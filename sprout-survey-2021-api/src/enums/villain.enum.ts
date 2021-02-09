@@ -1,0 +1,16 @@
+export enum Villanin {
+  GreenDeath,
+  Drago,
+  DragoBewilderbeast,
+  Grimmel,
+  Viggo,
+  Ryker,
+  Dagur,
+  Johann,
+  THWWarlords,
+  Alvin,
+  Mildew,
+  Other,
+  None,
+  Multiple,
+}

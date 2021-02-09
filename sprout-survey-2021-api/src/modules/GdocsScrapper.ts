@@ -1,0 +1,586 @@
+import axios from 'axios';
+import neatCsv from 'neat-csv';
+import { Answer } from '../enums/answer.enum';
+import { Character } from '../enums/character.enum';
+import { Community } from '../enums/community.enum';
+import { Continent } from '../enums/continent.enum';
+import { FurryCommunity } from '../enums/furry-community.enum';
+import { Gender } from '../enums/gender.enum';
+import { Question } from '../enums/question.enum';
+import { ost2enum } from '../enums/soundtrack.enum';
+import headers from '../stuff/csv-headers';
+
+export interface ColumnIntegrityData {
+  col: string,
+  rowOffset?: number,
+  isMatchingAtOffset?: boolean,
+  leftMatches?: number,
+  rightMatches?: number,
+};
+
+export interface LineIntegrityData {
+  line: number,
+  columns?: ColumnIntegrityData[],
+  lineInvalid?: boolean,
+}
+
+const ratingQuestions = [
+  Question.HTTYD1Rating,
+  Question.HTTYD1ScoreRating,
+  Question.HTTYD1PlotRating,
+  Question.HTTYD1CharacterRating,
+  Question.HTTYD1EmotionRating,
+  Question.HTTYD1VisualsRating,
+  Question.HTTYD1ThemeRating,
+  Question.HTTYD2Rating,
+  Question.HTTYD2ScoreRating,
+  Question.HTTYD2PlotRating,
+  Question.HTTYD2CharacterRating,
+  Question.HTTYD2EmotionRating,
+  Question.HTTYD2VisualsRating,
+  Question.HTTYD2ThemeRating,
+  Question.HTTYD3Rating,
+  Question.HTTYD3ScoreRating,
+  Question.HTTYD3PlotRating,
+  Question.HTTYD3CharacterRating,
+  Question.HTTYD3EmotionRating,
+  Question.HTTYD3VisualsRating,
+  Question.HTTYD3ThemeRating,
+  Question.ThotfuryCharacterRating,
+  Question.ThotfuryDesignRating,
+  Question.THWFittingEnd,
+  Question.THWPlotCoherency,
+  Question.THWThemeApproval,
+  Question.GONFRating,
+  Question.BoneknapperRating,
+  Question.BookOfDragonsRating,
+  Question.DawnOfDragonRidersRating,
+  Question.HomecomingRating,
+  Question.RidersOfBerkRating,
+  Question.RTTERating,
+  Question.SideCharactersLikabilityAgreement,
+  Question.YouCanEnjoyGarbageAgreement,
+  Question.FavouriteDraconidReasonScore,      // not actually question
+  Question.FavouriteVillainReasonScore,
+]
+
+export class GdocsScrapper {
+
+  sheetUrl: string;
+  dataCache: any;
+  test = "wow";
+
+  /**
+   * We will re-fetch gsheet data 
+   */
+  maxAge: number;
+  private lastCacheRefresh: any;
+
+
+  headers = headers;
+
+  /**
+   * Initializes the GdocsScrapper
+   * @param sheetUrl URL to gsheet we want to get
+   * @param maxAge max age in milliseconds (1h default)
+   */
+  constructor(sheetUrl: string, maxAge: number = 3600000) {
+    this.sheetUrl = sheetUrl;
+    this.maxAge = maxAge;
+  }
+
+  getData = async (forceRefresh?: boolean): Promise<any> => {
+
+    if (
+      !this.lastCacheRefresh
+        || Date.now() - this.lastCacheRefresh > this.maxAge 
+        || forceRefresh
+    ) {
+      // prevent multiple requests that arrive in quick succession from
+      // triggering the parsing
+      this.lastCacheRefresh = Date.now();
+
+      // if force refresh, we wait for loadData to finish,
+      // otherwise we return the cached value
+      if (forceRefresh || !this.lastCacheRefresh) {
+        await this.loadData();
+      } else {
+        this.loadData();
+      }
+
+      return this.dataCache;
+    }
+
+    return this.dataCache;
+  }
+
+  private async gsheet2json(headers: Question[] | string[] = this.headers) {
+    const csvString = (await axios.get(this.sheetUrl)).data;
+    return await neatCsv(csvString, {headers});
+  }
+
+  private async loadData() {
+    console.log("trying to load data.")
+    const csvString = (await axios.get(this.sheetUrl)).data;
+    let data = await neatCsv(csvString, {headers: this.headers});
+    // console.log(data);
+
+    // process data, condense stuff to enums where possible
+    this.processData(data);
+  }
+
+
+  //#region data-processing
+  processData(data: any) {
+    const processedData = [];
+    let deletedCount = 0;
+
+    for (const row of data) {
+
+      // skip over things we marked as a duplicate
+      if (row[Question.IsDeleted]) {
+        console.warn('Skipping row as it\'s been marked a duplicate. Row:\n', row);
+        deletedCount++;
+        continue;
+      }
+
+      let rowOut: any = {};
+
+      // these are guaranteed to be a number or empty
+      for (const q of ratingQuestions) {
+        if (row[q])
+          rowOut[q] = +row[q];
+        else {
+          rowOut[q] = undefined;
+        }
+      }
+
+      // age
+      if (!row[Question.Age]) {
+        rowOut[Question.Age] = undefined;
+      } else if (isNaN(row[Question.Age]) || row[Question.Age] > 100) {
+        rowOut[Question.Age] = -1;                                      // negative values for invalid ages
+      } else {
+        rowOut[Question.Age] = +row[Question.Age]
+      }
+
+      // gender
+      if (row[Question.Gender].startsWith('Funny Answer')) {
+        rowOut[Question.Gender] = Gender.Apache;
+      } else if (row[Question.Gender].startsWith('Snowflake')) {
+        rowOut[Question.Gender] = Gender.Snowflake;
+      } else if (row[Question.Gender] === 'Male') {
+        rowOut[Question.Gender] = Gender.Male;
+      } else if (row[Question.Gender] === 'Female') {
+        rowOut[Question.Gender] = Gender.Female;
+      } else if (!(row[Question.Gender].trim()) || row[Question.Gender] === 'Prefer Not To Answer') {
+        rowOut[Question.Gender] = Gender.Shy;
+      } else {
+        rowOut[Question.Gender] = Gender.Other;
+      }
+
+      // community
+      const community = row[Question.Community].split(';');
+      const communityOut: any = {
+        value: this.communtiy2enum(community[0])
+      };
+      if (community.length > 1) {
+        communityOut['dwFlag'] = true;
+      }
+      rowOut[Question.Community] = communityOut;
+
+      // location
+      rowOut[Question.Location] = this.continent2enum(row[Question.Location]);
+
+      // fandom time
+      if (row[Question.FandomTime].startsWith('<')) {
+        rowOut[Question.FandomTime] = 0;
+      } else if (row[Question.FandomTime].startsWith('10+')) {
+        rowOut[Question.FandomTime] = 10;
+      } else if (row[Question.FandomTime].startsWith('P')){
+        rowOut[Question.FandomTime] = undefined;
+      } else if (row[Question.FandomTime].trim()){
+        rowOut[Question.FandomTime] = + (row[Question.FandomTime].split(' Y')[0]);
+      } else {
+        rowOut[Question.FandomTime] = undefined;
+      }
+
+      // previous survey
+      switch (row[Question.SurveyParticipation2020]) {
+        case 'Yes':
+          rowOut[Question.SurveyParticipation2020] = Answer.Yes;
+          break;
+        case 'No':
+          rowOut[Question.SurveyParticipation2020] = Answer.No;
+          break;
+        default:
+          rowOut[Question.SurveyParticipation2020] = Answer.Neutral;
+      }
+
+      // is furry?
+      const isFurry = row[Question.IsFurry];
+
+      rowOut[Question.IsFurry] = [];
+      if (isFurry.indexOf('Furry')) {
+        rowOut[Question.IsFurry].push(FurryCommunity.Furry);
+      }
+      if (isFurry.indexOf('Scaly')) {
+        rowOut[Question.IsFurry].push(FurryCommunity.Scalie);
+      }
+      if (isFurry.indexOf('Other Related')) {
+        rowOut[Question.IsFurry].push(FurryCommunity.Other);
+      }
+      if (isFurry.indexOf('Prefer Not To Answer')) {
+        rowOut[Question.IsFurry].push(FurryCommunity.AnswerShy);
+      }
+      if (isFurry.indexOf('I do not identify')) {
+        rowOut[Question.IsFurry].push(FurryCommunity.None);
+      }
+      if (isFurry.trim().length === 0) {
+        rowOut[Question.IsFurry].push(FurryCommunity.AnswerShy);
+      }
+
+      // count people who provided usernames, but omit the actual username
+      rowOut[Question.UsernameProvided] = !!row[Question.UsernameProvided];
+
+      // favourite characters go
+      const httyd1fav = row[Question.HTTYD1FavouriteCharacter].split('; ');
+      const httyd1worst = row[Question.HTTYD1WorstCharacter].split('; ');
+      const httyd2fav = row[Question.HTTYD2FavouriteCharacter].split('; ');
+      const httyd2worst = row[Question.HTTYD2WorstCharacter].split('; ');
+      const httyd3fav = row[Question.HTTYD3FavouriteCharacter].split('; ');
+      const httyd3worst = row[Question.HTTYD3WorstCharacter].split('; ');
+
+      rowOut[Question.HTTYD1FavouriteCharacter] = {value: this.character2enum(httyd1fav), dwFlag: httyd1fav[1] && httyd1fav[1].indexOf('This Sign Can\'t Stop Me') !== -1};
+      rowOut[Question.HTTYD2FavouriteCharacter] = {value: this.character2enum(httyd2fav), dwFlag: httyd2fav[1] && httyd2fav[1].indexOf('This Sign Can\'t Stop Me') !== -1};
+      rowOut[Question.HTTYD3FavouriteCharacter] = {value: this.character2enum(httyd3fav), dwFlag: httyd3fav[1] && httyd3fav[1].indexOf('This Sign Can\'t Stop Me') !== -1};
+
+      rowOut[Question.HTTYD1WorstCharacter] = {value: this.character2enum(httyd1worst), dwFlag: httyd1worst[1] && httyd1worst[1].indexOf('This Sign Can\'t Stop Me') !== -1};
+      rowOut[Question.HTTYD2WorstCharacter] = {value: this.character2enum(httyd2worst), dwFlag: httyd2worst[1] && httyd2worst[1].indexOf('This Sign Can\'t Stop Me') !== -1};
+      rowOut[Question.HTTYD3WorstCharacter] = {value: this.character2enum(httyd3worst), dwFlag: httyd3worst[1] && httyd3worst[1].indexOf('This Sign Can\'t Stop Me') !== -1};
+
+      // favourite songs
+      const httyd1ost = row[Question.HTTYD1FavouriteSoundtrack].split('; ');
+      const httyd2ost = row[Question.HTTYD2FavouriteSoundtrack].split('; ');
+      const httyd3ost = row[Question.HTTYD3FavouriteSoundtrack].split('; ');
+
+      rowOut[Question.HTTYD1FavouriteSoundtrack] = {value: ost2enum(1, httyd1ost[0]), dwFlag: httyd1ost[1] && httyd1ost[1].indexOf('This Sign Can\'t Stop Me') !== -1};
+      rowOut[Question.HTTYD2FavouriteSoundtrack] = {value: ost2enum(2, httyd2ost[0]), dwFlag: httyd2ost[1] && httyd2ost[1].indexOf('This Sign Can\'t Stop Me') !== -1};
+      rowOut[Question.HTTYD3FavouriteSoundtrack] = {value: ost2enum(3, httyd3ost[0]), dwFlag: httyd3ost[1] && httyd3ost[1].indexOf('This Sign Can\'t Stop Me') !== -1};
+
+      // todo:
+      //   * bonus questions for 2/thw
+      //   * favourite short
+      //   * thw themes
+      //   * best opening
+      //   * ranking
+      //   * seeing order
+      //   * is RTTE canon?
+      //   * thw opinion change
+      //   * reasons for fandom
+      //   * most important aspects
+      //   * fav dragon
+      //   * fav villain
+
+      processedData.push(rowOut);
+    }
+
+    return processedData;
+  }
+
+  character2enum(character: string) {
+    switch (character.trim()) {
+      case 'Hiccup':
+        return Character.Hiccup;
+      case 'Toothless':
+        return Character.Toothless;
+      case 'Astrid':
+        return Character.Astrid;
+      case 'Stoick':
+        return Character.Stoick;
+      case 'Gobber':
+        return Character.Gobber;
+      case 'Ruffnut':
+        return Character.Ruffnut;
+      case 'Tuffnut':
+        return Character.Tuffnut;
+      case 'Twins':
+        return Character.Twins;
+      case 'Snotlout':
+        return Character.Snotlout;
+      case 'Fishlegs':
+        return Character.Fishlegs;
+      case 'Cloudjumper':
+        return Character.Cloudjumper;
+      case 'Drago':
+        return Character.Drago;
+      case 'Eret':
+        return Character.Eret;
+      case 'Light Fury':
+        return Character.Thotfury;
+      case 'Grimmel':
+        return Character.Grimmel;
+      default:
+        return Character.Other;
+    }
+  }
+
+  communtiy2enum(community: string) {
+    switch (community.trim()) {
+      case '':
+      case undefined:
+      case null:
+      case 'Prefer Not To Answer':
+        return Community.Shy;
+      case 'Discord':
+        return Community.Discord;
+      case 'The Subreddit':
+        return Community.Reddit;
+      case 'Youtube':
+        return Community.Youtube;
+      case 'Twitter':
+        return Community.Twitter;
+      case 'Instagram':
+        return Community.Instagram;
+      case 'Amino':
+        return Community.Amino;
+      case 'The HTTYD Wiki (FANDOM)':
+        return Community.Fandom;
+      case 'Tumblr':
+        return Community.Tumblr;
+      case 'Berk\'s Grapevine':
+        return Community.Grapevine;
+      default:
+        return Community.Other;
+    }
+  }
+
+  continent2enum(continent: string) {
+    switch (continent) {
+      case 'Africa':
+        return Continent.Africa;
+      case 'Antarctica':
+        return Continent.Antarctica;
+      case 'Asia':
+        return Continent.Asia;
+      case 'Australia':
+        return Continent.Australia;
+      case 'Europe':
+        return Continent.Europe;
+      case 'North America':
+        return Continent.NorthAmerica;
+      case 'South America':
+        return Continent.SouthAmerica;
+      default: 
+        return Continent.Shy;
+    }
+  }
+
+  isRatingQuestion(col: string) {
+    switch (col) {
+      case Question.HTTYD1Rating:
+      case Question.HTTYD1ScoreRating:
+      case Question.HTTYD1PlotRating:
+      case Question.HTTYD1CharacterRating:
+      case Question.HTTYD1EmotionRating:
+      case Question.HTTYD1VisualsRating:
+      case Question.HTTYD1ThemeRating:
+      case Question.HTTYD2Rating:
+      case Question.HTTYD2ScoreRating:
+      case Question.HTTYD2PlotRating:
+      case Question.HTTYD2CharacterRating:
+      case Question.HTTYD2EmotionRating:
+      case Question.HTTYD2VisualsRating:
+      case Question.HTTYD2ThemeRating:
+      case Question.HTTYD3Rating:
+      case Question.HTTYD3ScoreRating:
+      case Question.HTTYD3PlotRating:
+      case Question.HTTYD3CharacterRating:
+      case Question.HTTYD3EmotionRating:
+      case Question.HTTYD3VisualsRating:
+      case Question.HTTYD3ThemeRating:
+      case Question.ThotfuryCharacterRating:
+      case Question.ThotfuryDesignRating:
+      case Question.THWFittingEnd:
+      case Question.THWPlotCoherency:
+      case Question.THWThemeApproval:
+      case Question.GONFRating:
+      case Question.BoneknapperRating:
+      case Question.BookOfDragonsRating:
+      case Question.DawnOfDragonRidersRating:
+      case Question.HomecomingRating:
+      case Question.RidersOfBerkRating:
+      case Question.RTTERating:
+      case Question.SideCharactersLikabilityAgreement:
+      case Question.YouCanEnjoyGarbageAgreement:
+      case Question.FavouriteDraconidReasonScore:      // not actually questions
+      case Question.FavouriteVillainReasonScore:
+        return true;
+      default: 
+        return false;
+    }
+  }
+
+
+  //#endregion
+
+  //#region integrity-check
+
+  /**
+   * Generates excel column names up to a given column.
+   * It only handles up to two letter columns because thats
+   * what we need and I don't wanan spend time coming up
+   * with a general solution
+   * @param lastColumn 
+   */
+  // generateExcelColums(lastColumn: string = 'Z'): string[] {
+  //   const cols = [];
+
+  //   // guard against users doing user things
+  //   lastColumn = lastColumn.toUpperCase();
+
+  //   let ccNumber = 10;        // we can do (number).toString(radix). 
+  //   let currentColumn = 'A';  // 10.toString(11) returns 'a', which is neat.
+
+  //   while (true) {
+  //     cols.push(currentColumn);
+
+  //     if (currentColumn === lastColumn) {
+  //       break;
+  //     }
+
+  //     ccNumber++;
+  //     if (ccNumber % 36 === 0) {
+  //       ccNumber += 10;      // let's make that A again
+  //     }
+  //     currentColumn = ccNumber.toString(36).toUpperCase();
+  //   }
+
+  //   return cols;
+  // }
+
+  // async checkDataIntegrity(truthFile: string) {
+  //   const columns = this.generateExcelColums('BR');
+  //   const column2index: {[x: string]: number} = {};
+
+  //   // make so we can convert columns to index and back again
+  //   for (let i in columns) {
+  //     column2index[columns[i]] = +i;
+  //   }
+
+  //   const integrityCheckResult: LineIntegrityData[] = [];
+
+  //   const deletedLines: {
+  //     line: number;
+  //     columns: {
+  //       col: string,
+  //       content: string,
+  //     }
+  //   }[];
+
+  //   const surveyData = await this.gsheet2json(columns);
+  //   const truthData = await neatCsv(truthFile, {headers: columns});
+
+  //   // it is assumed that compared to the truth file, gsheet results
+  //   // will only have rows that are shifted up (due to deduping)
+
+  //   for (const [row, value] of Object.entries(surveyData)) {
+
+  //     if (+row >= truthData.length) {
+  //       break;
+  //     }
+
+  //     // create new integrityCheckResult object for the new line
+  //     let lineIntegrity: LineIntegrityData = {
+  //       line: +row,
+  //       columns: [] as ColumnIntegrityData[],
+  //     };
+
+
+  //     // first, we compare the time to get base offset 
+  //     // if row remains -1, then there's something wrong with the data
+  //     let baseOffset = -1;
+  //     for (let i = +row; i < truthData.length; i++) {
+  //       if (surveyData[+row]['A'] === truthData[i]['A']) {
+  //         baseOffset = i - +row;
+  //       }
+  //     }
+
+  //     if (baseOffset === -1) {
+  //       lineIntegrity.lineInvalid = true;
+  //       integrityCheckResult.push(lineIntegrity);
+  //       continue;
+  //     }
+
+  //     // do a sliding window to establish which columns are offset. Five consecutive mismatches mean there's something wrong
+  //     let offsetMismatchBroken = false;
+  //     let truthTableRow = +row + baseOffset;
+
+  //     for (const [colIndex, col] of Object.entries(columns)) {
+  //       let leftMatches = 5;
+  //       let rightMatches = 5;
+
+  //       for (let i = Math.max(+colIndex - leftMatches, 0); i < +colIndex; i++) {
+  //         if (surveyData[+row][columns[i]] !== truthData[truthTableRow][columns[i]]) {
+  //           leftMatches--;
+  //         }
+  //       }
+  //       for (let i = Math.min(+colIndex + rightMatches, columns.length - 1), i > +colIndex; i--) {
+  //         if (surveyData[+row][columns[i]] !== truthData[truthTableRow][columns[i]]) {
+  //           rightMatches--;
+  //         }
+  //       }
+  //     }
+      
+
+  //     // first pass:
+  //     // we do multiple passes for each row. First, we check for 
+  //     // naive offsets — whether stuff from survey data matches
+  //     // our truth table
+  //     // for (const [col, columnValue] of Object.entries(value)) {
+
+  //     //   // if values don't match, the value was changed
+  //     //   if (surveyData[+row][col] === truthData[+row][col]) {
+  //     //     lineIntegrity.columns.push({
+  //     //       col: col,
+  //     //       naiveOffset: 0
+  //     //     });
+  //     //   } else {
+  //     //     // check column until a match is found. We do this for non-trusted columns as well,
+  //     //     // since naiveOffset _can_ be used to confirm the offset we got in answers that 
+  //     //     // are unique in a jiffy.
+  //     //     let foundMatch = false;
+  //     //     for (let i = +row; i < truthData.length; i++) {
+  //     //       if (foundMatch = surveyData[+row][col] === truthData[i][col]) {
+  //     //         lineIntegrity.columns.push({
+  //     //           col: col,
+  //     //           naiveOffset: i - +row
+  //     //         });
+  //     //         break;
+  //     //       }
+  //     //     }
+
+  //     //     // if match was not found in the truth table, then our entry was edited.
+  //     //     if (!foundMatch) {
+  //     //       lineIntegrity.columns.push({
+  //     //         col: col,
+  //     //         wasEdited: true,
+  //     //       });
+  //     //     }
+  //     //   }
+  //     // }
+
+  //     // second pass:
+  //     // 
+  //   }
+  // }
+
+  // private findRowOffset(truthData: any[], row: number, col: string, value: string) {
+
+  // }
+
+  // private checkOffsetValidity(truthData: any[], row: number, col: string, offset: number, expectedValue: string) {
+  //   return truthData[row + offset][col] === expectedValue;
+  // }
+  //#endregion
+}

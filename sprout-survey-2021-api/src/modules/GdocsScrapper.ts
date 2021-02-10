@@ -1,14 +1,23 @@
 import axios from 'axios';
 import neatCsv from 'neat-csv';
 import { Answer } from '../enums/answer.enum';
+import { Aspect } from '../enums/aspect-enum';
 import { Character } from '../enums/character.enum';
 import { Community } from '../enums/community.enum';
 import { Continent } from '../enums/continent.enum';
+import { Draconid, draconid2enum } from '../enums/draconid.enum';
 import { FurryCommunity } from '../enums/furry-community.enum';
 import { Gender } from '../enums/gender.enum';
+import { HTTYDAppealReason } from '../enums/httyd-appeal-reason.enum';
+import { HTTYDShort } from '../enums/httyd-short.enum';
+import { MovieOrder } from '../enums/movie-order.enum';
 import { Question } from '../enums/question.enum';
 import { ost2enum } from '../enums/soundtrack.enum';
+import { THWOpinionChange } from '../enums/thw-opinion-change.enum';
+import { THWTheme } from '../enums/thw-theme.enum';
+import { Villain, villain2enum } from '../enums/villain.enum';
 import headers from '../stuff/csv-headers';
+import fs from 'fs';
 
 export interface ColumnIntegrityData {
   col: string,
@@ -126,7 +135,14 @@ export class GdocsScrapper {
     // console.log(data);
 
     // process data, condense stuff to enums where possible
-    this.processData(data);
+    const dataOut = this.processData(data);
+
+    fs.writeFile('survey-data.json', JSON.stringify(dataOut), (error)=>{
+      if (error) {
+        return console.error('Failed to save file:', error);
+      }
+      console.log('File saved!')
+    });
   }
 
 
@@ -251,13 +267,13 @@ export class GdocsScrapper {
       const httyd3fav = row[Question.HTTYD3FavouriteCharacter].split('; ');
       const httyd3worst = row[Question.HTTYD3WorstCharacter].split('; ');
 
-      rowOut[Question.HTTYD1FavouriteCharacter] = {value: this.character2enum(httyd1fav), dwFlag: httyd1fav[1] && httyd1fav[1].indexOf('This Sign Can\'t Stop Me') !== -1};
-      rowOut[Question.HTTYD2FavouriteCharacter] = {value: this.character2enum(httyd2fav), dwFlag: httyd2fav[1] && httyd2fav[1].indexOf('This Sign Can\'t Stop Me') !== -1};
-      rowOut[Question.HTTYD3FavouriteCharacter] = {value: this.character2enum(httyd3fav), dwFlag: httyd3fav[1] && httyd3fav[1].indexOf('This Sign Can\'t Stop Me') !== -1};
+      rowOut[Question.HTTYD1FavouriteCharacter] = {value: this.character2enum(httyd1fav[0]), dwFlag: httyd1fav[1] && httyd1fav[1].indexOf('This Sign Can\'t Stop Me') !== -1};
+      rowOut[Question.HTTYD2FavouriteCharacter] = {value: this.character2enum(httyd2fav[0]), dwFlag: httyd2fav[1] && httyd2fav[1].indexOf('This Sign Can\'t Stop Me') !== -1};
+      rowOut[Question.HTTYD3FavouriteCharacter] = {value: this.character2enum(httyd3fav[0]), dwFlag: httyd3fav[1] && httyd3fav[1].indexOf('This Sign Can\'t Stop Me') !== -1};
 
-      rowOut[Question.HTTYD1WorstCharacter] = {value: this.character2enum(httyd1worst), dwFlag: httyd1worst[1] && httyd1worst[1].indexOf('This Sign Can\'t Stop Me') !== -1};
-      rowOut[Question.HTTYD2WorstCharacter] = {value: this.character2enum(httyd2worst), dwFlag: httyd2worst[1] && httyd2worst[1].indexOf('This Sign Can\'t Stop Me') !== -1};
-      rowOut[Question.HTTYD3WorstCharacter] = {value: this.character2enum(httyd3worst), dwFlag: httyd3worst[1] && httyd3worst[1].indexOf('This Sign Can\'t Stop Me') !== -1};
+      rowOut[Question.HTTYD1WorstCharacter] = {value: this.character2enum(httyd1worst[0]), dwFlag: httyd1worst[1] && httyd1worst[1].indexOf('This Sign Can\'t Stop Me') !== -1};
+      rowOut[Question.HTTYD2WorstCharacter] = {value: this.character2enum(httyd2worst[0]), dwFlag: httyd2worst[1] && httyd2worst[1].indexOf('This Sign Can\'t Stop Me') !== -1};
+      rowOut[Question.HTTYD3WorstCharacter] = {value: this.character2enum(httyd3worst[0]), dwFlag: httyd3worst[1] && httyd3worst[1].indexOf('This Sign Can\'t Stop Me') !== -1};
 
       // favourite songs
       const httyd1ost = row[Question.HTTYD1FavouriteSoundtrack].split('; ');
@@ -268,27 +284,265 @@ export class GdocsScrapper {
       rowOut[Question.HTTYD2FavouriteSoundtrack] = {value: ost2enum(2, httyd2ost[0]), dwFlag: httyd2ost[1] && httyd2ost[1].indexOf('This Sign Can\'t Stop Me') !== -1};
       rowOut[Question.HTTYD3FavouriteSoundtrack] = {value: ost2enum(3, httyd3ost[0]), dwFlag: httyd3ost[1] && httyd3ost[1].indexOf('This Sign Can\'t Stop Me') !== -1};
 
-      // todo:
-      //   * bonus questions for 2/thw
-      //   * favourite short
-      //   * thw themes
-      //   * best opening
-      //   * ranking
-      //   * seeing order
-      //   * is RTTE canon?
-      //   * thw opinion change
-      //   * reasons for fandom
-      //   * most important aspects
-      //   * fav dragon
-      //   * fav villain
+      // bonus questions for 2 and thw
+      const valkaVillain = row[Question.HTTYD2ValkaVillain];
+      if (valkaVillain.startsWith('Yes')) {
+        rowOut[Question.HTTYD2ValkaVillain] = Answer.Yes;
+      } else if (valkaVillain.startsWith('No')) {
+        rowOut[Question.HTTYD2ValkaVillain] = Answer.No;
+      } else if (valkaVillain.startsWith('Neu')) {
+        rowOut[Question.HTTYD2ValkaVillain] = Answer.Neutral;
+      } else {
+        rowOut[Question.HTTYD2ValkaVillain] = Answer.Unanswered;
+      }
+
+      const dragoRedemption = row[Question.HTTYD3DragoRedemptionArc];
+      if (dragoRedemption.startsWith('Yes')) {
+        rowOut[Question.HTTYD3DragoRedemptionArc] = Answer.Yes;
+      } else if (dragoRedemption.startsWith('No')) {
+        rowOut[Question.HTTYD3DragoRedemptionArc] = Answer.No;
+      } else if (dragoRedemption.startsWith('Neu')) {
+        rowOut[Question.HTTYD3DragoRedemptionArc] = Answer.Neutral;
+      } else {
+        rowOut[Question.HTTYD3DragoRedemptionArc] = Answer.Unanswered;
+      }
+
+      // favourite short
+      const favShort = row[Question.FavouriteShort];
+      if (favShort.startsWith('Gift')) {
+        rowOut[Question.FavouriteShort] = HTTYDShort.GotNF;
+      } else if (favShort.startsWith('Legend')) {
+        rowOut[Question.FavouriteShort] = HTTYDShort.Boneknapper;
+      } else if (favShort.startsWith('The Book')) {
+        rowOut[Question.FavouriteShort] = HTTYDShort.BookOfDragons;
+      } else if (favShort.startsWith('Dawn of')) {
+        rowOut[Question.FavouriteShort] = HTTYDShort.DawnOfDragonRiders;
+      } else if (favShort.startsWith('Ho')) {
+        rowOut[Question.FavouriteShort] = HTTYDShort.Homecoming;
+      } else {
+        rowOut[Question.FavouriteShort] = HTTYDShort.NoAnswer;
+      }
+
+      // RTTE canon?
+      const rtteCanon = row[Question.IsRTTECanon];
+      if (rtteCanon.startsWith('Yes')) {
+        rowOut[Question.IsRTTECanon] = Answer.Yes;
+      } else if (rtteCanon.startsWith('No')) {
+        rowOut[Question.IsRTTECanon] = Answer.No;
+      } else if (rtteCanon.startsWith('Neu')) {
+        rowOut[Question.IsRTTECanon] = Answer.Neutral;
+      } else {
+        rowOut[Question.IsRTTECanon] = Answer.Unanswered;
+      }
+
+      // THW themes
+      const thwThemes = row[Question.THWStrongestThemes];
+      rowOut[Question.THWStrongestThemes] = [];
+      if (thwThemes.indexOf('Growing Up and Letting Go') !== -1) {
+        rowOut[Question.THWStrongestThemes].push(THWTheme.GrowingUp);
+      }
+      if (thwThemes.indexOf('Putting Aside Idealism When Nessecary') !== -1) {
+        rowOut[Question.THWStrongestThemes].push(THWTheme.PuttingAsideIdealism);
+      }
+      if (thwThemes.indexOf('Accepting That Friendships Sometimes End') !== -1) {
+        rowOut[Question.THWStrongestThemes].push(THWTheme.AcceptingFriendshipsEnd);
+      }
+      if (thwThemes.indexOf('Negative Effects Humans Sometimes Have on Animals and/or the Environment') !== -1) {
+        rowOut[Question.THWStrongestThemes].push(THWTheme.Moralfagging);
+      }
+      if (thwThemes.indexOf('Love and Loss') !== -1) {
+        rowOut[Question.THWStrongestThemes].push(THWTheme.LoveLoss);
+      }
+      if (thwThemes.indexOf('_salt') !== -1) {
+        rowOut[Question.THWStrongestThemes].push(THWTheme.SarcasticAnswer);
+      }
+      if (thwThemes.indexOf('_all-garbage') !== -1) {
+        rowOut[Question.THWStrongestThemes].push(THWTheme.AllGarbage);
+      }
+      if (thwThemes.indexOf('_other')) {
+        rowOut[Question.THWStrongestThemes].push(THWTheme.Other);
+      }
+      if (!thwThemes || thwThemes.trim().length === 0) {
+        rowOut[Question.THWStrongestThemes].push(THWTheme.NoAnswer);
+      }
+
+      // best opening
+      const favOpening = row[Question.FavouriteOpeningScene];
+      if (favOpening === 'HTTYD 1') {
+        rowOut[Question.FavouriteOpeningScene] = 1;
+      } else if (favOpening === 'HTTYD 2') {
+        rowOut[Question.FavouriteOpeningScene] = 1;
+      } else if (favOpening === 'HTTYD: THW') {
+        rowOut[Question.FavouriteOpeningScene] = 1;
+      }
+
+      // movie ranking
+      switch (row[Question.MovieRanking]) {
+        case '1 > 2 > 3':
+          rowOut[Question.MovieRanking] = MovieOrder.r123;
+          break;
+        case '1 > 3 > 2':
+          rowOut[Question.MovieRanking] = MovieOrder.r132;
+          break;
+        case '2 > 1 > 3':
+          rowOut[Question.MovieRanking] = MovieOrder.r213;
+          break;
+        case '2 > 3 > 1':
+        case '2> 3 > 1':
+          rowOut[Question.MovieRanking] = MovieOrder.r231;
+          break;
+        case '3 > 1 > 2':
+          rowOut[Question.MovieRanking] = MovieOrder.r312;
+          break;
+        case '3 > 2 > 1':
+          rowOut[Question.MovieRanking] = MovieOrder.r321;
+      }
+
+      // movie watching order
+      switch (row[Question.MovieWatchingOrder]) {
+        case '1 -> 2 -> 3':
+          rowOut[Question.MovieWatchingOrder] = MovieOrder.r123;
+          break;
+        case '1 -> 3 -> 2':
+          rowOut[Question.MovieWatchingOrder] = MovieOrder.r132;
+          break;
+        case '2 -> 1 -> 3':
+          rowOut[Question.MovieWatchingOrder] = MovieOrder.r213;
+          break;
+        case '2 -> 3 -> 1':
+          rowOut[Question.MovieWatchingOrder] = MovieOrder.r231;
+          break;
+        case '3 -> 1 -> 2':
+          rowOut[Question.MovieWatchingOrder] = MovieOrder.r312;
+          break;
+        case '3 -> 2 -> 1':
+          rowOut[Question.MovieWatchingOrder] = MovieOrder.r321;
+      }
+
+      // thw opinion change
+      const opinionChange = row[Question.THWOpinionChange];
+      if (opinionChange.startsWith('No')) {
+        rowOut[Question.THWOpinionChange] = THWOpinionChange.Unchanged;
+      } else if (opinionChange.startsWith('Yes, I liked it l')) {
+        rowOut[Question.THWOpinionChange] = THWOpinionChange.LikedItLess;
+      } else if (opinionChange.startsWith('Yes, I liked it m')) {
+        rowOut[Question.THWOpinionChange] = THWOpinionChange.LikedItMore;
+      }
+
+      // reasons for fandom
+      const fandomReason = row[Question.HTTYDAppealReasons];
+      rowOut[Question.HTTYDAppealReasons] = [];
+      if (fandomReason.indexOf('I love fantasy, so of course I\'ll love HTTYD.') !== -1) {
+        rowOut[Question.HTTYDAppealReasons].push(HTTYDAppealReason.FantasyFan);
+      }
+      if (fandomReason.indexOf('I found the characters or events of the franchise personally relatable and/or touching.') !== -1) {
+        rowOut[Question.HTTYDAppealReasons].push(HTTYDAppealReason.Relatable);
+      }
+      if (fandomReason.indexOf('I have fond memories of the franchise from my early childhood, so of course I still love it now!') !== -1) {
+        rowOut[Question.HTTYDAppealReasons].push(HTTYDAppealReason.Nostalgia);
+      }
+      if (fandomReason.indexOf('The world of the franchise interests and fascinates me.') !== -1) {
+        rowOut[Question.HTTYDAppealReasons].push(HTTYDAppealReason.FascinatingWorld);
+      }
+      if (fandomReason.indexOf('I find the franchise (or at least parts of it) to be of outstanding objective quality.') !== -1) {
+        rowOut[Question.HTTYDAppealReasons].push(HTTYDAppealReason.ObjectiveQuality);
+      }
+      if (fandomReason.indexOf('I\'m interested in animation, film-making, or other fields related to the franchise.') !== -1) {
+        rowOut[Question.HTTYDAppealReasons].push(HTTYDAppealReason.AnimationInterest);
+      }
+      if (fandomReason.indexOf('Dragons are cool!') !== -1) {
+        rowOut[Question.HTTYDAppealReasons].push(HTTYDAppealReason.DragonsCool);
+      }
+      if (fandomReason.indexOf('Other') !== -1) {
+        rowOut[Question.HTTYDAppealReasons].push(HTTYDAppealReason.Other);
+      }
+      if (fandomReason.indexOf('_other') !== -1) {
+        rowOut[Question.HTTYDAppealReasons].push(HTTYDAppealReason.Other);
+      }
+      if (fandomReason.indexOf('I ship one or more sets of characters in the franchise.') !== -1) {
+        rowOut[Question.HTTYDAppealReasons].push(HTTYDAppealReason.CharacterShipping);
+      }
+
+      // most important aspect
+      const importantAspects = row[Question.MostImportantAspects];
+      rowOut[Question.MostImportantAspects] = [];
+      if (importantAspects.indexOf('Plot') !== -1) {
+        rowOut[Question.MostImportantAspects].push(Aspect.Plot);
+      }
+      if (importantAspects.indexOf('Theme') !== -1) {
+        rowOut[Question.MostImportantAspects].push(Aspect.Theme);
+      }
+      if (importantAspects.indexOf('Characters') !== -1) {
+        rowOut[Question.MostImportantAspects].push(Aspect.Characters);
+      }
+      if (importantAspects.indexOf('Visual') !== -1) {
+        rowOut[Question.MostImportantAspects].push(Aspect.Visuals);
+      }
+      if (importantAspects.indexOf('Soundtrack') !== -1) {
+        rowOut[Question.MostImportantAspects].push(Aspect.Soundtrack);
+      }
+      if (importantAspects.indexOf('Emotion') !== -1) {
+        rowOut[Question.MostImportantAspects].push(Aspect.Emotion);
+      }
+
+      // fav dragon
+      const favDraconid = row[Question.FavouriteDraconid].split('; ');
+      const fdReason = row[Question.FavouriteDraconidReason];
+      const fdScore = row[Question.FavouriteDraconidReasonScore];
+      const draconidType = draconid2enum(favDraconid[0]);
+
+      let dwFlag;
+      if (favDraconid[1] && favDraconid[1].indexOf('This Sign Can\'t Stop Me Because I Can\'t Read') !== -1) {
+        dwFlag = true;
+      }
+      
+      rowOut[Question.FavouriteDraconid] = {
+        value: draconidType,
+        originalValue: draconidType === Draconid.Other ? favDraconid[0].trim().toLowerCase() : undefined,
+        reason: fdReason,
+        reasonScore: this.parseNumber(fdScore),
+        dwFlag
+      };
+
+      // fav villain
+      const favVillain = row[Question.FavouriteVillain].split('; ');
+      const fvReason = row[Question.FavouriteVillainReason];
+      const fvScore = row[Question.FavouriteVillainReasonScore];
+      const villainType = villain2enum(favVillain[0]);
+
+      let dwFlag2;
+      if (favVillain[1] && favVillain[1].indexOf('This Sign Can\'t Stop Me Because I Can\'t Read') !== -1) {
+        dwFlag2 = true;
+      }
+
+      rowOut[Question.FavouriteVillain] = {
+        value: villainType,
+        originalValue: villainType === Villain.Other ? favVillain[0].trim().toLowerCase() : undefined,
+        reason: fvReason,
+        reasonScore: this.parseNumber(fvScore),
+        dwFlag: dwFlag2
+      }
 
       processedData.push(rowOut);
     }
 
-    return processedData;
+    return {
+      deletedCount: deletedCount,
+      processedData: processedData
+    };
+  }
+
+  parseNumber(num: any) {
+    if (!num || isNaN(+num)) {
+      return undefined;
+    }
+    return +num;
   }
 
   character2enum(character: string) {
+    if (!character) {
+      return undefined;
+    }
     switch (character.trim()) {
       case 'Hiccup':
         return Character.Hiccup;
@@ -326,6 +580,9 @@ export class GdocsScrapper {
   }
 
   communtiy2enum(community: string) {
+    if (!community) {
+      return Community.Shy;
+    }
     switch (community.trim()) {
       case '':
       case undefined:
@@ -356,6 +613,9 @@ export class GdocsScrapper {
   }
 
   continent2enum(continent: string) {
+    if (!continent) {
+      return Continent.Shy;
+    }
     switch (continent) {
       case 'Africa':
         return Continent.Africa;

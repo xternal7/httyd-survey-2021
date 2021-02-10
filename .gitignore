@@ -1,3 +1,5 @@
 node_modules/
 */*.env
 
+
+sprout-survey-2021-api/survey-data.json

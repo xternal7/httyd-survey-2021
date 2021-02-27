@@ -137,7 +137,7 @@ export class GdocsScrapper {
     // process data, condense stuff to enums where possible
     const dataOut = this.processData(data);
 
-    fs.writeFile('survey-data.json', JSON.stringify(dataOut), (error)=>{
+    fs.writeFile('survey-data.js', `export default ${JSON.stringify(dataOut)}`, (error)=>{
       if (error) {
         return console.error('Failed to save file:', error);
       }
@@ -534,14 +534,14 @@ export class GdocsScrapper {
 
   parseNumber(num: any) {
     if (!num || isNaN(+num)) {
-      return undefined;
+      return null;
     }
     return +num;
   }
 
   character2enum(character: string) {
     if (!character) {
-      return undefined;
+      return Character.NoAnswer;
     }
     switch (character.trim()) {
       case 'Hiccup':

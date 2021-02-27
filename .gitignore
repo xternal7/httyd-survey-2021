@@ -3,3 +3,5 @@ node_modules/
 
 
 sprout-survey-2021-api/survey-data.json
+
+sprout-survey-2021/src/assets/results/survey-data.js

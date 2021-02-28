@@ -19,7 +19,7 @@
             were the "fav soundtrack" questions, because oh boy. There was a pattern.
           </li>
           <li>
-            {{duplicateCount}} responses were identified as a duplicates, which probably appeared due to glitch in the poll. Duplicates were identified by looking at the questions with free-entry responses.
+            {{surveyResults.deletedCount}} responses were identified as a duplicates, which probably appeared due to glitch in the poll. Duplicates were identified by looking at the questions with free-entry responses.
           </li>
         </ul>
       </div>
@@ -169,15 +169,126 @@
 </template>
 
 <script lang="ts">
+import axios from 'axios';
+import {Question} from './enums/question.enum';
+
 import { defineComponent } from 'vue';
 import HelloWorld from './components/HelloWorld.vue';
 import TitleScreen from './components/TitleScreen.vue';
+
+// data
+import surveyResults from './assets/results/survey-data';
 
 export default defineComponent({
   name: 'App',
   components: {
     HelloWorld,
     TitleScreen,
+  },
+  data() {
+    return {
+      surveyResults: surveyResults,
+      graphProcessingQueue: [],
+
+      filteredResults: {},
+
+      // GraphData is structured in the followign manner:
+      //   * question
+      //      * answer
+      //        * response count
+      graphData: {},
+    };
+  },
+  async created() {
+    console.log('got data:', surveyResults);
+    console.log('c', Object.values(Question));
+    for (const c of Object.values(Question)) {
+      console.log('-->', c);
+    }
+    console.log("www")
+    this.graphData['all'] = this.processData(surveyResults.processedData, 'all responses')
+  },
+
+  methods: {
+    async prefilterData() {
+    },
+    /**
+     * Converts raw data into separate columns
+     */
+    async processData(data: any, datasetName: string, options?: {processQuestions: Question[]}) {
+      const startTime = performance.now();
+
+      console.info('Starting to process data ...')
+
+      // create data structure ahead of time. 
+      const processedData = {};
+
+      for (const question of Object.values(Question)) {
+        processedData[question] = { }
+      }
+
+      console.info('[÷] data structure prepared');
+
+
+      for (const surveyResponse of data) {
+        for (const question of Object.values(Question)) {
+          let answer = surveyResponse[question];
+
+          if (answer === undefined) {
+            answer = 'NoAnswer';
+          }
+
+          
+
+          if (Array.isArray(answer)) {
+            for (const ans of answer) {
+              if (question === ('16' as Question)) {
+                console.log('ans', ans, {[ans]: 'test'})
+              }
+              if (! processedData[question][ans]) {
+                processedData[question][ans] = 1;
+              } else {
+                processedData[question][ans]++;
+              }
+            }
+          } else if (answer.value) {
+            if (question === ('16' as Question)) {
+              console.log('ans', answer.value, {[answer.value]: 'test'})
+            }
+            if (answer.dwFlag) {
+              if (! processedData[question]['dwFlags']) {
+                processedData[question]['dwFlags'] = 1;
+              } else {
+                processedData[question]['dwFlags']++;
+              }
+            }
+            if (! processedData[question][answer.value]) {
+              processedData[question][answer.value] = 1;
+            } else {
+              processedData[question][answer.value]++;
+            }
+          } else {
+            if (question === ('16' as Question)) {
+              console.log('ans', answer, {[answer]: 'test'})
+            }
+            if (! processedData[question][answer]) {
+              processedData[question][answer] = 1;
+            } else {
+              processedData[question][answer]++;
+            }
+          }
+        }
+
+        // todo: special processing for "please select at most 2" questions.
+      }
+
+
+      const endTime = performance.now();
+      console.info(`Data for ${datasetName} processed in ${endTime - startTime} ms.        (note: numbers are slightly fuzzed cos spectre)`);
+      console.info('Processed data:', processedData);
+
+      return processedData;
+    }
   }
 });
 </script>

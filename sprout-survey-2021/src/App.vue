@@ -35,6 +35,15 @@
           This year, we've decided to also ask for location and gender.
         </p>
 
+        <div class="graph-area">
+          <graph
+            title="Age"
+            :conf="{trackWidth: '6px !important', columnWidth: '8px !important'}"
+            :columns="graphColumnDefinitions[Question.Age]()"
+            :data="graphData?.['all']?.[Question.Age]"
+          ></graph>
+        </div>
+
         <p>
           So there's that. The "dragons are a stereotypically female interest" redditor got BTFO'd. In the "other" department, there is a few trans-adjacent things (mostly nonbinary). I am pleasantly suprised about the lack of super-special-snowflake genders and a negligible number of apache-genders (apache-genders appearing in this poll: '420'). Thanks for keeping the answer serious.
         </p>
@@ -175,18 +184,23 @@ import {Question} from './enums/question.enum';
 import { defineComponent } from 'vue';
 import HelloWorld from './components/HelloWorld.vue';
 import TitleScreen from './components/TitleScreen.vue';
+import Graph from './components/Graph.vue';
 
 // data
 import surveyResults from './assets/results/survey-data';
+import graphColumnDefinitions from './helpers/column-definitions';
 
 export default defineComponent({
   name: 'App',
   components: {
     HelloWorld,
     TitleScreen,
+    Graph,
   },
   data() {
     return {
+      Question,
+      graphColumnDefinitions,
       surveyResults: surveyResults,
       graphProcessingQueue: [],
 
@@ -202,13 +216,12 @@ export default defineComponent({
   async created() {
     console.log('got data:', surveyResults);
     console.log('c', Object.values(Question));
-    for (const c of Object.values(Question)) {
-      console.log('-->', c);
-    }
     console.log("www")
-    this.graphData['all'] = this.processData(surveyResults.processedData, 'all responses')
+    this.graphData['all'] = await this.processData(surveyResults.processedData, 'all responses');
+    console.log("this.graphData:", JSON.parse(JSON.stringify(this.graphData)));
+    this.$forceUpdate();
+    this.$nextTick();
   },
-
   methods: {
     async prefilterData() {
     },
@@ -238,12 +251,10 @@ export default defineComponent({
             answer = 'NoAnswer';
           }
 
-          
-
           if (Array.isArray(answer)) {
             for (const ans of answer) {
               if (question === ('16' as Question)) {
-                console.log('ans', ans, {[ans]: 'test'})
+                // console.log('ans', ans, {[ans]: 'test'})
               }
               if (! processedData[question][ans]) {
                 processedData[question][ans] = 1;
@@ -253,7 +264,7 @@ export default defineComponent({
             }
           } else if (answer.value) {
             if (question === ('16' as Question)) {
-              console.log('ans', answer.value, {[answer.value]: 'test'})
+              // console.log('ans', answer.value, {[answer.value]: 'test'})
             }
             if (answer.dwFlag) {
               if (! processedData[question]['dwFlags']) {
@@ -269,7 +280,7 @@ export default defineComponent({
             }
           } else {
             if (question === ('16' as Question)) {
-              console.log('ans', answer, {[answer]: 'test'})
+              // console.log('ans', answer, {[answer]: 'test'})
             }
             if (! processedData[question][answer]) {
               processedData[question][answer] = 1;

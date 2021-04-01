@@ -43,6 +43,7 @@
                 :style="{
                   'height': ( (graphData[column.key]?.[set.setKey] || 0) / maxValue * 100) + '%',
                   'background-color': (set.color || '#fff'),
+                  'border': (set.border || '0px solid transparent'),
                 }"
               >
               </div>
@@ -54,6 +55,24 @@
             {{column.label}}
           </div>
         </div>
+      </div>
+    </div>
+    <div 
+      v-if="setConf.length > 1"
+      class="graph-set-container flex flex-row flex-wrap flex-center"
+    >
+      <div
+        v-for="set of setConf"
+        :key="set"
+        class="graph-set"
+      >
+        <div
+          class="set-color"
+          :style="{
+            'background-color': (set.color || '#fff'),
+            'border': (set.border || '0px solid transparent')
+          }"
+        ></div> {{set.setLabel}}
       </div>
     </div>
   </div>
@@ -303,7 +322,22 @@ export default defineComponent({
   }
 }
 
+.graph-set-container {
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
 
+  .graph-set {
+    margin: 0.5rem 1rem;
+
+    .set-color {
+      display: inline-block;
+      width: 0.6rem;
+      height: 0.6rem;
+
+      box-sizing: border-box;
+    }
+  }
+}
 
 
 

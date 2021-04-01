@@ -40,7 +40,20 @@
             title="Age"
             :conf="{trackWidth: '6px !important', columnWidth: '8px !important'}"
             :columns="graphColumnDefinitions[Question.Age]()"
-            :data="graphData?.['all']?.[Question.Age]"
+            :sets="[{
+              setKey: 'default',
+              setLabel: 'Default',
+              color: '#00f'
+            },{
+              setKey: 'default',
+              setLabel: 'Red',
+              color: '#f00'
+            }]"
+            :data="{
+              _multiSet: true,
+              default: graphData?.['all']?.[Question.Age],
+              secondary: graphData?.['all']?.[Question.Age]
+            }"
           ></graph>
         </div>
 

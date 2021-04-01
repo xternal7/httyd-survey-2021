@@ -25,7 +25,8 @@
         :key="column"
         class="graph-value"
         :style="{
-          'width': graphConf.columnWidth ?? undefined
+          'width': graphConf.columnWidth ?? undefined,
+          'margin': `0 ${graphConf.columnXMargin ?? 0}`
         }"
       >
         <div class="graph-bars">
@@ -41,6 +42,7 @@
               <div
                 class="graph-data-bar"
                 :style="{
+                  'width': graphConf.barWidth,
                   'height': ( (graphData[column.key]?.[set.setKey] || 0) / maxValue * 100) + '%',
                   'background-color': (set.color || '#fff'),
                   'border': (set.border || '0px solid transparent'),
@@ -130,6 +132,9 @@ export default defineComponent({
   },
   methods: {
     processData(data) {
+
+      console.log('data:', data)
+
       // set default conf options
       this.graphConf = {
         trackWidth: '1rem',
@@ -184,9 +189,9 @@ export default defineComponent({
       }
 
       console.info(
-        'data processed:', JSON.parse(JSON.stringify(this.graphData)),
-        '\nset conf:', JSON.parse(JSON.stringify(this.setConf)),
-        '\ncolumns:', JSON.parse(JSON.stringify(this.columns)),
+        'data processed:', this.graphData, //JSON.parse(JSON.stringify(this.graphData)),
+        '\nset conf:', this.setConf, // JSON.parse(JSON.stringify(this.setConf)),
+        '\ncolumns:', this.columns, // JSON.parse(JSON.stringify(this.columns)),
         '\nmax value:', this.maxValue,
         '\ntick values', this.tickValues
       )

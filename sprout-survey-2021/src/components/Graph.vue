@@ -5,6 +5,21 @@
       <div>{{description}}</div>
     </div>
     <div class="graph-main">
+      <div class="graph-grid-y">
+          <div
+            v-for="(tick, index) of tickValues.tickValues"
+            :key="tick"
+            class="graph-tick-y"
+            :style="{'height': tickValues.blockHeight}"
+          >
+            <div class="value-abs">
+              {{tick}}
+            </div>
+            <div class="value-percent">
+              {{tickValues.tickPercentValues[index]}}
+            </div>
+          </div>
+      </div>
       <div
         v-for="column of columns"
         :key="column"
@@ -63,6 +78,11 @@ export default defineComponent({
       graphData: {},
       setConf: [],
       graphConf: {},
+      tickValues: {
+        blockHeight: '1px',
+        tickValues: [] as number[],
+        tickPercentValues: [] as string[]
+      }
     }
   },
   watch: {
@@ -115,6 +135,8 @@ export default defineComponent({
         data = {default: data};
       }
 
+      // get max value for graph 
+
       // convert data from set.column to column.set form
       for (const set of (this.setConf as any[])) {
         for (const answerKey in data[set.setKey]) {
@@ -129,13 +151,48 @@ export default defineComponent({
         }
       }
 
+      const yTickInterval = this.findBestInterval(this.maxValue);
+      const yTicks = Math.floor(this.maxValue / yTickInterval) + 1;  // account for the zero tick, which is extra!
+      const yAxisHeight = yTickInterval * yTicks;                    // height as in 'max value' that can be displayed. Should be > than max value.
+      const percentPerTick = yAxisHeight / this.maxValue;            // % height of a particular segment
+
+      this.tickValues.blockHeight = `${Math.floor(percentPerTick * 100)}%`;
+      this.tickValues.tickValues = [] as number[];
+      this.tickValues.tickPercentValues = [] as string[];
+      for (let i = 0; i <= yTicks; i++) {
+        this.tickValues.tickValues.push( i * yTickInterval );
+        this.tickValues.tickPercentValues.push( `${Math.floor( (i * yTickInterval * 100) / this.maxValue)}%` );
+      }
 
       console.info(
         'data processed:', JSON.parse(JSON.stringify(this.graphData)),
         '\nset conf:', JSON.parse(JSON.stringify(this.setConf)),
         '\ncolumns:', JSON.parse(JSON.stringify(this.columns)),
         '\nmax value:', this.maxValue,
+        '\ntick values', this.tickValues
       )
+    },
+    findBestInterval(maxValue: number) {
+      const upperBound = maxValue / 4;
+      const lowerBound = maxValue / 5;
+
+      let firstAboveLowerBound: any = undefined;
+      let lastBelowUpperBound: any = undefined;
+
+      for (const interval of [2, 5, 10, 20, 25, 50, 100, 200, 250, 500, 1000]) {
+        if (interval < upperBound) {
+          lastBelowUpperBound = interval;
+        }
+        if (interval > lowerBound && !firstAboveLowerBound) {
+          firstAboveLowerBound = interval;
+        }
+      }
+
+      if (lastBelowUpperBound < firstAboveLowerBound) {
+        return lastBelowUpperBound;
+      } else {
+        return firstAboveLowerBound ?? 2; // can never be less than this, so we use it as a default in case of undefined
+      }
     }
   }
 });
@@ -144,7 +201,7 @@ export default defineComponent({
 .graph-root {
   max-width: 100%;
   width: 42rem;
-  height: 24rem;
+  // height: 24rem;
   margin: 2rem;
   border: 1px solid #fa6;
   display: flex;
@@ -163,6 +220,36 @@ export default defineComponent({
   }
 }
 
+.graph-grid-y {
+  position: absolute;
+  height: 24rem;
+  width: 100%;
+  top: 0;
+
+  display: flex;
+  flex-direction: column-reverse;
+  flex-wrap: nowrap;
+
+  .graph-tick-y {
+    position: relative;
+    display: block;
+    border-bottom: 1px dotted rgba(#fa6, 0.5);
+
+    .value-abs, .value-percent {
+      position: absolute;
+      bottom: 0;
+      transform: translate(50%);
+    }
+    .value-abs {
+      left: 0.5rem;
+    }
+    .value-percent {
+      right: 0.5rem;
+      text-align: right;
+    }
+  }
+}
+
 .graph-main {
   display: flex;
   flex-direction: row;
@@ -170,6 +257,7 @@ export default defineComponent({
   justify-content: center;
 
   flex-grow: 1;
+  position: relative;
 }
 
 .graph-value {
@@ -183,7 +271,7 @@ export default defineComponent({
     flex-grow: 1;
     flex-direction: row;
     justify-content: center;
-    // height: 100%;
+    height: 24rem;
     margin-left: 2px;
     margin-right: 2px;
 

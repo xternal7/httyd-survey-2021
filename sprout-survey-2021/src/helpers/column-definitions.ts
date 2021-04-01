@@ -18,6 +18,19 @@ let graphColumnDefinitions = {
     );
 
     return cols;
+  },
+  rating1to10: () => {
+    const cols: any[] = [];
+    for (let i = 1; i <= 10; i++) {
+      cols.push({
+        key: i,
+        label: `${i}`
+      });
+    }
+
+    cols.push({key: "NoAnswer", label: "Shy"});
+
+    return cols;
   }
 }
 

@@ -77,17 +77,83 @@
 
       <h2>How To Train Your Dragon 1</h2>
       <div class="segment-content">
-
+        <p>We'll take a look at the scores from 1-10 first. To save some scrolling, I've went ahead and combined all the graphs into one.</p>
+        <graph
+          title="Rate [aspect] from 1 to 10"
+          :conf="{
+            columnXMargin: '0.125rem',
+            barWidth: '4px',
+            trackWidthMultiset: 'auto'
+          }"
+          :columns="graphColumnDefinitions.rating1to10()"
+          :sets="sets.httydRatingSets"
+          :data="{
+            _multiSet: true,
+            overall: graphData?.['all']?.[Question.HTTYD1Rating],
+            plot: graphData?.['all']?.[Question.HTTYD1PlotRating],
+            score: graphData?.['all']?.[Question.HTTYD1ScoreRating],
+            theme: graphData?.['all']?.[Question.HTTYD1ThemeRating],
+            character: graphData?.['all']?.[Question.HTTYD1CharacterRating],
+            visuals: graphData?.['all']?.[Question.HTTYD1VisualsRating],
+            emotion: graphData?.['all']?.[Question.HTTYD1EmotionRating]
+          }"
+        ></graph>
       </div>
 
       <h2>How To Train Your Dragon 2</h2>
       <div class="segment-content">
-
+        <p>
+          As usual, we'll be starting by plotting the 1-10 ratings on a graph. We can see that the ratings are getting a lil bit ... degraded.
+          It's like our bell curve got shifted to the left and got fatter to boot. Someone put it on a diet.
+        </p>
+        <p>
+          And the ratings dropped across the board: plot bar now has a strong presence as far down as 7, score bar is down considerably, theme is down ... 
+          the visuals got seems to be the only metric that's getting a bump. 
+        </p>
+        <graph
+          title="Rate [aspect] from 1 to 10"
+          :conf="{
+            columnXMargin: '0.125rem',
+            barWidth: '4px',
+            trackWidthMultiset: 'auto'
+          }"
+          :columns="graphColumnDefinitions.rating1to10()"
+          :sets="sets.httydRatingSets"
+          :data="{
+            _multiSet: true,
+            overall: graphData?.['all']?.[Question.HTTYD2Rating],
+            plot: graphData?.['all']?.[Question.HTTYD2PlotRating],
+            score: graphData?.['all']?.[Question.HTTYD2ScoreRating],
+            theme: graphData?.['all']?.[Question.HTTYD2ThemeRating],
+            character: graphData?.['all']?.[Question.HTTYD2CharacterRating],
+            visuals: graphData?.['all']?.[Question.HTTYD2VisualsRating],
+            emotion: graphData?.['all']?.[Question.HTTYD2EmotionRating]
+          }"
+        ></graph>
       </div>
 
       <h2>How To Train Your Dragon: The Hidden World</h2>
       <div class="segment-content">
-
+        <graph
+          title="Rate [aspect] from 1 to 10"
+          :conf="{
+            columnXMargin: '0.125rem',
+            barWidth: '4px',
+            trackWidthMultiset: 'auto'
+          }"
+          :columns="graphColumnDefinitions.rating1to10()"
+          :sets="sets.httydRatingSets"
+          :data="{
+            _multiSet: true,
+            overall: graphData?.['all']?.[Question.HTTYD3Rating],
+            plot: graphData?.['all']?.[Question.HTTYD3PlotRating],
+            score: graphData?.['all']?.[Question.HTTYD3ScoreRating],
+            theme: graphData?.['all']?.[Question.HTTYD3ThemeRating],
+            character: graphData?.['all']?.[Question.HTTYD3CharacterRating],
+            visuals: graphData?.['all']?.[Question.HTTYD3VisualsRating],
+            emotion: graphData?.['all']?.[Question.HTTYD3EmotionRating]
+          }"
+        ></graph>
       </div>
 
       <h2>Answers: Aggregated</h2>
@@ -224,6 +290,11 @@ export default defineComponent({
       //      * answer
       //        * response count
       graphData: {},
+
+      // set definitions
+      sets: {
+        httydRatingSets: this.getHttydRatingSet()
+      }
     };
   },
   async created() {
@@ -312,6 +383,37 @@ export default defineComponent({
       console.info('Processed data:', processedData);
 
       return processedData;
+    },
+    getHttydRatingSet() {
+      return [{
+        setKey: 'overall',
+        setLabel: 'Overall',
+        color: '#fff'
+      },{
+        setKey: 'plot',
+        setLabel: 'Plot',
+        color: '#f00'
+      },{
+        setKey: 'score',
+        setLabel: 'Score',
+        color: '#f80',
+      },{
+        setKey: 'theme',
+        setLabel: 'Theme',
+        color: '#a35'
+      },{
+        setKey: 'character',
+        setLabel: 'Characters',
+        color: '#193'
+      },{
+        setKey: 'visuals',
+        setLabel: 'Visuals',
+        color: '#17a',
+      },{
+        setKey: 'emotion',
+        setLabel: 'Emotion',
+        color: '#149'
+      }];
     }
   }
 });

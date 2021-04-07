@@ -6,19 +6,19 @@
     </div>
     <div class="graph-main">
       <div class="graph-grid-y">
-          <div
-            v-for="(tick, index) of tickValues.tickValues"
-            :key="tick"
-            class="graph-tick-y"
-            :style="{'height': tickValues.blockHeight}"
-          >
-            <div class="value-abs">
-              {{tick}}
-            </div>
-            <div class="value-percent">
-              {{tickValues.tickPercentValues[index]}}
-            </div>
+        <div
+          v-for="(tick, index) of tickValues.tickValues"
+          :key="tick"
+          class="graph-tick-y"
+          :style="{'height': tickValues.blockHeight}"
+        >
+          <div class="value-abs">
+            {{tick}}
           </div>
+          <div class="value-percent">
+            {{tickValues.tickPercentValues[index]}}
+          </div>
+        </div>
       </div>
       <div
         v-for="column of columns"

@@ -134,6 +134,16 @@
 
       <h2>How To Train Your Dragon: The Hidden World</h2>
       <div class="segment-content">
+        <p>
+          ...
+        </p>
+        <p>
+          Yikes.
+        </p>
+        <p>
+          Don't know what to say but that. The ratings have completely disintegrated. That curve got almost completely flattened. Admittedly, the
+          overall rating seems to have mildly improved over last year, but still ... This is not good, Sean. This is ... very not good.
+        </p>
         <graph
           title="Rate [aspect] from 1 to 10"
           :conf="{
@@ -158,11 +168,144 @@
 
       <h2>Answers: Aggregated</h2>
       <div class="segment-content">
-
-      </div>
-
-      <h2>Answers but even mroe aggregated</h2>
-      <div class="segment-content">
+        <p>
+          Let's take another look at the 1-10 rating graphs — although, this time, in a different manner. We've put scores for all aspects on a
+          single graph for every movie. This time, we'll have separate graphs for every aspect, combining scores of all movies on a single graph.
+        </p>
+        
+        <div class="graph-area">
+          <graph
+            title="Rate [movie] from 1 to 10, overall"
+            :conf="{
+              columnXMargin: '0.125rem',
+              barWidth: '8px',
+              trackWidthMultiset: 'auto'
+            }"
+            :columns="graphColumnDefinitions.rating1to10()"
+            :sets="sets.httydMovieSets"
+            :data="{
+              _multiSet: true,
+              '1': graphData?.['all']?.[Question.HTTYD1Rating],
+              '2': graphData?.['all']?.[Question.HTTYD2Rating],
+              '3': graphData?.['all']?.[Question.HTTYD3Rating],
+            }"
+          ></graph>
+          <graph
+            title="Rate plot from 1 to 10"
+            :conf="{
+              columnXMargin: '0.125rem',
+              barWidth: '8px',
+              trackWidthMultiset: 'auto'
+            }"
+            :columns="graphColumnDefinitions.rating1to10()"
+            :sets="sets.httydMovieSets"
+            :data="{
+              _multiSet: true,
+              '1': graphData?.['all']?.[Question.HTTYD1PlotRating],
+              '2': graphData?.['all']?.[Question.HTTYD2PlotRating],
+              '3': graphData?.['all']?.[Question.HTTYD3PlotRating],
+            }"
+          ></graph>
+          <graph
+            title="Rate theme from 1 to 10"
+            :conf="{
+              columnXMargin: '0.125rem',
+              barWidth: '8px',
+              trackWidthMultiset: 'auto'
+            }"
+            :columns="graphColumnDefinitions.rating1to10()"
+            :sets="sets.httydMovieSets"
+            :data="{
+              _multiSet: true,
+              '1': graphData?.['all']?.[Question.HTTYD1ThemeRating],
+              '2': graphData?.['all']?.[Question.HTTYD2ThemeRating],
+              '3': graphData?.['all']?.[Question.HTTYD3ThemeRating],
+            }"
+          ></graph>
+          <graph
+            title="Rate score from 1 to 10"
+            :conf="{
+              columnXMargin: '0.125rem',
+              barWidth: '8px',
+              trackWidthMultiset: 'auto'
+            }"
+            :columns="graphColumnDefinitions.rating1to10()"
+            :sets="sets.httydMovieSets"
+            :data="{
+              _multiSet: true,
+              '1': graphData?.['all']?.[Question.HTTYD1ScoreRating],
+              '2': graphData?.['all']?.[Question.HTTYD2ScoreRating],
+              '3': graphData?.['all']?.[Question.HTTYD3ScoreRating],
+            }"
+          ></graph>
+          <graph
+            title="Rate characters from 1 to 10"
+            :conf="{
+              columnXMargin: '0.125rem',
+              barWidth: '8px',
+              trackWidthMultiset: 'auto'
+            }"
+            :columns="graphColumnDefinitions.rating1to10()"
+            :sets="sets.httydMovieSets"
+            :data="{
+              _multiSet: true,
+              '1': graphData?.['all']?.[Question.HTTYD1CharacterRating],
+              '2': graphData?.['all']?.[Question.HTTYD2CharacterRating],
+              '3': graphData?.['all']?.[Question.HTTYD3CharacterRating],
+            }"
+          ></graph>
+          <graph
+            title="Rate visuals from 1 to 10"
+            :conf="{
+              columnXMargin: '0.125rem',
+              barWidth: '8px',
+              trackWidthMultiset: 'auto'
+            }"
+            :columns="graphColumnDefinitions.rating1to10()"
+            :sets="sets.httydMovieSets"
+            :data="{
+              _multiSet: true,
+              '1': graphData?.['all']?.[Question.HTTYD1VisualsRating],
+              '2': graphData?.['all']?.[Question.HTTYD2VisualsRating],
+              '3': graphData?.['all']?.[Question.HTTYD3VisualsRating],
+            }"
+          ></graph>
+          <graph
+            title="Rate emotion from 1 to 10"
+            :conf="{
+              columnXMargin: '0.125rem',
+              barWidth: '8px',
+              trackWidthMultiset: 'auto'
+            }"
+            :columns="graphColumnDefinitions.rating1to10()"
+            :sets="sets.httydMovieSets"
+            :data="{
+              _multiSet: true,
+              '1': graphData?.['all']?.[Question.HTTYD1EmotionRating],
+              '2': graphData?.['all']?.[Question.HTTYD2EmotionRating],
+              '3': graphData?.['all']?.[Question.HTTYD3EmotionRating]
+            }"
+          ></graph>
+        </div>
+        <p>
+          I initially wasn't going to comment here, but a few trends become a bit ... <i>well</i>.
+        </p>
+        <p>
+          And by that I mean what the hell is going up with the emotion graph? If you look at the other graphs when comparing The Hidden World with
+          the first two movies, you see that when ratings less or equal to 5 start popping up everywhere, higher up ratings usually take the L to
+          compensate across the board. This does not happen in the emotion graph: in fact, 10/10 stays at the same level as the first two movies while
+          only 7/10-9/10 columns take the L.
+        </p>
+        <p>
+          This raises questions. Why does that happen? Who voted for the 10/10 emotion on The Hidden World. Is this a result of people just blindly giving
+          10/10 to everything across the board for the emotion rating? Or are people represented in 10/10 column for HTTYD1 and/or HTTYD2 an entirely
+          different group than the ones who 10/10'd The Hidden World? Did the salt squad jump on the 10/10 wagon because "THW surely evoked emotions, just
+          not the ones it intended," or is this just a boring anomaly with nothing deeper behind it?
+        </p>
+        <p>
+          There's so many different possibilities, so many hypothesises. We will definitely be digging through that once we're done with presenting
+          the raw answers.
+        </p>
 
       </div>
     </div>
@@ -212,7 +355,22 @@
         <p>
           There's some questions that didn't fit any of the categories set up by this writeup. So let's tie up the loose ends before dipping into some advanced analysis.
         </p>
+        <p>
+          Let's start by Brussel's belated christmass gift to Tamius.
+        </p>
 
+        <div class="graph-area">
+          <graph
+            title="Personal enjoyment vs. objective quality."
+            description="Rate the following statement: 'Personal enjoyment of a piece of media is different and independent of the quality of that piece of media.' Agreement on the scale from 1 - 10. Bigger number means more agreement."
+            :conf="{trackWidth: '8px', barWidth: '16px !important', columnWidth: '32px !important'}"
+            :columns="graphColumnDefinitions.rating1to10()"
+            :data="graphData?.['all']?.[Question.YouCanEnjoyGarbageAgreement]"
+          ></graph>
+        </div>
+         <p>
+            Given reddit, I honestly expected this graph to be a lot more contested.
+        </p>
       </div>
     </div>
 
@@ -293,7 +451,8 @@ export default defineComponent({
 
       // set definitions
       sets: {
-        httydRatingSets: this.getHttydRatingSet()
+        httydRatingSets: this.getHttydRatingSet(),
+        httydMovieSets: this.getHttydMovieSet()
       }
     };
   },
@@ -414,6 +573,21 @@ export default defineComponent({
         setLabel: 'Emotion',
         color: '#149'
       }];
+    },
+    getHttydMovieSet() {
+      return [{
+        setKey: '1',
+        setLabel: 'HTTYD 1',
+        color: '#ffeaa9'
+      },{
+        setKey: '2',
+        setLabel: 'HTTYD 2',
+        color: '#c98e30'
+      },{
+        setKey: '3',
+        setLabel: 'HTTYD: THW',
+        color: '#c90000'
+      }];
     }
   }
 });
@@ -464,6 +638,8 @@ body {
   color: rgb(221, 220, 212);
 
   font-size: 18px;
+
+  overflow-x: hidden;
 }
 
 h1, h2 {
@@ -506,6 +682,16 @@ h2 {
   margin: 0 auto;
   width: 100%;
   padding: 0rem 1rem;
+}
+
+.graph-area {
+  width: 99.9vw;
+  margin-left: calc(0px - max(calc(100vw - min(75rem, 100%)), 0.001px) / 2 - 1rem);
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 * {

@@ -38,28 +38,45 @@
         <div class="graph-area">
           <graph
             title="Age"
+            description="'Snowflake' contains people who think are funny and gave answers like 'example: 11' or anything not a number. Answers like 'I'll be X soon' were corrected to answerer's current age."
             :conf="{trackWidth: '6px !important', columnWidth: '8px !important'}"
             :columns="graphColumnDefinitions[Question.Age]()"
-            :sets="[{
-              setKey: 'default',
-              setLabel: 'Default',
-              color: '#00f'
-            },{
-              setKey: 'default',
-              setLabel: 'Red',
-              color: '#f00'
-            }]"
-            :data="{
-              _multiSet: true,
-              default: graphData?.['all']?.[Question.Age],
-              secondary: graphData?.['all']?.[Question.Age]
-            }"
+            :data="graphData?.['all']?.[Question.Age]"
+          ></graph>
+          <graph
+            title="Gender"
+            description="Various instances of 'nonbinary' are accounted for under 'other'. 'Apache' category contains meme answers, and I'm awarding 'male dragon' a title of a snowflake."
+            :conf="{barWidth: '16px !important', columnWidth: '64px !important'}"
+            :columns="graphColumnDefinitions[Question.Gender]()"
+            :data="graphData?.['all']?.[Question.Gender]"
           ></graph>
         </div>
 
         <p>
           So there's that. The "dragons are a stereotypically female interest" redditor got BTFO'd. In the "other" department, there is a few trans-adjacent things (mostly nonbinary). I am pleasantly suprised about the lack of super-special-snowflake genders and a negligible number of apache-genders (apache-genders appearing in this poll: '420'). Thanks for keeping the answer serious.
         </p>
+
+        <div class="graph-area">
+          <graph
+            title="Location"
+            description=""
+            :conf="{barWidth: '16px !important', columnWidth: '72px !important', labelsHeight: '6rem'}"
+            :columns="graphColumnDefinitions[Question.Location]()"
+            :data="graphData?.['all']?.[Question.Location]"
+          ></graph>
+          <graph
+            title="Community"
+            description=""
+            :conf="{barWidth: '16px !important', columnWidth: '42px !important', sidewaysLabels: true, labelsHeight: '6rem'}"
+            :columns="graphColumnDefinitions[Question.Community]()"
+            :data="graphData?.['all']?.[Question.Community]"
+          ></graph>
+        </div>
+
+        <p>Europe, North America, Discord and Reddit dominate the fandom. Very little surprises here.</p>
+        
+
+        <b>TODO: FURRY QUESTION NEEDS TO BE ADDDED</b>
       </div>
     </div>
 
@@ -78,27 +95,29 @@
       <h2>How To Train Your Dragon 1</h2>
       <div class="segment-content">
         <p>We'll take a look at the scores from 1-10 first. To save some scrolling, I've went ahead and combined all the graphs into one.</p>
-        <graph
-          title="Rate [aspect] from 1 to 10"
-          :conf="{
-            columnXMargin: '0.125rem',
-            barWidth: '4px',
-            trackWidthMultiset: 'auto'
-          }"
-          :columns="graphColumnDefinitions.rating1to10()"
-          :sets="sets.httydRatingSets"
-          :data="{
-            _multiSet: true,
-            overall: graphData?.['all']?.[Question.HTTYD1Rating],
-            plot: graphData?.['all']?.[Question.HTTYD1PlotRating],
-            score: graphData?.['all']?.[Question.HTTYD1ScoreRating],
-            theme: graphData?.['all']?.[Question.HTTYD1ThemeRating],
-            character: graphData?.['all']?.[Question.HTTYD1CharacterRating],
-            visuals: graphData?.['all']?.[Question.HTTYD1VisualsRating],
-            emotion: graphData?.['all']?.[Question.HTTYD1EmotionRating]
-          }"
-        ></graph>
-      </div>
+        
+        <div class="graph-area">
+          <graph
+            title="Rate [aspect] from 1 to 10"
+            :conf="{
+              columnXMargin: '0.125rem',
+              barWidth: '4px',
+              trackWidthMultiset: 'auto'
+            }"
+            :columns="graphColumnDefinitions.rating1to10()"
+            :sets="sets.httydRatingSets"
+            :data="{
+              _multiSet: true,
+              overall: graphData?.['all']?.[Question.HTTYD1Rating],
+              plot: graphData?.['all']?.[Question.HTTYD1PlotRating],
+              score: graphData?.['all']?.[Question.HTTYD1ScoreRating],
+              theme: graphData?.['all']?.[Question.HTTYD1ThemeRating],
+              character: graphData?.['all']?.[Question.HTTYD1CharacterRating],
+              visuals: graphData?.['all']?.[Question.HTTYD1VisualsRating],
+              emotion: graphData?.['all']?.[Question.HTTYD1EmotionRating]
+            }"
+          ></graph>
+        </div>
 
       <h2>How To Train Your Dragon 2</h2>
       <div class="segment-content">

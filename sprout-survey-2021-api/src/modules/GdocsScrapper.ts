@@ -552,6 +552,8 @@ export class GdocsScrapper {
         return Character.Astrid;
       case 'Stoick':
         return Character.Stoick;
+      case 'Valka':
+        return Character.Valka;
       case 'Gobber':
         return Character.Gobber;
       case 'Ruffnut':

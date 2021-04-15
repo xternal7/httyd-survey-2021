@@ -5,6 +5,7 @@ export enum Character {
   Toothless,
   Astrid,
   Stoick,
+  Valka,
   Gobber,
   Ruffnut,
   Tuffnut,

@@ -1,3 +1,4 @@
+import { Character } from '@/enums/character.enum';
 import { Community } from '@/enums/community.enum';
 import { Continent } from '@/enums/continent.enum';
 import { Gender } from '@/enums/gender.enum';
@@ -151,6 +152,115 @@ let graphColumnDefinitions = {
     cols.push({key: "NoAnswer", label: "Shy"});
 
     return cols;
+  },
+  httydCharacter: (movie: 1 | 2 | 3) => {
+    const commonChars = [
+      {
+        key: Character.Hiccup,
+        label: 'Hiccup'
+      },
+      {
+        key: Character.Toothless,
+        label: 'Toothless'
+      },
+      {
+        key: Character.Astrid,
+        label: 'Astrid'
+      },
+    ];
+    const commonCharsTail = [
+      {
+        key: Character.Gobber,
+        label: 'Gobber'
+      },
+      {
+        key: Character.Ruffnut,
+        label: 'Ruffnut'
+      },
+      {
+        key: Character.Tuffnut,
+        label: 'Tuffnut'
+      },
+      {
+        key: Character.Snotlout,
+        label: 'Snotlout'
+      },
+      {
+        key: Character.Fishlegs,
+        label: 'Fishlegs'
+      },
+      {
+        key: Character.Other,
+        label: 'Other'
+      },
+      {
+        key: Character.NoAnswer,
+        label: 'Shy'
+      }
+    ];
+    
+    switch (movie) {
+      case 1:
+        return [
+          ...commonChars,
+          {
+            key: Character.Stoick,
+            label: 'Stoick'
+          },
+          ...commonCharsTail
+        ];
+      case 2:
+        return [
+          ...commonCharsTail,
+          {
+            key: Character.Stoick,
+            label: 'Stoick'
+          },
+          {
+            key: Character.Valka,
+            label: 'Valka'
+          },
+          {
+            key: Character.Cloudjumper,
+            label: 'Cloudjumper'
+          },
+          {
+            key: Character.Drago,
+            label: 'Drago'
+          },
+          {
+            key: Character.Eret,
+            label: 'Eret'
+          },
+          ...commonCharsTail
+        ];
+      case 3:
+      default:
+        return [
+          ...commonChars,
+          {
+            key: Character.Valka,
+            label: 'Valka'
+          },
+          {
+            key: Character.Cloudjumper,
+            label: 'Cloudjumper'
+          },
+          {
+            key: Character.Eret,
+            label: 'Eret'
+          },
+          {
+            key: Character.Thotfury,
+            label: 'Light Fury'
+          },
+          {
+            key: Character.Grimmel,
+            label: 'Grimmel'
+          },
+          ...commonCharsTail
+        ];
+    }
   }
 }
 

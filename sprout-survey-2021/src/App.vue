@@ -163,26 +163,28 @@
           Don't know what to say but that. The ratings have completely disintegrated. That curve got almost completely flattened. Admittedly, the
           overall rating seems to have mildly improved over last year, but still ... This is not good, Sean. This is ... very not good.
         </p>
-        <graph
-          title="Rate [aspect] from 1 to 10"
-          :conf="{
-            columnXMargin: '0.125rem',
-            barWidth: '4px',
-            trackWidthMultiset: 'auto'
-          }"
-          :columns="graphColumnDefinitions.rating1to10()"
-          :sets="sets.httydRatingSets"
-          :data="{
-            _multiSet: true,
-            overall: graphData?.['all']?.[Question.HTTYD3Rating],
-            plot: graphData?.['all']?.[Question.HTTYD3PlotRating],
-            score: graphData?.['all']?.[Question.HTTYD3ScoreRating],
-            theme: graphData?.['all']?.[Question.HTTYD3ThemeRating],
-            character: graphData?.['all']?.[Question.HTTYD3CharacterRating],
-            visuals: graphData?.['all']?.[Question.HTTYD3VisualsRating],
-            emotion: graphData?.['all']?.[Question.HTTYD3EmotionRating]
-          }"
-        ></graph>
+        <div class="graph-area">
+          <graph
+            title="Rate [aspect] from 1 to 10"
+            :conf="{
+              columnXMargin: '0.125rem',
+              barWidth: '4px',
+              trackWidthMultiset: 'auto'
+            }"
+            :columns="graphColumnDefinitions.rating1to10()"
+            :sets="sets.httydRatingSets"
+            :data="{
+              _multiSet: true,
+              overall: graphData?.['all']?.[Question.HTTYD3Rating],
+              plot: graphData?.['all']?.[Question.HTTYD3PlotRating],
+              score: graphData?.['all']?.[Question.HTTYD3ScoreRating],
+              theme: graphData?.['all']?.[Question.HTTYD3ThemeRating],
+              character: graphData?.['all']?.[Question.HTTYD3CharacterRating],
+              visuals: graphData?.['all']?.[Question.HTTYD3VisualsRating],
+              emotion: graphData?.['all']?.[Question.HTTYD3EmotionRating]
+            }"
+          ></graph>
+        </div>
       </div>
 
       <h2>Answers: Aggregated</h2>
@@ -316,7 +318,7 @@
           only 7/10-9/10 columns take the L.
         </p>
         <p>
-          This raises questions. Why does that happen? Who voted for the 10/10 emotion on The Hidden World. Is this a result of people just blindly giving
+          This raises questions. Why does that happen? Who voted for the 10/10 emotion on The Hidden World? Is this a result of people just blindly giving
           10/10 to everything across the board for the emotion rating? Or are people represented in 10/10 column for HTTYD1 and/or HTTYD2 an entirely
           different group than the ones who 10/10'd The Hidden World? Did the salt squad jump on the 10/10 wagon because "THW surely evoked emotions, just
           not the ones it intended," or is this just a boring anomaly with nothing deeper behind it?

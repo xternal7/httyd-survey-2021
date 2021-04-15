@@ -52,8 +52,23 @@
             </div>
           </template>
         </div>
-        <div class="column-label-container">
-          <div class="column-label">
+        <div
+          class="column-label-container"
+          :style="{
+            'width': (graphConf?.sidewaysLabels === true ? graphConf.labelsHeight ?? '2rem' : graphConf.labelsHeight ?? undefined),
+            'height': (graphConf?.sidewaysLabels === true ? graphConf.labelsHeight ?? '2rem' : graphConf.labelsHeight ?? undefined) 
+          }"
+        >
+          <div
+            class="column-label"
+            :style="{
+              'width': graphConf?.sidewaysLabels === true ? graphConf.labelsHeight ?? '2rem' : undefined,
+              'height': graphConf?.sidewaysLabels === true ? graphConf.labelsHeight ?? '2rem' : undefined,
+              'transform-origin': graphConf?.sidewaysLabels === true ? '0 0' : undefined,
+              'transform': (graphConf?.sidewaysLabels === true ? 'rotate(90deg) translateY(-1.9rem)' : undefined),
+              'text-align': graphConf?.sidewaysLabels === true ? 'left': undefined
+            }"
+          >
             {{column.label}}
           </div>
         </div>
@@ -83,6 +98,12 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 
+export enum GraphSortDir {
+  Desc = -1,
+  Unsorted = 0,
+  Asc = 1,
+}
+
 export default defineComponent({
   name: 'Graph',
   props: [
@@ -92,6 +113,7 @@ export default defineComponent({
     'columns',
     'data',
     'sets',
+    'sort'
   ],
   data() {
     return {
@@ -322,6 +344,7 @@ export default defineComponent({
     justify-content: center;
 
     .column-label {
+      display: block;
       text-align: center;
     }
   }

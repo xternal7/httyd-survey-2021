@@ -211,7 +211,7 @@ let graphColumnDefinitions = {
         ];
       case 2:
         return [
-          ...commonCharsTail,
+          ...commonChars,
           {
             key: Character.Stoick,
             label: 'Stoick'

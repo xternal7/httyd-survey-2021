@@ -119,6 +119,39 @@
           ></graph>
         </div>
 
+        <p>
+          Very top-heavy graph, we're getting a nice bell curve approximation across the board. Sometimes, data is beautiful.
+          Let's move on to the next graph: which characters people liked and which characters they hated.
+        </p>
+
+        <div class="graph-area">
+          <graph
+            title="Favourite and least favourite character"
+            :conf="{
+              barWidth: '16px !important',
+              trackWidthMultiset: '16px !important',
+              trackWidth: '16px !important',
+              columnWidth: '42px !important',
+              sidewaysLabels: true,
+              labelsHeight: '6rem'
+            }"
+            :columns="graphColumnDefinitions.httydCharacter(1)"
+            :sets="sets.mostLeastFavouriteSets"
+            :data="{
+              _multiSet: true,
+              favourite: graphData?.['all']?.[Question.HTTYD1FavouriteCharacter],
+              worst: graphData?.['all']?.[Question.HTTYD1WorstCharacter],
+            }"
+          ></graph>
+        </div>
+
+        <p>
+          Needless to say, I find 'least favourite' results a little bit surprising, with Gobber getting a #2 (though I guess I can see why
+          people voted that way).
+        </p>
+
+      </div>
+
       <h2>How To Train Your Dragon 2</h2>
       <div class="segment-content">
         <p>
@@ -149,6 +182,35 @@
             emotion: graphData?.['all']?.[Question.HTTYD2EmotionRating]
           }"
         ></graph>
+
+        <p>Anyway, let's move on:</p>
+
+        <div class="graph-area">
+          <graph
+            title="Favourite and least favourite character"
+            :conf="{
+              barWidth: '8px !important',
+              trackWidthMultiset: '8px !important',
+              trackWidth: '8px !important',
+              columnWidth: '32px !important',
+              sidewaysLabels: true,
+              labelsHeight: '6rem'
+            }"
+            :columns="graphColumnDefinitions.httydCharacter(2)"
+            :sets="sets.mostLeastFavouriteSets"
+            :data="{
+              _multiSet: true,
+              favourite: graphData?.['all']?.[Question.HTTYD2FavouriteCharacter],
+              worst: graphData?.['all']?.[Question.HTTYD2WorstCharacter],
+            }"
+            :debug="true"
+          ></graph>
+        </div>
+
+        <p>
+          Well that's unexpected.
+        </p>
+
       </div>
 
       <h2>How To Train Your Dragon: The Hidden World</h2>
@@ -416,7 +478,7 @@
       <p>Poll: A Brussel Sprout</p>
       <p>Website and related software: Tamius Han</p>
       <p>QA:</p>
-      <p></p>
+      <p style="color: green">>implying there was QA</p>
       <p>
         Tech stack:
       </p>
@@ -473,7 +535,8 @@ export default defineComponent({
       // set definitions
       sets: {
         httydRatingSets: this.getHttydRatingSet(),
-        httydMovieSets: this.getHttydMovieSet()
+        httydMovieSets: this.getHttydMovieSet(),
+        mostLeastFavouriteSets: this.getMostLeastFavouriteSet(),
       }
     };
   },
@@ -492,7 +555,7 @@ export default defineComponent({
     /**
      * Converts raw data into separate columns
      */
-    async processData(data: any, datasetName: string, options?: {processQuestions: Question[]}) {
+    async processData(data: any[], datasetName: string, options?: {processQuestions: Question[]}) {
       const startTime = performance.now();
 
       console.info('Starting to process data ...')
@@ -557,11 +620,11 @@ export default defineComponent({
         // todo: special processing for "please select at most 2" questions.
       }
 
-
       const endTime = performance.now();
       console.info(`Data for ${datasetName} processed in ${endTime - startTime} ms.        (note: numbers are slightly fuzzed cos spectre)`);
       console.info('Processed data:', processedData);
 
+      processedData['answerCount'] = data.length;
       return processedData;
     },
     getHttydRatingSet() {
@@ -607,6 +670,17 @@ export default defineComponent({
       },{
         setKey: '3',
         setLabel: 'HTTYD: THW',
+        color: '#c90000'
+      }];
+    },
+    getMostLeastFavouriteSet() {
+      return [{
+        setKey: 'favourite',
+        setLabel: 'Favourite',
+        color: '#ffeaa9'
+      },{
+        setKey: 'worst',
+        setLabel: 'Least favourite',
         color: '#c90000'
       }];
     }

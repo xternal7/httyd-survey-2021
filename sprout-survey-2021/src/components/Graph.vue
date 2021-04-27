@@ -3,11 +3,20 @@
     <div class="graph-header">
       <h1>{{title}}</h1>
       <div>{{description}}</div>
+      <div v-if="displayMode === GraphDisplayMode.Absolute">
+              DISPLAYING ABSOLUTE (value-based) RESULTS
+      </div>
+      <div v-else>
+              DISPLAYING RELATIVE (%-based) RESULTS
+      </div>
     </div>
     <div class="graph-main">
-      <div class="graph-grid-y">
+      <div
+        v-if="displayMode === GraphDisplayMode.Absolute"
+        class="graph-grid-y"
+      >
         <div
-          v-for="(tick, index) of tickValues.tickValues"
+          v-for="tick of tickValues.tickValues"
           :key="tick"
           class="graph-tick-y"
           :style="{'height': tickValues.blockHeight}"
@@ -15,8 +24,17 @@
           <div class="value-abs">
             {{tick}}
           </div>
-          <div class="value-percent">
-            {{tickValues.tickPercentValues[index]}}
+        </div>
+      </div>
+      <div v-else>
+        <div
+          v-for="tick of tickValues.tickValues"
+          :key="tick"
+          class="graph-tick-y"
+          :style="{'height': tickValues.blockHeight}"
+        >
+          <div class="value-abs">
+            {{tick}}
           </div>
         </div>
       </div>
@@ -34,6 +52,7 @@
             v-for="set of setConf"
           >
             <div
+              v-if="displayMode === GraphDisplayMode.Absolute"
               class="graph-set-track"
               :style="{
                 'width': (setConf.length > 1 ? graphConf.trackWidthMultiset : graphConf.trackWidth)
@@ -43,11 +62,39 @@
                 class="graph-data-bar"
                 :style="{
                   'width': graphConf.barWidth,
-                  'height': ( (graphData[column.key]?.[set.setKey] || 0) / maxValue * 100) + '%',
+                  'height': ( (graphData[column.key]?.[set.setKey]?.value || 0) / maxValue * 100) + '%',
                   'background-color': (set.color || '#fff'),
                   'border': (set.border || '0px solid transparent'),
                 }"
               >
+                <div class="graph-data-column-value">
+                  <b>{{column.label}}</b><template v-if="setConf.length"><b>:</b> {{set.setLabel}}</template><br/>
+                  {{graphData[column.key]?.[set.setKey]?.value}} ({{ (graphData[column.key]?.[set.setKey]?.percent || 0).toFixed(2) }}%)
+                </div>
+              </div>
+            </div>
+
+            <!-- relative display -->
+            <div
+              v-else
+              class="graph-set-track"
+              :style="{
+                'width': (setConf.length > 1 ? graphConf.trackWidthMultiset : graphConf.trackWidth)
+              }"
+            >
+              <div
+                class="graph-data-bar"
+                :style="{
+                  'width': graphConf.barWidth,
+                  'height': ( (graphData[column.key]?.[set.setKey]?.percent || 0) / maxPercent * 100) + '%',
+                  'background-color': (set.color || '#fff'),
+                  'border': (set.border || '0px solid transparent'),
+                }"
+              >
+                <div class="graph-data-column-value">
+                  <b>{{column.label}}</b><template v-if="setConf.length"><b>:</b> {{set.setLabel}}</template><br/>
+                  <span class="value-display">{{ (graphData[column.key]?.[set.setKey]?.percent || 0).toFixed(2) }}% ({{graphData[column.key]?.[set.setKey]?.value}})</span>
+                </div>
               </div>
             </div>
           </template>
@@ -104,6 +151,11 @@ export enum GraphSortDir {
   Asc = 1,
 }
 
+export enum GraphDisplayMode {
+  Relative = 1,
+  Absolute = 2,
+}
+
 export default defineComponent({
   name: 'Graph',
   props: [
@@ -112,30 +164,37 @@ export default defineComponent({
     'conf',
     'columns',
     'data',
+    'dataCount',   // MUST BE PASSED ON MULTIPLE CHOICE ANSWERS! (can also be passed via setConf)
     'sets',
-    'sort'
+    'sort',
+    'debug',
+    'defaultMode'
   ],
   data() {
     return {
       maxValue: 0,
+      maxPercent: 0,
       graphData: {},
-      setConf: [],
+      setConf: [] as {setKey: string, setLabel: string | number, color?: string, setCount: number}[],
       graphConf: {},
       tickValues: {
         blockHeight: '1px',
+        percentBlockHeight: '1px',
         tickValues: [] as number[],
         tickPercentValues: [] as string[]
-      }
+      },
+      displayMode: GraphDisplayMode.Absolute,
+      GraphDisplayMode
     }
   },
   watch: {
     data: {
       immediate: true,
       handler(newData: any) {
-        console.log(
-          '[watch] data?', newData === undefined ? 'like greenland' : JSON.parse(JSON.stringify(newData)),
-          ''
-        )
+        // console.log(
+        //   '[watch] data?', newData === undefined ? 'like greenland' : JSON.parse(JSON.stringify(newData)),
+        //   ''
+        // )
         this.processData(newData);
       }
     },
@@ -146,16 +205,33 @@ export default defineComponent({
           return;
         }
         this.setConf = newSetConf;
+        this.processData(this.data);
+      }
+    },
+    defaultMode: {
+      immediate: true,
+      handler(newMode) {
+        // if (newMode === 'absolute' || newMode === GraphDisplayMode.Absolute) {
+        //   this.displayMode = GraphDisplayMode.Absolute;
+        // } else {
+        //   this.displayMode = GraphDisplayMode.Relative;
+        // }
       }
     }
   },
   mounted() {
-    console.log('[mounted] data?', this.data === undefined ? 'like greenland' : JSON.parse(JSON.stringify(this.data)))
+    // console.log('[mounted] data?', this.data === undefined ? 'like greenland' : JSON.parse(JSON.stringify(this.data)))
   },
   methods: {
     processData(data) {
 
-      console.log('data:', data)
+      if (this.debug) {
+        console.log(
+          `—————————— DATA FOR GRAPH: ${this.title} ——————————\n`,
+          'data:', data,
+          'data count provided?', this.dataCount ?? 'no'
+        )
+      }
 
       // set default conf options
       this.graphConf = {
@@ -166,9 +242,12 @@ export default defineComponent({
       }
 
       if (!data) {
-        console.warn("no data yet, doing nothing!");
+        if (this.debug) {
+          console.warn("no data yet, doing nothing!");
+        }
         return;
       }
+
       if (!this.setConf.length) {
         (this.setConf as any) = [{
           setKey: 'default',
@@ -181,7 +260,25 @@ export default defineComponent({
         data = {default: data};
       }
 
+      // generate per-set max values
+      for (const set of (this.setConf as any[])) {
+
+        if (!set.dataCount) {
+          if (this.dataCount) {
+            set.dataCount = this.dataCount;
+          } else {
+            set.dataCount = 0;
+            for (const answerKey in data[set.setKey]) {
+              set.dataCount += (data[set.setKey][answerKey] || 0);
+            }
+          }
+        }
+      }
+
+
       // get max value for graph 
+      let maxValue = 0;
+      let maxPercent = 0;
 
       // convert data from set.column to column.set form
       for (const set of (this.setConf as any[])) {
@@ -189,34 +286,71 @@ export default defineComponent({
           if (! this.graphData[answerKey]) {
             this.graphData[answerKey] = {};
           }
-          this.graphData[answerKey][set.setKey] = data[set.setKey][answerKey];
 
-          if (this.maxValue < data[set.setKey][answerKey]) {
-            this.maxValue = data[set.setKey][answerKey];
+          const processedAnswer = {
+            value: data[set.setKey][answerKey],
+            percent: (data[set.setKey]?.[answerKey] || 0) / set.dataCount * 100
+          };
+
+          this.graphData[answerKey][set.setKey] = processedAnswer;
+
+          if (maxValue < processedAnswer.value) {
+            maxValue = processedAnswer.value;
+          }
+          if (maxPercent < processedAnswer.percent) {
+            maxPercent = processedAnswer.percent / 100;
           }
         }
       }
 
-      const yTickInterval = this.findBestInterval(this.maxValue);
-      const yTicks = Math.floor(this.maxValue / yTickInterval) + 1;  // account for the zero tick, which is extra!
-      const yAxisHeight = yTickInterval * yTicks;                    // height as in 'max value' that can be displayed. Should be > than max value.
-      const percentPerTick = yAxisHeight / this.maxValue;            // % height of a particular segment
+      const yTickInterval = this.findBestInterval(maxValue);
+      const yPercentTickInterval = this.findBestInterval(maxPercent);
+
+      const yTicks = Math.floor(maxValue / yTickInterval) + 1;                // add one blank block above the tallest one
+      const yPercentTicks = Math.floor(maxPercent / yTickInterval);
+      const yAxisHeight        =        yTickInterval * (yTicks + 1);         // height as in 'max value' that can be displayed. Should be > than max value.
+      const yAxisPercentHeight = yPercentTickInterval * (yPercentTicks + 1)
+      const percentPerTick = yAxisHeight / maxValue;                          // % height of a particular segment
+      const percentPerPercentTick = yAxisPercentHeight / maxPercent;
 
       this.tickValues.blockHeight = `${Math.floor(percentPerTick * 100)}%`;
+      this.tickValues.percentBlockHeight = `${Math.floor(percentPerPercentTick * 100)}%`;
+
       this.tickValues.tickValues = [] as number[];
       this.tickValues.tickPercentValues = [] as string[];
+      
       for (let i = 0; i <= yTicks; i++) {
         this.tickValues.tickValues.push( i * yTickInterval );
-        this.tickValues.tickPercentValues.push( `${Math.floor( (i * yTickInterval * 100) / this.maxValue)}%` );
+      }
+      for (let i = 0; i <= yPercentTicks; i++) {
+        this.tickValues.tickPercentValues.push( `${Math.floor(i * yPercentTickInterval).toFixed(0)}`);
       }
 
-      console.info(
-        'data processed:', this.graphData, //JSON.parse(JSON.stringify(this.graphData)),
-        '\nset conf:', this.setConf, // JSON.parse(JSON.stringify(this.setConf)),
-        '\ncolumns:', this.columns, // JSON.parse(JSON.stringify(this.columns)),
-        '\nmax value:', this.maxValue,
-        '\ntick values', this.tickValues
-      )
+      if (this.debug) {
+        console.info(
+          'data processed:', this.graphData, //JSON.parse(JSON.stringify(this.graphData)),
+          '\nset conf:', this.setConf, // JSON.parse(JSON.stringify(this.setConf)),
+          '\ncolumns:', this.columns, // JSON.parse(JSON.stringify(this.columns)),
+          '\nmax value:', maxValue, '; %:', maxPercent
+        )
+      }
+
+      // ticks aren't normalized to max value, but to the next tick that's bigger than max value.
+      // we need to correct max values accordingly
+      // this.maxValue = yAxisHeight;
+      this.maxValue = yAxisHeight;
+      this.maxPercent = yAxisPercentHeight;
+
+      if (this.debug) {
+        console.warn(
+          '\n\n—————————————————[ tick calculation stuff]—————————————————',
+          '\nbest interval  :', yTickInterval,
+          '\nnumber of ticks:', yTicks, '        (max/ticks =>', this.maxValue, '/', yTickInterval, ')',
+          '\ny axis height  :', yAxisHeight, "     (height as in 'max value' that can be displayed. Should be > than max value.)",
+          '\n% per tick     :', +((percentPerTick * 100).toFixed(2)),
+          '\ntick values', this.tickValues,
+        );
+      }
     },
     findBestInterval(maxValue: number) {
       const upperBound = maxValue / 4;
@@ -225,7 +359,7 @@ export default defineComponent({
       let firstAboveLowerBound: any = undefined;
       let lastBelowUpperBound: any = undefined;
 
-      for (const interval of [2, 5, 10, 20, 25, 50, 100, 200, 250, 500, 1000]) {
+      for (const interval of [1, 2, 5, 10, 20, 25, 50, 100, 200, 250, 500, 1000]) {
         if (interval < upperBound) {
           lastBelowUpperBound = interval;
         }
@@ -275,6 +409,8 @@ export default defineComponent({
   display: flex;
   flex-direction: column-reverse;
   flex-wrap: nowrap;
+
+  pointer-events: none;
 
   .graph-tick-y {
     position: relative;
@@ -331,7 +467,29 @@ export default defineComponent({
         display: block;
       }
 
+      .graph-data-column-value {
+        display: none;
+      }
+
+      &:hover, &:focus {
+        cursor: pointer;
+
+        .graph-data-column-value {
+          display: block;
+          font-size: 0.8rem;
+          padding: 0.5em;
+          min-width: 5rem;
+
+          background-color: rgba(0,0,0,0.8);
+
+          transform: translate(-50%, -120%);
+        }
+      }
     }
+    // .graph-set-track::hover {
+    //   cursor: pointer;
+      
+    // }
   }
 
   .column-label-container {

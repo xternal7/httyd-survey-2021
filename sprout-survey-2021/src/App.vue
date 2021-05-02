@@ -98,6 +98,7 @@
         
         <div class="graph-area">
           <graph
+            style="width: 520px !important"
             title="Rate [aspect] from 1 to 10"
             :conf="{
               columnXMargin: '0.125rem',
@@ -148,6 +149,26 @@
         <p>
           Needless to say, I find 'least favourite' results a little bit surprising, with Gobber getting a #2 (though I guess I can see why
           people voted that way).
+        </p>
+
+        <div class="graph-area">
+          <graph
+            title="Favourite Soundtrack"
+            :conf="{
+              barWidth: '20px !important',
+              trackWidthMultiset: '16px !important',
+              trackWidth: '16px !important',
+              columnWidth: '42px !important',
+              sidewaysLabels: true,
+              labelsHeight: '16rem'
+            }"
+            :columns="graphColumnDefinitions[Question.HTTYD1FavouriteSoundtrack]()"
+            :data="graphData?.['all']?.[Question.HTTYD1FavouriteSoundtrack]"
+          ></graph>
+        </div>
+      
+        <p>
+          RESULT COMMENTARY HERE
         </p>
 
       </div>
@@ -203,13 +224,49 @@
               favourite: graphData?.['all']?.[Question.HTTYD2FavouriteCharacter],
               worst: graphData?.['all']?.[Question.HTTYD2WorstCharacter],
             }"
-            :debug="true"
           ></graph>
         </div>
 
         <p>
           Well that's unexpected.
         </p>
+
+        <div class="graph-area">
+          <graph
+            title="Favourite Soundtrack"
+            :conf="{
+              barWidth: '20px !important',
+              trackWidthMultiset: '16px !important',
+              trackWidth: '16px !important',
+              columnWidth: '42px !important',
+              sidewaysLabels: true,
+              labelsHeight: '16rem'
+            }"
+            :columns="graphColumnDefinitions[Question.HTTYD2FavouriteSoundtrack]()"
+            :data="graphData?.['all']?.[Question.HTTYD2FavouriteSoundtrack]"
+          ></graph>
+        </div>
+      
+        <p>
+          RESULT COMMENTARY HERE
+        </p>
+
+        <p>Last but not least: our special question.</p>
+
+        <div class="graph-area">
+          <graph
+            title="Would the movie be better, had Valka been a villain?"
+            description="Originally, Dean DeBlois planned to have Valka be HTTYD 2's sympathetic villain. The question asked: Do you think this idea, if it had made it into the final product, would have improved the film?"
+            :conf="{
+              barWidth: '20px !important',
+              trackWidthMultiset: '16px !important',
+              trackWidth: '16px !important',
+              columnWidth: '96px !important',
+            }"
+            :columns="graphColumnDefinitions.yesNoNeutral()"
+            :data="graphData?.['all']?.[Question.HTTYD2ValkaVillain]"
+          ></graph>
+        </div>
 
       </div>
 
@@ -247,6 +304,77 @@
             }"
           ></graph>
         </div>
+
+        <div class="graph-area">
+          <graph
+            title="Favourite and least favourite character"
+            :conf="{
+              barWidth: '16px !important',
+              trackWidthMultiset: '16px !important',
+              trackWidth: '16px !important',
+              columnWidth: '42px !important',
+              sidewaysLabels: true,
+              labelsHeight: '6rem'
+            }"
+            :columns="graphColumnDefinitions.httydCharacter(3)"
+            :sets="sets.mostLeastFavouriteSets"
+            :data="{
+              _multiSet: true,
+              favourite: graphData?.['all']?.[Question.HTTYD3FavouriteCharacter],
+              worst: graphData?.['all']?.[Question.HTTYD3WorstCharacter],
+            }"
+          ></graph>
+        </div>
+
+        <p>
+          BTW that graph also needs revision ↑↑↑
+        </p>
+
+        <div class="graph-area">
+          <graph
+            title="Favourite Soundtrack"
+            :conf="{
+              barWidth: '20px !important',
+              trackWidthMultiset: '16px !important',
+              trackWidth: '16px !important',
+              columnWidth: '42px !important',
+              sidewaysLabels: true,
+              labelsHeight: '16rem'
+            }"
+            :columns="graphColumnDefinitions[Question.HTTYD3FavouriteSoundtrack]()"
+            :data="graphData?.['all']?.[Question.HTTYD3FavouriteSoundtrack]"
+          ></graph>
+        </div>
+      
+        <p>
+          If you wonder about what the 'salt squad' represents on the graph — it's the people who answered with any variant of 
+          <i>'I actually hate all of them.'</i>like  The reason The Hidden World gets this category while the other movies don't is because
+          The Hidden World is the only one that attracted the answers like this.
+        </p>
+        <p>There's two more things that are worth noting here — one: 'Shy' category is twice the size compared to
+          the other two movies; and two: you actually can't infer anything from it, since this category contains both people who left the question
+          blank, as well as people who provided a non-answer such as <i>"I don't have a favourite"</i> or <i>"I like them all"</i>.
+        </p>
+
+        <p>
+          Last but not least, our bonus question:
+        </p>
+
+        <div class="graph-area">
+          <graph
+            title="Would Drago redemption arc improve the movie?"
+            description="Originally, Dean DeBlois planned a redemption arc for Drago in the third film. The question was: Do you think this idea, if it had made it into the final product, would have improved the film?"
+            :conf="{
+              barWidth: '20px !important',
+              trackWidthMultiset: '16px !important',
+              trackWidth: '16px !important',
+              columnWidth: '96px !important',
+            }"
+            :columns="graphColumnDefinitions.yesNoNeutral()"
+            :data="graphData?.['all']?.[Question.HTTYD3DragoRedemptionArc]"
+          ></graph>
+        </div>
+
       </div>
 
       <h2>Answers: Aggregated</h2>
@@ -419,6 +547,164 @@
         <p>
           If there's one thing everyone can agree about this movie, it's the fact that the movie has been rather controversial in the fandom. This made it "worthy" of additional questions.
         </p>
+        <p>
+          Let's start with the Light Fury.
+        </p>
+        <div class="graph-area">
+          <graph
+            title="What is your opinion on the Light Fury as a character?"
+            description="0: garbage tier, 5-6: eh, 10: perfect"
+            :conf="{trackWidth: '8px', barWidth: '16px !important', columnWidth: '32px !important'}"
+            :columns="graphColumnDefinitions.rating1to10()"
+            :data="graphData?.['all']?.[Question.ThotfuryCharacterRating]"
+          ></graph>
+          <graph
+            title="What is your opinion on the Light Fury's visual design?"
+            description="0: garbage tier, 5-6: eh, 10: perfect"
+            :conf="{trackWidth: '8px', barWidth: '16px !important', columnWidth: '32px !important'}"
+            :columns="graphColumnDefinitions.rating1to10()"
+            :data="graphData?.['all']?.[Question.ThotfuryDesignRating]"
+          ></graph>
+        </div>
+
+        <p>
+          Almost no surprises here. The ratings are about as contested as the rest of the The Hidden World related questions so far.
+        </p>
+
+        <div class="graph-area">
+          <graph
+            title="Was THW a fitting end to the franchise?"
+            description="0: hell no, 5-6: eh, 10: perfect"
+            :conf="{trackWidth: '8px', barWidth: '16px !important', columnWidth: '32px !important'}"
+            :columns="graphColumnDefinitions.rating1to10()"
+            :data="graphData?.['all']?.[Question.THWFittingEnd]"
+          ></graph>
+          <graph
+            title="The plot of The Hidden World makes sense and has clear cause and effect"
+            description="0: hell no, 5-6: eh, 10: enough sense to make me a millionare"
+            :conf="{trackWidth: '8px', barWidth: '16px !important', columnWidth: '32px !important'}"
+            :columns="graphColumnDefinitions.rating1to10()"
+            :data="graphData?.['all']?.[Question.THWPlotCoherency]"
+          ></graph>
+        </div>
+
+        <p>
+          I really like how both of these got (on average) worse results than the plot rating. Let's plot them on the same graph, just for shits and giggles:
+        </p>
+
+        <div class="graph-area">
+          <graph
+            title="Fitting end vs. plot rating"
+            :conf="{trackWidthMultiset: '8px', columnWidth: '32px !important'}"
+            :sets="[{
+              setKey: 'fittingEnd',
+              setLabel: 'Fitting end rating',
+              color: '#ffeaa9'
+            },{
+              setKey: 'plotRating',
+              setLabel: 'Plot rating',
+              color: '#c90000'
+            }]"
+            :columns="graphColumnDefinitions.rating1to10()"
+            :data="{
+              _multiSet: true,
+              fittingEnd: graphData?.['all']?.[Question.THWFittingEnd],
+              plotRating: graphData?.['all']?.[Question.HTTYD3PlotRating]
+            }"
+          ></graph>
+          <graph
+            title="Plot coherency vs. plot rating"
+            :conf="{trackWidthMultiset: '8px', columnWidth: '32px !important'}"
+            :columns="graphColumnDefinitions.rating1to10()"
+            :sets="[{
+              setKey: 'plotCoherency',
+              setLabel: 'Plot coherency rating',
+              color: '#ffeaa9'
+            },{
+              setKey: 'plotRating',
+              setLabel: 'Plot rating',
+              color: '#c90000'
+            }]"
+            :data="{
+              _multiSet: true,
+              plotCoherency: graphData?.['all']?.[Question.THWPlotCoherency],
+              plotRating: graphData?.['all']?.[Question.HTTYD3PlotRating]
+            }"
+          ></graph>
+        </div>
+
+        <p>
+          Now I <i>really</i> want to see how the the votes moved around, between plot rating and these two.
+        </p>
+
+        <p>
+          Last but not least: the themes. Due to limited space below the graphs, the labels were shortened from the original answers.
+          Most of the answers are accurate but possibly abbreviated version of what was on poll. The only exception is the answer
+          <i>'Negative Effects Humans Sometimes Have on Animals and/or the Environment'</i>: due its excessive length, the graph label
+          for it is 'Misantrophy' (which basically means exactly the same thing). 'Putting aside idealism when neccessary' was shortened
+          to 'putting aside idealism.'
+        </p>
+        <p>
+          The 'other' box allowed for free-form entry, which was ... fun, and spawned a few categories of answers. 'All garbage' is
+          self-explanatory, '🧂' were salty or sarcastic answers, and 'other' is limited to all answers that don't fit
+          in either of the two newly-spawned. Note that 'All garbage' doesn't necessarily imply '🧂'.
+        </p>
+
+        <div class="graph-area">
+          <graph
+            title="Strongest themes — TODO MULTI CHOICE"
+            description="Which of the following themes / messages do you feel The Hidden World most strongly conveys? Participants were asked to pick two at most. 'They tried' is for people who picked more."
+            :conf="{
+              trackWidth: '8px',
+              barWidth: '16px !important',
+              columnWidth: '32px !important',
+              sidewaysLabels: true,
+              labelsHeight: '16rem'
+            }"
+            :columns="graphColumnDefinitions[Question.THWStrongestThemes]()"
+            :data="graphData?.['all']?.[Question.THWStrongestThemes]"
+          ></graph>
+          <graph
+            title="Theme approval"
+            description="Regarding the themes you see in The Hidden World, rate the extent to which you agree with / approve of those themes."
+            :conf="{trackWidth: '8px', barWidth: '16px !important', columnWidth: '32px !important'}"
+            :columns="graphColumnDefinitions.rating1to10()"
+            :data="graphData?.['all']?.[Question.THWThemeApproval]"
+          ></graph>
+        </div>
+
+        <p>
+          🧂 option itself provided a really wide array of answers. To give some examples:
+        </p>
+        <ul>
+          <li>
+            The spirit of defeatism (or other variations of 'just give up')
+          </li>
+          <li>
+            Heteronormativity and Anthropocentrism
+          </li>
+          <li>
+           I had no idea what was trying to be conveyed. I can only be meta and say it was gaslighting the whole time
+          </li>
+          <li>
+            Racism wins somehow?? (or other variations of 'Segregation good')
+          </li>
+          <li>
+            In the words of Homer Simpson: "The lesson is, never try."
+          </li>
+          <li>
+            (Variations of 'Hoes before bros')
+          </li>
+          <li>
+            Fuck This Movie
+          </li>
+        </ul>
+
+
+        <p>
+          TODO: COMMENTARY
+        </p>
+
       </div>
 
     </div>
@@ -429,6 +715,68 @@
         <p>
           Last year, we've asked some basic questions about the TV series. As is tradition, we asked that this year as well — but now with more detail! (Oh, and we also included the shorts!)
         </p>
+        <p>
+          So let's start with shorts and then move onto the others.
+        </p>
+
+        <div class="graph-area">
+          <graph
+            title="Favourite short"
+            :conf="{
+              trackWidth: '8px',
+              barWidth: '16px !important',
+              columnWidth: '32px !important',
+              sidewaysLabels: true,
+              labelsHeight: '16rem'
+            }"
+            :columns="graphColumnDefinitions[Question.FavouriteShort]()"
+            :data="{
+              ...graphData?.['all']?.[Question.FavouriteShort],
+              _multiSet: false
+            }"
+          ></graph>
+
+          <graph
+            title="Rate [short] from 1 to 10"
+            :conf="{
+              columnXMargin: '0.125rem',
+              barWidth: '8px',
+              trackWidthMultiset: 'auto'
+            }"
+            :columns="graphColumnDefinitions.rating1to10()"
+            :sets="[{
+              setKey: 'bk',
+              setLabel: 'Boneknapper',
+              color: '#c00'
+            },{
+              setKey: 'bod',
+              setLabel: 'Book of Dragons',
+              color: '#d92'
+            },{
+              setKey: 'dodr',
+              setLabel: 'Dawn of Dragon Riders',
+              color: '#fb8'
+            },{
+              setKey: 'gonf',
+              setLabel: 'Gift of the Night Fury',
+              color: '#139'
+            },{
+              setKey: 'hc',
+              setLabel: 'Homecoming',
+              color: '#17a'
+            },]"
+            :data="{
+              _multiSet: true,
+              'bk': graphData?.['all']?.[Question.BoneknapperRating],
+              'bod': graphData?.['all']?.[Question.BookOfDragonsRating],
+              'dodr': graphData?.['all']?.[Question.DawnOfDragonRidersRating],
+              'gonf': graphDatat?.['all']?.[Question.GONFRating],
+              'hc': graphDatat?.['all']?.[Question.HomecomingRating],
+            }"
+          ></graph>
+        </div>
+
+
       </div>
     </div>
 
@@ -452,7 +800,22 @@
           ></graph>
         </div>
          <p>
-            Given reddit, I honestly expected this graph to be a lot more contested.
+            Given reddit, I honestly expected this graph would be so contested it'd make <a href="https://wowpedia.fandom.com/wiki/Tarren_Mill#Tarren_Mill_is_under_attack.21" target="_blank">Tarren Mill</a> seem like a peaceful Lordaeron village.
+        </p>
+
+        <div class="graph-area">
+          <graph
+            title="Do you view the bond between Hiccup and Toothless as being more 'Master and Pet' or 'Mutual Friends?'"
+            description="0 - master/pet, 10 - mutual friends"
+            :conf="{trackWidth: '8px', barWidth: '16px !important', columnWidth: '32px !important'}"
+            :columns="graphColumnDefinitions.rating1to10()"
+            :data="graphData?.['all']?.[Question.BondType]"
+          ></graph>
+        </div>
+
+
+        <p>
+          TODO: commentary
         </p>
       </div>
     </div>

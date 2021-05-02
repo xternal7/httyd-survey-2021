@@ -1,8 +1,13 @@
+import { Answer } from '@/enums/answer.enum';
 import { Character } from '@/enums/character.enum';
 import { Community } from '@/enums/community.enum';
 import { Continent } from '@/enums/continent.enum';
 import { Gender } from '@/enums/gender.enum';
+import { HTTYDAppealReason } from '@/enums/httyd-appeal-reason.enum';
+import { HTTYDShort } from '@/enums/httyd-short.enum';
 import { Question } from '@/enums/question.enum';
+import { HTTYD2Soundtrack, HTTYDSoundtrack, THWSoundtrack } from '@/enums/soundtrack.enum';
+import { THWTheme } from '@/enums/thw-theme.enum';
 
 let graphColumnDefinitions = {
   [Question.Age]: () => {
@@ -153,6 +158,26 @@ let graphColumnDefinitions = {
 
     return cols;
   },
+  yesNoNeutral() {
+    return [
+      {
+        key: Answer.Yes,
+        label: 'Yes'
+      },
+      {
+        key: Answer.Neutral,
+        label: 'Neutral'
+      },
+      {
+        key: Answer.No,
+        label: 'No'
+      },
+      {
+        key: Answer.Unanswered,
+        label: 'Shy'
+      }
+    ]
+  },
   httydCharacter: (movie: 1 | 2 | 3) => {
     const commonChars = [
       {
@@ -180,6 +205,10 @@ let graphColumnDefinitions = {
       {
         key: Character.Tuffnut,
         label: 'Tuffnut'
+      },
+      {
+        key: Character.Twins,
+        label: 'Twins'
       },
       {
         key: Character.Snotlout,
@@ -261,6 +290,343 @@ let graphColumnDefinitions = {
           ...commonCharsTail
         ];
     }
+  },
+  [Question.HTTYD1FavouriteSoundtrack]: () => {
+    return [
+      {
+        key: HTTYDSoundtrack.ThisIsBerk,
+        label: 'This is Berk',
+      },
+      {
+        key: HTTYDSoundtrack.DragonBattle,
+        label: 'Dragon Battle'
+      },
+      {
+        key: HTTYDSoundtrack.DownedDragon,
+        label: 'The Downed Dragon'
+      },
+      {
+        key: HTTYDSoundtrack.DragonTraining,
+        label: 'Dragon training'
+      },
+      {
+        key: HTTYDSoundtrack.Wounded,
+        label: 'Wounded',
+      },
+      {
+        key: HTTYDSoundtrack.DragonBook,
+        label: 'The Dragon Book',
+      },
+      {
+        key: HTTYDSoundtrack.FocusHiccup,
+        label: 'Focus, Hiccup!'
+      },
+      {
+        key: HTTYDSoundtrack.ForbiddenFriendship,
+        label: 'Forbidden Friendship'
+      },
+      {
+        key: HTTYDSoundtrack.NewTail,
+        label: 'New Tail'
+      },
+      {
+        key: HTTYDSoundtrack.SeeYouTomorrow,
+        label: 'See You Tomorrow'
+      },
+      {
+        key: HTTYDSoundtrack.TestDrive,
+        label: 'Test Drive'
+      },
+      {
+        key: HTTYDSoundtrack.NotSoFireproof,
+        label: 'Not so Fireproof'
+      },
+      {
+        key: HTTYDSoundtrack.ThisTimeForSure,
+        label: 'This Time For Sure'
+      },
+      {
+        key: HTTYDSoundtrack.AstridGoesForASpin,
+        label: 'Astrid Goes for a Spin'
+      },
+      {
+        key: HTTYDSoundtrack.RomanticFlight,
+        label: 'Romantic Flight'
+      },
+      {
+        key: HTTYDSoundtrack.DragonsDen,
+        label: 'Dragon\'s Den'
+      },
+      {
+        key: HTTYDSoundtrack.Cove,
+        label: 'The Cove'
+      },
+      {
+        key: HTTYDSoundtrack.KillRing,
+        label: 'The Kill Ring'
+      },
+      {
+        key: HTTYDSoundtrack.ReadyTheShips,
+        label: 'Ready The Ships'
+      },
+      {
+        key: HTTYDSoundtrack.BattlingGreenDeath,
+        label: 'Battling the Green Death'
+      },
+      {
+        key: HTTYDSoundtrack.CounterAttack,
+        label: 'Counter Attack'
+      },
+      {
+        key: HTTYDSoundtrack.WheresHiccup,
+        label: 'Where\'s Hiccup'
+      },
+      {
+        key: HTTYDSoundtrack.ComingBackAround,
+        label: 'Coming Back Around'
+      },
+      {
+        key: HTTYDSoundtrack.SticksStones,
+        label: 'Sticks and Stones'
+      },
+      {
+        key: HTTYDSoundtrack.VikingsHaveTHeirTea,
+        label: 'Vikings Have Their Tea'
+      },
+      {
+        key: HTTYDSoundtrack.None,
+        label: 'Shy'
+      },
+      {
+        key: HTTYDSoundtrack.Multiple,
+        label: 'Cant read'
+      }
+    ]
+  },
+  [Question.HTTYD2FavouriteSoundtrack]: () => {
+    return [{
+      key: HTTYD2Soundtrack.DragonRacing,
+      label: 'Dragon Racing'
+    },{
+      key: HTTYD2Soundtrack.TogetherMapTheWorld,
+      label: 'Together We Map The World'
+    },{
+      key: HTTYD2Soundtrack.HiccupTheChief,
+      label: 'Hiccup the Chief'
+    },{
+      key: HTTYD2Soundtrack.ToothlessLost,
+      label: 'Toothless Lost'
+    }, {
+      key: HTTYD2Soundtrack.ShouldIKnowYou,
+      label: 'Should I Know You'
+    },{
+      key: HTTYD2Soundtrack.ValkaDragonSanctuary,
+      label: 'Valka\'s Dragon Sacntuary'
+    },{
+      key: HTTYD2Soundtrack.LosingMom,
+      label: 'Losing Mom'
+    },{
+      key: HTTYD2Soundtrack.MeetDrago,
+      label: 'Meet Drago'
+    },{
+      key: HTTYD2Soundtrack.StoickFindsBeauty,
+      label: 'Stoick Finds Beauty'
+    },{
+      key: HTTYD2Soundtrack.FlyingWithMother,
+      label: 'Flying With Mother'
+    },{
+      key: HTTYD2Soundtrack.DancingAndTheDreaming,
+      label: 'For the Dancing and the Dreaming'
+    }, {
+      key: HTTYD2Soundtrack.BattleBewilderbeast,
+      label:  'Battle of the Bewilderbeast'
+    },{
+      key: HTTYD2Soundtrack.HiccupConfrontsDrago,
+      label: 'Hiccup Confronts Drago'
+    },{
+      key: HTTYD2Soundtrack.StoickSavesHiccup,
+      label: 'Stoick Saves Hiccup'
+    }, {
+      key: HTTYD2Soundtrack.StoicksShip,
+      label: 'Stoick\'s ship'
+    }, {
+      key: HTTYD2Soundtrack.AlphaComesToBerk,
+      label: 'Alpha Comes To Berk',
+    }, {
+      key: HTTYD2Soundtrack.TwoNewAlphas,
+      label: 'Two New Alphas'
+    },{
+      key: HTTYD2Soundtrack.ToothlessFound,
+      label: 'Toothless Found'
+    }, {
+      key: HTTYD2Soundtrack.WhereNoOneGoes,
+      label: 'Where No One Goes'
+    },{
+      key: HTTYD2Soundtrack.IntoAFantasy,
+      label: 'Into A Fantasy',
+    }, {
+      key: HTTYD2Soundtrack.None,
+      label: 'Shy'
+    }, {
+      key: HTTYD2Soundtrack.Multiple,
+      label: 'Cant read'
+    }]
+  },
+  [Question.HTTYD3FavouriteSoundtrack]: () => {
+    return [{
+      key: THWSoundtrack.RaidersReturn,
+      label: 'Raiders Return to Busy, Busy Berk'
+    }, {
+      key: THWSoundtrack.DinnerTalk,
+      label: 'Dinner Talk'
+    }, {
+      key: THWSoundtrack.LegendHasIt,
+      label: 'Legend Has It'
+    }, {
+      key: THWSoundtrack.ToothlessSmitten,
+      label: 'Toothless: Smitten'
+    }, {
+      key: THWSoundtrack.WorstPepTalk,
+      label: 'Worst Pep Talk Ever',
+    }, {
+      key: THWSoundtrack.NightFuryKiller,
+      label: 'Night Fury Killer',
+    },{
+      key: THWSoundtrack.Exodus,
+      label: 'Exodus!'
+    }, {
+      key: THWSoundtrack.ThirdDate,
+      label: 'Third Date'
+    }, {
+      key: THWSoundtrack.NewNewTail,
+      label: 'New New Tail'
+    }, {
+      key: THWSoundtrack.FuriesInLove,
+      label: 'Furies in Love'
+    }, {
+      key: THWSoundtrack.KillerDragons,
+      label: 'Killer Dragons',
+    }, {
+      key: THWSoundtrack.GreatWaterfall,
+      label: 'With Love Comes a Great Waterfall'
+    }, {
+      key: THWSoundtrack.THW,
+      label: 'The Hidden World'
+    }, {
+      key: THWSoundtrack.ArmadaBattle,
+      label: 'Armada Battle'
+    }, {
+      key: THWSoundtrack.AsLongAsHesSafe,
+      label: 'As Long As He\'s Safe'
+    }, {
+      key: THWSoundtrack.OnceThereWereDragons,
+      label: 'Once There Were Dragons'
+    }, {
+      key: THWSoundtrack.TogetherFromAfar,
+      label: 'Together From Afar'
+    }, {
+      key: THWSoundtrack.THWSuite,
+      label: 'The Hidden World Suite'
+    }, {
+      key: THWSoundtrack.None,
+      label: 'Shy'
+    }, {
+      key: THWSoundtrack.Multiple,
+      label: 'Cant read'
+    },{
+      key: THWSoundtrack.AffirmativeNone,
+      label: 'Salt squad'
+    }]
+  },
+  [Question.FavouriteShort]: () => {
+    return [{
+      key: HTTYDShort.Boneknapper,
+      label: 'The Legend of the Boneknapper'
+    },{
+      key: HTTYDShort.BookOfDragons,
+      label: 'The Book of Dragons'
+    },{
+      key: HTTYDShort.DawnOfDragonRiders,
+      label: 'Dawn of the Dragon Riders'
+    },{
+      key: HTTYDShort.GotNF,
+      label: 'Gift of the Night Fury'
+    },{
+      key: HTTYDShort.Homecoming,
+      label: 'Homecoming'
+    },{
+      key: HTTYDShort.NoAnswer,
+      label: 'Shy'
+    }];
+  },
+  [Question.HTTYDAppealReasons]: () => {
+    return [{
+      key: HTTYDAppealReason.AnimationInterest,
+      label: 'Animation interest'
+    },{
+      key: HTTYDAppealReason.CharacterShipping,
+      label: 'Character shipping'
+    },{
+      key: HTTYDAppealReason.DragonsCool,
+      label: 'Dragons are cool'
+    },{
+      key: HTTYDAppealReason.FantasyFan,
+      label: 'Fan of fantasy'
+    },{
+      key: HTTYDAppealReason.FascinatingWorld,
+      label: 'Fascinating world'
+    },{
+      key: HTTYDAppealReason.Nostalgia,
+      label: 'Nostalgia'
+    },{
+      key: HTTYDAppealReason.ObjectiveQuality,
+      label: 'Objective quality'
+    },{
+      key: HTTYDAppealReason.Relatable,
+      label: 'It\'s relatable'
+    },{
+      key: HTTYDAppealReason.Other,
+      label: 'Other'
+    },{
+      key: HTTYDAppealReason.NoAnswer,
+      label: 'Shy'
+    }];
+  },
+  [Question.THWStrongestThemes]: () => {
+    return [{
+      key: THWTheme.AcceptingFriendshipsEnd,
+      label: 'Accepting friendships end'
+    },{
+      key: THWTheme.GrowingUp,
+      label: 'Growing up and letting go'
+    },{
+      key: THWTheme.LoveLoss,
+      label: 'Love and loss'
+    },{
+      key: THWTheme.Moralfagging,
+      label: 'Misantrophy'
+    },{
+      key: THWTheme.PuttingAsideIdealism,
+      label: 'Putting aside idealism'
+    },{
+      key: 'spacer-1',
+      label: ''
+    },{
+      key: 'spacer-2',
+      label: ''
+    },{
+      key: THWTheme.AllGarbage,
+      label: 'All garbage'
+    },{
+      key: THWTheme.SarcasticAnswer,
+      label: '🧂'
+    },{
+      key: THWTheme.Other,
+      label: 'Other'
+    },{
+      key: THWTheme.NoAnswer,
+      label: 'Shy'
+    }];
   }
 }
 

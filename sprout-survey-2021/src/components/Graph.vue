@@ -328,9 +328,9 @@ export default defineComponent({
 
       if (this.debug) {
         console.info(
-          'data processed:', this.graphData, //JSON.parse(JSON.stringify(this.graphData)),
-          '\nset conf:', this.setConf, // JSON.parse(JSON.stringify(this.setConf)),
-          '\ncolumns:', this.columns, // JSON.parse(JSON.stringify(this.columns)),
+          'data processed:', JSON.parse(JSON.stringify(this.graphData)), //JSON.parse(JSON.stringify(this.graphData)),
+          '\nset conf:', JSON.parse(JSON.stringify(this.setConf)),       // JSON.parse(JSON.stringify(this.setConf)),
+          '\ncolumns:', this.columns,                                    // JSON.parse(JSON.stringify(this.columns)),
           '\nmax value:', maxValue, '; %:', maxPercent
         )
       }

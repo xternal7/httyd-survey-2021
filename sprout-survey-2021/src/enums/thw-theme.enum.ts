@@ -7,5 +7,7 @@ export enum THWTheme {
   LoveLoss,
   Other,
   AllGarbage,
-  SarcasticAnswer
+  Salt,
+  SarcasticAnswer,
+  TooManyAnswers
 }

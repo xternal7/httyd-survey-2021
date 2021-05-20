@@ -4,5 +4,6 @@ export enum MovieOrder {
   r213,
   r231,
   r312,
-  r321
+  r321,
+  Shy
 }

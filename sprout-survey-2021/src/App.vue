@@ -820,8 +820,31 @@
       </div>
     </div>
 
+    <div class="segment">
+      <h1>Favourite draconid</h1>
 
+      <graph
+        title="Favourite draconid"
+        :conf="{trackWidth: '8px', barWidth: '16px !important', columnWidth: '32px !important'}"
+        :columns="graphColumnDefinitions[Question.FavouriteDraconid]"
+        :data="graphData?.['all']?.[Question.FavouriteDraconid]"
+      ></graph>
+      
+      todo: add reason
+    </div>
 
+    <div class="segment">
+      <h1>Favourite villain</h1>
+
+      <graph
+        title="Favourite villain"
+        :conf="{trackWidth: '8px', barWidth: '16px !important', columnWidth: '32px !important'}"
+        :columns="graphColumnDefinitions[Question.FavouriteVillain]"
+        :data="graphData?.['all']?.[Question.FavouriteVillain]"
+      ></graph>
+      
+      todo: add reason
+    </div>
 
 
 

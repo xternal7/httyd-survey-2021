@@ -2,12 +2,15 @@ import { Answer } from '@/enums/answer.enum';
 import { Character } from '@/enums/character.enum';
 import { Community } from '@/enums/community.enum';
 import { Continent } from '@/enums/continent.enum';
+import { Draconid } from '@/enums/draconid.enum';
 import { Gender } from '@/enums/gender.enum';
 import { HTTYDAppealReason } from '@/enums/httyd-appeal-reason.enum';
 import { HTTYDShort } from '@/enums/httyd-short.enum';
+import { MovieOrder } from '@/enums/movie-order.enum';
 import { Question } from '@/enums/question.enum';
 import { HTTYD2Soundtrack, HTTYDSoundtrack, THWSoundtrack } from '@/enums/soundtrack.enum';
 import { THWTheme } from '@/enums/thw-theme.enum';
+import { Villain } from '@/enums/villain.enum';
 
 let graphColumnDefinitions = {
   [Question.Age]: () => {
@@ -627,7 +630,157 @@ let graphColumnDefinitions = {
       key: THWTheme.NoAnswer,
       label: 'Shy'
     }];
-  }
+  },
+  [Question.FavouriteDraconid]: () => {
+    return [
+      {
+        key: Draconid.NightFury,
+        label: 'Night Fury'
+      }, {
+        key: Draconid.ThotFury,
+        label: 'Light Fury'
+      }, {
+        key: Draconid.ThotLights,
+        label: 'Night Lights',
+      }, {
+        key: Draconid.Nadder,
+        label: 'Nadder'
+      }, {
+        key: Draconid.Stormcutter,
+        label: 'Stormcutter'
+      }, {
+        key: Draconid.Nightmare,
+        label: 'Monstrous Nightmare'
+      }, {
+        key: Draconid.Skrill,
+        label: 'Skrill'
+      }, {
+        key: Draconid.Bewilderbeast,
+        label: 'Bewilderbeast'
+      }, {
+        key: Draconid.Deathgripper,
+        label: 'Deathgripper'
+      }, {
+        key: Draconid.Terror,
+        label: 'Terrible Terror'
+      }, {
+        key: Draconid.Gronckle,
+        label: 'Gronckle'
+      }, {
+        key: Draconid.WhisperingDeath,
+        label: 'Whispering Death'
+      }, {
+        key: Draconid.Zippleback,
+        label: 'Zippleback'
+      }, {
+        key: Draconid.Gorecutter,
+        label: 'Gorecutter'
+      }, {
+        key: Draconid.Other,
+        label: 'Other'
+      }, {
+        key: Draconid.None,
+        label: 'Shy'
+      }
+    ]
+  },
+  [Question.FavouriteVillain]: () => {
+    return [
+      {
+        key: Villain.GreenDeath,
+        label: 'Green Death'
+      }, {
+        key: Villain.Drago,
+        label: 'Drago'
+      }, {
+        key: Villain.DragoBewilderbeast,
+        label: 'Drago\'s Bewilderbeast'
+      }, {
+        key: Villain.Grimmel,
+        label: 'Grimmel'
+      }, {
+        key: Villain.Viggo,
+        label: 'Viggo'
+      }, {
+        key: Villain.Ryker,
+        label: 'Ryker'
+      }, {
+        key: Villain.Dagur,
+        label: 'Dagur'
+      }, {
+        key: Villain.Johann,
+        label: 'Johann'
+      }, {
+        key: Villain.THWWarlords,
+        label: 'Warlords',
+      }, {
+        key: Villain.Alvin,
+        label: 'Alvin'
+      }, {
+        key: Villain.Mildew,
+        label: 'Mildew'
+      }, {
+        key: Villain.Stoick,
+        label: 'Stoick',
+      }, {
+        key: Villain.Other,
+        label: 'Other'
+      }, {
+        key: Villain.None,
+        label: 'Shy',
+      }, {
+        key: Villain.Multiple,
+        label: 'Can\'t read'
+      }
+    ];
+  },
+  [Question.MovieWatchingOrder]: () => {
+    return [
+      {
+        key: MovieOrder.r123,
+        label: '1 → 2 → 3'
+      }, {
+        key: MovieOrder.r132,
+        label: '1 → 3 → 2'
+      }, {
+        key: MovieOrder.r213,
+        label: '2 → 1 → 3'
+      }, {
+        key: MovieOrder.r213,
+        label: '2 → 3 → 1'
+      }, {
+        key: MovieOrder.r312,
+        label: '3 → 1 → 2'
+      }, {
+        key: MovieOrder.r321,
+        label: '3 → 2 → 1'
+      }
+    ];
+  },
+  [Question.MovieRanking]: () => {
+    return [
+      {
+        key: MovieOrder.r123,
+        label: '1 > 2 > 3'
+      }, {
+        key: MovieOrder.r132,
+        label: '1 > 3 > 2'
+      }, {
+        key: MovieOrder.r213,
+        label: '2 > 1 > 3'
+      }, {
+        key: MovieOrder.r213,
+        label: '2 > 3 > 1'
+      }, {
+        key: MovieOrder.r312,
+        label: '3 > 1 > 2'
+      }, {
+        key: MovieOrder.r321,
+        label: '3 > 2 > 1'
+      }
+    ];
+  },
+  
 }
 
 export default graphColumnDefinitions;

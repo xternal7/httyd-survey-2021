@@ -522,24 +522,63 @@
     </div>
 
     <div class="segment">
-      <h1>Favourite draconid</h1>
-      <div class="segment-content">
-        <p>
-          Ho boy: initially, this (and the 'favourite villain') question was meant to ship without the "but why" question box. However, it was forseen that this would be a runaway victory for Toothless — a rather boring result.
-          In order to make the results of this poll less boring, Tam insisted really really hard on adding the "but why is it your favourite" follow-up question, so you can see why people have their favourites.
-        </p>
-        <p>
-          <small>Side note: better answers are absolutely getting the preferential treatment here.</small>
-        </p>
+      <h1>Favourite things</h1>
+
+      <p>
+        This year, we have also asked people for a few favourite things. Let's start with the 'favourite draconid'
+        category to start things off. Furthermore, we've decided to ask people to explain their pick and show some
+        of the most well-written answers (where the criteria was mostly how specific the reasoning given was).
+        The reasons people gave for their answer are sorted per answer.
+      </p>
+
+      <div class="graph-area">
+        <graph
+          title="Favourite draconid"
+          :conf="{trackWidth: '8px', barWidth: '16px !important', columnWidth: '32px !important'}"
+          :columns="graphColumnDefinitions[Question.FavouriteDraconid]"
+          :data="graphData?.['all']?.[Question.FavouriteDraconid]"
+        ></graph>
       </div>
       
-    </div>
-    <div class="segment">
-      <h1>Favourite villain</h1>
-      <div class="segment-content">
-        <p>I don't like to repeat myself too much, so let's just skip to the results.</p>
+      todo: add reason
+
+
+      <p>
+        The 'favourite villain' question largely follows the same format as the previous one, so I don't feel
+        the need to repeat myself. Let's go straight to the results.
+      </p>
+
+      <div class="graph-area">
+        <graph
+          title="Favourite villain"
+          :conf="{trackWidth: '8px', barWidth: '16px !important', columnWidth: '32px !important'}"
+          :columns="graphColumnDefinitions[Question.FavouriteVillain]"
+          :data="graphData?.['all']?.[Question.FavouriteVillain]"
+        ></graph>
       </div>
+      
+      todo: add reason
+
+      <p>
+        Last but not least: favourite opening scene.
+      </p>
+
+      <div class="graph-area">
+        <graph
+          title="Favourite opening scene"
+          :conf="{trackWidth: '8px', barWidth: '16px !important', columnWidth: '32px !important'}"
+          :columns="graphColumnDefinitions[Question.FavouriteOpeningScene]"
+          :data="graphData?.['all']?.[Question.FavouriteOpeningScene]"
+        ></graph>
+      </div>
+
+      <p>
+        Unlike the previous two, this question came without a 'please explain' field — mostly because Tamius 
+        didn't forsee anything interesting coming out of it, and thus only annoyed Brussel into adding the 
+        'please explain' section to the previous two questions.
+      </p>
     </div>
+
 
     <div class="segment">
       <h1>The Hidden World Speciál</h1>
@@ -776,6 +815,62 @@
           ></graph>
         </div>
 
+        <p>
+          todo: commentary, if any
+        </p>
+
+        <div class="graph-area">
+          <graph
+            title="Rate [TV series] from 1 to 10"
+            :conf="{
+              columnXMargin: '0.125rem',
+              barWidth: '8px',
+              trackWidthMultiset: 'auto'
+            }"
+            :columns="graphColumnDefinitions.rating1to10()"
+            :sets="[{
+              setKey: 'rdob',
+              setLabel: 'Riders/Defenders',
+              color: '#c00'
+            },{
+              setKey: 'rtte',
+              setLabel: 'Race to the Edge',
+              color: '#fb8'
+            }]"
+            :data="{
+              _multiSet: true,
+              'rdob': graphData?.['all']?.[Question.RidersOfBerkRating],
+              'rtte': graphData?.['all']?.[Question.RTTERating],
+            }"
+          ></graph>
+
+          <graph
+            title="Likability of side characters in RTTE"
+            description="Rate your agreement with the following statement: 'The side characters (Snotlout, Fishlegs, the Twins, etc) were generally more likable in Race to the Edge than in the films.'"
+            :conf="{trackWidth: '8px', barWidth: '16px !important', columnWidth: '32px !important'}"
+            :columns="graphColumnDefinitions.rating1to10()"
+            :data="graphData?.['all']?.[Question.SideCharactersLikabilityAgreement]"
+          ></graph>
+        </div>
+
+        <p>todo: commentary, if any</p>
+
+        <p>
+          Last but not least — even though Race to the Edge is <b>not</b> canon to the movie franchise as far as cold, hard facts
+          are concerned, we will see people insisting that it is from time to time. Which begs the question — how many people <i>do</i>
+          think that RTTE is canon? Well ...
+        </p>
+
+        <div class="graph-area">
+          <graph
+            title="Do you consider Race to the Edge canon to the films?"
+            :conf="{trackWidth: '8px', barWidth: '16px !important', columnWidth: '32px !important'}"
+            :columns="graphColumnDefinitions.yesNoNeutral()"
+            :data="graphData?.['all']?.[Question.IsRTTECanon]"
+          ></graph>
+        </div>
+
+        <p>Those headcanons <i>are</i> capable of firing way more than twenty feet.</p>
 
       </div>
     </div>
@@ -805,6 +900,35 @@
 
         <div class="graph-area">
           <graph
+            title="Most important aspects of a movie (TODO: answer keys!)"
+            description="Of the following aspects of films/shows in general, which do you feel are the MOST important? Try not to check more than 2 boxes."
+            :conf="{
+              trackWidth: '8px',
+              barWidth: '16px !important',
+              columnWidth: '32px !important',
+              sidewaysLabels: true,
+              labelsHeight: '16rem'
+            }"
+            :columns="graphColumnDefinitions[Question.MostImportantAspects]()"
+            :data="graphData?.['all']?.[Question.MostImportantAspects]"
+          ></graph>
+        </div>
+
+        <p>
+          todo commentary
+        </p>
+
+
+        <div class="graph-area">
+          <graph
+            title="Why do you like HTTYD franchise? (todo: data)"
+            description="Which of the following best describe/describes your reason for being drawn to HTTYD? Try not to check more than 2 boxes."
+            :conf="{trackWidth: '8px', barWidth: '16px !important', columnWidth: '32px !important'}"
+            :columns="graphColumnDefinitions[Question.HTTYDAppealReasons]()"
+            :data="graphData?.['all']?.[Question.HTTYDAppealReasons]"
+          ></graph>
+
+          <graph
             title="Do you view the bond between Hiccup and Toothless as being more 'Master and Pet' or 'Mutual Friends?'"
             description="0 - master/pet, 10 - mutual friends"
             :conf="{trackWidth: '8px', barWidth: '16px !important', columnWidth: '32px !important'}"
@@ -817,35 +941,43 @@
         <p>
           TODO: commentary
         </p>
+
+        <div class="graph-area">
+          <graph
+            title="Movie ranking"
+            description="From best to worst"
+            :conf="{trackWidth: '8px', barWidth: '16px !important', columnWidth: '32px !important'}"
+            :columns="graphColumnDefinitions[Question.MovieRanking]"
+            :data="graphData?.['all']?.[Question.MovieRanking]"
+          ></graph>
+
+          <graph
+            title="Movie watching order"
+            description="In which order did you see the each film for the first time?"
+            :conf="{trackWidth: '8px', barWidth: '16px !important', columnWidth: '32px !important'}"
+            :columns="graphColumnDefinitions[Question.MovieWatchingOrder]"
+            :data="graphData?.['all']?.[Question.MovieWatchingOrder]"
+          ></graph>
+
+          <graph
+            title="The Hidden World opinion change"
+            description="If you watched The Hidden World before seeing the other two films, did your opinion of The Hidden World change after watching them?"
+            :conf="{trackWidth: '8px', barWidth: '16px !important', columnWidth: '32px !important'}"
+            :columns="graphColumnDefinitions.yesNoNeutral()"
+            :data="graphData?.['all']?.[Question.THWOpinionChange]"
+          ></graph>
+        </div>
+        
+
+        <p>
+          todo: commentary
+        </p>
+
+        
       </div>
     </div>
 
-    <div class="segment">
-      <h1>Favourite draconid</h1>
-
-      <graph
-        title="Favourite draconid"
-        :conf="{trackWidth: '8px', barWidth: '16px !important', columnWidth: '32px !important'}"
-        :columns="graphColumnDefinitions[Question.FavouriteDraconid]"
-        :data="graphData?.['all']?.[Question.FavouriteDraconid]"
-      ></graph>
-      
-      todo: add reason
-    </div>
-
-    <div class="segment">
-      <h1>Favourite villain</h1>
-
-      <graph
-        title="Favourite villain"
-        :conf="{trackWidth: '8px', barWidth: '16px !important', columnWidth: '32px !important'}"
-        :columns="graphColumnDefinitions[Question.FavouriteVillain]"
-        :data="graphData?.['all']?.[Question.FavouriteVillain]"
-      ></graph>
-      
-      todo: add reason
-    </div>
-
+  
 
 
 

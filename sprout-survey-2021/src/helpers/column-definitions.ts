@@ -780,6 +780,16 @@ let graphColumnDefinitions = {
       }
     ];
   },
+  [Question.HTTYDAppealReasons]: () => {
+    return [
+
+    ];
+  },
+  [Question.MostImportantAspects]: () => {
+    return [
+
+    ];
+  }
   
 }
 

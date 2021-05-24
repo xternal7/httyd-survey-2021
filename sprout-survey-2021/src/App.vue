@@ -829,8 +829,8 @@
               'bk': graphData?.['all']?.[Question.BoneknapperRating],
               'bod': graphData?.['all']?.[Question.BookOfDragonsRating],
               'dodr': graphData?.['all']?.[Question.DawnOfDragonRidersRating],
-              'gonf': graphDatat?.['all']?.[Question.GONFRating],
-              'hc': graphDatat?.['all']?.[Question.HomecomingRating],
+              'gonf': graphData?.['all']?.[Question.GONFRating],
+              'hc': graphData?.['all']?.[Question.HomecomingRating],
             }"
           ></graph>
         </div>

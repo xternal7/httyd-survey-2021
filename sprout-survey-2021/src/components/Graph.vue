@@ -1,5 +1,10 @@
 <template>
-  <div class="graph-root">
+  <div
+    class="graph-root"
+    :class="{
+      'wide': graphConf?.size === 'wide'
+    }"
+  >
     <div class="graph-header">
       <h1>{{title}}</h1>
       <div>{{description}}</div>
@@ -43,7 +48,7 @@
         :key="column"
         class="graph-value"
         :style="{
-          'width': graphConf.columnWidth ?? undefined,
+          'width': graphConf.columnWidth ?? '2rem',
           'margin': `0 ${graphConf.columnXMargin ?? 0}`
         }"
       >
@@ -102,17 +107,27 @@
         <div
           class="column-label-container"
           :style="{
-            'width': (graphConf?.sidewaysLabels === true ? graphConf.labelsHeight ?? '2rem' : graphConf.labelsHeight ?? undefined),
-            'height': (graphConf?.sidewaysLabels === true ? graphConf.labelsHeight ?? '2rem' : graphConf.labelsHeight ?? undefined) 
+            'width': (graphConf?.sidewaysLabels === true ? graphConf.columnWidth ?? '2rem' : graphConf.columnWidth ?? undefined),
+            'height': (graphConf?.sidewaysLabels === true ? graphConf.labelsHeight ?? '2rem' : graphConf.labelsHeight ?? undefined),
           }"
         >
-          <div
+          <!-- <div
             class="column-label"
             :style="{
               'width': graphConf?.sidewaysLabels === true ? graphConf.labelsHeight ?? '2rem' : undefined,
               'height': graphConf?.sidewaysLabels === true ? graphConf.labelsHeight ?? '2rem' : undefined,
               'transform-origin': graphConf?.sidewaysLabels === true ? '0 0' : undefined,
-              'transform': (graphConf?.sidewaysLabels === true ? 'rotate(90deg) translateY(-1.9rem)' : undefined),
+              'transform': (graphConf?.sidewaysLabels === true ? 'rotate(90deg)' : undefined),
+              'text-align': graphConf?.sidewaysLabels === true ? 'left': undefined,
+              'border': '1px solid blue'
+            }"
+          > -->
+          <div
+            class="column-label"
+            :style="{
+              'height': graphConf?.sidewaysLabels === true ? '100%' : undefined,
+              'width': graphConf?.sidewaysLabels !== true ? '100%' : undefined,
+              'writing-mode': graphConf?.sidewaysLabels === true ? 'vertical-rl' : undefined,
               'text-align': graphConf?.sidewaysLabels === true ? 'left': undefined
             }"
           >
@@ -252,7 +267,7 @@ export default defineComponent({
         (this.setConf as any) = [{
           setKey: 'default',
           setLabel: 'Default',
-          color: '#fff'
+          color: '#edb26a'
         }];
       }
 
@@ -386,6 +401,10 @@ export default defineComponent({
   border: 1px solid #fa6;
   display: flex;
   flex-direction: column;
+
+  &.wide {
+    width: 72rem;
+  }
 }
 
 .graph-header {

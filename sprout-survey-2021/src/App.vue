@@ -98,12 +98,14 @@
         
         <div class="graph-area">
           <graph
-            style="width: 520px !important"
             title="Rate [aspect] from 1 to 10"
             :conf="{
-              columnXMargin: '0.125rem',
-              barWidth: '4px',
-              trackWidthMultiset: 'auto'
+              columnXMargin: '1.2rem',
+              barWidth: '8px',
+              trackWidth: '8px',
+              columnWidth: '72px',
+              trackWidthMultiset: 'auto',
+              size: 'wide'
             }"
             :columns="graphColumnDefinitions.rating1to10()"
             :sets="sets.httydRatingSets"
@@ -129,6 +131,7 @@
           <graph
             title="Favourite and least favourite character"
             :conf="{
+              size: 'wide',
               barWidth: '16px !important',
               trackWidthMultiset: '16px !important',
               trackWidth: '16px !important',
@@ -155,12 +158,14 @@
           <graph
             title="Favourite Soundtrack"
             :conf="{
-              barWidth: '20px !important',
-              trackWidthMultiset: '16px !important',
-              trackWidth: '16px !important',
-              columnWidth: '42px !important',
+              columnXMargin: '1.2rem',
+              barWidth: '12px !important',
+              trackWidthMultiset: '12px !important',
+              trackWidth: '12px !important',
+              columnWidth: '12px !important',
               sidewaysLabels: true,
-              labelsHeight: '16rem'
+              labelsHeight: '12rem',
+              size: 'wide'
             }"
             :columns="graphColumnDefinitions[Question.HTTYD1FavouriteSoundtrack]()"
             :data="graphData?.['all']?.[Question.HTTYD1FavouriteSoundtrack]"
@@ -183,26 +188,31 @@
           And the ratings dropped across the board: plot bar now has a strong presence as far down as 7, score bar is down considerably, theme is down ... 
           the visuals got seems to be the only metric that's getting a bump. 
         </p>
-        <graph
-          title="Rate [aspect] from 1 to 10"
-          :conf="{
-            columnXMargin: '0.125rem',
-            barWidth: '4px',
-            trackWidthMultiset: 'auto'
-          }"
-          :columns="graphColumnDefinitions.rating1to10()"
-          :sets="sets.httydRatingSets"
-          :data="{
-            _multiSet: true,
-            overall: graphData?.['all']?.[Question.HTTYD2Rating],
-            plot: graphData?.['all']?.[Question.HTTYD2PlotRating],
-            score: graphData?.['all']?.[Question.HTTYD2ScoreRating],
-            theme: graphData?.['all']?.[Question.HTTYD2ThemeRating],
-            character: graphData?.['all']?.[Question.HTTYD2CharacterRating],
-            visuals: graphData?.['all']?.[Question.HTTYD2VisualsRating],
-            emotion: graphData?.['all']?.[Question.HTTYD2EmotionRating]
-          }"
-        ></graph>
+        <div class="graph-area">
+          <graph
+            title="Rate [aspect] from 1 to 10"
+            :conf="{
+              columnXMargin: '1.2rem',
+              barWidth: '8px',
+              trackWidth: '8px',
+              columnWidth: '72px',
+              trackWidthMultiset: 'auto',
+              size: 'wide'
+            }"
+            :columns="graphColumnDefinitions.rating1to10()"
+            :sets="sets.httydRatingSets"
+            :data="{
+              _multiSet: true,
+              overall: graphData?.['all']?.[Question.HTTYD2Rating],
+              plot: graphData?.['all']?.[Question.HTTYD2PlotRating],
+              score: graphData?.['all']?.[Question.HTTYD2ScoreRating],
+              theme: graphData?.['all']?.[Question.HTTYD2ThemeRating],
+              character: graphData?.['all']?.[Question.HTTYD2CharacterRating],
+              visuals: graphData?.['all']?.[Question.HTTYD2VisualsRating],
+              emotion: graphData?.['all']?.[Question.HTTYD2EmotionRating]
+            }"
+          ></graph>
+        </div>
 
         <p>Anyway, let's move on:</p>
 
@@ -215,7 +225,8 @@
               trackWidth: '8px !important',
               columnWidth: '32px !important',
               sidewaysLabels: true,
-              labelsHeight: '6rem'
+              labelsHeight: '6rem',
+              size: 'wide'
             }"
             :columns="graphColumnDefinitions.httydCharacter(2)"
             :sets="sets.mostLeastFavouriteSets"
@@ -235,12 +246,14 @@
           <graph
             title="Favourite Soundtrack"
             :conf="{
-              barWidth: '20px !important',
-              trackWidthMultiset: '16px !important',
-              trackWidth: '16px !important',
-              columnWidth: '42px !important',
+              columnXMargin: '1.2rem',
+              barWidth: '12px !important',
+              trackWidthMultiset: '12px !important',
+              trackWidth: '12px !important',
+              columnWidth: '12px !important',
               sidewaysLabels: true,
-              labelsHeight: '16rem'
+              labelsHeight: '12rem',
+              size: 'wide'
             }"
             :columns="graphColumnDefinitions[Question.HTTYD2FavouriteSoundtrack]()"
             :data="graphData?.['all']?.[Question.HTTYD2FavouriteSoundtrack]"
@@ -286,9 +299,12 @@
           <graph
             title="Rate [aspect] from 1 to 10"
             :conf="{
-              columnXMargin: '0.125rem',
-              barWidth: '4px',
-              trackWidthMultiset: 'auto'
+              columnXMargin: '1.2rem',
+              barWidth: '8px',
+              trackWidth: '8px',
+              columnWidth: '72px',
+              trackWidthMultiset: 'auto',
+              size: 'wide'
             }"
             :columns="graphColumnDefinitions.rating1to10()"
             :sets="sets.httydRatingSets"
@@ -309,6 +325,7 @@
           <graph
             title="Favourite and least favourite character"
             :conf="{
+              size: 'wide',
               barWidth: '16px !important',
               trackWidthMultiset: '16px !important',
               trackWidth: '16px !important',
@@ -334,12 +351,14 @@
           <graph
             title="Favourite Soundtrack"
             :conf="{
-              barWidth: '20px !important',
-              trackWidthMultiset: '16px !important',
-              trackWidth: '16px !important',
-              columnWidth: '42px !important',
+              columnXMargin: '1.2rem',
+              barWidth: '12px !important',
+              trackWidthMultiset: '12px !important',
+              trackWidth: '12px !important',
+              columnWidth: '12px !important',
               sidewaysLabels: true,
-              labelsHeight: '16rem'
+              labelsHeight: '12rem',
+              size: 'wide'
             }"
             :columns="graphColumnDefinitions[Question.HTTYD3FavouriteSoundtrack]()"
             :data="graphData?.['all']?.[Question.HTTYD3FavouriteSoundtrack]"
@@ -365,6 +384,7 @@
             title="Would Drago redemption arc improve the movie?"
             description="Originally, Dean DeBlois planned a redemption arc for Drago in the third film. The question was: Do you think this idea, if it had made it into the final product, would have improved the film?"
             :conf="{
+              size: 'wide',
               barWidth: '20px !important',
               trackWidthMultiset: '16px !important',
               trackWidth: '16px !important',
@@ -907,7 +927,7 @@
               barWidth: '16px !important',
               columnWidth: '32px !important',
               sidewaysLabels: true,
-              labelsHeight: '16rem'
+              labelsHeight: '8rem'
             }"
             :columns="graphColumnDefinitions[Question.MostImportantAspects]()"
             :data="graphData?.['all']?.[Question.MostImportantAspects]"
@@ -923,7 +943,14 @@
           <graph
             title="Why do you like HTTYD franchise? (todo: data)"
             description="Which of the following best describe/describes your reason for being drawn to HTTYD? Try not to check more than 2 boxes."
-            :conf="{trackWidth: '8px', barWidth: '16px !important', columnWidth: '32px !important'}"
+            :conf="{
+              barWidth: '20px !important',
+              trackWidthMultiset: '16px !important',
+              trackWidth: '16px !important',
+              columnWidth: '52px !important',
+              sidewaysLabels: true,
+              labelsHeight: '16rem'
+            }"
             :columns="graphColumnDefinitions[Question.HTTYDAppealReasons]()"
             :data="graphData?.['all']?.[Question.HTTYDAppealReasons]"
           ></graph>

@@ -3,6 +3,7 @@ import { Character } from '@/enums/character.enum';
 import { Community } from '@/enums/community.enum';
 import { Continent } from '@/enums/continent.enum';
 import { Draconid } from '@/enums/draconid.enum';
+import { FurryCommunity } from '@/enums/furry-community.enum';
 import { Gender } from '@/enums/gender.enum';
 import { HTTYDAppealReason } from '@/enums/httyd-appeal-reason.enum';
 import { HTTYDShort } from '@/enums/httyd-short.enum';
@@ -162,6 +163,23 @@ let graphColumnDefinitions = {
 
     return cols;
   },
+  [Question.FandomTime]: () => {
+    const cols: any[] = [];
+
+    cols.push({key: 0, label: '<1'});
+
+    for (let i = 1; i < 10; i++) {
+      cols.push({
+        key: i,
+        label: `${i}`
+      });
+    }
+
+    cols.push({key: 10, label: '10+'});
+    cols.push({key: "NoAnswer", label: "Shy"});
+
+    return cols;
+  },
   yesNoNeutral() {
     return [
       {
@@ -171,6 +189,26 @@ let graphColumnDefinitions = {
       {
         key: Answer.Neutral,
         label: 'Neutral'
+      },
+      {
+        key: Answer.No,
+        label: 'No'
+      },
+      {
+        key: Answer.Unanswered,
+        label: 'Shy'
+      }
+    ]
+  },
+  [Question.SurveyParticipation2020]: () => {
+    return [
+      {
+        key: Answer.Yes,
+        label: 'Yes'
+      },
+      {
+        key: Answer.Neutral,
+        label: 'Unsure'
       },
       {
         key: Answer.No,
@@ -735,6 +773,23 @@ let graphColumnDefinitions = {
       }
     ];
   },
+  [Question.FavouriteOpeningScene]: () => {
+    return [
+      {
+        key: 1,
+        label: 'HTTYD1'
+      },{
+        key: 2,
+        label: 'HTTYD2'
+      },{
+        key: 3,
+        label: 'HTTYD: THW'
+      },{
+        key: 0,
+        label: 'Shy'
+      }
+    ]
+  },
   [Question.MovieWatchingOrder]: () => {
     return [
       {
@@ -755,6 +810,9 @@ let graphColumnDefinitions = {
       }, {
         key: MovieOrder.r321,
         label: '3 → 2 → 1'
+      }, {
+        key: MovieOrder.Shy,
+        label: 'Shy'
       }
     ];
   },
@@ -778,6 +836,9 @@ let graphColumnDefinitions = {
       }, {
         key: MovieOrder.r321,
         label: '3 > 2 > 1'
+      }, {
+        key: MovieOrder.Shy,
+        label: 'Shy'
       }
     ];
   },
@@ -842,6 +903,26 @@ let graphColumnDefinitions = {
       }, {
         key: MovieAspect.TooManyAnswers,
         label: 'They tried'
+      }
+    ];
+  },
+  [Question.IsFurry]: () => {
+    return [
+      {
+        key: FurryCommunity.None,
+        label: 'None',
+      },{
+        key: FurryCommunity.Furry,
+        label: 'Furry'
+      },{
+        key: FurryCommunity.Scalie,
+        label: 'Scalie'
+      },{
+        key: FurryCommunity.Other,
+        label: 'Other'
+      },{
+        key: FurryCommunity.AnswerShy,
+        label: 'Shy'
       }
     ];
   }

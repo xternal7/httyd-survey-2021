@@ -59,14 +59,14 @@
         <div class="graph-area">
           <graph
             title="Location"
-            description=""
+            description="What continent do you live on?"
             :conf="{barWidth: '16px !important', columnWidth: '72px !important', labelsHeight: '6rem'}"
             :columns="graphColumnDefinitions[Question.Location]()"
             :data="graphData?.['all']?.[Question.Location]"
           ></graph>
           <graph
             title="Community"
-            description=""
+            description=" Which of the following HTTYD communities do you most frequently use? PICK ONE."
             :conf="{barWidth: '16px !important', columnWidth: '42px !important', sidewaysLabels: true, labelsHeight: '6rem'}"
             :columns="graphColumnDefinitions[Question.Community]()"
             :data="graphData?.['all']?.[Question.Community]"
@@ -75,8 +75,46 @@
 
         <p>Europe, North America, Discord and Reddit dominate the fandom. Very little surprises here.</p>
         
+        <div class="graph-area">
+          <graph
+            title="Participation in 2020 survey"
+            description=""
+            :conf="{barWidth: '16px !important', columnWidth: '72px !important', labelsHeight: '6rem'}"
+            :columns="graphColumnDefinitions[Question.SurveyParticipation2020]()"
+            :data="graphData?.['all']?.[Question.SurveyParticipation2020]"
+          ></graph>
 
-        <b>TODO: FURRY QUESTION NEEDS TO BE ADDDED</b>
+          <graph
+            title="Time in fandom"
+            description="How long have you been a member of the HTTYD fandom? Answers were given in years."
+            :conf="{barWidth: '12px !important', columnWidth: '42px !important', labelsHeight: '6rem'}"
+            :columns="graphColumnDefinitions[Question.FandomTime]()"
+            :data="graphData?.['all']?.[Question.FandomTime]"
+          ></graph>
+        </div>
+
+        <p>
+          The 10+ group is quite sizable at just over a quarter of people. Side note — if there's ever gonna be a third poll,
+          we need to separate time in fandom and 'when did you first watch the first movie' into two separate questions.
+        </p>
+
+        <div class="graph-area">
+          <graph
+            title="Do you identify as a member of any of the following communities?"
+            description="(Multiple choices possible)"
+            :conf="{barWidth: '16px !important', columnWidth: '72px !important', labelsHeight: '6rem'}"
+            :columns="graphColumnDefinitions[Question.IsFurry]()"
+            :data="graphData?.['all']?.[Question.IsFurry]"
+          ></graph>
+        </div>
+
+        <p>
+          ... with some of these answers bleeding into the gender section, I can't say I'm surprised.
+        </p>
+        <p>
+          Additionally, {{surveyResults.providedUsernames}} out of {{surveyResults.totalAnswers}} ({{(surveyResults.providedAnswers/(surveyResults.totalAnswers || 1)).toFixed()}}%) of people left their usernames and
+          {{surveyResults.providedFeedbacks}} ({{(surveyResults.providedFeedbacks/(surveyResults.totalAnswers || 1)).toFixed()}}%) have left us some feedback. 
+        </p>
       </div>
     </div>
 
@@ -554,8 +592,14 @@
       <div class="graph-area">
         <graph
           title="Favourite draconid"
-          :conf="{trackWidth: '8px', barWidth: '16px !important', columnWidth: '32px !important'}"
-          :columns="graphColumnDefinitions[Question.FavouriteDraconid]"
+          :conf="{
+            trackWidth: '8px',
+            barWidth: '16px !important',
+            columnWidth: '32px !important',
+            sidewaysLabels: true,
+            labelsHeight: '12rem'
+          }"
+          :columns="graphColumnDefinitions[Question.FavouriteDraconid]()"
           :data="graphData?.['all']?.[Question.FavouriteDraconid]"
         ></graph>
       </div>
@@ -571,8 +615,14 @@
       <div class="graph-area">
         <graph
           title="Favourite villain"
-          :conf="{trackWidth: '8px', barWidth: '16px !important', columnWidth: '32px !important'}"
-          :columns="graphColumnDefinitions[Question.FavouriteVillain]"
+          :conf="{
+            trackWidth: '8px',
+            barWidth: '16px !important',
+            columnWidth: '32px !important',
+            sidewaysLabels: true,
+            labelsHeight: '12rem'
+          }"
+          :columns="graphColumnDefinitions[Question.FavouriteVillain]()"
           :data="graphData?.['all']?.[Question.FavouriteVillain]"
         ></graph>
       </div>
@@ -586,8 +636,14 @@
       <div class="graph-area">
         <graph
           title="Favourite opening scene"
-          :conf="{trackWidth: '8px', barWidth: '16px !important', columnWidth: '32px !important'}"
-          :columns="graphColumnDefinitions[Question.FavouriteOpeningScene]"
+          :conf="{
+            trackWidth: '8px',
+            barWidth: '16px !important',
+            columnWidth: '32px !important',
+            sidewaysLabels: true,
+            labelsHeight: '12rem'
+          }"
+          :columns="graphColumnDefinitions[Question.FavouriteOpeningScene]()"
           :data="graphData?.['all']?.[Question.FavouriteOpeningScene]"
         ></graph>
       </div>
@@ -784,7 +840,7 @@
             :conf="{
               trackWidth: '8px',
               barWidth: '16px !important',
-              columnWidth: '32px !important',
+              columnWidth: '64px !important',
               sidewaysLabels: true,
               labelsHeight: '16rem'
             }"
@@ -798,8 +854,8 @@
           <graph
             title="Rate [short] from 1 to 10"
             :conf="{
-              columnXMargin: '0.125rem',
-              barWidth: '8px',
+              columnXMargin: '0.75rem',
+              barWidth: '6px',
               trackWidthMultiset: 'auto'
             }"
             :columns="graphColumnDefinitions.rating1to10()"
@@ -973,23 +1029,44 @@
           <graph
             title="Movie ranking"
             description="From best to worst"
-            :conf="{trackWidth: '8px', barWidth: '16px !important', columnWidth: '32px !important'}"
-            :columns="graphColumnDefinitions[Question.MovieRanking]"
+            :conf="{
+              barWidth: '20px !important',
+              trackWidthMultiset: '16px !important',
+              trackWidth: '16px !important',
+              columnWidth: '52px !important',
+              sidewaysLabels: true,
+              labelsHeight: '6rem'
+            }"
+            :columns="graphColumnDefinitions[Question.MovieRanking]()"
             :data="graphData?.['all']?.[Question.MovieRanking]"
           ></graph>
 
           <graph
             title="Movie watching order"
             description="In which order did you see the each film for the first time?"
-            :conf="{trackWidth: '8px', barWidth: '16px !important', columnWidth: '32px !important'}"
-            :columns="graphColumnDefinitions[Question.MovieWatchingOrder]"
+            :conf="{
+              barWidth: '20px !important',
+              trackWidthMultiset: '16px !important',
+              trackWidth: '16px !important',
+              columnWidth: '52px !important',
+              sidewaysLabels: true,
+              labelsHeight: '6rem'
+            }"
+            :columns="graphColumnDefinitions[Question.MovieWatchingOrder]()"
             :data="graphData?.['all']?.[Question.MovieWatchingOrder]"
           ></graph>
 
           <graph
             title="The Hidden World opinion change"
             description="If you watched The Hidden World before seeing the other two films, did your opinion of The Hidden World change after watching them?"
-            :conf="{trackWidth: '8px', barWidth: '16px !important', columnWidth: '32px !important'}"
+            :conf="{
+              barWidth: '20px !important',
+              trackWidthMultiset: '16px !important',
+              trackWidth: '16px !important',
+              columnWidth: '52px !important',
+              sidewaysLabels: true,
+              labelsHeight: '6rem'
+            }"
             :columns="graphColumnDefinitions.yesNoNeutral()"
             :data="graphData?.['all']?.[Question.THWOpinionChange]"
           ></graph>
@@ -1082,7 +1159,7 @@ export default defineComponent({
         httydRatingSets: this.getHttydRatingSet(),
         httydMovieSets: this.getHttydMovieSet(),
         mostLeastFavouriteSets: this.getMostLeastFavouriteSet(),
-      }
+      },
     };
   },
   async created() {

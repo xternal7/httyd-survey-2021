@@ -6,6 +6,7 @@ import { Draconid } from '@/enums/draconid.enum';
 import { Gender } from '@/enums/gender.enum';
 import { HTTYDAppealReason } from '@/enums/httyd-appeal-reason.enum';
 import { HTTYDShort } from '@/enums/httyd-short.enum';
+import { MovieAspect } from '@/enums/movie-aspect';
 import { MovieOrder } from '@/enums/movie-order.enum';
 import { Question } from '@/enums/question.enum';
 import { HTTYD2Soundtrack, HTTYDSoundtrack, THWSoundtrack } from '@/enums/soundtrack.enum';
@@ -782,12 +783,66 @@ let graphColumnDefinitions = {
   },
   [Question.HTTYDAppealReasons]: () => {
     return [
-
+      {
+        key: HTTYDAppealReason.AnimationInterest,
+        label: 'Interested in animation'
+      },{
+        key: HTTYDAppealReason.DragonsCool,
+        label: 'Dragons are cool'
+      },{
+        key: HTTYDAppealReason.FantasyFan,
+        label: 'Like fantasy',
+      },{
+        key: HTTYDAppealReason.FascinatingWorld,
+        label: 'Found world fascinating'
+      },{
+        key: HTTYDAppealReason.ObjectiveQuality,
+        label: 'At least a part of the fracnhise is objectively good'
+      }, {
+        key: HTTYDAppealReason.Relatable,
+        label: 'Found the story relatable'
+      }, {
+        key: HTTYDAppealReason.CharacterShipping,
+        label: 'Character shipping'
+      }, {
+        key: HTTYDAppealReason.Other,
+        label: 'Other'
+      }, {
+        key: HTTYDAppealReason.NoAnswer,
+        label: 'Shy'
+      }, {
+        key: HTTYDAppealReason.TooManyAnswers,
+        label: 'They tried'
+      }
     ];
   },
   [Question.MostImportantAspects]: () => {
     return [
-
+      {
+        key: MovieAspect.Characters,
+        label: 'Characters'
+      }, {
+        key: MovieAspect.Emotion,
+        label: 'Emotion'
+      }, {
+        key: MovieAspect.Plot,
+        label: 'Plot'
+      }, {
+        key: MovieAspect.Soundtrack,
+        label: 'Soundtrack'
+      }, {
+        key: MovieAspect.Theme,
+        label: 'Theme'
+      }, {
+        key: MovieAspect.Visuals,
+        label: 'Visuals'
+      }, {
+        key: MovieAspect.NoAnswer,
+        label: 'Shy'
+      }, {
+        key: MovieAspect.TooManyAnswers,
+        label: 'They tried'
+      }
     ];
   }
   

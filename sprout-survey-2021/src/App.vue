@@ -1100,7 +1100,11 @@
       <p>Poll: A Brussel Sprout</p>
       <p>Website and related software: Tamius Han</p>
       <p>QA:</p>
-      <p style="color: green">>implying there was QA</p>
+      <p>
+        <span style="color: green">>implying there was QA</span>
+        <small><small><br/>Actually there was. Lots of it. I've got way more problems with parsing data this year than the last one.</small></small>
+      </p>
+      
       <p>
         Tech stack:
       </p>

@@ -71,6 +71,7 @@ const ratingQuestions = [
   Question.YouCanEnjoyGarbageAgreement,
   Question.FavouriteDraconidReasonScore,      // not actually question
   Question.FavouriteVillainReasonScore,
+  Question.BondType
 ]
 
 export class GdocsScrapper {
@@ -151,6 +152,7 @@ export class GdocsScrapper {
     const processedData = [];
     let deletedCount = 0;
 
+    let rcount = 0;
     for (const row of data) {
 
       // skip over things we marked as a duplicate
@@ -237,19 +239,19 @@ export class GdocsScrapper {
       const isFurry = row[Question.IsFurry];
 
       rowOut[Question.IsFurry] = [];
-      if (isFurry.indexOf('Furry')) {
+      if (isFurry.indexOf('Furry') !== -1) {
         rowOut[Question.IsFurry].push(FurryCommunity.Furry);
       }
-      if (isFurry.indexOf('Scaly')) {
+      if (isFurry.indexOf('Scaly') !== -1) {
         rowOut[Question.IsFurry].push(FurryCommunity.Scalie);
       }
-      if (isFurry.indexOf('Other Related')) {
+      if (isFurry.indexOf('Other Related') !== -1) {
         rowOut[Question.IsFurry].push(FurryCommunity.Other);
       }
-      if (isFurry.indexOf('Prefer Not To Answer')) {
+      if (isFurry.indexOf('Prefer Not To Answer') !== -1) {
         rowOut[Question.IsFurry].push(FurryCommunity.AnswerShy);
       }
-      if (isFurry.indexOf('I do not identify')) {
+      if (isFurry.indexOf('I do not identify') !== -1) {
         rowOut[Question.IsFurry].push(FurryCommunity.None);
       }
       if (isFurry.trim().length === 0) {
@@ -523,6 +525,14 @@ export class GdocsScrapper {
         dwFlag: dwFlag2
       }
 
+      console.info(`\n\n\nProcessed row ${rcount}. Processed data:\n`);
+      rcount++;
+      for(const col in row) {
+        console.info(`Col. ${col}: parsed ${JSON.stringify(rowOut[col])} from ${row[col]} `);
+      }
+      console.info('----------------');
+
+
       processedData.push(rowOut);
     }
 
@@ -677,6 +687,7 @@ export class GdocsScrapper {
       case Question.YouCanEnjoyGarbageAgreement:
       case Question.FavouriteDraconidReasonScore:      // not actually questions
       case Question.FavouriteVillainReasonScore:
+      case Question.BondType:
         return true;
       default: 
         return false;

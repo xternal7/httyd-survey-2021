@@ -1128,6 +1128,11 @@ import HelloWorld from './components/HelloWorld.vue';
 import TitleScreen from './components/TitleScreen.vue';
 import Graph from './components/Graph.vue';
 
+import {Character} from './enums/character.enum';
+import {FurryCommunity} from './enums/furry-community.enum';
+import {Draconid} from './enums/draconid.enum';
+import {Villain} from './enums/villain.enum';
+
 // data
 import surveyResults from './assets/results/survey-data';
 import graphColumnDefinitions from './helpers/column-definitions';
@@ -1202,9 +1207,9 @@ export default defineComponent({
 
           if (Array.isArray(answer)) {
             for (const ans of answer) {
-              if (question === ('16' as Question)) {
-                // console.log('ans', ans, {[ans]: 'test'})
-              }
+              // if (question === ('16' as Question)) {
+              //   console.log('ans is arr:', ans, {[ans]: 'test'})
+              // }
               if (! processedData[question][ans]) {
                 processedData[question][ans] = 1;
               } else {
@@ -1212,9 +1217,9 @@ export default defineComponent({
               }
             }
           } else if (answer.value) {
-            if (question === ('16' as Question)) {
-              // console.log('ans', answer.value, {[answer.value]: 'test'})
-            }
+            // if (question === Question.HTTYD1FavouriteCharacter) {
+            //   console.log('ans is obj:', answer.value)
+            // }
             if (answer.dwFlag) {
               if (! processedData[question]['dwFlags']) {
                 processedData[question]['dwFlags'] = 1;
@@ -1228,9 +1233,9 @@ export default defineComponent({
               processedData[question][answer.value]++;
             }
           } else {
-            if (question === ('16' as Question)) {
-              // console.log('ans', answer, {[answer]: 'test'})
-            }
+            // if (question === ('16' as Question)) {
+            //   console.log('ans', answer, {[answer]: 'test'})
+            // }
             if (! processedData[question][answer]) {
               processedData[question][answer] = 1;
             } else {
@@ -1245,6 +1250,69 @@ export default defineComponent({
       const endTime = performance.now();
       console.info(`Data for ${datasetName} processed in ${endTime - startTime} ms.        (note: numbers are slightly fuzzed cos spectre)`);
       console.info('Processed data:', processedData);
+
+      console.info(
+      `\n\n\n\n---------------[DATA INPUT]---------------`,
+      `\n\n\n          general info\n`,
+      // `\ndeleted answers: ${data.deletedCount}`,
+      // `\n  valid answers: ${data.processedData.length}`,
+      // `\n username given: ${usernameCount}`,
+      // `\n feedback given: ${feedbackCount}`,
+      '\n\n\n          furry count\n',
+      `\n      not furry: ${data.filter(x => x[Question.IsFurry].indexOf(FurryCommunity.None) !== -1).length}`,
+      `\n       is furry: ${data.filter(x => x[Question.IsFurry].indexOf(FurryCommunity.Furry) !== -1).length}`,
+      `\n      is scalie: ${data.filter(x => x[Question.IsFurry].indexOf(FurryCommunity.Scalie) !== -1).length}`,
+      `\n       is other: ${data.filter(x => x[Question.IsFurry].indexOf(FurryCommunity.Other) !== -1).length}`,
+      `\n         is shy: ${data.filter(x => x[Question.IsFurry].indexOf(FurryCommunity.AnswerShy) !== -1).length}`,
+      '\n\n\n          fav draconid\n',
+      `\n     night fury: ${data.filter(x => x[Question.FavouriteDraconid].value === Draconid.NightFury).length}`,
+      `\n       thotfury: ${data.filter(x => x[Question.FavouriteDraconid].value === Draconid.ThotFury).length}`,
+      '\n\n\n          fav villain\n',
+      `\n    green death: ${data.filter(x => x[Question.FavouriteVillain].value === Villain.GreenDeath).length}`,
+      `\n          Drago: ${data.filter(x => x[Question.FavouriteVillain].value === Villain.Drago).length}`,
+      '\n\n\n          fav/least fav char\n',
+      '\n               | HTTYD1    HTTYD2   HTTYD3',
+      `\n         hiccup: +${
+        data.filter(x => x[Question.HTTYD1FavouriteCharacter].value === Character.Hiccup).length
+      }; -${
+        data.filter(x => x[Question.HTTYD1WorstCharacter].value === Character.Hiccup).length
+      }   +${
+        data.filter(x => x[Question.HTTYD2FavouriteCharacter].value === Character.Hiccup).length
+      }; -${
+        data.filter(x => x[Question.HTTYD2WorstCharacter].value === Character.Hiccup).length
+      }   +${
+        data.filter(x => x[Question.HTTYD3FavouriteCharacter].value === Character.Hiccup).length
+      }; -${
+        data.filter(x => x[Question.HTTYD3WorstCharacter].value === Character.Hiccup).length
+      }   `,
+      `\n        tuffnut: +${
+        data.filter(x => x[Question.HTTYD1FavouriteCharacter].value === Character.Tuffnut).length
+      }; -${
+        data.filter(x => x[Question.HTTYD1WorstCharacter].value === Character.Tuffnut).length
+      }   +${
+        data.filter(x => x[Question.HTTYD2FavouriteCharacter].value === Character.Tuffnut).length
+      }; -${
+        data.filter(x => x[Question.HTTYD2WorstCharacter].value === Character.Tuffnut).length
+      }   +${
+        data.filter(x => x[Question.HTTYD3FavouriteCharacter].value === Character.Tuffnut).length
+      }; -${
+        data.filter(x => x[Question.HTTYD3WorstCharacter].value === Character.Tuffnut).length
+      }   `,
+      `\n        ruffnut: +${
+        data.filter(x => x[Question.HTTYD1FavouriteCharacter].value === Character.Ruffnut).length
+      }; -${
+        data.filter(x => x[Question.HTTYD1WorstCharacter].value === Character.Ruffnut).length
+      }   +${
+        data.filter(x => x[Question.HTTYD2FavouriteCharacter].value === Character.Ruffnut).length
+      }; -${
+        data.filter(x => x[Question.HTTYD2WorstCharacter].value === Character.Ruffnut).length
+      }   +${
+        data.filter(x => x[Question.HTTYD3FavouriteCharacter].value === Character.Ruffnut).length
+      }; -${
+        data.filter(x => x[Question.HTTYD3WorstCharacter].value === Character.Ruffnut).length
+      }   `,
+    );
+
 
       processedData['answerCount'] = data.length;
       return processedData;

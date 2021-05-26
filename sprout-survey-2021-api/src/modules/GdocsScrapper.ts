@@ -151,6 +151,8 @@ export class GdocsScrapper {
   processData(data: any) {
     const processedData = [];
     let deletedCount = 0;
+    let feedbackCount = 0;
+    let usernameCount = 0;
 
     let rcount = 0;
     for (const row of data) {
@@ -160,6 +162,10 @@ export class GdocsScrapper {
         console.warn('Skipping row as it\'s been marked a duplicate. Row:\n', row);
         deletedCount++;
         continue;
+      }
+      // also count feedbacks
+      if (row[Question.SurveyFeedbackProvided]) {
+        feedbackCount++;
       }
 
       let rowOut: any = {};
@@ -260,6 +266,9 @@ export class GdocsScrapper {
 
       // count people who provided usernames, but omit the actual username
       rowOut[Question.UsernameProvided] = !!row[Question.UsernameProvided];
+      if (rowOut[Question.UsernameProvided]) {
+        usernameCount++;
+      }
 
       // favourite characters go
       const httyd1fav = row[Question.HTTYD1FavouriteCharacter].split('; ');

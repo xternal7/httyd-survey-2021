@@ -802,7 +802,7 @@ let graphColumnDefinitions = {
         key: MovieOrder.r213,
         label: '2 → 1 → 3'
       }, {
-        key: MovieOrder.r213,
+        key: MovieOrder.r231,
         label: '2 → 3 → 1'
       }, {
         key: MovieOrder.r312,
@@ -828,7 +828,7 @@ let graphColumnDefinitions = {
         key: MovieOrder.r213,
         label: '2 > 1 > 3'
       }, {
-        key: MovieOrder.r213,
+        key: MovieOrder.r231,
         label: '2 > 3 > 1'
       }, {
         key: MovieOrder.r312,

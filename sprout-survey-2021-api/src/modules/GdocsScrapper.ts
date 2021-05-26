@@ -534,6 +534,9 @@ export class GdocsScrapper {
         dwFlag: dwFlag2
       }
 
+
+
+
       console.info(`\n\n\nProcessed row ${rcount}. Processed data:\n`);
       rcount++;
       for(const col in row) {
@@ -544,6 +547,69 @@ export class GdocsScrapper {
 
       processedData.push(rowOut);
     }
+
+    console.info(
+      `\n\n\n\n---------------[DATA PROCESSED]---------------`,
+      `\n\n\n          general info\n`,
+      `\ndeleted answers: ${deletedCount}`,
+      `\n  valid answers: ${processedData.length}`,
+      `\n username given: ${usernameCount}`,
+      `\n feedback given: ${feedbackCount}`,
+      '\n\n\n          furry count\n',
+      `\n      not furry: ${processedData.filter(x => x[Question.IsFurry].indexOf(FurryCommunity.None) !== -1).length}`,
+      `\n       is furry: ${processedData.filter(x => x[Question.IsFurry].indexOf(FurryCommunity.Furry) !== -1).length}`,
+      `\n      is scalie: ${processedData.filter(x => x[Question.IsFurry].indexOf(FurryCommunity.Scalie) !== -1).length}`,
+      `\n       is other: ${processedData.filter(x => x[Question.IsFurry].indexOf(FurryCommunity.Other) !== -1).length}`,
+      `\n         is shy: ${processedData.filter(x => x[Question.IsFurry].indexOf(FurryCommunity.AnswerShy) !== -1).length}`,
+      '\n\n\n          fav draconid\n',
+      `\n     night fury: ${processedData.filter(x => x[Question.FavouriteDraconid].value === Draconid.NightFury).length}`,
+      `\n       thotfury: ${processedData.filter(x => x[Question.FavouriteDraconid].value === Draconid.ThotFury).length}`,
+      '\n\n\n          fav villain\n',
+      `\n    green death: ${processedData.filter(x => x[Question.FavouriteVillain].value === Villain.GreenDeath).length}`,
+      `\n          Drago: ${processedData.filter(x => x[Question.FavouriteVillain].value === Villain.Drago).length}`,
+      '\n\n\n          fav/least fav char\n',
+      '\n               | HTTYD1    HTTYD2   HTTYD3',
+      `\n         hiccup: +${
+        processedData.filter(x => x[Question.HTTYD1FavouriteCharacter].value === Character.Hiccup).length
+      }; -${
+        processedData.filter(x => x[Question.HTTYD1WorstCharacter].value === Character.Hiccup).length
+      }   +${
+        processedData.filter(x => x[Question.HTTYD2FavouriteCharacter].value === Character.Hiccup).length
+      }; -${
+        processedData.filter(x => x[Question.HTTYD2WorstCharacter].value === Character.Hiccup).length
+      }   +${
+        processedData.filter(x => x[Question.HTTYD3FavouriteCharacter].value === Character.Hiccup).length
+      }; -${
+        processedData.filter(x => x[Question.HTTYD3WorstCharacter].value === Character.Hiccup).length
+      }   `,
+      `\n        tuffnut: +${
+        processedData.filter(x => x[Question.HTTYD1FavouriteCharacter].value === Character.Tuffnut).length
+      }; -${
+        processedData.filter(x => x[Question.HTTYD1WorstCharacter].value === Character.Tuffnut).length
+      }   +${
+        processedData.filter(x => x[Question.HTTYD2FavouriteCharacter].value === Character.Tuffnut).length
+      }; -${
+        processedData.filter(x => x[Question.HTTYD2WorstCharacter].value === Character.Tuffnut).length
+      }   +${
+        processedData.filter(x => x[Question.HTTYD3FavouriteCharacter].value === Character.Tuffnut).length
+      }; -${
+        processedData.filter(x => x[Question.HTTYD3WorstCharacter].value === Character.Tuffnut).length
+      }   `,
+      `\n        ruffnut: +${
+        processedData.filter(x => x[Question.HTTYD1FavouriteCharacter].value === Character.Ruffnut).length
+      }; -${
+        processedData.filter(x => x[Question.HTTYD1WorstCharacter].value === Character.Ruffnut).length
+      }   +${
+        processedData.filter(x => x[Question.HTTYD2FavouriteCharacter].value === Character.Ruffnut).length
+      }; -${
+        processedData.filter(x => x[Question.HTTYD2WorstCharacter].value === Character.Ruffnut).length
+      }   +${
+        processedData.filter(x => x[Question.HTTYD3FavouriteCharacter].value === Character.Ruffnut).length
+      }; -${
+        processedData.filter(x => x[Question.HTTYD3WorstCharacter].value === Character.Ruffnut).length
+      }   `,
+    );
+
 
     return {
       deletedCount: deletedCount,

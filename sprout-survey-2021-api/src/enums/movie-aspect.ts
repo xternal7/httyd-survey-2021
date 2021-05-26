@@ -4,5 +4,7 @@ export enum MovieAspect {
   Theme,
   Emotion,
   Visuals,
-  Soundtrack
+  Soundtrack,
+  NoAnswer,
+  TooManyAnswers
 }

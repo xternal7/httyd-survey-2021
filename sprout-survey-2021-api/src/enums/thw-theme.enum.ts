@@ -3,9 +3,11 @@ export enum THWTheme {
   GrowingUp,
   PuttingAsideIdealism,
   AcceptingFriendshipsEnd,
-  Moralfagging,
+  Moralfagging,  // Negative Effects Humans Sometimes Have on Animals and/or the Environment
   LoveLoss,
   Other,
   AllGarbage,
-  SarcasticAnswer
+  Salt,
+  SarcasticAnswer,
+  TooManyAnswers
 }

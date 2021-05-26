@@ -7,5 +7,7 @@ export enum HTTYDAppealReason {
   ObjectiveQuality,
   AnimationInterest,
   CharacterShipping,
-  Other
+  Other,
+  NoAnswer,
+  TooManyAnswers
 }

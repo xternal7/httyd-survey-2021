@@ -203,7 +203,8 @@
               columnWidth: '12px !important',
               sidewaysLabels: true,
               labelsHeight: '12rem',
-              size: 'wide'
+              size: 'wide',
+              hideZeroColumns: true
             }"
             :columns="graphColumnDefinitions[Question.HTTYD1FavouriteSoundtrack]()"
             :data="graphData?.['all']?.[Question.HTTYD1FavouriteSoundtrack]"
@@ -291,7 +292,8 @@
               columnWidth: '12px !important',
               sidewaysLabels: true,
               labelsHeight: '12rem',
-              size: 'wide'
+              size: 'wide',
+              hideZeroColumns: true
             }"
             :columns="graphColumnDefinitions[Question.HTTYD2FavouriteSoundtrack]()"
             :data="graphData?.['all']?.[Question.HTTYD2FavouriteSoundtrack]"
@@ -396,7 +398,8 @@
               columnWidth: '12px !important',
               sidewaysLabels: true,
               labelsHeight: '12rem',
-              size: 'wide'
+              size: 'wide',
+              hideZeroColumns: true
             }"
             :columns="graphColumnDefinitions[Question.HTTYD3FavouriteSoundtrack]()"
             :data="graphData?.['all']?.[Question.HTTYD3FavouriteSoundtrack]"

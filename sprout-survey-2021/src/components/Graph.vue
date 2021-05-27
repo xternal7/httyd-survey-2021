@@ -43,98 +43,102 @@
           </div>
         </div>
       </div>
-      <div
+      <template
         v-for="column of columns"
-        :key="column"
-        class="graph-value"
-        :style="{
-          'width': graphConf.columnWidth ?? '2rem',
-          'margin': `0 ${graphConf.columnXMargin ?? 0}`
-        }"
       >
-        <div class="graph-bars">
-          <template 
-            v-for="set of setConf"
-          >
-            <div
-              v-if="displayMode === GraphDisplayMode.Absolute"
-              class="graph-set-track"
-              :style="{
-                'width': (setConf.length > 1 ? graphConf.trackWidthMultiset : graphConf.trackWidth)
-              }"
-            >
-              <div
-                class="graph-data-bar"
-                :style="{
-                  'width': graphConf.barWidth,
-                  'height': ( (graphData[column.key]?.[set.setKey]?.value || 0) / maxValue * 100) + '%',
-                  'background-color': (set.color || '#fff'),
-                  'border': (set.border || '0px solid transparent'),
-                }"
-              >
-                <div class="graph-data-column-value">
-                  <b>{{column.label}}</b><template v-if="setConf.length"><b>:</b> {{set.setLabel}}</template><br/>
-                  {{graphData[column.key]?.[set.setKey]?.value}} ({{ (graphData[column.key]?.[set.setKey]?.percent || 0).toFixed(2) }}%)
-                </div>
-              </div>
-            </div>
-
-            <!-- relative display -->
-            <div
-              v-else
-              class="graph-set-track"
-              :style="{
-                'width': (setConf.length > 1 ? graphConf.trackWidthMultiset : graphConf.trackWidth)
-              }"
-            >
-              <div
-                class="graph-data-bar"
-                :style="{
-                  'width': graphConf.barWidth,
-                  'height': ( (graphData[column.key]?.[set.setKey]?.percent || 0) / maxPercent * 100) + '%',
-                  'background-color': (set.color || '#fff'),
-                  'border': (set.border || '0px solid transparent'),
-                }"
-              >
-                <div class="graph-data-column-value">
-                  <b>{{column.label}}</b><template v-if="setConf.length"><b>:</b> {{set.setLabel}}</template><br/>
-                  <span class="value-display">{{ (graphData[column.key]?.[set.setKey]?.percent || 0).toFixed(2) }}% ({{graphData[column.key]?.[set.setKey]?.value}})</span>
-                </div>
-              </div>
-            </div>
-          </template>
-        </div>
         <div
-          class="column-label-container"
+          v-if="!conf.hideZeroColumns || !hiddenCols[column.key]"
+          :key="column"
+          class="graph-value"
           :style="{
-            'width': (graphConf?.sidewaysLabels === true ? graphConf.columnWidth ?? '2rem' : graphConf.columnWidth ?? undefined),
-            'height': (graphConf?.sidewaysLabels === true ? graphConf.labelsHeight ?? '2rem' : graphConf.labelsHeight ?? undefined),
+            'width': graphConf.columnWidth ?? '2rem',
+            'margin': `0 ${graphConf.columnXMargin ?? 0}`
           }"
         >
-          <!-- <div
-            class="column-label"
-            :style="{
-              'width': graphConf?.sidewaysLabels === true ? graphConf.labelsHeight ?? '2rem' : undefined,
-              'height': graphConf?.sidewaysLabels === true ? graphConf.labelsHeight ?? '2rem' : undefined,
-              'transform-origin': graphConf?.sidewaysLabels === true ? '0 0' : undefined,
-              'transform': (graphConf?.sidewaysLabels === true ? 'rotate(90deg)' : undefined),
-              'text-align': graphConf?.sidewaysLabels === true ? 'left': undefined,
-              'border': '1px solid blue'
-            }"
-          > -->
-          <div
-            class="column-label"
-            :style="{
-              'height': graphConf?.sidewaysLabels === true ? '100%' : undefined,
-              'width': graphConf?.sidewaysLabels !== true ? '100%' : undefined,
-              'writing-mode': graphConf?.sidewaysLabels === true ? 'vertical-rl' : undefined,
-              'text-align': graphConf?.sidewaysLabels === true ? 'left': undefined
-            }"
-          >
-            {{column.label}}
-          </div>
+            <div class="graph-bars">
+              <template 
+                v-for="set of setConf"
+              >
+                <div
+                  v-if="displayMode === GraphDisplayMode.Absolute"
+                  class="graph-set-track"
+                  :style="{
+                    'width': (setConf.length > 1 ? graphConf.trackWidthMultiset : graphConf.trackWidth)
+                  }"
+                >
+                  <div
+                    class="graph-data-bar"
+                    :style="{
+                      'width': graphConf.barWidth,
+                      'height': ( (graphData[column.key]?.[set.setKey]?.value || 0) / maxValue * 100) + '%',
+                      'background-color': (set.color || '#fff'),
+                      'border': (set.border || '0px solid transparent'),
+                    }"
+                  >
+                    <div class="graph-data-column-value">
+                      <b>{{column.label}}</b><template v-if="setConf.length"><b>:</b> {{set.setLabel}}</template><br/>
+                      {{graphData[column.key]?.[set.setKey]?.value}} ({{ (graphData[column.key]?.[set.setKey]?.percent || 0).toFixed(2) }}%)
+                    </div>
+                  </div>
+                </div>
+
+                <!-- relative display -->
+                <div
+                  v-else
+                  class="graph-set-track"
+                  :style="{
+                    'width': (setConf.length > 1 ? graphConf.trackWidthMultiset : graphConf.trackWidth)
+                  }"
+                >
+                  <div
+                    class="graph-data-bar"
+                    :style="{
+                      'width': graphConf.barWidth,
+                      'height': ( (graphData[column.key]?.[set.setKey]?.percent || 0) / maxPercent * 100) + '%',
+                      'background-color': (set.color || '#fff'),
+                      'border': (set.border || '0px solid transparent'),
+                    }"
+                  >
+                    <div class="graph-data-column-value">
+                      <b>{{column.label}}</b><template v-if="setConf.length"><b>:</b> {{set.setLabel}}</template><br/>
+                      <span class="value-display">{{ (graphData[column.key]?.[set.setKey]?.percent || 0).toFixed(2) }}% ({{graphData[column.key]?.[set.setKey]?.value}})</span>
+                    </div>
+                  </div>
+                </div>
+              </template>
+            </div>
+            <div
+              class="column-label-container"
+              :style="{
+                'width': (graphConf?.sidewaysLabels === true ? graphConf.columnWidth ?? '2rem' : graphConf.columnWidth ?? undefined),
+                'height': (graphConf?.sidewaysLabels === true ? graphConf.labelsHeight ?? '2rem' : graphConf.labelsHeight ?? undefined),
+              }"
+            >
+              <!-- <div
+                class="column-label"
+                :style="{
+                  'width': graphConf?.sidewaysLabels === true ? graphConf.labelsHeight ?? '2rem' : undefined,
+                  'height': graphConf?.sidewaysLabels === true ? graphConf.labelsHeight ?? '2rem' : undefined,
+                  'transform-origin': graphConf?.sidewaysLabels === true ? '0 0' : undefined,
+                  'transform': (graphConf?.sidewaysLabels === true ? 'rotate(90deg)' : undefined),
+                  'text-align': graphConf?.sidewaysLabels === true ? 'left': undefined,
+                  'border': '1px solid blue'
+                }"
+              > -->
+              <div
+                class="column-label"
+                :style="{
+                  'height': graphConf?.sidewaysLabels === true ? '100%' : undefined,
+                  'width': graphConf?.sidewaysLabels !== true ? '100%' : undefined,
+                  'writing-mode': graphConf?.sidewaysLabels === true ? 'vertical-rl' : undefined,
+                  'text-align': graphConf?.sidewaysLabels === true ? 'left': undefined
+                }"
+              >
+                {{column.label}}
+              </div>
+            </div>
         </div>
-      </div>
+      </template>
     </div>
     <div 
       v-if="setConf.length > 1"
@@ -183,7 +187,7 @@ export default defineComponent({
     'sets',
     'sort',
     'debug',
-    'defaultMode'
+    'defaultMode',
   ],
   data() {
     return {
@@ -199,7 +203,8 @@ export default defineComponent({
         tickPercentValues: [] as string[]
       },
       displayMode: GraphDisplayMode.Absolute,
-      GraphDisplayMode
+      GraphDisplayMode,
+      hiddenCols: {},
     }
   },
   watch: {
@@ -315,6 +320,13 @@ export default defineComponent({
           if (maxPercent < processedAnswer.percent) {
             maxPercent = processedAnswer.percent / 100;
           }
+        }
+      }
+
+      
+      if (this.conf.hideZeroColumns) {
+        for (const col of this.columns) {
+          this.hiddenCols[col.key] = (! this.graphData[col.key]);
         }
       }
 

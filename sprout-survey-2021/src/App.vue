@@ -26,6 +26,32 @@
     </div>
 
     <div class="segment">
+      <h1>Introduction</h1>
+      <p>
+        Back in late January, there's been a poll about various aspects of How To Train Your Dragon franchise, much like the year prior. These are the results.
+      </p>
+      <p>
+        Much like last year, we'll start by graphs showing the raw responses (with a little bit of commentary). After that, we'll try to filter our results to
+        see if we can spot any interesting patterns. Last but not least, there'll also be a quick "Q&A session" where I respond to some of the interesting 
+        'survey feedback' responses we got.
+      </p>
+      <p>
+        I can already hear some of you saying: "But Tam! The survey was in January! What took you this long?" And this is a fair question — after all, last year's
+        results were done much quicker. The answer to this question lies in combination of reasons: the 'rona, the document with results got corrupted while it was
+        being prepared and we had to roll it back. Then there's the homebrew graphs (I decided to roll my own, because the library I used last year caused massive
+        performance issues even with only a dozen or two questions), which were a mild annoyance. The amount of bugs was bigger than the last year, but most importantly:
+        I've been drowning in other obligations as well.
+      </p>
+      <p>
+        Thanks for being patient.
+      </p>
+      <p>
+        Also fair warning: the graphs are kinda not the best looking thing ever, but they do their thing good enough. It's also recommended that you see them on desktop,
+        (or, at the very least, on a tablet), because they weren't really optimized for mobile.
+      </p>
+    </div>
+
+    <div class="segment">
       <h1>Demographics</h1>
 
       <div class="segment-content">
@@ -188,8 +214,11 @@
         </div>
 
         <p>
-          Needless to say, I find 'least favourite' results a little bit surprising, with Gobber getting a #2 (though I guess I can see why
-          people voted that way).
+          Are we surprised? No.
+        </p>
+        <p>
+          Not so fun fact: I've came this far before the first major issues with the code became apparent. Initially, the 'least popular'
+          award went to Gobber and then Fishlegs ... which was surprising ... and, combined with some other funny-looking data, also wrong.
         </p>
 
         <div class="graph-area">
@@ -278,7 +307,7 @@
         </div>
 
         <p>
-          Well that's unexpected.
+          No surprises here.
         </p>
 
         <div class="graph-area">
@@ -408,7 +437,7 @@
       
         <p>
           If you wonder about what the 'salt squad' represents on the graph — it's the people who answered with any variant of 
-          <i>'I actually hate all of them.'</i>like  The reason The Hidden World gets this category while the other movies don't is because
+          <i>'I actually hate all of them.'</i> The reason The Hidden World gets this category while the other movies don't is because
           The Hidden World is the only one that attracted the answers like this.
         </p>
         <p>There's two more things that are worth noting here — one: 'Shy' category is twice the size compared to
@@ -607,6 +636,10 @@
         ></graph>
       </div>
       
+      <p>
+        I don't think anyone is surprised by the results. First two places go to Night Fury and <a href="https://httydnd.tamius.net/23" target="_blank">Night Fury: Wyvern Edition</a>.
+      </p>
+
       todo: add reason
 
 

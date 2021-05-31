@@ -1247,19 +1247,19 @@ export default defineComponent({
 
           if (Array.isArray(answer)) {
             for (const ans of answer) {
-              // if (question === ('16' as Question)) {
-              //   console.log('ans is arr:', ans, {[ans]: 'test'})
-              // }
+              if (question === Question.FavouriteDraconid) {
+                console.log('ans is arr:', ans)
+              }
               if (! processedData[question][ans]) {
                 processedData[question][ans] = 1;
               } else {
                 processedData[question][ans]++;
               }
             }
-          } else if (answer.value) {
-            // if (question === Question.HTTYD1FavouriteCharacter) {
-            //   console.log('ans is obj:', answer.value)
-            // }
+          } else if (answer.value !== undefined && answer.value !== null) {
+            if (question === Question.FavouriteDraconid) {
+              console.log('ans is obj:', answer.value)
+            }
             if (answer.dwFlag) {
               if (! processedData[question]['dwFlags']) {
                 processedData[question]['dwFlags'] = 1;
@@ -1273,9 +1273,9 @@ export default defineComponent({
               processedData[question][answer.value]++;
             }
           } else {
-            // if (question === ('16' as Question)) {
-            //   console.log('ans', answer, {[answer]: 'test'})
-            // }
+            if (question === Question.FavouriteDraconid) {
+              console.log('ans:', answer)
+            }
             if (! processedData[question][answer]) {
               processedData[question][answer] = 1;
             } else {

@@ -5,14 +5,25 @@
       'wide': graphConf?.size === 'wide'
     }"
   >
-    <div class="graph-header">
+    <div class="graph-header expand">
       <h1>{{title}}</h1>
-      <div>{{description}}</div>
-      <div v-if="displayMode === GraphDisplayMode.Absolute">
-              DISPLAYING ABSOLUTE (value-based) RESULTS
-      </div>
-      <div v-else>
-              DISPLAYING RELATIVE (%-based) RESULTS
+      <div class="description">{{description}}</div>
+      <div class="expand"></div>
+      <div class="mode-switch-box">
+        <div 
+          class="option"
+          :class="{'selected': displayMode === GraphDisplayMode.Absolute}"
+          @click="displayMode = GraphDisplayMode.Absolute"
+        >
+          Absolute
+        </div>
+        <div
+          class="option"
+          :class="{'selected': displayMode === GraphDisplayMode.Relative}"
+          @click="displayMode = GraphDisplayMode.Relative"
+        >
+          Normalized
+        </div>
       </div>
     </div>
     <div class="graph-main">
@@ -70,14 +81,14 @@
                     class="graph-data-bar"
                     :style="{
                       'width': graphConf.barWidth,
-                      'height': ( (graphData[column.key]?.[set.setKey]?.value || 0) / maxValue * 100) + '%',
+                      'height': ( (graphData[column.key]?.[set.setKey]?.value || 0) / (maxValue || 1) * 100) + '%',
                       'background-color': (set.color || '#fff'),
                       'border': (set.border || '0px solid transparent'),
                     }"
                   >
                     <div class="graph-data-column-value">
-                      <b>{{column.label}}</b><template v-if="setConf.length"><b>:</b> {{set.setLabel}}</template><br/>
-                      {{graphData[column.key]?.[set.setKey]?.value}} ({{ (graphData[column.key]?.[set.setKey]?.percent || 0).toFixed(2) }}%)
+                      <b>{{column.label}}</b><template v-if="setConf.length"><b>:</b> <span class="set-label">{{set.setLabel}}</span></template><br/>
+                      <div class="result">{{graphData[column.key]?.[set.setKey]?.value}} ({{ (graphData[column.key]?.[set.setKey]?.percent || 0).toFixed(2) }}%)</div>
                     </div>
                   </div>
                 </div>
@@ -400,6 +411,9 @@ export default defineComponent({
       } else {
         return firstAboveLowerBound ?? 2; // can never be less than this, so we use it as a default in case of undefined
       }
+    },
+    setDisplayMode(mode) {
+      this.displayMode = mode;
     }
   }
 });
@@ -422,18 +436,54 @@ export default defineComponent({
 .graph-header {
   flex-grow: 0;
   flex-shrink: 0;
+
+  padding: 1rem;
+
   h1 {
     text-align: center;
     margin: 0;
     font-weight: 300;
     font-size: 2rem;
     // font-variant: small-caps;
+
+    margin-bottom: 1rem;
   }
+  .description {
+    font-size: 0.9em;
+    opacity: 0.8;
+    font-weight: 300;
+    text-align: center;
+  }
+
+  .mode-switch-box {
+    width: 100%;
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+
+    cursor: pointer;
+    user-select: none;
+
+    .option {
+      padding: 0.5rem;
+      margin-left: 0.5rem;
+      margin-right: 0.5rem;
+
+      &.selected {
+        color: #000;
+        background-color: #fa6;
+      }
+    }
+  }
+}
+
+.graph-grid-y, .graph-bars {
+  height: 24rem;
+  max-height: 80vh;
 }
 
 .graph-grid-y {
   position: absolute;
-  height: 24rem;
   width: 100%;
   top: 0;
 
@@ -469,7 +519,7 @@ export default defineComponent({
   align-items: center;
   justify-content: center;
 
-  flex-grow: 1;
+  // flex-grow: 1;
   position: relative;
 }
 
@@ -481,10 +531,8 @@ export default defineComponent({
 
   .graph-bars {
     display: flex;
-    flex-grow: 1;
     flex-direction: row;
     justify-content: center;
-    height: 24rem;
     margin-left: 2px;
     margin-right: 2px;
 
@@ -510,10 +558,19 @@ export default defineComponent({
           font-size: 0.8rem;
           padding: 0.5em;
           min-width: 5rem;
+          width: 6.9rem;
+          max-width: 15rem;
 
           background-color: rgba(0,0,0,0.8);
 
           transform: translate(-50%, -120%);
+
+          .set-label {
+            opacity: 0.8;
+          }
+          .result {
+            color: #fa6;
+          }
         }
       }
     }
@@ -535,6 +592,10 @@ export default defineComponent({
     .column-label {
       display: block;
       text-align: center;
+
+      opacity: 0.8;
+      font-weight: 300;
+      font-size: 0.9em;
     }
   }
 }
@@ -556,7 +617,11 @@ export default defineComponent({
   }
 }
 
-
+.expand {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
 
 
 </style>

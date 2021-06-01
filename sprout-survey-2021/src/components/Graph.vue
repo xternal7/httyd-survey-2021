@@ -197,7 +197,7 @@ export default defineComponent({
     'conf',
     'columns',
     'data',
-    'dataCount',   // MUST BE PASSED ON MULTIPLE CHOICE ANSWERS! (can also be passed via setConf)
+    'dataCount',
     'sets',
     'sort',
     'debug',

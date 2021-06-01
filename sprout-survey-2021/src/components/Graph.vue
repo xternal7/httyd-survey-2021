@@ -42,15 +42,18 @@
           </div>
         </div>
       </div>
-      <div v-else>
+      <div
+        v-else
+        class="graph-grid-y"
+      >
         <div
-          v-for="tick of tickValues.tickValues"
+          v-for="tick of tickValues.tickPercentValues"
           :key="tick"
           class="graph-tick-y"
-          :style="{'height': tickValues.blockHeight}"
+          :style="{'height': tickValues.percentBlockHeight}"
         >
-          <div class="value-abs">
-            {{tick}}
+          <div class="value-percent">
+            {{tick}} %
           </div>
         </div>
       </div>
@@ -283,26 +286,17 @@ export default defineComponent({
         (this.setConf as any) = [{
           setKey: 'default',
           setLabel: 'Default',
-          color: '#edb26a'
+          color: '#edb26a',
+          dataCount: this.dataCount
         }];
       }
 
       if (! data._multiSet) {
         data = {default: data};
-      }
-
-      // generate per-set max values
-      for (const set of (this.setConf as any[])) {
-
-        if (!set.dataCount) {
-          if (this.dataCount) {
-            set.dataCount = this.dataCount;
-          } else {
-            set.dataCount = 0;
-            for (const answerKey in data[set.setKey]) {
-              set.dataCount += (data[set.setKey][answerKey] || 0);
-            }
-          }
+      } else {
+        // generate per-set max values
+        for (const set of (this.setConf as any[])) {
+          set.dataCount = this.dataCount[set.setKey];
         }
       }
 
@@ -320,7 +314,7 @@ export default defineComponent({
 
           const processedAnswer = {
             value: data[set.setKey][answerKey],
-            percent: (data[set.setKey]?.[answerKey] || 0) / set.dataCount * 100
+            percent: ((data[set.setKey]?.[answerKey] || 0) / set.dataCount) * 100
           };
 
           this.graphData[answerKey][set.setKey] = processedAnswer;
@@ -329,7 +323,7 @@ export default defineComponent({
             maxValue = processedAnswer.value;
           }
           if (maxPercent < processedAnswer.percent) {
-            maxPercent = processedAnswer.percent / 100;
+            maxPercent = processedAnswer.percent;
           }
         }
       }
@@ -341,14 +335,15 @@ export default defineComponent({
         }
       }
 
+
       const yTickInterval = this.findBestInterval(maxValue);
       const yPercentTickInterval = this.findBestInterval(maxPercent);
 
-      const yTicks = Math.floor(maxValue / yTickInterval) + 1;                // add one blank block above the tallest one
-      const yPercentTicks = Math.floor(maxPercent / yTickInterval);
-      const yAxisHeight        =        yTickInterval * (yTicks + 1);         // height as in 'max value' that can be displayed. Should be > than max value.
+      const yTicks             = Math.floor(maxValue   / yTickInterval)        + 1; // add one blank block above the tallest one
+      const yPercentTicks      = Math.floor(maxPercent / yPercentTickInterval) + 1;
+      const yAxisHeight        =        yTickInterval * (yTicks + 1);               // height as in 'max value' that can be displayed. Should be > than max value.
       const yAxisPercentHeight = yPercentTickInterval * (yPercentTicks + 1)
-      const percentPerTick = yAxisHeight / maxValue;                          // % height of a particular segment
+      const percentPerTick     =    yAxisHeight / maxValue;                         // % height of a particular segment
       const percentPerPercentTick = yAxisPercentHeight / maxPercent;
 
       this.tickValues.blockHeight = `${Math.floor(percentPerTick * 100)}%`;
@@ -502,13 +497,16 @@ export default defineComponent({
       position: absolute;
       bottom: 0;
       transform: translate(50%);
+      width: 1.5em;
+      white-space: nowrap;
     }
     .value-abs {
-      left: 0.5rem;
+      left: 0.25rem;
+      // text-align: right;
     }
     .value-percent {
-      right: 0.5rem;
-      text-align: right;
+      left: 0.25rem;
+      // text-align: right;
     }
   }
 }

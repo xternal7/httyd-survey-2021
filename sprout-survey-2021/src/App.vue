@@ -68,6 +68,7 @@
             :conf="{trackWidth: '6px !important', columnWidth: '8px !important'}"
             :columns="graphColumnDefinitions[Question.Age]()"
             :data="graphData?.['all']?.[Question.Age]"
+            :dataCount="graphData?.['all']?.answerCount"
           ></graph>
           <graph
             title="Gender"
@@ -75,6 +76,7 @@
             :conf="{barWidth: '16px !important', columnWidth: '64px !important'}"
             :columns="graphColumnDefinitions[Question.Gender]()"
             :data="graphData?.['all']?.[Question.Gender]"
+            :dataCount="graphData?.['all']?.answerCount"
           ></graph>
         </div>
 
@@ -89,6 +91,7 @@
             :conf="{barWidth: '16px !important', columnWidth: '72px !important', labelsHeight: '6rem'}"
             :columns="graphColumnDefinitions[Question.Location]()"
             :data="graphData?.['all']?.[Question.Location]"
+            :dataCount="graphData?.['all']?.answerCount"
           ></graph>
           <graph
             title="Community"
@@ -96,6 +99,7 @@
             :conf="{barWidth: '16px !important', columnWidth: '42px !important', sidewaysLabels: true, labelsHeight: '6rem'}"
             :columns="graphColumnDefinitions[Question.Community]()"
             :data="graphData?.['all']?.[Question.Community]"
+            :dataCount="graphData?.['all']?.answerCount"
           ></graph>
         </div>
 
@@ -108,6 +112,7 @@
             :conf="{barWidth: '16px !important', columnWidth: '72px !important', labelsHeight: '6rem'}"
             :columns="graphColumnDefinitions[Question.SurveyParticipation2020]()"
             :data="graphData?.['all']?.[Question.SurveyParticipation2020]"
+            :dataCount="graphData?.['all']?.answerCount"
           ></graph>
 
           <graph
@@ -116,6 +121,7 @@
             :conf="{barWidth: '12px !important', columnWidth: '42px !important', labelsHeight: '6rem'}"
             :columns="graphColumnDefinitions[Question.FandomTime]()"
             :data="graphData?.['all']?.[Question.FandomTime]"
+            :dataCount="graphData?.['all']?.answerCount"
           ></graph>
         </div>
 
@@ -131,6 +137,7 @@
             :conf="{barWidth: '16px !important', columnWidth: '72px !important', labelsHeight: '6rem'}"
             :columns="graphColumnDefinitions[Question.IsFurry]()"
             :data="graphData?.['all']?.[Question.IsFurry]"
+            :dataCount="graphData?.['all']?.answerCount"
           ></graph>
         </div>
 
@@ -183,6 +190,15 @@
               visuals: graphData?.['all']?.[Question.HTTYD1VisualsRating],
               emotion: graphData?.['all']?.[Question.HTTYD1EmotionRating]
             }"
+            :dataCount="{
+              overall: graphData?.['all']?.answerCount,
+              plot: graphData?.['all']?.answerCount,
+              score: graphData?.['all']?.answerCount,
+              theme: graphData?.['all']?.answerCount,
+              character: graphData?.['all']?.answerCount,
+              visuals: graphData?.['all']?.answerCount,
+              emotion: graphData?.['all']?.answerCount,
+            }"
           ></graph>
         </div>
 
@@ -209,6 +225,10 @@
               _multiSet: true,
               favourite: graphData?.['all']?.[Question.HTTYD1FavouriteCharacter],
               worst: graphData?.['all']?.[Question.HTTYD1WorstCharacter],
+            }"
+            :dataCount="{
+              favourite: graphData?.['all']?.answerCount,
+              worst: graphData?.['all']?.answerCount,
             }"
           ></graph>
         </div>
@@ -237,6 +257,7 @@
             }"
             :columns="graphColumnDefinitions[Question.HTTYD1FavouriteSoundtrack]()"
             :data="graphData?.['all']?.[Question.HTTYD1FavouriteSoundtrack]"
+            :dataCount="graphData?.['all']?.answerCount"
           ></graph>
         </div>
       
@@ -279,6 +300,15 @@
               visuals: graphData?.['all']?.[Question.HTTYD2VisualsRating],
               emotion: graphData?.['all']?.[Question.HTTYD2EmotionRating]
             }"
+            :dataCount="{
+              overall: graphData?.['all']?.answerCount,
+              plot: graphData?.['all']?.answerCount,
+              score: graphData?.['all']?.answerCount,
+              theme: graphData?.['all']?.answerCount,
+              character: graphData?.['all']?.answerCount,
+              visuals: graphData?.['all']?.answerCount,
+              emotion: graphData?.['all']?.answerCount,
+            }"
           ></graph>
         </div>
 
@@ -303,6 +333,10 @@
               favourite: graphData?.['all']?.[Question.HTTYD2FavouriteCharacter],
               worst: graphData?.['all']?.[Question.HTTYD2WorstCharacter],
             }"
+            :dataCount="{
+              favourite: graphData?.['all']?.answerCount,
+              worst: graphData?.['all']?.answerCount,
+            }"
           ></graph>
         </div>
 
@@ -326,6 +360,7 @@
             }"
             :columns="graphColumnDefinitions[Question.HTTYD2FavouriteSoundtrack]()"
             :data="graphData?.['all']?.[Question.HTTYD2FavouriteSoundtrack]"
+            :dataCount="graphData?.['all']?.answerCount"
           ></graph>
         </div>
       
@@ -347,6 +382,7 @@
             }"
             :columns="graphColumnDefinitions.yesNoNeutral()"
             :data="graphData?.['all']?.[Question.HTTYD2ValkaVillain]"
+            :dataCount="graphData?.['all']?.answerCount"
           ></graph>
         </div>
 
@@ -387,6 +423,15 @@
               visuals: graphData?.['all']?.[Question.HTTYD3VisualsRating],
               emotion: graphData?.['all']?.[Question.HTTYD3EmotionRating]
             }"
+            :dataCount="{
+              overall: graphData?.['all']?.answerCount,
+              plot: graphData?.['all']?.answerCount,
+              score: graphData?.['all']?.answerCount,
+              theme: graphData?.['all']?.answerCount,
+              character: graphData?.['all']?.answerCount,
+              visuals: graphData?.['all']?.answerCount,
+              emotion: graphData?.['all']?.answerCount,
+            }"
           ></graph>
         </div>
 
@@ -408,6 +453,10 @@
               _multiSet: true,
               favourite: graphData?.['all']?.[Question.HTTYD3FavouriteCharacter],
               worst: graphData?.['all']?.[Question.HTTYD3WorstCharacter],
+            }"
+            :dataCount="{
+              favourite: graphData?.['all']?.answerCount,
+              worst: graphData?.['all']?.answerCount,
             }"
           ></graph>
         </div>
@@ -432,6 +481,7 @@
             }"
             :columns="graphColumnDefinitions[Question.HTTYD3FavouriteSoundtrack]()"
             :data="graphData?.['all']?.[Question.HTTYD3FavouriteSoundtrack]"
+            :dataCount="graphData?.['all']?.answerCount"
           ></graph>
         </div>
       
@@ -462,6 +512,7 @@
             }"
             :columns="graphColumnDefinitions.yesNoNeutral()"
             :data="graphData?.['all']?.[Question.HTTYD3DragoRedemptionArc]"
+            :dataCount="graphData?.['all']?.answerCount"
           ></graph>
         </div>
 
@@ -490,6 +541,11 @@
               '2': graphData?.['all']?.[Question.HTTYD2Rating],
               '3': graphData?.['all']?.[Question.HTTYD3Rating],
             }"
+            :dataCount="{
+              '1': graphData?.['all']?.answerCount,
+              '2': graphData?.['all']?.answerCount,
+              '3': graphData?.['all']?.answerCount,
+            }"
           ></graph>
           <graph
             title="Rate plot from 1 to 10"
@@ -505,6 +561,11 @@
               '1': graphData?.['all']?.[Question.HTTYD1PlotRating],
               '2': graphData?.['all']?.[Question.HTTYD2PlotRating],
               '3': graphData?.['all']?.[Question.HTTYD3PlotRating],
+            }"
+            :dataCount="{
+              '1': graphData?.['all']?.answerCount,
+              '2': graphData?.['all']?.answerCount,
+              '3': graphData?.['all']?.answerCount,
             }"
           ></graph>
           <graph
@@ -522,6 +583,11 @@
               '2': graphData?.['all']?.[Question.HTTYD2ThemeRating],
               '3': graphData?.['all']?.[Question.HTTYD3ThemeRating],
             }"
+            :dataCount="{
+              '1': graphData?.['all']?.answerCount,
+              '2': graphData?.['all']?.answerCount,
+              '3': graphData?.['all']?.answerCount,
+            }"
           ></graph>
           <graph
             title="Rate score from 1 to 10"
@@ -537,6 +603,11 @@
               '1': graphData?.['all']?.[Question.HTTYD1ScoreRating],
               '2': graphData?.['all']?.[Question.HTTYD2ScoreRating],
               '3': graphData?.['all']?.[Question.HTTYD3ScoreRating],
+            }"
+            :dataCount="{
+              '1': graphData?.['all']?.answerCount,
+              '2': graphData?.['all']?.answerCount,
+              '3': graphData?.['all']?.answerCount,
             }"
           ></graph>
           <graph
@@ -554,6 +625,11 @@
               '2': graphData?.['all']?.[Question.HTTYD2CharacterRating],
               '3': graphData?.['all']?.[Question.HTTYD3CharacterRating],
             }"
+            :dataCount="{
+              '1': graphData?.['all']?.answerCount,
+              '2': graphData?.['all']?.answerCount,
+              '3': graphData?.['all']?.answerCount,
+            }"
           ></graph>
           <graph
             title="Rate visuals from 1 to 10"
@@ -570,6 +646,11 @@
               '2': graphData?.['all']?.[Question.HTTYD2VisualsRating],
               '3': graphData?.['all']?.[Question.HTTYD3VisualsRating],
             }"
+            :dataCount="{
+              '1': graphData?.['all']?.answerCount,
+              '2': graphData?.['all']?.answerCount,
+              '3': graphData?.['all']?.answerCount,
+            }"
           ></graph>
           <graph
             title="Rate emotion from 1 to 10"
@@ -585,6 +666,11 @@
               '1': graphData?.['all']?.[Question.HTTYD1EmotionRating],
               '2': graphData?.['all']?.[Question.HTTYD2EmotionRating],
               '3': graphData?.['all']?.[Question.HTTYD3EmotionRating]
+            }"
+            :dataCount="{
+              '1': graphData?.['all']?.answerCount,
+              '2': graphData?.['all']?.answerCount,
+              '3': graphData?.['all']?.answerCount,
             }"
           ></graph>
         </div>
@@ -633,6 +719,7 @@
           }"
           :columns="graphColumnDefinitions[Question.FavouriteDraconid]()"
           :data="graphData?.['all']?.[Question.FavouriteDraconid]"
+          :dataCount="graphData?.['all']?.answerCount"
         ></graph>
       </div>
       
@@ -660,6 +747,7 @@
           }"
           :columns="graphColumnDefinitions[Question.FavouriteVillain]()"
           :data="graphData?.['all']?.[Question.FavouriteVillain]"
+          :dataCount="graphData?.['all']?.answerCount"
         ></graph>
       </div>
       
@@ -681,6 +769,7 @@
           }"
           :columns="graphColumnDefinitions[Question.FavouriteOpeningScene]()"
           :data="graphData?.['all']?.[Question.FavouriteOpeningScene]"
+          :dataCount="graphData?.['all']?.answerCount"
         ></graph>
       </div>
 
@@ -708,6 +797,7 @@
             :conf="{trackWidth: '8px', barWidth: '16px !important', columnWidth: '32px !important'}"
             :columns="graphColumnDefinitions.rating1to10()"
             :data="graphData?.['all']?.[Question.ThotfuryCharacterRating]"
+            :dataCount="graphData?.['all']?.answerCount"
           ></graph>
           <graph
             title="What is your opinion on the Light Fury's visual design?"
@@ -715,6 +805,7 @@
             :conf="{trackWidth: '8px', barWidth: '16px !important', columnWidth: '32px !important'}"
             :columns="graphColumnDefinitions.rating1to10()"
             :data="graphData?.['all']?.[Question.ThotfuryDesignRating]"
+            :dataCount="graphData?.['all']?.answerCount"
           ></graph>
         </div>
 
@@ -729,6 +820,7 @@
             :conf="{trackWidth: '8px', barWidth: '16px !important', columnWidth: '32px !important'}"
             :columns="graphColumnDefinitions.rating1to10()"
             :data="graphData?.['all']?.[Question.THWFittingEnd]"
+            :dataCount="graphData?.['all']?.answerCount"
           ></graph>
           <graph
             title="The plot of The Hidden World makes sense and has clear cause and effect"
@@ -736,6 +828,7 @@
             :conf="{trackWidth: '8px', barWidth: '16px !important', columnWidth: '32px !important'}"
             :columns="graphColumnDefinitions.rating1to10()"
             :data="graphData?.['all']?.[Question.THWPlotCoherency]"
+            :dataCount="graphData?.['all']?.answerCount"
           ></graph>
         </div>
 
@@ -762,6 +855,10 @@
               fittingEnd: graphData?.['all']?.[Question.THWFittingEnd],
               plotRating: graphData?.['all']?.[Question.HTTYD3PlotRating]
             }"
+            :dataCount="{
+              fittingEnd: graphData?.['all']?.answerCount,
+              plotRating: graphData?.['all']?.answerCount
+            }"
           ></graph>
           <graph
             title="Plot coherency vs. plot rating"
@@ -780,6 +877,10 @@
               _multiSet: true,
               plotCoherency: graphData?.['all']?.[Question.THWPlotCoherency],
               plotRating: graphData?.['all']?.[Question.HTTYD3PlotRating]
+            }"
+            :dataCount="{
+              fittingEnd: graphData?.['all']?.answerCount,
+              plotRating: graphData?.['all']?.answerCount 
             }"
           ></graph>
         </div>
@@ -814,6 +915,7 @@
             }"
             :columns="graphColumnDefinitions[Question.THWStrongestThemes]()"
             :data="graphData?.['all']?.[Question.THWStrongestThemes]"
+            :dataCount="graphData?.['all']?.answerCount"
           ></graph>
           <graph
             title="Theme approval"
@@ -821,6 +923,7 @@
             :conf="{trackWidth: '8px', barWidth: '16px !important', columnWidth: '32px !important'}"
             :columns="graphColumnDefinitions.rating1to10()"
             :data="graphData?.['all']?.[Question.THWThemeApproval]"
+            :dataCount="graphData?.['all']?.answerCount"
           ></graph>
         </div>
 
@@ -885,6 +988,7 @@
               ...graphData?.['all']?.[Question.FavouriteShort],
               _multiSet: false
             }"
+            :dataCount="graphData?.['all']?.answerCount"
           ></graph>
 
           <graph
@@ -924,6 +1028,13 @@
               'gonf': graphData?.['all']?.[Question.GONFRating],
               'hc': graphData?.['all']?.[Question.HomecomingRating],
             }"
+            :dataCount="{
+              'bk': graphData?.['all']?.answerCount,
+              'bod': graphData?.['all']?.answerCount,
+              'dodr': graphData?.['all']?.answerCount,
+              'gonf': graphData?.['all']?.answerCount,
+              'hc': graphData?.['all']?.answerCount,
+            }"
           ></graph>
         </div>
 
@@ -954,6 +1065,10 @@
               'rdob': graphData?.['all']?.[Question.RidersOfBerkRating],
               'rtte': graphData?.['all']?.[Question.RTTERating],
             }"
+            :dataCount="{
+              'rdob': graphData?.['all']?.answerCount,
+              'rtte': graphData?.['all']?.answerCount
+            }"
           ></graph>
 
           <graph
@@ -962,6 +1077,7 @@
             :conf="{trackWidth: '8px', barWidth: '16px !important', columnWidth: '32px !important'}"
             :columns="graphColumnDefinitions.rating1to10()"
             :data="graphData?.['all']?.[Question.SideCharactersLikabilityAgreement]"
+            :dataCount="graphData?.['all']?.answerCount"
           ></graph>
         </div>
 
@@ -979,6 +1095,7 @@
             :conf="{trackWidth: '8px', barWidth: '16px !important', columnWidth: '32px !important'}"
             :columns="graphColumnDefinitions.yesNoNeutral()"
             :data="graphData?.['all']?.[Question.IsRTTECanon]"
+            :dataCount="graphData?.['all']?.answerCount"
           ></graph>
         </div>
 
@@ -1023,6 +1140,7 @@
             }"
             :columns="graphColumnDefinitions[Question.MostImportantAspects]()"
             :data="graphData?.['all']?.[Question.MostImportantAspects]"
+            :dataCount="graphData?.['all']?.answerCount"
           ></graph>
         </div>
 
@@ -1045,6 +1163,7 @@
             }"
             :columns="graphColumnDefinitions[Question.HTTYDAppealReasons]()"
             :data="graphData?.['all']?.[Question.HTTYDAppealReasons]"
+            :dataCount="graphData?.['all']?.answerCount"
           ></graph>
 
           <graph
@@ -1053,6 +1172,7 @@
             :conf="{trackWidth: '8px', barWidth: '16px !important', columnWidth: '32px !important'}"
             :columns="graphColumnDefinitions.rating1to10()"
             :data="graphData?.['all']?.[Question.BondType]"
+            :dataCount="graphData?.['all']?.answerCount"
           ></graph>
         </div>
 
@@ -1075,6 +1195,7 @@
             }"
             :columns="graphColumnDefinitions[Question.MovieRanking]()"
             :data="graphData?.['all']?.[Question.MovieRanking]"
+            :dataCount="graphData?.['all']?.answerCount"
           ></graph>
 
           <graph
@@ -1090,6 +1211,7 @@
             }"
             :columns="graphColumnDefinitions[Question.MovieWatchingOrder]()"
             :data="graphData?.['all']?.[Question.MovieWatchingOrder]"
+            :dataCount="graphData?.['all']?.answerCount"
           ></graph>
 
           <graph
@@ -1105,6 +1227,7 @@
             }"
             :columns="graphColumnDefinitions.yesNoNeutral()"
             :data="graphData?.['all']?.[Question.THWOpinionChange]"
+            :dataCount="graphData?.['all']?.answerCount"
           ></graph>
         </div>
         

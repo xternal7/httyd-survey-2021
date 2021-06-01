@@ -79,6 +79,10 @@
             :dataCount="graphData?.['all']?.answerCount"
           ></graph>
         </div>
+        <average
+            :data="graphData?.['all']?.[Question.Age]"
+          >
+          </average>
 
         <p>
           So there's that. The "dragons are a stereotypically female interest" redditor got BTFO'd. In the "other" department, there is a few trans-adjacent things (mostly nonbinary). I am pleasantly suprised about the lack of super-special-snowflake genders and a negligible number of apache-genders (apache-genders appearing in this poll: '420'). Thanks for keeping the answer serious.
@@ -201,9 +205,29 @@
             }"
           ></graph>
         </div>
+        <div class="">
+          <average
+            :sets="sets.httydRatingSets"
+            :data="{
+              _multiSet: true,
+              overall: graphData?.['all']?.[Question.HTTYD1Rating],
+              plot: graphData?.['all']?.[Question.HTTYD1PlotRating],
+              score: graphData?.['all']?.[Question.HTTYD1ScoreRating],
+              theme: graphData?.['all']?.[Question.HTTYD1ThemeRating],
+              character: graphData?.['all']?.[Question.HTTYD1CharacterRating],
+              visuals: graphData?.['all']?.[Question.HTTYD1VisualsRating],
+              emotion: graphData?.['all']?.[Question.HTTYD1EmotionRating]
+            }"
+          >
+          </average>
+        </div>
 
         <p>
-          Very top-heavy graph, we're getting a nice bell curve approximation across the board. Sometimes, data is beautiful.
+          Very top-heavy graph, we're getting a nice bell curve approximation across the board. Sometimes, data is beautiful,
+          As a side note — feast your eyes on that sub-1 standard deviation on the overall bar, because this is the last time
+          you're going to see this kind of universal agreement on a 1-10 question.
+        </p>
+        <p>
           Let's move on to the next graph: which characters people liked and which characters they hated.
         </p>
 
@@ -311,6 +335,29 @@
             }"
           ></graph>
         </div>
+        <div class="">
+          <average
+            :sets="sets.httydRatingSets"
+            :data="{
+              _multiSet: true,
+              overall: graphData?.['all']?.[Question.HTTYD2Rating],
+              plot: graphData?.['all']?.[Question.HTTYD2PlotRating],
+              score: graphData?.['all']?.[Question.HTTYD2ScoreRating],
+              theme: graphData?.['all']?.[Question.HTTYD2ThemeRating],
+              character: graphData?.['all']?.[Question.HTTYD2CharacterRating],
+              visuals: graphData?.['all']?.[Question.HTTYD2VisualsRating],
+              emotion: graphData?.['all']?.[Question.HTTYD2EmotionRating]
+            }"
+          >
+          </average>
+        </div>
+
+        <p>
+          The fun bit is that those results are mildly out of line with last year's results. Last year, most people voted
+          'emotion' as the strongest aspect of the second movie and 'graphics or music' (they were combined in a single option)
+          second, but this year visuals and music <i>both</i> got higher aggregate score than the emotion — though admittedly,
+          still well within the margin of error.
+        </p>
 
         <p>Anyway, let's move on:</p>
 
@@ -341,7 +388,7 @@
         </div>
 
         <p>
-          No surprises here.
+          Protagonists are number one, villain and villain lite are number last. No surprises here.
         </p>
 
         <div class="graph-area">
@@ -434,6 +481,45 @@
             }"
           ></graph>
         </div>
+        <div class="">
+          <average
+            :sets="sets.httydRatingSets"
+            :data="{
+              _multiSet: true,
+              overall: graphData?.['all']?.[Question.HTTYD3Rating],
+              plot: graphData?.['all']?.[Question.HTTYD3PlotRating],
+              score: graphData?.['all']?.[Question.HTTYD3ScoreRating],
+              theme: graphData?.['all']?.[Question.HTTYD3ThemeRating],
+              character: graphData?.['all']?.[Question.HTTYD3CharacterRating],
+              visuals: graphData?.['all']?.[Question.HTTYD3VisualsRating],
+              emotion: graphData?.['all']?.[Question.HTTYD3EmotionRating]
+            }"
+          >
+          </average>
+        </div>
+
+        <p>
+          It's known for quite some time that the opinions of the last movie arerather controversial, but the averages and deviations
+          really drive the point home. Given the general feel of the subreddit in the past year and a half since movie's release, this
+          is not surprising at all — except in one category. Visuals.
+        </p>
+        <p>
+          Maybe I haven't been paying enough attention, but I was wholly under impression that the fandom agrees that the third one had
+          the best visuals. "But look at those trees and grass and graphics!" was a common argument, and lots of circlejerking was had
+          over the sand (Odin forbid you mentioned that sand is really nothing special — it's just retextured and less sticky snow).
+          Another possibility may be that I fell victim to one of the classic blunders: last year, people overwhelmingly voted visuals the
+          strongest aspect of The Hidden World, which perhaps set incorrect expectations for this year's poll, especially this year's
+          result only reaffirm that point.
+        </p>
+        <p>
+          However, turns out that visuals are not just the technical graphics-whoring you see on gaming forums — they also include the
+          artstyle itself, which is much more subjective.
+        </p>
+        <p>
+          This should explain why the ratings are lower, and I can say where they're coming from as I absolutely detest the dragon armor in
+          this movie, and dislike a few other things from the artistic perspective as well. I am not going to lie — I expected THW to come
+          out on top in the visuals department
+        </p>
 
         <div class="graph-area">
           <graph
@@ -462,7 +548,8 @@
         </div>
 
         <p>
-          BTW that graph also needs revision ↑↑↑
+          Light Fury hate is real. Imagine outranking the main antagonist and villain of the movie by this wide of a margin.
+          But given reddit and some other parts of the fandom, I cannot say whether that surprises me, or completely fails to surprise me.
         </p>
 
         <div class="graph-area">
@@ -547,6 +634,7 @@
               '3': graphData?.['all']?.answerCount,
             }"
           ></graph>
+
           <graph
             title="Rate plot from 1 to 10"
             :conf="{
@@ -809,6 +897,20 @@
           ></graph>
         </div>
 
+        <div>
+          <average
+            :sets="[
+              {setKey: 'thotfuryCharacter', setLabel: 'LF as character'},
+              {setKey: 'thotfuryDesign', setLabel: 'LF design'}
+            ]"
+            :data="{
+              _multiSet: true,
+              thotfuryCharacter: graphData?.['all']?.[Question.ThotfuryCharacterRating],
+              thotfuryDesign: graphData?.['all']?.[Question.ThotfuryDesignRating]
+            }"
+          >
+          </average>
+        </div>
         <p>
           Almost no surprises here. The ratings are about as contested as the rest of the The Hidden World related questions so far.
         </p>
@@ -830,6 +932,21 @@
             :data="graphData?.['all']?.[Question.THWPlotCoherency]"
             :dataCount="graphData?.['all']?.answerCount"
           ></graph>
+        </div>
+
+        <div>
+          <average
+            :sets="[
+              {setKey: 'fittingEnd', setLabel: 'THW is fitting end'},
+              {setKey: 'plotMakesSense', setLabel: 'THW plot is coherent & makes sense'}
+            ]"
+            :data="{
+              _multiSet: true,
+              fittingEnd: graphData?.['all']?.[Question.THWFittingEnd],
+              plotMakesSense: graphData?.['all']?.[Question.THWPlotCoherency]
+            }"
+          >
+          </average>
         </div>
 
         <p>
@@ -884,6 +1001,23 @@
             }"
           ></graph>
         </div>
+        <div>
+          <average
+            :sets="[
+              {setKey: 'fittingEnd', setLabel: 'THW is fitting end'},
+              {setKey: 'plotMakesSense', setLabel: 'THW plot is coherent & makes sense'},
+              {setKey: 'plotRating', setLabel: 'Plot rating'}
+            ]"
+            :data="{
+              _multiSet: true,
+              fittingEnd: graphData?.['all']?.[Question.THWFittingEnd],
+              plotMakesSense: graphData?.['all']?.[Question.THWPlotCoherency],
+              plotRating: graphData?.['all']?.[Question.HTTYD3PlotRating]
+            }"
+          >
+          </average>
+        </div>
+
 
         <p>
           Now I <i>really</i> want to see how the the votes moved around, between plot rating and these two.
@@ -925,6 +1059,12 @@
             :data="graphData?.['all']?.[Question.THWThemeApproval]"
             :dataCount="graphData?.['all']?.answerCount"
           ></graph>
+        </div>
+        <div>
+          <average
+            :data="graphData?.['all']?.[Question.THWThemeApproval]"
+          >
+          </average>
         </div>
 
         <p>
@@ -1038,9 +1178,40 @@
           ></graph>
         </div>
 
-        <p>
-          todo: commentary, if any
-        </p>
+        <div>
+          <average
+            :sets="[{
+              setKey: 'bk',
+              setLabel: 'Boneknapper',
+              color: '#c00'
+            },{
+              setKey: 'bod',
+              setLabel: 'Book of Dragons',
+              color: '#d92'
+            },{
+              setKey: 'dodr',
+              setLabel: 'Dawn of Dragon Riders',
+              color: '#fb8'
+            },{
+              setKey: 'gonf',
+              setLabel: 'Gift of the Night Fury',
+              color: '#139'
+            },{
+              setKey: 'hc',
+              setLabel: 'Homecoming',
+              color: '#17a'
+            },]"
+            :data="{
+              _multiSet: true,
+              'bk': graphData?.['all']?.[Question.BoneknapperRating],
+              'bod': graphData?.['all']?.[Question.BookOfDragonsRating],
+              'dodr': graphData?.['all']?.[Question.DawnOfDragonRidersRating],
+              'gonf': graphData?.['all']?.[Question.GONFRating],
+              'hc': graphData?.['all']?.[Question.HomecomingRating],
+            }"
+          >
+          </average>
+        </div>
 
         <div class="graph-area">
           <graph
@@ -1079,6 +1250,30 @@
             :data="graphData?.['all']?.[Question.SideCharactersLikabilityAgreement]"
             :dataCount="graphData?.['all']?.answerCount"
           ></graph>
+        </div>
+
+        <div>
+          <average
+            :sets="[{
+              setKey: 'rdob',
+              setLabel: 'Riders/Defenders',
+              color: '#c00'
+            },{
+              setKey: 'rtte',
+              setLabel: 'Race to the Edge',
+              color: '#fb8'
+            },{
+              setKey: 'rtteCharLike',
+              setLabel: 'Likability of side characters in RTTE'
+            }]"
+            :data="{
+              _multiSet: true,
+              'rdob': graphData?.['all']?.[Question.RidersOfBerkRating],
+              'rtte': graphData?.['all']?.[Question.RTTERating],
+              'rtteCharLike': graphData?.['all']?.[Question.SideCharactersLikabilityAgreement]
+            }"
+          >
+          </average>
         </div>
 
         <p>todo: commentary, if any</p>
@@ -1174,6 +1369,13 @@
             :data="graphData?.['all']?.[Question.BondType]"
             :dataCount="graphData?.['all']?.answerCount"
           ></graph>
+        </div>
+
+        <div>
+          <average
+            :data="graphData?.['all']?.[Question.BondType]"
+          >
+          </average>
         </div>
 
 
@@ -1290,6 +1492,7 @@ import { defineComponent } from 'vue';
 import HelloWorld from './components/HelloWorld.vue';
 import TitleScreen from './components/TitleScreen.vue';
 import Graph from './components/Graph.vue';
+import Average from './components/Average.vue';
 
 import {Character} from './enums/character.enum';
 import {FurryCommunity} from './enums/furry-community.enum';
@@ -1306,6 +1509,7 @@ export default defineComponent({
     HelloWorld,
     TitleScreen,
     Graph,
+    Average
   },
   data() {
     return {

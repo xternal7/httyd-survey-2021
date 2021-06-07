@@ -66,3 +66,43 @@ export function draconid2enum(draconid: string) {
       return Draconid.Other;
   }
 }
+export function enum2draconid(draconid: Draconid, originalValue?: string) {
+  switch (draconid) {
+    case Draconid.NightFury:
+      return 'Night Fury';
+    case Draconid.ThotFury:
+      return 'Light Fury';
+    case Draconid.ThotLights:
+      return 'Night Lights';
+    case Draconid.Nadder:
+      return 'Deadly Nadder';
+    case Draconid.Stormcutter:
+      return 'Stormcutter';
+    case Draconid.Nightmare:
+      return 'Monstrous Nightmare';
+    case Draconid.Skrill:
+      return 'Skrill';
+    case Draconid.Bewilderbeast:
+      return 'Bewilderbeast';
+    case Draconid.GreenDeath:
+      return 'Green/Red Death';
+    case Draconid.Deathgripper:
+      return 'Deathgripper';
+    case Draconid.Terror:
+      return 'Terrible Terror';
+    case Draconid.Gronckle:
+      return 'Gronckle';
+    case Draconid.WhisperingDeath:
+      return 'Whispering Death';
+    case Draconid.Zippleback:
+      return 'Hideous Zippleback';
+    case Draconid.Gorecutter:
+      return 'Crimson Gorecutter';
+    case Draconid.None:
+      return '<none>';
+    case Draconid.Other:
+      return `Other — ${originalValue || 'unknown'}`;
+    default:
+      return `MISSINGO — ${draconid}`;
+  }
+}

@@ -820,7 +820,15 @@
           I don't think anyone is surprised by the results. First two places go to Night Fury and <a href="https://httydnd.tamius.net/23" target="_blank">Night Fury: Wyvern Edition</a>.
         </p>
 
-        todo: fav comment box
+        <div class="">
+          <favourite-reason-display
+            :data="surveyResults.processedData"
+            :options="favDraconidOptions"
+            :reasonField="Question.FavouriteDraconid"
+            answerFn="draconid"
+          >
+          </favourite-reason-display>
+        </div>
 
         <p>
           The 'favourite villain' question largely follows the same format as the previous one, so I don't feel
@@ -842,7 +850,15 @@
             :dataCount="graphData?.['all']?.answerCount"
           ></graph>
         </div>
-        todo: add reason
+
+        <div class="">
+          <favourite-reason-display
+            :data="surveyResults.processedData"
+            :options="favVillainOptions"
+            :reasonField="Question.FavouriteVillain"
+          >
+          </favourite-reason-display>
+        </div>
 
         <p>
           Last but not least: favourite opening scene.
@@ -1503,10 +1519,11 @@ import HelloWorld from './components/HelloWorld.vue';
 import TitleScreen from './components/TitleScreen.vue';
 import Graph from './components/Graph.vue';
 import Average from './components/Average.vue';
+import FavouriteReasonDisplay from './components/FavouriteReasonDisplay.vue';
 
 import {Character} from './enums/character.enum';
 import {FurryCommunity} from './enums/furry-community.enum';
-import {Draconid} from './enums/draconid.enum';
+import {Draconid, enum2draconid} from './enums/draconid.enum';
 import {Villain} from './enums/villain.enum';
 
 // data
@@ -1519,7 +1536,8 @@ export default defineComponent({
     HelloWorld,
     TitleScreen,
     Graph,
-    Average
+    Average,
+    FavouriteReasonDisplay,
   },
   data() {
     return {
@@ -1542,6 +1560,20 @@ export default defineComponent({
         httydMovieSets: this.getHttydMovieSet(),
         mostLeastFavouriteSets: this.getMostLeastFavouriteSet(),
       },
+
+      favDraconidOptions: [
+        {
+          value: undefined,
+          label: 'All answers'
+        }
+      ],
+      favVillainOptions: [
+        {
+          value: undefined,
+          label: 'All answers'
+        }
+      ],
+      enum2draconid
     };
   },
   async created() {
@@ -1552,6 +1584,7 @@ export default defineComponent({
     console.log("this.graphData:", JSON.parse(JSON.stringify(this.graphData)));
     this.$forceUpdate();
     this.$nextTick();
+
   },
   methods: {
     async prefilterData() {

@@ -27,28 +27,30 @@
 
     <div class="segment">
       <h1>Introduction</h1>
-      <p>
-        Back in late January, there's been a poll about various aspects of How To Train Your Dragon franchise, much like the year prior. These are the results.
-      </p>
-      <p>
-        Much like last year, we'll start by graphs showing the raw responses (with a little bit of commentary). After that, we'll try to filter our results to
-        see if we can spot any interesting patterns. Last but not least, there'll also be a quick "Q&A session" where I respond to some of the interesting 
-        'survey feedback' responses we got.
-      </p>
-      <p>
-        I can already hear some of you saying: "But Tam! The survey was in January! What took you this long?" And this is a fair question — after all, last year's
-        results were done much quicker. The answer to this question lies in combination of reasons: the 'rona, the document with results got corrupted while it was
-        being prepared and we had to roll it back. Then there's the homebrew graphs (I decided to roll my own, because the library I used last year caused massive
-        performance issues even with only a dozen or two questions), which were a mild annoyance. The amount of bugs was bigger than the last year, but most importantly:
-        I've been drowning in other obligations as well.
-      </p>
-      <p>
-        Thanks for being patient.
-      </p>
-      <p>
-        Also fair warning: the graphs are kinda not the best looking thing ever, but they do their thing good enough. It's also recommended that you see them on desktop,
-        (or, at the very least, on a tablet), because they weren't really optimized for mobile.
-      </p>
+      <div class="segment-content">
+        <p>
+          Back in late January, there's been a poll about various aspects of How To Train Your Dragon franchise, much like the year prior. These are the results.
+        </p>
+        <p>
+          Much like last year, we'll start by graphs showing the raw responses (with a little bit of commentary). After that, we'll try to filter our results to
+          see if we can spot any interesting patterns. Last but not least, there'll also be a quick "Q&A session" where I respond to some of the interesting 
+          'survey feedback' responses we got.
+        </p>
+        <p>
+          I can already hear some of you saying: "But Tam! The survey was in January! What took you this long?" And this is a fair question — after all, last year's
+          results were done much quicker. The answer to this question lies in combination of reasons: the 'rona, the document with results got corrupted while it was
+          being prepared and we had to roll it back. Then there's the homebrew graphs (I decided to roll my own, because the library I used last year caused massive
+          performance issues even with only a dozen or two questions), which were a mild annoyance. The amount of bugs was bigger than the last year, but most importantly:
+          I've been drowning in other obligations as well.
+        </p>
+        <p>
+          Thanks for being patient.
+        </p>
+        <p>
+          Also fair warning: the graphs are kinda not the best looking thing ever, but they do their thing good enough. It's also recommended that you see them on desktop,
+          (or, at the very least, on a tablet), because they weren't really optimized for mobile.
+        </p>
+      </div>
     </div>
 
     <div class="segment">
@@ -107,7 +109,9 @@
           ></graph>
         </div>
 
-        <p>Europe, North America, Discord and Reddit dominate the fandom. Very little surprises here.</p>
+        <p>
+          Europe, North America, Discord and Reddit dominate the fandom. Very little surprises here, though the platforms do suffer from selection bias.
+        </p>
         
         <div class="graph-area">
           <graph
@@ -286,7 +290,7 @@
         </div>
       
         <p>
-          RESULT COMMENTARY HERE
+          Cris, I promise you you didn't find me on this graph.
         </p>
 
       </div>
@@ -788,84 +792,84 @@
     <div class="segment">
       <h1>Favourite things</h1>
 
-      <p>
-        This year, we have also asked people for a few favourite things. Let's start with the 'favourite draconid'
-        category to start things off. Furthermore, we've decided to ask people to explain their pick and show some
-        of the most well-written answers (where the criteria was mostly how specific the reasoning given was).
-        The reasons people gave for their answer are sorted per answer.
-      </p>
+      <div class="segment-content">
+        <p>
+          This year, we have also asked people for a few favourite things. Let's start with the 'favourite draconid'
+          category to start things off. Furthermore, we've decided to ask people to explain their pick and show some
+          of the most well-written answers (where the criteria was mostly how specific the reasoning given was).
+          The reasons people gave for their answer are sorted per answer.
+        </p>
 
-      <div class="graph-area">
-        <graph
-          title="Favourite draconid"
-          :conf="{
-            trackWidth: '8px',
-            barWidth: '16px !important',
-            columnWidth: '32px !important',
-            sidewaysLabels: true,
-            labelsHeight: '12rem'
-          }"
-          :columns="graphColumnDefinitions[Question.FavouriteDraconid]()"
-          :data="graphData?.['all']?.[Question.FavouriteDraconid]"
-          :dataCount="graphData?.['all']?.answerCount"
-        ></graph>
-      </div>
+        <div class="graph-area">
+          <graph
+            title="Favourite draconid"
+            :conf="{
+              trackWidth: '8px',
+              barWidth: '16px !important',
+              columnWidth: '32px !important',
+              sidewaysLabels: true,
+              labelsHeight: '12rem'
+            }"
+            :columns="graphColumnDefinitions[Question.FavouriteDraconid]()"
+            :data="graphData?.['all']?.[Question.FavouriteDraconid]"
+            :dataCount="graphData?.['all']?.answerCount"
+          ></graph>
+        </div>
       
-      <p>
-        I don't think anyone is surprised by the results. First two places go to Night Fury and <a href="https://httydnd.tamius.net/23" target="_blank">Night Fury: Wyvern Edition</a>.
-      </p>
+        <p>
+          I don't think anyone is surprised by the results. First two places go to Night Fury and <a href="https://httydnd.tamius.net/23" target="_blank">Night Fury: Wyvern Edition</a>.
+        </p>
 
-      todo: add reason
+        todo: fav comment box
 
+        <p>
+          The 'favourite villain' question largely follows the same format as the previous one, so I don't feel
+          the need to repeat myself. Let's go straight to the results.
+        </p>
 
-      <p>
-        The 'favourite villain' question largely follows the same format as the previous one, so I don't feel
-        the need to repeat myself. Let's go straight to the results.
-      </p>
+        <div class="graph-area">
+          <graph
+            title="Favourite villain"
+            :conf="{
+              trackWidth: '8px',
+              barWidth: '16px !important',
+              columnWidth: '32px !important',
+              sidewaysLabels: true,
+              labelsHeight: '12rem'
+            }"
+            :columns="graphColumnDefinitions[Question.FavouriteVillain]()"
+            :data="graphData?.['all']?.[Question.FavouriteVillain]"
+            :dataCount="graphData?.['all']?.answerCount"
+          ></graph>
+        </div>
+        todo: add reason
 
-      <div class="graph-area">
-        <graph
-          title="Favourite villain"
-          :conf="{
-            trackWidth: '8px',
-            barWidth: '16px !important',
-            columnWidth: '32px !important',
-            sidewaysLabels: true,
-            labelsHeight: '12rem'
-          }"
-          :columns="graphColumnDefinitions[Question.FavouriteVillain]()"
-          :data="graphData?.['all']?.[Question.FavouriteVillain]"
-          :dataCount="graphData?.['all']?.answerCount"
-        ></graph>
+        <p>
+          Last but not least: favourite opening scene.
+        </p>
+
+        <div class="graph-area">
+          <graph
+            title="Favourite opening scene"
+            :conf="{
+              trackWidth: '8px',
+              barWidth: '16px !important',
+              columnWidth: '32px !important',
+              sidewaysLabels: true,
+              labelsHeight: '12rem'
+            }"
+            :columns="graphColumnDefinitions[Question.FavouriteOpeningScene]()"
+            :data="graphData?.['all']?.[Question.FavouriteOpeningScene]"
+            :dataCount="graphData?.['all']?.answerCount"
+          ></graph>
+        </div>
+
+        <p>
+          Unlike the previous two, this question came without a 'please explain' field — mostly because Tamius 
+          didn't forsee anything interesting coming out of it, and thus only annoyed Brussel into adding the 
+          'please explain' section to the previous two questions.
+        </p>
       </div>
-      
-      todo: add reason
-
-      <p>
-        Last but not least: favourite opening scene.
-      </p>
-
-      <div class="graph-area">
-        <graph
-          title="Favourite opening scene"
-          :conf="{
-            trackWidth: '8px',
-            barWidth: '16px !important',
-            columnWidth: '32px !important',
-            sidewaysLabels: true,
-            labelsHeight: '12rem'
-          }"
-          :columns="graphColumnDefinitions[Question.FavouriteOpeningScene]()"
-          :data="graphData?.['all']?.[Question.FavouriteOpeningScene]"
-          :dataCount="graphData?.['all']?.answerCount"
-        ></graph>
-      </div>
-
-      <p>
-        Unlike the previous two, this question came without a 'please explain' field — mostly because Tamius 
-        didn't forsee anything interesting coming out of it, and thus only annoyed Brussel into adding the 
-        'please explain' section to the previous two questions.
-      </p>
     </div>
 
 
@@ -1316,10 +1320,16 @@
             :conf="{trackWidth: '8px', barWidth: '16px !important', columnWidth: '32px !important'}"
             :columns="graphColumnDefinitions.rating1to10()"
             :data="graphData?.['all']?.[Question.YouCanEnjoyGarbageAgreement]"
+            :dataCount="graphData?.['all']?.answerCount"
           ></graph>
         </div>
-         <p>
-            Given reddit, I honestly expected this graph would be so contested it'd make <a href="https://wowpedia.fandom.com/wiki/Tarren_Mill#Tarren_Mill_is_under_attack.21" target="_blank">Tarren Mill</a> seem like a peaceful Lordaeron village.
+        <div>
+          <average
+            :data="graphData?.['all']?.[Question.YouCanEnjoyGarbageAgreement]"
+          ></average>
+        </div>
+        <p>
+          Given reddit, I honestly expected this graph would be so contested it'd make <a href="https://wowpedia.fandom.com/wiki/Tarren_Mill#Tarren_Mill_is_under_attack.21" target="_blank">Tarren Mill</a> seem like a peaceful Lordaeron village.
         </p>
 
         <div class="graph-area">
@@ -1808,6 +1818,32 @@ h2 {
   font-size: 3.75rem;
   color: rgb(215, 166, 100);
 }
+
+@media screen and (max-width: 1200px ) {
+  h1 {
+    font-size: 4rem !important;
+  }
+  h2 {
+    font-size: 2rem;
+  }
+
+  body {
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 420px ) {
+  h1 {
+    font-size: 3rem !important;
+  }
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  body {
+    font-size: 14px;
+  }
+}
+
 
 #app {
   margin: 0px;

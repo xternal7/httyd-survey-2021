@@ -85,7 +85,7 @@ export default defineComponent({
                                   ?.trim()
                                   .replaceAll('<', '&lt;')
                                   .replaceAll('>', '&gt;')
-                                  .replaceAll('\n', '<br/>');
+                                  .replaceAll('\n', '<br />');
         // we should be fine now
       }
 

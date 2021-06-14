@@ -18,6 +18,7 @@
       <div
         v-for="reason of reasons"
         :key="reason"
+        class="reason-item"
       >
         <div class="answer">{{reason.answer}}</div>
         <div class="reason" v-html="reason.reason"></div>
@@ -67,7 +68,7 @@ export default defineComponent({
           x[+this.reasonField]?.reason?.trim() &&
           (
             !this.selectedOption ||
-            x[this.filterByField] === this.selectedOption
+            x[this.reasonField] === this.selectedOption
           )
         )
       );
@@ -110,5 +111,31 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
+.reason-box {
+  height: 32rem;
+  max-height: 90vh;
+  overflow-y: auto;
+}
 
+.reason-item {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+
+  &:not(:last-child) {
+    padding-bottom: 1rem;
+    border-bottom: 1px dotted #fa6;
+  }
+
+  .answer {
+    font-style: italic;
+    font-size: 0.75em;
+    text-transform: uppercase;
+    color: #fa6;
+    font-weight: 700;
+    margin-bottom: 0.25em;
+  }
+  .reason {
+    opacity: 0.69;
+  }
+}
 </style>

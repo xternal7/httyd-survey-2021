@@ -1827,6 +1827,11 @@ export default defineComponent({
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;300;400;600&display=swap');
 
+html, * {
+  scrollbar-width: thin;
+  scrollbar-color: #fa6 transparent;
+}
+
 body {
   font-family: 'Josefin Sans', Helvetica, Arial, sans-serif;
   background-color: #000;

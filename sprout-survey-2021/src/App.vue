@@ -140,8 +140,8 @@
 
         <div class="graph-area">
           <graph
-            title="Do you identify as a member of any of the following communities?"
-            description="(Multiple choices possible)"
+            title="Of furries and scalies"
+            description="Do you identify as a member of any of the following communities? (Multiple choices possible)"
             :conf="{barWidth: '16px !important', columnWidth: '72px !important', labelsHeight: '6rem'}"
             :columns="graphColumnDefinitions[Question.IsFurry]()"
             :data="graphData?.['all']?.[Question.IsFurry]"
@@ -423,7 +423,7 @@
 
         <div class="graph-area">
           <graph
-            title="Would the movie be better, had Valka been a villain?"
+            title="Would Valka be better as villain?"
             description="Originally, Dean DeBlois planned to have Valka be HTTYD 2's sympathetic villain. The question asked: Do you think this idea, if it had made it into the final product, would have improved the film?"
             :conf="{
               barWidth: '20px !important',
@@ -592,7 +592,7 @@
 
         <div class="graph-area">
           <graph
-            title="Would Drago redemption arc improve the movie?"
+            title="Would Drago redemption arc improve THW?"
             description="Originally, Dean DeBlois planned a redemption arc for Drago in the third film. The question was: Do you think this idea, if it had made it into the final product, would have improved the film?"
             :conf="{
               size: 'wide',
@@ -900,16 +900,16 @@
         </p>
         <div class="graph-area">
           <graph
-            title="What is your opinion on the Light Fury as a character?"
-            description="0: garbage tier, 5-6: eh, 10: perfect"
+            title="Light Fury as a character"
+            description="What is your opinion on the Light Fury as a character? 0: garbage tier, 5-6: eh, 10: perfect"
             :conf="{trackWidth: '8px', barWidth: '16px !important', columnWidth: '32px !important'}"
             :columns="graphColumnDefinitions.rating1to10()"
             :data="graphData?.['all']?.[Question.ThotfuryCharacterRating]"
             :dataCount="graphData?.['all']?.answerCount"
           ></graph>
           <graph
-            title="What is your opinion on the Light Fury's visual design?"
-            description="0: garbage tier, 5-6: eh, 10: perfect"
+            title="Light fury: the design"
+            description="What is your opinion on the Light Fury's visual design? 0: garbage tier, 5-6: eh, 10: perfect"
             :conf="{trackWidth: '8px', barWidth: '16px !important', columnWidth: '32px !important'}"
             :columns="graphColumnDefinitions.rating1to10()"
             :data="graphData?.['all']?.[Question.ThotfuryDesignRating]"
@@ -945,8 +945,8 @@
             :dataCount="graphData?.['all']?.answerCount"
           ></graph>
           <graph
-            title="The plot of The Hidden World makes sense and has clear cause and effect"
-            description="0: hell no, 5-6: eh, 10: enough sense to make me a millionare"
+            title="The plot of The Hidden World makes sense"
+            description="Rate your agreement with the following statement: 'The plot of The Hidden World makes sense and has clear cause and effect.' 0: hell no, 5-6: eh, 10: enough sense to make me a millionare"
             :conf="{trackWidth: '8px', barWidth: '16px !important', columnWidth: '32px !important'}"
             :columns="graphColumnDefinitions.rating1to10()"
             :data="graphData?.['all']?.[Question.THWPlotCoherency]"
@@ -1306,7 +1306,8 @@
 
         <div class="graph-area">
           <graph
-            title="Do you consider Race to the Edge canon to the films?"
+            title="Is Race to the Edge canon?"
+            descriptiom="Do you consider Race to the Edge canon to the films?"
             :conf="{trackWidth: '8px', barWidth: '16px !important', columnWidth: '32px !important'}"
             :columns="graphColumnDefinitions.yesNoNeutral()"
             :data="graphData?.['all']?.[Question.IsRTTECanon]"
@@ -1388,8 +1389,8 @@
           ></graph>
 
           <graph
-            title="Do you view the bond between Hiccup and Toothless as being more 'Master and Pet' or 'Mutual Friends?'"
-            description="0 - master/pet, 10 - mutual friends"
+            title="Master/pet or mutual friends?"
+            description="Do you view the bond between Hiccup and Toothless as being more 'Master and Pet' or 'Mutual Friends?' 0 - master/pet, 10 - mutual friends"
             :conf="{trackWidth: '8px', barWidth: '16px !important', columnWidth: '32px !important'}"
             :columns="graphColumnDefinitions.rating1to10()"
             :data="graphData?.['all']?.[Question.BondType]"

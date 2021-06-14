@@ -26,152 +26,281 @@
         </div>
       </div>
     </div>
-    <div class="graph-main-container">
-      <div class="graph-main">
-        <div
-          v-if="displayMode === GraphDisplayMode.Absolute"
-          class="graph-grid-y"
-        >
+    <div v-if="false" class="desktop">
+      <div class="graph-main-container desktop">
+        <div class="graph-main">
           <div
-            v-for="tick of tickValues.tickValues"
-            :key="tick"
-            class="graph-tick-y"
-            :style="{'height': tickValues.blockHeight}"
+            v-if="displayMode === GraphDisplayMode.Absolute"
+            class="graph-grid-y"
           >
-            <div class="value-abs">
-              {{tick}}
+            <div
+              v-for="tick of tickValues.tickValues"
+              :key="tick"
+              class="graph-tick-y"
+              :style="{'height': tickValues.blockHeight}"
+            >
+              <div class="value-abs">
+                {{tick}}
+              </div>
             </div>
           </div>
-        </div>
-        <div
-          v-else
-          class="graph-grid-y"
-        >
           <div
-            v-for="tick of tickValues.tickPercentValues"
-            :key="tick"
-            class="graph-tick-y"
-            :style="{'height': tickValues.percentBlockHeight}"
+            v-else
+            class="graph-grid-y"
           >
-            <div class="value-percent">
-              {{tick}} %
+            <div
+              v-for="tick of tickValues.tickPercentValues"
+              :key="tick"
+              class="graph-tick-y"
+              :style="{'height': tickValues.percentBlockHeight}"
+            >
+              <div class="value-percent">
+                {{tick}} %
+              </div>
             </div>
           </div>
+          <template
+            v-for="column of columns"
+          >
+            <div
+              v-if="!conf.hideZeroColumns || !hiddenCols[column.key]"
+              :key="column"
+              class="graph-value"
+              :style="{
+                'width': graphConf.columnWidth ?? '2rem',
+                'margin': `0 ${graphConf.columnXMargin ?? 0}`
+              }"
+            >
+                <div class="graph-bars">
+                  <template 
+                    v-for="set of setConf"
+                  >
+                    <div
+                      v-if="displayMode === GraphDisplayMode.Absolute"
+                      class="graph-set-track"
+                      :style="{
+                        'width': (setConf.length > 1 ? graphConf.trackWidthMultiset : graphConf.trackWidth)
+                      }"
+                    >
+                      <div
+                        class="graph-data-bar"
+                        :style="{
+                          'width': graphConf.barWidth,
+                          'height': ( (graphData[column.key]?.[set.setKey]?.value || 0) / (maxValue || 1) * 100) + '%',
+                          'background-color': (set.color || '#fff'),
+                          'border': (set.border || '0px solid transparent'),
+                        }"
+                      >
+                        <div class="graph-data-column-value">
+                          <b>{{column.label}}</b><template v-if="setConf.length"><b>:</b> <span class="set-label">{{set.setLabel}}</span></template><br/>
+                          <div class="result">{{graphData[column.key]?.[set.setKey]?.value}} ({{ (graphData[column.key]?.[set.setKey]?.percent || 0).toFixed(2) }}%)</div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- relative display -->
+                    <div
+                      v-else
+                      class="graph-set-track"
+                      :style="{
+                        'width': (setConf.length > 1 ? graphConf.trackWidthMultiset : graphConf.trackWidth)
+                      }"
+                    >
+                      <div
+                        class="graph-data-bar"
+                        :style="{
+                          'width': graphConf.barWidth,
+                          'height': ( (graphData[column.key]?.[set.setKey]?.percent || 0) / maxPercent * 100) + '%',
+                          'background-color': (set.color || '#fff'),
+                          'border': (set.border || '0px solid transparent'),
+                        }"
+                      >
+                        <div class="graph-data-column-value">
+                          <b>{{column.label}}</b><template v-if="setConf.length"><b>:</b> {{set.setLabel}}</template><br/>
+                          <span class="value-display">{{ (graphData[column.key]?.[set.setKey]?.percent || 0).toFixed(2) }}% ({{graphData[column.key]?.[set.setKey]?.value}})</span>
+                        </div>
+                      </div>
+                    </div>
+                  </template>
+                </div>
+                <div
+                  class="column-label-container"
+                  :style="{
+                    'width': (graphConf?.sidewaysLabels === true ? graphConf.columnWidth ?? '2rem' : graphConf.columnWidth ?? undefined),
+                    'height': (graphConf?.sidewaysLabels === true ? graphConf.labelsHeight ?? '2rem' : graphConf.labelsHeight ?? undefined),
+                  }"
+                >
+                  <!-- <div
+                    class="column-label"
+                    :style="{
+                      'width': graphConf?.sidewaysLabels === true ? graphConf.labelsHeight ?? '2rem' : undefined,
+                      'height': graphConf?.sidewaysLabels === true ? graphConf.labelsHeight ?? '2rem' : undefined,
+                      'transform-origin': graphConf?.sidewaysLabels === true ? '0 0' : undefined,
+                      'transform': (graphConf?.sidewaysLabels === true ? 'rotate(90deg)' : undefined),
+                      'text-align': graphConf?.sidewaysLabels === true ? 'left': undefined,
+                      'border': '1px solid blue'
+                    }"
+                  > -->
+                  <div
+                    class="column-label"
+                    :style="{
+                      'height': graphConf?.sidewaysLabels === true ? '100%' : undefined,
+                      'width': graphConf?.sidewaysLabels !== true ? '100%' : undefined,
+                      'writing-mode': graphConf?.sidewaysLabels === true ? 'vertical-rl' : undefined,
+                      'text-align': graphConf?.sidewaysLabels === true ? 'left': undefined
+                    }"
+                  >
+                    {{column.label}}
+                  </div>
+                </div>
+            </div>
+          </template>
         </div>
-        <template
-          v-for="column of columns"
+      </div>
+      <div 
+        v-if="setConf.length > 1"
+        class="graph-set-container flex flex-row flex-wrap flex-center"
+      >
+        <div
+          v-for="set of setConf"
+          :key="set"
+          class="graph-set"
         >
           <div
-            v-if="!conf.hideZeroColumns || !hiddenCols[column.key]"
-            :key="column"
-            class="graph-value"
+            class="set-color"
             :style="{
-              'width': graphConf.columnWidth ?? '2rem',
-              'margin': `0 ${graphConf.columnXMargin ?? 0}`
+              'background-color': (set.color || '#fff'),
+              'border': (set.border || '0px solid transparent')
             }"
+          ></div> {{set.setLabel}}
+        </div>
+      </div>
+    </div>
+    <div v-else class="mobile">
+      <div class="graph-main-container mobile">
+        <div class="graph-main">
+          <div class="sticky-bg">
+          </div>
+          <div class="sticky-bg-title">
+            <div class="unstuck">
+              <div></div>
+            </div>
+            <div class="stuck">
+              <div class="title-mini">
+                {{title}}
+              </div>
+            </div>
+          </div>
+          <!-- graph grid -->
+          <div
+            v-if="displayMode === GraphDisplayMode.Absolute"
+            class="graph-grid-y"
           >
-              <div class="graph-bars">
+            <div
+              v-for="tick of tickValues.tickValues"
+              :key="tick"
+              class="graph-tick-y"
+              :style="{'width': tickValues.blockHeight}"
+            >
+              <div class="value-abs">
+                {{tick}}
+              </div>
+            </div>
+          </div>
+          <div
+            v-else
+            class="graph-grid-y"
+          >
+            <div
+              v-for="tick of tickValues.tickPercentValues"
+              :key="tick"
+              class="graph-tick-y"
+              :style="{'height': tickValues.percentBlockHeight}"
+            >
+              <div class="value-percent">
+                {{tick}} %
+              </div>
+            </div>
+          </div>
+          <template
+            v-for="column of columns"
+          >
+            <div
+              v-if="!conf.hideZeroColumns || !hiddenCols[column.key]"
+              :key="column"
+              class="graph-value"
+              :style="{
+                'margin': `0 ${graphConf.columnXMargin ?? 0}`
+              }"
+            >
+              <div class="mobile-graph-label">
+                <span class="answer">{{column.label}}</span> &nbsp;
+              </div>
+              <div class="mobile-graph-bars">
                 <template 
                   v-for="set of setConf"
                 >
                   <div
                     v-if="displayMode === GraphDisplayMode.Absolute"
-                    class="graph-set-track"
+                    class="mobile-graph-set-track"
                     :style="{
-                      'width': (setConf.length > 1 ? graphConf.trackWidthMultiset : graphConf.trackWidth)
+                      'height': (setConf.length > 1 ? graphConf.trackWidthMultiset : graphConf.trackWidth)
                     }"
                   >
                     <div
-                      class="graph-data-bar"
+                      class="mobile-graph-data-bar"
                       :style="{
-                        'width': graphConf.barWidth,
-                        'height': ( (graphData[column.key]?.[set.setKey]?.value || 0) / (maxValue || 1) * 100) + '%',
+                        'height': graphConf.barWidth,
+                        'width': ( (graphData[column.key]?.[set.setKey]?.value || 0) / (maxValue || 1) * 100) + '%',
                         'background-color': (set.color || '#fff'),
                         'border': (set.border || '0px solid transparent'),
                       }"
                     >
-                      <div class="graph-data-column-value">
-                        <b>{{column.label}}</b><template v-if="setConf.length"><b>:</b> <span class="set-label">{{set.setLabel}}</span></template><br/>
-                        <div class="result">{{graphData[column.key]?.[set.setKey]?.value}} ({{ (graphData[column.key]?.[set.setKey]?.percent || 0).toFixed(2) }}%)</div>
-                      </div>
                     </div>
                   </div>
 
                   <!-- relative display -->
                   <div
                     v-else
-                    class="graph-set-track"
+                    class="mobile-graph-set-track"
                     :style="{
-                      'width': (setConf.length > 1 ? graphConf.trackWidthMultiset : graphConf.trackWidth)
+                      'height': (setConf.length > 1 ? graphConf.trackWidthMultiset : graphConf.trackWidth)
                     }"
                   >
                     <div
                       class="graph-data-bar"
                       :style="{
-                        'width': graphConf.barWidth,
-                        'height': ( (graphData[column.key]?.[set.setKey]?.percent || 0) / maxPercent * 100) + '%',
+                        'height': graphConf.barWidth,
+                        'width': ( (graphData[column.key]?.[set.setKey]?.percent || 0) / maxPercent * 100) + '%',
                         'background-color': (set.color || '#fff'),
                         'border': (set.border || '0px solid transparent'),
                       }"
                     >
-                      <div class="graph-data-column-value">
-                        <b>{{column.label}}</b><template v-if="setConf.length"><b>:</b> {{set.setLabel}}</template><br/>
-                        <span class="value-display">{{ (graphData[column.key]?.[set.setKey]?.percent || 0).toFixed(2) }}% ({{graphData[column.key]?.[set.setKey]?.value}})</span>
-                      </div>
                     </div>
                   </div>
                 </template>
               </div>
-              <div
-                class="column-label-container"
-                :style="{
-                  'width': (graphConf?.sidewaysLabels === true ? graphConf.columnWidth ?? '2rem' : graphConf.columnWidth ?? undefined),
-                  'height': (graphConf?.sidewaysLabels === true ? graphConf.labelsHeight ?? '2rem' : graphConf.labelsHeight ?? undefined),
-                }"
-              >
-                <!-- <div
-                  class="column-label"
-                  :style="{
-                    'width': graphConf?.sidewaysLabels === true ? graphConf.labelsHeight ?? '2rem' : undefined,
-                    'height': graphConf?.sidewaysLabels === true ? graphConf.labelsHeight ?? '2rem' : undefined,
-                    'transform-origin': graphConf?.sidewaysLabels === true ? '0 0' : undefined,
-                    'transform': (graphConf?.sidewaysLabels === true ? 'rotate(90deg)' : undefined),
-                    'text-align': graphConf?.sidewaysLabels === true ? 'left': undefined,
-                    'border': '1px solid blue'
-                  }"
-                > -->
-                <div
-                  class="column-label"
-                  :style="{
-                    'height': graphConf?.sidewaysLabels === true ? '100%' : undefined,
-                    'width': graphConf?.sidewaysLabels !== true ? '100%' : undefined,
-                    'writing-mode': graphConf?.sidewaysLabels === true ? 'vertical-rl' : undefined,
-                    'text-align': graphConf?.sidewaysLabels === true ? 'left': undefined
-                  }"
-                >
-                  {{column.label}}
-                </div>
-              </div>
-          </div>
-        </template>
+            </div>
+          </template>
+        </div>
       </div>
-    </div>
-    <div 
-      v-if="setConf.length > 1"
-      class="graph-set-container flex flex-row flex-wrap flex-center"
-    >
-      <div
-        v-for="set of setConf"
-        :key="set"
-        class="graph-set"
+      <div 
+        v-if="setConf.length > 1"
+        class="graph-set-container flex flex-row flex-wrap flex-center"
       >
         <div
-          class="set-color"
-          :style="{
-            'background-color': (set.color || '#fff'),
-            'border': (set.border || '0px solid transparent')
-          }"
-        ></div> {{set.setLabel}}
+          v-for="set of setConf"
+          :key="set"
+          class="graph-set"
+        >
+          <div
+            class="set-color"
+            :style="{
+              'background-color': (set.color || '#fff'),
+              'border': (set.border || '0px solid transparent')
+            }"
+          ></div> {{set.setLabel}}
+        </div>
       </div>
     </div>
   </div>
@@ -221,6 +350,7 @@ export default defineComponent({
       displayMode: GraphDisplayMode.Absolute,
       GraphDisplayMode,
       hiddenCols: {},
+      isMobile: true,
     }
   },
   watch: {
@@ -417,21 +547,24 @@ export default defineComponent({
 </script>
 <style lang="scss" scoped>
 .graph-root {
-  max-width: 100%;
-  width: 42rem;
+  // max-width: 100%;
+  // width: 42rem;
   // height: 24rem;
-  margin: 2rem;
+  // margin: 2rem;
   border: 1px solid #fa6;
+
+  width: 100%;
+
   display: flex;
   flex-direction: column;
 
-  &.wide {
-    width: 72rem;
+  // &.wide {
+  //   width: 72rem;
 
-    .graph-main {
-      min-width: calc(72rem - 2px);
-    }
-  }
+  //   .graph-main {
+  //     min-width: calc(72rem - 2px);
+  //   }
+  // }
 }
 
 .graph-header {
@@ -439,6 +572,8 @@ export default defineComponent({
   flex-shrink: 0;
 
   padding: 1rem;
+
+  z-index: 1000;
 
   h1 {
     text-align: center;
@@ -518,11 +653,10 @@ export default defineComponent({
 }
 .graph-main-container {
   width: 100%;
-  overflow-x: auto;
 }
 .graph-main {
   width: 100%;
-  min-width: calc(42rem - 2px);
+  // min-width: calc(42rem - 2px);
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -530,9 +664,6 @@ export default defineComponent({
 
   // flex-grow: 1;
   position: relative;
-
-  overflow-y: auto;
-  
 }
 
 .graph-value {
@@ -612,6 +743,192 @@ export default defineComponent({
   }
 }
 
+.desktop {
+  .graph-main-container {
+    overflow-x: auto;
+  }
+  .graph-main {
+    overflow-y: hidden;
+  }
+}
+
+.mobile {
+  .graph-grid-y, .graph-bars {
+    max-height: unset;
+    height: 100%;
+    width: 100%;
+  }
+
+  .graph-grid-y {
+    position: absolute;
+    height: 100%;
+    left: 0;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+
+    pointer-events: none;
+
+    .graph-tick-y {
+      position: relative;
+      display: block;
+      border-left: 1px dotted rgba(#fa6, 0.5);
+
+      .value-abs, .value-percent {
+        position: sticky;
+        right: 0;
+        transform: unset;
+        margin-left: 2px;
+        top: 1.5rem;
+        height: 0% !important;
+        width: 1.5em;
+        white-space: nowrap;
+        // margin-left: 0px;
+        // padding-left: 0px;
+        // background-color: #000; 
+        z-index: 110;
+      }
+      .value-abs {
+        left: 0.25rem;
+        // text-align: right;
+      }
+      .value-percent {
+        left: 0.25rem;
+        // text-align: right;
+      }
+    }
+  }
+  .graph-main-container {
+    width: 100%;
+  }
+  .graph-main {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 1rem;
+
+    .sticky-bg, .sticky-bg-title {
+      position: sticky;
+      z-index: 100;
+      width: 100%;
+      height: 2.25rem;
+
+      margin-top: -2.25rem;
+      top:  0;
+      background: rgba(0,0,0,0.9);
+      box-shadow: -0.5rem -0.25rem 0.25rem 0.5rem rgba(0,0,0,0.9);
+
+      .unstuck {
+        height: 0;
+        overflow-y: visible;
+        position: relative;
+        z-index: 102;
+        width: 100%;
+
+        div {
+          display: block;
+          position: absolute;
+          top: 0;
+          background-color: #000;
+          min-height: 1.2rem;
+          width: 100%;
+        }
+      }
+
+      .stuck {
+        position: sticky;
+        top: 0;
+        height: 20px;
+        z-index: 101;
+      }
+    }
+
+    .sticky-bg-title {
+      display: contents;
+    }
+  }
+
+  .graph-value {
+    width: 100% !important;
+    display: flex;
+    flex-direction: column;
+
+    .mobile-graph-bars {
+      // display: flex;
+      // flex-direction: row;
+      // justify-content: center;
+      margin-top: 0px;
+      margin-bottom: 4px;
+
+      .mobile-graph-set-track {
+        // display: flex;
+        // flex-direction: column-reverse;
+        margin-top: 1px;
+        margin-bottom: 1px;
+
+        .mobile-graph-data-bar {
+          display: block;
+        }
+
+        .graph-data-column-value {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .mobile-graph-set-track {
+    display: flex;
+    width: 100%;
+  }
+
+  .mobile-graph-label {
+    margin-top: 0.5em;
+    font-size: 0.8rem;
+    .answer {
+      font-variant: small-caps;
+      opacity: 0.69;
+    }
+  }
+
+  .graph-set-container {
+    position: sticky; 
+    bottom: 0px;
+    background-color: rgba(0,0,0,0.8);
+
+    box-shadow: -0.5rem -0.25rem 0.25rem 0.5rem rgba(0,0,0,0.8);
+
+    padding: 0;
+    margin: 0.5rem 1rem;
+    margin-top: 0;
+    font-size: 0.7rem;
+
+    .graph-set {
+      margin: 0.5rem 1rem;
+
+      .set-color {
+        display: inline-block;
+        width: 0.5rem;
+        height: 0.5rem;
+
+        box-sizing: border-box;
+      }
+    }
+  }
+
+  .title-mini {
+    margin-top: 0.5rem;
+    color: #fa6;
+    font-weight: bold;
+
+    font-size: 0.7rem;
+    font-variant: small-caps;
+  }
+}
+
 .graph-set-container {
   padding: 0.5rem 1rem;
   font-size: 0.9rem;
@@ -635,6 +952,9 @@ export default defineComponent({
   flex-grow: 1;
 }
 
+.relative {
+  position:relative;
+}
 
 </style>
 

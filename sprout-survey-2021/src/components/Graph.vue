@@ -1,9 +1,6 @@
 <template>
   <div
     class="graph-root"
-    :class="{
-      'wide': graphConf?.size === 'wide'
-    }"
   >
     <div class="graph-header expand">
       <h1>{{title}}</h1>
@@ -26,7 +23,7 @@
         </div>
       </div>
     </div>
-    <div v-if="false" class="desktop">
+    <div v-if="!isMobile" class="desktop">
       <div class="graph-main-container desktop">
         <div class="graph-main">
           <div
@@ -333,6 +330,7 @@ export default defineComponent({
     'sort',
     'debug',
     'defaultMode',
+    'isMobile',
   ],
   data() {
     return {
@@ -350,7 +348,6 @@ export default defineComponent({
       displayMode: GraphDisplayMode.Absolute,
       GraphDisplayMode,
       hiddenCols: {},
-      isMobile: true,
     }
   },
   watch: {
@@ -547,24 +544,12 @@ export default defineComponent({
 </script>
 <style lang="scss" scoped>
 .graph-root {
-  // max-width: 100%;
-  // width: 42rem;
-  // height: 24rem;
-  // margin: 2rem;
-  border: 1px solid #fa6;
+  // border: 1px solid #fa6;
 
   width: 100%;
 
   display: flex;
   flex-direction: column;
-
-  // &.wide {
-  //   width: 72rem;
-
-  //   .graph-main {
-  //     min-width: calc(72rem - 2px);
-  //   }
-  // }
 }
 
 .graph-header {

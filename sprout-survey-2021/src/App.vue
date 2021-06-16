@@ -64,49 +64,58 @@
         </p>
 
         <div class="graph-area">
-          <graph
-            title="Age"
-            description="'Snowflake' contains people who think are funny and gave answers like 'example: 11' or anything not a number. Answers like 'I'll be X soon' were corrected to answerer's current age."
-            :conf="{trackWidth: '6px !important', columnWidth: '8px !important'}"
-            :columns="graphColumnDefinitions[Question.Age]()"
-            :data="graphData?.['all']?.[Question.Age]"
-            :dataCount="graphData?.['all']?.answerCount"
-          ></graph>
-          <graph
-            title="Gender"
-            description="Various instances of 'nonbinary' are accounted for under 'other'. 'Apache' category contains meme answers, and I'm awarding 'male dragon' a title of a snowflake."
-            :conf="{barWidth: '16px !important', columnWidth: '64px !important'}"
-            :columns="graphColumnDefinitions[Question.Gender]()"
-            :data="graphData?.['all']?.[Question.Gender]"
-            :dataCount="graphData?.['all']?.answerCount"
-          ></graph>
+          <div class="graph-normal">
+            <graph
+              title="Age"
+              description="'Snowflake' contains people who think are funny and gave answers like 'example: 11' or anything not a number. Answers like 'I'll be X soon' were corrected to answerer's current age."
+              :conf="{trackWidth: '6px !important', columnWidth: '8px !important'}"
+              :columns="graphColumnDefinitions[Question.Age]()"
+              :data="graphData?.['all']?.[Question.Age]"
+              :dataCount="graphData?.['all']?.answerCount"
+            ></graph>
+            <average
+              :data="graphData?.['all']?.[Question.Age]"
+            >
+            </average>
+          </div>
+          <div class="graph-normal">
+            <graph
+              title="Gender"
+              description="Various instances of 'nonbinary' are accounted for under 'other'. 'Apache' category contains meme answers, and I'm awarding 'male dragon' a title of a snowflake."
+              :conf="{barWidth: '16px !important', columnWidth: '64px !important'}"
+              :columns="graphColumnDefinitions[Question.Gender]()"
+              :data="graphData?.['all']?.[Question.Gender]"
+              :dataCount="graphData?.['all']?.answerCount"
+            ></graph>
+          </div>
         </div>
-        <average
-            :data="graphData?.['all']?.[Question.Age]"
-          >
-          </average>
+        
 
         <p>
           So there's that. The "dragons are a stereotypically female interest" redditor got BTFO'd. In the "other" department, there is a few trans-adjacent things (mostly nonbinary). I am pleasantly suprised about the lack of super-special-snowflake genders and a negligible number of apache-genders (apache-genders appearing in this poll: '420'). Thanks for keeping the answer serious.
         </p>
 
         <div class="graph-area">
-          <graph
-            title="Location"
-            description="What continent do you live on?"
-            :conf="{barWidth: '16px !important', columnWidth: '72px !important', labelsHeight: '6rem'}"
-            :columns="graphColumnDefinitions[Question.Location]()"
-            :data="graphData?.['all']?.[Question.Location]"
-            :dataCount="graphData?.['all']?.answerCount"
-          ></graph>
-          <graph
-            title="Community"
-            description=" Which of the following HTTYD communities do you most frequently use? PICK ONE."
-            :conf="{barWidth: '16px !important', columnWidth: '42px !important', sidewaysLabels: true, labelsHeight: '6rem'}"
-            :columns="graphColumnDefinitions[Question.Community]()"
-            :data="graphData?.['all']?.[Question.Community]"
-            :dataCount="graphData?.['all']?.answerCount"
-          ></graph>
+          <div class="graph-normal">
+            <graph
+              title="Location"
+              description="What continent do you live on?"
+              :conf="{barWidth: '16px !important', columnWidth: '72px !important', labelsHeight: '6rem'}"
+              :columns="graphColumnDefinitions[Question.Location]()"
+              :data="graphData?.['all']?.[Question.Location]"
+              :dataCount="graphData?.['all']?.answerCount"
+            ></graph>
+          </div>
+          <div class="graph-normal">
+            <graph
+              title="Community"
+              description=" Which of the following HTTYD communities do you most frequently use? PICK ONE."
+              :conf="{barWidth: '16px !important', columnWidth: '42px !important', sidewaysLabels: true, labelsHeight: '6rem'}"
+              :columns="graphColumnDefinitions[Question.Community]()"
+              :data="graphData?.['all']?.[Question.Community]"
+              :dataCount="graphData?.['all']?.answerCount"
+            ></graph>
+          </div>
         </div>
 
         <p>
@@ -114,23 +123,26 @@
         </p>
         
         <div class="graph-area">
-          <graph
-            title="Participation in 2020 survey"
-            description=""
-            :conf="{barWidth: '16px !important', columnWidth: '72px !important', labelsHeight: '6rem'}"
-            :columns="graphColumnDefinitions[Question.SurveyParticipation2020]()"
-            :data="graphData?.['all']?.[Question.SurveyParticipation2020]"
-            :dataCount="graphData?.['all']?.answerCount"
-          ></graph>
-
-          <graph
-            title="Time in fandom"
-            description="How long have you been a member of the HTTYD fandom? Answers were given in years."
-            :conf="{barWidth: '12px !important', columnWidth: '42px !important', labelsHeight: '6rem'}"
-            :columns="graphColumnDefinitions[Question.FandomTime]()"
-            :data="graphData?.['all']?.[Question.FandomTime]"
-            :dataCount="graphData?.['all']?.answerCount"
-          ></graph>
+          <div class="graph-normal">
+            <graph
+              title="Participation in 2020 survey"
+              description=""
+              :conf="{barWidth: '16px !important', columnWidth: '72px !important', labelsHeight: '6rem'}"
+              :columns="graphColumnDefinitions[Question.SurveyParticipation2020]()"
+              :data="graphData?.['all']?.[Question.SurveyParticipation2020]"
+              :dataCount="graphData?.['all']?.answerCount"
+            ></graph>
+          </div>
+          <div class="graph-normal">
+            <graph
+              title="Time in fandom"
+              description="How long have you been a member of the HTTYD fandom? Answers were given in years."
+              :conf="{barWidth: '12px !important', columnWidth: '42px !important', labelsHeight: '6rem'}"
+              :columns="graphColumnDefinitions[Question.FandomTime]()"
+              :data="graphData?.['all']?.[Question.FandomTime]"
+              :dataCount="graphData?.['all']?.answerCount"
+            ></graph>
+          </div>
         </div>
 
         <p>
@@ -139,14 +151,16 @@
         </p>
 
         <div class="graph-area">
-          <graph
-            title="Of furries and scalies"
-            description="Do you identify as a member of any of the following communities? (Multiple choices possible)"
-            :conf="{barWidth: '16px !important', columnWidth: '72px !important', labelsHeight: '6rem'}"
-            :columns="graphColumnDefinitions[Question.IsFurry]()"
-            :data="graphData?.['all']?.[Question.IsFurry]"
-            :dataCount="graphData?.['all']?.answerCount"
-          ></graph>
+          <div class="graph-normal">
+            <graph
+              title="Of furries and scalies"
+              description="Do you identify as a member of any of the following communities? (Multiple choices possible)"
+              :conf="{barWidth: '16px !important', columnWidth: '72px !important', labelsHeight: '6rem'}"
+              :columns="graphColumnDefinitions[Question.IsFurry]()"
+              :data="graphData?.['all']?.[Question.IsFurry]"
+              :dataCount="graphData?.['all']?.answerCount"
+            ></graph>
+          </div>
         </div>
 
         <p>
@@ -176,54 +190,54 @@
         <p>We'll take a look at the scores from 1-10 first. To save some scrolling, I've went ahead and combined all the graphs into one.</p>
         
         <div class="graph-area">
-          <graph
-            title="Rate [aspect] from 1 to 10"
-            :conf="{
-              columnXMargin: '1.2rem',
-              barWidth: '8px',
-              trackWidth: '8px',
-              columnWidth: '72px',
-              trackWidthMultiset: 'auto',
-              size: 'wide'
-            }"
-            :columns="graphColumnDefinitions.rating1to10()"
-            :sets="sets.httydRatingSets"
-            :data="{
-              _multiSet: true,
-              overall: graphData?.['all']?.[Question.HTTYD1Rating],
-              plot: graphData?.['all']?.[Question.HTTYD1PlotRating],
-              score: graphData?.['all']?.[Question.HTTYD1ScoreRating],
-              theme: graphData?.['all']?.[Question.HTTYD1ThemeRating],
-              character: graphData?.['all']?.[Question.HTTYD1CharacterRating],
-              visuals: graphData?.['all']?.[Question.HTTYD1VisualsRating],
-              emotion: graphData?.['all']?.[Question.HTTYD1EmotionRating]
-            }"
-            :dataCount="{
-              overall: graphData?.['all']?.answerCount,
-              plot: graphData?.['all']?.answerCount,
-              score: graphData?.['all']?.answerCount,
-              theme: graphData?.['all']?.answerCount,
-              character: graphData?.['all']?.answerCount,
-              visuals: graphData?.['all']?.answerCount,
-              emotion: graphData?.['all']?.answerCount,
-            }"
-          ></graph>
-        </div>
-        <div class="">
-          <average
-            :sets="sets.httydRatingSets"
-            :data="{
-              _multiSet: true,
-              overall: graphData?.['all']?.[Question.HTTYD1Rating],
-              plot: graphData?.['all']?.[Question.HTTYD1PlotRating],
-              score: graphData?.['all']?.[Question.HTTYD1ScoreRating],
-              theme: graphData?.['all']?.[Question.HTTYD1ThemeRating],
-              character: graphData?.['all']?.[Question.HTTYD1CharacterRating],
-              visuals: graphData?.['all']?.[Question.HTTYD1VisualsRating],
-              emotion: graphData?.['all']?.[Question.HTTYD1EmotionRating]
-            }"
-          >
-          </average>
+          <div class="graph-wide">
+            <graph
+              title="Rate [aspect] from 1 to 10"
+              :conf="{
+                columnXMargin: '1.2rem',
+                barWidth: '8px',
+                trackWidth: '8px',
+                columnWidth: '72px',
+                trackWidthMultiset: 'auto',
+                size: 'wide'
+              }"
+              :columns="graphColumnDefinitions.rating1to10()"
+              :sets="sets.httydRatingSets"
+              :data="{
+                _multiSet: true,
+                overall: graphData?.['all']?.[Question.HTTYD1Rating],
+                plot: graphData?.['all']?.[Question.HTTYD1PlotRating],
+                score: graphData?.['all']?.[Question.HTTYD1ScoreRating],
+                theme: graphData?.['all']?.[Question.HTTYD1ThemeRating],
+                character: graphData?.['all']?.[Question.HTTYD1CharacterRating],
+                visuals: graphData?.['all']?.[Question.HTTYD1VisualsRating],
+                emotion: graphData?.['all']?.[Question.HTTYD1EmotionRating]
+              }"
+              :dataCount="{
+                overall: graphData?.['all']?.answerCount,
+                plot: graphData?.['all']?.answerCount,
+                score: graphData?.['all']?.answerCount,
+                theme: graphData?.['all']?.answerCount,
+                character: graphData?.['all']?.answerCount,
+                visuals: graphData?.['all']?.answerCount,
+                emotion: graphData?.['all']?.answerCount,
+              }"
+            ></graph>
+             <average
+              :sets="sets.httydRatingSets"
+              :data="{
+                _multiSet: true,
+                overall: graphData?.['all']?.[Question.HTTYD1Rating],
+                plot: graphData?.['all']?.[Question.HTTYD1PlotRating],
+                score: graphData?.['all']?.[Question.HTTYD1ScoreRating],
+                theme: graphData?.['all']?.[Question.HTTYD1ThemeRating],
+                character: graphData?.['all']?.[Question.HTTYD1CharacterRating],
+                visuals: graphData?.['all']?.[Question.HTTYD1VisualsRating],
+                emotion: graphData?.['all']?.[Question.HTTYD1EmotionRating]
+              }"
+            >
+            </average>
+          </div>
         </div>
 
         <p>
@@ -231,34 +245,37 @@
           As a side note — feast your eyes on that sub-1 standard deviation on the overall bar, because this is the last time
           you're going to see this kind of universal agreement on a 1-10 question.
         </p>
+        <p>As far as last year's results are concerned, the score is about the same as last year (9.3)</p>. 
         <p>
           Let's move on to the next graph: which characters people liked and which characters they hated.
         </p>
 
         <div class="graph-area">
-          <graph
-            title="Favourite and least favourite character"
-            :conf="{
-              size: 'wide',
-              barWidth: '16px !important',
-              trackWidthMultiset: '16px !important',
-              trackWidth: '16px !important',
-              columnWidth: '42px !important',
-              sidewaysLabels: true,
-              labelsHeight: '6rem'
-            }"
-            :columns="graphColumnDefinitions.httydCharacter(1)"
-            :sets="sets.mostLeastFavouriteSets"
-            :data="{
-              _multiSet: true,
-              favourite: graphData?.['all']?.[Question.HTTYD1FavouriteCharacter],
-              worst: graphData?.['all']?.[Question.HTTYD1WorstCharacter],
-            }"
-            :dataCount="{
-              favourite: graphData?.['all']?.answerCount,
-              worst: graphData?.['all']?.answerCount,
-            }"
-          ></graph>
+          <div class="graph-wide">
+            <graph
+              title="Favourite and least favourite character"
+              :conf="{
+                size: 'wide',
+                barWidth: '16px !important',
+                trackWidthMultiset: '16px !important',
+                trackWidth: '16px !important',
+                columnWidth: '42px !important',
+                sidewaysLabels: true,
+                labelsHeight: '6rem'
+              }"
+              :columns="graphColumnDefinitions.httydCharacter(1)"
+              :sets="sets.mostLeastFavouriteSets"
+              :data="{
+                _multiSet: true,
+                favourite: graphData?.['all']?.[Question.HTTYD1FavouriteCharacter],
+                worst: graphData?.['all']?.[Question.HTTYD1WorstCharacter],
+              }"
+              :dataCount="{
+                favourite: graphData?.['all']?.answerCount,
+                worst: graphData?.['all']?.answerCount,
+              }"
+            ></graph>
+          </div>
         </div>
 
         <p>
@@ -270,23 +287,25 @@
         </p>
 
         <div class="graph-area">
-          <graph
-            title="Favourite Soundtrack"
-            :conf="{
-              columnXMargin: '1.2rem',
-              barWidth: '12px !important',
-              trackWidthMultiset: '12px !important',
-              trackWidth: '12px !important',
-              columnWidth: '12px !important',
-              sidewaysLabels: true,
-              labelsHeight: '12rem',
-              size: 'wide',
-              hideZeroColumns: true
-            }"
-            :columns="graphColumnDefinitions[Question.HTTYD1FavouriteSoundtrack]()"
-            :data="graphData?.['all']?.[Question.HTTYD1FavouriteSoundtrack]"
-            :dataCount="graphData?.['all']?.answerCount"
-          ></graph>
+          <div class="graph-wide">
+            <graph
+              title="Favourite Soundtrack"
+              :conf="{
+                columnXMargin: '1.2rem',
+                barWidth: '12px !important',
+                trackWidthMultiset: '12px !important',
+                trackWidth: '12px !important',
+                columnWidth: '12px !important',
+                sidewaysLabels: true,
+                labelsHeight: '12rem',
+                size: 'wide',
+                hideZeroColumns: true
+              }"
+              :columns="graphColumnDefinitions[Question.HTTYD1FavouriteSoundtrack]()"
+              :data="graphData?.['all']?.[Question.HTTYD1FavouriteSoundtrack]"
+              :dataCount="graphData?.['all']?.answerCount"
+            ></graph>
+          </div>
         </div>
       
         <p>
@@ -306,58 +325,59 @@
           the visuals got seems to be the only metric that's getting a bump. 
         </p>
         <div class="graph-area">
-          <graph
-            title="Rate [aspect] from 1 to 10"
-            :conf="{
-              columnXMargin: '1.2rem',
-              barWidth: '8px',
-              trackWidth: '8px',
-              columnWidth: '72px',
-              trackWidthMultiset: 'auto',
-              size: 'wide'
-            }"
-            :columns="graphColumnDefinitions.rating1to10()"
-            :sets="sets.httydRatingSets"
-            :data="{
-              _multiSet: true,
-              overall: graphData?.['all']?.[Question.HTTYD2Rating],
-              plot: graphData?.['all']?.[Question.HTTYD2PlotRating],
-              score: graphData?.['all']?.[Question.HTTYD2ScoreRating],
-              theme: graphData?.['all']?.[Question.HTTYD2ThemeRating],
-              character: graphData?.['all']?.[Question.HTTYD2CharacterRating],
-              visuals: graphData?.['all']?.[Question.HTTYD2VisualsRating],
-              emotion: graphData?.['all']?.[Question.HTTYD2EmotionRating]
-            }"
-            :dataCount="{
-              overall: graphData?.['all']?.answerCount,
-              plot: graphData?.['all']?.answerCount,
-              score: graphData?.['all']?.answerCount,
-              theme: graphData?.['all']?.answerCount,
-              character: graphData?.['all']?.answerCount,
-              visuals: graphData?.['all']?.answerCount,
-              emotion: graphData?.['all']?.answerCount,
-            }"
-          ></graph>
-        </div>
-        <div class="">
-          <average
-            :sets="sets.httydRatingSets"
-            :data="{
-              _multiSet: true,
-              overall: graphData?.['all']?.[Question.HTTYD2Rating],
-              plot: graphData?.['all']?.[Question.HTTYD2PlotRating],
-              score: graphData?.['all']?.[Question.HTTYD2ScoreRating],
-              theme: graphData?.['all']?.[Question.HTTYD2ThemeRating],
-              character: graphData?.['all']?.[Question.HTTYD2CharacterRating],
-              visuals: graphData?.['all']?.[Question.HTTYD2VisualsRating],
-              emotion: graphData?.['all']?.[Question.HTTYD2EmotionRating]
-            }"
-          >
-          </average>
+          <div class="graph-wide">
+            <graph
+              title="Rate [aspect] from 1 to 10"
+              :conf="{
+                columnXMargin: '1.2rem',
+                barWidth: '8px',
+                trackWidth: '8px',
+                columnWidth: '72px',
+                trackWidthMultiset: 'auto',
+                size: 'wide'
+              }"
+              :columns="graphColumnDefinitions.rating1to10()"
+              :sets="sets.httydRatingSets"
+              :data="{
+                _multiSet: true,
+                overall: graphData?.['all']?.[Question.HTTYD2Rating],
+                plot: graphData?.['all']?.[Question.HTTYD2PlotRating],
+                score: graphData?.['all']?.[Question.HTTYD2ScoreRating],
+                theme: graphData?.['all']?.[Question.HTTYD2ThemeRating],
+                character: graphData?.['all']?.[Question.HTTYD2CharacterRating],
+                visuals: graphData?.['all']?.[Question.HTTYD2VisualsRating],
+                emotion: graphData?.['all']?.[Question.HTTYD2EmotionRating]
+              }"
+              :dataCount="{
+                overall: graphData?.['all']?.answerCount,
+                plot: graphData?.['all']?.answerCount,
+                score: graphData?.['all']?.answerCount,
+                theme: graphData?.['all']?.answerCount,
+                character: graphData?.['all']?.answerCount,
+                visuals: graphData?.['all']?.answerCount,
+                emotion: graphData?.['all']?.answerCount,
+              }"
+            ></graph>
+            <average
+              :sets="sets.httydRatingSets"
+              :data="{
+                _multiSet: true,
+                overall: graphData?.['all']?.[Question.HTTYD2Rating],
+                plot: graphData?.['all']?.[Question.HTTYD2PlotRating],
+                score: graphData?.['all']?.[Question.HTTYD2ScoreRating],
+                theme: graphData?.['all']?.[Question.HTTYD2ThemeRating],
+                character: graphData?.['all']?.[Question.HTTYD2CharacterRating],
+                visuals: graphData?.['all']?.[Question.HTTYD2VisualsRating],
+                emotion: graphData?.['all']?.[Question.HTTYD2EmotionRating]
+              }"
+            >
+            </average>
+          </div>
         </div>
 
         <p>
-          The fun bit is that those results are mildly out of line with last year's results. Last year, most people voted
+          The overall rating for HTTYD2 did not change from last year (8.5 average). There was, however, a mild change in what
+          people consider the movie's strongest aspect. Last year, most people voted
           'emotion' as the strongest aspect of the second movie and 'graphics or music' (they were combined in a single option)
           second, but this year visuals and music <i>both</i> got higher aggregate score than the emotion — though admittedly,
           still well within the margin of error.
@@ -366,29 +386,31 @@
         <p>Anyway, let's move on:</p>
 
         <div class="graph-area">
-          <graph
-            title="Favourite and least favourite character"
-            :conf="{
-              barWidth: '8px !important',
-              trackWidthMultiset: '8px !important',
-              trackWidth: '8px !important',
-              columnWidth: '32px !important',
-              sidewaysLabels: true,
-              labelsHeight: '6rem',
-              size: 'wide'
-            }"
-            :columns="graphColumnDefinitions.httydCharacter(2)"
-            :sets="sets.mostLeastFavouriteSets"
-            :data="{
-              _multiSet: true,
-              favourite: graphData?.['all']?.[Question.HTTYD2FavouriteCharacter],
-              worst: graphData?.['all']?.[Question.HTTYD2WorstCharacter],
-            }"
-            :dataCount="{
-              favourite: graphData?.['all']?.answerCount,
-              worst: graphData?.['all']?.answerCount,
-            }"
-          ></graph>
+          <div class="graph-wide">
+            <graph
+              title="Favourite and least favourite character"
+              :conf="{
+                barWidth: '8px !important',
+                trackWidthMultiset: '8px !important',
+                trackWidth: '8px !important',
+                columnWidth: '32px !important',
+                sidewaysLabels: true,
+                labelsHeight: '6rem',
+                size: 'wide'
+              }"
+              :columns="graphColumnDefinitions.httydCharacter(2)"
+              :sets="sets.mostLeastFavouriteSets"
+              :data="{
+                _multiSet: true,
+                favourite: graphData?.['all']?.[Question.HTTYD2FavouriteCharacter],
+                worst: graphData?.['all']?.[Question.HTTYD2WorstCharacter],
+              }"
+              :dataCount="{
+                favourite: graphData?.['all']?.answerCount,
+                worst: graphData?.['all']?.answerCount,
+              }"
+            ></graph>
+          </div>
         </div>
 
         <p>
@@ -396,23 +418,25 @@
         </p>
 
         <div class="graph-area">
-          <graph
-            title="Favourite Soundtrack"
-            :conf="{
-              columnXMargin: '1.2rem',
-              barWidth: '12px !important',
-              trackWidthMultiset: '12px !important',
-              trackWidth: '12px !important',
-              columnWidth: '12px !important',
-              sidewaysLabels: true,
-              labelsHeight: '12rem',
-              size: 'wide',
-              hideZeroColumns: true
-            }"
-            :columns="graphColumnDefinitions[Question.HTTYD2FavouriteSoundtrack]()"
-            :data="graphData?.['all']?.[Question.HTTYD2FavouriteSoundtrack]"
-            :dataCount="graphData?.['all']?.answerCount"
-          ></graph>
+          <div class="graph-wide">
+            <graph
+              title="Favourite Soundtrack"
+              :conf="{
+                columnXMargin: '1.2rem',
+                barWidth: '12px !important',
+                trackWidthMultiset: '12px !important',
+                trackWidth: '12px !important',
+                columnWidth: '12px !important',
+                sidewaysLabels: true,
+                labelsHeight: '12rem',
+                size: 'wide',
+                hideZeroColumns: true
+              }"
+              :columns="graphColumnDefinitions[Question.HTTYD2FavouriteSoundtrack]()"
+              :data="graphData?.['all']?.[Question.HTTYD2FavouriteSoundtrack]"
+              :dataCount="graphData?.['all']?.answerCount"
+            ></graph>
+          </div>
         </div>
       
         <p>
@@ -422,19 +446,21 @@
         <p>Last but not least: our special question.</p>
 
         <div class="graph-area">
-          <graph
-            title="Would Valka be better as villain?"
-            description="Originally, Dean DeBlois planned to have Valka be HTTYD 2's sympathetic villain. The question asked: Do you think this idea, if it had made it into the final product, would have improved the film?"
-            :conf="{
-              barWidth: '20px !important',
-              trackWidthMultiset: '16px !important',
-              trackWidth: '16px !important',
-              columnWidth: '96px !important',
-            }"
-            :columns="graphColumnDefinitions.yesNoNeutral()"
-            :data="graphData?.['all']?.[Question.HTTYD2ValkaVillain]"
-            :dataCount="graphData?.['all']?.answerCount"
-          ></graph>
+          <div class="graph-wide">
+            <graph
+              title="Would Valka be better as villain?"
+              description="Originally, Dean DeBlois planned to have Valka be HTTYD 2's sympathetic villain. The question asked: Do you think this idea, if it had made it into the final product, would have improved the film?"
+              :conf="{
+                barWidth: '20px !important',
+                trackWidthMultiset: '16px !important',
+                trackWidth: '16px !important',
+                columnWidth: '96px !important',
+              }"
+              :columns="graphColumnDefinitions.yesNoNeutral()"
+              :data="graphData?.['all']?.[Question.HTTYD2ValkaVillain]"
+              :dataCount="graphData?.['all']?.answerCount"
+            ></graph>
+          </div>
         </div>
 
       </div>
@@ -452,56 +478,55 @@
           overall rating seems to have mildly improved over last year, but still ... This is not good, Sean. This is ... very not good.
         </p>
         <div class="graph-area">
-          <graph
-            title="Rate [aspect] from 1 to 10"
-            :conf="{
-              columnXMargin: '1.2rem',
-              barWidth: '8px',
-              trackWidth: '8px',
-              columnWidth: '72px',
-              trackWidthMultiset: 'auto',
-              size: 'wide'
-            }"
-            :columns="graphColumnDefinitions.rating1to10()"
-            :sets="sets.httydRatingSets"
-            :data="{
-              _multiSet: true,
-              overall: graphData?.['all']?.[Question.HTTYD3Rating],
-              plot: graphData?.['all']?.[Question.HTTYD3PlotRating],
-              score: graphData?.['all']?.[Question.HTTYD3ScoreRating],
-              theme: graphData?.['all']?.[Question.HTTYD3ThemeRating],
-              character: graphData?.['all']?.[Question.HTTYD3CharacterRating],
-              visuals: graphData?.['all']?.[Question.HTTYD3VisualsRating],
-              emotion: graphData?.['all']?.[Question.HTTYD3EmotionRating]
-            }"
-            :dataCount="{
-              overall: graphData?.['all']?.answerCount,
-              plot: graphData?.['all']?.answerCount,
-              score: graphData?.['all']?.answerCount,
-              theme: graphData?.['all']?.answerCount,
-              character: graphData?.['all']?.answerCount,
-              visuals: graphData?.['all']?.answerCount,
-              emotion: graphData?.['all']?.answerCount,
-            }"
-          ></graph>
+          <div class="graph-wide">
+            <graph
+              title="Rate [aspect] from 1 to 10"
+              :conf="{
+                columnXMargin: '1.2rem',
+                barWidth: '8px',
+                trackWidth: '8px',
+                columnWidth: '72px',
+                trackWidthMultiset: 'auto',
+                size: 'wide'
+              }"
+              :columns="graphColumnDefinitions.rating1to10()"
+              :sets="sets.httydRatingSets"
+              :data="{
+                _multiSet: true,
+                overall: graphData?.['all']?.[Question.HTTYD3Rating],
+                plot: graphData?.['all']?.[Question.HTTYD3PlotRating],
+                score: graphData?.['all']?.[Question.HTTYD3ScoreRating],
+                theme: graphData?.['all']?.[Question.HTTYD3ThemeRating],
+                character: graphData?.['all']?.[Question.HTTYD3CharacterRating],
+                visuals: graphData?.['all']?.[Question.HTTYD3VisualsRating],
+                emotion: graphData?.['all']?.[Question.HTTYD3EmotionRating]
+              }"
+              :dataCount="{
+                overall: graphData?.['all']?.answerCount,
+                plot: graphData?.['all']?.answerCount,
+                score: graphData?.['all']?.answerCount,
+                theme: graphData?.['all']?.answerCount,
+                character: graphData?.['all']?.answerCount,
+                visuals: graphData?.['all']?.answerCount,
+                emotion: graphData?.['all']?.answerCount,
+              }"
+            ></graph>
+            <average
+              :sets="sets.httydRatingSets"
+              :data="{
+                _multiSet: true,
+                overall: graphData?.['all']?.[Question.HTTYD3Rating],
+                plot: graphData?.['all']?.[Question.HTTYD3PlotRating],
+                score: graphData?.['all']?.[Question.HTTYD3ScoreRating],
+                theme: graphData?.['all']?.[Question.HTTYD3ThemeRating],
+                character: graphData?.['all']?.[Question.HTTYD3CharacterRating],
+                visuals: graphData?.['all']?.[Question.HTTYD3VisualsRating],
+                emotion: graphData?.['all']?.[Question.HTTYD3EmotionRating]
+              }"
+            >
+            </average>
+          </div>
         </div>
-        <div class="">
-          <average
-            :sets="sets.httydRatingSets"
-            :data="{
-              _multiSet: true,
-              overall: graphData?.['all']?.[Question.HTTYD3Rating],
-              plot: graphData?.['all']?.[Question.HTTYD3PlotRating],
-              score: graphData?.['all']?.[Question.HTTYD3ScoreRating],
-              theme: graphData?.['all']?.[Question.HTTYD3ThemeRating],
-              character: graphData?.['all']?.[Question.HTTYD3CharacterRating],
-              visuals: graphData?.['all']?.[Question.HTTYD3VisualsRating],
-              emotion: graphData?.['all']?.[Question.HTTYD3EmotionRating]
-            }"
-          >
-          </average>
-        </div>
-
         <p>
           It's known for quite some time that the opinions of the last movie arerather controversial, but the averages and deviations
           really drive the point home. Given the general feel of the subreddit in the past year and a half since movie's release, this
@@ -520,35 +545,40 @@
           artstyle itself, which is much more subjective.
         </p>
         <p>
-          This should explain why the ratings are lower, and I can say where they're coming from as I absolutely detest the dragon armor in
-          this movie, and dislike a few other things from the artistic perspective as well. I am not going to lie — I expected THW to come
-          out on top in the visuals department
+          This should probably explain why the ratings are lower, and I can say where they're coming from as I absolutely detest the dragon
+          armor in this movie, and dislike a few other things from the artistic perspective as well. I am not going to lie — I expected THW
+          to come out on top in the visuals department, but turns out that reddit hype machine may be deceiving.
+        </p>
+        <p>
+          Compared to the last year's survey, the average overall rating is up by a small but noticeable amount: 6.78, compared to 6.3 last year.
         </p>
 
         <div class="graph-area">
-          <graph
-            title="Favourite and least favourite character"
-            :conf="{
-              size: 'wide',
-              barWidth: '16px !important',
-              trackWidthMultiset: '16px !important',
-              trackWidth: '16px !important',
-              columnWidth: '42px !important',
-              sidewaysLabels: true,
-              labelsHeight: '6rem'
-            }"
-            :columns="graphColumnDefinitions.httydCharacter(3)"
-            :sets="sets.mostLeastFavouriteSets"
-            :data="{
-              _multiSet: true,
-              favourite: graphData?.['all']?.[Question.HTTYD3FavouriteCharacter],
-              worst: graphData?.['all']?.[Question.HTTYD3WorstCharacter],
-            }"
-            :dataCount="{
-              favourite: graphData?.['all']?.answerCount,
-              worst: graphData?.['all']?.answerCount,
-            }"
-          ></graph>
+          <div class="graph-wide">
+            <graph
+              title="Favourite and least favourite character"
+              :conf="{
+                size: 'wide',
+                barWidth: '16px !important',
+                trackWidthMultiset: '16px !important',
+                trackWidth: '16px !important',
+                columnWidth: '42px !important',
+                sidewaysLabels: true,
+                labelsHeight: '6rem'
+              }"
+              :columns="graphColumnDefinitions.httydCharacter(3)"
+              :sets="sets.mostLeastFavouriteSets"
+              :data="{
+                _multiSet: true,
+                favourite: graphData?.['all']?.[Question.HTTYD3FavouriteCharacter],
+                worst: graphData?.['all']?.[Question.HTTYD3WorstCharacter],
+              }"
+              :dataCount="{
+                favourite: graphData?.['all']?.answerCount,
+                worst: graphData?.['all']?.answerCount,
+              }"
+            ></graph>
+          </div>
         </div>
 
         <p>
@@ -557,23 +587,25 @@
         </p>
 
         <div class="graph-area">
-          <graph
-            title="Favourite Soundtrack"
-            :conf="{
-              columnXMargin: '1.2rem',
-              barWidth: '12px !important',
-              trackWidthMultiset: '12px !important',
-              trackWidth: '12px !important',
-              columnWidth: '12px !important',
-              sidewaysLabels: true,
-              labelsHeight: '12rem',
-              size: 'wide',
-              hideZeroColumns: true
-            }"
-            :columns="graphColumnDefinitions[Question.HTTYD3FavouriteSoundtrack]()"
-            :data="graphData?.['all']?.[Question.HTTYD3FavouriteSoundtrack]"
-            :dataCount="graphData?.['all']?.answerCount"
-          ></graph>
+          <div class="graph-wide">
+            <graph
+              title="Favourite Soundtrack"
+              :conf="{
+                columnXMargin: '1.2rem',
+                barWidth: '12px !important',
+                trackWidthMultiset: '12px !important',
+                trackWidth: '12px !important',
+                columnWidth: '12px !important',
+                sidewaysLabels: true,
+                labelsHeight: '12rem',
+                size: 'wide',
+                hideZeroColumns: true
+              }"
+              :columns="graphColumnDefinitions[Question.HTTYD3FavouriteSoundtrack]()"
+              :data="graphData?.['all']?.[Question.HTTYD3FavouriteSoundtrack]"
+              :dataCount="graphData?.['all']?.answerCount"
+            ></graph>
+          </div>
         </div>
       
         <p>
@@ -591,22 +623,23 @@
         </p>
 
         <div class="graph-area">
-          <graph
-            title="Would Drago redemption arc improve THW?"
-            description="Originally, Dean DeBlois planned a redemption arc for Drago in the third film. The question was: Do you think this idea, if it had made it into the final product, would have improved the film?"
-            :conf="{
-              size: 'wide',
-              barWidth: '20px !important',
-              trackWidthMultiset: '16px !important',
-              trackWidth: '16px !important',
-              columnWidth: '96px !important',
-            }"
-            :columns="graphColumnDefinitions.yesNoNeutral()"
-            :data="graphData?.['all']?.[Question.HTTYD3DragoRedemptionArc]"
-            :dataCount="graphData?.['all']?.answerCount"
-          ></graph>
+          <div class="graph-wide">
+            <graph
+              title="Would Drago redemption arc improve THW?"
+              description="Originally, Dean DeBlois planned a redemption arc for Drago in the third film. The question was: Do you think this idea, if it had made it into the final product, would have improved the film?"
+              :conf="{
+                size: 'wide',
+                barWidth: '20px !important',
+                trackWidthMultiset: '16px !important',
+                trackWidth: '16px !important',
+                columnWidth: '96px !important',
+              }"
+              :columns="graphColumnDefinitions.yesNoNeutral()"
+              :data="graphData?.['all']?.[Question.HTTYD3DragoRedemptionArc]"
+              :dataCount="graphData?.['all']?.answerCount"
+            ></graph>
+          </div>
         </div>
-
       </div>
 
       <h2>Answers: Aggregated</h2>
@@ -617,154 +650,237 @@
         </p>
         
         <div class="graph-area">
-          <graph
-            title="Rate [movie] from 1 to 10, overall"
-            :conf="{
-              columnXMargin: '0.125rem',
-              barWidth: '8px',
-              trackWidthMultiset: 'auto'
-            }"
-            :columns="graphColumnDefinitions.rating1to10()"
-            :sets="sets.httydMovieSets"
-            :data="{
-              _multiSet: true,
-              '1': graphData?.['all']?.[Question.HTTYD1Rating],
-              '2': graphData?.['all']?.[Question.HTTYD2Rating],
-              '3': graphData?.['all']?.[Question.HTTYD3Rating],
-            }"
-            :dataCount="{
-              '1': graphData?.['all']?.answerCount,
-              '2': graphData?.['all']?.answerCount,
-              '3': graphData?.['all']?.answerCount,
-            }"
-          ></graph>
+          <div class="graph-wide">
+            <graph
+              title="Rate [movie] from 1 to 10, overall"
+              :conf="{
+                columnXMargin: '0.125rem',
+                barWidth: '8px',
+                trackWidthMultiset: 'auto'
+              }"
+              :columns="graphColumnDefinitions.rating1to10()"
+              :sets="sets.httydMovieSets"
+              :data="{
+                _multiSet: true,
+                '1': graphData?.['all']?.[Question.HTTYD1Rating],
+                '2': graphData?.['all']?.[Question.HTTYD2Rating],
+                '3': graphData?.['all']?.[Question.HTTYD3Rating],
+              }"
+              :dataCount="{
+                '1': graphData?.['all']?.answerCount,
+                '2': graphData?.['all']?.answerCount,
+                '3': graphData?.['all']?.answerCount,
+              }"
+            ></graph>
+            <average
+              :sets="sets.httydMovieSets"
+              :data="{
+                _multiSet: true,
+                '1': graphData?.['all']?.[Question.HTTYD1Rating],
+                '2': graphData?.['all']?.[Question.HTTYD2Rating],
+                '3': graphData?.['all']?.[Question.HTTYD3Rating],
+              }"
+            ></average>
+          </div>
 
-          <graph
-            title="Rate plot from 1 to 10"
-            :conf="{
-              columnXMargin: '0.125rem',
-              barWidth: '8px',
-              trackWidthMultiset: 'auto'
-            }"
-            :columns="graphColumnDefinitions.rating1to10()"
-            :sets="sets.httydMovieSets"
-            :data="{
-              _multiSet: true,
-              '1': graphData?.['all']?.[Question.HTTYD1PlotRating],
-              '2': graphData?.['all']?.[Question.HTTYD2PlotRating],
-              '3': graphData?.['all']?.[Question.HTTYD3PlotRating],
-            }"
-            :dataCount="{
-              '1': graphData?.['all']?.answerCount,
-              '2': graphData?.['all']?.answerCount,
-              '3': graphData?.['all']?.answerCount,
-            }"
-          ></graph>
-          <graph
-            title="Rate theme from 1 to 10"
-            :conf="{
-              columnXMargin: '0.125rem',
-              barWidth: '8px',
-              trackWidthMultiset: 'auto'
-            }"
-            :columns="graphColumnDefinitions.rating1to10()"
-            :sets="sets.httydMovieSets"
-            :data="{
-              _multiSet: true,
-              '1': graphData?.['all']?.[Question.HTTYD1ThemeRating],
-              '2': graphData?.['all']?.[Question.HTTYD2ThemeRating],
-              '3': graphData?.['all']?.[Question.HTTYD3ThemeRating],
-            }"
-            :dataCount="{
-              '1': graphData?.['all']?.answerCount,
-              '2': graphData?.['all']?.answerCount,
-              '3': graphData?.['all']?.answerCount,
-            }"
-          ></graph>
-          <graph
-            title="Rate score from 1 to 10"
-            :conf="{
-              columnXMargin: '0.125rem',
-              barWidth: '8px',
-              trackWidthMultiset: 'auto'
-            }"
-            :columns="graphColumnDefinitions.rating1to10()"
-            :sets="sets.httydMovieSets"
-            :data="{
-              _multiSet: true,
-              '1': graphData?.['all']?.[Question.HTTYD1ScoreRating],
-              '2': graphData?.['all']?.[Question.HTTYD2ScoreRating],
-              '3': graphData?.['all']?.[Question.HTTYD3ScoreRating],
-            }"
-            :dataCount="{
-              '1': graphData?.['all']?.answerCount,
-              '2': graphData?.['all']?.answerCount,
-              '3': graphData?.['all']?.answerCount,
-            }"
-          ></graph>
-          <graph
-            title="Rate characters from 1 to 10"
-            :conf="{
-              columnXMargin: '0.125rem',
-              barWidth: '8px',
-              trackWidthMultiset: 'auto'
-            }"
-            :columns="graphColumnDefinitions.rating1to10()"
-            :sets="sets.httydMovieSets"
-            :data="{
-              _multiSet: true,
-              '1': graphData?.['all']?.[Question.HTTYD1CharacterRating],
-              '2': graphData?.['all']?.[Question.HTTYD2CharacterRating],
-              '3': graphData?.['all']?.[Question.HTTYD3CharacterRating],
-            }"
-            :dataCount="{
-              '1': graphData?.['all']?.answerCount,
-              '2': graphData?.['all']?.answerCount,
-              '3': graphData?.['all']?.answerCount,
-            }"
-          ></graph>
-          <graph
-            title="Rate visuals from 1 to 10"
-            :conf="{
-              columnXMargin: '0.125rem',
-              barWidth: '8px',
-              trackWidthMultiset: 'auto'
-            }"
-            :columns="graphColumnDefinitions.rating1to10()"
-            :sets="sets.httydMovieSets"
-            :data="{
-              _multiSet: true,
-              '1': graphData?.['all']?.[Question.HTTYD1VisualsRating],
-              '2': graphData?.['all']?.[Question.HTTYD2VisualsRating],
-              '3': graphData?.['all']?.[Question.HTTYD3VisualsRating],
-            }"
-            :dataCount="{
-              '1': graphData?.['all']?.answerCount,
-              '2': graphData?.['all']?.answerCount,
-              '3': graphData?.['all']?.answerCount,
-            }"
-          ></graph>
-          <graph
-            title="Rate emotion from 1 to 10"
-            :conf="{
-              columnXMargin: '0.125rem',
-              barWidth: '8px',
-              trackWidthMultiset: 'auto'
-            }"
-            :columns="graphColumnDefinitions.rating1to10()"
-            :sets="sets.httydMovieSets"
-            :data="{
-              _multiSet: true,
-              '1': graphData?.['all']?.[Question.HTTYD1EmotionRating],
-              '2': graphData?.['all']?.[Question.HTTYD2EmotionRating],
-              '3': graphData?.['all']?.[Question.HTTYD3EmotionRating]
-            }"
-            :dataCount="{
-              '1': graphData?.['all']?.answerCount,
-              '2': graphData?.['all']?.answerCount,
-              '3': graphData?.['all']?.answerCount,
-            }"
-          ></graph>
+          <div class="graph-wide">
+            <graph
+              title="Rate plot from 1 to 10"
+              :conf="{
+                columnXMargin: '0.125rem',
+                barWidth: '8px',
+                trackWidthMultiset: 'auto'
+              }"
+              :columns="graphColumnDefinitions.rating1to10()"
+              :sets="sets.httydMovieSets"
+              :data="{
+                _multiSet: true,
+                '1': graphData?.['all']?.[Question.HTTYD1PlotRating],
+                '2': graphData?.['all']?.[Question.HTTYD2PlotRating],
+                '3': graphData?.['all']?.[Question.HTTYD3PlotRating],
+              }"
+              :dataCount="{
+                '1': graphData?.['all']?.answerCount,
+                '2': graphData?.['all']?.answerCount,
+                '3': graphData?.['all']?.answerCount,
+              }"
+            ></graph>
+            <average
+              :sets="sets.httydMovieSets"
+              :data="{
+                _multiSet: true,
+                '1': graphData?.['all']?.[Question.HTTYD1PlotRating],
+                '2': graphData?.['all']?.[Question.HTTYD2PlotRating],
+                '3': graphData?.['all']?.[Question.HTTYD3PlotRating],
+              }"
+            ></average>
+          </div>
+
+          <div class="graph-wide">
+            <graph
+              title="Rate theme from 1 to 10"
+              :conf="{
+                columnXMargin: '0.125rem',
+                barWidth: '8px',
+                trackWidthMultiset: 'auto'
+              }"
+              :columns="graphColumnDefinitions.rating1to10()"
+              :sets="sets.httydMovieSets"
+              :data="{
+                _multiSet: true,
+                '1': graphData?.['all']?.[Question.HTTYD1ThemeRating],
+                '2': graphData?.['all']?.[Question.HTTYD2ThemeRating],
+                '3': graphData?.['all']?.[Question.HTTYD3ThemeRating],
+              }"
+              :dataCount="{
+                '1': graphData?.['all']?.answerCount,
+                '2': graphData?.['all']?.answerCount,
+                '3': graphData?.['all']?.answerCount,
+              }"
+            ></graph>
+            <average
+              :sets="sets.httydMovieSets"
+              :data="{
+                _multiSet: true,
+                '1': graphData?.['all']?.[Question.HTTYD1ThemeRating],
+                '2': graphData?.['all']?.[Question.HTTYD2ThemeRating],
+                '3': graphData?.['all']?.[Question.HTTYD3ThemeRating],
+              }"
+            >
+            </average>
+          </div>
+
+          <div class="graph-wide">
+            <graph
+              title="Rate score from 1 to 10"
+              :conf="{
+                columnXMargin: '0.125rem',
+                barWidth: '8px',
+                trackWidthMultiset: 'auto'
+              }"
+              :columns="graphColumnDefinitions.rating1to10()"
+              :sets="sets.httydMovieSets"
+              :data="{
+                _multiSet: true,
+                '1': graphData?.['all']?.[Question.HTTYD1ScoreRating],
+                '2': graphData?.['all']?.[Question.HTTYD2ScoreRating],
+                '3': graphData?.['all']?.[Question.HTTYD3ScoreRating],
+              }"
+              :dataCount="{
+                '1': graphData?.['all']?.answerCount,
+                '2': graphData?.['all']?.answerCount,
+                '3': graphData?.['all']?.answerCount,
+              }"
+            ></graph>
+            <average
+              :sets="sets.httydMovieSets"
+              :data="{
+                _multiSet: true,
+                '1': graphData?.['all']?.[Question.HTTYD1ScoreRating],
+                '2': graphData?.['all']?.[Question.HTTYD2ScoreRating],
+                '3': graphData?.['all']?.[Question.HTTYD3ScoreRating],
+              }"
+            ></average>
+          </div>
+
+          <div class="graph-wide">
+            <graph
+              title="Rate characters from 1 to 10"
+              :conf="{
+                columnXMargin: '0.125rem',
+                barWidth: '8px',
+                trackWidthMultiset: 'auto'
+              }"
+              :columns="graphColumnDefinitions.rating1to10()"
+              :sets="sets.httydMovieSets"
+              :data="{
+                _multiSet: true,
+                '1': graphData?.['all']?.[Question.HTTYD1CharacterRating],
+                '2': graphData?.['all']?.[Question.HTTYD2CharacterRating],
+                '3': graphData?.['all']?.[Question.HTTYD3CharacterRating],
+              }"
+              :dataCount="{
+                '1': graphData?.['all']?.answerCount,
+                '2': graphData?.['all']?.answerCount,
+                '3': graphData?.['all']?.answerCount,
+              }"
+            ></graph>
+            <average
+              :sets="sets.httydMovieSets"
+              :data="{
+                _multiSet: true,
+                '1': graphData?.['all']?.[Question.HTTYD1CharacterRating],
+                '2': graphData?.['all']?.[Question.HTTYD2CharacterRating],
+                '3': graphData?.['all']?.[Question.HTTYD3CharacterRating],
+              }"
+            ></average>
+          </div>
+
+          <div class="graph-wide">
+            <graph
+              title="Rate visuals from 1 to 10"
+              :conf="{
+                columnXMargin: '0.125rem',
+                barWidth: '8px',
+                trackWidthMultiset: 'auto'
+              }"
+              :columns="graphColumnDefinitions.rating1to10()"
+              :sets="sets.httydMovieSets"
+              :data="{
+                _multiSet: true,
+                '1': graphData?.['all']?.[Question.HTTYD1VisualsRating],
+                '2': graphData?.['all']?.[Question.HTTYD2VisualsRating],
+                '3': graphData?.['all']?.[Question.HTTYD3VisualsRating],
+              }"
+              :dataCount="{
+                '1': graphData?.['all']?.answerCount,
+                '2': graphData?.['all']?.answerCount,
+                '3': graphData?.['all']?.answerCount,
+              }"
+            ></graph>
+            <average
+              :sets="sets.httydMovieSets"
+              :data="{
+                _multiSet: true,
+                '1': graphData?.['all']?.[Question.HTTYD1VisualsRating],
+                '2': graphData?.['all']?.[Question.HTTYD2VisualsRating],
+                '3': graphData?.['all']?.[Question.HTTYD3VisualsRating],
+              }"
+            ></average>
+          </div>
+
+          <div class="graph-wide">
+            <graph
+              title="Rate emotion from 1 to 10"
+              :conf="{
+                columnXMargin: '0.125rem',
+                barWidth: '8px',
+                trackWidthMultiset: 'auto'
+              }"
+              :columns="graphColumnDefinitions.rating1to10()"
+              :sets="sets.httydMovieSets"
+              :data="{
+                _multiSet: true,
+                '1': graphData?.['all']?.[Question.HTTYD1EmotionRating],
+                '2': graphData?.['all']?.[Question.HTTYD2EmotionRating],
+                '3': graphData?.['all']?.[Question.HTTYD3EmotionRating]
+              }"
+              :dataCount="{
+                '1': graphData?.['all']?.answerCount,
+                '2': graphData?.['all']?.answerCount,
+                '3': graphData?.['all']?.answerCount,
+              }"
+            ></graph>
+            <average
+              :sets="sets.httydMovieSets"
+              :data="{
+                _multiSet: true,
+                '1': graphData?.['all']?.[Question.HTTYD1EmotionRating],
+                '2': graphData?.['all']?.[Question.HTTYD2EmotionRating],
+                '3': graphData?.['all']?.[Question.HTTYD3EmotionRating]
+              }"
+            ></average>
+          </div>
         </div>
         <p>
           I initially wasn't going to comment here, but a few trends become a bit ... <i>well</i>.
@@ -801,19 +917,21 @@
         </p>
 
         <div class="graph-area">
-          <graph
-            title="Favourite draconid"
-            :conf="{
-              trackWidth: '8px',
-              barWidth: '16px !important',
-              columnWidth: '32px !important',
-              sidewaysLabels: true,
-              labelsHeight: '12rem'
-            }"
-            :columns="graphColumnDefinitions[Question.FavouriteDraconid]()"
-            :data="graphData?.['all']?.[Question.FavouriteDraconid]"
-            :dataCount="graphData?.['all']?.answerCount"
-          ></graph>
+          <div class="graph-wide">
+            <graph
+              title="Favourite draconid"
+              :conf="{
+                trackWidth: '8px',
+                barWidth: '16px !important',
+                columnWidth: '32px !important',
+                sidewaysLabels: true,
+                labelsHeight: '12rem'
+              }"
+              :columns="graphColumnDefinitions[Question.FavouriteDraconid]()"
+              :data="graphData?.['all']?.[Question.FavouriteDraconid]"
+              :dataCount="graphData?.['all']?.answerCount"
+            ></graph>
+          </div>
         </div>
       
         <p>
@@ -836,19 +954,21 @@
         </p>
 
         <div class="graph-area">
-          <graph
-            title="Favourite villain"
-            :conf="{
-              trackWidth: '8px',
-              barWidth: '16px !important',
-              columnWidth: '32px !important',
-              sidewaysLabels: true,
-              labelsHeight: '12rem'
-            }"
-            :columns="graphColumnDefinitions[Question.FavouriteVillain]()"
-            :data="graphData?.['all']?.[Question.FavouriteVillain]"
-            :dataCount="graphData?.['all']?.answerCount"
-          ></graph>
+          <div class="graph-wide">
+            <graph
+              title="Favourite villain"
+              :conf="{
+                trackWidth: '8px',
+                barWidth: '16px !important',
+                columnWidth: '32px !important',
+                sidewaysLabels: true,
+                labelsHeight: '12rem'
+              }"
+              :columns="graphColumnDefinitions[Question.FavouriteVillain]()"
+              :data="graphData?.['all']?.[Question.FavouriteVillain]"
+              :dataCount="graphData?.['all']?.answerCount"
+            ></graph>
+          </div>
         </div>
 
         <div class="">
@@ -865,19 +985,21 @@
         </p>
 
         <div class="graph-area">
-          <graph
-            title="Favourite opening scene"
-            :conf="{
-              trackWidth: '8px',
-              barWidth: '16px !important',
-              columnWidth: '32px !important',
-              sidewaysLabels: true,
-              labelsHeight: '12rem'
-            }"
-            :columns="graphColumnDefinitions[Question.FavouriteOpeningScene]()"
-            :data="graphData?.['all']?.[Question.FavouriteOpeningScene]"
-            :dataCount="graphData?.['all']?.answerCount"
-          ></graph>
+          <div class="graph-wide">
+            <graph
+              title="Favourite opening scene"
+              :conf="{
+                trackWidth: '8px',
+                barWidth: '16px !important',
+                columnWidth: '32px !important',
+                sidewaysLabels: true,
+                labelsHeight: '12rem'
+              }"
+              :columns="graphColumnDefinitions[Question.FavouriteOpeningScene]()"
+              :data="graphData?.['all']?.[Question.FavouriteOpeningScene]"
+              :dataCount="graphData?.['all']?.answerCount"
+            ></graph>
+          </div>
         </div>
 
         <p>
@@ -899,74 +1021,72 @@
           Let's start with the Light Fury.
         </p>
         <div class="graph-area">
-          <graph
-            title="Light Fury as a character"
-            description="What is your opinion on the Light Fury as a character? 0: garbage tier, 5-6: eh, 10: perfect"
-            :conf="{trackWidth: '8px', barWidth: '16px !important', columnWidth: '32px !important'}"
-            :columns="graphColumnDefinitions.rating1to10()"
-            :data="graphData?.['all']?.[Question.ThotfuryCharacterRating]"
-            :dataCount="graphData?.['all']?.answerCount"
-          ></graph>
-          <graph
-            title="Light fury: the design"
-            description="What is your opinion on the Light Fury's visual design? 0: garbage tier, 5-6: eh, 10: perfect"
-            :conf="{trackWidth: '8px', barWidth: '16px !important', columnWidth: '32px !important'}"
-            :columns="graphColumnDefinitions.rating1to10()"
-            :data="graphData?.['all']?.[Question.ThotfuryDesignRating]"
-            :dataCount="graphData?.['all']?.answerCount"
-          ></graph>
+          <div class="graph-normal">
+            <graph
+              title="Light Fury as a character"
+              description="What is your opinion on the Light Fury as a character? 0: garbage tier, 5-6: eh, 10: perfect"
+              :conf="{trackWidth: '8px', barWidth: '16px !important', columnWidth: '32px !important'}"
+              :columns="graphColumnDefinitions.rating1to10()"
+              :data="graphData?.['all']?.[Question.ThotfuryCharacterRating]"
+              :dataCount="graphData?.['all']?.answerCount"
+            ></graph>
+            <average
+              :sets="[
+                {setKey: 'thotfuryCharacter', setLabel: 'LF as character'},
+                {setKey: 'thotfuryDesign', setLabel: 'LF design'}
+              ]"
+              :data="{
+                _multiSet: true,
+                thotfuryCharacter: graphData?.['all']?.[Question.ThotfuryCharacterRating],
+                thotfuryDesign: graphData?.['all']?.[Question.ThotfuryDesignRating]
+              }"
+            >
+            </average>
+          </div>
+          <div class="graph-normal">
+            <graph
+              title="Light fury: the design"
+              description="What is your opinion on the Light Fury's visual design? 0: garbage tier, 5-6: eh, 10: perfect"
+              :conf="{trackWidth: '8px', barWidth: '16px !important', columnWidth: '32px !important'}"
+              :columns="graphColumnDefinitions.rating1to10()"
+              :data="graphData?.['all']?.[Question.ThotfuryDesignRating]"
+              :dataCount="graphData?.['all']?.answerCount"
+            ></graph>
+          </div>
         </div>
 
-        <div>
-          <average
-            :sets="[
-              {setKey: 'thotfuryCharacter', setLabel: 'LF as character'},
-              {setKey: 'thotfuryDesign', setLabel: 'LF design'}
-            ]"
-            :data="{
-              _multiSet: true,
-              thotfuryCharacter: graphData?.['all']?.[Question.ThotfuryCharacterRating],
-              thotfuryDesign: graphData?.['all']?.[Question.ThotfuryDesignRating]
-            }"
-          >
-          </average>
-        </div>
         <p>
           Almost no surprises here. The ratings are about as contested as the rest of the The Hidden World related questions so far.
         </p>
 
         <div class="graph-area">
-          <graph
-            title="Was THW a fitting end to the franchise?"
-            description="0: hell no, 5-6: eh, 10: perfect"
-            :conf="{trackWidth: '8px', barWidth: '16px !important', columnWidth: '32px !important'}"
-            :columns="graphColumnDefinitions.rating1to10()"
-            :data="graphData?.['all']?.[Question.THWFittingEnd]"
-            :dataCount="graphData?.['all']?.answerCount"
-          ></graph>
-          <graph
-            title="The plot of The Hidden World makes sense"
-            description="Rate your agreement with the following statement: 'The plot of The Hidden World makes sense and has clear cause and effect.' 0: hell no, 5-6: eh, 10: enough sense to make me a millionare"
-            :conf="{trackWidth: '8px', barWidth: '16px !important', columnWidth: '32px !important'}"
-            :columns="graphColumnDefinitions.rating1to10()"
-            :data="graphData?.['all']?.[Question.THWPlotCoherency]"
-            :dataCount="graphData?.['all']?.answerCount"
-          ></graph>
-        </div>
+          <div class="graph-normal">
+            <graph
+              title="Was THW a fitting end to the franchise?"
+              description="0: hell no, 5-6: eh, 10: perfect"
+              :conf="{trackWidth: '8px', barWidth: '16px !important', columnWidth: '32px !important'}"
+              :columns="graphColumnDefinitions.rating1to10()"
+              :data="graphData?.['all']?.[Question.THWFittingEnd]"
+              :dataCount="graphData?.['all']?.answerCount"
+            ></graph>
+            <average
+              :data="graphData?.['all']?.[Question.THWFittingEnd]"
+            ></average>
+          </div>
 
-        <div>
-          <average
-            :sets="[
-              {setKey: 'fittingEnd', setLabel: 'THW is fitting end'},
-              {setKey: 'plotMakesSense', setLabel: 'THW plot is coherent & makes sense'}
-            ]"
-            :data="{
-              _multiSet: true,
-              fittingEnd: graphData?.['all']?.[Question.THWFittingEnd],
-              plotMakesSense: graphData?.['all']?.[Question.THWPlotCoherency]
-            }"
-          >
-          </average>
+          <div class="graph-normal">
+            <graph
+              title="The plot of The Hidden World makes sense"
+              description="Rate your agreement with the following statement: 'The plot of The Hidden World makes sense and has clear cause and effect.' 0: hell no, 5-6: eh, 10: enough sense to make me a millionare"
+              :conf="{trackWidth: '8px', barWidth: '16px !important', columnWidth: '32px !important'}"
+              :columns="graphColumnDefinitions.rating1to10()"
+              :data="graphData?.['all']?.[Question.THWPlotCoherency]"
+              :dataCount="graphData?.['all']?.answerCount"
+            ></graph>
+            <average
+              :data="graphData?.['all']?.[Question.THWPlotCoherency]"
+            ></average>
+          </div>
         </div>
 
         <p>
@@ -974,52 +1094,56 @@
         </p>
 
         <div class="graph-area">
-          <graph
-            title="Fitting end vs. plot rating"
-            :conf="{trackWidthMultiset: '8px', columnWidth: '32px !important'}"
-            :sets="[{
-              setKey: 'fittingEnd',
-              setLabel: 'Fitting end rating',
-              color: '#ffeaa9'
-            },{
-              setKey: 'plotRating',
-              setLabel: 'Plot rating',
-              color: '#c90000'
-            }]"
-            :columns="graphColumnDefinitions.rating1to10()"
-            :data="{
-              _multiSet: true,
-              fittingEnd: graphData?.['all']?.[Question.THWFittingEnd],
-              plotRating: graphData?.['all']?.[Question.HTTYD3PlotRating]
-            }"
-            :dataCount="{
-              fittingEnd: graphData?.['all']?.answerCount,
-              plotRating: graphData?.['all']?.answerCount
-            }"
-          ></graph>
-          <graph
-            title="Plot coherency vs. plot rating"
-            :conf="{trackWidthMultiset: '8px', columnWidth: '32px !important'}"
-            :columns="graphColumnDefinitions.rating1to10()"
-            :sets="[{
-              setKey: 'plotCoherency',
-              setLabel: 'Plot coherency rating',
-              color: '#ffeaa9'
-            },{
-              setKey: 'plotRating',
-              setLabel: 'Plot rating',
-              color: '#c90000'
-            }]"
-            :data="{
-              _multiSet: true,
-              plotCoherency: graphData?.['all']?.[Question.THWPlotCoherency],
-              plotRating: graphData?.['all']?.[Question.HTTYD3PlotRating]
-            }"
-            :dataCount="{
-              fittingEnd: graphData?.['all']?.answerCount,
-              plotRating: graphData?.['all']?.answerCount 
-            }"
-          ></graph>
+          <div class="graph-normal">
+            <graph
+              title="Fitting end vs. plot rating"
+              :conf="{trackWidthMultiset: '8px', columnWidth: '32px !important'}"
+              :sets="[{
+                setKey: 'fittingEnd',
+                setLabel: 'Fitting end rating',
+                color: '#ffeaa9'
+              },{
+                setKey: 'plotRating',
+                setLabel: 'Plot rating',
+                color: '#c90000'
+              }]"
+              :columns="graphColumnDefinitions.rating1to10()"
+              :data="{
+                _multiSet: true,
+                fittingEnd: graphData?.['all']?.[Question.THWFittingEnd],
+                plotRating: graphData?.['all']?.[Question.HTTYD3PlotRating]
+              }"
+              :dataCount="{
+                fittingEnd: graphData?.['all']?.answerCount,
+                plotRating: graphData?.['all']?.answerCount
+              }"
+            ></graph>
+          </div>
+          <div class="graph-normal">
+            <graph
+              title="Plot coherency vs. plot rating"
+              :conf="{trackWidthMultiset: '8px', columnWidth: '32px !important'}"
+              :columns="graphColumnDefinitions.rating1to10()"
+              :sets="[{
+                setKey: 'plotCoherency',
+                setLabel: 'Plot coherency rating',
+                color: '#ffeaa9'
+              },{
+                setKey: 'plotRating',
+                setLabel: 'Plot rating',
+                color: '#c90000'
+              }]"
+              :data="{
+                _multiSet: true,
+                plotCoherency: graphData?.['all']?.[Question.THWPlotCoherency],
+                plotRating: graphData?.['all']?.[Question.HTTYD3PlotRating]
+              }"
+              :dataCount="{
+                fittingEnd: graphData?.['all']?.answerCount,
+                plotRating: graphData?.['all']?.answerCount 
+              }"
+            ></graph>
+          </div>
         </div>
         <div>
           <average
@@ -1034,8 +1158,7 @@
               plotMakesSense: graphData?.['all']?.[Question.THWPlotCoherency],
               plotRating: graphData?.['all']?.[Question.HTTYD3PlotRating]
             }"
-          >
-          </average>
+          ></average>
         </div>
 
 
@@ -1057,6 +1180,7 @@
         </p>
 
         <div class="graph-area">
+          <div class="graph-normal">
           <graph
             title="Strongest themes — TODO MULTI CHOICE"
             description="Which of the following themes / messages do you feel The Hidden World most strongly conveys? Participants were asked to pick two at most. 'They tried' is for people who picked more."
@@ -1071,20 +1195,20 @@
             :data="graphData?.['all']?.[Question.THWStrongestThemes]"
             :dataCount="graphData?.['all']?.answerCount"
           ></graph>
-          <graph
-            title="Theme approval"
-            description="Regarding the themes you see in The Hidden World, rate the extent to which you agree with / approve of those themes."
-            :conf="{trackWidth: '8px', barWidth: '16px !important', columnWidth: '32px !important'}"
-            :columns="graphColumnDefinitions.rating1to10()"
-            :data="graphData?.['all']?.[Question.THWThemeApproval]"
-            :dataCount="graphData?.['all']?.answerCount"
-          ></graph>
         </div>
-        <div>
-          <average
-            :data="graphData?.['all']?.[Question.THWThemeApproval]"
-          >
-          </average>
+          <div class="graph-normal">
+            <graph
+              title="Theme approval"
+              description="Regarding the themes you see in The Hidden World, rate the extent to which you agree with / approve of those themes."
+              :conf="{trackWidth: '8px', barWidth: '16px !important', columnWidth: '32px !important'}"
+              :columns="graphColumnDefinitions.rating1to10()"
+              :data="graphData?.['all']?.[Question.THWThemeApproval]"
+              :dataCount="graphData?.['all']?.answerCount"
+            ></graph>
+            <average
+              :data="graphData?.['all']?.[Question.THWThemeApproval]"
+            ></average>
+          </div>
         </div>
 
         <p>
@@ -1114,11 +1238,6 @@
           </li>
         </ul>
 
-
-        <p>
-          TODO: COMMENTARY
-        </p>
-
       </div>
 
     </div>
@@ -1134,146 +1253,136 @@
         </p>
 
         <div class="graph-area">
-          <graph
-            title="Favourite short"
-            :conf="{
-              trackWidth: '8px',
-              barWidth: '16px !important',
-              columnWidth: '64px !important',
-              sidewaysLabels: true,
-              labelsHeight: '16rem'
-            }"
-            :columns="graphColumnDefinitions[Question.FavouriteShort]()"
-            :data="{
-              ...graphData?.['all']?.[Question.FavouriteShort],
-              _multiSet: false
-            }"
-            :dataCount="graphData?.['all']?.answerCount"
-          ></graph>
+          <div class="graph-normal">
+            <graph
+              title="Favourite short"
+              :conf="{
+                trackWidth: '8px',
+                barWidth: '16px !important',
+                columnWidth: '64px !important',
+                sidewaysLabels: true,
+                labelsHeight: '16rem'
+              }"
+              :columns="graphColumnDefinitions[Question.FavouriteShort]()"
+              :data="{
+                ...graphData?.['all']?.[Question.FavouriteShort],
+                _multiSet: false
+              }"
+              :dataCount="graphData?.['all']?.answerCount"
+            ></graph>
+          </div>
 
-          <graph
-            title="Rate [short] from 1 to 10"
-            :conf="{
-              columnXMargin: '0.75rem',
-              barWidth: '6px',
-              trackWidthMultiset: 'auto'
-            }"
-            :columns="graphColumnDefinitions.rating1to10()"
-            :sets="[{
-              setKey: 'bk',
-              setLabel: 'Boneknapper',
-              color: '#c00'
-            },{
-              setKey: 'bod',
-              setLabel: 'Book of Dragons',
-              color: '#d92'
-            },{
-              setKey: 'dodr',
-              setLabel: 'Dawn of Dragon Riders',
-              color: '#fb8'
-            },{
-              setKey: 'gonf',
-              setLabel: 'Gift of the Night Fury',
-              color: '#139'
-            },{
-              setKey: 'hc',
-              setLabel: 'Homecoming',
-              color: '#17a'
-            },]"
-            :data="{
-              _multiSet: true,
-              'bk': graphData?.['all']?.[Question.BoneknapperRating],
-              'bod': graphData?.['all']?.[Question.BookOfDragonsRating],
-              'dodr': graphData?.['all']?.[Question.DawnOfDragonRidersRating],
-              'gonf': graphData?.['all']?.[Question.GONFRating],
-              'hc': graphData?.['all']?.[Question.HomecomingRating],
-            }"
-            :dataCount="{
-              'bk': graphData?.['all']?.answerCount,
-              'bod': graphData?.['all']?.answerCount,
-              'dodr': graphData?.['all']?.answerCount,
-              'gonf': graphData?.['all']?.answerCount,
-              'hc': graphData?.['all']?.answerCount,
-            }"
-          ></graph>
-        </div>
-
-        <div>
-          <average
-            :sets="[{
-              setKey: 'bk',
-              setLabel: 'Boneknapper',
-              color: '#c00'
-            },{
-              setKey: 'bod',
-              setLabel: 'Book of Dragons',
-              color: '#d92'
-            },{
-              setKey: 'dodr',
-              setLabel: 'Dawn of Dragon Riders',
-              color: '#fb8'
-            },{
-              setKey: 'gonf',
-              setLabel: 'Gift of the Night Fury',
-              color: '#139'
-            },{
-              setKey: 'hc',
-              setLabel: 'Homecoming',
-              color: '#17a'
-            },]"
-            :data="{
-              _multiSet: true,
-              'bk': graphData?.['all']?.[Question.BoneknapperRating],
-              'bod': graphData?.['all']?.[Question.BookOfDragonsRating],
-              'dodr': graphData?.['all']?.[Question.DawnOfDragonRidersRating],
-              'gonf': graphData?.['all']?.[Question.GONFRating],
-              'hc': graphData?.['all']?.[Question.HomecomingRating],
-            }"
-          >
-          </average>
+          <div class="graph-normal">
+            <graph
+              title="Rate [short] from 1 to 10"
+              :conf="{
+                columnXMargin: '0.75rem',
+                barWidth: '6px',
+                trackWidthMultiset: 'auto'
+              }"
+              :columns="graphColumnDefinitions.rating1to10()"
+              :sets="[{
+                setKey: 'bk',
+                setLabel: 'Boneknapper',
+                color: '#c00'
+              },{
+                setKey: 'bod',
+                setLabel: 'Book of Dragons',
+                color: '#d92'
+              },{
+                setKey: 'dodr',
+                setLabel: 'Dawn of Dragon Riders',
+                color: '#fb8'
+              },{
+                setKey: 'gonf',
+                setLabel: 'Gift of the Night Fury',
+                color: '#139'
+              },{
+                setKey: 'hc',
+                setLabel: 'Homecoming',
+                color: '#17a'
+              },]"
+              :data="{
+                _multiSet: true,
+                'bk': graphData?.['all']?.[Question.BoneknapperRating],
+                'bod': graphData?.['all']?.[Question.BookOfDragonsRating],
+                'dodr': graphData?.['all']?.[Question.DawnOfDragonRidersRating],
+                'gonf': graphData?.['all']?.[Question.GONFRating],
+                'hc': graphData?.['all']?.[Question.HomecomingRating],
+              }"
+              :dataCount="{
+                'bk': graphData?.['all']?.answerCount,
+                'bod': graphData?.['all']?.answerCount,
+                'dodr': graphData?.['all']?.answerCount,
+                'gonf': graphData?.['all']?.answerCount,
+                'hc': graphData?.['all']?.answerCount,
+              }"
+            ></graph>
+            <average
+              :sets="[{
+                setKey: 'bk',
+                setLabel: 'Boneknapper',
+                color: '#c00'
+              },{
+                setKey: 'bod',
+                setLabel: 'Book of Dragons',
+                color: '#d92'
+              },{
+                setKey: 'dodr',
+                setLabel: 'Dawn of Dragon Riders',
+                color: '#fb8'
+              },{
+                setKey: 'gonf',
+                setLabel: 'Gift of the Night Fury',
+                color: '#139'
+              },{
+                setKey: 'hc',
+                setLabel: 'Homecoming',
+                color: '#17a'
+              },]"
+              :data="{
+                _multiSet: true,
+                'bk': graphData?.['all']?.[Question.BoneknapperRating],
+                'bod': graphData?.['all']?.[Question.BookOfDragonsRating],
+                'dodr': graphData?.['all']?.[Question.DawnOfDragonRidersRating],
+                'gonf': graphData?.['all']?.[Question.GONFRating],
+                'hc': graphData?.['all']?.[Question.HomecomingRating],
+              }"
+            >
+            </average>
+          </div>
         </div>
 
         <div class="graph-area">
-          <graph
-            title="Rate [TV series] from 1 to 10"
-            :conf="{
-              columnXMargin: '0.125rem',
-              barWidth: '8px',
-              trackWidthMultiset: 'auto'
-            }"
-            :columns="graphColumnDefinitions.rating1to10()"
-            :sets="[{
-              setKey: 'rdob',
-              setLabel: 'Riders/Defenders',
-              color: '#c00'
-            },{
-              setKey: 'rtte',
-              setLabel: 'Race to the Edge',
-              color: '#fb8'
-            }]"
-            :data="{
-              _multiSet: true,
-              'rdob': graphData?.['all']?.[Question.RidersOfBerkRating],
-              'rtte': graphData?.['all']?.[Question.RTTERating],
-            }"
-            :dataCount="{
-              'rdob': graphData?.['all']?.answerCount,
-              'rtte': graphData?.['all']?.answerCount
-            }"
-          ></graph>
-
-          <graph
-            title="Likability of side characters in RTTE"
-            description="Rate your agreement with the following statement: 'The side characters (Snotlout, Fishlegs, the Twins, etc) were generally more likable in Race to the Edge than in the films.'"
-            :conf="{trackWidth: '8px', barWidth: '16px !important', columnWidth: '32px !important'}"
-            :columns="graphColumnDefinitions.rating1to10()"
-            :data="graphData?.['all']?.[Question.SideCharactersLikabilityAgreement]"
-            :dataCount="graphData?.['all']?.answerCount"
-          ></graph>
-        </div>
-
-        <div>
-          <average
+          <div class="graph-normal">
+            <graph
+              title="Rate [TV series] from 1 to 10"
+              :conf="{
+                columnXMargin: '0.125rem',
+                barWidth: '8px',
+                trackWidthMultiset: 'auto'
+              }"
+              :columns="graphColumnDefinitions.rating1to10()"
+              :sets="[{
+                setKey: 'rdob',
+                setLabel: 'Riders/Defenders',
+                color: '#c00'
+              },{
+                setKey: 'rtte',
+                setLabel: 'Race to the Edge',
+                color: '#fb8'
+              }]"
+              :data="{
+                _multiSet: true,
+                'rdob': graphData?.['all']?.[Question.RidersOfBerkRating],
+                'rtte': graphData?.['all']?.[Question.RTTERating],
+              }"
+              :dataCount="{
+                'rdob': graphData?.['all']?.answerCount,
+                'rtte': graphData?.['all']?.answerCount
+              }"
+            ></graph>
+            <average
             :sets="[{
               setKey: 'rdob',
               setLabel: 'Riders/Defenders',
@@ -1290,13 +1399,24 @@
               _multiSet: true,
               'rdob': graphData?.['all']?.[Question.RidersOfBerkRating],
               'rtte': graphData?.['all']?.[Question.RTTERating],
-              'rtteCharLike': graphData?.['all']?.[Question.SideCharactersLikabilityAgreement]
             }"
-          >
-          </average>
+          ></average>
         </div>
 
-        <p>todo: commentary, if any</p>
+          <div class="graph-normal">
+            <graph
+              title="Likability of side characters in RTTE"
+              description="Rate your agreement with the following statement: 'The side characters (Snotlout, Fishlegs, the Twins, etc) were generally more likable in Race to the Edge than in the films.'"
+              :conf="{trackWidth: '8px', barWidth: '16px !important', columnWidth: '32px !important'}"
+              :columns="graphColumnDefinitions.rating1to10()"
+              :data="graphData?.['all']?.[Question.SideCharactersLikabilityAgreement]"
+              :dataCount="graphData?.['all']?.answerCount"
+            ></graph>
+            <average
+              :data="graphData?.['all']?.[Question.SideCharactersLikabilityAgreement]"
+            ></average>
+          </div>
+        </div>
 
         <p>
           Last but not least — even though Race to the Edge is <b>not</b> canon to the movie franchise as far as cold, hard facts
@@ -1305,6 +1425,7 @@
         </p>
 
         <div class="graph-area">
+          <div class="graph-normal">
           <graph
             title="Is Race to the Edge canon?"
             descriptiom="Do you consider Race to the Edge canon to the films?"
@@ -1313,6 +1434,7 @@
             :data="graphData?.['all']?.[Question.IsRTTECanon]"
             :dataCount="graphData?.['all']?.answerCount"
           ></graph>
+        </div>
         </div>
 
         <p>Those headcanons <i>are</i> capable of firing way more than twenty feet.</p>
@@ -1331,6 +1453,7 @@
         </p>
 
         <div class="graph-area">
+          <div class="graph-normal">
           <graph
             title="Personal enjoyment vs. objective quality."
             description="Rate the following statement: 'Personal enjoyment of a piece of media is different and independent of the quality of that piece of media.' Agreement on the scale from 1 - 10. Bigger number means more agreement."
@@ -1339,6 +1462,7 @@
             :data="graphData?.['all']?.[Question.YouCanEnjoyGarbageAgreement]"
             :dataCount="graphData?.['all']?.answerCount"
           ></graph>
+        </div>
         </div>
         <div>
           <average
@@ -1350,6 +1474,7 @@
         </p>
 
         <div class="graph-area">
+          <div class="graph-normal">
           <graph
             title="Most important aspects of a movie (TODO: answer keys!)"
             description="Of the following aspects of films/shows in general, which do you feel are the MOST important? Try not to check more than 2 boxes."
@@ -1365,6 +1490,7 @@
             :dataCount="graphData?.['all']?.answerCount"
           ></graph>
         </div>
+        </div>
 
         <p>
           todo commentary
@@ -1372,45 +1498,48 @@
 
 
         <div class="graph-area">
-          <graph
-            title="Why do you like HTTYD franchise? (todo: data)"
-            description="Which of the following best describe/describes your reason for being drawn to HTTYD? Try not to check more than 2 boxes."
-            :conf="{
-              barWidth: '20px !important',
-              trackWidthMultiset: '16px !important',
-              trackWidth: '16px !important',
-              columnWidth: '52px !important',
-              sidewaysLabels: true,
-              labelsHeight: '16rem'
-            }"
-            :columns="graphColumnDefinitions[Question.HTTYDAppealReasons]()"
-            :data="graphData?.['all']?.[Question.HTTYDAppealReasons]"
-            :dataCount="graphData?.['all']?.answerCount"
-          ></graph>
+          <div class="graph-normal">
+            <graph
+              title="Why do you like HTTYD franchise? (todo: data)"
+              description="Which of the following best describe/describes your reason for being drawn to HTTYD? Try not to check more than 2 boxes."
+              :conf="{
+                barWidth: '20px !important',
+                trackWidthMultiset: '16px !important',
+                trackWidth: '16px !important',
+                columnWidth: '52px !important',
+                sidewaysLabels: true,
+                labelsHeight: '16rem'
+              }"
+              :columns="graphColumnDefinitions[Question.HTTYDAppealReasons]()"
+              :data="graphData?.['all']?.[Question.HTTYDAppealReasons]"
+              :dataCount="graphData?.['all']?.answerCount"
+            ></graph>
+          </div>
 
-          <graph
-            title="Master/pet or mutual friends?"
-            description="Do you view the bond between Hiccup and Toothless as being more 'Master and Pet' or 'Mutual Friends?' 0 - master/pet, 10 - mutual friends"
-            :conf="{trackWidth: '8px', barWidth: '16px !important', columnWidth: '32px !important'}"
-            :columns="graphColumnDefinitions.rating1to10()"
-            :data="graphData?.['all']?.[Question.BondType]"
-            :dataCount="graphData?.['all']?.answerCount"
-          ></graph>
+          <div class="graph-normal">
+            <graph
+              title="Master/pet or mutual friends?"
+              description="Do you view the bond between Hiccup and Toothless as being more 'Master and Pet' or 'Mutual Friends?' 0 - master/pet, 10 - mutual friends"
+              :conf="{trackWidth: '8px', barWidth: '16px !important', columnWidth: '32px !important'}"
+              :columns="graphColumnDefinitions.rating1to10()"
+              :data="graphData?.['all']?.[Question.BondType]"
+              :dataCount="graphData?.['all']?.answerCount"
+            ></graph>
+            <average
+              :data="graphData?.['all']?.[Question.BondType]"
+            >
+            </average>
+          </div>
         </div>
-
-        <div>
-          <average
-            :data="graphData?.['all']?.[Question.BondType]"
-          >
-          </average>
-        </div>
-
 
         <p>
-          TODO: commentary
+          So basically "cos dragons" and "cos story relatable" and "cos world fascinating" for the first question,
+          and a rather strong agreement that the bond between Hiccup and Toothless is on the 'mutual friends' 
+          end of the spectrum.
         </p>
 
         <div class="graph-area">
+          <div class="graph-normal">
           <graph
             title="Movie ranking"
             description="From best to worst"
@@ -1426,7 +1555,9 @@
             :data="graphData?.['all']?.[Question.MovieRanking]"
             :dataCount="graphData?.['all']?.answerCount"
           ></graph>
+        </div>
 
+          <div class="graph-normal">
           <graph
             title="Movie watching order"
             description="In which order did you see the each film for the first time?"
@@ -1442,7 +1573,9 @@
             :data="graphData?.['all']?.[Question.MovieWatchingOrder]"
             :dataCount="graphData?.['all']?.answerCount"
           ></graph>
+        </div>
 
+          <div class="graph-normal">
           <graph
             title="The Hidden World opinion change"
             description="If you watched The Hidden World before seeing the other two films, did your opinion of The Hidden World change after watching them?"
@@ -1459,12 +1592,19 @@
             :dataCount="graphData?.['all']?.answerCount"
           ></graph>
         </div>
+        </div>
         
 
         <p>
-          todo: commentary
+          Compared to the last year, HTTYD1 superior options gained a few percentage points (+2% for 1>2>3 and +4% for 1>3>2). Objectively wrong
+          options have also gained some votes, but all in all nothing too statistically significant. Probably.
         </p>
-
+        <p>
+          The 2>1>3 option, however, went down by <i>a lot</i>. From 23.9% last year to 17.7% this year.
+        </p>
+        <p>
+          The other two graphs aren't particularly remarkable and thus don't deserve a paragraph of their own.
+        </p>
         
       </div>
     </div>
@@ -1825,7 +1965,7 @@ export default defineComponent({
 }
 </style>
 
-<style>
+<style lang="scss">
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;300;400;600&display=swap');
 
 html, * {
@@ -1912,13 +2052,34 @@ h2 {
 }
 
 .graph-area {
-  width: 99.9vw;
-  margin-left: calc(0px - max(calc(100vw - min(75rem, 100%)), 0.001px) / 2 - 1rem);
+  width: calc(100% + 2rem);  
+
+  margin-left: calc(-2rem - 1px);
 
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
+
+  .graph-normal, .graph-wide {
+    margin: 0.5rem;
+  }
+
+  .graph-normal {
+    width: 42rem !important;
+    max-width: 100%;
+  }
+  .graph-wide {
+    max-width: 100% !important;
+    width: 72rem;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .graph-area {
+    margin-left: calc(0px - max(calc(100vw - min(75rem, 100%)), 0.001px) / 2 - 1px);
+    width: calc(100vw - 1px);
+  }
 }
 
 * {

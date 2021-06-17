@@ -1391,9 +1391,6 @@
               setKey: 'rtte',
               setLabel: 'Race to the Edge',
               color: '#fb8'
-            },{
-              setKey: 'rtteCharLike',
-              setLabel: 'Likability of side characters in RTTE'
             }]"
             :data="{
               _multiSet: true,
@@ -1476,7 +1473,7 @@
         <div class="graph-area">
           <div class="graph-normal">
           <graph
-            title="Most important aspects of a movie (TODO: answer keys!)"
+            title="Most important aspects of a movie"
             description="Of the following aspects of films/shows in general, which do you feel are the MOST important? Try not to check more than 2 boxes."
             :conf="{
               trackWidth: '8px',
@@ -1491,11 +1488,6 @@
           ></graph>
         </div>
         </div>
-
-        <p>
-          todo commentary
-        </p>
-
 
         <div class="graph-area">
           <div class="graph-normal">
@@ -1605,11 +1597,37 @@
         <p>
           The other two graphs aren't particularly remarkable and thus don't deserve a paragraph of their own.
         </p>
-        
+        <p>
+          That about covers the answers to the questions at face value. Now let's take a deeper dive into the data and see if there's anything
+          hiding deep below in the statistics.
+        </p>
       </div>
     </div>
 
-  
+    <div class="segment">
+      <h1>Analysis</h1>
+
+      <p>
+        Let's take a deeper look into the data. People don't answer the questions randomly: the answers are often shaped by their interests, the
+        culture they come from, and sometimes even by their identity. Let's see if we can spot any interesting trends in the results when we filter
+        the answers.
+      </p>
+      <p>
+        This year's filter page would be a bit of a pain in the ass to set up properly, and it would require mad amounts of time. Given I have only 
+        gotten to this point of the page mid-june (remember: the poll was late January), I do not have the luxury of time to present a functional and
+        user-friendly UI (although, with most people having forgot about the poll, there may not be too much harm in delaying this project a further 
+        two months or so). Though if you want to filter results on your own and have some very basic knowledge of javascript, you can dig through
+        the data <span class="link" @click="showFilterPage=true">here</span>. The filtering page makes absolutely no attempt to accomodate mobile users, because smartphones
+        are the worst thing that has happened to the internet in the history of ever.
+      </p>
+
+      <FilterPage
+        v-if="showFilterPage"
+        :rawData="surveyResults"
+        @close="showFilterPage=false"
+      >
+      </FilterPage>
+    </div>
 
 
 
@@ -1657,6 +1675,7 @@ import {Question} from './enums/question.enum';
 
 import { defineComponent } from 'vue';
 import HelloWorld from './components/HelloWorld.vue';
+import FilterPage from './components/FilterPage.vue';
 import TitleScreen from './components/TitleScreen.vue';
 import Graph from './components/Graph.vue';
 import Average from './components/Average.vue';
@@ -1679,15 +1698,19 @@ export default defineComponent({
     Graph,
     Average,
     FavouriteReasonDisplay,
+    FilterPage,
   },
   data() {
     return {
       Question,
       graphColumnDefinitions,
-      surveyResults: surveyResults,
-      graphProcessingQueue: [],
+      surveyResults: JSON.parse(JSON.stringify(surveyResults)),
 
+
+      graphProcessingQueue: [],
       filteredResults: {},
+
+      showFilterPage: false,
 
       // GraphData is structured in the followign manner:
       //   * question
@@ -1996,6 +2019,18 @@ h2 {
   font-weight: 300;
   font-size: 3.75rem;
   color: rgb(215, 166, 100);
+}
+
+a, .link, a:visited {
+  color: #fa6;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a:hover, a:focus, a:active, .link:hover {
+  color: #fa6;
+  cursor: pointer;
+  text-decoration: underline;
 }
 
 @media screen and (max-width: 1200px ) {

@@ -28,7 +28,10 @@
         <b>SET RULES</b>
       </div>
       <div class="">
-        <filter-rule></filter-rule>
+        <filter-rule
+          :value="filterFnTxt"
+          @functionChanged="filterUpdated($event)"
+        ></filter-rule>
       </div>
     </div>
     <!-- #endregion -->
@@ -64,14 +67,17 @@ export default defineComponent({
       setColor: '',
       setBorderColor: '',
       setKey: '',
-      filters: [],
+      filterFnTxt: 'if you see this the set is stuck. Try switching to a different set and then back again.',
     }
   },
-  created() {
-    this.getRandomName();
-    this.getRandomColor();
-
-    this.nameToKey();
+  mounted() {
+    if (this.value) {
+      this.setName = this.value.set.name;
+      this.setKey = this.value.set.key;
+      this.setColor = this.value.set.color?.replace('#', '');
+      this.setBorderColor = `${this.value.set.border?.split('#')[1] || ''}`;
+      this.filterFnTxt = this.value.filterFnTxt;
+    }
   },
   watch: {
     setName(newValue) {
@@ -82,47 +88,29 @@ export default defineComponent({
         this.setName = newValue.set.name;
         this.setKey = newValue.set.key;
         this.setColor = newValue.set.color?.replace('#', '');
-        this.setBorderColor = `${newValue.set.border?.split('#')[1]}`
+        this.setBorderColor = `${newValue.set.border?.split('#')[1] || ''}`;
+        this.filterFnTxt = newValue.filterFnTxt;
       }
     }
   },
   methods: {
-    getRandomArrayMember(array) {
-      return array[Math.floor(Math.random() * array.length)];
-    },
-    getRandomName() {
-      const nameStore = ['Toothless', 'Hiccup', 'Stoick', 'Valka', 'Astrid', 'Stormfly', 'Thotfury', 'Cloudjumper', 'Drago', 'Hookfang', 'Eret', 'Skrill-ex', 'Gobber', 'Flying sausage'];
-      return this.getRandomArrayMember(nameStore);
-    },
-    getRandomColor() {
-      if (this.setName === 'Toothless')  {
-        this.setColor = '000';
-        this.setBorderColor = '6688FF';
-        return;
-      }
-      if (this.setName === 'Thotfury') {
-        this.setColor = 'fff';
-        return;
-      }
-      // maybe not so random after all? 🐰🐰🐰🥚🥚🥚
-      
-      const colorStore = ['#f00', '#f80', '#a35', "#193", '#17a', '#149', '#ffeaa9', '#c98e30', '#c90000'];
-      return this.getRandomArrayMember(colorStore);
-    },
     nameToKey() {
       this.setKey = this.setName.trim().toLowerCase().replaceAll(' ', '-');
     },
+    filterUpdated(newValue) {
+      this.filterFnTxt = newValue;
+    },
     emitUpdated() {
       this.$emit(
-        'input',
+        'save',
         {
           set: {
             name: this.setName,
             color: `#${this.setColor}`,
-            border: `1px solid #${this.setBorderColor}`,
+            border: this.setBorderColor ? `1px solid #${this.setBorderColor}` : undefined,
             key: this.setKey
           },
-          filters: this.filters
+          filterFnTxt: this.filterFnTxt
         }
       )
     }

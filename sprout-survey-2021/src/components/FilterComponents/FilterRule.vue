@@ -4,12 +4,17 @@
     <!-- header has question select and enum helper -->
     <div class="">
       Question: 
-      <input list="questions" v-model="selectedQuestion" />
+      <input
+        list="questions"
+        v-model="selectedQuestion"
+        @change="questionInputChanged($event)"
+      />
 
       <datalist id="questions">
         <option 
           v-for="question of questions"
           :key="question.value"
+          @change="answerInputChanged($event)"
         >
           {{question.label}}
         </option>
@@ -35,20 +40,27 @@
       <small>
         <b>Help:</b> here's what happens in the background:<br/>
         <code>surveyAnswers.filter(x => fn(x))</code>; where <code>fn(x)</code> is your filter function.<br/>
-        <code>x: number[] | string[]</code>, where elements of array are answers. Answers are given as an enum value.
+        <code>x</code> represents a single person's response.<br/>
+        Type of x: <code>{ [questionKey: string]: (number | string)[]}</code> — that remains true even for single-answer questions.
+        Values in the array are enumerated by appropriate enum. For FavouriteDraconid and FavouriteVillain, the structure is a lil
+        bit different: instead of <code>(number | string)[]</code>, the type of those two answers is <code>todo</code>.<br/>
+        Correct enum values can be selected from the dropdown — selecting a dropdown will insert the enum value of the selected option.<br/>
+        <b>CHANGE EVENT ONLY FIRES ON BLUR</b>
       </small>
     </div>
     <textarea
+      ref="codeBox"
       class="filter-formula-textbox"
       :placeholder="functionTxt"
       :value="functionTxt"
+      @input="updateFunctionTxt($event)"      
     ></textarea>
 
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent, TextareaHTMLAttributes } from 'vue';
 import { Question } from '../../enums/question.enum';
 import { Answer } from '../../enums/answer.enum';
 import { Gender } from '../../enums/gender.enum';
@@ -70,6 +82,9 @@ import { Villain } from '../../enums/villain.enum';
 
 export default defineComponent({
   name: 'FilterDataset',
+  props: [
+    'value'
+  ],
   data() {
     const questions: any[] = [];
     const answers: any[] = [];
@@ -82,70 +97,154 @@ export default defineComponent({
       questions,
       answers,
       selectedQuestion: undefined,  // enum field rather enum value!
-      functionTxt: '(x) => {\n  /* write function here.\n   * return true to keep result\n   * return false to reject\n   */\n\n\n}',
+      selectedEnum: undefined as any,
+      lastInsertedFunctionText: undefined,
+      functionTxt: '',
     }
   },
   watch: {
     selectedQuestion(newValue) {
       if (newValue) {
         this.answers = this.questionToAnswers(newValue);
+        this.selectedEnum = this.getQuestionEnum(newValue);
       } else {
         this.answers = [];
+        this.selectedEnum = undefined;
       }
+    },
+    value(newValue) {
+      if (!newValue) {
+        return;
+      }
+      console.warn('value updated!, newValue:', newValue);
+      this.functionTxt = newValue;
+    }
+  },
+  created() {
+    if (this.value) {
+      this.functionTxt = this.value;
     }
   },
   methods: {
+    updateFunctionTxt(updateEvent) {
+      console.log('updating function txt:', updateEvent.target.value);
+      this.functionTxt = updateEvent.target.value;
+      this.$emit('functionChanged', updateEvent.target.value)
+    },
+
+    questionInputChanged(question: any) {
+      question.stopPropagation();
+      question = question.target.value;
+      // insert nothing when cleared
+      if (!question) {
+        return;
+      }
+
+      this.insertCodeText(`'${Question[question]}' /* ${question} */`);
+    },
+    answerInputChanged(answer: any) {
+      answer = answer.target.value;
+
+      if (!answer) {
+        return;
+      }
+
+      const returnVal = this.selectedEnum ? this.selectedEnum[answer] : answer;
+
+      if (isNaN(returnVal)) {
+        this.insertCodeText(`'${returnVal}' /* ${answer} */`);
+      } else {
+        this.insertCodeText(`${returnVal} /* ${answer} */`);
+      }
+    },
+
+    // insert text at cursor position
+    insertCodeText(text: string) {
+      this.$nextTick( () => {
+        console.log('inserting code text!', text)
+        const control = this.$refs.codeBox as HTMLTextAreaElement;
+        const newCaretPosition = control.selectionStart + text.length;
+
+        //  insert text like this — .setRangeText(text) doesnt work with vue!
+        this.functionTxt = `${this.functionTxt.slice(0, control.selectionStart)}${text}${this.functionTxt.slice(control.selectionEnd)}`;
+
+        control.focus();
+
+        // maintain cursor position. We need to do this $nextTick thing because when functionTxt updates, the vue will 
+        // re-render the textarea field, which will cause the caret position to be lost. This is highly inconvenient to
+        // us, as we'd rather have the caret position appear at the end of our insertion.
+        this.$nextTick( () => {
+          control.setSelectionRange(newCaretPosition, newCaretPosition);
+        });
+      });
+    },
 
     // get correct enum for question
-    questionToAnswers(questionEnum: string) {
-      if (this.isRatingQuestion(questionEnum)) {
-        return this.generateRatingAnswers();
-      }
+    getQuestionEnum(questionEnum) {
       if (this.isYesNoQuestion(questionEnum)) {
-        return this.enum2labels(Answer);
+        return Answer;
       }
 
       switch (Question[questionEnum]) {
-        case Question.FandomTime:
-        case Question.Age:
-          return ['Valid answers: numbers in years, "NoAnswer", "special"'];
         case Question.Gender:
-          return this.enum2labels(Gender);
+          return Gender;
         case Question.Community:
-          return this.enum2labels(Community);
+          return Community;
         case Question.Location:
-          return this.enum2labels(Continent);
+          return Continent;
         case Question.IsFurry:
-          return this.enum2labels(FurryCommunity);
+          return FurryCommunity;
         case Question.HTTYD1FavouriteCharacter:
         case Question.HTTYD2FavouriteCharacter:
         case Question.HTTYD3FavouriteCharacter:
         case Question.HTTYD1WorstCharacter:
         case Question.HTTYD2WorstCharacter:
         case Question.HTTYD3WorstCharacter:
-          return this.enum2labels(Character);
+          return Character;
         case Question.HTTYD1FavouriteSoundtrack:
-          return this.enum2labels(HTTYDSoundtrack);
+          return HTTYDSoundtrack;
         case Question.HTTYD2FavouriteCharacter:
-          return this.enum2labels(HTTYD2Soundtrack);
+          return HTTYD2Soundtrack;
         case Question.HTTYD3FavouriteSoundtrack:
-          return this.enum2labels(THWSoundtrack);
+          return THWSoundtrack;
         case Question.THWStrongestThemes:
-          return this.enum2labels(THWTheme);
+          return THWTheme;
         case Question.FavouriteShort:
-          return this.enum2labels(HTTYDShort);
+          return HTTYDShort;
         case Question.MovieRanking:
-          return this.enum2labels(MovieRankEnum);
+          return MovieRankEnum;
         case Question.MovieWatchingOrder:
-          return this.enum2labels(MovieOrder);
+          return MovieOrder;
         case Question.FavouriteDraconid:
-          return this.enum2labels(Draconid);
+          return Draconid;
         case Question.FavouriteVillain:
-          return this.enum2labels(Villain);
+          return Villain;
         case Question.MostImportantAspects:
-          return this.enum2labels(MovieAspect);
+          return MovieAspect;
         case Question.THWOpinionChange:
-          return this.enum2labels(THWOpinionChange);
+          return THWOpinionChange;
+        default:
+          return undefined;
+      }
+    },
+
+    // convert enums to their labels — for dropdown display
+    questionToAnswers(questionEnum: string) {
+      if (this.isRatingQuestion(questionEnum)) {
+        return this.generateRatingAnswers();
+      }
+
+      const targetEnum = this.getQuestionEnum(questionEnum);
+
+      if (targetEnum) {
+        return this.enum2labels(targetEnum);
+      }
+
+      // some more special cases:
+      switch (Question[questionEnum]) {
+        case Question.FandomTime:
+        case Question.Age:
+          return ['Valid answers: numbers in years, "NoAnswer", "special"'];
         default:
           return ['if you see this, you\'re trying to filter by data that is not publicly available. go away'];
       }
@@ -153,7 +252,7 @@ export default defineComponent({
     enum2labels(enumm: any) {
       const labels: any[] = [];
       for (const a in enumm) {
-        labels.push(a);
+        labels.push(enumm[a]);
       }
       return labels;
     },
@@ -238,5 +337,9 @@ export default defineComponent({
 .filter-formula-textbox {
   width: 100%;
   min-height: 16rem;
+}
+
+code {
+  color: #aaf;
 }
 </style>

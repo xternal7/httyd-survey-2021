@@ -71,31 +71,122 @@
       <!-- #endregion -->
 
 
+      <!-- graph display -->
+      <!-- #region graph display -->
+      <div class="graph-area">
+        <div
+          v-for="q in questions"
+          class="graph-box"
+          :key="q"
+        >
+          <template
+            v-if="processedData.data[q.value]"
+          >
+            <graph
+              class="graph-wide"
+              :title="q.label"
+              :conf="{
+                columnXMargin: '1.2rem',
+                barWidth: '8px',
+                trackWidth: '8px',
+                columnWidth: '72px',
+                trackWidthMultiset: 'auto',
+                size: 'wide'
+              }"
+              :columns="getColumns(q.value)"
+              :sets="processedData.sets"
+              :data="getData(q.value)"
+              :dataCount="processedData.counts"
+            >
+              <!-- todo: averages go here -->
+            </graph>
+
+            <div>
+              <b>Embed:</b>
+              <pre>
+                {{getGraphCode(q)}}
+              </pre>
+            </div>
+          </template>
+        </div>
+        
+      </div>
+
+      <!-- #endregion -->
     </div>
   </div>
   
 </template>
 
 <script lang="ts">
+  import Graph from './Graph.vue';
 import { defineComponent } from 'vue';
+import { Question } from '../enums/question.enum';
 import FilterDataset from './FilterComponents/FilterDataset.vue';
+import questionMixin from './FilterComponents/questionMixin';
+import graphColumnDefinitions from '../helpers/column-definitions';
 
 export default defineComponent({
   name: 'FilterPage',
   components: {
-    FilterDataset
+    FilterDataset,
+    Graph,
   },
+  mixins: [
+    questionMixin
+  ],
   props: [
     'rawData',
   ],
   data() {
+    const questions: any[] = [];
+
+    for (const q in Question) {
+      questions.push({label: q, value: Question[q]})
+    }
+
     return {
+      questions,
       datasets: [] as any[],
       currentlySelectedSet: undefined as any,
-      processedData: {sets: [], data: []},
+      processedData: {sets: [] as any[], data: {} as any, counts: {}},
     }
   },
   methods: {
+    //#region graph getters
+    getColumns(question: Question) {
+      console.info('————————————— getting columns! ——————');
+      if (this.isYesNoQuestion(question)) {
+        console.info('question', question, 'is  a yes/no question. Returning yes/no/neutral column definitions!')
+        return graphColumnDefinitions.yesNoNeutral();
+      }
+      if (this.isRatingQuestion(question)) {
+        console.info('question', question, 'is a rating question. Returning yes/no/neutral column definitions!')
+        return graphColumnDefinitions.rating1to10();
+      }
+      // handle special values:
+      switch (question) {
+        // case Question.UsernameProvided:
+        // case Question.SurveyFeedbackProvided
+        // todo: handle pls?
+        case Question.HTTYD1FavouriteCharacter:
+        case Question.HTTYD1WorstCharacter:
+          return graphColumnDefinitions.httydCharacter(1);
+        case Question.HTTYD2FavouriteCharacter:
+        case Question.HTTYD2WorstCharacter:
+          return graphColumnDefinitions.httydCharacter(2);
+        case Question.HTTYD3FavouriteCharacter:
+        case Question.HTTYD3WorstCharacter:
+          return graphColumnDefinitions.httydCharacter(3);
+        default:
+          return graphColumnDefinitions[question]?.() ?? '';
+      }
+    },
+    getData(question: Question) {
+      return this.processedData.data[question];
+    },
+    //#endregion
+
     //#region set management
     editSet(set) {
       this.currentlySelectedSet = set;
@@ -156,14 +247,59 @@ export default defineComponent({
     },
     //#endregion
 
+    getGraphCode(question) {
+      return `
+          <graph
+            class="graph-wide"
+            :title="${question.label}"
+            :conf="{
+              columnXMargin: '1.2rem',
+              barWidth: '8px',
+              trackWidth: '8px',
+              columnWidth: '72px',
+              trackWidthMultiset: 'auto',
+              size: 'wide'
+            }"
+            :columns="${
+              JSON.stringify(
+                this.getColumns(question.value),
+                null,
+                2
+              )
+            }"
+            :sets="${
+              JSON.stringify(
+                this.processedData.sets,
+                null,
+                2
+              )
+            }"
+            :data="${
+              JSON.stringify(
+                this.getData(question.value),
+                null,
+                2
+              )
+            }"
+            :dataCount="${
+              JSON.stringify(
+                this.processedData.counts,
+                null,
+                2
+              )
+            }"
+          >
+            <!-- todo: averages go here -->
+          </graph>
+        `;
+    },
+
     //#region data filtering
     filterData() {
       // create a copy of data to ensure we don't touchy original stuff
       const rawSurveyResults: {processedData: any, [x: string]: any} = JSON.parse(JSON.stringify(this.rawData));
 
-      const graphData = {
-        _multiSet: true,
-      };
+      const graphData = {};
       const answerCounts = {};
       const sets: any[] = [];
 
@@ -183,11 +319,52 @@ export default defineComponent({
         });
       }
 
+      // switch sets and questions around:
+      // not very optimal, but I'm lazy and can't bother to implement
+      // this in a properly optimized way.
+      //
+      // data out must be formatted in the following manner
+      // 
+      // graphDataOut.set.question.answer = count
+      const graphDataOut = {};
+      for (const set in graphData) {
+        for (const surveyResponse of graphData[set]) {
+          for (const question in surveyResponse) {
+
+            // create question if it doesn't exist
+            if (!graphDataOut[question]) {
+              graphDataOut[question] = {_multiSet: true};
+            }
+
+            // create answer set if it doesn't exist
+            if (!graphDataOut[question][set]) {
+              graphDataOut[question][set] = {};
+            }
+
+            let answer = this.isRatingQuestion(question) ? `${surveyResponse[question]}` : surveyResponse[question];
+
+            // create answer count if doesn't exist, otherwise increase count
+            if (! graphDataOut[question][set][answer]) {
+              graphDataOut[question][set][answer] = 1;
+            } else {
+              graphDataOut[question][set][answer]++;
+            }
+          }
+        }
+      }
+
       console.log(
-        'filtered answers:', graphData,
+        '—————————————————————————————————————————————————————————————\n\n\n',
+        'filtered answers:', graphDataOut,
         '\n:sets stuff:', sets,
         '\n:dataCount:', answerCounts
       );
+
+      this.processedData = {
+        data: graphDataOut,
+        sets,
+        counts: answerCounts
+      }
     },
 
     //#endregion
@@ -277,5 +454,33 @@ export default defineComponent({
 
 .strike {
   text-decoration: line-through;
+}
+
+.graph-area {
+  width: 90%;  
+
+  margin-left: 0 !important;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  .graph-normal, .graph-wide {
+    margin: 0.5rem;
+  }
+
+  .graph-normal {
+    width: 42rem !important;
+    max-width: 100%;
+  }
+  .graph-wide {
+    max-width: 100% !important;
+    width: 72rem;
+  }
+}
+
+pre {
+  font-size: 0.75rem;
 }
 </style>

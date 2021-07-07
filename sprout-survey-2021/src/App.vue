@@ -1687,7 +1687,7 @@ import {Draconid, enum2draconid} from './enums/draconid.enum';
 import {Villain} from './enums/villain.enum';
 
 // data
-import surveyResults from './assets/results/survey-data';
+import surveyResults from './assets/results/survey-data.js';
 import graphColumnDefinitions from './helpers/column-definitions';
 
 export default defineComponent({
@@ -1745,6 +1745,10 @@ export default defineComponent({
     console.log('c', Object.values(Question));
     console.log("www")
     this.graphData['all'] = await this.processData(surveyResults.processedData, 'all responses');
+
+    console.info('graph data — all:', this.graphData['all']);
+    console.info('in graph: :data="graphData[set][question]');
+
     console.log("this.graphData:", JSON.parse(JSON.stringify(this.graphData)));
     this.$forceUpdate();
     this.$nextTick();
@@ -1780,10 +1784,8 @@ export default defineComponent({
           }
 
           if (Array.isArray(answer)) {
+            // console.info('answer is array:', answer);
             for (const ans of answer) {
-              if (question === Question.FavouriteDraconid) {
-                console.log('ans is arr:', ans)
-              }
               if (! processedData[question][ans]) {
                 processedData[question][ans] = 1;
               } else {
@@ -1791,9 +1793,7 @@ export default defineComponent({
               }
             }
           } else if (answer.value !== undefined && answer.value !== null) {
-            if (question === Question.FavouriteDraconid) {
-              console.log('ans is obj:', answer.value)
-            }
+            console.log('ans is obj:', answer)
             if (answer.dwFlag) {
               if (! processedData[question]['dwFlags']) {
                 processedData[question]['dwFlags'] = 1;
@@ -1807,9 +1807,7 @@ export default defineComponent({
               processedData[question][answer.value]++;
             }
           } else {
-            if (question === Question.FavouriteDraconid) {
-              console.log('ans:', answer)
-            }
+            console.log('ans is plain value', answer)
             if (! processedData[question][answer]) {
               processedData[question][answer] = 1;
             } else {

@@ -4,5 +4,6 @@ export enum Aspect {
   Characters,
   Visuals,
   Emotion,
-  Soundtrack
+  Soundtrack,
+  TooManyAnswers
 }

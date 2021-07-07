@@ -173,72 +173,66 @@ export class GdocsScrapper {
       // these are guaranteed to be a number or empty
       for (const q of ratingQuestions) {
         if (row[q])
-          rowOut[q] = +row[q];
+          rowOut[q] = [+row[q]];
         else {
-          rowOut[q] = undefined;
+          rowOut[q] = ['NoAnswer'];
         }
       }
 
       // age
       if (!row[Question.Age]) {
-        rowOut[Question.Age] = undefined;
+        rowOut[Question.Age] = ['NoAnswer'];
       } else if (isNaN(row[Question.Age]) || row[Question.Age] > 100) {
-        rowOut[Question.Age] = -1;                                      // negative values for invalid ages
+        rowOut[Question.Age] = [-1];                                      // negative values for invalid ages
       } else {
-        rowOut[Question.Age] = +row[Question.Age]
+        rowOut[Question.Age] = [+row[Question.Age]]
       }
 
       // gender
       if (row[Question.Gender].startsWith('Funny Answer')) {
-        rowOut[Question.Gender] = Gender.Apache;
+        rowOut[Question.Gender] = [Gender.Apache];
       } else if (row[Question.Gender].startsWith('Snowflake')) {
-        rowOut[Question.Gender] = Gender.Snowflake;
+        rowOut[Question.Gender] = [Gender.Snowflake];
       } else if (row[Question.Gender] === 'Male') {
-        rowOut[Question.Gender] = Gender.Male;
+        rowOut[Question.Gender] = [Gender.Male];
       } else if (row[Question.Gender] === 'Female') {
-        rowOut[Question.Gender] = Gender.Female;
+        rowOut[Question.Gender] = [Gender.Female];
       } else if (!(row[Question.Gender].trim()) || row[Question.Gender] === 'Prefer Not To Answer') {
-        rowOut[Question.Gender] = Gender.Shy;
+        rowOut[Question.Gender] = [Gender.Shy];
       } else {
-        rowOut[Question.Gender] = Gender.Other;
+        rowOut[Question.Gender] = [Gender.Other];
       }
 
       // community
       const community = row[Question.Community].split(';');
-      const communityOut: any = {
-        value: this.communtiy2enum(community[0])
-      };
-      if (community.length > 1) {
-        communityOut['dwFlag'] = true;
-      }
-      rowOut[Question.Community] = communityOut;
+      rowOut[Question.Community] = [this.communtiy2enum(community[0]), ...(community.length > 1 ? ['dwFlag'] : [])];
 
       // location
-      rowOut[Question.Location] = this.continent2enum(row[Question.Location]);
+      rowOut[Question.Location] = [this.continent2enum(row[Question.Location])];
 
       // fandom time
       if (row[Question.FandomTime].startsWith('<')) {
-        rowOut[Question.FandomTime] = 0;
+        rowOut[Question.FandomTime] = [0];
       } else if (row[Question.FandomTime].startsWith('10+')) {
-        rowOut[Question.FandomTime] = 10;
+        rowOut[Question.FandomTime] = [10];
       } else if (row[Question.FandomTime].startsWith('P')){
-        rowOut[Question.FandomTime] = undefined;
+        rowOut[Question.FandomTime] = ['NoAnswer']
       } else if (row[Question.FandomTime].trim()){
-        rowOut[Question.FandomTime] = + (row[Question.FandomTime].split(' Y')[0]);
+        rowOut[Question.FandomTime] = [(row[Question.FandomTime].split(' Y')[0])]
       } else {
-        rowOut[Question.FandomTime] = undefined;
+        rowOut[Question.FandomTime] = ['NoAnswer']
       }
 
       // previous survey
       switch (row[Question.SurveyParticipation2020]) {
         case 'Yes':
-          rowOut[Question.SurveyParticipation2020] = Answer.Yes;
+          rowOut[Question.SurveyParticipation2020] = [Answer.Yes];
           break;
         case 'No':
-          rowOut[Question.SurveyParticipation2020] = Answer.No;
+          rowOut[Question.SurveyParticipation2020] = [Answer.No];
           break;
         default:
-          rowOut[Question.SurveyParticipation2020] = Answer.Neutral;
+          rowOut[Question.SurveyParticipation2020] = [Answer.Neutral];
       }
 
       // is furry?
@@ -278,72 +272,72 @@ export class GdocsScrapper {
       const httyd3fav = row[Question.HTTYD3FavouriteCharacter].split('; ');
       const httyd3worst = row[Question.HTTYD3WorstCharacter].split('; ');
 
-      rowOut[Question.HTTYD1FavouriteCharacter] = {value: this.character2enum(httyd1fav[0]), dwFlag: httyd1fav[1] && httyd1fav[1].indexOf('This Sign Can\'t Stop Me') !== -1};
-      rowOut[Question.HTTYD2FavouriteCharacter] = {value: this.character2enum(httyd2fav[0]), dwFlag: httyd2fav[1] && httyd2fav[1].indexOf('This Sign Can\'t Stop Me') !== -1};
-      rowOut[Question.HTTYD3FavouriteCharacter] = {value: this.character2enum(httyd3fav[0]), dwFlag: httyd3fav[1] && httyd3fav[1].indexOf('This Sign Can\'t Stop Me') !== -1};
+      rowOut[Question.HTTYD1FavouriteCharacter] = [this.character2enum(httyd1fav[0]), ...(httyd1fav[1] && httyd1fav[1].indexOf('This Sign Can\'t Stop Me') !== -1 ? ['dwFlag'] : [])];
+      rowOut[Question.HTTYD2FavouriteCharacter] = [this.character2enum(httyd2fav[0]), ...(httyd2fav[1] && httyd2fav[1].indexOf('This Sign Can\'t Stop Me') !== -1 ? ['dwFlag'] : [])];
+      rowOut[Question.HTTYD3FavouriteCharacter] = [this.character2enum(httyd3fav[0]), ...(httyd3fav[1] && httyd3fav[1].indexOf('This Sign Can\'t Stop Me') !== -1 ? ['dwFlag'] : [])];
 
-      rowOut[Question.HTTYD1WorstCharacter] = {value: this.character2enum(httyd1worst[0]), dwFlag: httyd1worst[1] && httyd1worst[1].indexOf('This Sign Can\'t Stop Me') !== -1};
-      rowOut[Question.HTTYD2WorstCharacter] = {value: this.character2enum(httyd2worst[0]), dwFlag: httyd2worst[1] && httyd2worst[1].indexOf('This Sign Can\'t Stop Me') !== -1};
-      rowOut[Question.HTTYD3WorstCharacter] = {value: this.character2enum(httyd3worst[0]), dwFlag: httyd3worst[1] && httyd3worst[1].indexOf('This Sign Can\'t Stop Me') !== -1};
+      rowOut[Question.HTTYD1WorstCharacter] = [this.character2enum(httyd1worst[0]), ...(httyd1worst[1] && httyd1worst[1].indexOf('This Sign Can\'t Stop Me') -1 ? ['dwFlag'] : [])];
+      rowOut[Question.HTTYD2WorstCharacter] = [this.character2enum(httyd2worst[0]), ...(httyd2worst[1] && httyd2worst[1].indexOf('This Sign Can\'t Stop Me') -1 ? ['dwFlag'] : [])];
+      rowOut[Question.HTTYD3WorstCharacter] = [this.character2enum(httyd3worst[0]), ...(httyd3worst[1] && httyd3worst[1].indexOf('This Sign Can\'t Stop Me') -1 ? ['dwFlag'] : [])];
 
       // favourite songs
       const httyd1ost = row[Question.HTTYD1FavouriteSoundtrack].split('; ');
       const httyd2ost = row[Question.HTTYD2FavouriteSoundtrack].split('; ');
       const httyd3ost = row[Question.HTTYD3FavouriteSoundtrack].split('; ');
 
-      rowOut[Question.HTTYD1FavouriteSoundtrack] = {value: ost2enum(1, httyd1ost[0]), dwFlag: httyd1ost[1] && httyd1ost[1].indexOf('This Sign Can\'t Stop Me') !== -1};
-      rowOut[Question.HTTYD2FavouriteSoundtrack] = {value: ost2enum(2, httyd2ost[0]), dwFlag: httyd2ost[1] && httyd2ost[1].indexOf('This Sign Can\'t Stop Me') !== -1};
-      rowOut[Question.HTTYD3FavouriteSoundtrack] = {value: ost2enum(3, httyd3ost[0]), dwFlag: httyd3ost[1] && httyd3ost[1].indexOf('This Sign Can\'t Stop Me') !== -1};
+      rowOut[Question.HTTYD1FavouriteSoundtrack] = [ost2enum(1, httyd1ost[0]), ...(httyd1ost[1] && httyd1ost[1].indexOf('This Sign Can\'t Stop Me') -1 ? ['dwFlag'] : [])];
+      rowOut[Question.HTTYD2FavouriteSoundtrack] = [ost2enum(2, httyd2ost[0]), ...(httyd2ost[1] && httyd2ost[1].indexOf('This Sign Can\'t Stop Me') -1 ? ['dwFlag'] : [])];
+      rowOut[Question.HTTYD3FavouriteSoundtrack] = [ost2enum(3, httyd3ost[0]), ...(httyd3ost[1] && httyd3ost[1].indexOf('This Sign Can\'t Stop Me') -1 ? ['dwFlag'] : [])];
 
       // bonus questions for 2 and thw
       const valkaVillain = row[Question.HTTYD2ValkaVillain];
       if (valkaVillain.startsWith('Yes')) {
-        rowOut[Question.HTTYD2ValkaVillain] = Answer.Yes;
+        rowOut[Question.HTTYD2ValkaVillain] = [Answer.Yes];
       } else if (valkaVillain.startsWith('No')) {
-        rowOut[Question.HTTYD2ValkaVillain] = Answer.No;
+        rowOut[Question.HTTYD2ValkaVillain] = [Answer.No];
       } else if (valkaVillain.startsWith('Neu')) {
-        rowOut[Question.HTTYD2ValkaVillain] = Answer.Neutral;
+        rowOut[Question.HTTYD2ValkaVillain] = [Answer.Neutral];
       } else {
-        rowOut[Question.HTTYD2ValkaVillain] = Answer.Unanswered;
+        rowOut[Question.HTTYD2ValkaVillain] = [Answer.Unanswered];
       }
 
       const dragoRedemption = row[Question.HTTYD3DragoRedemptionArc];
       if (dragoRedemption.startsWith('Yes')) {
-        rowOut[Question.HTTYD3DragoRedemptionArc] = Answer.Yes;
+        rowOut[Question.HTTYD3DragoRedemptionArc] = [Answer.Yes];
       } else if (dragoRedemption.startsWith('No')) {
-        rowOut[Question.HTTYD3DragoRedemptionArc] = Answer.No;
+        rowOut[Question.HTTYD3DragoRedemptionArc] = [Answer.No];
       } else if (dragoRedemption.startsWith('Neu')) {
-        rowOut[Question.HTTYD3DragoRedemptionArc] = Answer.Neutral;
+        rowOut[Question.HTTYD3DragoRedemptionArc] = [Answer.Neutral];
       } else {
-        rowOut[Question.HTTYD3DragoRedemptionArc] = Answer.Unanswered;
+        rowOut[Question.HTTYD3DragoRedemptionArc] = [Answer.Unanswered];
       }
 
       // favourite short
       const favShort = row[Question.FavouriteShort];
       if (favShort.startsWith('Gift')) {
-        rowOut[Question.FavouriteShort] = HTTYDShort.GotNF;
+        rowOut[Question.FavouriteShort] = [HTTYDShort.GotNF];
       } else if (favShort.startsWith('Legend')) {
-        rowOut[Question.FavouriteShort] = HTTYDShort.Boneknapper;
+        rowOut[Question.FavouriteShort] = [HTTYDShort.Boneknapper];
       } else if (favShort.startsWith('The Book')) {
-        rowOut[Question.FavouriteShort] = HTTYDShort.BookOfDragons;
+        rowOut[Question.FavouriteShort] = [HTTYDShort.BookOfDragons];
       } else if (favShort.startsWith('Dawn of')) {
-        rowOut[Question.FavouriteShort] = HTTYDShort.DawnOfDragonRiders;
+        rowOut[Question.FavouriteShort] = [HTTYDShort.DawnOfDragonRiders];
       } else if (favShort.startsWith('Ho')) {
-        rowOut[Question.FavouriteShort] = HTTYDShort.Homecoming;
+        rowOut[Question.FavouriteShort] = [HTTYDShort.Homecoming];
       } else {
-        rowOut[Question.FavouriteShort] = HTTYDShort.NoAnswer;
+        rowOut[Question.FavouriteShort] = [HTTYDShort.NoAnswer];
       }
 
       // RTTE canon?
       const rtteCanon = row[Question.IsRTTECanon];
       if (rtteCanon.startsWith('Yes')) {
-        rowOut[Question.IsRTTECanon] = Answer.Yes;
+        rowOut[Question.IsRTTECanon] = [Answer.Yes];
       } else if (rtteCanon.startsWith('No')) {
-        rowOut[Question.IsRTTECanon] = Answer.No;
+        rowOut[Question.IsRTTECanon] = [Answer.No];
       } else if (rtteCanon.startsWith('Neu')) {
-        rowOut[Question.IsRTTECanon] = Answer.Neutral;
+        rowOut[Question.IsRTTECanon] = [Answer.Neutral];
       } else {
-        rowOut[Question.IsRTTECanon] = Answer.Unanswered;
+        rowOut[Question.IsRTTECanon] = [Answer.Unanswered];
       }
 
       // THW themes
@@ -364,6 +358,12 @@ export class GdocsScrapper {
       if (thwThemes.indexOf('Love and Loss') !== -1) {
         rowOut[Question.THWStrongestThemes].push(THWTheme.LoveLoss);
       }
+      // catch people who picked more than two boxes so far BEFORE 
+      // processing any extra tags we added on top of the answers:
+      if (rowOut[Question.THWStrongestThemes].length > 2) {
+        rowOut[Question.THWStrongestThemes].push(THWTheme.TooManyAnswers);
+      }
+      // process our special flags
       if (thwThemes.indexOf('_salt') !== -1) {
         rowOut[Question.THWStrongestThemes].push(THWTheme.SarcasticAnswer);
       }
@@ -380,64 +380,67 @@ export class GdocsScrapper {
       // best opening
       const favOpening = row[Question.FavouriteOpeningScene];
       if (favOpening === 'HTTYD 1') {
-        rowOut[Question.FavouriteOpeningScene] = 1;
+        rowOut[Question.FavouriteOpeningScene] = [1];
       } else if (favOpening === 'HTTYD 2') {
-        rowOut[Question.FavouriteOpeningScene] = 1;
+        rowOut[Question.FavouriteOpeningScene] = [2];
       } else if (favOpening === 'HTTYD: THW') {
-        rowOut[Question.FavouriteOpeningScene] = 1;
+        rowOut[Question.FavouriteOpeningScene] = [3];
       }
 
       // movie ranking
       switch (row[Question.MovieRanking]) {
         case '1 > 2 > 3':
-          rowOut[Question.MovieRanking] = MovieOrder.r123;
+          rowOut[Question.MovieRanking] = [MovieOrder.r123];
           break;
         case '1 > 3 > 2':
-          rowOut[Question.MovieRanking] = MovieOrder.r132;
+          rowOut[Question.MovieRanking] = [MovieOrder.r132];
           break;
         case '2 > 1 > 3':
-          rowOut[Question.MovieRanking] = MovieOrder.r213;
+          rowOut[Question.MovieRanking] = [MovieOrder.r213];
           break;
         case '2 > 3 > 1':
         case '2> 3 > 1':
-          rowOut[Question.MovieRanking] = MovieOrder.r231;
+          rowOut[Question.MovieRanking] = [MovieOrder.r231];
           break;
         case '3 > 1 > 2':
-          rowOut[Question.MovieRanking] = MovieOrder.r312;
+          rowOut[Question.MovieRanking] = [MovieOrder.r312];
           break;
         case '3 > 2 > 1':
-          rowOut[Question.MovieRanking] = MovieOrder.r321;
+          rowOut[Question.MovieRanking] = [MovieOrder.r321];
+          break;
+        default:
+          rowOut[Question.MovieRanking] = [MovieOrder.Shy];
       }
 
       // movie watching order
       switch (row[Question.MovieWatchingOrder]) {
         case '1 -> 2 -> 3':
-          rowOut[Question.MovieWatchingOrder] = MovieOrder.r123;
+          rowOut[Question.MovieWatchingOrder] = [MovieOrder.r123];
           break;
         case '1 -> 3 -> 2':
-          rowOut[Question.MovieWatchingOrder] = MovieOrder.r132;
+          rowOut[Question.MovieWatchingOrder] = [MovieOrder.r132];
           break;
         case '2 -> 1 -> 3':
-          rowOut[Question.MovieWatchingOrder] = MovieOrder.r213;
+          rowOut[Question.MovieWatchingOrder] = [MovieOrder.r213];
           break;
         case '2 -> 3 -> 1':
-          rowOut[Question.MovieWatchingOrder] = MovieOrder.r231;
+          rowOut[Question.MovieWatchingOrder] = [MovieOrder.r231];
           break;
         case '3 -> 1 -> 2':
-          rowOut[Question.MovieWatchingOrder] = MovieOrder.r312;
+          rowOut[Question.MovieWatchingOrder] = [MovieOrder.r312];
           break;
         case '3 -> 2 -> 1':
-          rowOut[Question.MovieWatchingOrder] = MovieOrder.r321;
+          rowOut[Question.MovieWatchingOrder] = [MovieOrder.r321];
       }
 
       // thw opinion change
       const opinionChange = row[Question.THWOpinionChange];
       if (opinionChange.startsWith('No')) {
-        rowOut[Question.THWOpinionChange] = THWOpinionChange.Unchanged;
+        rowOut[Question.THWOpinionChange] = [THWOpinionChange.Unchanged];
       } else if (opinionChange.startsWith('Yes, I liked it l')) {
-        rowOut[Question.THWOpinionChange] = THWOpinionChange.LikedItLess;
+        rowOut[Question.THWOpinionChange] = [THWOpinionChange.LikedItLess];
       } else if (opinionChange.startsWith('Yes, I liked it m')) {
-        rowOut[Question.THWOpinionChange] = THWOpinionChange.LikedItMore;
+        rowOut[Question.THWOpinionChange] = [THWOpinionChange.LikedItMore];
       }
 
       // reasons for fandom
@@ -464,15 +467,18 @@ export class GdocsScrapper {
       if (fandomReason.indexOf('Dragons are cool!') !== -1) {
         rowOut[Question.HTTYDAppealReasons].push(HTTYDAppealReason.DragonsCool);
       }
-      if (fandomReason.indexOf('Other') !== -1) {
-        rowOut[Question.HTTYDAppealReasons].push(HTTYDAppealReason.Other);
-      }
-      if (fandomReason.indexOf('_other') !== -1) {
-        rowOut[Question.HTTYDAppealReasons].push(HTTYDAppealReason.Other);
-      }
       if (fandomReason.indexOf('I ship one or more sets of characters in the franchise.') !== -1) {
         rowOut[Question.HTTYDAppealReasons].push(HTTYDAppealReason.CharacterShipping);
       }
+      // count the answers _before_ processing tags, assing the 'they tried' flag if over the limit
+      if (rowOut[Question.HTTYDAppealReasons].length > 2) {
+        rowOut[Question.HTTYDAppealReasons].push(HTTYDAppealReason.TooManyAnswers);
+      }
+      // process remaining flags
+      if (fandomReason.indexOf('Other') !== -1 || fandomReason.indexOf('_other')) {
+        rowOut[Question.HTTYDAppealReasons].push(HTTYDAppealReason.Other);
+      }
+      
 
       // most important aspect
       const importantAspects = row[Question.MostImportantAspects];
@@ -495,6 +501,13 @@ export class GdocsScrapper {
       if (importantAspects.indexOf('Emotion') !== -1) {
         rowOut[Question.MostImportantAspects].push(Aspect.Emotion);
       }
+      // count the 'too many answers' group
+      if (rowOut[Question.MostImportantAspects].length > 2) {
+        rowOut[Question.MostImportantAspects].push(Aspect.TooManyAnswers)
+      }
+
+
+      // TODO: rework fav draconid and fav villain
 
       // fav dragon
       const favDraconid = row[Question.FavouriteDraconid].split('; ');

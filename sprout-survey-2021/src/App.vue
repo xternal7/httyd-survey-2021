@@ -1605,7 +1605,7 @@
     </div>
 
     <div class="segment">
-      <h1>Analysis</h1>
+      <h1>Deep dive</h1>
 
       <p>
         Let's take a deeper look into the data. People don't answer the questions randomly: the answers are often shaped by their interests, the
@@ -1627,6 +1627,688 @@
         @close="showFilterPage=false"
       >
       </FilterPage>
+
+
+      <!-- #region results by age -->
+      <h2>Results by age</h2>
+      
+      <p>
+        I didn't expect too much surprises here, but since I was mostly playing with that while debugging my filters, I was doing testing
+        by filtering the first result. But there's been some things that ... well, stood out.
+      </p>
+
+      <div class="graph-area">
+        <div class="graph-wide">
+          <graph
+            class="graph-wide"
+            title="Community"
+            :defaultMode="'normalized'"
+            :conf="{
+              columnXMargin: '1.2rem',
+              barWidth: '8px',
+              trackWidth: '8px',
+              columnWidth: '72px',
+              trackWidthMultiset: 'auto',
+              size: 'wide'
+            }"
+            :columns="[{'key':2,'label':'Reddit'},{'key':1,'label':'Discord'},{'key':5,'label':'Instagram'},{'key':8,'label':'Fandom'},{'key':9,'label':'Grapewine'},{'key':6,'label':'Amino'},{'key':3,'label':'Tumblr'},{'key':4,'label':'Twitter'},{'key':7,'label':'Youtube'},{'key':10,'label':'Other'},{'key':0,'label':'Shy'},{'key':'dw','label':'multi'}]"
+            :sets="[{'setKey':'all-responses','setLabel':'All responses','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'sub-17','setLabel':'sub-17','color':'#fa6','dataCount':94},{'setKey':'17-20','setLabel':'17-20','color':'#f64','dataCount':132},{'setKey':'20-23','setLabel':'20-23','color':'#f41','dataCount':76},{'setKey':'23-27','setLabel':'23-27','color':'#d20','dataCount':38},{'setKey':'27-and-over','setLabel':'27 and over','color':'#b00','dataCount':24}]"
+            :data="{'_multiSet':true,'all-responses':{'0':15,'1':101,'2':151,'3':10,'4':4,'5':55,'6':5,'7':35,'8':28,'9':12,'10':15,'dwFlag':17},'sub-17':{'0':1,'1':18,'2':39,'3':1,'4':1,'5':12,'6':2,'7':9,'8':8,'10':3,'dwFlag':7},'17-20':{'0':3,'1':30,'2':44,'3':2,'4':1,'5':19,'6':1,'7':14,'8':10,'9':4,'10':4,'dwFlag':2},'20-23':{'0':3,'1':17,'2':24,'3':5,'4':2,'5':10,'6':1,'7':4,'8':5,'9':2,'10':3,'dwFlag':4},'23-27':{'0':2,'1':13,'2':15,'3':1,'5':3,'8':1,'9':2,'10':1,'dwFlag':1},'27-and-over':{'0':1,'1':12,'2':8,'8':1,'10':2}}"
+            :dataCount="{'all-responses':431,'':0,'sub-17':94,'17-20':132,'20-23':76,'23-27':38,'27-and-over':24}"
+          >
+            <!-- todo: averages go here -->
+          </graph>
+        </div>
+      </div>
+
+      <p>
+       I honestly thought reddit is more of a boomer (actually gen x/y) thing, but no. Discord wins popularity contest versus reddit in the millenial/gen X category.
+      </p>
+      <p>
+        It is worth noting that — primarily due to the difference in modus operandi for different platforms — respondents skew significantly towards reddit side of things.
+      </p>
+
+      <p>
+        I am not gonna be covering fandom time, that one is very obvious. Boomers gonna be booming.
+      </p>
+
+      <div class="graph-area">
+        <div class="graph-wide">
+           <graph
+            class="graph-wide"
+            title="Furries"
+            description="Multiple choices were allowed for this question"
+            :conf="{
+              columnXMargin: '1.2rem',
+              barWidth: '8px',
+              trackWidth: '8px',
+              columnWidth: '72px',
+              trackWidthMultiset: 'auto',
+              size: 'wide'
+            }"
+            :columns="[{'key':0,'label':'None'},{'key':1,'label':'Furry'},{'key':2,'label':'Scalie'},{'key':3,'label':'Other'},{'key':4,'label':'Shy'}]"
+            :sets="[{'setKey':'all-responses','setLabel':'All responses','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'sub-17','setLabel':'sub-17','color':'#fa6','dataCount':94},{'setKey':'17-20','setLabel':'17-20','color':'#f64','dataCount':132},{'setKey':'20-23','setLabel':'20-23','color':'#f41','dataCount':76},{'setKey':'23-27','setLabel':'23-27','color':'#d20','dataCount':38},{'setKey':'27-and-over','setLabel':'27 and over','color':'#b00','dataCount':24}]"
+            :data="{'_multiSet':true,'all-responses':{'0':309,'1':80,'2':67,'3':29,'4':17},'sub-17':{'0':79,'1':9,'2':6,'3':5,'4':5},'17-20':{'0':98,'1':24,'2':18,'3':9,'4':4},'20-23':{'0':43,'1':21,'2':20,'3':6,'4':4},'23-27':{'0':28,'1':6,'2':5,'3':3},'27-and-over':{'0':15,'1':9,'2':9,'3':3}}"
+            :dataCount="{'all-responses':431,'':0,'sub-17':94,'17-20':132,'20-23':76,'23-27':38,'27-and-over':24}"
+          >
+            <!-- todo: averages go here -->
+          </graph>
+        </div>
+      </div>
+
+      <p>
+        My momma says it's just a phase when I fill my days with mayonez, but no. You don't need to squint much to see that the 'None' option
+        (as a proportion of the cohort) is actually trending downwards as the people grow older.
+      </p>
+
+      <p>
+        But now, the interesting parts. Turns out that age does matter when it comes to rating. I am going to gloss over things here, but
+        older people generally tend to like the first movie more.
+      </p>
+
+      <div class="graph-aree">
+        <div class="graph-wide">
+          <graph
+            class="graph-wide"
+            title="HTTYD1Rating"
+            :conf="{
+              columnXMargin: '1.2rem',
+              barWidth: '8px',
+              trackWidth: '8px',
+              columnWidth: '72px',
+              trackWidthMultiset: 'auto',
+              size: 'wide'
+            }"
+            :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
+            :sets="[{'setKey':'all-responses','setLabel':'All responses','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'sub-17','setLabel':'sub-17','color':'#fa6','dataCount':94},{'setKey':'17-20','setLabel':'17-20','color':'#f64','dataCount':132},{'setKey':'20-23','setLabel':'20-23','color':'#f41','dataCount':76},{'setKey':'23-27','setLabel':'23-27','color':'#d20','dataCount':38},{'setKey':'27-and-over','setLabel':'27 and over','color':'#b00','dataCount':24}]"
+            :data="{'_multiSet':true,'all-responses':{'1':1,'4':1,'6':1,'7':7,'8':50,'9':126,'10':245},'sub-17':{'4':1,'6':1,'7':1,'8':14,'9':26,'10':51},'17-20':{'7':4,'8':12,'9':43,'10':73},'20-23':{'8':13,'9':19,'10':44},'23-27':{'7':1,'8':3,'9':12,'10':22},'27-and-over':{'1':1,'7':1,'8':2,'9':2,'10':18}}"
+            :dataCount="{'all-responses':431,'':0,'sub-17':94,'17-20':132,'20-23':76,'23-27':38,'27-and-over':24}"
+          >
+            <average
+              :sets="[{'setKey':'all-responses','setLabel':'All responses','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'sub-17','setLabel':'sub-17','color':'#fa6','dataCount':94},{'setKey':'17-20','setLabel':'17-20','color':'#f64','dataCount':132},{'setKey':'20-23','setLabel':'20-23','color':'#f41','dataCount':76},{'setKey':'23-27','setLabel':'23-27','color':'#d20','dataCount':38},{'setKey':'27-and-over','setLabel':'27 and over','color':'#b00','dataCount':24}]"
+              :data="{'_multiSet':true,'all-responses':{'1':1,'4':1,'6':1,'7':7,'8':50,'9':126,'10':245},'sub-17':{'4':1,'6':1,'7':1,'8':14,'9':26,'10':51},'17-20':{'7':4,'8':12,'9':43,'10':73},'20-23':{'8':13,'9':19,'10':44},'23-27':{'7':1,'8':3,'9':12,'10':22},'27-and-over':{'1':1,'7':1,'8':2,'9':2,'10':18}}"
+              :dataCount="{'all-responses':431,'':0,'sub-17':94,'17-20':132,'20-23':76,'23-27':38,'27-and-over':24}"
+            >
+            </average>
+          </graph>
+        </div>
+
+        <div class="graph-wide">
+          <graph
+            class="graph-wide"
+            title="HTTYD1PlotRating"
+            :conf="{
+              columnXMargin: '1.2rem',
+              barWidth: '8px',
+              trackWidth: '8px',
+              columnWidth: '72px',
+              trackWidthMultiset: 'auto',
+              size: 'wide'
+            }"
+            :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
+            :sets="[{'setKey':'all-responses','setLabel':'All responses','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'sub-17','setLabel':'sub-17','color':'#fa6','dataCount':94},{'setKey':'17-20','setLabel':'17-20','color':'#f64','dataCount':132},{'setKey':'20-23','setLabel':'20-23','color':'#f41','dataCount':76},{'setKey':'23-27','setLabel':'23-27','color':'#d20','dataCount':38},{'setKey':'27-and-over','setLabel':'27 and over','color':'#b00','dataCount':24}]"
+            :data="{'_multiSet':true,'all-responses':{'1':1,'4':2,'5':3,'6':2,'7':35,'8':98,'9':111,'10':177,'NoAnswer':2},'sub-17':{'4':1,'5':1,'6':1,'7':8,'8':21,'9':28,'10':33,'NoAnswer':1},'17-20':{'7':15,'8':29,'9':35,'10':53},'20-23':{'5':2,'6':1,'7':4,'8':17,'9':15,'10':37},'23-27':{'7':3,'8':12,'9':8,'10':14,'NoAnswer':1},'27-and-over':{'1':1,'4':1,'8':4,'9':6,'10':12}}"
+            :dataCount="{'all-responses':431,'':0,'sub-17':94,'17-20':132,'20-23':76,'23-27':38,'27-and-over':24}"
+          >
+            <average
+              :sets="[{'setKey':'all-responses','setLabel':'All responses','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'sub-17','setLabel':'sub-17','color':'#fa6','dataCount':94},{'setKey':'17-20','setLabel':'17-20','color':'#f64','dataCount':132},{'setKey':'20-23','setLabel':'20-23','color':'#f41','dataCount':76},{'setKey':'23-27','setLabel':'23-27','color':'#d20','dataCount':38},{'setKey':'27-and-over','setLabel':'27 and over','color':'#b00','dataCount':24}]"
+              :data="{'_multiSet':true,'all-responses':{'1':1,'4':1,'6':1,'7':7,'8':50,'9':126,'10':245},'sub-17':{'4':1,'6':1,'7':1,'8':14,'9':26,'10':51},'17-20':{'7':4,'8':12,'9':43,'10':73},'20-23':{'8':13,'9':19,'10':44},'23-27':{'7':1,'8':3,'9':12,'10':22},'27-and-over':{'1':1,'7':1,'8':2,'9':2,'10':18}}"
+              :dataCount="{'all-responses':431,'':0,'sub-17':94,'17-20':132,'20-23':76,'23-27':38,'27-and-over':24}"
+            ></average>
+          </graph>
+        </div>
+      </div>
+
+      <p>
+        Plot rating graph looks as if some people in the 23-27 group accidentally thought this poll is the Stanley Parable and smashed an 8 instead of 10/10,
+        but remember: with small sample sizes like this, bell curve anomalies like this are kinda to be expected.
+      </p>
+
+      <p>
+        I'm not going to post all the graphs, because emotion rating graph resembles the plot rating (minus the bell curve anomaly) in the sense that older 
+        people gave better ratings. Theme rating graph is sorta even across demographics. So is the score rating — almost everyone went for 10/10 equally often
+        on that one. People who voted anything less than that are such a minority there's nothing to extrapolate from that graph. Character rating graph is
+        all over the place.
+      </p>
+
+      <p>
+        Admittedly, older people sticking higher grades to an older movie is not very surprising. However, when it comes to the visuals, there is a small
+        surprise, to be sure — though a welcome one.
+      </p>
+
+      <div class="graph-area">
+        <div class="graph-wide">
+          <graph
+            class="graph-wide"
+            :title="HTTYD1VisualsRating"
+            :conf="{
+              columnXMargin: '1.2rem',
+              barWidth: '8px',
+              trackWidth: '8px',
+              columnWidth: '72px',
+              trackWidthMultiset: 'auto',
+              size: 'wide'
+            }"
+            :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
+            :sets="[{'setKey':'all-responses','setLabel':'All responses','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'sub-17','setLabel':'sub-17','color':'#fa6','dataCount':94},{'setKey':'17-20','setLabel':'17-20','color':'#f64','dataCount':132},{'setKey':'20-23','setLabel':'20-23','color':'#f41','dataCount':76},{'setKey':'23-27','setLabel':'23-27','color':'#d20','dataCount':38},{'setKey':'27-and-over','setLabel':'27 and over','color':'#b00','dataCount':24}]"
+            :data="{'_multiSet':true,'all-responses':{'4':1,'5':9,'6':20,'7':53,'8':96,'9':99,'10':151,'NoAnswer':2},'sub-17':{'5':1,'6':3,'7':8,'8':12,'9':30,'10':38,'NoAnswer':2},'17-20':{'5':4,'6':6,'7':18,'8':34,'9':24,'10':46},'20-23':{'5':3,'6':4,'7':8,'8':21,'9':16,'10':24},'23-27':{'5':1,'6':4,'7':5,'8':9,'9':8,'10':11},'27-and-over':{'7':3,'8':4,'9':10,'10':7}}"
+            :dataCount="{'all-responses':431,'':0,'sub-17':94,'17-20':132,'20-23':76,'23-27':38,'27-and-over':24}"
+          >
+            <average
+              :sets="[{'setKey':'all-responses','setLabel':'All responses','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'sub-17','setLabel':'sub-17','color':'#fa6','dataCount':94},{'setKey':'17-20','setLabel':'17-20','color':'#f64','dataCount':132},{'setKey':'20-23','setLabel':'20-23','color':'#f41','dataCount':76},{'setKey':'23-27','setLabel':'23-27','color':'#d20','dataCount':38},{'setKey':'27-and-over','setLabel':'27 and over','color':'#b00','dataCount':24}]"
+              :data="{'_multiSet':true,'all-responses':{'4':1,'5':9,'6':20,'7':53,'8':96,'9':99,'10':151,'NoAnswer':2},'sub-17':{'5':1,'6':3,'7':8,'8':12,'9':30,'10':38,'NoAnswer':2},'17-20':{'5':4,'6':6,'7':18,'8':34,'9':24,'10':46},'20-23':{'5':3,'6':4,'7':8,'8':21,'9':16,'10':24},'23-27':{'5':1,'6':4,'7':5,'8':9,'9':8,'10':11},'27-and-over':{'7':3,'8':4,'9':10,'10':7}}"
+              :dataCount="{'all-responses':431,'':0,'sub-17':94,'17-20':132,'20-23':76,'23-27':38,'27-and-over':24}"
+            >
+            </average>
+          </graph>
+        </div>
+      </div>
+
+      <p>
+        Objectively speaking, the visuals of the first movie <i>do</i> look rather dated due to advancements in computer graphics. But that doesn't stop the youngest
+        demographics from ten-outta-tenning the aspect. Interestingly enough, 17-23 cohorts get a bit of a double-peaking at 10 and 8, while the curve of the 27+ 
+        cohort gets a single peak at 9/10. 
+      </p>
+
+      <p>
+        I don't feel there's enough data to comment on fav/lest fav character by age, so we'll be skipping that.
+      </p>
+
+      <p>
+        Let's move to the second movie.
+      </p>
+
+      <div class="graph-area">
+        <div class="graph-wide">
+          <graph
+            class="graph-wide"
+            :title="HTTYD2Rating"
+            :conf="{
+              columnXMargin: '1.2rem',
+              barWidth: '8px',
+              trackWidth: '8px',
+              columnWidth: '72px',
+              trackWidthMultiset: 'auto',
+              size: 'wide'
+            }"
+            :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
+            :sets="[{'setKey':'all-responses','setLabel':'All responses','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'sub-17','setLabel':'sub-17','color':'#fa6','dataCount':94},{'setKey':'17-20','setLabel':'17-20','color':'#f64','dataCount':132},{'setKey':'20-23','setLabel':'20-23','color':'#f41','dataCount':76},{'setKey':'23-27','setLabel':'23-27','color':'#d20','dataCount':38},{'setKey':'27-and-over','setLabel':'27 and over','color':'#b00','dataCount':24}]"
+            :data="{'_multiSet':true,'all-responses':{'1':1,'2':2,'3':1,'4':1,'5':7,'6':15,'7':54,'8':109,'9':122,'10':115,'NoAnswer':4},'sub-17':{'4':1,'5':2,'6':3,'7':10,'8':18,'9':32,'10':26,'NoAnswer':2},'17-20':{'5':1,'6':3,'7':15,'8':29,'9':40,'10':44},'20-23':{'1':1,'2':1,'5':3,'6':2,'7':11,'8':23,'9':14,'10':21},'23-27':{'5':1,'6':2,'7':7,'8':17,'9':6,'10':5},'27-and-over':{'2':1,'3':1,'6':2,'7':3,'8':3,'9':8,'10':5,'NoAnswer':1}}"
+            :dataCount="{'all-responses':431,'':0,'sub-17':94,'17-20':132,'20-23':76,'23-27':38,'27-and-over':24}"
+          >
+            <average
+              :sets="[{'setKey':'all-responses','setLabel':'All responses','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'sub-17','setLabel':'sub-17','color':'#fa6','dataCount':94},{'setKey':'17-20','setLabel':'17-20','color':'#f64','dataCount':132},{'setKey':'20-23','setLabel':'20-23','color':'#f41','dataCount':76},{'setKey':'23-27','setLabel':'23-27','color':'#d20','dataCount':38},{'setKey':'27-and-over','setLabel':'27 and over','color':'#b00','dataCount':24}]"
+              :data="{'_multiSet':true,'all-responses':{'1':1,'2':2,'3':1,'4':1,'5':7,'6':15,'7':54,'8':109,'9':122,'10':115,'NoAnswer':4},'sub-17':{'4':1,'5':2,'6':3,'7':10,'8':18,'9':32,'10':26,'NoAnswer':2},'17-20':{'5':1,'6':3,'7':15,'8':29,'9':40,'10':44},'20-23':{'1':1,'2':1,'5':3,'6':2,'7':11,'8':23,'9':14,'10':21},'23-27':{'5':1,'6':2,'7':7,'8':17,'9':6,'10':5},'27-and-over':{'2':1,'3':1,'6':2,'7':3,'8':3,'9':8,'10':5,'NoAnswer':1}}"
+              :dataCount="{'all-responses':431,'':0,'sub-17':94,'17-20':132,'20-23':76,'23-27':38,'27-and-over':24}"
+            ></average>
+          </graph>
+        </div>
+
+        <div class="graph-wide">
+          <graph
+            class="graph-wide"
+            :title="HTTYD2PlotRating"
+            :conf="{
+              columnXMargin: '1.2rem',
+              barWidth: '8px',
+              trackWidth: '8px',
+              columnWidth: '72px',
+              trackWidthMultiset: 'auto',
+              size: 'wide'
+            }"
+            :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
+            :sets="[{'setKey':'all-responses','setLabel':'All responses','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'sub-17','setLabel':'sub-17','color':'#fa6','dataCount':94},{'setKey':'17-20','setLabel':'17-20','color':'#f64','dataCount':132},{'setKey':'20-23','setLabel':'20-23','color':'#f41','dataCount':76},{'setKey':'23-27','setLabel':'23-27','color':'#d20','dataCount':38},{'setKey':'27-and-over','setLabel':'27 and over','color':'#b00','dataCount':24}]"
+            :data="{'_multiSet':true,'all-responses':{'1':1,'2':1,'3':2,'4':5,'5':13,'6':29,'7':96,'8':107,'9':97,'10':76,'NoAnswer':4},'sub-17':{'4':1,'5':2,'6':4,'7':20,'8':18,'9':25,'10':21,'NoAnswer':3},'17-20':{'4':1,'5':2,'6':11,'7':26,'8':32,'9':37,'10':23},'20-23':{'1':1,'2':1,'5':3,'6':6,'7':18,'8':22,'9':12,'10':13},'23-27':{'4':2,'5':1,'6':4,'7':14,'8':9,'9':4,'10':4},'27-and-over':{'3':2,'5':1,'6':1,'7':4,'8':9,'9':4,'10':2,'NoAnswer':1}}"
+            :dataCount="{'all-responses':431,'':0,'sub-17':94,'17-20':132,'20-23':76,'23-27':38,'27-and-over':24}"
+          >
+            <average
+              :sets="[{'setKey':'all-responses','setLabel':'All responses','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'sub-17','setLabel':'sub-17','color':'#fa6','dataCount':94},{'setKey':'17-20','setLabel':'17-20','color':'#f64','dataCount':132},{'setKey':'20-23','setLabel':'20-23','color':'#f41','dataCount':76},{'setKey':'23-27','setLabel':'23-27','color':'#d20','dataCount':38},{'setKey':'27-and-over','setLabel':'27 and over','color':'#b00','dataCount':24}]"
+              :data="{'_multiSet':true,'all-responses':{'1':1,'2':1,'3':2,'4':5,'5':13,'6':29,'7':96,'8':107,'9':97,'10':76,'NoAnswer':4},'sub-17':{'4':1,'5':2,'6':4,'7':20,'8':18,'9':25,'10':21,'NoAnswer':3},'17-20':{'4':1,'5':2,'6':11,'7':26,'8':32,'9':37,'10':23},'20-23':{'1':1,'2':1,'5':3,'6':6,'7':18,'8':22,'9':12,'10':13},'23-27':{'4':2,'5':1,'6':4,'7':14,'8':9,'9':4,'10':4},'27-and-over':{'3':2,'5':1,'6':1,'7':4,'8':9,'9':4,'10':2,'NoAnswer':1}}"
+              :dataCount="{'all-responses':431,'':0,'sub-17':94,'17-20':132,'20-23':76,'23-27':38,'27-and-over':24}"
+            ></average>
+          </graph>
+        </div>
+      </div>
+
+      <p>
+        Oh, how the turn tables. In general, older respondents judged the plot — as well as the movie overall — more harshly than the younger participants.
+      </p>
+
+      <p>
+        Other graphs aren't as interesting: while older people did tend to rate the emotional impact slightly lower than the younger participants, the differences
+        are almost within the margin of error. Visuals rating is roughly even, with older participants having a slightly bigger chance of rating that aspect lower.
+        Character rating is also all over the place.
+      </p>
+
+      <div class="graph-area">
+        <div class="graph-wide">
+          <graph
+            class="graph-wide"
+            :title="HTTYD2ScoreRating"
+            :conf="{
+              columnXMargin: '1.2rem',
+              barWidth: '8px',
+              trackWidth: '8px',
+              columnWidth: '72px',
+              trackWidthMultiset: 'auto',
+              size: 'wide'
+            }"
+            :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
+            :sets="[{'setKey':'all-responses','setLabel':'All responses','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'sub-17','setLabel':'sub-17','color':'#fa6','dataCount':94},{'setKey':'17-20','setLabel':'17-20','color':'#f64','dataCount':132},{'setKey':'20-23','setLabel':'20-23','color':'#f41','dataCount':76},{'setKey':'23-27','setLabel':'23-27','color':'#d20','dataCount':38},{'setKey':'27-and-over','setLabel':'27 and over','color':'#b00','dataCount':24}]"
+            :data="{'_multiSet':true,'all-responses':{'2':1,'3':3,'4':2,'5':6,'6':9,'7':24,'8':83,'9':80,'10':218,'NoAnswer':5},'sub-17':{'5':1,'6':3,'7':3,'8':12,'9':23,'10':50,'NoAnswer':2},'17-20':{'3':1,'4':1,'5':1,'6':1,'7':7,'8':25,'9':17,'10':78,'NoAnswer':1},'20-23':{'2':1,'4':1,'5':3,'6':2,'7':3,'8':14,'9':16,'10':35,'NoAnswer':1},'23-27':{'6':1,'7':3,'8':14,'9':6,'10':14},'27-and-over':{'3':2,'7':2,'8':6,'9':3,'10':10,'NoAnswer':1}}"
+            :dataCount="{'all-responses':431,'':0,'sub-17':94,'17-20':132,'20-23':76,'23-27':38,'27-and-over':24}"
+          >
+            <average
+              :sets="[{'setKey':'all-responses','setLabel':'All responses','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'sub-17','setLabel':'sub-17','color':'#fa6','dataCount':94},{'setKey':'17-20','setLabel':'17-20','color':'#f64','dataCount':132},{'setKey':'20-23','setLabel':'20-23','color':'#f41','dataCount':76},{'setKey':'23-27','setLabel':'23-27','color':'#d20','dataCount':38},{'setKey':'27-and-over','setLabel':'27 and over','color':'#b00','dataCount':24}]"
+              :data="{'_multiSet':true,'all-responses':{'2':1,'3':3,'4':2,'5':6,'6':9,'7':24,'8':83,'9':80,'10':218,'NoAnswer':5},'sub-17':{'5':1,'6':3,'7':3,'8':12,'9':23,'10':50,'NoAnswer':2},'17-20':{'3':1,'4':1,'5':1,'6':1,'7':7,'8':25,'9':17,'10':78,'NoAnswer':1},'20-23':{'2':1,'4':1,'5':3,'6':2,'7':3,'8':14,'9':16,'10':35,'NoAnswer':1},'23-27':{'6':1,'7':3,'8':14,'9':6,'10':14},'27-and-over':{'3':2,'7':2,'8':6,'9':3,'10':10,'NoAnswer':1}}"
+              :dataCount="{'all-responses':431,'':0,'sub-17':94,'17-20':132,'20-23':76,'23-27':38,'27-and-over':24}"
+            ></average>
+          </graph>
+        </div>
+      </div>
+
+      <p>
+        There's some good ol' divide along the age lines here, with older participants generally giving worse ratings than their younger counterparts.
+        Both 23-27 and 27+ cohorts double-peak on 10/10 and 8/10, but the tallest peak is reversed between the groups and — rather interestingly — 
+        23-37 have much bigger portion on 8/10 than the 27+. 
+      </p>
+
+      <p>
+        Theme rating chart also deserves a shout-out, because this double-peaking phenomenom, with 27+ and 23-27 cohorts holding different peaks
+        gets even stronger. But again: remember the small sample size? Wacky results like this aren't too surprising.
+      </p>
+
+      <div class="grpah-area">
+        <div class="graph-wide">
+          <graph
+            :title="HTTYD2ThemeRating"
+            :conf="{
+              columnXMargin: '1.2rem',
+              barWidth: '8px',
+              trackWidth: '8px',
+              columnWidth: '72px',
+              trackWidthMultiset: 'auto',
+              size: 'wide'
+            }"
+            :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
+            :sets="[{'setKey':'all-responses','setLabel':'All responses','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'sub-17','setLabel':'sub-17','color':'#fa6','dataCount':94},{'setKey':'17-20','setLabel':'17-20','color':'#f64','dataCount':132},{'setKey':'20-23','setLabel':'20-23','color':'#f41','dataCount':76},{'setKey':'23-27','setLabel':'23-27','color':'#d20','dataCount':38},{'setKey':'27-and-over','setLabel':'27 and over','color':'#b00','dataCount':24}]"
+            :data="{'_multiSet':true,'all-responses':{'1':3,'2':2,'3':3,'4':8,'5':17,'6':33,'7':48,'8':100,'9':87,'10':125,'NoAnswer':5},'sub-17':{'3':1,'4':1,'5':5,'6':9,'7':10,'8':20,'9':20,'10':25,'NoAnswer':3},'17-20':{'1':1,'4':1,'5':3,'6':8,'7':17,'8':28,'9':33,'10':40,'NoAnswer':1},'20-23':{'1':2,'3':1,'4':2,'5':4,'6':9,'7':10,'8':16,'9':8,'10':24},'23-27':{'2':1,'4':2,'5':1,'6':3,'7':2,'8':14,'9':7,'10':8},'27-and-over':{'2':1,'4':1,'5':1,'7':2,'8':5,'9':3,'10':10,'NoAnswer':1}}"
+            :dataCount="{'all-responses':431,'':0,'sub-17':94,'17-20':132,'20-23':76,'23-27':38,'27-and-over':24}"
+          >
+             <average
+              :sets="[{'setKey':'all-responses','setLabel':'All responses','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'sub-17','setLabel':'sub-17','color':'#fa6','dataCount':94},{'setKey':'17-20','setLabel':'17-20','color':'#f64','dataCount':132},{'setKey':'20-23','setLabel':'20-23','color':'#f41','dataCount':76},{'setKey':'23-27','setLabel':'23-27','color':'#d20','dataCount':38},{'setKey':'27-and-over','setLabel':'27 and over','color':'#b00','dataCount':24}]"
+              :data="{'_multiSet':true,'all-responses':{'1':3,'2':2,'3':3,'4':8,'5':17,'6':33,'7':48,'8':100,'9':87,'10':125,'NoAnswer':5},'sub-17':{'3':1,'4':1,'5':5,'6':9,'7':10,'8':20,'9':20,'10':25,'NoAnswer':3},'17-20':{'1':1,'4':1,'5':3,'6':8,'7':17,'8':28,'9':33,'10':40,'NoAnswer':1},'20-23':{'1':2,'3':1,'4':2,'5':4,'6':9,'7':10,'8':16,'9':8,'10':24},'23-27':{'2':1,'4':2,'5':1,'6':3,'7':2,'8':14,'9':7,'10':8},'27-and-over':{'2':1,'4':1,'5':1,'7':2,'8':5,'9':3,'10':10,'NoAnswer':1}}"
+              :dataCount="{'all-responses':431,'':0,'sub-17':94,'17-20':132,'20-23':76,'23-27':38,'27-and-over':24}"
+            ></average>
+          </graph>
+        </div>
+      </div>
+
+      <p>&nbsp;</p>
+
+      <p>
+        And then there's HTTYD3.
+      </p>
+
+      <p>
+        As is tradition:
+      </p>
+
+      <div class="graph-area">
+        <div class="graph-wide">
+          <graph
+            title="HTTYD3Rating"
+            :conf="{
+              columnXMargin: '1.2rem',
+              barWidth: '8px',
+              trackWidth: '8px',
+              columnWidth: '72px',
+              trackWidthMultiset: 'auto',
+              size: 'wide'
+            }"
+            :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
+            :sets="[{'setKey':'all-responses','setLabel':'All responses','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'sub-17','setLabel':'sub-17','color':'#fa6','dataCount':94},{'setKey':'17-20','setLabel':'17-20','color':'#f64','dataCount':132},{'setKey':'20-23','setLabel':'20-23','color':'#f41','dataCount':76},{'setKey':'23-27','setLabel':'23-27','color':'#d20','dataCount':38},{'setKey':'27-and-over','setLabel':'27 and over','color':'#b00','dataCount':24}]"
+            :data="{'_multiSet':true,'all-responses':{'1':22,'2':14,'3':29,'4':31,'5':23,'6':43,'7':59,'8':69,'9':61,'10':73,'NoAnswer':7},'sub-17':{'1':2,'2':1,'3':3,'4':5,'5':5,'6':10,'7':8,'8':23,'9':19,'10':15,'NoAnswer':3},'17-20':{'1':3,'2':6,'3':9,'4':9,'5':6,'6':10,'7':20,'8':21,'9':23,'10':23,'NoAnswer':2},'20-23':{'1':7,'2':3,'3':1,'4':7,'5':6,'6':6,'7':14,'8':10,'9':7,'10':15},'23-27':{'1':3,'2':1,'3':5,'4':5,'5':1,'6':3,'7':5,'8':4,'9':6,'10':4,'NoAnswer':1},'27-and-over':{'1':3,'2':1,'3':3,'4':2,'5':1,'6':4,'7':1,'8':2,'9':1,'10':5,'NoAnswer':1}}"
+            :dataCount="{'all-responses':431,'':0,'sub-17':94,'17-20':132,'20-23':76,'23-27':38,'27-and-over':24}"
+          >
+             <average
+              :sets="[{'setKey':'all-responses','setLabel':'All responses','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'sub-17','setLabel':'sub-17','color':'#fa6','dataCount':94},{'setKey':'17-20','setLabel':'17-20','color':'#f64','dataCount':132},{'setKey':'20-23','setLabel':'20-23','color':'#f41','dataCount':76},{'setKey':'23-27','setLabel':'23-27','color':'#d20','dataCount':38},{'setKey':'27-and-over','setLabel':'27 and over','color':'#b00','dataCount':24}]"
+              :data="{'_multiSet':true,'all-responses':{'1':22,'2':14,'3':29,'4':31,'5':23,'6':43,'7':59,'8':69,'9':61,'10':73,'NoAnswer':7},'sub-17':{'1':2,'2':1,'3':3,'4':5,'5':5,'6':10,'7':8,'8':23,'9':19,'10':15,'NoAnswer':3},'17-20':{'1':3,'2':6,'3':9,'4':9,'5':6,'6':10,'7':20,'8':21,'9':23,'10':23,'NoAnswer':2},'20-23':{'1':7,'2':3,'3':1,'4':7,'5':6,'6':6,'7':14,'8':10,'9':7,'10':15},'23-27':{'1':3,'2':1,'3':5,'4':5,'5':1,'6':3,'7':5,'8':4,'9':6,'10':4,'NoAnswer':1},'27-and-over':{'1':3,'2':1,'3':3,'4':2,'5':1,'6':4,'7':1,'8':2,'9':1,'10':5,'NoAnswer':1}}"
+              :dataCount="{'all-responses':431,'':0,'sub-17':94,'17-20':132,'20-23':76,'23-27':38,'27-and-over':24}"
+            ></average>
+          </graph>
+        </div>
+        <div class="graph-wide">
+          <graph
+            title="HTTYD3PlotRating"
+            :conf="{
+              columnXMargin: '1.2rem',
+              barWidth: '8px',
+              trackWidth: '8px',
+              columnWidth: '72px',
+              trackWidthMultiset: 'auto',
+              size: 'wide'
+            }"
+            :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
+            :sets="[{'setKey':'all-responses','setLabel':'All responses','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'sub-17','setLabel':'sub-17','color':'#fa6','dataCount':94},{'setKey':'17-20','setLabel':'17-20','color':'#f64','dataCount':132},{'setKey':'20-23','setLabel':'20-23','color':'#f41','dataCount':76},{'setKey':'23-27','setLabel':'23-27','color':'#d20','dataCount':38},{'setKey':'27-and-over','setLabel':'27 and over','color':'#b00','dataCount':24}]"
+            :data="{'_multiSet':true,'all-responses':{'1':37,'2':33,'3':37,'4':21,'5':28,'6':48,'7':60,'8':63,'9':44,'10':53,'NoAnswer':7},'sub-17':{'1':4,'2':6,'3':4,'4':4,'5':4,'6':4,'7':17,'8':20,'9':12,'10':16,'NoAnswer':3},'17-20':{'1':11,'2':8,'3':12,'4':7,'5':8,'6':16,'7':19,'8':20,'9':13,'10':16,'NoAnswer':2},'20-23':{'1':8,'2':4,'3':8,'4':3,'5':4,'6':10,'7':11,'8':13,'9':7,'10':8},'23-27':{'1':4,'2':6,'3':4,'4':4,'6':7,'7':3,'8':4,'9':3,'10':2,'NoAnswer':1},'27-and-over':{'1':4,'2':5,'3':2,'5':2,'6':3,'8':1,'9':1,'10':5,'NoAnswer':1}}"
+            :dataCount="{'all-responses':431,'':0,'sub-17':94,'17-20':132,'20-23':76,'23-27':38,'27-and-over':24}"
+          >
+            <average
+              :sets="[{'setKey':'all-responses','setLabel':'All responses','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'sub-17','setLabel':'sub-17','color':'#fa6','dataCount':94},{'setKey':'17-20','setLabel':'17-20','color':'#f64','dataCount':132},{'setKey':'20-23','setLabel':'20-23','color':'#f41','dataCount':76},{'setKey':'23-27','setLabel':'23-27','color':'#d20','dataCount':38},{'setKey':'27-and-over','setLabel':'27 and over','color':'#b00','dataCount':24}]"
+              :data="{'_multiSet':true,'all-responses':{'1':37,'2':33,'3':37,'4':21,'5':28,'6':48,'7':60,'8':63,'9':44,'10':53,'NoAnswer':7},'sub-17':{'1':4,'2':6,'3':4,'4':4,'5':4,'6':4,'7':17,'8':20,'9':12,'10':16,'NoAnswer':3},'17-20':{'1':11,'2':8,'3':12,'4':7,'5':8,'6':16,'7':19,'8':20,'9':13,'10':16,'NoAnswer':2},'20-23':{'1':8,'2':4,'3':8,'4':3,'5':4,'6':10,'7':11,'8':13,'9':7,'10':8},'23-27':{'1':4,'2':6,'3':4,'4':4,'6':7,'7':3,'8':4,'9':3,'10':2,'NoAnswer':1},'27-and-over':{'1':4,'2':5,'3':2,'5':2,'6':3,'8':1,'9':1,'10':5,'NoAnswer':1}}"
+              :dataCount="{'all-responses':431,'':0,'sub-17':94,'17-20':132,'20-23':76,'23-27':38,'27-and-over':24}"
+            ></average>
+          </graph>
+        </div>
+      </div>
+
+      <p>
+        Overall, younger respondents seemed to give higher ratings than the older people, but that's only half of the story. With younger people, you're getting
+        a nice-ish gauss ... almost. But as soon as you hit 20 or more, you start seeing extremes.
+      </p>
+
+      <p>
+        And it keeps happening:
+      </p>
+
+      <div class="graph-area">
+        <div class="graph-wide">
+           <graph
+            class="graph-wide"
+            title="THW Theme rating"
+            :conf="{
+              columnXMargin: '1.2rem',
+              barWidth: '8px',
+              trackWidth: '8px',
+              columnWidth: '72px',
+              trackWidthMultiset: 'auto',
+              size: 'wide'
+            }"
+            :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
+            :sets="[{'setKey':'all-responses','setLabel':'All responses','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'sub-17','setLabel':'sub-17','color':'#fa6','dataCount':94},{'setKey':'17-20','setLabel':'17-20','color':'#f64','dataCount':132},{'setKey':'20-23','setLabel':'20-23','color':'#f41','dataCount':76},{'setKey':'23-27','setLabel':'23-27','color':'#d20','dataCount':38},{'setKey':'27-and-over','setLabel':'27 and over','color':'#b00','dataCount':24}]"
+            :data="{'_multiSet':true,'all-responses':{'1':64,'2':26,'3':16,'4':22,'5':23,'6':32,'7':31,'8':55,'9':56,'10':99,'NoAnswer':7},'sub-17':{'1':6,'2':5,'3':3,'4':3,'5':4,'6':9,'7':9,'8':12,'9':16,'10':24,'NoAnswer':3},'17-20':{'1':23,'2':6,'3':3,'4':2,'5':10,'6':8,'7':8,'8':17,'9':18,'10':35,'NoAnswer':2},'20-23':{'1':9,'2':7,'3':5,'4':5,'5':5,'6':7,'7':5,'8':10,'9':6,'10':17},'23-27':{'1':8,'2':1,'3':4,'4':5,'5':1,'6':1,'7':2,'8':3,'9':6,'10':6,'NoAnswer':1},'27-and-over':{'1':7,'2':2,'3':1,'4':1,'5':1,'6':1,'7':1,'8':2,'9':1,'10':6,'NoAnswer':1}}"
+            :dataCount="{'all-responses':431,'':0,'sub-17':94,'17-20':132,'20-23':76,'23-27':38,'27-and-over':24}"
+          >
+            <average
+              :sets="[{'setKey':'all-responses','setLabel':'All responses','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'sub-17','setLabel':'sub-17','color':'#fa6','dataCount':94},{'setKey':'17-20','setLabel':'17-20','color':'#f64','dataCount':132},{'setKey':'20-23','setLabel':'20-23','color':'#f41','dataCount':76},{'setKey':'23-27','setLabel':'23-27','color':'#d20','dataCount':38},{'setKey':'27-and-over','setLabel':'27 and over','color':'#b00','dataCount':24}]"
+              :data="{'_multiSet':true,'all-responses':{'1':64,'2':26,'3':16,'4':22,'5':23,'6':32,'7':31,'8':55,'9':56,'10':99,'NoAnswer':7},'sub-17':{'1':6,'2':5,'3':3,'4':3,'5':4,'6':9,'7':9,'8':12,'9':16,'10':24,'NoAnswer':3},'17-20':{'1':23,'2':6,'3':3,'4':2,'5':10,'6':8,'7':8,'8':17,'9':18,'10':35,'NoAnswer':2},'20-23':{'1':9,'2':7,'3':5,'4':5,'5':5,'6':7,'7':5,'8':10,'9':6,'10':17},'23-27':{'1':8,'2':1,'3':4,'4':5,'5':1,'6':1,'7':2,'8':3,'9':6,'10':6,'NoAnswer':1},'27-and-over':{'1':7,'2':2,'3':1,'4':1,'5':1,'6':1,'7':1,'8':2,'9':1,'10':6,'NoAnswer':1}}"
+              :dataCount="{'all-responses':431,'':0,'sub-17':94,'17-20':132,'20-23':76,'23-27':38,'27-and-over':24}"
+            ></average>
+          </graph>
+        </div>
+      </div>
+
+      <p>
+        Theme approval?
+      </p>
+
+      <div class="graph-area">
+        <graph
+          class="graph-wide"
+          title="THWThemeApproval"
+          :conf="{
+            columnXMargin: '1.2rem',
+            barWidth: '8px',
+            trackWidth: '8px',
+            columnWidth: '72px',
+            trackWidthMultiset: 'auto',
+            size: 'wide'
+          }"
+          :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
+          :sets="[{'setKey':'all-responses','setLabel':'All responses','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'sub-17','setLabel':'sub-17','color':'#fa6','dataCount':94},{'setKey':'17-20','setLabel':'17-20','color':'#f64','dataCount':132},{'setKey':'20-23','setLabel':'20-23','color':'#f41','dataCount':76},{'setKey':'23-27','setLabel':'23-27','color':'#d20','dataCount':38},{'setKey':'27-and-over','setLabel':'27 and over','color':'#b00','dataCount':24}]"
+          :data="{'_multiSet':true,'all-responses':{'1':40,'2':14,'3':25,'4':22,'5':28,'6':28,'7':44,'8':70,'9':62,'10':88,'NoAnswer':10},'sub-17':{'1':2,'2':3,'3':1,'4':6,'5':6,'6':7,'7':7,'8':22,'9':14,'10':24,'NoAnswer':2},'17-20':{'1':13,'2':3,'3':9,'4':9,'5':5,'6':7,'7':14,'8':21,'9':25,'10':22,'NoAnswer':4},'20-23':{'1':10,'2':2,'3':5,'4':1,'5':8,'6':2,'7':9,'8':14,'9':8,'10':17},'23-27':{'1':6,'2':1,'3':2,'4':3,'5':3,'7':4,'8':2,'9':6,'10':10,'NoAnswer':1},'27-and-over':{'1':3,'2':3,'3':1,'5':4,'7':2,'8':3,'9':1,'10':5,'NoAnswer':2}}"
+          :dataCount="{'all-responses':431,'':0,'sub-17':94,'17-20':132,'20-23':76,'23-27':38,'27-and-over':24}"
+        >
+          <average
+            :sets="[{'setKey':'all-responses','setLabel':'All responses','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'sub-17','setLabel':'sub-17','color':'#fa6','dataCount':94},{'setKey':'17-20','setLabel':'17-20','color':'#f64','dataCount':132},{'setKey':'20-23','setLabel':'20-23','color':'#f41','dataCount':76},{'setKey':'23-27','setLabel':'23-27','color':'#d20','dataCount':38},{'setKey':'27-and-over','setLabel':'27 and over','color':'#b00','dataCount':24}]"
+            :data="{'_multiSet':true,'all-responses':{'1':40,'2':14,'3':25,'4':22,'5':28,'6':28,'7':44,'8':70,'9':62,'10':88,'NoAnswer':10},'sub-17':{'1':2,'2':3,'3':1,'4':6,'5':6,'6':7,'7':7,'8':22,'9':14,'10':24,'NoAnswer':2},'17-20':{'1':13,'2':3,'3':9,'4':9,'5':5,'6':7,'7':14,'8':21,'9':25,'10':22,'NoAnswer':4},'20-23':{'1':10,'2':2,'3':5,'4':1,'5':8,'6':2,'7':9,'8':14,'9':8,'10':17},'23-27':{'1':6,'2':1,'3':2,'4':3,'5':3,'7':4,'8':2,'9':6,'10':10,'NoAnswer':1},'27-and-over':{'1':3,'2':3,'3':1,'5':4,'7':2,'8':3,'9':1,'10':5,'NoAnswer':2}}"
+            :dataCount="{'all-responses':431,'':0,'sub-17':94,'17-20':132,'20-23':76,'23-27':38,'27-and-over':24}"
+          ></average>
+        </graph>
+      </div>
+
+
+      <p>
+        Older participants generally tend to agree that the plot of The Hidden World is incoherent mess, which it is:
+      </p>
+
+      <div class="graph-area">
+        <graph
+          class="graph-wide"
+          title="THWPlotCoherency"
+          :conf="{
+            columnXMargin: '1.2rem',
+            barWidth: '8px',
+            trackWidth: '8px',
+            columnWidth: '72px',
+            trackWidthMultiset: 'auto',
+            size: 'wide'
+          }"
+          :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
+          :sets="[{'setKey':'all-responses','setLabel':'All responses','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'sub-17','setLabel':'sub-17','color':'#fa6','dataCount':94},{'setKey':'17-20','setLabel':'17-20','color':'#f64','dataCount':132},{'setKey':'20-23','setLabel':'20-23','color':'#f41','dataCount':76},{'setKey':'23-27','setLabel':'23-27','color':'#d20','dataCount':38},{'setKey':'27-and-over','setLabel':'27 and over','color':'#b00','dataCount':24}]"
+          :data="{'_multiSet':true,'all-responses':{'1':78,'2':24,'3':38,'4':28,'5':29,'6':34,'7':53,'8':40,'9':42,'10':57,'NoAnswer':8},'sub-17':{'1':10,'2':6,'3':6,'4':3,'5':4,'6':9,'7':16,'8':10,'9':9,'10':18,'NoAnswer':3},'17-20':{'1':18,'2':9,'3':10,'4':10,'5':11,'6':15,'7':15,'8':17,'9':12,'10':13,'NoAnswer':2},'20-23':{'1':15,'2':6,'3':8,'4':4,'5':5,'6':3,'7':8,'8':5,'9':10,'10':12},'23-27':{'1':12,'2':1,'3':5,'4':1,'6':3,'7':4,'8':4,'9':2,'10':5,'NoAnswer':1},'27-and-over':{'1':9,'3':2,'4':2,'5':1,'6':1,'7':2,'8':1,'9':1,'10':4,'NoAnswer':1}}"
+          :dataCount="{'all-responses':431,'':0,'sub-17':94,'17-20':132,'20-23':76,'23-27':38,'27-and-over':24}"
+        >
+            <average
+              :sets="[{'setKey':'all-responses','setLabel':'All responses','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'sub-17','setLabel':'sub-17','color':'#fa6','dataCount':94},{'setKey':'17-20','setLabel':'17-20','color':'#f64','dataCount':132},{'setKey':'20-23','setLabel':'20-23','color':'#f41','dataCount':76},{'setKey':'23-27','setLabel':'23-27','color':'#d20','dataCount':38},{'setKey':'27-and-over','setLabel':'27 and over','color':'#b00','dataCount':24}]"
+              :data="{'_multiSet':true,'all-responses':{'1':78,'2':24,'3':38,'4':28,'5':29,'6':34,'7':53,'8':40,'9':42,'10':57,'NoAnswer':8},'sub-17':{'1':10,'2':6,'3':6,'4':3,'5':4,'6':9,'7':16,'8':10,'9':9,'10':18,'NoAnswer':3},'17-20':{'1':18,'2':9,'3':10,'4':10,'5':11,'6':15,'7':15,'8':17,'9':12,'10':13,'NoAnswer':2},'20-23':{'1':15,'2':6,'3':8,'4':4,'5':5,'6':3,'7':8,'8':5,'9':10,'10':12},'23-27':{'1':12,'2':1,'3':5,'4':1,'6':3,'7':4,'8':4,'9':2,'10':5,'NoAnswer':1},'27-and-over':{'1':9,'3':2,'4':2,'5':1,'6':1,'7':2,'8':1,'9':1,'10':4,'NoAnswer':1}}"
+              :dataCount="{'all-responses':431,'':0,'sub-17':94,'17-20':132,'20-23':76,'23-27':38,'27-and-over':24}"
+            ></average>
+        </graph>
+      </div>
+
+      <p>And <i>yet</i>:</p>
+
+      <div class="graph-area">
+        <graph
+            class="graph-wide"
+            title="THWFittingEnd"
+            :conf="{
+              columnXMargin: '1.2rem',
+              barWidth: '8px',
+              trackWidth: '8px',
+              columnWidth: '72px',
+              trackWidthMultiset: 'auto',
+              size: 'wide'
+            }"
+            :columns="[{'key':1,'label':'Yes'},{'key':3,'label':'Neutral'},{'key':2,'label':'No'},{'key':0,'label':'Shy'}]"
+            :sets="[{'setKey':'all-responses','setLabel':'All responses','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'sub-17','setLabel':'sub-17','color':'#fa6','dataCount':94},{'setKey':'17-20','setLabel':'17-20','color':'#f64','dataCount':132},{'setKey':'20-23','setLabel':'20-23','color':'#f41','dataCount':76},{'setKey':'23-27','setLabel':'23-27','color':'#d20','dataCount':38},{'setKey':'27-and-over','setLabel':'27 and over','color':'#b00','dataCount':24}]"
+            :data="{'_multiSet':true,'all-responses':{'1':103,'2':20,'3':21,'4':32,'5':22,'6':15,'7':39,'8':35,'9':53,'10':84,'NoAnswer':7},'sub-17':{'1':14,'2':6,'3':3,'4':3,'5':5,'6':4,'7':9,'8':17,'9':11,'10':19,'NoAnswer':3},'17-20':{'1':35,'3':7,'4':12,'5':6,'6':4,'7':18,'8':4,'9':15,'10':29,'NoAnswer':2},'20-23':{'1':16,'2':3,'3':5,'4':4,'5':6,'6':2,'7':8,'8':6,'9':9,'10':17},'23-27':{'1':10,'2':6,'3':2,'6':1,'7':1,'9':7,'10':10,'NoAnswer':1},'27-and-over':{'1':11,'2':1,'4':4,'5':1,'7':1,'8':2,'9':1,'10':2,'NoAnswer':1}}"
+            :dataCount="{'all-responses':431,'':0,'sub-17':94,'17-20':132,'20-23':76,'23-27':38,'27-and-over':24}"
+          >
+            <!-- todo: averages go here -->
+          </graph>
+      </div>
+
+      <p>Wack.</p>
+
+      <p>We need to have an audit to see whether there was a fucky wucky with the data parser.</p>
+
+      <p>
+        On a lighter note: remember when I theorized that average ratings for THW visuals may be lower than the other two movies
+        because of the overly flashy design of Berk and costumes?
+      </p>
+
+      <div class="graph-area">
+          <graph
+            class="graph-wide"
+            :title="HTTYD3VisualsRating"
+            :conf="{
+              columnXMargin: '1.2rem',
+              barWidth: '8px',
+              trackWidth: '8px',
+              columnWidth: '72px',
+              trackWidthMultiset: 'auto',
+              size: 'wide'
+            }"
+            :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
+            :sets="[{'setKey':'all-responses','setLabel':'All responses','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'sub-17','setLabel':'sub-17','color':'#fa6','dataCount':94},{'setKey':'17-20','setLabel':'17-20','color':'#f64','dataCount':132},{'setKey':'20-23','setLabel':'20-23','color':'#f41','dataCount':76},{'setKey':'23-27','setLabel':'23-27','color':'#d20','dataCount':38},{'setKey':'27-and-over','setLabel':'27 and over','color':'#b00','dataCount':24}]"
+            :data="{'_multiSet':true,'all-responses':{'1':5,'2':2,'3':1,'4':5,'5':8,'6':10,'7':16,'8':34,'9':68,'10':275,'NoAnswer':7},'sub-17':{'4':4,'6':2,'7':1,'8':5,'9':15,'10':65,'NoAnswer':2},'17-20':{'5':4,'6':4,'7':4,'8':7,'9':17,'10':94,'NoAnswer':2},'20-23':{'1':3,'2':1,'6':1,'7':4,'8':6,'9':13,'10':48},'23-27':{'3':1,'7':3,'8':5,'9':5,'10':22,'NoAnswer':2},'27-and-over':{'4':1,'5':2,'6':1,'7':1,'8':3,'9':6,'10':9,'NoAnswer':1}}"
+            :dataCount="{'all-responses':431,'':0,'sub-17':94,'17-20':132,'20-23':76,'23-27':38,'27-and-over':24}"
+          >
+            <!-- todo: averages go here -->
+          </graph>
+      </div>
+
+      <p>
+        While that graph doesn't prove that theory conclusively, the visuals ratings by older participants do drop off significantly.
+        Given the lack of 1/10 votes, I'd reckon lower votes aren't the result of the "fuck THW" salt squad. Also, the older you get, the bigger the chance
+        you don't have a favourite THW soundtrack:
+      </p>
+
+      <div class="graph-area">
+         <graph
+            class="graph-wide"
+            title="HTTYD3FavouriteSoundtrack"
+            :conf="{
+              columnXMargin: '1.2rem',
+              barWidth: '8px',
+              trackWidth: '8px',
+              columnWidth: '72px',
+              trackWidthMultiset: 'auto',
+              size: 'wide'
+            }"
+            :columns="[{'key':0,'label':'Raiders Return to Busy, Busy Berk'},{'key':1,'label':'Dinner Talk'},{'key':2,'label':'Legend Has It'},{'key':3,'label':'Toothless: Smitten'},{'key':4,'label':'Worst Pep Talk Ever'},{'key':5,'label':'Night Fury Killer'},{'key':6,'label':'Exodus!'},{'key':7,'label':'Third Date'},{'key':8,'label':'New New Tail'},{'key':9,'label':'Furies in Love'},{'key':10,'label':'Killer Dragons'},{'key':11,'label':'With Love Comes a Great Waterfall'},{'key':12,'label':'The Hidden World'},{'key':13,'label':'Armada Battle'},{'key':14,'label':'As Long As He\'s Safe'},{'key':15,'label':'Once There Were Dragons'},{'key':16,'label':'Together From Afar'},{'key':17,'label':'The Hidden World Suite'},{'key':19,'label':'Shy'},{'key':18,'label':'Cant read'},{'key':20,'label':'Salt squad'}]"
+            :sets="[{'setKey':'all-responses','setLabel':'All responses','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'sub-17','setLabel':'sub-17','color':'#fa6','dataCount':94},{'setKey':'17-20','setLabel':'17-20','color':'#f64','dataCount':132},{'setKey':'20-23','setLabel':'20-23','color':'#f41','dataCount':76},{'setKey':'23-27','setLabel':'23-27','color':'#d20','dataCount':38},{'setKey':'27-and-over','setLabel':'27 and over','color':'#b00','dataCount':24}]"
+            :data="{'_multiSet':true,'all-responses':{'2':17,'5':1,'6':8,'7':24,'8':6,'12':64,'13':12,'14':21,'15':157,'16':8,'17':1,'19':108,'20':4},'sub-17':{'2':7,'6':2,'7':3,'8':2,'12':12,'13':3,'14':7,'15':37,'16':2,'19':19},'17-20':{'2':4,'6':5,'7':7,'8':2,'12':13,'13':4,'14':6,'15':57,'16':1,'19':32,'20':1},'20-23':{'2':1,'6':1,'7':3,'8':2,'12':20,'13':2,'14':4,'15':24,'16':2,'17':1,'19':16},'23-27':{'2':1,'7':3,'12':8,'13':1,'15':12,'16':1,'19':11,'20':1},'27-and-over':{'2':1,'7':1,'12':1,'13':1,'14':1,'15':7,'16':1,'19':11}}"
+            :dataCount="{'all-responses':431,'':0,'sub-17':94,'17-20':132,'20-23':76,'23-27':38,'27-and-over':24}"
+          >
+            <!-- todo: averages go here -->
+          </graph>
+      </div>
+
+      <p>
+        Reminder: neither of the cohorts had a significant 'Shy' coolumn presence.
+      </p>
+
+      <p>
+        Let's move on.
+      </p>
+
+      <div class="graph-area">
+        <graph
+            class="graph-wide"
+            title="MovieRanking"
+            :conf="{
+              columnXMargin: '1.2rem',
+              barWidth: '8px',
+              trackWidth: '8px',
+              columnWidth: '72px',
+              trackWidthMultiset: 'auto',
+              size: 'wide'
+            }"
+            :columns="[{'key':0,'label':'1 > 2 > 3'},{'key':1,'label':'1 > 3 > 2'},{'key':2,'label':'2 > 1 > 3'},{'key':3,'label':'2 > 3 > 1'},{'key':4,'label':'3 > 1 > 2'},{'key':5,'label':'3 > 2 > 1'},{'key':6,'label':'Shy'}]"
+            :sets="[{'setKey':'all-responses','setLabel':'All responses','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'sub-17','setLabel':'sub-17','color':'#fa6','dataCount':94},{'setKey':'17-20','setLabel':'17-20','color':'#f64','dataCount':132},{'setKey':'20-23','setLabel':'20-23','color':'#f41','dataCount':76},{'setKey':'23-27','setLabel':'23-27','color':'#d20','dataCount':38},{'setKey':'27-and-over','setLabel':'27 and over','color':'#b00','dataCount':24}]"
+            :data="{'_multiSet':true,'all-responses':{'0':228,'1':79,'2':76,'3':16,'4':13,'5':11,'6':8},'sub-17':{'0':34,'1':26,'2':20,'3':5,'4':4,'5':2,'6':3},'17-20':{'0':72,'1':22,'2':24,'3':5,'4':4,'5':4,'6':1},'20-23':{'0':44,'1':11,'2':14,'3':2,'4':2,'5':2,'6':1},'23-27':{'0':25,'1':8,'2':3,'3':2},'27-and-over':{'0':13,'1':2,'2':4,'4':1,'5':2,'6':2}}"
+            :dataCount="{'all-responses':431,'':0,'sub-17':94,'17-20':132,'20-23':76,'23-27':38,'27-and-over':24}"
+          >
+            <!-- todo: averages go here -->
+          </graph>
+      </div>
+
+      <p>
+        I really like how older (17+) participants are, in general, "frst movie best, last movie worst" whereas the youngest cohort
+        seems to be a bit more varied in their opinions.
+      </p>
+
+      <p>
+        Moving on. Pop quiz: who thinks RTTE is canon?
+      </p>
+
+      <div class="graph-area">
+            <graph
+            class="graph-wide"
+            :title="IsRTTECanon"
+            :conf="{
+              columnXMargin: '1.2rem',
+              barWidth: '8px',
+              trackWidth: '8px',
+              columnWidth: '72px',
+              trackWidthMultiset: 'auto',
+              size: 'wide',
+              sidewaysLabels: true,
+              labelsHeight: '6rem',
+              hideZeroColumns: true
+            }"
+            :columns="[{'key':1,'label':'Yes'},{'key':3,'label':'Neutral'},{'key':2,'label':'No'},{'key':0,'label':'Shy'}]"
+            :sets="[{'setKey':'all-responses','setLabel':'All responses','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'sub-17','setLabel':'sub-17','color':'#fa6','dataCount':94},{'setKey':'17-20','setLabel':'17-20','color':'#f64','dataCount':132},{'setKey':'20-23','setLabel':'20-23','color':'#f41','dataCount':76},{'setKey':'23-27','setLabel':'23-27','color':'#d20','dataCount':38},{'setKey':'27-and-over','setLabel':'27 and over','color':'#b00','dataCount':24}]"
+            :data="{'_multiSet':true,'all-responses':{'0':33,'1':235,'2':64,'3':99},'sub-17':{'0':3,'1':63,'2':10,'3':18},'17-20':{'0':8,'1':80,'2':18,'3':26},'20-23':{'0':6,'1':37,'2':11,'3':22},'23-27':{'0':4,'1':13,'2':14,'3':7},'27-and-over':{'0':7,'1':4,'2':5,'3':8}}"
+            :dataCount="{'all-responses':431,'':0,'sub-17':94,'17-20':132,'20-23':76,'23-27':38,'27-and-over':24}"
+          >
+            <!-- todo: averages go here -->
+          </graph>
+      </div>
+
+      <p>
+        And who rated Light Fury the worst character of THW? Surprisingly enough, once you're over 23, you simpls stop caring compared to others.
+      </p>
+      <p>
+        Though — remember. Small sample size on the 23+ end of things. Lots of answers.
+      </p>
+
+      <div class="graph-area">
+        <graph
+            class="graph-wide"
+            :title="HTTYD3WorstCharacter"
+            :conf="{
+              columnXMargin: '1.2rem',
+              barWidth: '8px',
+              trackWidth: '8px',
+              columnWidth: '72px',
+              trackWidthMultiset: 'auto',
+              size: 'wide',
+
+              sidewaysLabels: true,
+              labelsHeight: '6rem',
+              hideZeroColumns: true
+            }"
+            :columns="[{'key':3,'label':'Hiccup'},{'key':4,'label':'Toothless'},{'key':5,'label':'Astrid'},{'key':7,'label':'Valka'},{'key':14,'label':'Cloudjumper'},{'key':16,'label':'Eret'},{'key':17,'label':'Light Fury'},{'key':18,'label':'Grimmel'},{'key':8,'label':'Gobber'},{'key':9,'label':'Ruffnut'},{'key':10,'label':'Tuffnut'},{'key':11,'label':'Twins'},{'key':12,'label':'Snotlout'},{'key':13,'label':'Fishlegs'},{'key':2,'label':'Other'},{'key':1,'label':'Shy'}]"
+            :sets="[{'setKey':'all-responses','setLabel':'All responses','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'sub-17','setLabel':'sub-17','color':'#fa6','dataCount':94},{'setKey':'17-20','setLabel':'17-20','color':'#f64','dataCount':132},{'setKey':'20-23','setLabel':'20-23','color':'#f41','dataCount':76},{'setKey':'23-27','setLabel':'23-27','color':'#d20','dataCount':38},{'setKey':'27-and-over','setLabel':'27 and over','color':'#b00','dataCount':24}]"
+            :data="{'_multiSet':true,'all-responses':{'1':18,'2':21,'3':7,'4':25,'5':9,'6':1,'7':4,'8':1,'9':22,'10':14,'12':71,'13':16,'16':21,'17':120,'18':81},'sub-17':{'1':5,'2':6,'4':3,'6':1,'8':1,'9':5,'10':4,'12':18,'13':2,'16':4,'17':23,'18':22},'17-20':{'1':5,'2':3,'3':3,'4':10,'5':3,'9':9,'12':24,'13':9,'16':7,'17':37,'18':22},'20-23':{'1':2,'2':6,'3':1,'4':4,'7':2,'9':2,'10':3,'12':11,'13':2,'16':4,'17':23,'18':16},'23-27':{'1':2,'2':2,'3':1,'4':3,'5':1,'7':1,'9':2,'10':2,'12':7,'16':2,'17':8,'18':7},'27-and-over':{'1':2,'3':1,'4':1,'5':4,'9':2,'10':2,'12':4,'13':2,'17':3,'18':3}}"
+            :dataCount="{'all-responses':431,'':0,'sub-17':94,'17-20':132,'20-23':76,'23-27':38,'27-and-over':24}"
+          >
+            <!-- todo: averages go here -->
+          </graph>
+      </div>
+
+      <p>
+        Cherry on the cake:
+      </p>
+
+      <div class="graph-area">
+        <graph
+            class="graph-wide"
+            :title="YouCanEnjoyGarbageAgreement"
+            :conf="{
+              columnXMargin: '1.2rem',
+              barWidth: '8px',
+              trackWidth: '8px',
+              columnWidth: '72px',
+              trackWidthMultiset: 'auto',
+              size: 'wide'
+            }"
+            :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
+            :sets="[{'setKey':'all-responses','setLabel':'All responses','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'sub-17','setLabel':'sub-17','color':'#fa6','dataCount':94},{'setKey':'17-20','setLabel':'17-20','color':'#f64','dataCount':132},{'setKey':'20-23','setLabel':'20-23','color':'#f41','dataCount':76},{'setKey':'23-27','setLabel':'23-27','color':'#d20','dataCount':38},{'setKey':'27-and-over','setLabel':'27 and over','color':'#b00','dataCount':24}]"
+            :data="{'_multiSet':true,'all-responses':{'1':3,'2':4,'3':9,'4':12,'5':29,'6':17,'7':63,'8':70,'9':58,'10':158,'NoAnswer':8},'sub-17':{'4':4,'5':9,'6':4,'7':16,'8':12,'9':14,'10':31,'NoAnswer':4},'17-20':{'2':4,'3':4,'4':2,'5':11,'6':5,'7':18,'8':22,'9':15,'10':50,'NoAnswer':1},'20-23':{'1':1,'4':4,'5':2,'6':3,'7':11,'8':10,'9':11,'10':33,'NoAnswer':1},'23-27':{'1':1,'3':1,'4':1,'5':2,'6':2,'7':3,'8':6,'9':7,'10':15},'27-and-over':{'4':1,'5':3,'7':2,'8':5,'9':2,'10':11}}"
+            :dataCount="{'all-responses':431,'':0,'sub-17':94,'17-20':132,'20-23':76,'23-27':38,'27-and-over':24}"
+          >
+            <average
+              :sets="[{'setKey':'all-responses','setLabel':'All responses','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'sub-17','setLabel':'sub-17','color':'#fa6','dataCount':94},{'setKey':'17-20','setLabel':'17-20','color':'#f64','dataCount':132},{'setKey':'20-23','setLabel':'20-23','color':'#f41','dataCount':76},{'setKey':'23-27','setLabel':'23-27','color':'#d20','dataCount':38},{'setKey':'27-and-over','setLabel':'27 and over','color':'#b00','dataCount':24}]"
+              :data="{'_multiSet':true,'all-responses':{'1':3,'2':4,'3':9,'4':12,'5':29,'6':17,'7':63,'8':70,'9':58,'10':158,'NoAnswer':8},'sub-17':{'4':4,'5':9,'6':4,'7':16,'8':12,'9':14,'10':31,'NoAnswer':4},'17-20':{'2':4,'3':4,'4':2,'5':11,'6':5,'7':18,'8':22,'9':15,'10':50,'NoAnswer':1},'20-23':{'1':1,'4':4,'5':2,'6':3,'7':11,'8':10,'9':11,'10':33,'NoAnswer':1},'23-27':{'1':1,'3':1,'4':1,'5':2,'6':2,'7':3,'8':6,'9':7,'10':15},'27-and-over':{'4':1,'5':3,'7':2,'8':5,'9':2,'10':11}}"
+              :dataCount="{'all-responses':431,'':0,'sub-17':94,'17-20':132,'20-23':76,'23-27':38,'27-and-over':24}"
+            ></average>
+          </graph>
+      </div>
+
+      <p>
+        The older you are, the more you agree (though admittedly not by a big margin, something something sample size).
+      </p>
+
+      <!-- #endregion -->
+
+      <h2>Results by gender</h2>
+
     </div>
 
 

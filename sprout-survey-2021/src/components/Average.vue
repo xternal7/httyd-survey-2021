@@ -49,7 +49,7 @@ export default defineComponent({
     sets: {
       immediate: true,
       handler(newSetConf: any) {
-        console.log('new set conf:', newSetConf)
+        // console.log('new set conf:', newSetConf)
         if (!newSetConf || !this) {
           return;
         }
@@ -64,8 +64,7 @@ export default defineComponent({
         return;
       }
 
-      console.log('processing data for average. Data:', data, 'sets:', this.setConf)
-
+      // console.log('processing data for average. Data:', data, 'sets:', this.setConf)
       if (!data._multiSet) {
         const avg = this.calculateAverage(data);
         this.average = avg.average;

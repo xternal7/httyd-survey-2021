@@ -103,9 +103,11 @@
 
             <div>
               <b>Embed:</b>
-              <pre>
-                {{getGraphCode(q)}}
-              </pre>
+              <div class="graph-code">
+                <pre>
+                  {{getGraphCode(q)}}
+                </pre>
+              </div>
             </div>
           </template>
         </div>
@@ -155,13 +157,12 @@ export default defineComponent({
   methods: {
     //#region graph getters
     getColumns(question: Question) {
-      console.info('————————————— getting columns! ——————');
+      // console.info('————————————— getting columns! ——————');
+      // console.info('is rating?', this.isRatingQuestion(`${question}`), 'is yes/no?', this.isYesNoQuestion(`${question}`))
       if (this.isYesNoQuestion(question)) {
-        console.info('question', question, 'is  a yes/no question. Returning yes/no/neutral column definitions!')
         return graphColumnDefinitions.yesNoNeutral();
       }
       if (this.isRatingQuestion(question)) {
-        console.info('question', question, 'is a rating question. Returning yes/no/neutral column definitions!')
         return graphColumnDefinitions.rating1to10();
       }
       // handle special values:
@@ -179,7 +180,7 @@ export default defineComponent({
         case Question.HTTYD3WorstCharacter:
           return graphColumnDefinitions.httydCharacter(3);
         default:
-          return graphColumnDefinitions[question]?.() ?? '';
+          return graphColumnDefinitions[question]?.() ?? graphColumnDefinitions.rating1to10();
       }
     },
     getData(question: Question) {
@@ -251,42 +252,35 @@ export default defineComponent({
       return `
           <graph
             class="graph-wide"
-            :title="${question.label}"
+            title="${question.label}"
             :conf="{
               columnXMargin: '1.2rem',
               barWidth: '8px',
               trackWidth: '8px',
               columnWidth: '72px',
               trackWidthMultiset: 'auto',
-              size: 'wide'
+              size: 'wide',
+              hideZeroColumns: true
             }"
             :columns="${
               JSON.stringify(
-                this.getColumns(question.value),
-                null,
-                2
-              )
+                this.getColumns(question.value)
+              ).replaceAll('\'', '\\\'').replaceAll('"', '\'')
             }"
             :sets="${
               JSON.stringify(
-                this.processedData.sets,
-                null,
-                2
-              )
+                this.processedData.sets
+              ).replaceAll('\'', '\\\'').replaceAll('"', '\'')
             }"
             :data="${
               JSON.stringify(
-                this.getData(question.value),
-                null,
-                2
-              )
+                this.getData(question.value)
+              ).replaceAll('\'', '\\\'').replaceAll('"', '\'')
             }"
             :dataCount="${
               JSON.stringify(
-                this.processedData.counts,
-                null,
-                2
-              )
+                this.processedData.counts
+              ).replaceAll('\'', '\\\'').replaceAll('"', '\'')
             }"
           >
             <!-- todo: averages go here -->
@@ -341,14 +335,19 @@ export default defineComponent({
               graphDataOut[question][set] = {};
             }
 
-            let answer = this.isRatingQuestion(question) ? `${surveyResponse[question]}` : surveyResponse[question];
+            // lpt: everything is an array!
+            let answers = surveyResponse[question];
 
             // create answer count if doesn't exist, otherwise increase count
-            if (! graphDataOut[question][set][answer]) {
-              graphDataOut[question][set][answer] = 1;
-            } else {
-              graphDataOut[question][set][answer]++;
-            }
+            try {
+              for (const answer of answers) {
+                if (! graphDataOut[question][set][answer]) {
+                  graphDataOut[question][set][answer] = 1;
+                } else {
+                  graphDataOut[question][set][answer]++;
+                }
+              }
+            } catch (e) {}
           }
         }
       }
@@ -482,5 +481,12 @@ export default defineComponent({
 
 pre {
   font-size: 0.75rem;
+}
+
+.graph-code {
+  overflow-y: auto;
+  // overflow-y: hidden;
+  max-height: 220px;
+  width: 72rem;
 }
 </style>

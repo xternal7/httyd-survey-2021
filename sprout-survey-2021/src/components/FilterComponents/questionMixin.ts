@@ -74,7 +74,9 @@ const questionMixin = {
     },
     // determine the correct enum for the question with these
     isRatingQuestion(questionEnum: string) {
-      switch (Question[questionEnum]) {
+      const v = isNaN(+questionEnum) ? Question[`${questionEnum}`] : questionEnum;
+
+      switch (v) {
         case Question.HTTYD1Rating:
         case Question.HTTYD1ScoreRating:
         case Question.HTTYD1PlotRating:
@@ -119,7 +121,9 @@ const questionMixin = {
       }
     },
     isYesNoQuestion(questionEnum: string) {
-      switch(Question[questionEnum]) {
+      const v = isNaN(+questionEnum) ? Question[`${questionEnum}`] : questionEnum;
+
+      switch(v) {
         case Question.SurveyParticipation2020:
         case Question.UsernameProvided:        // for the purposes of this filter ...
         case Question.SurveyFeedbackProvided:  // for the purposes of this filter ...

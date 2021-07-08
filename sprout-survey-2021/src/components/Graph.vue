@@ -374,11 +374,11 @@ export default defineComponent({
     defaultMode: {
       immediate: true,
       handler(newMode) {
-        // if (newMode === 'absolute' || newMode === GraphDisplayMode.Absolute) {
-        //   this.displayMode = GraphDisplayMode.Absolute;
-        // } else {
-        //   this.displayMode = GraphDisplayMode.Relative;
-        // }
+        if (newMode === 'absolute' || newMode === GraphDisplayMode.Absolute) {
+          this.displayMode = GraphDisplayMode.Absolute;
+        } else {
+          this.displayMode = GraphDisplayMode.Relative;
+        }
       }
     }
   },

@@ -17,4 +17,5 @@ export enum Character {
   Eret = 16,
   Thotfury = 17,
   Grimmel = 18,
+  Multiple = 'dwFlag',
 }

@@ -12,7 +12,7 @@ import { HTTYDAppealReason } from '../enums/httyd-appeal-reason.enum';
 import { HTTYDShort } from '../enums/httyd-short.enum';
 import { MovieOrder } from '../enums/movie-order.enum';
 import { Question } from '../enums/question.enum';
-import { ost2enum } from '../enums/soundtrack.enum';
+import { HTTYD2Soundtrack, HTTYDSoundtrack, ost2enum, THWSoundtrack } from '../enums/soundtrack.enum';
 import { THWOpinionChange } from '../enums/thw-opinion-change.enum';
 import { THWTheme } from '../enums/thw-theme.enum';
 import { Villain, villain2enum } from '../enums/villain.enum';
@@ -205,7 +205,7 @@ export class GdocsScrapper {
 
       // community
       const community = row[Question.Community].split(';');
-      rowOut[Question.Community] = [this.communtiy2enum(community[0]), ...(community.length > 1 ? ['dwFlag'] : [])];
+      rowOut[Question.Community] = [this.communtiy2enum(community[0]), ...(community.length > 1 ? [ Community.Multiple ] : [])];
 
       // location
       rowOut[Question.Location] = [this.continent2enum(row[Question.Location])];
@@ -259,7 +259,7 @@ export class GdocsScrapper {
       }
 
       // count people who provided usernames, but omit the actual username
-      rowOut[Question.UsernameProvided] = !!row[Question.UsernameProvided];
+      rowOut[Question.UsernameProvided] = [ row[Question.UsernameProvided] ? Answer.Yes : Answer.No]; 
       if (rowOut[Question.UsernameProvided]) {
         usernameCount++;
       }
@@ -272,22 +272,22 @@ export class GdocsScrapper {
       const httyd3fav = row[Question.HTTYD3FavouriteCharacter].split('; ');
       const httyd3worst = row[Question.HTTYD3WorstCharacter].split('; ');
 
-      rowOut[Question.HTTYD1FavouriteCharacter] = [this.character2enum(httyd1fav[0]), ...(httyd1fav[1] && httyd1fav[1].indexOf('This Sign Can\'t Stop Me') !== -1 ? ['dwFlag'] : [])];
-      rowOut[Question.HTTYD2FavouriteCharacter] = [this.character2enum(httyd2fav[0]), ...(httyd2fav[1] && httyd2fav[1].indexOf('This Sign Can\'t Stop Me') !== -1 ? ['dwFlag'] : [])];
-      rowOut[Question.HTTYD3FavouriteCharacter] = [this.character2enum(httyd3fav[0]), ...(httyd3fav[1] && httyd3fav[1].indexOf('This Sign Can\'t Stop Me') !== -1 ? ['dwFlag'] : [])];
+      rowOut[Question.HTTYD1FavouriteCharacter] = [this.character2enum(httyd1fav[0]), ...(httyd1fav[1] && httyd1fav[1].indexOf('This Sign Can\'t Stop Me') !== -1 ? [ Character.Multiple ] : [])];
+      rowOut[Question.HTTYD2FavouriteCharacter] = [this.character2enum(httyd2fav[0]), ...(httyd2fav[1] && httyd2fav[1].indexOf('This Sign Can\'t Stop Me') !== -1 ? [ Character.Multiple ] : [])];
+      rowOut[Question.HTTYD3FavouriteCharacter] = [this.character2enum(httyd3fav[0]), ...(httyd3fav[1] && httyd3fav[1].indexOf('This Sign Can\'t Stop Me') !== -1 ? [ Character.Multiple ] : [])];
 
-      rowOut[Question.HTTYD1WorstCharacter] = [this.character2enum(httyd1worst[0]), ...(httyd1worst[1] && httyd1worst[1].indexOf('This Sign Can\'t Stop Me') -1 ? ['dwFlag'] : [])];
-      rowOut[Question.HTTYD2WorstCharacter] = [this.character2enum(httyd2worst[0]), ...(httyd2worst[1] && httyd2worst[1].indexOf('This Sign Can\'t Stop Me') -1 ? ['dwFlag'] : [])];
-      rowOut[Question.HTTYD3WorstCharacter] = [this.character2enum(httyd3worst[0]), ...(httyd3worst[1] && httyd3worst[1].indexOf('This Sign Can\'t Stop Me') -1 ? ['dwFlag'] : [])];
+      rowOut[Question.HTTYD1WorstCharacter] = [this.character2enum(httyd1worst[0]), ...(httyd1worst[1] && httyd1worst[1].indexOf('This Sign Can\'t Stop Me') -1 ? [ Character.Multiple ] : [])];
+      rowOut[Question.HTTYD2WorstCharacter] = [this.character2enum(httyd2worst[0]), ...(httyd2worst[1] && httyd2worst[1].indexOf('This Sign Can\'t Stop Me') -1 ? [ Character.Multiple ] : [])];
+      rowOut[Question.HTTYD3WorstCharacter] = [this.character2enum(httyd3worst[0]), ...(httyd3worst[1] && httyd3worst[1].indexOf('This Sign Can\'t Stop Me') -1 ? [ Character.Multiple ] : [])];
 
       // favourite songs
       const httyd1ost = row[Question.HTTYD1FavouriteSoundtrack].split('; ');
       const httyd2ost = row[Question.HTTYD2FavouriteSoundtrack].split('; ');
       const httyd3ost = row[Question.HTTYD3FavouriteSoundtrack].split('; ');
 
-      rowOut[Question.HTTYD1FavouriteSoundtrack] = [ost2enum(1, httyd1ost[0]), ...(httyd1ost[1] && httyd1ost[1].indexOf('This Sign Can\'t Stop Me') -1 ? ['dwFlag'] : [])];
-      rowOut[Question.HTTYD2FavouriteSoundtrack] = [ost2enum(2, httyd2ost[0]), ...(httyd2ost[1] && httyd2ost[1].indexOf('This Sign Can\'t Stop Me') -1 ? ['dwFlag'] : [])];
-      rowOut[Question.HTTYD3FavouriteSoundtrack] = [ost2enum(3, httyd3ost[0]), ...(httyd3ost[1] && httyd3ost[1].indexOf('This Sign Can\'t Stop Me') -1 ? ['dwFlag'] : [])];
+      rowOut[Question.HTTYD1FavouriteSoundtrack] = [ost2enum(1, httyd1ost[0]), ...(httyd1ost[1] && httyd1ost[1].indexOf('This Sign Can\'t Stop Me') -1 ? [ HTTYDSoundtrack.Multiple ] : [])];
+      rowOut[Question.HTTYD2FavouriteSoundtrack] = [ost2enum(2, httyd2ost[0]), ...(httyd2ost[1] && httyd2ost[1].indexOf('This Sign Can\'t Stop Me') -1 ? [ HTTYD2Soundtrack.Multiple ] : [])];
+      rowOut[Question.HTTYD3FavouriteSoundtrack] = [ost2enum(3, httyd3ost[0]), ...(httyd3ost[1] && httyd3ost[1].indexOf('This Sign Can\'t Stop Me') -1 ? [ THWSoundtrack.Multiple ] : [])];
 
       // bonus questions for 2 and thw
       const valkaVillain = row[Question.HTTYD2ValkaVillain];

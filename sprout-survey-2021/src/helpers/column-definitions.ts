@@ -145,8 +145,8 @@ let graphColumnDefinitions = {
         label: 'Shy'
       },
       {
-        key: 'dw',
-        label: 'multi'
+        key: Community.Multiple,
+        label: 'D.W.'
       }
     ]
   },
@@ -267,6 +267,9 @@ let graphColumnDefinitions = {
       {
         key: Character.NoAnswer,
         label: 'Shy'
+      }, {
+        key: Character.Multiple,
+        label: 'D.W.'
       }
     ];
     
@@ -441,7 +444,7 @@ let graphColumnDefinitions = {
       },
       {
         key: HTTYDSoundtrack.Multiple,
-        label: 'Cant read'
+        label: 'D.W.'
       }
     ]
   },
@@ -511,7 +514,7 @@ let graphColumnDefinitions = {
       label: 'Shy'
     }, {
       key: HTTYD2Soundtrack.Multiple,
-      label: 'Cant read'
+      label: 'D.W.'
     }]
   },
   [Question.HTTYD3FavouriteSoundtrack]: () => {
@@ -574,7 +577,7 @@ let graphColumnDefinitions = {
       label: 'Shy'
     }, {
       key: THWSoundtrack.Multiple,
-      label: 'Cant read'
+      label: 'D.W.'
     },{
       key: THWSoundtrack.AffirmativeNone,
       label: 'Salt squad'
@@ -632,6 +635,9 @@ let graphColumnDefinitions = {
     },{
       key: HTTYDAppealReason.NoAnswer,
       label: 'Shy'
+    },{
+      key: HTTYDAppealReason.TooManyAnswers,
+      label: 'They tried'
     }];
   },
   [Question.THWStrongestThemes]: () => {
@@ -668,6 +674,9 @@ let graphColumnDefinitions = {
     },{
       key: THWTheme.NoAnswer,
       label: 'Shy'
+    },{
+      key: THWTheme.TooManyAnswers,
+      label: 'They tried'
     }];
   },
   [Question.FavouriteDraconid]: () => {
@@ -720,6 +729,9 @@ let graphColumnDefinitions = {
       }, {
         key: Draconid.None,
         label: 'Shy'
+      }, {
+        key: Draconid.Multiple,
+        label: 'D.W.'
       }
     ]
   },
@@ -769,7 +781,7 @@ let graphColumnDefinitions = {
         label: 'Shy',
       }, {
         key: Villain.Multiple,
-        label: 'Can\'t read'
+        label: 'D.W.'
       }
     ];
   },

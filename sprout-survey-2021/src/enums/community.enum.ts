@@ -9,5 +9,6 @@ export enum Community {
   Youtube,
   Fandom,
   Grapevine,
-  Other
+  Other,
+  Multiple
 }

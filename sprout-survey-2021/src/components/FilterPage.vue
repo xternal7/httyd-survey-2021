@@ -291,27 +291,40 @@ export default defineComponent({
       const isAgeOrRating = isAge || isRatingQuestion;
       const isYesNoQuestion = this.isYesNoQuestion(question);
 
-      const ageConf = `{trackWidth: '6px !important', columnWidth: '8px !important', hideZeroColumns: false}`;
-      const ratingConf = `{columnXMargin: '1.2rem', barWidth: '8px', trackWidth: '8px', columnWidth: '72px', trackWidthMultiset: 'auto', size: 'wide', hideZeroColumns: false}`;
-      const yesNoConf = `{
-              columnXMargin: '1.2rem',
-              barWidth: '8px',
-              trackWidth: '8px',
-              columnWidth: '72px',
-              trackWidthMultiset: 'auto',
-              size: 'wide',
-              hideZeroColumns: false
-            }`;
-      const defaultConf = `{
-              size: 'wide',
-              barWidth: '16px !important',
-              trackWidthMultiset: '16px !important',
-              trackWidth: '16px !important',
-              columnWidth: '42px !important',
-              sidewaysLabels: true,
-              labelsHeight: '6rem'
-              hideZeroColumns: true
-            }`;
+      const ageConf = {
+        trackWidth: '6px !important',
+        columnWidth: '8px !important',
+        hideZeroColumns: false
+      };
+      const ratingConf = {
+        columnXMargin: '1.2rem',
+        barWidth: '8px',
+        trackWidth: '8px',
+        columnWidth: '72px',
+        trackWidthMultiset: 'auto',
+        size: 'wide',
+        hideZeroColumns: false
+      };
+      const yesNoConf = {
+        columnXMargin: '1.2rem',
+        barWidth: '8px',
+        trackWidth: '8px',
+        columnWidth: '72px',
+        trackWidthMultiset: 'auto',
+        size: 'wide',
+        hideZeroColumns: false
+      };
+      const defaultConf = {
+        columnXMargin: '1.2rem',
+        size: 'wide',
+        barWidth: '8px !important',
+        trackWidthMultiset: '8px !important',
+        trackWidth: '16px !important',
+        columnWidth: '72px !important',
+        sidewaysLabels: true,
+        labelsHeight: '6rem',
+        hideZeroColumns: true
+      };
 
       let conf;
       if (isAge) {
@@ -323,6 +336,7 @@ export default defineComponent({
       } else {
         conf = defaultConf;
       }
+      
       return conf;
     },
 
@@ -330,6 +344,8 @@ export default defineComponent({
       const isAge = question == 1;
       const isRatingQuestion = this.isRatingQuestion(question);
       const isAgeOrRating = isAge || isRatingQuestion;
+
+      const conf = JSON.stringify(this.getConf(question.value)).replaceAll('\'', '\\\'').replaceAll('"', '\'');
 
       const dataCount = JSON.stringify(this.processedData.counts).replaceAll('\'', '\\\'').replaceAll('"', '\'');
       const data = JSON.stringify(this.getData(question.value)).replaceAll('\'', '\\\'').replaceAll('"', '\'');
@@ -340,7 +356,7 @@ export default defineComponent({
           <graph
             class="graph-wide"
             title="${question.label}"
-            :conf="${this.getConf(question.value)}"
+            :conf="${conf}"
             :columns="${columns}"
             :sets="${sets}"
             :data="${data}"
@@ -486,6 +502,7 @@ export default defineComponent({
     },
     loadSavedSetConf(name) {
       this.datasets = JSON.parse(this.savedSetConfs[name]);
+      this.filterData();
     }
     //#endregion
   }

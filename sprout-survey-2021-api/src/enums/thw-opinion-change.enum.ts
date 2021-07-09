@@ -1,5 +1,6 @@
 export enum THWOpinionChange {
   LikedItMore,
   LikedItLess,
-  Unchanged
+  Unchanged,
+  Shy
 }

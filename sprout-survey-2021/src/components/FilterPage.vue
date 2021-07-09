@@ -36,7 +36,45 @@
       <div>&nbsp;</div>
       <div>&nbsp;</div>
       <div>&nbsp;</div>
+
       <div>
+        <b>Set options import/export</b><small><br/>Paste valid json config to import set conf. Updates on input event! If it doesn't, json is prolly fucked. Check console.</small>
+      </div>
+      <textarea
+        ref="codeBox"
+        class="filter-formula-textbox"
+        style="width: 100%; max-width: 128rem; margin: 0 auto; height: 4.2rem;"
+        placeholder="(Paste graph settings & unfocus)"
+        :value="setConfTxt"
+        @input="updateSetConf($event)" 
+      >
+      </textarea>
+
+      <div>
+        <br/>
+        <br/>
+        <b>Save/load current filters to/from localStorage</b>
+      </div>
+
+      <div>
+        <ol>
+          <li
+            v-for="(val, ssc) in savedSetConfs"
+            :key="ssc"
+            class="flex flex-row"
+            style="padding-left: 2rem; margin: 0.5rem 0;"
+          >
+            {{ssc}}
+            <span class="button flex-nogrow" @click="loadSavedSetConf(ssc)">Load</span>
+            <span class="button flex-nogrow" @click="removeSavedSetConf(ssc)">Remove</span>
+          </li>
+        </ol>
+        <input v-model="savedSetConfName" /> <span class="button flex-nogrow" @click="saveCurrentSetConf()">Save current setconf</span>
+      </div>
+
+      <div>
+        <br/>
+        <br/>
         <b>Currently defined sets</b>
       </div>
       <div
@@ -85,14 +123,7 @@
             <graph
               class="graph-wide"
               :title="q.label"
-              :conf="{
-                columnXMargin: '1.2rem',
-                barWidth: '8px',
-                trackWidth: '8px',
-                columnWidth: '72px',
-                trackWidthMultiset: 'auto',
-                size: 'wide'
-              }"
+              :conf="this.getConf(q.value)"
               :columns="getColumns(q.value)"
               :sets="processedData.sets"
               :data="getData(q.value)"
@@ -148,10 +179,13 @@ export default defineComponent({
     }
 
     return {
+      setConfTxt: '',
+      savedSetConfName: '',
       questions,
       datasets: [] as any[],
       currentlySelectedSet: undefined as any,
       processedData: {sets: [] as any[], data: {} as any, counts: {}},
+      savedSetConfs: JSON.parse(localStorage.getItem('ss21-filter-sets') || '{}'),
     }
   },
   methods: {
@@ -245,45 +279,79 @@ export default defineComponent({
       this.currentlySelectedSet.set.border = set.set.border;
       this.currentlySelectedSet.filterFnTxt = set.filterFnTxt;
       this.currentlySelectedSet = undefined;
+
+      // update sets.txt
+      this.setConfTxt = JSON.stringify(this.datasets);
     },
     //#endregion
 
-    getGraphCode(question) {
-      return `
-          <graph
-            class="graph-wide"
-            title="${question.label}"
-            :conf="{
+    getConf(question) {
+      const isAge = question == 1;
+      const isRatingQuestion = this.isRatingQuestion(question);
+      const isAgeOrRating = isAge || isRatingQuestion;
+      const isYesNoQuestion = this.isYesNoQuestion(question);
+
+      const ageConf = `{trackWidth: '6px !important', columnWidth: '8px !important', hideZeroColumns: false}`;
+      const ratingConf = `{columnXMargin: '1.2rem', barWidth: '8px', trackWidth: '8px', columnWidth: '72px', trackWidthMultiset: 'auto', size: 'wide', hideZeroColumns: false}`;
+      const yesNoConf = `{
               columnXMargin: '1.2rem',
               barWidth: '8px',
               trackWidth: '8px',
               columnWidth: '72px',
               trackWidthMultiset: 'auto',
               size: 'wide',
+              hideZeroColumns: false
+            }`;
+      const defaultConf = `{
+              size: 'wide',
+              barWidth: '16px !important',
+              trackWidthMultiset: '16px !important',
+              trackWidth: '16px !important',
+              columnWidth: '42px !important',
+              sidewaysLabels: true,
+              labelsHeight: '6rem'
               hideZeroColumns: true
-            }"
-            :columns="${
-              JSON.stringify(
-                this.getColumns(question.value)
-              ).replaceAll('\'', '\\\'').replaceAll('"', '\'')
-            }"
-            :sets="${
-              JSON.stringify(
-                this.processedData.sets
-              ).replaceAll('\'', '\\\'').replaceAll('"', '\'')
-            }"
-            :data="${
-              JSON.stringify(
-                this.getData(question.value)
-              ).replaceAll('\'', '\\\'').replaceAll('"', '\'')
-            }"
-            :dataCount="${
-              JSON.stringify(
-                this.processedData.counts
-              ).replaceAll('\'', '\\\'').replaceAll('"', '\'')
-            }"
+            }`;
+
+      let conf;
+      if (isAge) {
+        conf = ageConf;
+      } else if (isRatingQuestion) {
+        conf = ratingConf;
+      } else if (isYesNoQuestion) {
+        conf = yesNoConf;
+      } else {
+        conf = defaultConf;
+      }
+    },
+
+    getGraphCode(question) {
+      const isAge = question == 1;
+      const isRatingQuestion = this.isRatingQuestion(question);
+      const isAgeOrRating = isAge || isRatingQuestion;
+
+      const dataCount = JSON.stringify(this.processedData.counts).replaceAll('\'', '\\\'').replaceAll('"', '\'');
+      const data = JSON.stringify(this.getData(question.value)).replaceAll('\'', '\\\'').replaceAll('"', '\'');
+      const sets = JSON.stringify(this.processedData.sets).replaceAll('\'', '\\\'').replaceAll('"', '\'');
+      const columns = JSON.stringify(this.getColumns(question.value)).replaceAll('\'', '\\\'').replaceAll('"', '\'');
+
+      return `
+          <graph
+            class="graph-wide"
+            title="${question.label}"
+            :conf="${this.getConf(question.value)}"
+            :columns="${columns}"
+            :sets="${sets}"
+            :data="${data}"
+            :dataCount="${dataCount}"
           >
-            <!-- todo: averages go here -->
+            ${isAgeOrRating ? `
+              <average
+                :sets="${sets}"
+                :data="${data}"
+                :dataCount="${dataCount}"
+            `:''
+            }
           </graph>
         `;
     },
@@ -398,6 +466,26 @@ export default defineComponent({
     nameToKey(name) {
       return name.trim().toLowerCase().replaceAll(' ', '-');
     },
+
+    updateSetConf(event) {
+      // console.log('updating function txt:', updateEvent.target.value);
+      try {
+        this.datasets = JSON.parse(event.target.value);
+      } catch (e) {
+        console.error('failed to parse set:', e);
+      }
+    },
+    saveCurrentSetConf() {
+      this.savedSetConfs[this.savedSetConfName] = JSON.stringify(this.datasets);
+      localStorage.setItem('ss21-filter-sets', JSON.stringify(this.savedSetConfs));
+    },
+    removeSavedSetConf(name) {
+      delete this.savedSetConfs[name];
+      localStorage.setItem('ss21-filter-sets', JSON.stringify(this.savedSetConfs));
+    },
+    loadSavedSetConf(name) {
+      this.datasets = JSON.parse(this.savedSetConfs[name]);
+    }
     //#endregion
   }
 });

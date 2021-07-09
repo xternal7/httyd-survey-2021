@@ -1773,7 +1773,7 @@
 
       <p>
         Admittedly, older people sticking higher grades to an older movie is not very surprising. However, when it comes to the visuals, there is a small
-        surprise, to be sure — though a welcome one.
+        surprise, to be sure — though perhaps a welcome one.
       </p>
 
       <div class="graph-area">
@@ -2179,7 +2179,7 @@
       </div>
 
       <p>
-        Reminder: neither of the cohorts had a significant 'Shy' coolumn presence.
+        Reminder: neither of the cohorts had a significant 'Shy' coolumn presence for the first two movies, they were all low enough to be a rounding error. Not with THW.
       </p>
 
       <p>
@@ -2308,6 +2308,246 @@
       <!-- #endregion -->
 
       <h2>Results by gender</h2>
+
+      <p>
+        First things first — we're excluding the 'Other' and 'Shy' responses due to low-ish numbers.
+      </p>
+
+      <p>
+        First things first. The gender gap. Once people get old enough to stop giving a fuck about stereotypes, it kinda shrinks to pretty much nothing.
+      </p>
+
+      <div class="graph-area">
+        <graph
+          class="graph-wide"
+          title="Age"
+          defaultMode="absolute"
+          :conf="{trackWidth: '8px !important', columnWidth: '16px !important', hideZeroColumns: false}"
+          :columns="[{'key':10,'label':'10'},{'key':11,'label':''},{'key':12,'label':''},{'key':13,'label':''},{'key':14,'label':''},{'key':15,'label':'15'},{'key':16,'label':''},{'key':17,'label':''},{'key':18,'label':''},{'key':19,'label':''},{'key':20,'label':'20'},{'key':21,'label':''},{'key':22,'label':''},{'key':23,'label':''},{'key':24,'label':''},{'key':25,'label':'25'},{'key':26,'label':''},{'key':27,'label':''},{'key':28,'label':''},{'key':29,'label':''},{'key':30,'label':'30'},{'key':31,'label':''},{'key':32,'label':''},{'key':33,'label':''},{'key':34,'label':''},{'key':35,'label':'35'},{'key':36,'label':''},{'key':37,'label':''},{'key':38,'label':''},{'key':39,'label':''},{'key':40,'label':'40'},{'key':41,'label':''},{'key':42,'label':''},{'key':43,'label':''},{'key':44,'label':''},{'key':45,'label':'45'},{'key':46,'label':''},{'key':47,'label':''},{'key':48,'label':''},{'key':49,'label':''},{'key':'-1','label':'❄️'},{'key':'_dumm1','label':''},{'key':'_dumm4','label':''},{'key':'NoAnswer','label':'Shy'}]"
+          :sets="[{'setKey':'male','setLabel':'Male','color':'#66f','dataCount':269},{'setKey':'female','setLabel':'Female','color':'#f48','dataCount':116}]"
+          :data="{'_multiSet':true,'male':{'12':3,'13':4,'14':19,'15':11,'16':21,'17':31,'18':35,'19':24,'20':21,'21':20,'22':11,'23':6,'24':6,'25':5,'26':4,'27':3,'28':3,'29':4,'31':1,'33':1,'34':3,'NoAnswer':32,'-1':1},'female':{'12':1,'13':2,'14':4,'15':6,'16':9,'17':10,'18':9,'19':16,'20':7,'21':4,'22':4,'23':4,'24':2,'25':4,'26':4,'27':2,'28':3,'NoAnswer':23,'-1':2}}"
+          :dataCount="{'male':269,'female':116}"
+        >
+          <average
+            :sets="[{'setKey':'male','setLabel':'Male','color':'#66f','dataCount':269},{'setKey':'female','setLabel':'Female','color':'#f48','dataCount':116}]"
+            :data="{'_multiSet':true,'male':{'12':3,'13':4,'14':19,'15':11,'16':21,'17':31,'18':35,'19':24,'20':21,'21':20,'22':11,'23':6,'24':6,'25':5,'26':4,'27':3,'28':3,'29':4,'31':1,'33':1,'34':3,'NoAnswer':32,'-1':1},'female':{'12':1,'13':2,'14':4,'15':6,'16':9,'17':10,'18':9,'19':16,'20':7,'21':4,'22':4,'23':4,'24':2,'25':4,'26':4,'27':2,'28':3,'NoAnswer':23,'-1':2}}"
+            :dataCount="{'male':269,'female':116}"
+          ></average>
+        </graph>
+      </div>
+
+      <p>
+        Maybe that redditor wasn't completely wacky, but overall ... still rather out of touch with the stereotypes.
+      </p>
+
+      <p>
+        As a percentage of their group, female respondents seem to be roughly under-represented in the sub-19 group, roughly over-represented among the
+        19-27 group, and then nothing after 28. Which explains slightly lower average age and higher standard deviation.
+      </p>
+
+      <p>
+        Interestingly enough, when it came to rating things on scale from one to ten, girls and women were, on average,
+        a bit more generous with the ratings. Doesn't matter where you look: the situation is the same (almost) everywhere.
+      </p>
+
+      <div class="graph-area">
+        <graph
+            class="graph-wide"
+            title="Rate HTTYD1 on 1-10?"
+            :conf="{
+              columnXMargin: '1.2rem',
+              barWidth: '8px',
+              trackWidth: '8px',
+              columnWidth: '72px',
+              trackWidthMultiset: 'auto',
+              size: 'wide',
+              hideZeroColumns: true
+            }"
+            :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
+            :sets="[{'setKey':'male','setLabel':'Male','color':'#66f','dataCount':269},{'setKey':'female','setLabel':'Female','color':'#f48','dataCount':116}]"
+            :data="{'_multiSet':true,'male':{'4':1,'5':1,'7':23,'8':69,'9':71,'10':102,'NoAnswer':2},'female':{'5':2,'6':1,'7':7,'8':21,'9':26,'10':59}}"
+            :dataCount="{'male':269,'female':116}"
+          >
+            <average
+              :sets="[{'setKey':'male','setLabel':'Male','color':'#66f','dataCount':269},{'setKey':'female','setLabel':'Female','color':'#f48','dataCount':116}]"
+              :data="{'_multiSet':true,'male':{'4':1,'5':1,'7':23,'8':69,'9':71,'10':102,'NoAnswer':2},'female':{'5':2,'6':1,'7':7,'8':21,'9':26,'10':59}}"
+              :dataCount="{'male':269,'female':116}"
+            ></average>
+          </graph>      
+      </div>
+
+      <p>Bam, higher ratings on the pink side, across the board. Even for all aspects.</p>
+
+      <div class="graph-area">
+        <graph
+            class="graph-wide"
+            title="HTTYD 2?"
+            description="(overall rating)"
+            :conf="{
+              columnXMargin: '1.2rem',
+              barWidth: '8px',
+              trackWidth: '8px',
+              columnWidth: '72px',
+              trackWidthMultiset: 'auto',
+              size: 'wide',
+              hideZeroColumns: true
+            }"
+            :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
+            :sets="[{'setKey':'male','setLabel':'Male','color':'#66f','dataCount':269},{'setKey':'female','setLabel':'Female','color':'#f48','dataCount':116}]"
+            :data="{'_multiSet':true,'male':{'2':1,'3':1,'5':4,'6':10,'7':38,'8':71,'9':66,'10':76,'NoAnswer':2},'female':{'1':1,'4':1,'5':2,'6':4,'7':11,'8':23,'9':39,'10':35}}"
+            :dataCount="{'male':269,'female':116}"
+          >
+            <average
+              :sets="[{'setKey':'male','setLabel':'Male','color':'#66f','dataCount':269},{'setKey':'female','setLabel':'Female','color':'#f48','dataCount':116}]"
+              :data="{'_multiSet':true,'male':{'4':1,'5':1,'7':23,'8':69,'9':71,'10':102,'NoAnswer':2},'female':{'5':2,'6':1,'7':7,'8':21,'9':26,'10':59}}"
+              :dataCount="{'male':269,'female':116}"
+            ></average>
+          </graph>
+      </div>
+
+      <p>
+        The situation is mostly the same — the only notable exception is the plot rating, where male respondents were more likely to dole out ten outta tens than female.
+      </p>
+      <p>
+        <small>
+          There's two things worth noting, however: a) boys are showing a complete disregard for what your Statistics 101 professor will tell you and b) on average, female
+          ratings still come out to be slightly higher than male ratings.
+        </small>
+      </p>
+
+      <div class="graph-area">
+        <graph
+            class="graph-wide"
+            title="HTTYD2PlotRating"
+            :conf="{
+              columnXMargin: '1.2rem',
+              barWidth: '8px',
+              trackWidth: '8px',
+              columnWidth: '72px',
+              trackWidthMultiset: 'auto',
+              size: 'wide',
+              hideZeroColumns: true
+            }"
+            :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
+            :sets="[{'setKey':'male','setLabel':'Male','color':'#66f','dataCount':269},{'setKey':'female','setLabel':'Female','color':'#f48','dataCount':116}]"
+            :data="{'_multiSet':true,'male':{'2':1,'3':1,'4':3,'5':8,'6':18,'7':64,'8':59,'9':58,'10':56,'NoAnswer':1},'female':{'1':1,'4':2,'5':3,'6':8,'7':21,'8':30,'9':32,'10':18,'NoAnswer':1}}"
+            :dataCount="{'male':269,'female':116}"
+          >
+            <average
+              :sets="[{'setKey':'male','setLabel':'Male','color':'#66f','dataCount':269},{'setKey':'female','setLabel':'Female','color':'#f48','dataCount':116}]"
+              :data="{'_multiSet':true,'male':{'4':1,'5':1,'7':23,'8':69,'9':71,'10':102,'NoAnswer':2},'female':{'5':2,'6':1,'7':7,'8':21,'9':26,'10':59}}"
+              :dataCount="{'male':269,'female':116}"
+            ></average>
+          </graph>
+      </div>
+    
+      <p>
+        This kind of thinking extends to the shorts and TV series:
+      </p>
+
+      <div class="graph-area">
+
+      </div>
+
+      <p>
+        There <i>are</i> exceptions, though.
+      </p>
+
+      <p>
+        For example, female respondents were slightly less likely to think that the bond between Hiccup and Toothless was that of two mutual friends than male respondents:
+      </p>
+
+      <div class="graph-area">
+        <graph
+            class="graph-wide"
+            title="Bond type"
+            description="0: master-slave, 10: mutual friends"
+            :conf="{
+              columnXMargin: '1.2rem',
+              barWidth: '8px',
+              trackWidth: '8px',
+              columnWidth: '72px',
+              trackWidthMultiset: 'auto',
+              size: 'wide',
+              hideZeroColumns: true
+            }"
+            :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
+            :sets="[{'setKey':'male','setLabel':'Male','color':'#66f','dataCount':269},{'setKey':'female','setLabel':'Female','color':'#f48','dataCount':116}]"
+            :data="{'_multiSet':true,'male':{'2':2,'3':4,'4':3,'5':3,'6':3,'7':6,'8':29,'9':65,'10':152,'NoAnswer':2},'female':{'1':1,'2':3,'3':1,'4':4,'5':6,'6':2,'7':9,'8':12,'9':13,'10':64,'NoAnswer':1}}"
+            :dataCount="{'male':269,'female':116}"
+          >
+            <!-- todo: averages go here -->
+          </graph>
+      </div>
+
+      <p>
+        And I think that the elephant in the room is starting to become rather apparent by now.
+      </p>
+      
+      <div class="graph-area">
+        <graph
+            class="graph-wide"
+            title="HTTYD3Rating"
+            :conf="{
+              columnXMargin: '1.2rem',
+              barWidth: '8px',
+              trackWidth: '8px',
+              columnWidth: '72px',
+              trackWidthMultiset: 'auto',
+              size: 'wide',
+              hideZeroColumns: true
+            }"
+            :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
+            :sets="[{'setKey':'male','setLabel':'Male','color':'#66f','dataCount':269},{'setKey':'female','setLabel':'Female','color':'#f48','dataCount':116}]"
+            :data="{'_multiSet':true,'male':{'1':12,'2':7,'3':12,'4':14,'5':9,'6':26,'7':45,'8':49,'9':47,'10':45,'NoAnswer':3},'female':{'1':7,'2':6,'3':12,'4':9,'5':11,'6':12,'7':10,'8':15,'9':10,'10':22,'NoAnswer':2}}"
+            :dataCount="{'male':269,'female':116}"
+          >
+            <average
+              :sets="[{'setKey':'male','setLabel':'Male','color':'#66f','dataCount':269},{'setKey':'female','setLabel':'Female','color':'#f48','dataCount':116}]"
+              :data="{'_multiSet':true,'male':{'1':12,'2':7,'3':12,'4':14,'5':9,'6':26,'7':45,'8':49,'9':47,'10':45,'NoAnswer':3},'female':{'1':7,'2':6,'3':12,'4':9,'5':11,'6':12,'7':10,'8':15,'9':10,'10':22,'NoAnswer':2}}"
+              :dataCount="{'male':269,'female':116}"
+            ></average>
+          </graph>
+      </div>
+
+      <p>
+        This comes as a surprise when you know the gender of serial complainers on reddit and the main discord.
+      </p>
+
+      <p>
+        ... which begs the question. Is that truly up to gender, or did we see these graphs before? After all — on average, female respondents seem to be more biased
+        towards the 20-27 age group compared to male respondents.
+      </p>
+
+      <p>
+        Well here you have it.
+      </p>
+
+      <p>
+        
+      </p>
+
+      <div class="graph-area">
+        <graph
+            class="graph-wide"
+            title="Is RTTE canon?"
+            :conf="{
+              columnXMargin: '1.2rem',
+              barWidth: '8px',
+              trackWidth: '8px',
+              columnWidth: '72px',
+              trackWidthMultiset: 'auto',
+              size: 'wide',
+              hideZeroColumns: true
+            }"
+            :columns="[{'key':1,'label':'Yes'},{'key':3,'label':'Neutral'},{'key':2,'label':'No'},{'key':0,'label':'Shy'}]"
+            :sets="[{'setKey':'male','setLabel':'Male','color':'#66f','dataCount':269},{'setKey':'female','setLabel':'Female','color':'#f48','dataCount':116}]"
+            :data="{'_multiSet':true,'male':{'0':23,'1':141,'2':49,'3':56},'female':{'0':8,'1':70,'2':12,'3':26}}"
+            :dataCount="{'male':269,'female':116}"
+          >
+            <!-- todo: averages go here -->
+          </graph>
+      </div>
 
     </div>
 

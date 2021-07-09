@@ -520,13 +520,13 @@ export class GdocsScrapper {
         dwFlag = true;
       }
       
-      rowOut[Question.FavouriteDraconid] = {
+      rowOut[Question.FavouriteDraconid] = [draconidType, ...(dwFlag ? [Draconid.Multiple] : [])];
+      rowOut[Question.FavouriteDraconidReason] = {
         value: draconidType,
-        originalValue: draconidType === Draconid.Other ? favDraconid[0].trim().toLowerCase() : undefined,
         reason: fdReason,
+        originalValue: draconidType === Draconid.Other ? favDraconid[0].trim().toLowerCase() : undefined,
         reasonScore: this.parseNumber(fdScore),
-        dwFlag
-      };
+      }
 
       // fav villain
       const favVillain = row[Question.FavouriteVillain].split('; ');
@@ -539,16 +539,13 @@ export class GdocsScrapper {
         dwFlag2 = true;
       }
 
-      rowOut[Question.FavouriteVillain] = {
+      rowOut[Question.FavouriteVillain] =  [villainType, ...(dwFlag2 ? [Villain.Multiple] : [])]; 
+      rowOut[Question.FavouriteVillainReason] = {
         value: villainType,
         originalValue: villainType === Villain.Other ? favVillain[0].trim().toLowerCase() : undefined,
         reason: fvReason,
         reasonScore: this.parseNumber(fvScore),
-        dwFlag: dwFlag2
       }
-
-
-
 
       console.info(`\n\n\nProcessed row ${rcount}. Processed data:\n`);
       rcount++;

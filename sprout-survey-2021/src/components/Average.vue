@@ -3,7 +3,12 @@
     <div class="average-header">Average (± stdev)</div>
     <div class="avg-set-container">
       <template v-if="setConf.length <= 1">
-        {{average}} (± {{stdev}})
+        <template v-if="average">
+          {{average}} (± {{stdev}})
+        </template>
+        <template v-else>
+          &nbsp;
+        </template>
       </template>
       <template v-else>
         <div
@@ -17,7 +22,13 @@
               'background-color': (set.color || '#fff'),
               'border': (set.border || '0px solid transparent')
             }"
-          ></div> <span class="dim">{{set.setLabel}}</span>: {{set.average}} (± {{set.stdev}})
+          ></div> 
+          <template v-if="set.average">
+            <span class="dim">&nbsp;{{set.setLabel}}</span>: {{set.average}} (± {{set.stdev}})
+          </template>
+          <template v-else>
+            &nbsp;
+          </template>
         </div>
       </template>
     </div>
@@ -37,6 +48,10 @@ export default defineComponent({
       average: 0,
       stdev: 0,
       setConf: [] as {setKey: string, setLabel: string | number, color?: string, average?: number | string, stdev?: number | string}[],
+    } as {
+      average?: number,
+      stdev?: number,
+      setConf: {setKey: string, setLabel: string | number, color?: string, average?: number | string, stdev?: number | string}[]
     };
   },
   watch: {
@@ -80,7 +95,7 @@ export default defineComponent({
       }
     },
     calculateAverage(data: any) {
-      const ret = {average: 0, stdev: 0};
+      const ret: {average?: number, stdev?: number} = {average: 0, stdev: 0};
 
       let sum = 0;
       let total = 0;
@@ -106,6 +121,10 @@ export default defineComponent({
       }
       (ret.stdev as any) = Math.sqrt(n1 * sum).toFixed(2);
       (ret.average as any) = ret.average.toFixed(2);
+
+      if (isNaN(ret.average)) {
+        return {};
+      }
 
       return ret;
     }

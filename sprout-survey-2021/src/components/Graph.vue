@@ -172,6 +172,9 @@
           ></div> {{set.setLabel}}
         </div>
       </div>
+      <div class="slot">
+        <slot></slot>
+      </div>
     </div>
     <div v-else class="mobile">
       <div class="graph-main-container mobile">
@@ -298,6 +301,9 @@
             }"
           ></div> {{set.setLabel}}
         </div>
+      </div>
+      <div class="slot">
+        <slot></slot>
       </div>
     </div>
   </div>

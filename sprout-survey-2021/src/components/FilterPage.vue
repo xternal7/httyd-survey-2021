@@ -123,7 +123,7 @@
             <graph
               class="graph-wide"
               :title="q.label"
-              :conf="this.getConf(q.value)"
+              :conf="getConf(q.value)"
               :columns="getColumns(q.value)"
               :sets="processedData.sets"
               :data="getData(q.value)"
@@ -323,6 +323,7 @@ export default defineComponent({
       } else {
         conf = defaultConf;
       }
+      return conf;
     },
 
     getGraphCode(question) {

@@ -942,7 +942,7 @@
           <favourite-reason-display
             :data="surveyResults.processedData"
             :options="favDraconidOptions"
-            :reasonField="Question.FavouriteDraconid"
+            :reasonField="Question.FavouriteDraconidReason"
             answerFn="draconid"
           >
           </favourite-reason-display>
@@ -975,7 +975,7 @@
           <favourite-reason-display
             :data="surveyResults.processedData"
             :options="favVillainOptions"
-            :reasonField="Question.FavouriteVillain"
+            :reasonField="Question.FavouriteVillainReason"
           >
           </favourite-reason-display>
         </div>
@@ -1780,7 +1780,7 @@
         <div class="graph-wide">
           <graph
             class="graph-wide"
-            :title="HTTYD1VisualsRating"
+            title="HTTYD1VisualsRating"
             :conf="{
               columnXMargin: '1.2rem',
               barWidth: '8px',
@@ -1822,7 +1822,7 @@
         <div class="graph-wide">
           <graph
             class="graph-wide"
-            :title="HTTYD2Rating"
+            title="HTTYD2Rating"
             :conf="{
               columnXMargin: '1.2rem',
               barWidth: '8px',
@@ -1847,7 +1847,7 @@
         <div class="graph-wide">
           <graph
             class="graph-wide"
-            :title="HTTYD2PlotRating"
+            title="HTTYD2PlotRating"
             :conf="{
               columnXMargin: '1.2rem',
               barWidth: '8px',
@@ -1884,7 +1884,7 @@
         <div class="graph-wide">
           <graph
             class="graph-wide"
-            :title="HTTYD2ScoreRating"
+            title="HTTYD2ScoreRating"
             :conf="{
               columnXMargin: '1.2rem',
               barWidth: '8px',
@@ -1921,7 +1921,7 @@
       <div class="grpah-area">
         <div class="graph-wide">
           <graph
-            :title="HTTYD2ThemeRating"
+            title="HTTYD2ThemeRating"
             :conf="{
               columnXMargin: '1.2rem',
               barWidth: '8px',
@@ -2133,7 +2133,7 @@
       <div class="graph-area">
           <graph
             class="graph-wide"
-            :title="HTTYD3VisualsRating"
+            title="HTTYD3VisualsRating"
             :conf="{
               columnXMargin: '1.2rem',
               barWidth: '8px',
@@ -2219,7 +2219,7 @@
       <div class="graph-area">
             <graph
             class="graph-wide"
-            :title="IsRTTECanon"
+            title="IsRTTECanon"
             :conf="{
               columnXMargin: '1.2rem',
               barWidth: '8px',
@@ -2250,7 +2250,7 @@
       <div class="graph-area">
         <graph
             class="graph-wide"
-            :title="HTTYD3WorstCharacter"
+            title="HTTYD3WorstCharacter"
             :conf="{
               columnXMargin: '1.2rem',
               barWidth: '8px',
@@ -2279,7 +2279,7 @@
       <div class="graph-area">
         <graph
             class="graph-wide"
-            :title="YouCanEnjoyGarbageAgreement"
+            title="YouCanEnjoyGarbageAgreement"
             :conf="{
               columnXMargin: '1.2rem',
               barWidth: '8px',

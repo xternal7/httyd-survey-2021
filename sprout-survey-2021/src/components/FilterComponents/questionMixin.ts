@@ -72,6 +72,20 @@ const questionMixin = {
       }
       return labels;
     },
+
+    isRatingOrAgeQuestion(questionEnum: string | Question) {
+      const v = isNaN(+questionEnum) ? Question[`${questionEnum}`] : questionEnum;
+
+      if (v === Question.Age) {
+        return true;
+      }
+      if (v === Question.FandomTime) {
+        return true;
+      }
+
+      return this.isRatingQuestion(questionEnum);
+    },
+
     // determine the correct enum for the question with these
     isRatingQuestion(questionEnum: string) {
       const v = isNaN(+questionEnum) ? Question[`${questionEnum}`] : questionEnum;
@@ -132,7 +146,7 @@ const questionMixin = {
         case Question.THWOpinionChange:
         case Question.HTTYD2ValkaVillain:
         case Question.HTTYD3DragoRedemptionArc:
-        case Question.THWFittingEnd:
+        // case Question.THWFittingEnd:
           return true;
         default:
           return false;

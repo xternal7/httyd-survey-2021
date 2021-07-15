@@ -129,7 +129,12 @@
               :data="getData(q.value)"
               :dataCount="processedData.counts"
             >
-              <!-- todo: averages go here -->
+              <average 
+                v-if="isRatingOrAgeQuestion(q.value)"
+                :sets="processedData.sets"
+                :data="getData(q.value)"
+                :dataCount="processedData.counts"
+              ></average>
             </graph>
 
             <div>
@@ -152,7 +157,8 @@
 </template>
 
 <script lang="ts">
-  import Graph from './Graph.vue';
+import Average from './Average.vue';
+import Graph from './Graph.vue';
 import { defineComponent } from 'vue';
 import { Question } from '../enums/question.enum';
 import FilterDataset from './FilterComponents/FilterDataset.vue';
@@ -164,6 +170,7 @@ export default defineComponent({
   components: {
     FilterDataset,
     Graph,
+    Average,
   },
   mixins: [
     questionMixin
@@ -341,8 +348,8 @@ export default defineComponent({
     },
 
     getGraphCode(question) {
-      const isAge = question == 1;
-      const isRatingQuestion = this.isRatingQuestion(question);
+      const isAge = question.value == 1;
+      const isRatingQuestion = this.isRatingQuestion(question.value);
       const isAgeOrRating = isAge || isRatingQuestion;
 
       const conf = JSON.stringify(this.getConf(question.value)).replaceAll('\'', '\\\'').replaceAll('"', '\'');
@@ -361,12 +368,12 @@ export default defineComponent({
             :sets="${sets}"
             :data="${data}"
             :dataCount="${dataCount}"
-          >
-            ${isAgeOrRating ? `
+          > ${isAgeOrRating ? `
               <average
                 :sets="${sets}"
                 :data="${data}"
                 :dataCount="${dataCount}"
+              ></average>
             `:''
             }
           </graph>

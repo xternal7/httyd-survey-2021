@@ -661,7 +661,7 @@
         
         <div class="graph-area">
           <TabPanels v-model="tabs.base.aggregatedRatings">
-            <TabPanel val="overall">
+            <TabPanel class="graph-wide" val="overall">
               <graph
                 title="Rate [movie] from 1 to 10, overall"
                 class="graph-wide"
@@ -694,7 +694,7 @@
               ></average>
             </graph>
             </TabPanel>
-            <TabPanel val='plot'>
+            <TabPanel class="graph-wide" val='plot'>
               <graph
                 title="Rate plot from 1 to 10"
                 class="graph-wide"
@@ -728,7 +728,7 @@
                 ></average>
               </graph>
             </TabPanel>
-            <TabPanel val='theme'>
+            <TabPanel class="graph-wide" val='theme'>
               <graph
                 title="Rate theme from 1 to 10"
                 class="graph-wide"
@@ -763,7 +763,7 @@
                 </average>
               </graph>
             </TabPanel>
-            <TabPanel val='score'>
+            <TabPanel class="graph-wide" val='score'>
               <graph
                 class="graph-wide"
                 title="Rate score from 1 to 10"
@@ -797,7 +797,7 @@
                 ></average>
               </graph>
             </TabPanel>
-            <TabPanel val='char'>
+            <TabPanel class="graph-wide" val='char'>
               <graph
                 title="Rate characters from 1 to 10"
                 :conf="{
@@ -830,7 +830,7 @@
                 ></average>
               </graph>
             </TabPanel>
-            <TabPanel val='vis'>
+            <TabPanel class="graph-wide" val='vis'>
               <graph
                 title="Rate visuals from 1 to 10"
                 :conf="{
@@ -863,7 +863,7 @@
                 ></average>
               </graph>
             </TabPanel>
-            <TabPanel val='emo'>
+            <TabPanel class="graph-wide" val='emo'>
               <graph
                 title="Rate emotion from 1 to 10"
                 :conf="{
@@ -1737,7 +1737,7 @@
       </Tabs>
       <div class="graph-aree">
         <TabPanels v-model="tabs.age.httyd1">
-          <TabPanel val="overall" class="graph-wide">
+          <TabPanel class="graph-wide" val="overall" class="graph-wide">
             <graph
               class="graph-wide"
               title="HTTYD1Rating"
@@ -2098,7 +2098,7 @@
         </Tabs>
 
         <TabPanels v-model="tabs.age.thwRatings">
-          <TabPanel val="plot">
+          <TabPanel class="graph-wide" val="plot">
             <graph
             class="graph-wide"
             title="HTTYD3PlotRating"
@@ -2116,7 +2116,7 @@
             
           </graph>
           </TabPanel>
-          <TabPanel val="theme">
+          <TabPanel class="graph-wide" val="theme">
             <graph
             class="graph-wide"
             title="HTTYD3ThemeRating"
@@ -2134,7 +2134,7 @@
             
           </graph>
           </TabPanel>
-          <TabPanel val="theme-approval">
+          <TabPanel class="graph-wide" val="theme-approval">
             <graph
             class="graph-wide"
             title="THWThemeApproval"
@@ -2694,7 +2694,7 @@
           <Tab label="Fitting end?" val="fe" />
         </Tabs>
         <TabPanels v-model="tabs.gender.thw">
-          <TabPanel val="plot">
+          <TabPanel class="graph-wide" val="plot">
             <graph
               class="graph-wide"
               title="THW Plot Rating"
@@ -2711,7 +2711,7 @@
                 ></average>
             </graph>
           </TabPanel>
-          <TabPanel val="emo">
+          <TabPanel class="graph-wide" val="emo">
             <graph
               class="graph-wide"
               title="THW Emotion Rating"
@@ -2728,7 +2728,7 @@
                 ></average>
             </graph>
           </TabPanel>
-          <TabPanel val="char">
+          <TabPanel class="graph-wide" val="char">
             <graph
               class="graph-wide"
               title="THW Character Rating"
@@ -2745,7 +2745,7 @@
                 ></average>
             </graph>
           </TabPanel>
-          <TabPanel val="theme">
+          <TabPanel class="graph-wide" val="theme">
             <graph
               class="graph-wide"
               title="THW Theme Rating"
@@ -2763,7 +2763,7 @@
               
             </graph>
           </TabPanel>
-          <TabPanel val="visuals">
+          <TabPanel class="graph-wide" val="visuals">
             <graph
               class="graph-wide"
               title="THW Visuals Rating"
@@ -2781,7 +2781,7 @@
               
             </graph>
           </TabPanel>
-          <TabPanel val="ost">
+          <TabPanel class="graph-wide" val="ost">
             <graph
               class="graph-wide"
               title="THW Score Rating"
@@ -2798,7 +2798,7 @@
                 ></average>
             </graph>
           </TabPanel>
-          <TabPanel val="wchar">
+          <TabPanel class="graph-wide" val="wchar">
             <graph
               class="graph-wide"
               title="THW Worst Character"
@@ -2810,7 +2810,7 @@
             > 
             </graph>
           </TabPanel>
-          <TabPanel val="tfcr">
+          <TabPanel class="graph-wide" val="tfcr">
             <graph
               class="graph-wide"
               title="Light Fury Character Rating"
@@ -2828,7 +2828,7 @@
               
             </graph>
           </TabPanel>
-          <TabPanel val="tfdr">
+          <TabPanel class="graph-wide" val="tfdr">
             <graph
               class="graph-wide"
               title="Light Fury Design Rating"
@@ -2846,7 +2846,7 @@
               
             </graph>
           </TabPanel>
-          <TabPanel val="fe">
+          <TabPanel class="graph-wide" val="fe">
             <graph
             class="graph-wide"
             title="THWFittingEnd"

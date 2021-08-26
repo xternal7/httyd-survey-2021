@@ -3378,4 +3378,10 @@ a:hover, a:focus, a:active, .link:hover {
 * {
   box-sizing: border-box;
 }
+
+.tab-panel {
+  .graph-normal, .graph-wide {
+    margin: 0 auto;
+  }
+}
 </style>

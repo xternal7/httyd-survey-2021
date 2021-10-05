@@ -33,7 +33,7 @@
         </p>
         <p>
           Much like last year, we'll start by graphs showing the raw responses (with a little bit of commentary). After that, we'll try to filter our results to
-          see if we can spot any interesting patterns. Last but not least, there'll also be a quick "Q&A session" where I respond to some of the interesting 
+          see if we can spot any interesting patterns. Last but not least, there'll also be a quick "Q&A session" where I respond to some of the interesting
           'survey feedback' responses we got.
         </p>
         <p>
@@ -89,7 +89,7 @@
             ></graph>
           </div>
         </div>
-        
+
 
         <p>
           So there's that. The "dragons are a stereotypically female interest" redditor got BTFO'd. In the "other" department, there is a few trans-adjacent things (mostly nonbinary). I am pleasantly suprised about the lack of super-special-snowflake genders and a negligible number of apache-genders (apache-genders appearing in this poll: '420'). Thanks for keeping the answer serious.
@@ -121,7 +121,7 @@
         <p>
           Europe, North America, Discord and Reddit dominate the fandom. Very little surprises here, though the platforms do suffer from selection bias.
         </p>
-        
+
         <div class="graph-area">
           <div class="graph-normal">
             <graph
@@ -168,7 +168,7 @@
         </p>
         <p>
           Additionally, {{surveyResults.providedUsernames}} out of {{surveyResults.totalAnswers}} ({{(surveyResults.providedAnswers/(surveyResults.totalAnswers || 1)).toFixed()}}%) of people left their usernames and
-          {{surveyResults.providedFeedbacks}} ({{(surveyResults.providedFeedbacks/(surveyResults.totalAnswers || 1)).toFixed()}}%) have left us some feedback. 
+          {{surveyResults.providedFeedbacks}} ({{(surveyResults.providedFeedbacks/(surveyResults.totalAnswers || 1)).toFixed()}}%) have left us some feedback.
         </p>
       </div>
     </div>
@@ -178,7 +178,7 @@
       <div class="segment-content">
         <p>
           In last year's poll, the questions regarding movie ratings were rather simplistic: in addition to an overall rating on a scale from 1 to 10, people also got to vote on the best and the worst aspect of each movie.
-          This has been a major source of criticism. This year we've decided to just give people the ability to rate each aspect on the rate from 1 to 10. 
+          This has been a major source of criticism. This year we've decided to just give people the ability to rate each aspect on the rate from 1 to 10.
         </p>
         <p>
           We've also added some additional comments: most notably, favourite and least favourite character for each movie, as well as another bonus question for the second and third movie.
@@ -188,7 +188,7 @@
       <h2>How To Train Your Dragon 1</h2>
       <div class="segment-content">
         <p>We'll take a look at the scores from 1-10 first. To save some scrolling, I've went ahead and combined all the graphs into one.</p>
-        
+
         <div class="graph-area">
           <div class="graph-wide">
             <graph
@@ -245,7 +245,7 @@
           As a side note — feast your eyes on that sub-1 standard deviation on the overall bar, because this is the last time
           you're going to see this kind of universal agreement on a 1-10 question.
         </p>
-        <p>As far as last year's results are concerned, the score is about the same as last year (9.3)</p>. 
+        <p>As far as last year's results are concerned, the score is about the same as last year (9.3)</p>.
         <p>
           Let's move on to the next graph: which characters people liked and which characters they hated.
         </p>
@@ -307,7 +307,7 @@
             ></graph>
           </div>
         </div>
-      
+
         <p>
           Cris, I promise you you didn't find me on this graph.
         </p>
@@ -321,8 +321,8 @@
           It's like our bell curve got shifted to the left and got fatter to boot. Someone put it on a diet.
         </p>
         <p>
-          And the ratings dropped across the board: plot bar now has a strong presence as far down as 7, score bar is down considerably, theme is down ... 
-          the visuals got seems to be the only metric that's getting a bump. 
+          And the ratings dropped across the board: plot bar now has a strong presence as far down as 7, score bar is down considerably, theme is down ...
+          the visuals got seems to be the only metric that's getting a bump.
         </p>
         <div class="graph-area">
           <div class="graph-wide">
@@ -438,7 +438,7 @@
             ></graph>
           </div>
         </div>
-      
+
         <p>
           RESULT COMMENTARY HERE
         </p>
@@ -607,9 +607,9 @@
             ></graph>
           </div>
         </div>
-      
+
         <p>
-          If you wonder about what the 'salt squad' represents on the graph — it's the people who answered with any variant of 
+          If you wonder about what the 'salt squad' represents on the graph — it's the people who answered with any variant of
           <i>'I actually hate all of them.'</i> The reason The Hidden World gets this category while the other movies don't is because
           The Hidden World is the only one that attracted the answers like this.
         </p>
@@ -658,7 +658,7 @@
           <Tab val='vis' label="Visuals" />
           <Tab val='emo' label="Empotion" />
         </Tabs>
-        
+
         <div class="graph-area">
           <TabPanels v-model="tabs.base.aggregatedRatings">
             <TabPanel val="overall">
@@ -898,7 +898,7 @@
             </TabPanel>
           </TabPanels>
         </div>
-        
+
         <p>
           I initially wasn't going to comment here, but a few trends become a bit ... <i>well</i>.
         </p>
@@ -950,7 +950,7 @@
             ></graph>
           </div>
         </div>
-      
+
         <p>
           I don't think anyone is surprised by the results. First two places go to Night Fury and <a href="https://httydnd.tamius.net/23" target="_blank">Night Fury: Wyvern Edition</a>.
         </p>
@@ -1020,8 +1020,8 @@
         </div>
 
         <p>
-          Unlike the previous two, this question came without a 'please explain' field — mostly because Tamius 
-          didn't forsee anything interesting coming out of it, and thus only annoyed Brussel into adding the 
+          Unlike the previous two, this question came without a 'please explain' field — mostly because Tamius
+          didn't forsee anything interesting coming out of it, and thus only annoyed Brussel into adding the
           'please explain' section to the previous two questions.
         </p>
       </div>
@@ -1157,7 +1157,7 @@
               }"
               :dataCount="{
                 fittingEnd: graphData?.['all']?.answerCount,
-                plotRating: graphData?.['all']?.answerCount 
+                plotRating: graphData?.['all']?.answerCount
               }"
             ></graph>
           </div>
@@ -1543,7 +1543,7 @@
 
         <p>
           So basically "cos dragons" and "cos story relatable" and "cos world fascinating" for the first question,
-          and a rather strong agreement that the bond between Hiccup and Toothless is on the 'mutual friends' 
+          and a rather strong agreement that the bond between Hiccup and Toothless is on the 'mutual friends'
           end of the spectrum.
         </p>
 
@@ -1602,7 +1602,7 @@
           ></graph>
         </div>
         </div>
-        
+
 
         <p>
           Compared to the last year, HTTYD1 superior options gained a few percentage points (+2% for 1>2>3 and +4% for 1>3>2). Objectively wrong
@@ -1623,787 +1623,64 @@
 
     <div class="segment">
       <h1>Deep dive</h1>
-
-      <p>
-        Let's take a deeper look into the data. People don't answer the questions randomly: the answers are often shaped by their interests, the
-        culture they come from, and sometimes even by their identity. Let's see if we can spot any interesting trends in the results when we filter
-        the answers.
-      </p>
-      <p>
-        This year's filter page would be a bit of a pain in the ass to set up properly, and it would require mad amounts of time. Given I have only 
-        gotten to this point of the page mid-june (remember: the poll was late January), I do not have the luxury of time to present a functional and
-        user-friendly UI (although, with most people having forgot about the poll, there may not be too much harm in delaying this project a further 
-        two months or so). Though if you want to filter results on your own and have some very basic knowledge of javascript, you can dig through
-        the data <span class="link" @click="showFilterPage=true">here</span>. The filtering page makes absolutely no attempt to accomodate mobile users, because smartphones
-        are the worst thing that has happened to the internet in the history of ever.
-      </p>
-
-      <FilterPage
-        v-if="showFilterPage"
-        :rawData="surveyResults"
-        @close="showFilterPage=false"
-      >
-      </FilterPage>
-
-      <p>
-        By the way, there's a lot of additional graphs in there, so the sections will start out collapsed. 
-      </p>
-
-      <!-- #region results by age -->
-      <h2 @click="deepDiveResults.age = !deepDiveResults.age">Results by age</h2>
-      <template v-if="deepDiveResults.age">
-      <p>
-        I didn't expect too much surprises here, but since I was mostly playing with that while debugging my filters, I was doing testing
-        by filtering the first result. But there's been some things that ... well, stood out.
-      </p>
-
-      <div class="graph-area">
-        <div class="graph-wide">
-          <graph
-            class="graph-wide"
-            title="Community"
-            :conf="{'columnXMargin':'1.2rem','size':'wide','barWidth':'8px !important','trackWidthMultiset':'8px !important','trackWidth':'16px !important','columnWidth':'72px !important','sidewaysLabels':true,'labelsHeight':'6rem','hideZeroColumns':true}"
-            :columns="[{'key':2,'label':'Reddit'},{'key':1,'label':'Discord'},{'key':5,'label':'Instagram'},{'key':8,'label':'Fandom'},{'key':9,'label':'Grapewine'},{'key':6,'label':'Amino'},{'key':3,'label':'Tumblr'},{'key':4,'label':'Twitter'},{'key':7,'label':'Youtube'},{'key':10,'label':'Other'},{'key':0,'label':'Shy'},{'key':11,'label':'D.W.'}]"
-            :sets="[{'setKey':'all','setLabel':'All','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'under-16','setLabel':'Under 16','color':'#fa6','dataCount':58},{'setKey':'16-19','setLabel':'16-19','color':'#f83','dataCount':126},{'setKey':'19-22','setLabel':'19-22','color':'#e31','dataCount':103},{'setKey':'22-26','setLabel':'22-26','color':'#c90000','dataCount':44},{'setKey':'26+','setLabel':'26+','color':'#a00','dataCount':33}]"
-            :data="{'_multiSet':true,'all':{'0':15,'1':101,'2':151,'3':10,'4':4,'5':55,'6':5,'7':35,'8':28,'9':12,'10':15,'11':17},'under-16':{'1':10,'2':28,'5':7,'7':6,'8':5,'10':2,'11':7},'16-19':{'0':3,'1':30,'2':41,'3':3,'4':2,'5':18,'6':2,'7':12,'8':10,'10':5,'11':2},'19-22':{'0':3,'1':22,'2':33,'3':5,'4':1,'5':13,'6':2,'7':9,'8':6,'9':6,'10':3,'11':3},'22-26':{'0':3,'1':14,'2':15,'3':1,'4':1,'5':5,'8':3,'9':1,'10':1,'11':2},'26+':{'0':1,'1':14,'2':13,'5':1,'8':1,'9':1,'10':2}}"
-            :dataCount="{'all':431,'':0,'under-16':58,'16-19':126,'19-22':103,'22-26':44,'26+':33}"
-          > 
-          </graph>
-        </div>
-      </div>
-
-      <p>
-       I honestly thought reddit is more of a boomer (actually gen x/y) thing, but no. Discord wins popularity contest versus reddit in the millenial/gen X category.
-      </p>
-      <p>
-        It is worth noting that — primarily due to the difference in modus operandi for different platforms — respondents skew significantly towards reddit side of things.
-      </p>
-
-      <p>
-        Interestingly enough, Asians are super over-represented in the under-16 (16 or less) group:
-      </p>
-
-      <div class="graph-area">
-        <graph
-            class="graph-wide"
-            title="Location"
-            :conf="{'columnXMargin':'1.2rem','size':'wide','barWidth':'8px !important','trackWidthMultiset':'8px !important','trackWidth':'16px !important','columnWidth':'72px !important','sidewaysLabels':true,'labelsHeight':'6rem','hideZeroColumns':true}"
-            :columns="[{'key':6,'label':'Europe'},{'key':3,'label':'Asia'},{'key':1,'label':'Africa'},{'key':4,'label':'Australia'},{'key':7,'label':'NA'},{'key':8,'label':'SA'},{'key':2,'label':'Antarctica'},{'key':0,'label':'Shy'}]"
-            :sets="[{'setKey':'all','setLabel':'All','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'under-16','setLabel':'Under 16','color':'#fa6','dataCount':58},{'setKey':'16-19','setLabel':'16-19','color':'#f83','dataCount':126},{'setKey':'19-22','setLabel':'19-22','color':'#e31','dataCount':103},{'setKey':'22-26','setLabel':'22-26','color':'#c90000','dataCount':44},{'setKey':'26+','setLabel':'26+','color':'#a00','dataCount':33}]"
-            :data="{'_multiSet':true,'all':{'0':8,'1':2,'2':2,'3':31,'4':27,'6':160,'7':194,'8':7},'under-16':{'1':2,'2':1,'3':16,'4':4,'6':9,'7':26},'16-19':{'0':1,'3':8,'4':12,'6':55,'7':46,'8':4},'19-22':{'0':1,'3':3,'4':6,'6':43,'7':49,'8':1},'22-26':{'3':1,'4':3,'6':19,'7':20,'8':1},'26+':{'2':1,'6':15,'7':17}}"
-            :dataCount="{'all':431,'':0,'under-16':58,'16-19':126,'19-22':103,'22-26':44,'26+':33}"
-          > 
-          </graph>
-      </div>
-  
-      <p>
-        I am not gonna be covering fandom time, that one is very obvious. Boomers gonna be booming.
-      </p>
-
-      <div class="graph-area">
-        <div class="graph-wide">
-          <graph
-            class="graph-wide"
-            title="Furries"
-            description="Multiple choices were allowed for this question"
-            :conf="{'columnXMargin':'1.2rem','size':'wide','barWidth':'8px !important','trackWidthMultiset':'8px !important','trackWidth':'16px !important','columnWidth':'72px !important','sidewaysLabels':true,'labelsHeight':'6rem','hideZeroColumns':true}"
-            :columns="[{'key':0,'label':'None'},{'key':1,'label':'Furry'},{'key':2,'label':'Scalie'},{'key':3,'label':'Other'},{'key':4,'label':'Shy'}]"
-            :sets="[{'setKey':'all','setLabel':'All','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'under-16','setLabel':'Under 16','color':'#fa6','dataCount':58},{'setKey':'16-19','setLabel':'16-19','color':'#f83','dataCount':126},{'setKey':'19-22','setLabel':'19-22','color':'#e31','dataCount':103},{'setKey':'22-26','setLabel':'22-26','color':'#c90000','dataCount':44},{'setKey':'26+','setLabel':'26+','color':'#a00','dataCount':33}]"
-            :data="{'_multiSet':true,'all':{'0':309,'1':80,'2':67,'3':29,'4':17},'under-16':{'0':49,'1':5,'2':3,'3':2,'4':4},'16-19':{'0':95,'1':22,'2':19,'3':10,'4':5},'19-22':{'0':69,'1':21,'2':16,'3':8,'4':4},'22-26':{'0':28,'1':11,'2':9,'3':3},'26+':{'0':22,'1':10,'2':11,'3':3}}"
-            :dataCount="{'all':431,'':0,'under-16':58,'16-19':126,'19-22':103,'22-26':44,'26+':33}"
-          > 
-          </graph>
-        </div>
-      </div>
-
-      <p>
-        My mamma says it's just a phase when I fill my days with mayonez, but no. You don't need to squint much to see that the 'None' option
-        (as a proportion of the cohort) is actually trending downwards as the people grow older.
-      </p>
-
-      <p>
-        But now, the interesting parts. Turns out that age does matter when it comes to rating. I am going to gloss over things here, but
-        older people generally tend to like the first movie more.
-      </p>
-
-      <Tabs v-model="tabs.age.httyd1">
-        <Tab val="overall" label="Overall" />
-        <Tab val="plot" label="Plot" />
-        <Tab val="emo" label="Emotion" />
-        <Tab val="char" label="Characters" />
-        <Tab val="theme" label="Theme" />
-        <Tab val="vis" label="Visuals" />
-        <Tab val="ost" label="Score" />
-        <Tab val="fsong" label="Fav song" />
-        <Tab val="fchar" label="Favourite character" />
-        <Tab val="wchar" label="Worst character" />
-      </Tabs>
-      <div class="graph-aree">
-        <TabPanels v-model="tabs.age.httyd1">
-          <TabPanel val="overall" class="graph-wide">
-            <graph
-              class="graph-wide"
-              title="HTTYD1Rating"
-              :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
-              :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
-              :sets="[{'setKey':'all','setLabel':'All','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'under-16','setLabel':'Under 16','color':'#fa6','dataCount':58},{'setKey':'16-19','setLabel':'16-19','color':'#f83','dataCount':126},{'setKey':'19-22','setLabel':'19-22','color':'#e31','dataCount':103},{'setKey':'22-26','setLabel':'22-26','color':'#c90000','dataCount':44},{'setKey':'26+','setLabel':'26+','color':'#a00','dataCount':33}]"
-              :data="{'_multiSet':true,'all':{'1':1,'4':1,'6':1,'7':7,'8':50,'9':126,'10':245},'under-16':{'6':1,'8':9,'9':16,'10':32},'16-19':{'4':1,'7':5,'8':14,'9':41,'10':65},'19-22':{'8':11,'9':30,'10':62},'22-26':{'7':1,'8':8,'9':11,'10':24},'26+':{'1':1,'7':1,'8':2,'9':4,'10':25}}"
-              :dataCount="{'all':431,'':0,'under-16':58,'16-19':126,'19-22':103,'22-26':44,'26+':33}"
-            > 
-                <average
-                  :sets="[{'setKey':'all','setLabel':'All','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'under-16','setLabel':'Under 16','color':'#fa6','dataCount':58},{'setKey':'16-19','setLabel':'16-19','color':'#f83','dataCount':126},{'setKey':'19-22','setLabel':'19-22','color':'#e31','dataCount':103},{'setKey':'22-26','setLabel':'22-26','color':'#c90000','dataCount':44},{'setKey':'26+','setLabel':'26+','color':'#a00','dataCount':33}]"
-                  :data="{'_multiSet':true,'all':{'1':1,'4':1,'6':1,'7':7,'8':50,'9':126,'10':245},'under-16':{'6':1,'8':9,'9':16,'10':32},'16-19':{'4':1,'7':5,'8':14,'9':41,'10':65},'19-22':{'8':11,'9':30,'10':62},'22-26':{'7':1,'8':8,'9':11,'10':24},'26+':{'1':1,'7':1,'8':2,'9':4,'10':25}}"
-                  :dataCount="{'all':431,'':0,'under-16':58,'16-19':126,'19-22':103,'22-26':44,'26+':33}"
-                ></average>
-              
-            </graph>
-          </TabPanel>
-          <TabPanel class="graph-wide" val="plot">
-            <graph
-              class="graph-wide"
-              title="HTTYD1: Plot"
-              :conf="{
-                columnXMargin: '1.2rem',
-                barWidth: '8px',
-                trackWidth: '8px',
-                columnWidth: '72px',
-                trackWidthMultiset: 'auto',
-                size: 'wide'
-              }"
-              :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
-              :sets="[{'setKey':'all-responses','setLabel':'All responses','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'sub-17','setLabel':'sub-17','color':'#fa6','dataCount':94},{'setKey':'17-20','setLabel':'17-20','color':'#f64','dataCount':132},{'setKey':'20-23','setLabel':'20-23','color':'#f41','dataCount':76},{'setKey':'23-27','setLabel':'23-27','color':'#d20','dataCount':38},{'setKey':'27-and-over','setLabel':'27 and over','color':'#b00','dataCount':24}]"
-              :data="{'_multiSet':true,'all-responses':{'1':1,'4':2,'5':3,'6':2,'7':35,'8':98,'9':111,'10':177,'NoAnswer':2},'sub-17':{'4':1,'5':1,'6':1,'7':8,'8':21,'9':28,'10':33,'NoAnswer':1},'17-20':{'7':15,'8':29,'9':35,'10':53},'20-23':{'5':2,'6':1,'7':4,'8':17,'9':15,'10':37},'23-27':{'7':3,'8':12,'9':8,'10':14,'NoAnswer':1},'27-and-over':{'1':1,'4':1,'8':4,'9':6,'10':12}}"
-              :dataCount="{'all-responses':431,'':0,'sub-17':94,'17-20':132,'20-23':76,'23-27':38,'27-and-over':24}"
-            >
-              <average
-                :sets="[{'setKey':'all-responses','setLabel':'All responses','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'sub-17','setLabel':'sub-17','color':'#fa6','dataCount':94},{'setKey':'17-20','setLabel':'17-20','color':'#f64','dataCount':132},{'setKey':'20-23','setLabel':'20-23','color':'#f41','dataCount':76},{'setKey':'23-27','setLabel':'23-27','color':'#d20','dataCount':38},{'setKey':'27-and-over','setLabel':'27 and over','color':'#b00','dataCount':24}]"
-                :data="{'_multiSet':true,'all-responses':{'1':1,'4':1,'6':1,'7':7,'8':50,'9':126,'10':245},'sub-17':{'4':1,'6':1,'7':1,'8':14,'9':26,'10':51},'17-20':{'7':4,'8':12,'9':43,'10':73},'20-23':{'8':13,'9':19,'10':44},'23-27':{'7':1,'8':3,'9':12,'10':22},'27-and-over':{'1':1,'7':1,'8':2,'9':2,'10':18}}"
-                :dataCount="{'all-responses':431,'':0,'sub-17':94,'17-20':132,'20-23':76,'23-27':38,'27-and-over':24}"
-              ></average>
-            </graph>
-          </TabPanel>
-          <TabPanel class="graph-wide" val="vis">
-            <graph
-              class="graph-wide"
-              title="HTTYD1: Visuals"
-              :conf="{
-                columnXMargin: '1.2rem',
-                barWidth: '8px',
-                trackWidth: '8px',
-                columnWidth: '72px',
-                trackWidthMultiset: 'auto',
-                size: 'wide'
-              }"
-              :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
-              :sets="[{'setKey':'all-responses','setLabel':'All responses','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'sub-17','setLabel':'sub-17','color':'#fa6','dataCount':94},{'setKey':'17-20','setLabel':'17-20','color':'#f64','dataCount':132},{'setKey':'20-23','setLabel':'20-23','color':'#f41','dataCount':76},{'setKey':'23-27','setLabel':'23-27','color':'#d20','dataCount':38},{'setKey':'27-and-over','setLabel':'27 and over','color':'#b00','dataCount':24}]"
-              :data="{'_multiSet':true,'all-responses':{'4':1,'5':9,'6':20,'7':53,'8':96,'9':99,'10':151,'NoAnswer':2},'sub-17':{'5':1,'6':3,'7':8,'8':12,'9':30,'10':38,'NoAnswer':2},'17-20':{'5':4,'6':6,'7':18,'8':34,'9':24,'10':46},'20-23':{'5':3,'6':4,'7':8,'8':21,'9':16,'10':24},'23-27':{'5':1,'6':4,'7':5,'8':9,'9':8,'10':11},'27-and-over':{'7':3,'8':4,'9':10,'10':7}}"
-              :dataCount="{'all-responses':431,'':0,'sub-17':94,'17-20':132,'20-23':76,'23-27':38,'27-and-over':24}"
-            >
-              <average
-                :sets="[{'setKey':'all-responses','setLabel':'All responses','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'sub-17','setLabel':'sub-17','color':'#fa6','dataCount':94},{'setKey':'17-20','setLabel':'17-20','color':'#f64','dataCount':132},{'setKey':'20-23','setLabel':'20-23','color':'#f41','dataCount':76},{'setKey':'23-27','setLabel':'23-27','color':'#d20','dataCount':38},{'setKey':'27-and-over','setLabel':'27 and over','color':'#b00','dataCount':24}]"
-                :data="{'_multiSet':true,'all-responses':{'4':1,'5':9,'6':20,'7':53,'8':96,'9':99,'10':151,'NoAnswer':2},'sub-17':{'5':1,'6':3,'7':8,'8':12,'9':30,'10':38,'NoAnswer':2},'17-20':{'5':4,'6':6,'7':18,'8':34,'9':24,'10':46},'20-23':{'5':3,'6':4,'7':8,'8':21,'9':16,'10':24},'23-27':{'5':1,'6':4,'7':5,'8':9,'9':8,'10':11},'27-and-over':{'7':3,'8':4,'9':10,'10':7}}"
-                :dataCount="{'all-responses':431,'':0,'sub-17':94,'17-20':132,'20-23':76,'23-27':38,'27-and-over':24}"
-              >
-              </average>
-            </graph>
-          </TabPanel>
-          <TabPanel class="graph-wide" val="emo">
-            <graph
-              class="graph-wide"
-              title="HTTYD1EmotionRating"
-              :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
-              :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
-              :sets="[{'setKey':'all','setLabel':'All','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'under-16','setLabel':'Under 16','color':'#fa6','dataCount':58},{'setKey':'16-19','setLabel':'16-19','color':'#f83','dataCount':126},{'setKey':'19-22','setLabel':'19-22','color':'#e31','dataCount':103},{'setKey':'22-26','setLabel':'22-26','color':'#c90000','dataCount':44},{'setKey':'26+','setLabel':'26+','color':'#a00','dataCount':33}]"
-              :data="{'_multiSet':true,'all':{'1':1,'2':1,'4':2,'5':5,'6':12,'7':37,'8':80,'9':98,'10':194,'NoAnswer':1},'under-16':{'6':1,'7':6,'8':13,'9':13,'10':25},'16-19':{'5':2,'6':3,'7':14,'8':28,'9':26,'10':52,'NoAnswer':1},'19-22':{'4':1,'5':3,'6':2,'7':8,'8':16,'9':20,'10':53},'22-26':{'6':1,'7':4,'8':9,'9':11,'10':19},'26+':{'2':1,'7':1,'8':3,'9':9,'10':19}}"
-              :dataCount="{'all':431,'':0,'under-16':58,'16-19':126,'19-22':103,'22-26':44,'26+':33}"
-            > 
-                <average
-                  :sets="[{'setKey':'all','setLabel':'All','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'under-16','setLabel':'Under 16','color':'#fa6','dataCount':58},{'setKey':'16-19','setLabel':'16-19','color':'#f83','dataCount':126},{'setKey':'19-22','setLabel':'19-22','color':'#e31','dataCount':103},{'setKey':'22-26','setLabel':'22-26','color':'#c90000','dataCount':44},{'setKey':'26+','setLabel':'26+','color':'#a00','dataCount':33}]"
-                  :data="{'_multiSet':true,'all':{'1':1,'2':1,'4':2,'5':5,'6':12,'7':37,'8':80,'9':98,'10':194,'NoAnswer':1},'under-16':{'6':1,'7':6,'8':13,'9':13,'10':25},'16-19':{'5':2,'6':3,'7':14,'8':28,'9':26,'10':52,'NoAnswer':1},'19-22':{'4':1,'5':3,'6':2,'7':8,'8':16,'9':20,'10':53},'22-26':{'6':1,'7':4,'8':9,'9':11,'10':19},'26+':{'2':1,'7':1,'8':3,'9':9,'10':19}}"
-                  :dataCount="{'all':431,'':0,'under-16':58,'16-19':126,'19-22':103,'22-26':44,'26+':33}"
-                ></average>
-              
-            </graph>
-          </TabPanel>
-          <TabPanel class="graph-wide" val="char">
-            <graph
-              class="graph-wide"
-              title="HTTYD1CharacterRating"
-              :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
-              :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
-              :sets="[{'setKey':'all','setLabel':'All','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'under-16','setLabel':'Under 16','color':'#fa6','dataCount':58},{'setKey':'16-19','setLabel':'16-19','color':'#f83','dataCount':126},{'setKey':'19-22','setLabel':'19-22','color':'#e31','dataCount':103},{'setKey':'22-26','setLabel':'22-26','color':'#c90000','dataCount':44},{'setKey':'26+','setLabel':'26+','color':'#a00','dataCount':33}]"
-              :data="{'_multiSet':true,'all':{'1':1,'4':1,'5':10,'6':12,'7':50,'8':93,'9':101,'10':161,'NoAnswer':2},'under-16':{'5':3,'6':2,'7':4,'8':14,'9':13,'10':22},'16-19':{'4':1,'5':2,'6':5,'7':15,'8':28,'9':30,'10':44,'NoAnswer':1},'19-22':{'5':3,'6':1,'7':11,'8':22,'9':22,'10':43,'NoAnswer':1},'22-26':{'5':1,'6':4,'7':10,'8':11,'9':9,'10':9},'26+':{'1':1,'7':4,'8':5,'9':8,'10':15}}"
-              :dataCount="{'all':431,'':0,'under-16':58,'16-19':126,'19-22':103,'22-26':44,'26+':33}"
-            > 
-                <average
-                  :sets="[{'setKey':'all','setLabel':'All','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'under-16','setLabel':'Under 16','color':'#fa6','dataCount':58},{'setKey':'16-19','setLabel':'16-19','color':'#f83','dataCount':126},{'setKey':'19-22','setLabel':'19-22','color':'#e31','dataCount':103},{'setKey':'22-26','setLabel':'22-26','color':'#c90000','dataCount':44},{'setKey':'26+','setLabel':'26+','color':'#a00','dataCount':33}]"
-                  :data="{'_multiSet':true,'all':{'1':1,'4':1,'5':10,'6':12,'7':50,'8':93,'9':101,'10':161,'NoAnswer':2},'under-16':{'5':3,'6':2,'7':4,'8':14,'9':13,'10':22},'16-19':{'4':1,'5':2,'6':5,'7':15,'8':28,'9':30,'10':44,'NoAnswer':1},'19-22':{'5':3,'6':1,'7':11,'8':22,'9':22,'10':43,'NoAnswer':1},'22-26':{'5':1,'6':4,'7':10,'8':11,'9':9,'10':9},'26+':{'1':1,'7':4,'8':5,'9':8,'10':15}}"
-                  :dataCount="{'all':431,'':0,'under-16':58,'16-19':126,'19-22':103,'22-26':44,'26+':33}"
-                ></average>
-              
-            </graph>
-          </TabPanel>
-          <TabPanel class="graph-wide" val="theme">
-            <graph
-              class="graph-wide"
-              title="HTTYD1ThemeRating"
-              :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
-              :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
-              :sets="[{'setKey':'all','setLabel':'All','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'under-16','setLabel':'Under 16','color':'#fa6','dataCount':58},{'setKey':'16-19','setLabel':'16-19','color':'#f83','dataCount':126},{'setKey':'19-22','setLabel':'19-22','color':'#e31','dataCount':103},{'setKey':'22-26','setLabel':'22-26','color':'#c90000','dataCount':44},{'setKey':'26+','setLabel':'26+','color':'#a00','dataCount':33}]"
-              :data="{'_multiSet':true,'all':{'1':3,'4':3,'5':6,'6':9,'7':27,'8':52,'9':95,'10':235,'NoAnswer':1},'under-16':{'1':1,'6':1,'7':7,'8':9,'9':12,'10':28},'16-19':{'4':1,'5':3,'6':2,'7':5,'8':11,'9':36,'10':67,'NoAnswer':1},'19-22':{'1':1,'4':1,'5':1,'6':2,'7':8,'8':14,'9':19,'10':57},'22-26':{'4':1,'6':1,'7':4,'8':7,'9':12,'10':19},'26+':{'1':1,'5':1,'8':3,'9':3,'10':25}}"
-              :dataCount="{'all':431,'':0,'under-16':58,'16-19':126,'19-22':103,'22-26':44,'26+':33}"
-            > 
-                <average
-                  :sets="[{'setKey':'all','setLabel':'All','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'under-16','setLabel':'Under 16','color':'#fa6','dataCount':58},{'setKey':'16-19','setLabel':'16-19','color':'#f83','dataCount':126},{'setKey':'19-22','setLabel':'19-22','color':'#e31','dataCount':103},{'setKey':'22-26','setLabel':'22-26','color':'#c90000','dataCount':44},{'setKey':'26+','setLabel':'26+','color':'#a00','dataCount':33}]"
-                  :data="{'_multiSet':true,'all':{'1':3,'4':3,'5':6,'6':9,'7':27,'8':52,'9':95,'10':235,'NoAnswer':1},'under-16':{'1':1,'6':1,'7':7,'8':9,'9':12,'10':28},'16-19':{'4':1,'5':3,'6':2,'7':5,'8':11,'9':36,'10':67,'NoAnswer':1},'19-22':{'1':1,'4':1,'5':1,'6':2,'7':8,'8':14,'9':19,'10':57},'22-26':{'4':1,'6':1,'7':4,'8':7,'9':12,'10':19},'26+':{'1':1,'5':1,'8':3,'9':3,'10':25}}"
-                  :dataCount="{'all':431,'':0,'under-16':58,'16-19':126,'19-22':103,'22-26':44,'26+':33}"
-                ></average>
-              
-            </graph>
-          </TabPanel>
-          <TabPanel class="graph-wide" val="ost">
-            <graph
-              class="graph-wide"
-              title="HTTYD1ScoreRating"
-              :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
-              :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
-              :sets="[{'setKey':'all','setLabel':'All','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'under-16','setLabel':'Under 16','color':'#fa6','dataCount':58},{'setKey':'16-19','setLabel':'16-19','color':'#f83','dataCount':126},{'setKey':'19-22','setLabel':'19-22','color':'#e31','dataCount':103},{'setKey':'22-26','setLabel':'22-26','color':'#c90000','dataCount':44},{'setKey':'26+','setLabel':'26+','color':'#a00','dataCount':33}]"
-              :data="{'_multiSet':true,'all':{'2':1,'3':1,'4':1,'5':3,'6':5,'7':8,'8':17,'9':38,'10':356,'NoAnswer':1},'under-16':{'6':1,'7':1,'8':7,'9':5,'10':44},'16-19':{'3':1,'5':2,'6':1,'7':4,'8':3,'9':8,'10':106,'NoAnswer':1},'19-22':{'5':1,'7':3,'8':4,'9':8,'10':87},'22-26':{'9':6,'10':38},'26+':{'2':1,'6':2,'8':1,'9':1,'10':28}}"
-              :dataCount="{'all':431,'':0,'under-16':58,'16-19':126,'19-22':103,'22-26':44,'26+':33}"
-            > 
-                <average
-                  :sets="[{'setKey':'all','setLabel':'All','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'under-16','setLabel':'Under 16','color':'#fa6','dataCount':58},{'setKey':'16-19','setLabel':'16-19','color':'#f83','dataCount':126},{'setKey':'19-22','setLabel':'19-22','color':'#e31','dataCount':103},{'setKey':'22-26','setLabel':'22-26','color':'#c90000','dataCount':44},{'setKey':'26+','setLabel':'26+','color':'#a00','dataCount':33}]"
-                  :data="{'_multiSet':true,'all':{'2':1,'3':1,'4':1,'5':3,'6':5,'7':8,'8':17,'9':38,'10':356,'NoAnswer':1},'under-16':{'6':1,'7':1,'8':7,'9':5,'10':44},'16-19':{'3':1,'5':2,'6':1,'7':4,'8':3,'9':8,'10':106,'NoAnswer':1},'19-22':{'5':1,'7':3,'8':4,'9':8,'10':87},'22-26':{'9':6,'10':38},'26+':{'2':1,'6':2,'8':1,'9':1,'10':28}}"
-                  :dataCount="{'all':431,'':0,'under-16':58,'16-19':126,'19-22':103,'22-26':44,'26+':33}"
-                ></average>
-              
-            </graph>
-          </TabPanel>
-          <TabPanel class="graph-wide" val="fsong">
-            <graph
-              class="graph-wide"
-              title="HTTYD1FavouriteSoundtrack"
-              :conf="{'columnXMargin':'1.2rem','size':'wide','barWidth':'8px !important','trackWidthMultiset':'8px !important','trackWidth':'16px !important','columnWidth':'72px !important','sidewaysLabels':true,'labelsHeight':'6rem','hideZeroColumns':true}"
-              :columns="[{'key':0,'label':'This is Berk'},{'key':1,'label':'Dragon Battle'},{'key':2,'label':'The Downed Dragon'},{'key':3,'label':'Dragon training'},{'key':4,'label':'Wounded'},{'key':5,'label':'The Dragon Book'},{'key':6,'label':'Focus, Hiccup!'},{'key':7,'label':'Forbidden Friendship'},{'key':8,'label':'New Tail'},{'key':9,'label':'See You Tomorrow'},{'key':10,'label':'Test Drive'},{'key':11,'label':'Not so Fireproof'},{'key':12,'label':'This Time For Sure'},{'key':13,'label':'Astrid Goes for a Spin'},{'key':14,'label':'Romantic Flight'},{'key':15,'label':'Dragon\'s Den'},{'key':16,'label':'The Cove'},{'key':17,'label':'The Kill Ring'},{'key':18,'label':'Ready The Ships'},{'key':19,'label':'Battling the Green Death'},{'key':20,'label':'Counter Attack'},{'key':21,'label':'Where\'s Hiccup'},{'key':22,'label':'Coming Back Around'},{'key':23,'label':'Sticks and Stones'},{'key':24,'label':'Vikings Have Their Tea'},{'key':25,'label':'Shy'},{'key':26,'label':'D.W.'}]"
-              :sets="[{'setKey':'all','setLabel':'All','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'under-16','setLabel':'Under 16','color':'#fa6','dataCount':58},{'setKey':'16-19','setLabel':'16-19','color':'#f83','dataCount':126},{'setKey':'19-22','setLabel':'19-22','color':'#e31','dataCount':103},{'setKey':'22-26','setLabel':'22-26','color':'#c90000','dataCount':44},{'setKey':'26+','setLabel':'26+','color':'#a00','dataCount':33}]"
-              :data="{'_multiSet':true,'all':{'2':1,'7':120,'8':15,'9':13,'10':139,'14':33,'15':1,'21':5,'22':9,'23':28,'25':67,'26':1},'under-16':{'7':3,'8':3,'9':1,'10':24,'14':5,'21':3,'22':3,'23':5,'25':11},'16-19':{'2':1,'7':37,'8':3,'9':4,'10':38,'14':9,'22':1,'23':7,'25':26,'26':1},'19-22':{'7':42,'8':5,'9':2,'10':25,'14':7,'21':2,'22':4,'23':6,'25':10},'22-26':{'7':15,'9':1,'10':16,'14':3,'22':1,'23':4,'25':4},'26+':{'7':12,'8':1,'9':2,'10':10,'14':1,'23':2,'25':5}}"
-              :dataCount="{'all':431,'':0,'under-16':58,'16-19':126,'19-22':103,'22-26':44,'26+':33}"
-            > 
-            </graph>
-          </TabPanel>
-          <TabPanel class="graph-wide" val="fchar">
-            <graph
-              class="graph-wide"
-              title="HTTYD1FavouriteCharacter"
-              :conf="{'columnXMargin':'1.2rem','size':'wide','barWidth':'8px !important','trackWidthMultiset':'8px !important','trackWidth':'16px !important','columnWidth':'72px !important','sidewaysLabels':true,'labelsHeight':'6rem','hideZeroColumns':true}"
-              :columns="[{'key':3,'label':'Hiccup'},{'key':4,'label':'Toothless'},{'key':5,'label':'Astrid'},{'key':6,'label':'Stoick'},{'key':8,'label':'Gobber'},{'key':9,'label':'Ruffnut'},{'key':10,'label':'Tuffnut'},{'key':11,'label':'Twins'},{'key':12,'label':'Snotlout'},{'key':13,'label':'Fishlegs'},{'key':2,'label':'Other'},{'key':1,'label':'Shy'},{'key':'dwFlag','label':'D.W.'}]"
-              :sets="[{'setKey':'all','setLabel':'All','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'under-16','setLabel':'Under 16','color':'#fa6','dataCount':58},{'setKey':'16-19','setLabel':'16-19','color':'#f83','dataCount':126},{'setKey':'19-22','setLabel':'19-22','color':'#e31','dataCount':103},{'setKey':'22-26','setLabel':'22-26','color':'#c90000','dataCount':44},{'setKey':'26+','setLabel':'26+','color':'#a00','dataCount':33}]"
-              :data="{'_multiSet':true,'all':{'1':4,'2':14,'3':121,'4':242,'5':19,'6':8,'8':16,'9':2,'10':4,'12':1},'under-16':{'1':1,'2':4,'3':16,'4':25,'5':4,'8':7,'9':1},'16-19':{'1':1,'2':3,'3':30,'4':75,'5':6,'6':6,'8':5},'19-22':{'1':2,'2':6,'3':34,'4':54,'5':3,'8':1,'10':3},'22-26':{'3':16,'4':24,'5':3,'9':1},'26+':{'3':10,'4':21,'5':1,'12':1}}"
-              :dataCount="{'all':431,'':0,'under-16':58,'16-19':126,'19-22':103,'22-26':44,'26+':33}"
-            > 
-            </graph>
-          </TabPanel>
-          <TabPanel class="graph-wide" val="wchar">
-            <graph
-              class="graph-wide"
-              title="HTTYD1WorstCharacter"
-              :conf="{'columnXMargin':'1.2rem','size':'wide','barWidth':'8px !important','trackWidthMultiset':'8px !important','trackWidth':'16px !important','columnWidth':'72px !important','sidewaysLabels':true,'labelsHeight':'6rem','hideZeroColumns':true}"
-              :columns="[{'key':3,'label':'Hiccup'},{'key':4,'label':'Toothless'},{'key':5,'label':'Astrid'},{'key':6,'label':'Stoick'},{'key':8,'label':'Gobber'},{'key':9,'label':'Ruffnut'},{'key':10,'label':'Tuffnut'},{'key':11,'label':'Twins'},{'key':12,'label':'Snotlout'},{'key':13,'label':'Fishlegs'},{'key':2,'label':'Other'},{'key':1,'label':'Shy'},{'key':'dwFlag','label':'D.W.'}]"
-              :sets="[{'setKey':'all','setLabel':'All','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'under-16','setLabel':'Under 16','color':'#fa6','dataCount':58},{'setKey':'16-19','setLabel':'16-19','color':'#f83','dataCount':126},{'setKey':'19-22','setLabel':'19-22','color':'#e31','dataCount':103},{'setKey':'22-26','setLabel':'22-26','color':'#c90000','dataCount':44},{'setKey':'26+','setLabel':'26+','color':'#a00','dataCount':33}]"
-              :data="{'_multiSet':true,'all':{'1':42,'2':37,'3':2,'4':2,'5':34,'6':19,'8':7,'9':43,'10':38,'12':147,'13':59,'16':1,'dwFlag':4},'under-16':{'1':3,'2':5,'5':1,'6':2,'9':6,'10':5,'12':28,'13':7,'16':1},'16-19':{'1':14,'2':15,'4':1,'5':9,'6':5,'8':3,'9':9,'10':10,'12':42,'13':18,'dwFlag':2},'19-22':{'1':11,'2':6,'3':2,'5':9,'6':4,'8':1,'9':11,'10':12,'12':34,'13':13},'22-26':{'1':2,'2':4,'5':7,'6':1,'8':1,'9':7,'10':4,'12':13,'13':5},'26+':{'1':3,'2':2,'4':1,'5':4,'6':1,'8':1,'9':3,'10':3,'12':8,'13':7,'dwFlag':1}}"
-              :dataCount="{'all':431,'':0,'under-16':58,'16-19':126,'19-22':103,'22-26':44,'26+':33}"
-            > 
-            </graph>
-          </TabPanel>
-        </TabPanels>
-      </div>
-
-      <p>
-        Plot rating graph looks as if some people in the 23-27 group accidentally thought this poll is the Stanley Parable and smashed an 8 instead of 10/10,
-        but remember: with small sample sizes like this, bell curve anomalies like this are kinda to be expected.
-      </p>
-
-      <p>
-        I'm not going to post all the graphs, because emotion rating graph resembles the plot rating (minus the bell curve anomaly) in the sense that older 
-        people gave better ratings. Theme rating graph is sorta even across demographics. So is the score rating — almost everyone went for 10/10 equally often
-        on that one. People who voted anything less than that are such a minority there's nothing to extrapolate from that graph. Character rating graph is
-        all over the place.
-      </p>
-
-      <p>
-        Admittedly, older people sticking higher grades to an older movie is not very surprising. However, when it comes to the visuals, there is a small
-        surprise, to be sure — though perhaps a welcome one.
-      </p>
-
-
-      <p>
-        Objectively speaking, the visuals of the first movie <i>do</i> look rather dated due to advancements in computer graphics. But that doesn't stop the youngest
-        demographics from ten-outta-tenning the aspect. Interestingly enough, 17-23 cohorts get a bit of a double-peaking at 10 and 8, while the curve of the 27+ 
-        cohort gets a single peak at 9/10. 
-      </p>
-
-      <p>
-        I don't feel there's enough data to comment on fav/lest fav character by age, so we'll be skipping that.
-      </p>
-
-      <p>
-        Let's move to the second movie.
-      </p>
-
-      <div class="graph-area">
-        <graph
-          class="graph-wide"
-          title="HTTYD2Rating"
-          :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
-          :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
-          :sets="[{'setKey':'all','setLabel':'All','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'under-16','setLabel':'Under 16','color':'#fa6','dataCount':58},{'setKey':'16-19','setLabel':'16-19','color':'#f83','dataCount':126},{'setKey':'19-22','setLabel':'19-22','color':'#e31','dataCount':103},{'setKey':'22-26','setLabel':'22-26','color':'#c90000','dataCount':44},{'setKey':'26+','setLabel':'26+','color':'#a00','dataCount':33}]"
-          :data="{'_multiSet':true,'all':{'1':1,'2':2,'3':1,'4':1,'5':7,'6':15,'7':54,'8':109,'9':122,'10':115,'NoAnswer':4},'under-16':{'4':1,'5':1,'6':2,'7':9,'8':9,'9':18,'10':18},'16-19':{'5':2,'6':3,'7':13,'8':29,'9':38,'10':39,'NoAnswer':2},'19-22':{'5':2,'6':3,'7':12,'8':30,'9':30,'10':26},'22-26':{'1':1,'2':1,'5':2,'6':1,'7':6,'8':17,'9':5,'10':11},'26+':{'2':1,'3':1,'6':3,'7':6,'8':5,'9':9,'10':7,'NoAnswer':1}}"
-          :dataCount="{'all':431,'':0,'under-16':58,'16-19':126,'19-22':103,'22-26':44,'26+':33}"
-        > 
-            <average
-              :sets="[{'setKey':'all','setLabel':'All','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'under-16','setLabel':'Under 16','color':'#fa6','dataCount':58},{'setKey':'16-19','setLabel':'16-19','color':'#f83','dataCount':126},{'setKey':'19-22','setLabel':'19-22','color':'#e31','dataCount':103},{'setKey':'22-26','setLabel':'22-26','color':'#c90000','dataCount':44},{'setKey':'26+','setLabel':'26+','color':'#a00','dataCount':33}]"
-              :data="{'_multiSet':true,'all':{'1':1,'2':2,'3':1,'4':1,'5':7,'6':15,'7':54,'8':109,'9':122,'10':115,'NoAnswer':4},'under-16':{'4':1,'5':1,'6':2,'7':9,'8':9,'9':18,'10':18},'16-19':{'5':2,'6':3,'7':13,'8':29,'9':38,'10':39,'NoAnswer':2},'19-22':{'5':2,'6':3,'7':12,'8':30,'9':30,'10':26},'22-26':{'1':1,'2':1,'5':2,'6':1,'7':6,'8':17,'9':5,'10':11},'26+':{'2':1,'3':1,'6':3,'7':6,'8':5,'9':9,'10':7,'NoAnswer':1}}"
-              :dataCount="{'all':431,'':0,'under-16':58,'16-19':126,'19-22':103,'22-26':44,'26+':33}"
-            ></average>
-          
-        </graph>
-
-        <graph
-            class="graph-wide"
-            title="HTTYD2PlotRating"
-            :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
-            :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
-            :sets="[{'setKey':'all','setLabel':'All','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'under-16','setLabel':'Under 16','color':'#fa6','dataCount':58},{'setKey':'16-19','setLabel':'16-19','color':'#f83','dataCount':126},{'setKey':'19-22','setLabel':'19-22','color':'#e31','dataCount':103},{'setKey':'22-26','setLabel':'22-26','color':'#c90000','dataCount':44},{'setKey':'26+','setLabel':'26+','color':'#a00','dataCount':33}]"
-            :data="{'_multiSet':true,'all':{'1':1,'2':1,'3':2,'4':5,'5':13,'6':29,'7':96,'8':107,'9':97,'10':76,'NoAnswer':4},'under-16':{'4':1,'5':2,'6':2,'7':13,'8':11,'9':15,'10':13,'NoAnswer':1},'16-19':{'5':1,'6':8,'7':26,'8':28,'9':36,'10':25,'NoAnswer':2},'19-22':{'4':1,'5':3,'6':10,'7':23,'8':31,'9':20,'10':15},'22-26':{'1':1,'2':1,'4':1,'5':2,'6':5,'7':12,'8':8,'9':7,'10':7},'26+':{'3':2,'4':1,'5':1,'6':1,'7':8,'8':12,'9':4,'10':3,'NoAnswer':1}}"
-            :dataCount="{'all':431,'':0,'under-16':58,'16-19':126,'19-22':103,'22-26':44,'26+':33}"
-          > 
-              <average
-                :sets="[{'setKey':'all','setLabel':'All','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'under-16','setLabel':'Under 16','color':'#fa6','dataCount':58},{'setKey':'16-19','setLabel':'16-19','color':'#f83','dataCount':126},{'setKey':'19-22','setLabel':'19-22','color':'#e31','dataCount':103},{'setKey':'22-26','setLabel':'22-26','color':'#c90000','dataCount':44},{'setKey':'26+','setLabel':'26+','color':'#a00','dataCount':33}]"
-                :data="{'_multiSet':true,'all':{'1':1,'2':1,'3':2,'4':5,'5':13,'6':29,'7':96,'8':107,'9':97,'10':76,'NoAnswer':4},'under-16':{'4':1,'5':2,'6':2,'7':13,'8':11,'9':15,'10':13,'NoAnswer':1},'16-19':{'5':1,'6':8,'7':26,'8':28,'9':36,'10':25,'NoAnswer':2},'19-22':{'4':1,'5':3,'6':10,'7':23,'8':31,'9':20,'10':15},'22-26':{'1':1,'2':1,'4':1,'5':2,'6':5,'7':12,'8':8,'9':7,'10':7},'26+':{'3':2,'4':1,'5':1,'6':1,'7':8,'8':12,'9':4,'10':3,'NoAnswer':1}}"
-                :dataCount="{'all':431,'':0,'under-16':58,'16-19':126,'19-22':103,'22-26':44,'26+':33}"
-              ></average>
-            
-          </graph>
-      </div>
-
-      <p>
-        Oh, how the turn tables. In general, older respondents judged the plot — as well as the movie overall — more harshly than the younger participants.
-      </p>
-
-      <p>
-        Other graphs aren't as interesting: while older people did tend to rate the emotional impact slightly lower than the younger participants, the differences
-        are almost within the margin of error. Visuals rating is roughly even, with older participants having a slightly bigger chance of rating that aspect lower.
-        Character rating is also all over the place.
-      </p>
-
-      <div class="graph-area">
-        <graph
-            class="graph-wide"
-            title="HTTYD2ScoreRating"
-            :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
-            :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
-            :sets="[{'setKey':'all','setLabel':'All','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'under-16','setLabel':'Under 16','color':'#fa6','dataCount':58},{'setKey':'16-19','setLabel':'16-19','color':'#f83','dataCount':126},{'setKey':'19-22','setLabel':'19-22','color':'#e31','dataCount':103},{'setKey':'22-26','setLabel':'22-26','color':'#c90000','dataCount':44},{'setKey':'26+','setLabel':'26+','color':'#a00','dataCount':33}]"
-            :data="{'_multiSet':true,'all':{'2':1,'3':3,'4':2,'5':6,'6':9,'7':24,'8':83,'9':80,'10':218,'NoAnswer':5},'under-16':{'5':1,'6':2,'7':2,'8':8,'9':17,'10':28},'16-19':{'3':1,'4':1,'6':2,'7':8,'8':22,'9':12,'10':77,'NoAnswer':3},'19-22':{'5':2,'6':2,'7':2,'8':19,'9':25,'10':52,'NoAnswer':1},'22-26':{'2':1,'4':1,'5':2,'6':1,'7':4,'8':11,'9':6,'10':18},'26+':{'3':2,'7':2,'8':11,'9':5,'10':12,'NoAnswer':1}}"
-            :dataCount="{'all':431,'':0,'under-16':58,'16-19':126,'19-22':103,'22-26':44,'26+':33}"
-          > 
-              <average
-                :sets="[{'setKey':'all','setLabel':'All','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'under-16','setLabel':'Under 16','color':'#fa6','dataCount':58},{'setKey':'16-19','setLabel':'16-19','color':'#f83','dataCount':126},{'setKey':'19-22','setLabel':'19-22','color':'#e31','dataCount':103},{'setKey':'22-26','setLabel':'22-26','color':'#c90000','dataCount':44},{'setKey':'26+','setLabel':'26+','color':'#a00','dataCount':33}]"
-                :data="{'_multiSet':true,'all':{'2':1,'3':3,'4':2,'5':6,'6':9,'7':24,'8':83,'9':80,'10':218,'NoAnswer':5},'under-16':{'5':1,'6':2,'7':2,'8':8,'9':17,'10':28},'16-19':{'3':1,'4':1,'6':2,'7':8,'8':22,'9':12,'10':77,'NoAnswer':3},'19-22':{'5':2,'6':2,'7':2,'8':19,'9':25,'10':52,'NoAnswer':1},'22-26':{'2':1,'4':1,'5':2,'6':1,'7':4,'8':11,'9':6,'10':18},'26+':{'3':2,'7':2,'8':11,'9':5,'10':12,'NoAnswer':1}}"
-                :dataCount="{'all':431,'':0,'under-16':58,'16-19':126,'19-22':103,'22-26':44,'26+':33}"
-              ></average>
-            
-        </graph>
-      </div>
-
-      <p>
-        There's some good ol' divide along the age lines here, with older participants generally giving worse ratings than their younger counterparts.
-        Both 23-27 and 27+ cohorts double-peak on 10/10 and 8/10, but the tallest peak is reversed between the groups and — rather interestingly — 
-        23-37 have much bigger portion on 8/10 than the 27+. 
-      </p>
-
-      <p>
-        Theme rating chart also deserves a shout-out, because this double-peaking phenomenom, with 27+ and 23-27 cohorts holding different peaks
-        gets even stronger. But again: remember the small sample size? Wacky results like this aren't too surprising.
-      </p>
-
-      <div class="grpah-area">
-        <graph
-            class="graph-wide"
-            title="HTTYD2ThemeRating"
-            :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
-            :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
-            :sets="[{'setKey':'all','setLabel':'All','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'under-16','setLabel':'Under 16','color':'#fa6','dataCount':58},{'setKey':'16-19','setLabel':'16-19','color':'#f83','dataCount':126},{'setKey':'19-22','setLabel':'19-22','color':'#e31','dataCount':103},{'setKey':'22-26','setLabel':'22-26','color':'#c90000','dataCount':44},{'setKey':'26+','setLabel':'26+','color':'#a00','dataCount':33}]"
-            :data="{'_multiSet':true,'all':{'1':3,'2':2,'3':3,'4':8,'5':17,'6':33,'7':48,'8':100,'9':87,'10':125,'NoAnswer':5},'under-16':{'3':1,'5':5,'6':5,'7':4,'8':16,'9':13,'10':13,'NoAnswer':1},'16-19':{'4':1,'5':2,'6':9,'7':21,'8':22,'9':27,'10':42,'NoAnswer':2},'19-22':{'1':1,'3':1,'4':3,'5':5,'6':11,'7':10,'8':23,'9':18,'10':30,'NoAnswer':1},'22-26':{'1':2,'2':1,'4':1,'5':1,'6':3,'7':3,'8':16,'9':9,'10':8},'26+':{'2':1,'4':2,'5':1,'6':1,'7':3,'8':6,'9':4,'10':14,'NoAnswer':1}}"
-            :dataCount="{'all':431,'':0,'under-16':58,'16-19':126,'19-22':103,'22-26':44,'26+':33}"
-          > 
-              <average
-                :sets="[{'setKey':'all','setLabel':'All','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'under-16','setLabel':'Under 16','color':'#fa6','dataCount':58},{'setKey':'16-19','setLabel':'16-19','color':'#f83','dataCount':126},{'setKey':'19-22','setLabel':'19-22','color':'#e31','dataCount':103},{'setKey':'22-26','setLabel':'22-26','color':'#c90000','dataCount':44},{'setKey':'26+','setLabel':'26+','color':'#a00','dataCount':33}]"
-                :data="{'_multiSet':true,'all':{'1':3,'2':2,'3':3,'4':8,'5':17,'6':33,'7':48,'8':100,'9':87,'10':125,'NoAnswer':5},'under-16':{'3':1,'5':5,'6':5,'7':4,'8':16,'9':13,'10':13,'NoAnswer':1},'16-19':{'4':1,'5':2,'6':9,'7':21,'8':22,'9':27,'10':42,'NoAnswer':2},'19-22':{'1':1,'3':1,'4':3,'5':5,'6':11,'7':10,'8':23,'9':18,'10':30,'NoAnswer':1},'22-26':{'1':2,'2':1,'4':1,'5':1,'6':3,'7':3,'8':16,'9':9,'10':8},'26+':{'2':1,'4':2,'5':1,'6':1,'7':3,'8':6,'9':4,'10':14,'NoAnswer':1}}"
-                :dataCount="{'all':431,'':0,'under-16':58,'16-19':126,'19-22':103,'22-26':44,'26+':33}"
-              ></average>
-            
-          </graph>
-      </div>
-
-      <p>&nbsp;</p>
-
-      <p>
-        And then there's HTTYD3.
-      </p>
-
-      <p>
-        As is tradition:
-      </p>
-
-      <div class="graph-area">
-        <graph
-            class="graph-wide"
-            title="HTTYD3Rating"
-            :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
-            :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
-            :sets="[{'setKey':'all','setLabel':'All','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'under-16','setLabel':'Under 16','color':'#fa6','dataCount':58},{'setKey':'16-19','setLabel':'16-19','color':'#f83','dataCount':126},{'setKey':'19-22','setLabel':'19-22','color':'#e31','dataCount':103},{'setKey':'22-26','setLabel':'22-26','color':'#c90000','dataCount':44},{'setKey':'26+','setLabel':'26+','color':'#a00','dataCount':33}]"
-            :data="{'_multiSet':true,'all':{'1':22,'2':14,'3':29,'4':31,'5':23,'6':43,'7':59,'8':69,'9':61,'10':73,'NoAnswer':7},'under-16':{'1':2,'3':2,'4':2,'5':4,'6':4,'7':6,'8':17,'9':8,'10':12,'NoAnswer':1},'16-19':{'1':3,'2':5,'3':7,'4':7,'5':4,'6':12,'7':12,'8':21,'9':29,'10':23,'NoAnswer':3},'19-22':{'1':3,'2':5,'3':4,'4':10,'5':9,'6':9,'7':21,'8':15,'9':11,'10':15,'NoAnswer':1},'22-26':{'1':7,'2':1,'3':2,'4':7,'5':1,'6':4,'7':8,'8':3,'9':4,'10':6,'NoAnswer':1},'26+':{'1':3,'2':1,'3':6,'4':2,'5':1,'6':4,'7':1,'8':4,'9':4,'10':6,'NoAnswer':1}}"
-            :dataCount="{'all':431,'':0,'under-16':58,'16-19':126,'19-22':103,'22-26':44,'26+':33}"
-          > 
-              <average
-                :sets="[{'setKey':'all','setLabel':'All','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'under-16','setLabel':'Under 16','color':'#fa6','dataCount':58},{'setKey':'16-19','setLabel':'16-19','color':'#f83','dataCount':126},{'setKey':'19-22','setLabel':'19-22','color':'#e31','dataCount':103},{'setKey':'22-26','setLabel':'22-26','color':'#c90000','dataCount':44},{'setKey':'26+','setLabel':'26+','color':'#a00','dataCount':33}]"
-                :data="{'_multiSet':true,'all':{'1':22,'2':14,'3':29,'4':31,'5':23,'6':43,'7':59,'8':69,'9':61,'10':73,'NoAnswer':7},'under-16':{'1':2,'3':2,'4':2,'5':4,'6':4,'7':6,'8':17,'9':8,'10':12,'NoAnswer':1},'16-19':{'1':3,'2':5,'3':7,'4':7,'5':4,'6':12,'7':12,'8':21,'9':29,'10':23,'NoAnswer':3},'19-22':{'1':3,'2':5,'3':4,'4':10,'5':9,'6':9,'7':21,'8':15,'9':11,'10':15,'NoAnswer':1},'22-26':{'1':7,'2':1,'3':2,'4':7,'5':1,'6':4,'7':8,'8':3,'9':4,'10':6,'NoAnswer':1},'26+':{'1':3,'2':1,'3':6,'4':2,'5':1,'6':4,'7':1,'8':4,'9':4,'10':6,'NoAnswer':1}}"
-                :dataCount="{'all':431,'':0,'under-16':58,'16-19':126,'19-22':103,'22-26':44,'26+':33}"
-              ></average>
-            
-          </graph>
-      </div>
-
-      <p>
-        Overall, younger respondents seemed to give higher ratings than the older people, but that's only half of the story. With younger people, you're getting
-        a nice-ish gauss ... almost. But as soon as you hit 20 or more, you start seeing extremes.
-      </p>
-
-      <p>
-        And it keeps happening:
-      </p>
-
-      <div class="graph-area">
-
-        <Tabs v-model="tabs.age.thwRatings">
-          <Tab
-            label="Plot"
-            val="plot"
-          />
-          <Tab
-            label="Theme rating"
-            val="theme"
-          />
-          <Tab
-            label="Theme Approval"
-            val="theme-approval"
-          />
-        </Tabs>
-
-        <TabPanels v-model="tabs.age.thwRatings">
-          <TabPanel val="plot">
-            <graph
-            class="graph-wide"
-            title="HTTYD3PlotRating"
-            :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
-            :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
-            :sets="[{'setKey':'all','setLabel':'All','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'under-16','setLabel':'Under 16','color':'#fa6','dataCount':58},{'setKey':'16-19','setLabel':'16-19','color':'#f83','dataCount':126},{'setKey':'19-22','setLabel':'19-22','color':'#e31','dataCount':103},{'setKey':'22-26','setLabel':'22-26','color':'#c90000','dataCount':44},{'setKey':'26+','setLabel':'26+','color':'#a00','dataCount':33}]"
-            :data="{'_multiSet':true,'all':{'1':37,'2':33,'3':37,'4':21,'5':28,'6':48,'7':60,'8':63,'9':44,'10':53,'NoAnswer':7},'under-16':{'1':3,'2':1,'3':3,'4':2,'5':4,'6':1,'7':7,'8':14,'9':10,'10':12,'NoAnswer':1},'16-19':{'1':9,'2':10,'3':8,'4':6,'5':6,'6':13,'7':21,'8':21,'9':10,'10':19,'NoAnswer':3},'19-22':{'1':6,'2':7,'3':13,'4':5,'5':3,'6':15,'7':18,'8':17,'9':11,'10':7,'NoAnswer':1},'22-26':{'1':9,'2':4,'3':3,'4':5,'5':3,'6':6,'7':4,'8':3,'9':3,'10':3,'NoAnswer':1},'26+':{'1':4,'2':7,'3':3,'5':2,'6':5,'8':3,'9':2,'10':6,'NoAnswer':1}}"
-            :dataCount="{'all':431,'':0,'under-16':58,'16-19':126,'19-22':103,'22-26':44,'26+':33}"
-          > 
-              <average
-                :sets="[{'setKey':'all','setLabel':'All','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'under-16','setLabel':'Under 16','color':'#fa6','dataCount':58},{'setKey':'16-19','setLabel':'16-19','color':'#f83','dataCount':126},{'setKey':'19-22','setLabel':'19-22','color':'#e31','dataCount':103},{'setKey':'22-26','setLabel':'22-26','color':'#c90000','dataCount':44},{'setKey':'26+','setLabel':'26+','color':'#a00','dataCount':33}]"
-                :data="{'_multiSet':true,'all':{'1':37,'2':33,'3':37,'4':21,'5':28,'6':48,'7':60,'8':63,'9':44,'10':53,'NoAnswer':7},'under-16':{'1':3,'2':1,'3':3,'4':2,'5':4,'6':1,'7':7,'8':14,'9':10,'10':12,'NoAnswer':1},'16-19':{'1':9,'2':10,'3':8,'4':6,'5':6,'6':13,'7':21,'8':21,'9':10,'10':19,'NoAnswer':3},'19-22':{'1':6,'2':7,'3':13,'4':5,'5':3,'6':15,'7':18,'8':17,'9':11,'10':7,'NoAnswer':1},'22-26':{'1':9,'2':4,'3':3,'4':5,'5':3,'6':6,'7':4,'8':3,'9':3,'10':3,'NoAnswer':1},'26+':{'1':4,'2':7,'3':3,'5':2,'6':5,'8':3,'9':2,'10':6,'NoAnswer':1}}"
-                :dataCount="{'all':431,'':0,'under-16':58,'16-19':126,'19-22':103,'22-26':44,'26+':33}"
-              ></average>
-            
-          </graph>
-          </TabPanel>
-          <TabPanel val="theme">
-            <graph
-            class="graph-wide"
-            title="HTTYD3ThemeRating"
-            :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
-            :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
-            :sets="[{'setKey':'all','setLabel':'All','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'under-16','setLabel':'Under 16','color':'#fa6','dataCount':58},{'setKey':'16-19','setLabel':'16-19','color':'#f83','dataCount':126},{'setKey':'19-22','setLabel':'19-22','color':'#e31','dataCount':103},{'setKey':'22-26','setLabel':'22-26','color':'#c90000','dataCount':44},{'setKey':'26+','setLabel':'26+','color':'#a00','dataCount':33}]"
-            :data="{'_multiSet':true,'all':{'1':64,'2':26,'3':16,'4':22,'5':23,'6':32,'7':31,'8':55,'9':56,'10':99,'NoAnswer':7},'under-16':{'1':4,'2':4,'3':1,'4':1,'5':2,'6':5,'7':3,'8':7,'9':11,'10':19,'NoAnswer':1},'16-19':{'1':17,'2':4,'3':4,'4':4,'5':8,'6':8,'7':12,'8':16,'9':17,'10':33,'NoAnswer':3},'19-22':{'1':13,'2':8,'3':6,'4':4,'5':8,'6':10,'7':6,'8':15,'9':9,'10':23,'NoAnswer':1},'22-26':{'1':10,'2':3,'3':4,'4':5,'5':2,'6':2,'7':3,'8':3,'9':6,'10':5,'NoAnswer':1},'26+':{'1':9,'2':2,'3':1,'4':2,'5':1,'6':1,'7':1,'8':3,'9':4,'10':8,'NoAnswer':1}}"
-            :dataCount="{'all':431,'':0,'under-16':58,'16-19':126,'19-22':103,'22-26':44,'26+':33}"
-          > 
-              <average
-                :sets="[{'setKey':'all','setLabel':'All','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'under-16','setLabel':'Under 16','color':'#fa6','dataCount':58},{'setKey':'16-19','setLabel':'16-19','color':'#f83','dataCount':126},{'setKey':'19-22','setLabel':'19-22','color':'#e31','dataCount':103},{'setKey':'22-26','setLabel':'22-26','color':'#c90000','dataCount':44},{'setKey':'26+','setLabel':'26+','color':'#a00','dataCount':33}]"
-                :data="{'_multiSet':true,'all':{'1':64,'2':26,'3':16,'4':22,'5':23,'6':32,'7':31,'8':55,'9':56,'10':99,'NoAnswer':7},'under-16':{'1':4,'2':4,'3':1,'4':1,'5':2,'6':5,'7':3,'8':7,'9':11,'10':19,'NoAnswer':1},'16-19':{'1':17,'2':4,'3':4,'4':4,'5':8,'6':8,'7':12,'8':16,'9':17,'10':33,'NoAnswer':3},'19-22':{'1':13,'2':8,'3':6,'4':4,'5':8,'6':10,'7':6,'8':15,'9':9,'10':23,'NoAnswer':1},'22-26':{'1':10,'2':3,'3':4,'4':5,'5':2,'6':2,'7':3,'8':3,'9':6,'10':5,'NoAnswer':1},'26+':{'1':9,'2':2,'3':1,'4':2,'5':1,'6':1,'7':1,'8':3,'9':4,'10':8,'NoAnswer':1}}"
-                :dataCount="{'all':431,'':0,'under-16':58,'16-19':126,'19-22':103,'22-26':44,'26+':33}"
-              ></average>
-            
-          </graph>
-          </TabPanel>
-          <TabPanel val="theme-approval">
-            <graph
-            class="graph-wide"
-            title="THWThemeApproval"
-            :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
-            :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
-            :sets="[{'setKey':'all','setLabel':'All','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'under-16','setLabel':'Under 16','color':'#fa6','dataCount':58},{'setKey':'16-19','setLabel':'16-19','color':'#f83','dataCount':126},{'setKey':'19-22','setLabel':'19-22','color':'#e31','dataCount':103},{'setKey':'22-26','setLabel':'22-26','color':'#c90000','dataCount':44},{'setKey':'26+','setLabel':'26+','color':'#a00','dataCount':33}]"
-            :data="{'_multiSet':true,'all':{'1':40,'2':14,'3':25,'4':22,'5':28,'6':28,'7':44,'8':70,'9':62,'10':88,'NoAnswer':10},'under-16':{'1':2,'2':1,'3':1,'4':2,'5':2,'6':3,'7':5,'8':15,'9':9,'10':18},'16-19':{'1':9,'2':5,'3':6,'4':12,'5':6,'6':8,'7':10,'8':18,'9':23,'10':25,'NoAnswer':4},'19-22':{'1':12,'2':1,'3':6,'4':2,'5':9,'6':5,'7':14,'8':21,'9':13,'10':18,'NoAnswer':2},'22-26':{'1':6,'2':2,'3':4,'4':2,'5':5,'7':5,'8':5,'9':6,'10':8,'NoAnswer':1},'26+':{'1':5,'2':3,'3':1,'4':1,'5':4,'7':2,'8':3,'9':3,'10':9,'NoAnswer':2}}"
-            :dataCount="{'all':431,'':0,'under-16':58,'16-19':126,'19-22':103,'22-26':44,'26+':33}"
-          > 
-              <average
-                :sets="[{'setKey':'all','setLabel':'All','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'under-16','setLabel':'Under 16','color':'#fa6','dataCount':58},{'setKey':'16-19','setLabel':'16-19','color':'#f83','dataCount':126},{'setKey':'19-22','setLabel':'19-22','color':'#e31','dataCount':103},{'setKey':'22-26','setLabel':'22-26','color':'#c90000','dataCount':44},{'setKey':'26+','setLabel':'26+','color':'#a00','dataCount':33}]"
-                :data="{'_multiSet':true,'all':{'1':40,'2':14,'3':25,'4':22,'5':28,'6':28,'7':44,'8':70,'9':62,'10':88,'NoAnswer':10},'under-16':{'1':2,'2':1,'3':1,'4':2,'5':2,'6':3,'7':5,'8':15,'9':9,'10':18},'16-19':{'1':9,'2':5,'3':6,'4':12,'5':6,'6':8,'7':10,'8':18,'9':23,'10':25,'NoAnswer':4},'19-22':{'1':12,'2':1,'3':6,'4':2,'5':9,'6':5,'7':14,'8':21,'9':13,'10':18,'NoAnswer':2},'22-26':{'1':6,'2':2,'3':4,'4':2,'5':5,'7':5,'8':5,'9':6,'10':8,'NoAnswer':1},'26+':{'1':5,'2':3,'3':1,'4':1,'5':4,'7':2,'8':3,'9':3,'10':9,'NoAnswer':2}}"
-                :dataCount="{'all':431,'':0,'under-16':58,'16-19':126,'19-22':103,'22-26':44,'26+':33}"
-              ></average>
-            
-          </graph>
-          </TabPanel>
-
-        </TabPanels>
-      </div>
-
-      <p>
-        Older participants generally tend to agree that the plot of The Hidden World is incoherent mess, which it is:
-      </p>
-
-      <div class="graph-area">
-        <graph
-          class="graph-wide"
-          title="THWPlotCoherency"
-          :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
-          :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
-          :sets="[{'setKey':'all','setLabel':'All','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'under-16','setLabel':'Under 16','color':'#fa6','dataCount':58},{'setKey':'16-19','setLabel':'16-19','color':'#f83','dataCount':126},{'setKey':'19-22','setLabel':'19-22','color':'#e31','dataCount':103},{'setKey':'22-26','setLabel':'22-26','color':'#c90000','dataCount':44},{'setKey':'26+','setLabel':'26+','color':'#a00','dataCount':33}]"
-          :data="{'_multiSet':true,'all':{'1':78,'2':24,'3':38,'4':28,'5':29,'6':34,'7':53,'8':40,'9':42,'10':57,'NoAnswer':8},'under-16':{'1':6,'2':3,'3':4,'5':2,'6':6,'7':11,'8':6,'9':6,'10':13,'NoAnswer':1},'16-19':{'1':16,'2':7,'3':9,'4':9,'5':8,'6':13,'7':16,'8':14,'9':14,'10':17,'NoAnswer':3},'19-22':{'1':15,'2':10,'3':10,'4':8,'5':9,'6':8,'7':8,'8':12,'9':10,'10':12,'NoAnswer':1},'22-26':{'1':16,'2':2,'3':5,'4':1,'5':1,'6':2,'7':5,'8':4,'9':3,'10':4,'NoAnswer':1},'26+':{'1':11,'3':3,'4':2,'5':1,'6':2,'7':5,'8':1,'9':1,'10':6,'NoAnswer':1}}"
-          :dataCount="{'all':431,'':0,'under-16':58,'16-19':126,'19-22':103,'22-26':44,'26+':33}"
-        > 
-            <average
-              :sets="[{'setKey':'all','setLabel':'All','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'under-16','setLabel':'Under 16','color':'#fa6','dataCount':58},{'setKey':'16-19','setLabel':'16-19','color':'#f83','dataCount':126},{'setKey':'19-22','setLabel':'19-22','color':'#e31','dataCount':103},{'setKey':'22-26','setLabel':'22-26','color':'#c90000','dataCount':44},{'setKey':'26+','setLabel':'26+','color':'#a00','dataCount':33}]"
-              :data="{'_multiSet':true,'all':{'1':78,'2':24,'3':38,'4':28,'5':29,'6':34,'7':53,'8':40,'9':42,'10':57,'NoAnswer':8},'under-16':{'1':6,'2':3,'3':4,'5':2,'6':6,'7':11,'8':6,'9':6,'10':13,'NoAnswer':1},'16-19':{'1':16,'2':7,'3':9,'4':9,'5':8,'6':13,'7':16,'8':14,'9':14,'10':17,'NoAnswer':3},'19-22':{'1':15,'2':10,'3':10,'4':8,'5':9,'6':8,'7':8,'8':12,'9':10,'10':12,'NoAnswer':1},'22-26':{'1':16,'2':2,'3':5,'4':1,'5':1,'6':2,'7':5,'8':4,'9':3,'10':4,'NoAnswer':1},'26+':{'1':11,'3':3,'4':2,'5':1,'6':2,'7':5,'8':1,'9':1,'10':6,'NoAnswer':1}}"
-              :dataCount="{'all':431,'':0,'under-16':58,'16-19':126,'19-22':103,'22-26':44,'26+':33}"
-            ></average>
-          
-        </graph>
-      </div>
-
-      <p>
-        The 'fitting end' graph should, therefore, comes as no surprise either.
-      </p>
-
-      <div class="graph-area">
-        <graph
-            class="graph-wide"
-            title="THWFittingEnd"
-            :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
-            :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
-            :sets="[{'setKey':'all','setLabel':'All','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'under-16','setLabel':'Under 16','color':'#fa6','dataCount':58},{'setKey':'16-19','setLabel':'16-19','color':'#f83','dataCount':126},{'setKey':'19-22','setLabel':'19-22','color':'#e31','dataCount':103},{'setKey':'22-26','setLabel':'22-26','color':'#c90000','dataCount':44},{'setKey':'26+','setLabel':'26+','color':'#a00','dataCount':33}]"
-            :data="{'_multiSet':true,'all':{'1':103,'2':20,'3':21,'4':32,'5':22,'6':15,'7':39,'8':35,'9':53,'10':84,'NoAnswer':7},'under-16':{'1':9,'2':3,'3':1,'4':2,'5':4,'6':1,'7':6,'8':13,'9':3,'10':15,'NoAnswer':1},'16-19':{'1':27,'2':3,'3':8,'4':9,'5':6,'6':5,'7':15,'8':7,'9':19,'10':24,'NoAnswer':3},'19-22':{'1':24,'2':2,'3':6,'4':6,'5':6,'6':3,'7':14,'8':7,'9':11,'10':23,'NoAnswer':1},'22-26':{'1':13,'2':5,'3':2,'4':2,'5':1,'6':2,'7':1,'9':6,'10':11,'NoAnswer':1},'26+':{'1':13,'2':3,'4':4,'5':1,'7':1,'8':2,'9':4,'10':4,'NoAnswer':1}}"
-            :dataCount="{'all':431,'':0,'under-16':58,'16-19':126,'19-22':103,'22-26':44,'26+':33}"
-          > 
-              <average
-                :sets="[{'setKey':'all','setLabel':'All','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'under-16','setLabel':'Under 16','color':'#fa6','dataCount':58},{'setKey':'16-19','setLabel':'16-19','color':'#f83','dataCount':126},{'setKey':'19-22','setLabel':'19-22','color':'#e31','dataCount':103},{'setKey':'22-26','setLabel':'22-26','color':'#c90000','dataCount':44},{'setKey':'26+','setLabel':'26+','color':'#a00','dataCount':33}]"
-                :data="{'_multiSet':true,'all':{'1':103,'2':20,'3':21,'4':32,'5':22,'6':15,'7':39,'8':35,'9':53,'10':84,'NoAnswer':7},'under-16':{'1':9,'2':3,'3':1,'4':2,'5':4,'6':1,'7':6,'8':13,'9':3,'10':15,'NoAnswer':1},'16-19':{'1':27,'2':3,'3':8,'4':9,'5':6,'6':5,'7':15,'8':7,'9':19,'10':24,'NoAnswer':3},'19-22':{'1':24,'2':2,'3':6,'4':6,'5':6,'6':3,'7':14,'8':7,'9':11,'10':23,'NoAnswer':1},'22-26':{'1':13,'2':5,'3':2,'4':2,'5':1,'6':2,'7':1,'9':6,'10':11,'NoAnswer':1},'26+':{'1':13,'2':3,'4':4,'5':1,'7':1,'8':2,'9':4,'10':4,'NoAnswer':1}}"
-                :dataCount="{'all':431,'':0,'under-16':58,'16-19':126,'19-22':103,'22-26':44,'26+':33}"
-              ></average>
-            
-          </graph>
-      </div>
-
-      <p>Wack.</p>
-
-      <p>We need to have an audit to see whether there was a fucky wucky with the data parser.</p>
-
-      <p>
-        On a lighter note: remember when I theorized that average ratings for THW visuals may be lower than the other two movies
-        because of the overly flashy design of Berk and costumes?
-      </p>
-
-      <div class="graph-area">
-          <graph
-            class="graph-wide"
-            title="HTTYD3VisualsRating"
-            :conf="{
-              columnXMargin: '1.2rem',
-              barWidth: '8px',
-              trackWidth: '8px',
-              columnWidth: '72px',
-              trackWidthMultiset: 'auto',
-              size: 'wide'
-            }"
-            :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
-            :sets="[{'setKey':'all-responses','setLabel':'All responses','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'sub-17','setLabel':'sub-17','color':'#fa6','dataCount':94},{'setKey':'17-20','setLabel':'17-20','color':'#f64','dataCount':132},{'setKey':'20-23','setLabel':'20-23','color':'#f41','dataCount':76},{'setKey':'23-27','setLabel':'23-27','color':'#d20','dataCount':38},{'setKey':'27-and-over','setLabel':'27 and over','color':'#b00','dataCount':24}]"
-            :data="{'_multiSet':true,'all-responses':{'1':5,'2':2,'3':1,'4':5,'5':8,'6':10,'7':16,'8':34,'9':68,'10':275,'NoAnswer':7},'sub-17':{'4':4,'6':2,'7':1,'8':5,'9':15,'10':65,'NoAnswer':2},'17-20':{'5':4,'6':4,'7':4,'8':7,'9':17,'10':94,'NoAnswer':2},'20-23':{'1':3,'2':1,'6':1,'7':4,'8':6,'9':13,'10':48},'23-27':{'3':1,'7':3,'8':5,'9':5,'10':22,'NoAnswer':2},'27-and-over':{'4':1,'5':2,'6':1,'7':1,'8':3,'9':6,'10':9,'NoAnswer':1}}"
-            :dataCount="{'all-responses':431,'':0,'sub-17':94,'17-20':132,'20-23':76,'23-27':38,'27-and-over':24}"
-          >
-            <!-- todo: averages go here -->
-          </graph>
-      </div>
-
-      <p>
-        While that graph doesn't prove that theory conclusively, the visuals ratings by older participants do drop off significantly.
-        Given the lack of 1/10 votes, I'd reckon lower votes aren't the result of the "fuck THW" salt squad. Also, the older you get, the bigger the chance
-        you don't have a favourite THW soundtrack:
-      </p>
-
-      <div class="graph-area">
-          <graph
-            class="graph-wide"
-            title="HTTYD3VisualsRating"
-            :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
-            :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
-            :sets="[{'setKey':'all','setLabel':'All','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'under-16','setLabel':'Under 16','color':'#fa6','dataCount':58},{'setKey':'16-19','setLabel':'16-19','color':'#f83','dataCount':126},{'setKey':'19-22','setLabel':'19-22','color':'#e31','dataCount':103},{'setKey':'22-26','setLabel':'22-26','color':'#c90000','dataCount':44},{'setKey':'26+','setLabel':'26+','color':'#a00','dataCount':33}]"
-            :data="{'_multiSet':true,'all':{'1':5,'2':2,'3':1,'4':5,'5':8,'6':10,'7':16,'8':34,'9':68,'10':275,'NoAnswer':7},'under-16':{'4':3,'6':1,'7':1,'8':2,'9':9,'10':42},'16-19':{'4':1,'5':2,'6':5,'7':3,'8':8,'9':18,'10':86,'NoAnswer':3},'19-22':{'2':1,'5':2,'6':1,'7':4,'8':7,'9':17,'10':70,'NoAnswer':1},'22-26':{'1':3,'3':1,'7':3,'8':6,'9':4,'10':25,'NoAnswer':2},'26+':{'4':1,'5':2,'6':1,'7':2,'8':3,'9':8,'10':15,'NoAnswer':1}}"
-            :dataCount="{'all':431,'':0,'under-16':58,'16-19':126,'19-22':103,'22-26':44,'26+':33}"
-          > 
-              <average
-                :sets="[{'setKey':'all','setLabel':'All','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'under-16','setLabel':'Under 16','color':'#fa6','dataCount':58},{'setKey':'16-19','setLabel':'16-19','color':'#f83','dataCount':126},{'setKey':'19-22','setLabel':'19-22','color':'#e31','dataCount':103},{'setKey':'22-26','setLabel':'22-26','color':'#c90000','dataCount':44},{'setKey':'26+','setLabel':'26+','color':'#a00','dataCount':33}]"
-                :data="{'_multiSet':true,'all':{'1':5,'2':2,'3':1,'4':5,'5':8,'6':10,'7':16,'8':34,'9':68,'10':275,'NoAnswer':7},'under-16':{'4':3,'6':1,'7':1,'8':2,'9':9,'10':42},'16-19':{'4':1,'5':2,'6':5,'7':3,'8':8,'9':18,'10':86,'NoAnswer':3},'19-22':{'2':1,'5':2,'6':1,'7':4,'8':7,'9':17,'10':70,'NoAnswer':1},'22-26':{'1':3,'3':1,'7':3,'8':6,'9':4,'10':25,'NoAnswer':2},'26+':{'4':1,'5':2,'6':1,'7':2,'8':3,'9':8,'10':15,'NoAnswer':1}}"
-                :dataCount="{'all':431,'':0,'under-16':58,'16-19':126,'19-22':103,'22-26':44,'26+':33}"
-              ></average>
-            
-          </graph>
-      </div>
-
-      <p>
-        Reminder: neither of the cohorts had a significant 'Shy' coolumn presence for the first two movies, they were all low enough to be a rounding error. Not with THW.
-      </p>
-
-      <p>
-        Let's move on.
-      </p>
-
-      <div class="graph-area">
-         <graph
-            class="graph-wide"
-            title="MovieRanking"
-            :conf="{'columnXMargin':'1.2rem','size':'wide','barWidth':'8px !important','trackWidthMultiset':'8px !important','trackWidth':'16px !important','columnWidth':'72px !important','sidewaysLabels':true,'labelsHeight':'6rem','hideZeroColumns':true}"
-            :columns="[{'key':0,'label':'1 > 2 > 3'},{'key':1,'label':'1 > 3 > 2'},{'key':2,'label':'2 > 1 > 3'},{'key':3,'label':'2 > 3 > 1'},{'key':4,'label':'3 > 1 > 2'},{'key':5,'label':'3 > 2 > 1'},{'key':6,'label':'Shy'}]"
-            :sets="[{'setKey':'all','setLabel':'All','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'under-16','setLabel':'Under 16','color':'#fa6','dataCount':58},{'setKey':'16-19','setLabel':'16-19','color':'#f83','dataCount':126},{'setKey':'19-22','setLabel':'19-22','color':'#e31','dataCount':103},{'setKey':'22-26','setLabel':'22-26','color':'#c90000','dataCount':44},{'setKey':'26+','setLabel':'26+','color':'#a00','dataCount':33}]"
-            :data="{'_multiSet':true,'all':{'0':228,'1':79,'2':76,'3':16,'4':13,'5':11,'6':8},'under-16':{'0':18,'1':21,'2':13,'3':4,'4':1,'5':1},'16-19':{'0':61,'1':22,'2':24,'3':5,'4':6,'5':5,'6':3},'19-22':{'0':61,'1':14,'2':18,'3':3,'4':3,'5':2,'6':2},'22-26':{'0':30,'1':6,'2':6,'3':2},'26+':{'0':18,'1':6,'2':4,'4':1,'5':2,'6':2}}"
-            :dataCount="{'all':431,'':0,'under-16':58,'16-19':126,'19-22':103,'22-26':44,'26+':33}"
-          > 
-          </graph>
-      </div>
-
-      <p>
-        I really like how older (19 and up) participants are, in general, "frst movie best, last movie worst" whereas the youngest cohort
-        seems to be a bit more varied in their opinions.
-      </p>
-
-      <p>
-        Moving on. Pop quiz: who thinks RTTE is canon?
-      </p>
-
-      <div class="graph-area">
-        <graph
-          class="graph-wide"
-          title="IsRTTECanon"
-          :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
-          :columns="[{'key':1,'label':'Yes'},{'key':3,'label':'Neutral'},{'key':2,'label':'No'},{'key':0,'label':'Shy'}]"
-          :sets="[{'setKey':'all','setLabel':'All','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'under-16','setLabel':'Under 16','color':'#fa6','dataCount':58},{'setKey':'16-19','setLabel':'16-19','color':'#f83','dataCount':126},{'setKey':'19-22','setLabel':'19-22','color':'#e31','dataCount':103},{'setKey':'22-26','setLabel':'22-26','color':'#c90000','dataCount':44},{'setKey':'26+','setLabel':'26+','color':'#a00','dataCount':33}]"
-          :data="{'_multiSet':true,'all':{'0':33,'1':235,'2':64,'3':99},'under-16':{'0':2,'1':39,'2':6,'3':11},'16-19':{'0':6,'1':80,'2':16,'3':24},'19-22':{'0':7,'1':55,'2':13,'3':28},'22-26':{'0':6,'1':15,'2':16,'3':7},'26+':{'0':7,'1':8,'2':7,'3':11}}"
-          :dataCount="{'all':431,'':0,'under-16':58,'16-19':126,'19-22':103,'22-26':44,'26+':33}"
-        > 
-        </graph>
-      </div>
-
-      <p>
-        Probably nothing to do with this:
-      </p>
-
-      <div class="graph-area">
-        <graph
-          class="graph-wide"
-          title="RTTERating"
-          :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
-          :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
-          :sets="[{'setKey':'all','setLabel':'All','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'under-16','setLabel':'Under 16','color':'#fa6','dataCount':58},{'setKey':'16-19','setLabel':'16-19','color':'#f83','dataCount':126},{'setKey':'19-22','setLabel':'19-22','color':'#e31','dataCount':103},{'setKey':'22-26','setLabel':'22-26','color':'#c90000','dataCount':44},{'setKey':'26+','setLabel':'26+','color':'#a00','dataCount':33}]"
-          :data="{'_multiSet':true,'all':{'1':1,'2':2,'3':4,'4':10,'5':12,'6':19,'7':53,'8':65,'9':96,'10':119,'NoAnswer':50},'under-16':{'2':1,'5':1,'6':2,'7':4,'8':6,'9':16,'10':26,'NoAnswer':2},'16-19':{'1':1,'3':2,'4':3,'5':6,'6':3,'7':11,'8':17,'9':33,'10':40,'NoAnswer':10},'19-22':{'2':1,'4':2,'5':2,'6':4,'7':13,'8':20,'9':20,'10':26,'NoAnswer':15},'22-26':{'3':1,'4':2,'5':2,'6':4,'7':8,'8':6,'9':8,'10':5,'NoAnswer':8},'26+':{'3':1,'4':2,'6':1,'7':5,'8':6,'9':5,'10':4,'NoAnswer':9}}"
-          :dataCount="{'all':431,'':0,'under-16':58,'16-19':126,'19-22':103,'22-26':44,'26+':33}"
-        > 
-          <average
-            :sets="[{'setKey':'all','setLabel':'All','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'under-16','setLabel':'Under 16','color':'#fa6','dataCount':58},{'setKey':'16-19','setLabel':'16-19','color':'#f83','dataCount':126},{'setKey':'19-22','setLabel':'19-22','color':'#e31','dataCount':103},{'setKey':'22-26','setLabel':'22-26','color':'#c90000','dataCount':44},{'setKey':'26+','setLabel':'26+','color':'#a00','dataCount':33}]"
-            :data="{'_multiSet':true,'all':{'1':1,'2':2,'3':4,'4':10,'5':12,'6':19,'7':53,'8':65,'9':96,'10':119,'NoAnswer':50},'under-16':{'2':1,'5':1,'6':2,'7':4,'8':6,'9':16,'10':26,'NoAnswer':2},'16-19':{'1':1,'3':2,'4':3,'5':6,'6':3,'7':11,'8':17,'9':33,'10':40,'NoAnswer':10},'19-22':{'2':1,'4':2,'5':2,'6':4,'7':13,'8':20,'9':20,'10':26,'NoAnswer':15},'22-26':{'3':1,'4':2,'5':2,'6':4,'7':8,'8':6,'9':8,'10':5,'NoAnswer':8},'26+':{'3':1,'4':2,'6':1,'7':5,'8':6,'9':5,'10':4,'NoAnswer':9}}"
-            :dataCount="{'all':431,'':0,'under-16':58,'16-19':126,'19-22':103,'22-26':44,'26+':33}"
-          ></average>
-        </graph>
-      </div>
-
-      <p>
-        There's also some age differences in the 'favourite villain' part:
-      </p>
-
-      <div class="graph-area">
-        <graph
-          class="graph-wide"
-          title="FavouriteVillain"
-          :conf="{'columnXMargin':'1.2rem','size':'wide','barWidth':'8px !important','trackWidthMultiset':'8px !important','trackWidth':'16px !important','columnWidth':'72px !important','sidewaysLabels':true,'labelsHeight':'6rem','hideZeroColumns':true}"
-          :columns="[{'key':0,'label':'Green Death'},{'key':1,'label':'Drago'},{'key':2,'label':'Drago\'s Bewilderbeast'},{'key':3,'label':'Grimmel'},{'key':4,'label':'Viggo'},{'key':5,'label':'Ryker'},{'key':6,'label':'Dagur'},{'key':7,'label':'Johann'},{'key':8,'label':'Warlords'},{'key':9,'label':'Alvin'},{'key':10,'label':'Mildew'},{'key':11,'label':'Stoick'},{'key':12,'label':'Other'},{'key':13,'label':'Shy'},{'key':14,'label':'D.W.'}]"
-          :sets="[{'setKey':'all','setLabel':'All','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'under-16','setLabel':'Under 16','color':'#fa6','dataCount':58},{'setKey':'16-19','setLabel':'16-19','color':'#f83','dataCount':126},{'setKey':'19-22','setLabel':'19-22','color':'#e31','dataCount':103},{'setKey':'22-26','setLabel':'22-26','color':'#c90000','dataCount':44},{'setKey':'26+','setLabel':'26+','color':'#a00','dataCount':33}]"
-          :data="{'_multiSet':true,'all':{'0':58,'1':60,'2':19,'3':55,'4':144,'5':1,'6':44,'7':14,'8':1,'9':4,'10':6,'11':3,'12':5,'13':17},'under-16':{'0':3,'1':7,'2':5,'3':9,'4':22,'6':4,'7':5,'10':1,'13':2},'16-19':{'0':18,'1':17,'2':4,'3':13,'4':50,'6':13,'7':2,'9':2,'11':1,'13':6},'19-22':{'0':13,'1':11,'2':7,'3':17,'4':31,'5':1,'6':9,'7':3,'8':1,'9':1,'10':2,'11':2,'12':2,'13':3},'22-26':{'0':8,'1':8,'2':1,'3':7,'4':10,'6':4,'7':1,'10':2,'12':2,'13':1},'26+':{'0':5,'1':8,'2':1,'3':2,'4':7,'6':5,'7':1,'9':1,'12':1,'13':2}}"
-          :dataCount="{'all':431,'':0,'under-16':58,'16-19':126,'19-22':103,'22-26':44,'26+':33}"
-        > 
-        </graph>
-      </div>
-
-      <p>
-        And the older you get, the bigger the chance that of all draconids in the franchise, you'll like night furies the most.
-      </p>
-
-      <div class="graph-area">
-        <graph
-          class="graph-wide"
-          title="FavouriteDraconid"
-          :conf="{'columnXMargin':'1.2rem','size':'wide','barWidth':'8px !important','trackWidthMultiset':'8px !important','trackWidth':'16px !important','columnWidth':'72px !important','sidewaysLabels':true,'labelsHeight':'6rem','hideZeroColumns':true}"
-          :columns="[{'key':0,'label':'Night Fury'},{'key':1,'label':'Light Fury'},{'key':2,'label':'Night Lights'},{'key':3,'label':'Nadder'},{'key':8,'label':'Stormcutter'},{'key':5,'label':'Monstrous Nightmare'},{'key':7,'label':'Skrill'},{'key':9,'label':'Bewilderbeast'},{'key':10,'label':'Deathgripper'},{'key':13,'label':'Terrible Terror'},{'key':4,'label':'Gronckle'},{'key':12,'label':'Whispering Death'},{'key':14,'label':'Zippleback'},{'key':11,'label':'Gorecutter'},{'key':15,'label':'Other'},{'key':16,'label':'Shy'},{'key':17,'label':'D.W.'}]"
-          :sets="[{'setKey':'all','setLabel':'All','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'under-16','setLabel':'Under 16','color':'#fa6','dataCount':58},{'setKey':'16-19','setLabel':'16-19','color':'#f83','dataCount':126},{'setKey':'19-22','setLabel':'19-22','color':'#e31','dataCount':103},{'setKey':'22-26','setLabel':'22-26','color':'#c90000','dataCount':44},{'setKey':'26+','setLabel':'26+','color':'#a00','dataCount':33}]"
-          :data="{'_multiSet':true,'all':{'0':230,'1':9,'2':19,'3':10,'4':3,'5':11,'6':4,'7':35,'8':31,'9':9,'10':10,'12':4,'13':1,'14':3,'15':41,'16':11,'17':4},'under-16':{'0':24,'1':1,'2':5,'3':1,'5':3,'7':4,'8':3,'9':3,'10':1,'12':1,'15':9,'16':3,'17':1},'16-19':{'0':71,'1':1,'2':4,'3':6,'4':3,'5':6,'7':14,'8':3,'9':2,'12':2,'14':1,'15':11,'16':2,'17':1},'19-22':{'0':55,'1':3,'2':5,'5':2,'6':3,'7':5,'8':12,'9':1,'10':4,'12':1,'14':1,'15':9,'16':2},'22-26':{'0':23,'1':1,'2':2,'7':7,'8':3,'9':1,'10':3,'13':1,'15':2,'16':1},'26+':{'0':25,'1':1,'2':1,'3':1,'8':1,'15':3,'16':1,'17':1}}"
-          :dataCount="{'all':431,'':0,'under-16':58,'16-19':126,'19-22':103,'22-26':44,'26+':33}"
-        > 
-        </graph>
-      </div>
-
-      <p>
-        Side note: due to small sample sizes, these graphs are sometimes surprisingly susceptible to cohort changes. Move the age cutoff one year up and down
-        and the story can alter a bit.
-      </p>
-
-      </template>
-
-      <!-- #endregion -->
-      
-      <!-- #region gender -->
-
-      <h2 @click="deepDiveResults.gender = !deepDiveResults.gender">Results by gender</h2>
-      <div class="collapsible-heading-hint">(Click title to expand or collapse the section)</div>
-      <template v-if="deepDiveResults.gender">
-        <p>&nbsp;</p>
+      <div class="segment-content">
         <p>
-          First things first — we're excluding the 'Other' and 'Shy' responses due to low-ish numbers.
+          Let's take a deeper look into the data. People don't answer the questions randomly: the answers are often shaped by their interests, the
+          culture they come from, and sometimes even by their identity. Let's see if we can spot any interesting trends in the results when we filter
+          the answers.
+        </p>
+        <p>
+          This year's filter page would be a bit of a pain in the ass to set up properly, and it would require mad amounts of time. Given I have only
+          gotten to this point of the page mid-june (remember: the poll was late January), I do not have the luxury of time to present a functional and
+          user-friendly UI (although, with most people having forgot about the poll, there may not be too much harm in delaying this project a further
+          two months or so). Though if you want to filter results on your own and have some very basic knowledge of javascript, you can dig through
+          the data <span class="link" @click="showFilterPage=true">here</span>. The filtering page makes absolutely no attempt to accomodate mobile users, because smartphones
+          are the worst thing that has happened to the internet in the history of ever.
         </p>
 
+        <FilterPage
+          v-if="showFilterPage"
+          :rawData="surveyResults"
+          @close="showFilterPage=false"
+        >
+        </FilterPage>
+
         <p>
-          First things first. The gender gap. Once people get old enough to stop giving a fuck about stereotypes, it kinda shrinks to pretty much nothing.
+          By the way, there's a lot of additional graphs in there, so the sections will start out collapsed.
+        </p>
+
+        <!-- #region results by age -->
+        <h2 @click="deepDiveResults.age = !deepDiveResults.age">Results by age</h2>
+        <template v-if="deepDiveResults.age">
+        <p>
+          I didn't expect too much surprises here, but since I was mostly playing with that while debugging my filters, I was doing testing
+          by filtering the first result. But there's been some things that ... well, stood out.
         </p>
 
         <div class="graph-area">
-          <graph
-            class="graph-wide"
-            title="Age"
-            defaultMode="absolute"
-            :conf="{trackWidth: '8px !important', columnWidth: '16px !important', hideZeroColumns: false}"
-            :columns="[{'key':10,'label':'10'},{'key':11,'label':''},{'key':12,'label':''},{'key':13,'label':''},{'key':14,'label':''},{'key':15,'label':'15'},{'key':16,'label':''},{'key':17,'label':''},{'key':18,'label':''},{'key':19,'label':''},{'key':20,'label':'20'},{'key':21,'label':''},{'key':22,'label':''},{'key':23,'label':''},{'key':24,'label':''},{'key':25,'label':'25'},{'key':26,'label':''},{'key':27,'label':''},{'key':28,'label':''},{'key':29,'label':''},{'key':30,'label':'30'},{'key':31,'label':''},{'key':32,'label':''},{'key':33,'label':''},{'key':34,'label':''},{'key':35,'label':'35'},{'key':36,'label':''},{'key':37,'label':''},{'key':38,'label':''},{'key':39,'label':''},{'key':40,'label':'40'},{'key':41,'label':''},{'key':42,'label':''},{'key':43,'label':''},{'key':44,'label':''},{'key':45,'label':'45'},{'key':46,'label':''},{'key':47,'label':''},{'key':48,'label':''},{'key':49,'label':''},{'key':'-1','label':'❄️'},{'key':'_dumm1','label':''},{'key':'_dumm4','label':''},{'key':'NoAnswer','label':'Shy'}]"
-            :sets="[{'setKey':'male','setLabel':'Male','color':'#66f','dataCount':269},{'setKey':'female','setLabel':'Female','color':'#f48','dataCount':116}]"
-            :data="{'_multiSet':true,'male':{'12':3,'13':4,'14':19,'15':11,'16':21,'17':31,'18':35,'19':24,'20':21,'21':20,'22':11,'23':6,'24':6,'25':5,'26':4,'27':3,'28':3,'29':4,'31':1,'33':1,'34':3,'NoAnswer':32,'-1':1},'female':{'12':1,'13':2,'14':4,'15':6,'16':9,'17':10,'18':9,'19':16,'20':7,'21':4,'22':4,'23':4,'24':2,'25':4,'26':4,'27':2,'28':3,'NoAnswer':23,'-1':2}}"
-            :dataCount="{'male':269,'female':116}"
-          >
-            <average
-              :sets="[{'setKey':'male','setLabel':'Male','color':'#66f','dataCount':269},{'setKey':'female','setLabel':'Female','color':'#f48','dataCount':116}]"
-              :data="{'_multiSet':true,'male':{'12':3,'13':4,'14':19,'15':11,'16':21,'17':31,'18':35,'19':24,'20':21,'21':20,'22':11,'23':6,'24':6,'25':5,'26':4,'27':3,'28':3,'29':4,'31':1,'33':1,'34':3,'NoAnswer':32,'-1':1},'female':{'12':1,'13':2,'14':4,'15':6,'16':9,'17':10,'18':9,'19':16,'20':7,'21':4,'22':4,'23':4,'24':2,'25':4,'26':4,'27':2,'28':3,'NoAnswer':23,'-1':2}}"
-              :dataCount="{'male':269,'female':116}"
-            ></average>
-          </graph>
+          <div class="graph-wide">
+            <graph
+              class="graph-wide"
+              title="Community"
+              :conf="{'columnXMargin':'1.2rem','size':'wide','barWidth':'8px !important','trackWidthMultiset':'8px !important','trackWidth':'16px !important','columnWidth':'72px !important','sidewaysLabels':true,'labelsHeight':'6rem','hideZeroColumns':true}"
+              :columns="[{'key':2,'label':'Reddit'},{'key':1,'label':'Discord'},{'key':5,'label':'Instagram'},{'key':8,'label':'Fandom'},{'key':9,'label':'Grapewine'},{'key':6,'label':'Amino'},{'key':3,'label':'Tumblr'},{'key':4,'label':'Twitter'},{'key':7,'label':'Youtube'},{'key':10,'label':'Other'},{'key':0,'label':'Shy'},{'key':11,'label':'D.W.'}]"
+              :sets="[{'setKey':'all','setLabel':'All','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'under-16','setLabel':'Under 16','color':'#fa6','dataCount':58},{'setKey':'16-19','setLabel':'16-19','color':'#f83','dataCount':126},{'setKey':'19-22','setLabel':'19-22','color':'#e31','dataCount':103},{'setKey':'22-26','setLabel':'22-26','color':'#c90000','dataCount':44},{'setKey':'26+','setLabel':'26+','color':'#a00','dataCount':33}]"
+              :data="{'_multiSet':true,'all':{'0':15,'1':101,'2':151,'3':10,'4':4,'5':55,'6':5,'7':35,'8':28,'9':12,'10':15,'11':17},'under-16':{'1':10,'2':28,'5':7,'7':6,'8':5,'10':2,'11':7},'16-19':{'0':3,'1':30,'2':41,'3':3,'4':2,'5':18,'6':2,'7':12,'8':10,'10':5,'11':2},'19-22':{'0':3,'1':22,'2':33,'3':5,'4':1,'5':13,'6':2,'7':9,'8':6,'9':6,'10':3,'11':3},'22-26':{'0':3,'1':14,'2':15,'3':1,'4':1,'5':5,'8':3,'9':1,'10':1,'11':2},'26+':{'0':1,'1':14,'2':13,'5':1,'8':1,'9':1,'10':2}}"
+              :dataCount="{'all':431,'':0,'under-16':58,'16-19':126,'19-22':103,'22-26':44,'26+':33}"
+            >
+            </graph>
+          </div>
         </div>
 
         <p>
-          Interestingly enough, compared to the world, the gender gap is the smallest in the North America and — once you ignore the southern hemisphere due to
-          insignificant amount of responses — the biggest in Europe.
+        I honestly thought reddit is more of a boomer (actually gen x/y) thing, but no. Discord wins popularity contest versus reddit in the millenial/gen X category.
+        </p>
+        <p>
+          It is worth noting that — primarily due to the difference in modus operandi for different platforms — respondents skew significantly towards reddit side of things.
+        </p>
+
+        <p>
+          Interestingly enough, Asians are super over-represented in the under-16 (16 or less) group:
         </p>
 
         <div class="graph-area">
@@ -2412,1088 +1689,2192 @@
               title="Location"
               :conf="{'columnXMargin':'1.2rem','size':'wide','barWidth':'8px !important','trackWidthMultiset':'8px !important','trackWidth':'16px !important','columnWidth':'72px !important','sidewaysLabels':true,'labelsHeight':'6rem','hideZeroColumns':true}"
               :columns="[{'key':6,'label':'Europe'},{'key':3,'label':'Asia'},{'key':1,'label':'Africa'},{'key':4,'label':'Australia'},{'key':7,'label':'NA'},{'key':8,'label':'SA'},{'key':2,'label':'Antarctica'},{'key':0,'label':'Shy'}]"
-              :sets="[{'setKey':'male','setLabel':'Male','color':'#88f','dataCount':269},{'setKey':'female','setLabel':'Female','color':'#f48','dataCount':116}]"
-              :data="{'_multiSet':true,'male':{'1':2,'2':1,'3':22,'4':17,'6':112,'7':108,'8':7},'female':{'0':2,'3':7,'4':7,'6':34,'7':66}}"
-              :dataCount="{'male':269,'female':116}"
-            > 
+              :sets="[{'setKey':'all','setLabel':'All','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'under-16','setLabel':'Under 16','color':'#fa6','dataCount':58},{'setKey':'16-19','setLabel':'16-19','color':'#f83','dataCount':126},{'setKey':'19-22','setLabel':'19-22','color':'#e31','dataCount':103},{'setKey':'22-26','setLabel':'22-26','color':'#c90000','dataCount':44},{'setKey':'26+','setLabel':'26+','color':'#a00','dataCount':33}]"
+              :data="{'_multiSet':true,'all':{'0':8,'1':2,'2':2,'3':31,'4':27,'6':160,'7':194,'8':7},'under-16':{'1':2,'2':1,'3':16,'4':4,'6':9,'7':26},'16-19':{'0':1,'3':8,'4':12,'6':55,'7':46,'8':4},'19-22':{'0':1,'3':3,'4':6,'6':43,'7':49,'8':1},'22-26':{'3':1,'4':3,'6':19,'7':20,'8':1},'26+':{'2':1,'6':15,'7':17}}"
+              :dataCount="{'all':431,'':0,'under-16':58,'16-19':126,'19-22':103,'22-26':44,'26+':33}"
+            >
             </graph>
         </div>
 
         <p>
-          Let's do age by gender <i>and</i> location.
+          I am not gonna be covering fandom time, that one is very obvious. Boomers gonna be booming.
         </p>
 
-        <Tabs v-model="tabs.gender.location">
-          <Tab
-            label="EU"
-            val="eu"
-          />
-          <Tab
-            label="NA"
-            val="na"
-          />
+        <div class="graph-area">
+          <div class="graph-wide">
+            <graph
+              class="graph-wide"
+              title="Furries"
+              description="Multiple choices were allowed for this question"
+              :conf="{'columnXMargin':'1.2rem','size':'wide','barWidth':'8px !important','trackWidthMultiset':'8px !important','trackWidth':'16px !important','columnWidth':'72px !important','sidewaysLabels':true,'labelsHeight':'6rem','hideZeroColumns':true}"
+              :columns="[{'key':0,'label':'None'},{'key':1,'label':'Furry'},{'key':2,'label':'Scalie'},{'key':3,'label':'Other'},{'key':4,'label':'Shy'}]"
+              :sets="[{'setKey':'all','setLabel':'All','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'under-16','setLabel':'Under 16','color':'#fa6','dataCount':58},{'setKey':'16-19','setLabel':'16-19','color':'#f83','dataCount':126},{'setKey':'19-22','setLabel':'19-22','color':'#e31','dataCount':103},{'setKey':'22-26','setLabel':'22-26','color':'#c90000','dataCount':44},{'setKey':'26+','setLabel':'26+','color':'#a00','dataCount':33}]"
+              :data="{'_multiSet':true,'all':{'0':309,'1':80,'2':67,'3':29,'4':17},'under-16':{'0':49,'1':5,'2':3,'3':2,'4':4},'16-19':{'0':95,'1':22,'2':19,'3':10,'4':5},'19-22':{'0':69,'1':21,'2':16,'3':8,'4':4},'22-26':{'0':28,'1':11,'2':9,'3':3},'26+':{'0':22,'1':10,'2':11,'3':3}}"
+              :dataCount="{'all':431,'':0,'under-16':58,'16-19':126,'19-22':103,'22-26':44,'26+':33}"
+            >
+            </graph>
+          </div>
+        </div>
+
+        <p>
+          My mamma says it's just a phase when I fill my days with mayonez, but no. You don't need to squint much to see that the 'None' option
+          (as a proportion of the cohort) is actually trending downwards as the people grow older.
+        </p>
+
+        <p>
+          But now, the interesting parts. Turns out that age does matter when it comes to rating. I am going to gloss over things here, but
+          older people generally tend to like the first movie more.
+        </p>
+
+        <Tabs v-model="tabs.age.httyd1">
+          <Tab val="overall" label="Overall" />
+          <Tab val="plot" label="Plot" />
+          <Tab val="emo" label="Emotion" />
+          <Tab val="char" label="Characters" />
+          <Tab val="theme" label="Theme" />
+          <Tab val="vis" label="Visuals" />
+          <Tab val="ost" label="Score" />
+          <Tab val="fsong" label="Fav song" />
+          <Tab val="fchar" label="Favourite character" />
+          <Tab val="wchar" label="Worst character" />
         </Tabs>
-
-        <TabPanels v-model="tabs.gender.location">
-          <TabPanel val="eu">
-            <div class="graph-area">
-              <graph
-                  class="graph-wide"
-                  title="Age (by gender, EU)"
-                defaultMode="absolute"
-
-                  :conf="{'size':'wide','barWidth':'4px !important','trackWidthMultiset':'8px !important','trackWidth':'16px !important','hideZeroColumns':false}"
-                  :columns="[{'key':10,'label':'10'},{'key':11,'label':''},{'key':12,'label':''},{'key':13,'label':''},{'key':14,'label':''},{'key':15,'label':'15'},{'key':16,'label':''},{'key':17,'label':''},{'key':18,'label':''},{'key':19,'label':''},{'key':20,'label':'20'},{'key':21,'label':''},{'key':22,'label':''},{'key':23,'label':''},{'key':24,'label':''},{'key':25,'label':'25'},{'key':26,'label':''},{'key':27,'label':''},{'key':28,'label':''},{'key':29,'label':''},{'key':30,'label':'30'},{'key':31,'label':''},{'key':32,'label':''},{'key':33,'label':''},{'key':34,'label':''},{'key':35,'label':'35'},{'key':36,'label':''},{'key':37,'label':''},{'key':38,'label':''},{'key':39,'label':''},{'key':40,'label':'40'},{'key':41,'label':''},{'key':42,'label':''},{'key':43,'label':''},{'key':44,'label':''},{'key':45,'label':'45'},{'key':46,'label':''},{'key':47,'label':''},{'key':48,'label':''},{'key':49,'label':''},{'key':'-1','label':'❄️'},{'key':'_dumm1','label':''},{'key':'_dumm4','label':''},{'key':'NoAnswer','label':'Shy'}]"
-                  :sets="[
-                    {'setKey':'male-(eu)','setLabel':'Male (EU)','color':'#33a','dataCount':112},
-                    {'setKey':'female-(eu)','setLabel':'Female (EU)','color':'#f33','dataCount':34},
-                  ]"
-                  :data="{'_multiSet':true,'male-(eu)':{'14':3,'15':3,'16':8,'17':13,'18':16,'19':12,'20':9,'21':12,'22':6,'23':1,'24':4,'25':3,'26':3,'27':2,'28':1,'29':2,'31':1,'34':2,'NoAnswer':11},'female-(eu)':{'14':1,'15':1,'16':7,'17':4,'18':2,'19':4,'20':2,'21':1,'22':1,'23':1,'24':2,'26':2,'27':1,'NoAnswer':5},'male-(na)':{'13':2,'14':7,'15':4,'16':9,'17':12,'18':10,'19':9,'20':11,'21':6,'22':4,'23':3,'24':2,'25':2,'26':1,'27':1,'28':2,'29':2,'33':1,'34':1,'NoAnswer':18,'-1':1},'female-(na)':{'12':1,'13':1,'14':2,'15':4,'16':1,'17':5,'18':5,'19':11,'20':3,'21':3,'22':2,'23':3,'25':3,'26':2,'27':1,'28':3,'NoAnswer':14,'-1':2}}"
-                  :dataCount="{'male-(eu)':112,'female-(eu)':34,'male-(na)':108,'female-(na)':66}"
-                > 
-                    <average
-                      :sets="[
-                        {'setKey':'male-(eu)','setLabel':'Male (EU)','color':'#33a','dataCount':112},
-                        {'setKey':'female-(eu)','setLabel':'Female (EU)','color':'#f33','dataCount':34},
-                      ]"
-                      :data="{'_multiSet':true,'male-(eu)':{'14':3,'15':3,'16':8,'17':13,'18':16,'19':12,'20':9,'21':12,'22':6,'23':1,'24':4,'25':3,'26':3,'27':2,'28':1,'29':2,'31':1,'34':2,'NoAnswer':11},'female-(eu)':{'14':1,'15':1,'16':7,'17':4,'18':2,'19':4,'20':2,'21':1,'22':1,'23':1,'24':2,'26':2,'27':1,'NoAnswer':5},'male-(na)':{'13':2,'14':7,'15':4,'16':9,'17':12,'18':10,'19':9,'20':11,'21':6,'22':4,'23':3,'24':2,'25':2,'26':1,'27':1,'28':2,'29':2,'33':1,'34':1,'NoAnswer':18,'-1':1},'female-(na)':{'12':1,'13':1,'14':2,'15':4,'16':1,'17':5,'18':5,'19':11,'20':3,'21':3,'22':2,'23':3,'25':3,'26':2,'27':1,'28':3,'NoAnswer':14,'-1':2}}"
-                      :dataCount="{'male-(eu)':112,'female-(eu)':34,'male-(na)':108,'female-(na)':66}"
-                    ></average>
-                  
-                </graph>
-            </div>
-          </TabPanel>
-          <TabPanel val="na">
-            <div class="graph-area">
-              <graph
-                  class="graph-wide"
-                  title="Age (by gender, NA)"
-                defaultMode="absolute"
-                  :conf="{'size':'wide','barWidth':'4px !important','trackWidthMultiset':'8px !important','trackWidth':'16px !important','hideZeroColumns':false}"
-                  :columns="[
-                    {'key':10,'label':'10'},{'key':11,'label':''},{'key':12,'label':''},{'key':13,'label':''},{'key':14,'label':''},{'key':15,'label':'15'},{'key':16,'label':''},{'key':17,'label':''},{'key':18,'label':''},{'key':19,'label':''},{'key':20,'label':'20'},{'key':21,'label':''},{'key':22,'label':''},{'key':23,'label':''},{'key':24,'label':''},{'key':25,'label':'25'},{'key':26,'label':''},{'key':27,'label':''},{'key':28,'label':''},{'key':29,'label':''},{'key':30,'label':'30'},{'key':31,'label':''},{'key':32,'label':''},{'key':33,'label':''},{'key':34,'label':''},{'key':35,'label':'35'},{'key':36,'label':''},{'key':37,'label':''},{'key':38,'label':''},{'key':39,'label':''},{'key':40,'label':'40'},{'key':41,'label':''},{'key':42,'label':''},{'key':43,'label':''},{'key':44,'label':''},{'key':45,'label':'45'},{'key':46,'label':''},{'key':47,'label':''},{'key':48,'label':''},{'key':49,'label':''},{'key':'-1','label':'❄️'},{'key':'_dumm1','label':''},{'key':'_dumm4','label':''},{'key':'NoAnswer','label':'Shy'}]"
-                  :sets="[{'setKey':'male-(na)','setLabel':'Male (NA)','color':'#88f','dataCount':108},{'setKey':'female-(na)','setLabel':'Female (NA)','color':'#f48','dataCount':66}]"
-                  :data="{'_multiSet':true,'male-(eu)':{'14':3,'15':3,'16':8,'17':13,'18':16,'19':12,'20':9,'21':12,'22':6,'23':1,'24':4,'25':3,'26':3,'27':2,'28':1,'29':2,'31':1,'34':2,'NoAnswer':11},'female-(eu)':{'14':1,'15':1,'16':7,'17':4,'18':2,'19':4,'20':2,'21':1,'22':1,'23':1,'24':2,'26':2,'27':1,'NoAnswer':5},'male-(na)':{'13':2,'14':7,'15':4,'16':9,'17':12,'18':10,'19':9,'20':11,'21':6,'22':4,'23':3,'24':2,'25':2,'26':1,'27':1,'28':2,'29':2,'33':1,'34':1,'NoAnswer':18,'-1':1},'female-(na)':{'12':1,'13':1,'14':2,'15':4,'16':1,'17':5,'18':5,'19':11,'20':3,'21':3,'22':2,'23':3,'25':3,'26':2,'27':1,'28':3,'NoAnswer':14,'-1':2}}"
-                  :dataCount="{'male-(eu)':112,'female-(eu)':34,'male-(na)':108,'female-(na)':66}"
-                > 
-                    <average
-                      :sets="[{'setKey':'male-(na)','setLabel':'Male (NA)','color':'#88f','dataCount':108},{'setKey':'female-(na)','setLabel':'Female (NA)','color':'#f48','dataCount':66}]"
-                      :data="{'_multiSet':true,'male-(eu)':{'14':3,'15':3,'16':8,'17':13,'18':16,'19':12,'20':9,'21':12,'22':6,'23':1,'24':4,'25':3,'26':3,'27':2,'28':1,'29':2,'31':1,'34':2,'NoAnswer':11},'female-(eu)':{'14':1,'15':1,'16':7,'17':4,'18':2,'19':4,'20':2,'21':1,'22':1,'23':1,'24':2,'26':2,'27':1,'NoAnswer':5},'male-(na)':{'13':2,'14':7,'15':4,'16':9,'17':12,'18':10,'19':9,'20':11,'21':6,'22':4,'23':3,'24':2,'25':2,'26':1,'27':1,'28':2,'29':2,'33':1,'34':1,'NoAnswer':18,'-1':1},'female-(na)':{'12':1,'13':1,'14':2,'15':4,'16':1,'17':5,'18':5,'19':11,'20':3,'21':3,'22':2,'23':3,'25':3,'26':2,'27':1,'28':3,'NoAnswer':14,'-1':2}}"
-                      :dataCount="{'male-(eu)':112,'female-(eu)':34,'male-(na)':108,'female-(na)':66}"
-                    ></average>
-                  
-                </graph>
-            </div>
-          </TabPanel>
-        </TabPanels>
-
-        <p>
-          Maybe that redditor wasn't completely wacky, but overall ... still rather out of touch with the stereotypes.
-        </p>
-
-        <p>
-          If you ignore the boomer tail in the answers of male respondent, the female population seems to be roughly older than the male population
-          and also more widely distributed. But that 'over 27' tail that we see amongst male respondents and that we don't see among female respondents
-          still manages to make the male part of the fanbase slightly older on average.
-        </p>
-
-        <p>
-          It is worth noting that females used to be much more shyer when it comes to revealing their age: almost 20% of female respondents were age shy, 
-          compared to the 10% of male respondents.
-        </p>
-
-        <p>
-          Interestingly enough, when it came to rating things on scale from one to ten, girls and women were, on average,
-          a bit more generous with the ratings. Doesn't matter where you look: the situation is the same (almost) everywhere.
-        </p>
-
-        <div class="graph-area">
-          <graph
-              class="graph-wide"
-              title="Rate HTTYD1 on 1-10?"
-              :conf="{
-                columnXMargin: '1.2rem',
-                barWidth: '8px',
-                trackWidth: '8px',
-                columnWidth: '72px',
-                trackWidthMultiset: 'auto',
-                size: 'wide',
-              }"
-              :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
-              :sets="[{'setKey':'male','setLabel':'Male','color':'#66f','dataCount':269},{'setKey':'female','setLabel':'Female','color':'#f48','dataCount':116}]"
-              :data="{'_multiSet':true,'male':{'4':1,'5':1,'7':23,'8':69,'9':71,'10':102,'NoAnswer':2},'female':{'5':2,'6':1,'7':7,'8':21,'9':26,'10':59}}"
-              :dataCount="{'male':269,'female':116}"
-            >
-              <average
-                :sets="[{'setKey':'male','setLabel':'Male','color':'#66f','dataCount':269},{'setKey':'female','setLabel':'Female','color':'#f48','dataCount':116}]"
-                :data="{'_multiSet':true,'male':{'4':1,'5':1,'7':23,'8':69,'9':71,'10':102,'NoAnswer':2},'female':{'5':2,'6':1,'7':7,'8':21,'9':26,'10':59}}"
-                :dataCount="{'male':269,'female':116}"
-              ></average>
-            </graph>      
-        </div>
-
-        <p>Bam, higher ratings on the pink side, across the board. Even for all aspects.</p>
-
-        <div class="graph-area">
-          <graph
-              class="graph-wide"
-              title="HTTYD 2?"
-              description="(overall rating)"
-              :conf="{
-                columnXMargin: '1.2rem',
-                barWidth: '8px',
-                trackWidth: '8px',
-                columnWidth: '72px',
-                trackWidthMultiset: 'auto',
-                size: 'wide',
-                hideZeroColumns: true
-              }"
-              :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
-              :sets="[{'setKey':'male','setLabel':'Male','color':'#66f','dataCount':269},{'setKey':'female','setLabel':'Female','color':'#f48','dataCount':116}]"
-              :data="{'_multiSet':true,'male':{'2':1,'3':1,'5':4,'6':10,'7':38,'8':71,'9':66,'10':76,'NoAnswer':2},'female':{'1':1,'4':1,'5':2,'6':4,'7':11,'8':23,'9':39,'10':35}}"
-              :dataCount="{'male':269,'female':116}"
-            >
-              <average
-                :sets="[{'setKey':'male','setLabel':'Male','color':'#66f','dataCount':269},{'setKey':'female','setLabel':'Female','color':'#f48','dataCount':116}]"
-                :data="{'_multiSet':true,'male':{'4':1,'5':1,'7':23,'8':69,'9':71,'10':102,'NoAnswer':2},'female':{'5':2,'6':1,'7':7,'8':21,'9':26,'10':59}}"
-                :dataCount="{'male':269,'female':116}"
-              ></average>
-            </graph>
-        </div>
-
-        <p>
-          The situation is mostly the same — the only notable exception is the plot rating, where male respondents were more likely to dole out ten outta tens than female.
-        </p>
-        <p>
-          <small>
-            There's two things worth noting, however: a) boys are showing a complete disregard for what your Statistics 101 professor will tell you and b) on average, female
-            ratings still come out to be slightly higher than male ratings.
-          </small>
-        </p>
-
-        <div class="graph-area">
-          <graph
-              class="graph-wide"
-              title="HTTYD2PlotRating"
-              :conf="{
-                columnXMargin: '1.2rem',
-                barWidth: '8px',
-                trackWidth: '8px',
-                columnWidth: '72px',
-                trackWidthMultiset: 'auto',
-                size: 'wide',
-                hideZeroColumns: true
-              }"
-              :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
-              :sets="[{'setKey':'male','setLabel':'Male','color':'#66f','dataCount':269},{'setKey':'female','setLabel':'Female','color':'#f48','dataCount':116}]"
-              :data="{'_multiSet':true,'male':{'2':1,'3':1,'4':3,'5':8,'6':18,'7':64,'8':59,'9':58,'10':56,'NoAnswer':1},'female':{'1':1,'4':2,'5':3,'6':8,'7':21,'8':30,'9':32,'10':18,'NoAnswer':1}}"
-              :dataCount="{'male':269,'female':116}"
-            >
-              <average
-                :sets="[{'setKey':'male','setLabel':'Male','color':'#66f','dataCount':269},{'setKey':'female','setLabel':'Female','color':'#f48','dataCount':116}]"
-                :data="{'_multiSet':true,'male':{'4':1,'5':1,'7':23,'8':69,'9':71,'10':102,'NoAnswer':2},'female':{'5':2,'6':1,'7':7,'8':21,'9':26,'10':59}}"
-                :dataCount="{'male':269,'female':116}"
-              ></average>
-            </graph>
-        </div>
-      
-        <p>
-          This kind of thinking extends to the shorts and TV series:
-        </p>
-
-        <div class="graph-area">
-
-        </div>
-
-        <p>
-          And last but not least, female respondents tended to consider RTTE canon more often than male respondents.
-        </p>
-
-        <div class="graph-area">
-          <graph
-              class="graph-wide"
-              title="Is RTTE canon?"
-              :conf="{
-                columnXMargin: '1.2rem',
-                barWidth: '8px',
-                trackWidth: '8px',
-                columnWidth: '72px',
-                trackWidthMultiset: 'auto',
-                size: 'wide',
-                hideZeroColumns: true
-              }"
-              :columns="[{'key':1,'label':'Yes'},{'key':3,'label':'Neutral'},{'key':2,'label':'No'},{'key':0,'label':'Shy'}]"
-              :sets="[{'setKey':'male','setLabel':'Male','color':'#66f','dataCount':269},{'setKey':'female','setLabel':'Female','color':'#f48','dataCount':116}]"
-              :data="{'_multiSet':true,'male':{'0':23,'1':141,'2':49,'3':56},'female':{'0':8,'1':70,'2':12,'3':26}}"
-              :dataCount="{'male':269,'female':116}"
-            >
-            </graph>
-        </div>
-
-        <p>
-          There <i>are</i> exceptions, though.
-        </p>
-
-        <p>
-          For example, female respondents were slightly less likely to think that the bond between Hiccup and Toothless was that of two mutual friends than male respondents:
-        </p>
-
-        <div class="graph-area">
-          <graph
-              class="graph-wide"
-              title="Bond type"
-              description="0: master-slave, 10: mutual friends"
-              :conf="{
-                columnXMargin: '1.2rem',
-                barWidth: '8px',
-                trackWidth: '8px',
-                columnWidth: '72px',
-                trackWidthMultiset: 'auto',
-                size: 'wide',
-                hideZeroColumns: true
-              }"
-              :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
-              :sets="[{'setKey':'male','setLabel':'Male','color':'#66f','dataCount':269},{'setKey':'female','setLabel':'Female','color':'#f48','dataCount':116}]"
-              :data="{'_multiSet':true,'male':{'2':2,'3':4,'4':3,'5':3,'6':3,'7':6,'8':29,'9':65,'10':152,'NoAnswer':2},'female':{'1':1,'2':3,'3':1,'4':4,'5':6,'6':2,'7':9,'8':12,'9':13,'10':64,'NoAnswer':1}}"
-              :dataCount="{'male':269,'female':116}"
-            >
-              <average
-                :sets="[{'setKey':'male','setLabel':'Male','color':'#66f','dataCount':269},{'setKey':'female','setLabel':'Female','color':'#f48','dataCount':116}]"
-                :data="{'_multiSet':true,'male':{'2':2,'3':4,'4':3,'5':3,'6':3,'7':6,'8':29,'9':65,'10':152,'NoAnswer':2},'female':{'1':1,'2':3,'3':1,'4':4,'5':6,'6':2,'7':9,'8':12,'9':13,'10':64,'NoAnswer':1}}"
-                :dataCount="{'male':269,'female':116}"
-              ></average>
-            </graph>
-        </div>
-
-        <p>
-          And I think that the elephant in the room is starting to become harder to hide with each passing moment.
-        </p>
-        
-        <div class="graph-area">
-          <graph
-              class="graph-wide"
-              title="HTTYD3Rating"
-              :conf="{
-                columnXMargin: '1.2rem',
-                barWidth: '8px',
-                trackWidth: '8px',
-                columnWidth: '72px',
-                trackWidthMultiset: 'auto',
-                size: 'wide',
-                hideZeroColumns: true
-              }"
-              :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
-              :sets="[{'setKey':'male','setLabel':'Male','color':'#66f','dataCount':269},{'setKey':'female','setLabel':'Female','color':'#f48','dataCount':116}]"
-              :data="{'_multiSet':true,'male':{'1':12,'2':7,'3':12,'4':14,'5':9,'6':26,'7':45,'8':49,'9':47,'10':45,'NoAnswer':3},'female':{'1':7,'2':6,'3':12,'4':9,'5':11,'6':12,'7':10,'8':15,'9':10,'10':22,'NoAnswer':2}}"
-              :dataCount="{'male':269,'female':116}"
-            >
-              <average
-                :sets="[{'setKey':'male','setLabel':'Male','color':'#66f','dataCount':269},{'setKey':'female','setLabel':'Female','color':'#f48','dataCount':116}]"
-                :data="{'_multiSet':true,'male':{'1':12,'2':7,'3':12,'4':14,'5':9,'6':26,'7':45,'8':49,'9':47,'10':45,'NoAnswer':3},'female':{'1':7,'2':6,'3':12,'4':9,'5':11,'6':12,'7':10,'8':15,'9':10,'10':22,'NoAnswer':2}}"
-                :dataCount="{'male':269,'female':116}"
-              ></average>
-            </graph>
-        </div>
-
-        <p>
-          This comes as a surprise when you know the gender of the biggest serial complainers on reddit and the main discord.
-        </p>
-
-        <p>
-          And it's almost completely consistent, too! Male respondents rated every aspect of the movie higher, sometimes by as much 
-          as a whole one rating higher on average! It's worth noting that female votes are often also way more contested. This <i>includes</i>
-          everything about the light fury.
-        </p>
-
-        <div class="graph-area">
-          <Tabs v-model="tabs.gender.thw">
-            <Tab label="Plot" val="plot" />
-            <Tab label="Emotion" val="emo" />
-            <Tab label="Characters" val="char" />
-            <Tab label="Theme" val="theme" />
-            <Tab label="Visuals" val="visuals" />
-            <Tab label="Score" val="ost" />
-            <Tab label="Worst character" val="wchar" />
-            <Tab label="LF character" val="tfcr" />
-            <Tab label="LF design" val="tfdr" />
-            <Tab label="Fitting end?" val="fe" />
-          </Tabs>
-          <TabPanels v-model="tabs.gender.thw">
-            <TabPanel val="plot">
+        <div class="graph-aree">
+          <TabPanels v-model="tabs.age.httyd1">
+            <TabPanel val="overall" class="graph-wide">
               <graph
                 class="graph-wide"
-                title="THW Plot Rating"
+                title="HTTYD1Rating"
                 :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
                 :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
-                :sets="[{'setKey':'male','setLabel':'Male','color':'#88f','dataCount':269},{'setKey':'female','setLabel':'Female','color':'#f48','dataCount':116}]"
-                :data="{'_multiSet':true,'male':{'1':21,'2':14,'3':15,'4':13,'5':18,'6':36,'7':40,'8':45,'9':30,'10':34,'NoAnswer':3},'female':{'1':12,'2':13,'3':15,'4':6,'5':10,'6':10,'7':11,'8':9,'9':12,'10':16,'NoAnswer':2}}"
-                :dataCount="{'male':269,'female':116}"
-              > 
+                :sets="[{'setKey':'all','setLabel':'All','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'under-16','setLabel':'Under 16','color':'#fa6','dataCount':58},{'setKey':'16-19','setLabel':'16-19','color':'#f83','dataCount':126},{'setKey':'19-22','setLabel':'19-22','color':'#e31','dataCount':103},{'setKey':'22-26','setLabel':'22-26','color':'#c90000','dataCount':44},{'setKey':'26+','setLabel':'26+','color':'#a00','dataCount':33}]"
+                :data="{'_multiSet':true,'all':{'1':1,'4':1,'6':1,'7':7,'8':50,'9':126,'10':245},'under-16':{'6':1,'8':9,'9':16,'10':32},'16-19':{'4':1,'7':5,'8':14,'9':41,'10':65},'19-22':{'8':11,'9':30,'10':62},'22-26':{'7':1,'8':8,'9':11,'10':24},'26+':{'1':1,'7':1,'8':2,'9':4,'10':25}}"
+                :dataCount="{'all':431,'':0,'under-16':58,'16-19':126,'19-22':103,'22-26':44,'26+':33}"
+              >
                   <average
-                    :sets="[{'setKey':'male','setLabel':'Male','color':'#88f','dataCount':269},{'setKey':'female','setLabel':'Female','color':'#f48','dataCount':116}]"
-                    :data="{'_multiSet':true,'male':{'1':21,'2':14,'3':15,'4':13,'5':18,'6':36,'7':40,'8':45,'9':30,'10':34,'NoAnswer':3},'female':{'1':12,'2':13,'3':15,'4':6,'5':10,'6':10,'7':11,'8':9,'9':12,'10':16,'NoAnswer':2}}"
-                    :dataCount="{'male':269,'female':116}"
+                    :sets="[{'setKey':'all','setLabel':'All','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'under-16','setLabel':'Under 16','color':'#fa6','dataCount':58},{'setKey':'16-19','setLabel':'16-19','color':'#f83','dataCount':126},{'setKey':'19-22','setLabel':'19-22','color':'#e31','dataCount':103},{'setKey':'22-26','setLabel':'22-26','color':'#c90000','dataCount':44},{'setKey':'26+','setLabel':'26+','color':'#a00','dataCount':33}]"
+                    :data="{'_multiSet':true,'all':{'1':1,'4':1,'6':1,'7':7,'8':50,'9':126,'10':245},'under-16':{'6':1,'8':9,'9':16,'10':32},'16-19':{'4':1,'7':5,'8':14,'9':41,'10':65},'19-22':{'8':11,'9':30,'10':62},'22-26':{'7':1,'8':8,'9':11,'10':24},'26+':{'1':1,'7':1,'8':2,'9':4,'10':25}}"
+                    :dataCount="{'all':431,'':0,'under-16':58,'16-19':126,'19-22':103,'22-26':44,'26+':33}"
                   ></average>
+
               </graph>
             </TabPanel>
-            <TabPanel val="emo">
+            <TabPanel class="graph-wide" val="plot">
               <graph
                 class="graph-wide"
-                title="THW Emotion Rating"
-                :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
+                title="HTTYD1: Plot"
+                :conf="{
+                  columnXMargin: '1.2rem',
+                  barWidth: '8px',
+                  trackWidth: '8px',
+                  columnWidth: '72px',
+                  trackWidthMultiset: 'auto',
+                  size: 'wide'
+                }"
                 :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
-                :sets="[{'setKey':'male','setLabel':'Male','color':'#88f','dataCount':269},{'setKey':'female','setLabel':'Female','color':'#f48','dataCount':116}]"
-                :data="{'_multiSet':true,'male':{'1':11,'2':3,'3':7,'4':4,'5':13,'6':8,'7':15,'8':39,'9':38,'10':128,'NoAnswer':3},'female':{'1':4,'2':4,'3':6,'4':8,'5':9,'6':6,'7':5,'8':11,'9':7,'10':54,'NoAnswer':2}}"
-                :dataCount="{'male':269,'female':116}"
-              > 
-                  <average
-                    :sets="[{'setKey':'male','setLabel':'Male','color':'#88f','dataCount':269},{'setKey':'female','setLabel':'Female','color':'#f48','dataCount':116}]"
-                    :data="{'_multiSet':true,'male':{'1':11,'2':3,'3':7,'4':4,'5':13,'6':8,'7':15,'8':39,'9':38,'10':128,'NoAnswer':3},'female':{'1':4,'2':4,'3':6,'4':8,'5':9,'6':6,'7':5,'8':11,'9':7,'10':54,'NoAnswer':2}}"
-                    :dataCount="{'male':269,'female':116}"
-                  ></average>
-              </graph>
-            </TabPanel>
-            <TabPanel val="char">
-              <graph
-                class="graph-wide"
-                title="THW Character Rating"
-                :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
-                :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
-                :sets="[{'setKey':'male','setLabel':'Male','color':'#88f','dataCount':269},{'setKey':'female','setLabel':'Female','color':'#f48','dataCount':116}]"
-                :data="{'_multiSet':true,'male':{'1':16,'2':8,'3':6,'4':11,'5':16,'6':27,'7':30,'8':51,'9':44,'10':57,'NoAnswer':3},'female':{'1':13,'2':5,'3':4,'4':8,'5':10,'6':6,'7':11,'8':19,'9':15,'10':23,'NoAnswer':2}}"
-                :dataCount="{'male':269,'female':116}"
-              > 
-                  <average
-                    :sets="[{'setKey':'male','setLabel':'Male','color':'#88f','dataCount':269},{'setKey':'female','setLabel':'Female','color':'#f48','dataCount':116}]"
-                    :data="{'_multiSet':true,'male':{'1':16,'2':8,'3':6,'4':11,'5':16,'6':27,'7':30,'8':51,'9':44,'10':57,'NoAnswer':3},'female':{'1':13,'2':5,'3':4,'4':8,'5':10,'6':6,'7':11,'8':19,'9':15,'10':23,'NoAnswer':2}}"
-                    :dataCount="{'male':269,'female':116}"
-                  ></average>
-              </graph>
-            </TabPanel>
-            <TabPanel val="theme">
-              <graph
-                class="graph-wide"
-                title="THW Theme Rating"
-                :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
-                :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
-                :sets="[{'setKey':'male','setLabel':'Male','color':'#88f','dataCount':269},{'setKey':'female','setLabel':'Female','color':'#f48','dataCount':116}]"
-                :data="{'_multiSet':true,'male':{'1':30,'2':13,'3':10,'4':12,'5':12,'6':23,'7':24,'8':42,'9':39,'10':61,'NoAnswer':3},'female':{'1':24,'2':9,'3':5,'4':8,'5':10,'6':5,'7':3,'8':9,'9':13,'10':28,'NoAnswer':2}}"
-                :dataCount="{'male':269,'female':116}"
-              > 
-                  <average
-                    :sets="[{'setKey':'male','setLabel':'Male','color':'#88f','dataCount':269},{'setKey':'female','setLabel':'Female','color':'#f48','dataCount':116}]"
-                    :data="{'_multiSet':true,'male':{'1':30,'2':13,'3':10,'4':12,'5':12,'6':23,'7':24,'8':42,'9':39,'10':61,'NoAnswer':3},'female':{'1':24,'2':9,'3':5,'4':8,'5':10,'6':5,'7':3,'8':9,'9':13,'10':28,'NoAnswer':2}}"
-                    :dataCount="{'male':269,'female':116}"
-                  ></average>
-                
-              </graph>
-            </TabPanel>
-            <TabPanel val="visuals">
-              <graph
-                class="graph-wide"
-                title="THW Visuals Rating"
-                :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
-                :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
-                :sets="[{'setKey':'male','setLabel':'Male','color':'#88f','dataCount':269},{'setKey':'female','setLabel':'Female','color':'#f48','dataCount':116}]"
-                :data="{'_multiSet':true,'male':{'1':2,'2':1,'3':1,'4':1,'5':2,'6':4,'7':8,'8':22,'9':44,'10':181,'NoAnswer':3},'female':{'1':2,'4':1,'5':5,'6':4,'7':4,'8':8,'9':17,'10':73,'NoAnswer':2}}"
-                :dataCount="{'male':269,'female':116}"
-              > 
-                  <average
-                    :sets="[{'setKey':'male','setLabel':'Male','color':'#88f','dataCount':269},{'setKey':'female','setLabel':'Female','color':'#f48','dataCount':116}]"
-                    :data="{'_multiSet':true,'male':{'1':2,'2':1,'3':1,'4':1,'5':2,'6':4,'7':8,'8':22,'9':44,'10':181,'NoAnswer':3},'female':{'1':2,'4':1,'5':5,'6':4,'7':4,'8':8,'9':17,'10':73,'NoAnswer':2}}"
-                    :dataCount="{'male':269,'female':116}"
-                  ></average>
-                
-              </graph>
-            </TabPanel>
-            <TabPanel val="ost">
-              <graph
-                class="graph-wide"
-                title="THW Score Rating"
-                :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
-                :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
-                :sets="[{'setKey':'male','setLabel':'Male','color':'#88f','dataCount':269},{'setKey':'female','setLabel':'Female','color':'#f48','dataCount':116}]"
-                :data="{'_multiSet':true,'male':{'1':4,'2':1,'3':2,'4':4,'5':11,'6':12,'7':26,'8':46,'9':53,'10':105,'NoAnswer':5},'female':{'1':4,'2':1,'3':2,'4':3,'5':6,'6':1,'7':10,'8':21,'9':13,'10':52,'NoAnswer':3}}"
-                :dataCount="{'male':269,'female':116}"
-              > 
-                  <average
-                    :sets="[{'setKey':'male','setLabel':'Male','color':'#88f','dataCount':269},{'setKey':'female','setLabel':'Female','color':'#f48','dataCount':116}]"
-                    :data="{'_multiSet':true,'male':{'1':4,'2':1,'3':2,'4':4,'5':11,'6':12,'7':26,'8':46,'9':53,'10':105,'NoAnswer':5},'female':{'1':4,'2':1,'3':2,'4':3,'5':6,'6':1,'7':10,'8':21,'9':13,'10':52,'NoAnswer':3}}"
-                    :dataCount="{'male':269,'female':116}"
-                  ></average>
-              </graph>
-            </TabPanel>
-            <TabPanel val="wchar">
-              <graph
-                class="graph-wide"
-                title="THW Worst Character"
-                :conf="{'columnXMargin':'1.2rem','size':'wide','barWidth':'8px !important','trackWidthMultiset':'8px !important','trackWidth':'16px !important','columnWidth':'72px !important','sidewaysLabels':true,'labelsHeight':'6rem','hideZeroColumns':true}"
-                :columns="[{'key':3,'label':'Hiccup'},{'key':4,'label':'Toothless'},{'key':5,'label':'Astrid'},{'key':7,'label':'Valka'},{'key':14,'label':'Cloudjumper'},{'key':16,'label':'Eret'},{'key':17,'label':'Light Fury'},{'key':18,'label':'Grimmel'},{'key':8,'label':'Gobber'},{'key':9,'label':'Ruffnut'},{'key':10,'label':'Tuffnut'},{'key':11,'label':'Twins'},{'key':12,'label':'Snotlout'},{'key':13,'label':'Fishlegs'},{'key':2,'label':'Other'},{'key':1,'label':'Shy'},{'key':'dwFlag','label':'D.W.'}]"
-                :sets="[{'setKey':'male','setLabel':'Male','color':'#88f','dataCount':269},{'setKey':'female','setLabel':'Female','color':'#f48','dataCount':116}]"
-                :data="{'_multiSet':true,'male':{'1':8,'2':14,'3':4,'4':13,'5':4,'6':1,'7':3,'9':21,'10':9,'12':50,'13':12,'16':18,'17':65,'18':47},'female':{'1':7,'2':6,'3':2,'4':8,'5':2,'7':1,'9':1,'10':3,'12':14,'13':4,'16':1,'17':43,'18':24}}"
-                :dataCount="{'male':269,'female':116}"
-              > 
-              </graph>
-            </TabPanel>
-            <TabPanel val="tfcr">
-              <graph
-                class="graph-wide"
-                title="Light Fury Character Rating"
-                :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
-                :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
-                :sets="[{'setKey':'male','setLabel':'Male','color':'#88f','dataCount':269},{'setKey':'female','setLabel':'Female','color':'#f48','dataCount':116}]"
-                :data="{'_multiSet':true,'male':{'1':23,'2':17,'3':15,'4':11,'5':30,'6':31,'7':46,'8':47,'9':19,'10':27,'NoAnswer':3},'female':{'1':15,'2':11,'3':11,'4':12,'5':14,'6':10,'7':11,'8':12,'9':10,'10':8,'NoAnswer':2}}"
-                :dataCount="{'male':269,'female':116}"
-              > 
-                  <average
-                    :sets="[{'setKey':'male','setLabel':'Male','color':'#88f','dataCount':269},{'setKey':'female','setLabel':'Female','color':'#f48','dataCount':116}]"
-                    :data="{'_multiSet':true,'male':{'1':23,'2':17,'3':15,'4':11,'5':30,'6':31,'7':46,'8':47,'9':19,'10':27,'NoAnswer':3},'female':{'1':15,'2':11,'3':11,'4':12,'5':14,'6':10,'7':11,'8':12,'9':10,'10':8,'NoAnswer':2}}"
-                    :dataCount="{'male':269,'female':116}"
-                  ></average>
-                
-              </graph>
-            </TabPanel>
-            <TabPanel val="tfdr">
-              <graph
-                class="graph-wide"
-                title="Light Fury Design Rating"
-                :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
-                :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
-                :sets="[{'setKey':'male','setLabel':'Male','color':'#88f','dataCount':269},{'setKey':'female','setLabel':'Female','color':'#f48','dataCount':116}]"
-                :data="{'_multiSet':true,'male':{'1':10,'2':10,'3':12,'4':19,'5':17,'6':16,'7':44,'8':44,'9':48,'10':46,'NoAnswer':3},'female':{'1':13,'2':9,'3':4,'4':19,'5':11,'6':4,'7':10,'8':11,'9':14,'10':21}}"
-                :dataCount="{'male':269,'female':116}"
-              > 
-                  <average
-                    :sets="[{'setKey':'male','setLabel':'Male','color':'#88f','dataCount':269},{'setKey':'female','setLabel':'Female','color':'#f48','dataCount':116}]"
-                    :data="{'_multiSet':true,'male':{'1':10,'2':10,'3':12,'4':19,'5':17,'6':16,'7':44,'8':44,'9':48,'10':46,'NoAnswer':3},'female':{'1':13,'2':9,'3':4,'4':19,'5':11,'6':4,'7':10,'8':11,'9':14,'10':21}}"
-                    :dataCount="{'male':269,'female':116}"
-                  ></average>
-                
-              </graph>
-            </TabPanel>
-            <TabPanel val="fe">
-              <graph
-              class="graph-wide"
-              title="THWFittingEnd"
-              :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
-              :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
-              :sets="[{'setKey':'male','setLabel':'Male','color':'#88f','dataCount':269},{'setKey':'female','setLabel':'Female','color':'#f48','dataCount':116}]"
-              :data="{'_multiSet':true,'male':{'1':55,'2':11,'3':11,'4':21,'5':17,'6':10,'7':25,'8':24,'9':39,'10':52,'NoAnswer':4},'female':{'1':34,'2':6,'3':7,'4':10,'5':2,'6':3,'7':8,'8':6,'9':12,'10':26,'NoAnswer':2}}"
-              :dataCount="{'male':269,'female':116}"
-            > 
+                :sets="[{'setKey':'all-responses','setLabel':'All responses','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'sub-17','setLabel':'sub-17','color':'#fa6','dataCount':94},{'setKey':'17-20','setLabel':'17-20','color':'#f64','dataCount':132},{'setKey':'20-23','setLabel':'20-23','color':'#f41','dataCount':76},{'setKey':'23-27','setLabel':'23-27','color':'#d20','dataCount':38},{'setKey':'27-and-over','setLabel':'27 and over','color':'#b00','dataCount':24}]"
+                :data="{'_multiSet':true,'all-responses':{'1':1,'4':2,'5':3,'6':2,'7':35,'8':98,'9':111,'10':177,'NoAnswer':2},'sub-17':{'4':1,'5':1,'6':1,'7':8,'8':21,'9':28,'10':33,'NoAnswer':1},'17-20':{'7':15,'8':29,'9':35,'10':53},'20-23':{'5':2,'6':1,'7':4,'8':17,'9':15,'10':37},'23-27':{'7':3,'8':12,'9':8,'10':14,'NoAnswer':1},'27-and-over':{'1':1,'4':1,'8':4,'9':6,'10':12}}"
+                :dataCount="{'all-responses':431,'':0,'sub-17':94,'17-20':132,'20-23':76,'23-27':38,'27-and-over':24}"
+              >
                 <average
-                  :sets="[{'setKey':'male','setLabel':'Male','color':'#88f','dataCount':269},{'setKey':'female','setLabel':'Female','color':'#f48','dataCount':116}]"
-                  :data="{'_multiSet':true,'male':{'1':55,'2':11,'3':11,'4':21,'5':17,'6':10,'7':25,'8':24,'9':39,'10':52,'NoAnswer':4},'female':{'1':34,'2':6,'3':7,'4':10,'5':2,'6':3,'7':8,'8':6,'9':12,'10':26,'NoAnswer':2}}"
-                  :dataCount="{'male':269,'female':116}"
+                  :sets="[{'setKey':'all-responses','setLabel':'All responses','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'sub-17','setLabel':'sub-17','color':'#fa6','dataCount':94},{'setKey':'17-20','setLabel':'17-20','color':'#f64','dataCount':132},{'setKey':'20-23','setLabel':'20-23','color':'#f41','dataCount':76},{'setKey':'23-27','setLabel':'23-27','color':'#d20','dataCount':38},{'setKey':'27-and-over','setLabel':'27 and over','color':'#b00','dataCount':24}]"
+                  :data="{'_multiSet':true,'all-responses':{'1':1,'4':1,'6':1,'7':7,'8':50,'9':126,'10':245},'sub-17':{'4':1,'6':1,'7':1,'8':14,'9':26,'10':51},'17-20':{'7':4,'8':12,'9':43,'10':73},'20-23':{'8':13,'9':19,'10':44},'23-27':{'7':1,'8':3,'9':12,'10':22},'27-and-over':{'1':1,'7':1,'8':2,'9':2,'10':18}}"
+                  :dataCount="{'all-responses':431,'':0,'sub-17':94,'17-20':132,'20-23':76,'23-27':38,'27-and-over':24}"
                 ></average>
-              
-            </graph>
+              </graph>
             </TabPanel>
-          </TabPanels>
-        </div>
+            <TabPanel class="graph-wide" val="vis">
+              <graph
+                class="graph-wide"
+                title="HTTYD1: Visuals"
+                :conf="{
+                  columnXMargin: '1.2rem',
+                  barWidth: '8px',
+                  trackWidth: '8px',
+                  columnWidth: '72px',
+                  trackWidthMultiset: 'auto',
+                  size: 'wide'
+                }"
+                :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
+                :sets="[{'setKey':'all-responses','setLabel':'All responses','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'sub-17','setLabel':'sub-17','color':'#fa6','dataCount':94},{'setKey':'17-20','setLabel':'17-20','color':'#f64','dataCount':132},{'setKey':'20-23','setLabel':'20-23','color':'#f41','dataCount':76},{'setKey':'23-27','setLabel':'23-27','color':'#d20','dataCount':38},{'setKey':'27-and-over','setLabel':'27 and over','color':'#b00','dataCount':24}]"
+                :data="{'_multiSet':true,'all-responses':{'4':1,'5':9,'6':20,'7':53,'8':96,'9':99,'10':151,'NoAnswer':2},'sub-17':{'5':1,'6':3,'7':8,'8':12,'9':30,'10':38,'NoAnswer':2},'17-20':{'5':4,'6':6,'7':18,'8':34,'9':24,'10':46},'20-23':{'5':3,'6':4,'7':8,'8':21,'9':16,'10':24},'23-27':{'5':1,'6':4,'7':5,'8':9,'9':8,'10':11},'27-and-over':{'7':3,'8':4,'9':10,'10':7}}"
+                :dataCount="{'all-responses':431,'':0,'sub-17':94,'17-20':132,'20-23':76,'23-27':38,'27-and-over':24}"
+              >
+                <average
+                  :sets="[{'setKey':'all-responses','setLabel':'All responses','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'sub-17','setLabel':'sub-17','color':'#fa6','dataCount':94},{'setKey':'17-20','setLabel':'17-20','color':'#f64','dataCount':132},{'setKey':'20-23','setLabel':'20-23','color':'#f41','dataCount':76},{'setKey':'23-27','setLabel':'23-27','color':'#d20','dataCount':38},{'setKey':'27-and-over','setLabel':'27 and over','color':'#b00','dataCount':24}]"
+                  :data="{'_multiSet':true,'all-responses':{'4':1,'5':9,'6':20,'7':53,'8':96,'9':99,'10':151,'NoAnswer':2},'sub-17':{'5':1,'6':3,'7':8,'8':12,'9':30,'10':38,'NoAnswer':2},'17-20':{'5':4,'6':6,'7':18,'8':34,'9':24,'10':46},'20-23':{'5':3,'6':4,'7':8,'8':21,'9':16,'10':24},'23-27':{'5':1,'6':4,'7':5,'8':9,'9':8,'10':11},'27-and-over':{'7':3,'8':4,'9':10,'10':7}}"
+                  :dataCount="{'all-responses':431,'':0,'sub-17':94,'17-20':132,'20-23':76,'23-27':38,'27-and-over':24}"
+                >
+                </average>
+              </graph>
+            </TabPanel>
+            <TabPanel class="graph-wide" val="emo">
+              <graph
+                class="graph-wide"
+                title="HTTYD1EmotionRating"
+                :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
+                :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
+                :sets="[{'setKey':'all','setLabel':'All','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'under-16','setLabel':'Under 16','color':'#fa6','dataCount':58},{'setKey':'16-19','setLabel':'16-19','color':'#f83','dataCount':126},{'setKey':'19-22','setLabel':'19-22','color':'#e31','dataCount':103},{'setKey':'22-26','setLabel':'22-26','color':'#c90000','dataCount':44},{'setKey':'26+','setLabel':'26+','color':'#a00','dataCount':33}]"
+                :data="{'_multiSet':true,'all':{'1':1,'2':1,'4':2,'5':5,'6':12,'7':37,'8':80,'9':98,'10':194,'NoAnswer':1},'under-16':{'6':1,'7':6,'8':13,'9':13,'10':25},'16-19':{'5':2,'6':3,'7':14,'8':28,'9':26,'10':52,'NoAnswer':1},'19-22':{'4':1,'5':3,'6':2,'7':8,'8':16,'9':20,'10':53},'22-26':{'6':1,'7':4,'8':9,'9':11,'10':19},'26+':{'2':1,'7':1,'8':3,'9':9,'10':19}}"
+                :dataCount="{'all':431,'':0,'under-16':58,'16-19':126,'19-22':103,'22-26':44,'26+':33}"
+              >
+                  <average
+                    :sets="[{'setKey':'all','setLabel':'All','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'under-16','setLabel':'Under 16','color':'#fa6','dataCount':58},{'setKey':'16-19','setLabel':'16-19','color':'#f83','dataCount':126},{'setKey':'19-22','setLabel':'19-22','color':'#e31','dataCount':103},{'setKey':'22-26','setLabel':'22-26','color':'#c90000','dataCount':44},{'setKey':'26+','setLabel':'26+','color':'#a00','dataCount':33}]"
+                    :data="{'_multiSet':true,'all':{'1':1,'2':1,'4':2,'5':5,'6':12,'7':37,'8':80,'9':98,'10':194,'NoAnswer':1},'under-16':{'6':1,'7':6,'8':13,'9':13,'10':25},'16-19':{'5':2,'6':3,'7':14,'8':28,'9':26,'10':52,'NoAnswer':1},'19-22':{'4':1,'5':3,'6':2,'7':8,'8':16,'9':20,'10':53},'22-26':{'6':1,'7':4,'8':9,'9':11,'10':19},'26+':{'2':1,'7':1,'8':3,'9':9,'10':19}}"
+                    :dataCount="{'all':431,'':0,'under-16':58,'16-19':126,'19-22':103,'22-26':44,'26+':33}"
+                  ></average>
 
-      </template>
+              </graph>
+            </TabPanel>
+            <TabPanel class="graph-wide" val="char">
+              <graph
+                class="graph-wide"
+                title="HTTYD1CharacterRating"
+                :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
+                :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
+                :sets="[{'setKey':'all','setLabel':'All','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'under-16','setLabel':'Under 16','color':'#fa6','dataCount':58},{'setKey':'16-19','setLabel':'16-19','color':'#f83','dataCount':126},{'setKey':'19-22','setLabel':'19-22','color':'#e31','dataCount':103},{'setKey':'22-26','setLabel':'22-26','color':'#c90000','dataCount':44},{'setKey':'26+','setLabel':'26+','color':'#a00','dataCount':33}]"
+                :data="{'_multiSet':true,'all':{'1':1,'4':1,'5':10,'6':12,'7':50,'8':93,'9':101,'10':161,'NoAnswer':2},'under-16':{'5':3,'6':2,'7':4,'8':14,'9':13,'10':22},'16-19':{'4':1,'5':2,'6':5,'7':15,'8':28,'9':30,'10':44,'NoAnswer':1},'19-22':{'5':3,'6':1,'7':11,'8':22,'9':22,'10':43,'NoAnswer':1},'22-26':{'5':1,'6':4,'7':10,'8':11,'9':9,'10':9},'26+':{'1':1,'7':4,'8':5,'9':8,'10':15}}"
+                :dataCount="{'all':431,'':0,'under-16':58,'16-19':126,'19-22':103,'22-26':44,'26+':33}"
+              >
+                  <average
+                    :sets="[{'setKey':'all','setLabel':'All','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'under-16','setLabel':'Under 16','color':'#fa6','dataCount':58},{'setKey':'16-19','setLabel':'16-19','color':'#f83','dataCount':126},{'setKey':'19-22','setLabel':'19-22','color':'#e31','dataCount':103},{'setKey':'22-26','setLabel':'22-26','color':'#c90000','dataCount':44},{'setKey':'26+','setLabel':'26+','color':'#a00','dataCount':33}]"
+                    :data="{'_multiSet':true,'all':{'1':1,'4':1,'5':10,'6':12,'7':50,'8':93,'9':101,'10':161,'NoAnswer':2},'under-16':{'5':3,'6':2,'7':4,'8':14,'9':13,'10':22},'16-19':{'4':1,'5':2,'6':5,'7':15,'8':28,'9':30,'10':44,'NoAnswer':1},'19-22':{'5':3,'6':1,'7':11,'8':22,'9':22,'10':43,'NoAnswer':1},'22-26':{'5':1,'6':4,'7':10,'8':11,'9':9,'10':9},'26+':{'1':1,'7':4,'8':5,'9':8,'10':15}}"
+                    :dataCount="{'all':431,'':0,'under-16':58,'16-19':126,'19-22':103,'22-26':44,'26+':33}"
+                  ></average>
 
-      <!-- #endregion gender -->
+              </graph>
+            </TabPanel>
+            <TabPanel class="graph-wide" val="theme">
+              <graph
+                class="graph-wide"
+                title="HTTYD1ThemeRating"
+                :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
+                :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
+                :sets="[{'setKey':'all','setLabel':'All','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'under-16','setLabel':'Under 16','color':'#fa6','dataCount':58},{'setKey':'16-19','setLabel':'16-19','color':'#f83','dataCount':126},{'setKey':'19-22','setLabel':'19-22','color':'#e31','dataCount':103},{'setKey':'22-26','setLabel':'22-26','color':'#c90000','dataCount':44},{'setKey':'26+','setLabel':'26+','color':'#a00','dataCount':33}]"
+                :data="{'_multiSet':true,'all':{'1':3,'4':3,'5':6,'6':9,'7':27,'8':52,'9':95,'10':235,'NoAnswer':1},'under-16':{'1':1,'6':1,'7':7,'8':9,'9':12,'10':28},'16-19':{'4':1,'5':3,'6':2,'7':5,'8':11,'9':36,'10':67,'NoAnswer':1},'19-22':{'1':1,'4':1,'5':1,'6':2,'7':8,'8':14,'9':19,'10':57},'22-26':{'4':1,'6':1,'7':4,'8':7,'9':12,'10':19},'26+':{'1':1,'5':1,'8':3,'9':3,'10':25}}"
+                :dataCount="{'all':431,'':0,'under-16':58,'16-19':126,'19-22':103,'22-26':44,'26+':33}"
+              >
+                  <average
+                    :sets="[{'setKey':'all','setLabel':'All','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'under-16','setLabel':'Under 16','color':'#fa6','dataCount':58},{'setKey':'16-19','setLabel':'16-19','color':'#f83','dataCount':126},{'setKey':'19-22','setLabel':'19-22','color':'#e31','dataCount':103},{'setKey':'22-26','setLabel':'22-26','color':'#c90000','dataCount':44},{'setKey':'26+','setLabel':'26+','color':'#a00','dataCount':33}]"
+                    :data="{'_multiSet':true,'all':{'1':3,'4':3,'5':6,'6':9,'7':27,'8':52,'9':95,'10':235,'NoAnswer':1},'under-16':{'1':1,'6':1,'7':7,'8':9,'9':12,'10':28},'16-19':{'4':1,'5':3,'6':2,'7':5,'8':11,'9':36,'10':67,'NoAnswer':1},'19-22':{'1':1,'4':1,'5':1,'6':2,'7':8,'8':14,'9':19,'10':57},'22-26':{'4':1,'6':1,'7':4,'8':7,'9':12,'10':19},'26+':{'1':1,'5':1,'8':3,'9':3,'10':25}}"
+                    :dataCount="{'all':431,'':0,'under-16':58,'16-19':126,'19-22':103,'22-26':44,'26+':33}"
+                  ></average>
 
-      <!-- #region location -->
-      <h2 @click="deepDiveResults.location = !deepDiveResults.location">Results by location</h2>
-      <div class="collapsible-heading-hint">(Click title to expand or collapse the section)</div>
-      <template v-if="deepDiveResults.location">
-        <p>
-          Some aspects of 'by location' were already covered by the previous two sections, so I will not repeat myself
-          too much here. Age by gender by location is in the gender section.
-        </p>
-        <p>
-          Another thing worth noting is that in general, only EU and NA got enough answers to warrant putting them on 
-          a graph. Sucks to not include the other continents, but such is life.
-        </p>
-        <p>
-          Anyway — as far as age is concerned, EU is older on average ... although NA has more outliers on the high end.
-          And they're less likely to volunteer their age, too.
-        </p>
+              </graph>
+            </TabPanel>
+            <TabPanel class="graph-wide" val="ost">
+              <graph
+                class="graph-wide"
+                title="HTTYD1ScoreRating"
+                :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
+                :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
+                :sets="[{'setKey':'all','setLabel':'All','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'under-16','setLabel':'Under 16','color':'#fa6','dataCount':58},{'setKey':'16-19','setLabel':'16-19','color':'#f83','dataCount':126},{'setKey':'19-22','setLabel':'19-22','color':'#e31','dataCount':103},{'setKey':'22-26','setLabel':'22-26','color':'#c90000','dataCount':44},{'setKey':'26+','setLabel':'26+','color':'#a00','dataCount':33}]"
+                :data="{'_multiSet':true,'all':{'2':1,'3':1,'4':1,'5':3,'6':5,'7':8,'8':17,'9':38,'10':356,'NoAnswer':1},'under-16':{'6':1,'7':1,'8':7,'9':5,'10':44},'16-19':{'3':1,'5':2,'6':1,'7':4,'8':3,'9':8,'10':106,'NoAnswer':1},'19-22':{'5':1,'7':3,'8':4,'9':8,'10':87},'22-26':{'9':6,'10':38},'26+':{'2':1,'6':2,'8':1,'9':1,'10':28}}"
+                :dataCount="{'all':431,'':0,'under-16':58,'16-19':126,'19-22':103,'22-26':44,'26+':33}"
+              >
+                  <average
+                    :sets="[{'setKey':'all','setLabel':'All','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'under-16','setLabel':'Under 16','color':'#fa6','dataCount':58},{'setKey':'16-19','setLabel':'16-19','color':'#f83','dataCount':126},{'setKey':'19-22','setLabel':'19-22','color':'#e31','dataCount':103},{'setKey':'22-26','setLabel':'22-26','color':'#c90000','dataCount':44},{'setKey':'26+','setLabel':'26+','color':'#a00','dataCount':33}]"
+                    :data="{'_multiSet':true,'all':{'2':1,'3':1,'4':1,'5':3,'6':5,'7':8,'8':17,'9':38,'10':356,'NoAnswer':1},'under-16':{'6':1,'7':1,'8':7,'9':5,'10':44},'16-19':{'3':1,'5':2,'6':1,'7':4,'8':3,'9':8,'10':106,'NoAnswer':1},'19-22':{'5':1,'7':3,'8':4,'9':8,'10':87},'22-26':{'9':6,'10':38},'26+':{'2':1,'6':2,'8':1,'9':1,'10':28}}"
+                    :dataCount="{'all':431,'':0,'under-16':58,'16-19':126,'19-22':103,'22-26':44,'26+':33}"
+                  ></average>
 
-        <div class="graph-area">
-          <graph
-            class="graph-wide"
-            title="Age"
-            :conf="{'trackWidth':'6px !important','columnWidth':'8px !important','hideZeroColumns':false}"
-            :columns="[{'key':10,'label':'10'},{'key':11,'label':''},{'key':12,'label':''},{'key':13,'label':''},{'key':14,'label':''},{'key':15,'label':'15'},{'key':16,'label':''},{'key':17,'label':''},{'key':18,'label':''},{'key':19,'label':''},{'key':20,'label':'20'},{'key':21,'label':''},{'key':22,'label':''},{'key':23,'label':''},{'key':24,'label':''},{'key':25,'label':'25'},{'key':26,'label':''},{'key':27,'label':''},{'key':28,'label':''},{'key':29,'label':''},{'key':30,'label':'30'},{'key':31,'label':''},{'key':32,'label':''},{'key':33,'label':''},{'key':34,'label':''},{'key':35,'label':'35'},{'key':36,'label':''},{'key':37,'label':''},{'key':38,'label':''},{'key':39,'label':''},{'key':40,'label':'40'},{'key':41,'label':''},{'key':42,'label':''},{'key':43,'label':''},{'key':44,'label':''},{'key':45,'label':'45'},{'key':46,'label':''},{'key':47,'label':''},{'key':48,'label':''},{'key':49,'label':''},{'key':'-1','label':'❄️'},{'key':'_dumm1','label':''},{'key':'_dumm4','label':''},{'key':'NoAnswer','label':'Shy'}]"
-            :sets="[{'setKey':'europe','setLabel':'Europe','color':'#149','dataCount':160},{'setKey':'north-america','setLabel':'North America','color':'#fea','dataCount':194}]"
-            :data="{'_multiSet':true,'europe':{'14':4,'15':4,'16':19,'17':18,'18':18,'19':16,'20':14,'21':13,'22':7,'23':2,'24':6,'25':4,'26':5,'27':3,'28':1,'29':2,'31':1,'34':2,'63':1,'-1':1,'NoAnswer':19},'north-america':{'12':1,'13':3,'14':9,'15':10,'16':11,'17':20,'18':15,'19':21,'20':17,'21':11,'22':6,'23':6,'24':3,'25':5,'26':4,'27':2,'28':5,'29':2,'30':1,'33':1,'34':1,'35':1,'NoAnswer':36,'-1':3}}"
-            :dataCount="{'europe':160,'north-america':194}"
-          > 
-              <average
-                :sets="[{'setKey':'europe','setLabel':'Europe','color':'#149','dataCount':160},{'setKey':'north-america','setLabel':'North America','color':'#fea','dataCount':194}]"
-                :data="{'_multiSet':true,'europe':{'14':4,'15':4,'16':19,'17':18,'18':18,'19':16,'20':14,'21':13,'22':7,'23':2,'24':6,'25':4,'26':5,'27':3,'28':1,'29':2,'31':1,'34':2,'63':1,'-1':1,'NoAnswer':19},'north-america':{'12':1,'13':3,'14':9,'15':10,'16':11,'17':20,'18':15,'19':21,'20':17,'21':11,'22':6,'23':6,'24':3,'25':5,'26':4,'27':2,'28':5,'29':2,'30':1,'33':1,'34':1,'35':1,'NoAnswer':36,'-1':3}}"
-                :dataCount="{'europe':160,'north-america':194}"
-              ></average>
-            
-          </graph>
-        </div>
-
-        <p>
-          The upper end of the american curve is putting in some mad overtime on the fandom time chart, though: on average,
-          NA respondents claim to be a part of the fandom for almost a full year longer than Europeans.
-        </p>
-
-        <div class="graph-area">
-           <graph
-            class="graph-wide"
-            title="FandomTime"
-            :conf="{'columnXMargin':'1.2rem','size':'wide','barWidth':'8px !important','trackWidthMultiset':'8px !important','trackWidth':'16px !important','columnWidth':'72px !important','sidewaysLabels':true,'labelsHeight':'6rem','hideZeroColumns':true}"
-            :columns="[{'key':0,'label':'<1'},{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10+'},{'key':'NoAnswer','label':'Shy'}]"
-            :sets="[{'setKey':'europe','setLabel':'Europe','color':'#149','dataCount':160},{'setKey':'north-america','setLabel':'North America','color':'#fea','dataCount':194}]"
-            :data="{'_multiSet':true,'europe':{'0':16,'1':10,'2':16,'3':16,'4':11,'5':15,'6':6,'7':19,'8':10,'9':7,'10':29,'NoAnswer':5},'north-america':{'0':16,'1':9,'2':15,'3':11,'4':8,'5':22,'6':10,'7':21,'8':8,'9':7,'10':63,'NoAnswer':4}}"
-            :dataCount="{'europe':160,'north-america':194}"
-          > 
-          </graph>
-        </div>
-
-        <p>
-          Incidence of furry is rather similar between the continents:
-        </p>
-
-        <div class="graph-area">
-          <graph
-            class="graph-wide"
-            title="IsFurry"
-            :conf="{'columnXMargin':'1.2rem','size':'wide','barWidth':'8px !important','trackWidthMultiset':'8px !important','trackWidth':'16px !important','columnWidth':'72px !important','sidewaysLabels':true,'labelsHeight':'6rem','hideZeroColumns':true}"
-            :columns="[{'key':0,'label':'None'},{'key':1,'label':'Furry'},{'key':2,'label':'Scalie'},{'key':3,'label':'Other'},{'key':4,'label':'Shy'}]"
-            :sets="[{'setKey':'europe','setLabel':'Europe','color':'#149','dataCount':160},{'setKey':'north-america','setLabel':'North America','color':'#fea','dataCount':194}]"
-            :data="{'_multiSet':true,'europe':{'0':115,'1':31,'2':21,'3':8,'4':8},'north-america':{'0':138,'1':39,'2':33,'3':12,'4':5}}"
-            :dataCount="{'europe':160,'north-america':194}"
-          > 
-          </graph>
-        </div>
-
-        <p>
-          But while Americans were less likely to volunteer their age, Europeans were less likely to volunteer their usernames.
-        </p>
-        
-        <div class="graph-area">
-          <graph
-            class="graph-wide"
-            title="UsernameProvided"
-            :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
-            :columns="[{'key':1,'label':'Yes'},{'key':3,'label':'Neutral'},{'key':2,'label':'No'},{'key':0,'label':'Shy'}]"
-            :sets="[{'setKey':'europe','setLabel':'Europe','color':'#149','dataCount':160},{'setKey':'north-america','setLabel':'North America','color':'#fea','dataCount':194}]"
-            :data="{'_multiSet':true,'europe':{'1':50,'2':110},'north-america':{'1':73,'2':121}}"
-            :dataCount="{'europe':160,'north-america':194}"
-          > 
-          </graph>
-        </div>
-
-        <p>
-          And I am tempted to jump continents:
-        </p>
-
-        <div class="graph-area">
-          <graph
-            class="graph-wide"
-            title="HTTYD1Rating"
-            :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
-            :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
-            :sets="[{'setKey':'europe','setLabel':'Europe','color':'#149','dataCount':160},{'setKey':'north-america','setLabel':'North America','color':'#fea','dataCount':194}]"
-            :data="{'_multiSet':true,'europe':{'1':1,'4':1,'7':4,'8':19,'9':56,'10':79},'north-america':{'6':1,'7':1,'8':23,'9':46,'10':123}}"
-            :dataCount="{'europe':160,'north-america':194}"
-          > 
-              <average
-                :sets="[{'setKey':'europe','setLabel':'Europe','color':'#149','dataCount':160},{'setKey':'north-america','setLabel':'North America','color':'#fea','dataCount':194}]"
-                :data="{'_multiSet':true,'europe':{'1':1,'4':1,'7':4,'8':19,'9':56,'10':79},'north-america':{'6':1,'7':1,'8':23,'9':46,'10':123}}"
-                :dataCount="{'europe':160,'north-america':194}"
-              ></average>
-            
-          </graph>
-        </div>
-
-        <p>
-          Look, I'd put in some tabs and all, but I am on the line 2994 of the HTML file and vscode is lagging, so you'll have to take my word
-          when I say that similar thing can be seen on graphs that rate specific aspects of the movie.
-        </p>
-
-        <p>
-          Another thing that pops up, <i>again</i>. Toothless is the more popular character in both cases, but wins by a much greater margin
-          over here in Europe. Test drive has a convincing win over Forbidden Friendship in EU, but a minor loss over it among the NA respondents.
-        </p>
-
-        <p>
-          Is that difference due to gender or due to location? Well, depends. When it comes to favourite character, location to have a stronger
-          effect on the results than the gender (Toothless doesn't lead in EU just because it's the #1 choice for males, which represent a bigger
-          portion of the EU responses compared to the NA responses) ... though location × gender results are still interesting in that case. While
-          "Hiccup #1" responses are reasonably comparable across both genders among the NA respondents, there's a rather noticeable dip among the 
-          femae/EU respondents.
-        </p>
-
-        <p>
-          Location obfuscates some interesting bits in the 'favourite soundtrack' graph: namely: in the US, female respondents picked Forbidden 
-          Friendship as their favourite noticeably more often than Test Drive (while male responses went the other way), but they sorta averaged out.
-          In case of EU, though ... well, you could make that the 'favourite soundtrack by location' is actually the same thing as 'favourite soundtrack
-          by gender.' But this won't be the last time 'gender × location' graph is gonna be more interesting than each of these two on their own.
-        </p>
-
-        <p>
-          Shoutout to that three-way tie on EU/female 'favourite soundtrack by gender x location' graph.
-        </p>
-
-        <Tabs v-model="tabs.location.httydfav">
-          <Tab
-            label="Favourite Character"
-            val="fc"
-          />
-          <Tab
-            label="Favourite Soundtrack"
-            val="fs"
-          />
-          <Tab
-            label="Favourite Character (gender+location)"
-            val="fcg"
-          />
-          <Tab
-            label="Favourite Soundtrack (gender+location)"
-            val="fsg"
-          />
-        </Tabs>
-
-        <TabPanels v-model="tabs.location.httydfav">
-          <TabPanel val="fc">
-            <div class="graph-area">
-               <graph
-                  class="graph-wide"
-                  title="HTTYD1FavouriteCharacter"
-                  :conf="{'columnXMargin':'1.2rem','size':'wide','barWidth':'8px !important','trackWidthMultiset':'8px !important','trackWidth':'16px !important','columnWidth':'72px !important','sidewaysLabels':true,'labelsHeight':'6rem','hideZeroColumns':true}"
-                  :columns="[{'key':3,'label':'Hiccup'},{'key':4,'label':'Toothless'},{'key':5,'label':'Astrid'},{'key':6,'label':'Stoick'},{'key':8,'label':'Gobber'},{'key':9,'label':'Ruffnut'},{'key':10,'label':'Tuffnut'},{'key':11,'label':'Twins'},{'key':12,'label':'Snotlout'},{'key':13,'label':'Fishlegs'},{'key':2,'label':'Other'},{'key':1,'label':'Shy'},{'key':'dwFlag','label':'D.W.'}]"
-                  :sets="[{'setKey':'europe','setLabel':'Europe','color':'#149','dataCount':160},{'setKey':'north-america','setLabel':'North America','color':'#fea','dataCount':194}]"
-                  :data="{'_multiSet':true,'europe':{'1':1,'2':4,'3':39,'4':97,'5':8,'6':1,'8':5,'9':1,'10':3,'12':1},'north-america':{'1':3,'2':7,'3':59,'4':104,'5':8,'6':5,'8':6,'9':1,'10':1}}"
-                  :dataCount="{'europe':160,'north-america':194}"
-                > 
-                </graph>
-            </div>
-          </TabPanel>
-          <TabPanel val="fs">
-            <div class="graph-area">
+              </graph>
+            </TabPanel>
+            <TabPanel class="graph-wide" val="fsong">
               <graph
                 class="graph-wide"
                 title="HTTYD1FavouriteSoundtrack"
                 :conf="{'columnXMargin':'1.2rem','size':'wide','barWidth':'8px !important','trackWidthMultiset':'8px !important','trackWidth':'16px !important','columnWidth':'72px !important','sidewaysLabels':true,'labelsHeight':'6rem','hideZeroColumns':true}"
                 :columns="[{'key':0,'label':'This is Berk'},{'key':1,'label':'Dragon Battle'},{'key':2,'label':'The Downed Dragon'},{'key':3,'label':'Dragon training'},{'key':4,'label':'Wounded'},{'key':5,'label':'The Dragon Book'},{'key':6,'label':'Focus, Hiccup!'},{'key':7,'label':'Forbidden Friendship'},{'key':8,'label':'New Tail'},{'key':9,'label':'See You Tomorrow'},{'key':10,'label':'Test Drive'},{'key':11,'label':'Not so Fireproof'},{'key':12,'label':'This Time For Sure'},{'key':13,'label':'Astrid Goes for a Spin'},{'key':14,'label':'Romantic Flight'},{'key':15,'label':'Dragon\'s Den'},{'key':16,'label':'The Cove'},{'key':17,'label':'The Kill Ring'},{'key':18,'label':'Ready The Ships'},{'key':19,'label':'Battling the Green Death'},{'key':20,'label':'Counter Attack'},{'key':21,'label':'Where\'s Hiccup'},{'key':22,'label':'Coming Back Around'},{'key':23,'label':'Sticks and Stones'},{'key':24,'label':'Vikings Have Their Tea'},{'key':25,'label':'Shy'},{'key':26,'label':'D.W.'}]"
-                :sets="[{'setKey':'europe','setLabel':'Europe','color':'#149','dataCount':160},{'setKey':'north-america','setLabel':'North America','color':'#fea','dataCount':194}]"
-                :data="{'_multiSet':true,'europe':{'2':1,'7':38,'8':5,'9':6,'10':55,'14':12,'21':1,'22':2,'23':9,'25':31},'north-america':{'7':59,'8':7,'9':6,'10':57,'14':13,'15':1,'21':2,'22':7,'23':14,'25':28}}"
-                :dataCount="{'europe':160,'north-america':194}"
-              > 
+                :sets="[{'setKey':'all','setLabel':'All','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'under-16','setLabel':'Under 16','color':'#fa6','dataCount':58},{'setKey':'16-19','setLabel':'16-19','color':'#f83','dataCount':126},{'setKey':'19-22','setLabel':'19-22','color':'#e31','dataCount':103},{'setKey':'22-26','setLabel':'22-26','color':'#c90000','dataCount':44},{'setKey':'26+','setLabel':'26+','color':'#a00','dataCount':33}]"
+                :data="{'_multiSet':true,'all':{'2':1,'7':120,'8':15,'9':13,'10':139,'14':33,'15':1,'21':5,'22':9,'23':28,'25':67,'26':1},'under-16':{'7':3,'8':3,'9':1,'10':24,'14':5,'21':3,'22':3,'23':5,'25':11},'16-19':{'2':1,'7':37,'8':3,'9':4,'10':38,'14':9,'22':1,'23':7,'25':26,'26':1},'19-22':{'7':42,'8':5,'9':2,'10':25,'14':7,'21':2,'22':4,'23':6,'25':10},'22-26':{'7':15,'9':1,'10':16,'14':3,'22':1,'23':4,'25':4},'26+':{'7':12,'8':1,'9':2,'10':10,'14':1,'23':2,'25':5}}"
+                :dataCount="{'all':431,'':0,'under-16':58,'16-19':126,'19-22':103,'22-26':44,'26+':33}"
+              >
               </graph>
-            </div>
-          </TabPanel>
-          <TabPanel val="fcg">
-            <div class="graph-area">
+            </TabPanel>
+            <TabPanel class="graph-wide" val="fchar">
               <graph
                 class="graph-wide"
                 title="HTTYD1FavouriteCharacter"
                 :conf="{'columnXMargin':'1.2rem','size':'wide','barWidth':'8px !important','trackWidthMultiset':'8px !important','trackWidth':'16px !important','columnWidth':'72px !important','sidewaysLabels':true,'labelsHeight':'6rem','hideZeroColumns':true}"
                 :columns="[{'key':3,'label':'Hiccup'},{'key':4,'label':'Toothless'},{'key':5,'label':'Astrid'},{'key':6,'label':'Stoick'},{'key':8,'label':'Gobber'},{'key':9,'label':'Ruffnut'},{'key':10,'label':'Tuffnut'},{'key':11,'label':'Twins'},{'key':12,'label':'Snotlout'},{'key':13,'label':'Fishlegs'},{'key':2,'label':'Other'},{'key':1,'label':'Shy'},{'key':'dwFlag','label':'D.W.'}]"
-                :sets="[{'setKey':'male-(eu)','setLabel':'Male (EU)','color':'#33a','dataCount':112},{'setKey':'female-(eu)','setLabel':'Female (EU)','color':'#f33','dataCount':34},{'setKey':'male-(na)','setLabel':'Male (NA)','color':'#88f','dataCount':108},{'setKey':'female-(na)','setLabel':'Female (NA)','color':'#f48','dataCount':66}]"
-                :data="{'_multiSet':true,'male-(eu)':{'2':3,'3':32,'4':69,'5':5,'8':2,'10':1},'female-(eu)':{'2':1,'3':5,'4':22,'5':3,'8':2,'10':1},'male-(na)':{'1':3,'3':32,'4':58,'5':5,'6':4,'8':5,'9':1},'female-(na)':{'2':7,'3':22,'4':31,'5':3,'6':1,'8':1,'10':1}}"
-                :dataCount="{'male-(eu)':112,'female-(eu)':34,'male-(na)':108,'female-(na)':66}"
-              > 
+                :sets="[{'setKey':'all','setLabel':'All','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'under-16','setLabel':'Under 16','color':'#fa6','dataCount':58},{'setKey':'16-19','setLabel':'16-19','color':'#f83','dataCount':126},{'setKey':'19-22','setLabel':'19-22','color':'#e31','dataCount':103},{'setKey':'22-26','setLabel':'22-26','color':'#c90000','dataCount':44},{'setKey':'26+','setLabel':'26+','color':'#a00','dataCount':33}]"
+                :data="{'_multiSet':true,'all':{'1':4,'2':14,'3':121,'4':242,'5':19,'6':8,'8':16,'9':2,'10':4,'12':1},'under-16':{'1':1,'2':4,'3':16,'4':25,'5':4,'8':7,'9':1},'16-19':{'1':1,'2':3,'3':30,'4':75,'5':6,'6':6,'8':5},'19-22':{'1':2,'2':6,'3':34,'4':54,'5':3,'8':1,'10':3},'22-26':{'3':16,'4':24,'5':3,'9':1},'26+':{'3':10,'4':21,'5':1,'12':1}}"
+                :dataCount="{'all':431,'':0,'under-16':58,'16-19':126,'19-22':103,'22-26':44,'26+':33}"
+              >
               </graph>
-            </div>
-          </TabPanel>
-          <TabPanel val="fsg">
-            <div class="graph-area">
+            </TabPanel>
+            <TabPanel class="graph-wide" val="wchar">
               <graph
                 class="graph-wide"
-                title="HTTYD1FavouriteSoundtrack"
+                title="HTTYD1WorstCharacter"
                 :conf="{'columnXMargin':'1.2rem','size':'wide','barWidth':'8px !important','trackWidthMultiset':'8px !important','trackWidth':'16px !important','columnWidth':'72px !important','sidewaysLabels':true,'labelsHeight':'6rem','hideZeroColumns':true}"
-                :columns="[{'key':0,'label':'This is Berk'},{'key':1,'label':'Dragon Battle'},{'key':2,'label':'The Downed Dragon'},{'key':3,'label':'Dragon training'},{'key':4,'label':'Wounded'},{'key':5,'label':'The Dragon Book'},{'key':6,'label':'Focus, Hiccup!'},{'key':7,'label':'Forbidden Friendship'},{'key':8,'label':'New Tail'},{'key':9,'label':'See You Tomorrow'},{'key':10,'label':'Test Drive'},{'key':11,'label':'Not so Fireproof'},{'key':12,'label':'This Time For Sure'},{'key':13,'label':'Astrid Goes for a Spin'},{'key':14,'label':'Romantic Flight'},{'key':15,'label':'Dragon\'s Den'},{'key':16,'label':'The Cove'},{'key':17,'label':'The Kill Ring'},{'key':18,'label':'Ready The Ships'},{'key':19,'label':'Battling the Green Death'},{'key':20,'label':'Counter Attack'},{'key':21,'label':'Where\'s Hiccup'},{'key':22,'label':'Coming Back Around'},{'key':23,'label':'Sticks and Stones'},{'key':24,'label':'Vikings Have Their Tea'},{'key':25,'label':'Shy'},{'key':26,'label':'D.W.'}]"
-                :sets="[{'setKey':'male-(eu)','setLabel':'Male (EU)','color':'#33a','dataCount':112},{'setKey':'female-(eu)','setLabel':'Female (EU)','color':'#f33','dataCount':34},{'setKey':'male-(na)','setLabel':'Male (NA)','color':'#88f','dataCount':108},{'setKey':'female-(na)','setLabel':'Female (NA)','color':'#f48','dataCount':66}]"
-                :data="{'_multiSet':true,'male-(eu)':{'7':26,'8':4,'9':4,'10':44,'14':10,'21':1,'22':1,'23':7,'25':15},'female-(eu)':{'7':9,'8':1,'9':1,'10':9,'14':2,'22':1,'23':2,'25':9},'male-(na)':{'7':30,'8':4,'9':4,'10':36,'14':8,'15':1,'21':1,'22':5,'23':4,'25':15},'female-(na)':{'7':21,'8':3,'9':2,'10':16,'14':4,'21':1,'22':1,'23':8,'25':10}}"
-                :dataCount="{'male-(eu)':112,'female-(eu)':34,'male-(na)':108,'female-(na)':66}"
-              > 
+                :columns="[{'key':3,'label':'Hiccup'},{'key':4,'label':'Toothless'},{'key':5,'label':'Astrid'},{'key':6,'label':'Stoick'},{'key':8,'label':'Gobber'},{'key':9,'label':'Ruffnut'},{'key':10,'label':'Tuffnut'},{'key':11,'label':'Twins'},{'key':12,'label':'Snotlout'},{'key':13,'label':'Fishlegs'},{'key':2,'label':'Other'},{'key':1,'label':'Shy'},{'key':'dwFlag','label':'D.W.'}]"
+                :sets="[{'setKey':'all','setLabel':'All','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'under-16','setLabel':'Under 16','color':'#fa6','dataCount':58},{'setKey':'16-19','setLabel':'16-19','color':'#f83','dataCount':126},{'setKey':'19-22','setLabel':'19-22','color':'#e31','dataCount':103},{'setKey':'22-26','setLabel':'22-26','color':'#c90000','dataCount':44},{'setKey':'26+','setLabel':'26+','color':'#a00','dataCount':33}]"
+                :data="{'_multiSet':true,'all':{'1':42,'2':37,'3':2,'4':2,'5':34,'6':19,'8':7,'9':43,'10':38,'12':147,'13':59,'16':1,'dwFlag':4},'under-16':{'1':3,'2':5,'5':1,'6':2,'9':6,'10':5,'12':28,'13':7,'16':1},'16-19':{'1':14,'2':15,'4':1,'5':9,'6':5,'8':3,'9':9,'10':10,'12':42,'13':18,'dwFlag':2},'19-22':{'1':11,'2':6,'3':2,'5':9,'6':4,'8':1,'9':11,'10':12,'12':34,'13':13},'22-26':{'1':2,'2':4,'5':7,'6':1,'8':1,'9':7,'10':4,'12':13,'13':5},'26+':{'1':3,'2':2,'4':1,'5':4,'6':1,'8':1,'9':3,'10':3,'12':8,'13':7,'dwFlag':1}}"
+                :dataCount="{'all':431,'':0,'under-16':58,'16-19':126,'19-22':103,'22-26':44,'26+':33}"
+              >
               </graph>
-            </div>
-          </TabPanel>
-        </TabPanels>
+            </TabPanel>
+          </TabPanels>
+        </div>
 
         <p>
-          As far as the second movie is concerned, overall, the averages are tied. Per aspects, some aspects were rated higher by the EU (plot, characters, themes),
-          and some were more popular amongst people from North America (score, visuals, emotion):
-        </p>
-
-        <Tabs v-model="tabs.location.httyd2">
-          <Tab
-            label="Overall"
-            val="overall"
-          />
-          <Tab
-            label="Plot"
-            val="p"
-          />
-          <Tab
-            label="Emotion"
-            val="e"
-          />
-          <Tab
-            label="Characters"
-            val="c"
-          />
-          <Tab
-            label="Theme"
-            val="t"
-          />
-          <Tab
-            label="Visuals"
-            val="v"
-          />
-          <Tab
-            label="Score"
-            val="s"
-          />
-        </Tabs>
-
-        <TabPanels v-model="tabs.location.httyd2">
-          <TabPanel val="overall">
-            <div class="graph-area">
-               <graph
-                  class="graph-wide"
-                  title="HTTYD2PlotRating"
-                  :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
-                  :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
-                  :sets="[{'setKey':'europe','setLabel':'Europe','color':'#149','dataCount':160},{'setKey':'north-america','setLabel':'North America','color':'#fea','dataCount':194}]"
-                  :data="{'_multiSet':true,'europe':{'3':2,'4':1,'5':6,'6':11,'7':33,'8':40,'9':38,'10':28,'NoAnswer':1},'north-america':{'1':1,'2':1,'4':3,'5':5,'6':11,'7':53,'8':46,'9':44,'10':28,'NoAnswer':2}}"
-                  :dataCount="{'europe':160,'north-america':194}"
-                > 
-                    <average
-                      :sets="[{'setKey':'europe','setLabel':'Europe','color':'#149','dataCount':160},{'setKey':'north-america','setLabel':'North America','color':'#fea','dataCount':194}]"
-                      :data="{'_multiSet':true,'europe':{'3':2,'4':1,'5':6,'6':11,'7':33,'8':40,'9':38,'10':28,'NoAnswer':1},'north-america':{'1':1,'2':1,'4':3,'5':5,'6':11,'7':53,'8':46,'9':44,'10':28,'NoAnswer':2}}"
-                      :dataCount="{'europe':160,'north-america':194}"
-                    ></average>
-                </graph>
-            </div>
-          </TabPanel>
-          <TabPanel val="p">
-            <div class="graph-area">
-              <graph
-                  class="graph-wide"
-                  title="HTTYD2PlotRating"
-                  :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
-                  :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
-                  :sets="[{'setKey':'europe','setLabel':'Europe','color':'#149','dataCount':160},{'setKey':'north-america','setLabel':'North America','color':'#fea','dataCount':194}]"
-                  :data="{'_multiSet':true,'europe':{'3':2,'4':1,'5':6,'6':11,'7':33,'8':40,'9':38,'10':28,'NoAnswer':1},'north-america':{'1':1,'2':1,'4':3,'5':5,'6':11,'7':53,'8':46,'9':44,'10':28,'NoAnswer':2}}"
-                  :dataCount="{'europe':160,'north-america':194}"
-                > 
-                    <average
-                      :sets="[{'setKey':'europe','setLabel':'Europe','color':'#149','dataCount':160},{'setKey':'north-america','setLabel':'North America','color':'#fea','dataCount':194}]"
-                      :data="{'_multiSet':true,'europe':{'3':2,'4':1,'5':6,'6':11,'7':33,'8':40,'9':38,'10':28,'NoAnswer':1},'north-america':{'1':1,'2':1,'4':3,'5':5,'6':11,'7':53,'8':46,'9':44,'10':28,'NoAnswer':2}}"
-                      :dataCount="{'europe':160,'north-america':194}"
-                    ></average>
-                </graph>
-            </div>
-          </TabPanel>
-          <TabPanel val="e">
-            <div class="graph-area">
-              <graph
-            class="graph-wide"
-            title="HTTYD2EmotionRating"
-            :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
-            :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
-            :sets="[{'setKey':'europe','setLabel':'Europe','color':'#149','dataCount':160},{'setKey':'north-america','setLabel':'North America','color':'#fea','dataCount':194}]"
-            :data="{'_multiSet':true,'europe':{'1':1,'2':1,'4':2,'5':3,'6':4,'7':10,'8':26,'9':42,'10':70,'NoAnswer':1},'north-america':{'1':1,'3':1,'4':1,'5':2,'6':6,'7':13,'8':24,'9':57,'10':87,'NoAnswer':2}}"
-            :dataCount="{'europe':160,'north-america':194}"
-          > 
-              <average
-                :sets="[{'setKey':'europe','setLabel':'Europe','color':'#149','dataCount':160},{'setKey':'north-america','setLabel':'North America','color':'#fea','dataCount':194}]"
-                :data="{'_multiSet':true,'europe':{'1':1,'2':1,'4':2,'5':3,'6':4,'7':10,'8':26,'9':42,'10':70,'NoAnswer':1},'north-america':{'1':1,'3':1,'4':1,'5':2,'6':6,'7':13,'8':24,'9':57,'10':87,'NoAnswer':2}}"
-                :dataCount="{'europe':160,'north-america':194}"
-              ></average>
-            
-          </graph>
-            </div>
-          </TabPanel>
-          <TabPanel val="c">
-            <div class="graph-area">
-                <graph
-            class="graph-wide"
-            title="HTTYD2CharacterRating"
-            :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
-            :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
-            :sets="[{'setKey':'europe','setLabel':'Europe','color':'#149','dataCount':160},{'setKey':'north-america','setLabel':'North America','color':'#fea','dataCount':194}]"
-            :data="{'_multiSet':true,'europe':{'2':2,'3':1,'4':3,'5':2,'6':5,'7':14,'8':53,'9':33,'10':46,'NoAnswer':1},'north-america':{'1':1,'2':1,'4':2,'5':7,'6':8,'7':31,'8':37,'9':57,'10':48,'NoAnswer':2}}"
-            :dataCount="{'europe':160,'north-america':194}"
-          > 
-              <average
-                :sets="[{'setKey':'europe','setLabel':'Europe','color':'#149','dataCount':160},{'setKey':'north-america','setLabel':'North America','color':'#fea','dataCount':194}]"
-                :data="{'_multiSet':true,'europe':{'2':2,'3':1,'4':3,'5':2,'6':5,'7':14,'8':53,'9':33,'10':46,'NoAnswer':1},'north-america':{'1':1,'2':1,'4':2,'5':7,'6':8,'7':31,'8':37,'9':57,'10':48,'NoAnswer':2}}"
-                :dataCount="{'europe':160,'north-america':194}"
-              ></average>
-            
-          </graph>
-        
-            </div>
-          </TabPanel>
-          <TabPanel val="t">
-            <div class="graph-area">
-               <graph
-            class="graph-wide"
-            title="HTTYD2ThemeRating"
-            :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
-            :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
-            :sets="[{'setKey':'europe','setLabel':'Europe','color':'#149','dataCount':160},{'setKey':'north-america','setLabel':'North America','color':'#fea','dataCount':194}]"
-            :data="{'_multiSet':true,'europe':{'2':1,'4':4,'5':6,'6':14,'7':21,'8':38,'9':28,'10':46,'NoAnswer':2},'north-america':{'1':3,'2':1,'3':2,'4':4,'5':9,'6':11,'7':22,'8':40,'9':47,'10':53,'NoAnswer':2}}"
-            :dataCount="{'europe':160,'north-america':194}"
-          > 
-              <average
-                :sets="[{'setKey':'europe','setLabel':'Europe','color':'#149','dataCount':160},{'setKey':'north-america','setLabel':'North America','color':'#fea','dataCount':194}]"
-                :data="{'_multiSet':true,'europe':{'2':1,'4':4,'5':6,'6':14,'7':21,'8':38,'9':28,'10':46,'NoAnswer':2},'north-america':{'1':3,'2':1,'3':2,'4':4,'5':9,'6':11,'7':22,'8':40,'9':47,'10':53,'NoAnswer':2}}"
-                :dataCount="{'europe':160,'north-america':194}"
-              ></average>
-            
-          </graph>
-            </div>
-          </TabPanel>
-          <TabPanel val="v">
-            <div class="graph-area">
-                <graph
-            class="graph-wide"
-            title="HTTYD1VisualsRating"
-            :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
-            :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
-            :sets="[{'setKey':'europe','setLabel':'Europe','color':'#149','dataCount':160},{'setKey':'north-america','setLabel':'North America','color':'#fea','dataCount':194}]"
-            :data="{'_multiSet':true,'europe':{'5':4,'6':7,'7':24,'8':35,'9':37,'10':52,'NoAnswer':1},'north-america':{'4':1,'5':2,'6':13,'7':21,'8':48,'9':44,'10':64,'NoAnswer':1}}"
-            :dataCount="{'europe':160,'north-america':194}"
-          > 
-              <average
-                :sets="[{'setKey':'europe','setLabel':'Europe','color':'#149','dataCount':160},{'setKey':'north-america','setLabel':'North America','color':'#fea','dataCount':194}]"
-                :data="{'_multiSet':true,'europe':{'5':4,'6':7,'7':24,'8':35,'9':37,'10':52,'NoAnswer':1},'north-america':{'4':1,'5':2,'6':13,'7':21,'8':48,'9':44,'10':64,'NoAnswer':1}}"
-                :dataCount="{'europe':160,'north-america':194}"
-              ></average>
-            
-          </graph>
-            </div>
-          </TabPanel>
-          <TabPanel val="s">
-            <div class="graph-area">
-               <graph
-            class="graph-wide"
-            title="HTTYD1ScoreRating"
-            :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
-            :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
-            :sets="[{'setKey':'europe','setLabel':'Europe','color':'#149','dataCount':160},{'setKey':'north-america','setLabel':'North America','color':'#fea','dataCount':194}]"
-            :data="{'_multiSet':true,'europe':{'2':1,'5':2,'6':3,'7':5,'8':5,'9':17,'10':127},'north-america':{'3':1,'4':1,'5':1,'6':2,'7':3,'8':6,'9':12,'10':167,'NoAnswer':1}}"
-            :dataCount="{'europe':160,'north-america':194}"
-          > 
-              <average
-                :sets="[{'setKey':'europe','setLabel':'Europe','color':'#149','dataCount':160},{'setKey':'north-america','setLabel':'North America','color':'#fea','dataCount':194}]"
-                :data="{'_multiSet':true,'europe':{'2':1,'5':2,'6':3,'7':5,'8':5,'9':17,'10':127},'north-america':{'3':1,'4':1,'5':1,'6':2,'7':3,'8':6,'9':12,'10':167,'NoAnswer':1}}"
-                :dataCount="{'europe':160,'north-america':194}"
-              ></average>
-            
-          </graph>
-            </div>
-          </TabPanel>
-        </TabPanels>
-
-        <p>
-          But gender × location turns out to be the cooler daniel once more. Turns out that gender × location graph gets very interesting for the second movie.
-          With the first movie, the answers didn't diverge enough to warrant a mention. There were gender differences, but not much location differences. With
-          HTTYD2, the four groups (EU/male, EU/female, NA/male, NA/female) often get wildly different bell curves and peaks (with some double peaks as well).
-          Remember some of the weirness I pointed out on early graphs? When viewed in gender × location, the mysteries start to unravel.
+          Plot rating graph looks as if some people in the 23-27 group accidentally thought this poll is the Stanley Parable and smashed an 8 instead of 10/10,
+          but remember: with small sample sizes like this, bell curve anomalies like this are kinda to be expected.
         </p>
 
         <p>
-          (As a side note: I am aware that I am ignoring the age here — which is a factor that probably contributes to the double peaking we see here — but if
-          I did age × location × gender, the graph would have too many columns to be useful. Therefore, I ignore the age at the moment.)
+          I'm not going to post all the graphs, because emotion rating graph resembles the plot rating (minus the bell curve anomaly) in the sense that older
+          people gave better ratings. Theme rating graph is sorta even across demographics. So is the score rating — almost everyone went for 10/10 equally often
+          on that one. People who voted anything less than that are such a minority there's nothing to extrapolate from that graph. Character rating graph is
+          all over the place.
         </p>
 
-        <Tabs v-model="tabs.location.httyd2gl">
-          <Tab
-            label="Overall"
-            val="overall"
-          />
-          <Tab
-            label="Plot"
-            val="p"
-          />
-          <Tab
-            label="Emotion"
-            val="e"
-          />
-          <Tab
-            label="Characters"
-            val="c"
-          />
-          <Tab
-            label="Theme"
-            val="t"
-          />
-          <Tab
-            label="Visuals"
-            val="v"
-          />
-          <Tab
-            label="Score"
-            val="s"
-          />
-        </Tabs>
+        <p>
+          Admittedly, older people sticking higher grades to an older movie is not very surprising. However, when it comes to the visuals, there is a small
+          surprise, to be sure — though perhaps a welcome one.
+        </p>
 
-        <TabPanels v-model="tabs.location.httyd2gl">
-          <TabPanel val="overall">
-            <div class="graph-area">
+
+        <p>
+          Objectively speaking, the visuals of the first movie <i>do</i> look rather dated due to advancements in computer graphics. But that doesn't stop the youngest
+          demographics from ten-outta-tenning the aspect. Interestingly enough, 17-23 cohorts get a bit of a double-peaking at 10 and 8, while the curve of the 27+
+          cohort gets a single peak at 9/10.
+        </p>
+
+        <p>
+          I don't feel there's enough data to comment on fav/lest fav character by age, so we'll be skipping that.
+        </p>
+
+        <p>
+          Let's move to the second movie.
+        </p>
+
+        <div class="graph-area">
+          <graph
+            class="graph-wide"
+            title="HTTYD2Rating"
+            :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
+            :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
+            :sets="[{'setKey':'all','setLabel':'All','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'under-16','setLabel':'Under 16','color':'#fa6','dataCount':58},{'setKey':'16-19','setLabel':'16-19','color':'#f83','dataCount':126},{'setKey':'19-22','setLabel':'19-22','color':'#e31','dataCount':103},{'setKey':'22-26','setLabel':'22-26','color':'#c90000','dataCount':44},{'setKey':'26+','setLabel':'26+','color':'#a00','dataCount':33}]"
+            :data="{'_multiSet':true,'all':{'1':1,'2':2,'3':1,'4':1,'5':7,'6':15,'7':54,'8':109,'9':122,'10':115,'NoAnswer':4},'under-16':{'4':1,'5':1,'6':2,'7':9,'8':9,'9':18,'10':18},'16-19':{'5':2,'6':3,'7':13,'8':29,'9':38,'10':39,'NoAnswer':2},'19-22':{'5':2,'6':3,'7':12,'8':30,'9':30,'10':26},'22-26':{'1':1,'2':1,'5':2,'6':1,'7':6,'8':17,'9':5,'10':11},'26+':{'2':1,'3':1,'6':3,'7':6,'8':5,'9':9,'10':7,'NoAnswer':1}}"
+            :dataCount="{'all':431,'':0,'under-16':58,'16-19':126,'19-22':103,'22-26':44,'26+':33}"
+          >
+              <average
+                :sets="[{'setKey':'all','setLabel':'All','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'under-16','setLabel':'Under 16','color':'#fa6','dataCount':58},{'setKey':'16-19','setLabel':'16-19','color':'#f83','dataCount':126},{'setKey':'19-22','setLabel':'19-22','color':'#e31','dataCount':103},{'setKey':'22-26','setLabel':'22-26','color':'#c90000','dataCount':44},{'setKey':'26+','setLabel':'26+','color':'#a00','dataCount':33}]"
+                :data="{'_multiSet':true,'all':{'1':1,'2':2,'3':1,'4':1,'5':7,'6':15,'7':54,'8':109,'9':122,'10':115,'NoAnswer':4},'under-16':{'4':1,'5':1,'6':2,'7':9,'8':9,'9':18,'10':18},'16-19':{'5':2,'6':3,'7':13,'8':29,'9':38,'10':39,'NoAnswer':2},'19-22':{'5':2,'6':3,'7':12,'8':30,'9':30,'10':26},'22-26':{'1':1,'2':1,'5':2,'6':1,'7':6,'8':17,'9':5,'10':11},'26+':{'2':1,'3':1,'6':3,'7':6,'8':5,'9':9,'10':7,'NoAnswer':1}}"
+                :dataCount="{'all':431,'':0,'under-16':58,'16-19':126,'19-22':103,'22-26':44,'26+':33}"
+              ></average>
+
+          </graph>
+
+          <graph
+              class="graph-wide"
+              title="HTTYD2PlotRating"
+              :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
+              :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
+              :sets="[{'setKey':'all','setLabel':'All','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'under-16','setLabel':'Under 16','color':'#fa6','dataCount':58},{'setKey':'16-19','setLabel':'16-19','color':'#f83','dataCount':126},{'setKey':'19-22','setLabel':'19-22','color':'#e31','dataCount':103},{'setKey':'22-26','setLabel':'22-26','color':'#c90000','dataCount':44},{'setKey':'26+','setLabel':'26+','color':'#a00','dataCount':33}]"
+              :data="{'_multiSet':true,'all':{'1':1,'2':1,'3':2,'4':5,'5':13,'6':29,'7':96,'8':107,'9':97,'10':76,'NoAnswer':4},'under-16':{'4':1,'5':2,'6':2,'7':13,'8':11,'9':15,'10':13,'NoAnswer':1},'16-19':{'5':1,'6':8,'7':26,'8':28,'9':36,'10':25,'NoAnswer':2},'19-22':{'4':1,'5':3,'6':10,'7':23,'8':31,'9':20,'10':15},'22-26':{'1':1,'2':1,'4':1,'5':2,'6':5,'7':12,'8':8,'9':7,'10':7},'26+':{'3':2,'4':1,'5':1,'6':1,'7':8,'8':12,'9':4,'10':3,'NoAnswer':1}}"
+              :dataCount="{'all':431,'':0,'under-16':58,'16-19':126,'19-22':103,'22-26':44,'26+':33}"
+            >
+                <average
+                  :sets="[{'setKey':'all','setLabel':'All','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'under-16','setLabel':'Under 16','color':'#fa6','dataCount':58},{'setKey':'16-19','setLabel':'16-19','color':'#f83','dataCount':126},{'setKey':'19-22','setLabel':'19-22','color':'#e31','dataCount':103},{'setKey':'22-26','setLabel':'22-26','color':'#c90000','dataCount':44},{'setKey':'26+','setLabel':'26+','color':'#a00','dataCount':33}]"
+                  :data="{'_multiSet':true,'all':{'1':1,'2':1,'3':2,'4':5,'5':13,'6':29,'7':96,'8':107,'9':97,'10':76,'NoAnswer':4},'under-16':{'4':1,'5':2,'6':2,'7':13,'8':11,'9':15,'10':13,'NoAnswer':1},'16-19':{'5':1,'6':8,'7':26,'8':28,'9':36,'10':25,'NoAnswer':2},'19-22':{'4':1,'5':3,'6':10,'7':23,'8':31,'9':20,'10':15},'22-26':{'1':1,'2':1,'4':1,'5':2,'6':5,'7':12,'8':8,'9':7,'10':7},'26+':{'3':2,'4':1,'5':1,'6':1,'7':8,'8':12,'9':4,'10':3,'NoAnswer':1}}"
+                  :dataCount="{'all':431,'':0,'under-16':58,'16-19':126,'19-22':103,'22-26':44,'26+':33}"
+                ></average>
+
+            </graph>
+        </div>
+
+        <p>
+          Oh, how the turn tables. In general, older respondents judged the plot — as well as the movie overall — more harshly than the younger participants.
+        </p>
+
+        <p>
+          Other graphs aren't as interesting: while older people did tend to rate the emotional impact slightly lower than the younger participants, the differences
+          are almost within the margin of error. Visuals rating is roughly even, with older participants having a slightly bigger chance of rating that aspect lower.
+          Character rating is also all over the place.
+        </p>
+
+        <div class="graph-area">
+          <graph
+              class="graph-wide"
+              title="HTTYD2ScoreRating"
+              :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
+              :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
+              :sets="[{'setKey':'all','setLabel':'All','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'under-16','setLabel':'Under 16','color':'#fa6','dataCount':58},{'setKey':'16-19','setLabel':'16-19','color':'#f83','dataCount':126},{'setKey':'19-22','setLabel':'19-22','color':'#e31','dataCount':103},{'setKey':'22-26','setLabel':'22-26','color':'#c90000','dataCount':44},{'setKey':'26+','setLabel':'26+','color':'#a00','dataCount':33}]"
+              :data="{'_multiSet':true,'all':{'2':1,'3':3,'4':2,'5':6,'6':9,'7':24,'8':83,'9':80,'10':218,'NoAnswer':5},'under-16':{'5':1,'6':2,'7':2,'8':8,'9':17,'10':28},'16-19':{'3':1,'4':1,'6':2,'7':8,'8':22,'9':12,'10':77,'NoAnswer':3},'19-22':{'5':2,'6':2,'7':2,'8':19,'9':25,'10':52,'NoAnswer':1},'22-26':{'2':1,'4':1,'5':2,'6':1,'7':4,'8':11,'9':6,'10':18},'26+':{'3':2,'7':2,'8':11,'9':5,'10':12,'NoAnswer':1}}"
+              :dataCount="{'all':431,'':0,'under-16':58,'16-19':126,'19-22':103,'22-26':44,'26+':33}"
+            >
+                <average
+                  :sets="[{'setKey':'all','setLabel':'All','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'under-16','setLabel':'Under 16','color':'#fa6','dataCount':58},{'setKey':'16-19','setLabel':'16-19','color':'#f83','dataCount':126},{'setKey':'19-22','setLabel':'19-22','color':'#e31','dataCount':103},{'setKey':'22-26','setLabel':'22-26','color':'#c90000','dataCount':44},{'setKey':'26+','setLabel':'26+','color':'#a00','dataCount':33}]"
+                  :data="{'_multiSet':true,'all':{'2':1,'3':3,'4':2,'5':6,'6':9,'7':24,'8':83,'9':80,'10':218,'NoAnswer':5},'under-16':{'5':1,'6':2,'7':2,'8':8,'9':17,'10':28},'16-19':{'3':1,'4':1,'6':2,'7':8,'8':22,'9':12,'10':77,'NoAnswer':3},'19-22':{'5':2,'6':2,'7':2,'8':19,'9':25,'10':52,'NoAnswer':1},'22-26':{'2':1,'4':1,'5':2,'6':1,'7':4,'8':11,'9':6,'10':18},'26+':{'3':2,'7':2,'8':11,'9':5,'10':12,'NoAnswer':1}}"
+                  :dataCount="{'all':431,'':0,'under-16':58,'16-19':126,'19-22':103,'22-26':44,'26+':33}"
+                ></average>
+
+          </graph>
+        </div>
+
+        <p>
+          There's some good ol' divide along the age lines here, with older participants generally giving worse ratings than their younger counterparts.
+          Both 23-27 and 27+ cohorts double-peak on 10/10 and 8/10, but the tallest peak is reversed between the groups and — rather interestingly —
+          23-37 have much bigger portion on 8/10 than the 27+.
+        </p>
+
+        <p>
+          Theme rating chart also deserves a shout-out, because this double-peaking phenomenom, with 27+ and 23-27 cohorts holding different peaks
+          gets even stronger. But again: remember the small sample size? Wacky results like this aren't too surprising.
+        </p>
+
+        <div class="grpah-area">
+          <graph
+              class="graph-wide"
+              title="HTTYD2ThemeRating"
+              :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
+              :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
+              :sets="[{'setKey':'all','setLabel':'All','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'under-16','setLabel':'Under 16','color':'#fa6','dataCount':58},{'setKey':'16-19','setLabel':'16-19','color':'#f83','dataCount':126},{'setKey':'19-22','setLabel':'19-22','color':'#e31','dataCount':103},{'setKey':'22-26','setLabel':'22-26','color':'#c90000','dataCount':44},{'setKey':'26+','setLabel':'26+','color':'#a00','dataCount':33}]"
+              :data="{'_multiSet':true,'all':{'1':3,'2':2,'3':3,'4':8,'5':17,'6':33,'7':48,'8':100,'9':87,'10':125,'NoAnswer':5},'under-16':{'3':1,'5':5,'6':5,'7':4,'8':16,'9':13,'10':13,'NoAnswer':1},'16-19':{'4':1,'5':2,'6':9,'7':21,'8':22,'9':27,'10':42,'NoAnswer':2},'19-22':{'1':1,'3':1,'4':3,'5':5,'6':11,'7':10,'8':23,'9':18,'10':30,'NoAnswer':1},'22-26':{'1':2,'2':1,'4':1,'5':1,'6':3,'7':3,'8':16,'9':9,'10':8},'26+':{'2':1,'4':2,'5':1,'6':1,'7':3,'8':6,'9':4,'10':14,'NoAnswer':1}}"
+              :dataCount="{'all':431,'':0,'under-16':58,'16-19':126,'19-22':103,'22-26':44,'26+':33}"
+            >
+                <average
+                  :sets="[{'setKey':'all','setLabel':'All','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'under-16','setLabel':'Under 16','color':'#fa6','dataCount':58},{'setKey':'16-19','setLabel':'16-19','color':'#f83','dataCount':126},{'setKey':'19-22','setLabel':'19-22','color':'#e31','dataCount':103},{'setKey':'22-26','setLabel':'22-26','color':'#c90000','dataCount':44},{'setKey':'26+','setLabel':'26+','color':'#a00','dataCount':33}]"
+                  :data="{'_multiSet':true,'all':{'1':3,'2':2,'3':3,'4':8,'5':17,'6':33,'7':48,'8':100,'9':87,'10':125,'NoAnswer':5},'under-16':{'3':1,'5':5,'6':5,'7':4,'8':16,'9':13,'10':13,'NoAnswer':1},'16-19':{'4':1,'5':2,'6':9,'7':21,'8':22,'9':27,'10':42,'NoAnswer':2},'19-22':{'1':1,'3':1,'4':3,'5':5,'6':11,'7':10,'8':23,'9':18,'10':30,'NoAnswer':1},'22-26':{'1':2,'2':1,'4':1,'5':1,'6':3,'7':3,'8':16,'9':9,'10':8},'26+':{'2':1,'4':2,'5':1,'6':1,'7':3,'8':6,'9':4,'10':14,'NoAnswer':1}}"
+                  :dataCount="{'all':431,'':0,'under-16':58,'16-19':126,'19-22':103,'22-26':44,'26+':33}"
+                ></average>
+
+            </graph>
+        </div>
+
+        <p>&nbsp;</p>
+
+        <p>
+          And then there's HTTYD3.
+        </p>
+
+        <p>
+          As is tradition:
+        </p>
+
+        <div class="graph-area">
+          <graph
+              class="graph-wide"
+              title="HTTYD3Rating"
+              :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
+              :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
+              :sets="[{'setKey':'all','setLabel':'All','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'under-16','setLabel':'Under 16','color':'#fa6','dataCount':58},{'setKey':'16-19','setLabel':'16-19','color':'#f83','dataCount':126},{'setKey':'19-22','setLabel':'19-22','color':'#e31','dataCount':103},{'setKey':'22-26','setLabel':'22-26','color':'#c90000','dataCount':44},{'setKey':'26+','setLabel':'26+','color':'#a00','dataCount':33}]"
+              :data="{'_multiSet':true,'all':{'1':22,'2':14,'3':29,'4':31,'5':23,'6':43,'7':59,'8':69,'9':61,'10':73,'NoAnswer':7},'under-16':{'1':2,'3':2,'4':2,'5':4,'6':4,'7':6,'8':17,'9':8,'10':12,'NoAnswer':1},'16-19':{'1':3,'2':5,'3':7,'4':7,'5':4,'6':12,'7':12,'8':21,'9':29,'10':23,'NoAnswer':3},'19-22':{'1':3,'2':5,'3':4,'4':10,'5':9,'6':9,'7':21,'8':15,'9':11,'10':15,'NoAnswer':1},'22-26':{'1':7,'2':1,'3':2,'4':7,'5':1,'6':4,'7':8,'8':3,'9':4,'10':6,'NoAnswer':1},'26+':{'1':3,'2':1,'3':6,'4':2,'5':1,'6':4,'7':1,'8':4,'9':4,'10':6,'NoAnswer':1}}"
+              :dataCount="{'all':431,'':0,'under-16':58,'16-19':126,'19-22':103,'22-26':44,'26+':33}"
+            >
+                <average
+                  :sets="[{'setKey':'all','setLabel':'All','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'under-16','setLabel':'Under 16','color':'#fa6','dataCount':58},{'setKey':'16-19','setLabel':'16-19','color':'#f83','dataCount':126},{'setKey':'19-22','setLabel':'19-22','color':'#e31','dataCount':103},{'setKey':'22-26','setLabel':'22-26','color':'#c90000','dataCount':44},{'setKey':'26+','setLabel':'26+','color':'#a00','dataCount':33}]"
+                  :data="{'_multiSet':true,'all':{'1':22,'2':14,'3':29,'4':31,'5':23,'6':43,'7':59,'8':69,'9':61,'10':73,'NoAnswer':7},'under-16':{'1':2,'3':2,'4':2,'5':4,'6':4,'7':6,'8':17,'9':8,'10':12,'NoAnswer':1},'16-19':{'1':3,'2':5,'3':7,'4':7,'5':4,'6':12,'7':12,'8':21,'9':29,'10':23,'NoAnswer':3},'19-22':{'1':3,'2':5,'3':4,'4':10,'5':9,'6':9,'7':21,'8':15,'9':11,'10':15,'NoAnswer':1},'22-26':{'1':7,'2':1,'3':2,'4':7,'5':1,'6':4,'7':8,'8':3,'9':4,'10':6,'NoAnswer':1},'26+':{'1':3,'2':1,'3':6,'4':2,'5':1,'6':4,'7':1,'8':4,'9':4,'10':6,'NoAnswer':1}}"
+                  :dataCount="{'all':431,'':0,'under-16':58,'16-19':126,'19-22':103,'22-26':44,'26+':33}"
+                ></average>
+
+            </graph>
+        </div>
+
+        <p>
+          Overall, younger respondents seemed to give higher ratings than the older people, but that's only half of the story. With younger people, you're getting
+          a nice-ish gauss ... almost. But as soon as you hit 20 or more, you start seeing extremes.
+        </p>
+
+        <p>
+          And it keeps happening:
+        </p>
+
+        <div class="graph-area">
+
+          <Tabs v-model="tabs.age.thwRatings">
+            <Tab
+              label="Plot"
+              val="plot"
+            />
+            <Tab
+              label="Theme rating"
+              val="theme"
+            />
+            <Tab
+              label="Theme Approval"
+              val="theme-approval"
+            />
+          </Tabs>
+
+          <TabPanels v-model="tabs.age.thwRatings">
+            <TabPanel val="plot">
               <graph
+              class="graph-wide"
+              title="HTTYD3PlotRating"
+              :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
+              :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
+              :sets="[{'setKey':'all','setLabel':'All','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'under-16','setLabel':'Under 16','color':'#fa6','dataCount':58},{'setKey':'16-19','setLabel':'16-19','color':'#f83','dataCount':126},{'setKey':'19-22','setLabel':'19-22','color':'#e31','dataCount':103},{'setKey':'22-26','setLabel':'22-26','color':'#c90000','dataCount':44},{'setKey':'26+','setLabel':'26+','color':'#a00','dataCount':33}]"
+              :data="{'_multiSet':true,'all':{'1':37,'2':33,'3':37,'4':21,'5':28,'6':48,'7':60,'8':63,'9':44,'10':53,'NoAnswer':7},'under-16':{'1':3,'2':1,'3':3,'4':2,'5':4,'6':1,'7':7,'8':14,'9':10,'10':12,'NoAnswer':1},'16-19':{'1':9,'2':10,'3':8,'4':6,'5':6,'6':13,'7':21,'8':21,'9':10,'10':19,'NoAnswer':3},'19-22':{'1':6,'2':7,'3':13,'4':5,'5':3,'6':15,'7':18,'8':17,'9':11,'10':7,'NoAnswer':1},'22-26':{'1':9,'2':4,'3':3,'4':5,'5':3,'6':6,'7':4,'8':3,'9':3,'10':3,'NoAnswer':1},'26+':{'1':4,'2':7,'3':3,'5':2,'6':5,'8':3,'9':2,'10':6,'NoAnswer':1}}"
+              :dataCount="{'all':431,'':0,'under-16':58,'16-19':126,'19-22':103,'22-26':44,'26+':33}"
+            >
+                <average
+                  :sets="[{'setKey':'all','setLabel':'All','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'under-16','setLabel':'Under 16','color':'#fa6','dataCount':58},{'setKey':'16-19','setLabel':'16-19','color':'#f83','dataCount':126},{'setKey':'19-22','setLabel':'19-22','color':'#e31','dataCount':103},{'setKey':'22-26','setLabel':'22-26','color':'#c90000','dataCount':44},{'setKey':'26+','setLabel':'26+','color':'#a00','dataCount':33}]"
+                  :data="{'_multiSet':true,'all':{'1':37,'2':33,'3':37,'4':21,'5':28,'6':48,'7':60,'8':63,'9':44,'10':53,'NoAnswer':7},'under-16':{'1':3,'2':1,'3':3,'4':2,'5':4,'6':1,'7':7,'8':14,'9':10,'10':12,'NoAnswer':1},'16-19':{'1':9,'2':10,'3':8,'4':6,'5':6,'6':13,'7':21,'8':21,'9':10,'10':19,'NoAnswer':3},'19-22':{'1':6,'2':7,'3':13,'4':5,'5':3,'6':15,'7':18,'8':17,'9':11,'10':7,'NoAnswer':1},'22-26':{'1':9,'2':4,'3':3,'4':5,'5':3,'6':6,'7':4,'8':3,'9':3,'10':3,'NoAnswer':1},'26+':{'1':4,'2':7,'3':3,'5':2,'6':5,'8':3,'9':2,'10':6,'NoAnswer':1}}"
+                  :dataCount="{'all':431,'':0,'under-16':58,'16-19':126,'19-22':103,'22-26':44,'26+':33}"
+                ></average>
+
+            </graph>
+            </TabPanel>
+            <TabPanel val="theme">
+              <graph
+              class="graph-wide"
+              title="HTTYD3ThemeRating"
+              :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
+              :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
+              :sets="[{'setKey':'all','setLabel':'All','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'under-16','setLabel':'Under 16','color':'#fa6','dataCount':58},{'setKey':'16-19','setLabel':'16-19','color':'#f83','dataCount':126},{'setKey':'19-22','setLabel':'19-22','color':'#e31','dataCount':103},{'setKey':'22-26','setLabel':'22-26','color':'#c90000','dataCount':44},{'setKey':'26+','setLabel':'26+','color':'#a00','dataCount':33}]"
+              :data="{'_multiSet':true,'all':{'1':64,'2':26,'3':16,'4':22,'5':23,'6':32,'7':31,'8':55,'9':56,'10':99,'NoAnswer':7},'under-16':{'1':4,'2':4,'3':1,'4':1,'5':2,'6':5,'7':3,'8':7,'9':11,'10':19,'NoAnswer':1},'16-19':{'1':17,'2':4,'3':4,'4':4,'5':8,'6':8,'7':12,'8':16,'9':17,'10':33,'NoAnswer':3},'19-22':{'1':13,'2':8,'3':6,'4':4,'5':8,'6':10,'7':6,'8':15,'9':9,'10':23,'NoAnswer':1},'22-26':{'1':10,'2':3,'3':4,'4':5,'5':2,'6':2,'7':3,'8':3,'9':6,'10':5,'NoAnswer':1},'26+':{'1':9,'2':2,'3':1,'4':2,'5':1,'6':1,'7':1,'8':3,'9':4,'10':8,'NoAnswer':1}}"
+              :dataCount="{'all':431,'':0,'under-16':58,'16-19':126,'19-22':103,'22-26':44,'26+':33}"
+            >
+                <average
+                  :sets="[{'setKey':'all','setLabel':'All','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'under-16','setLabel':'Under 16','color':'#fa6','dataCount':58},{'setKey':'16-19','setLabel':'16-19','color':'#f83','dataCount':126},{'setKey':'19-22','setLabel':'19-22','color':'#e31','dataCount':103},{'setKey':'22-26','setLabel':'22-26','color':'#c90000','dataCount':44},{'setKey':'26+','setLabel':'26+','color':'#a00','dataCount':33}]"
+                  :data="{'_multiSet':true,'all':{'1':64,'2':26,'3':16,'4':22,'5':23,'6':32,'7':31,'8':55,'9':56,'10':99,'NoAnswer':7},'under-16':{'1':4,'2':4,'3':1,'4':1,'5':2,'6':5,'7':3,'8':7,'9':11,'10':19,'NoAnswer':1},'16-19':{'1':17,'2':4,'3':4,'4':4,'5':8,'6':8,'7':12,'8':16,'9':17,'10':33,'NoAnswer':3},'19-22':{'1':13,'2':8,'3':6,'4':4,'5':8,'6':10,'7':6,'8':15,'9':9,'10':23,'NoAnswer':1},'22-26':{'1':10,'2':3,'3':4,'4':5,'5':2,'6':2,'7':3,'8':3,'9':6,'10':5,'NoAnswer':1},'26+':{'1':9,'2':2,'3':1,'4':2,'5':1,'6':1,'7':1,'8':3,'9':4,'10':8,'NoAnswer':1}}"
+                  :dataCount="{'all':431,'':0,'under-16':58,'16-19':126,'19-22':103,'22-26':44,'26+':33}"
+                ></average>
+
+            </graph>
+            </TabPanel>
+            <TabPanel val="theme-approval">
+              <graph
+              class="graph-wide"
+              title="THWThemeApproval"
+              :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
+              :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
+              :sets="[{'setKey':'all','setLabel':'All','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'under-16','setLabel':'Under 16','color':'#fa6','dataCount':58},{'setKey':'16-19','setLabel':'16-19','color':'#f83','dataCount':126},{'setKey':'19-22','setLabel':'19-22','color':'#e31','dataCount':103},{'setKey':'22-26','setLabel':'22-26','color':'#c90000','dataCount':44},{'setKey':'26+','setLabel':'26+','color':'#a00','dataCount':33}]"
+              :data="{'_multiSet':true,'all':{'1':40,'2':14,'3':25,'4':22,'5':28,'6':28,'7':44,'8':70,'9':62,'10':88,'NoAnswer':10},'under-16':{'1':2,'2':1,'3':1,'4':2,'5':2,'6':3,'7':5,'8':15,'9':9,'10':18},'16-19':{'1':9,'2':5,'3':6,'4':12,'5':6,'6':8,'7':10,'8':18,'9':23,'10':25,'NoAnswer':4},'19-22':{'1':12,'2':1,'3':6,'4':2,'5':9,'6':5,'7':14,'8':21,'9':13,'10':18,'NoAnswer':2},'22-26':{'1':6,'2':2,'3':4,'4':2,'5':5,'7':5,'8':5,'9':6,'10':8,'NoAnswer':1},'26+':{'1':5,'2':3,'3':1,'4':1,'5':4,'7':2,'8':3,'9':3,'10':9,'NoAnswer':2}}"
+              :dataCount="{'all':431,'':0,'under-16':58,'16-19':126,'19-22':103,'22-26':44,'26+':33}"
+            >
+                <average
+                  :sets="[{'setKey':'all','setLabel':'All','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'under-16','setLabel':'Under 16','color':'#fa6','dataCount':58},{'setKey':'16-19','setLabel':'16-19','color':'#f83','dataCount':126},{'setKey':'19-22','setLabel':'19-22','color':'#e31','dataCount':103},{'setKey':'22-26','setLabel':'22-26','color':'#c90000','dataCount':44},{'setKey':'26+','setLabel':'26+','color':'#a00','dataCount':33}]"
+                  :data="{'_multiSet':true,'all':{'1':40,'2':14,'3':25,'4':22,'5':28,'6':28,'7':44,'8':70,'9':62,'10':88,'NoAnswer':10},'under-16':{'1':2,'2':1,'3':1,'4':2,'5':2,'6':3,'7':5,'8':15,'9':9,'10':18},'16-19':{'1':9,'2':5,'3':6,'4':12,'5':6,'6':8,'7':10,'8':18,'9':23,'10':25,'NoAnswer':4},'19-22':{'1':12,'2':1,'3':6,'4':2,'5':9,'6':5,'7':14,'8':21,'9':13,'10':18,'NoAnswer':2},'22-26':{'1':6,'2':2,'3':4,'4':2,'5':5,'7':5,'8':5,'9':6,'10':8,'NoAnswer':1},'26+':{'1':5,'2':3,'3':1,'4':1,'5':4,'7':2,'8':3,'9':3,'10':9,'NoAnswer':2}}"
+                  :dataCount="{'all':431,'':0,'under-16':58,'16-19':126,'19-22':103,'22-26':44,'26+':33}"
+                ></average>
+
+            </graph>
+            </TabPanel>
+
+          </TabPanels>
+        </div>
+
+        <p>
+          Older participants generally tend to agree that the plot of The Hidden World is incoherent mess, which it is:
+        </p>
+
+        <div class="graph-area">
+          <graph
+            class="graph-wide"
+            title="THWPlotCoherency"
+            :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
+            :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
+            :sets="[{'setKey':'all','setLabel':'All','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'under-16','setLabel':'Under 16','color':'#fa6','dataCount':58},{'setKey':'16-19','setLabel':'16-19','color':'#f83','dataCount':126},{'setKey':'19-22','setLabel':'19-22','color':'#e31','dataCount':103},{'setKey':'22-26','setLabel':'22-26','color':'#c90000','dataCount':44},{'setKey':'26+','setLabel':'26+','color':'#a00','dataCount':33}]"
+            :data="{'_multiSet':true,'all':{'1':78,'2':24,'3':38,'4':28,'5':29,'6':34,'7':53,'8':40,'9':42,'10':57,'NoAnswer':8},'under-16':{'1':6,'2':3,'3':4,'5':2,'6':6,'7':11,'8':6,'9':6,'10':13,'NoAnswer':1},'16-19':{'1':16,'2':7,'3':9,'4':9,'5':8,'6':13,'7':16,'8':14,'9':14,'10':17,'NoAnswer':3},'19-22':{'1':15,'2':10,'3':10,'4':8,'5':9,'6':8,'7':8,'8':12,'9':10,'10':12,'NoAnswer':1},'22-26':{'1':16,'2':2,'3':5,'4':1,'5':1,'6':2,'7':5,'8':4,'9':3,'10':4,'NoAnswer':1},'26+':{'1':11,'3':3,'4':2,'5':1,'6':2,'7':5,'8':1,'9':1,'10':6,'NoAnswer':1}}"
+            :dataCount="{'all':431,'':0,'under-16':58,'16-19':126,'19-22':103,'22-26':44,'26+':33}"
+          >
+              <average
+                :sets="[{'setKey':'all','setLabel':'All','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'under-16','setLabel':'Under 16','color':'#fa6','dataCount':58},{'setKey':'16-19','setLabel':'16-19','color':'#f83','dataCount':126},{'setKey':'19-22','setLabel':'19-22','color':'#e31','dataCount':103},{'setKey':'22-26','setLabel':'22-26','color':'#c90000','dataCount':44},{'setKey':'26+','setLabel':'26+','color':'#a00','dataCount':33}]"
+                :data="{'_multiSet':true,'all':{'1':78,'2':24,'3':38,'4':28,'5':29,'6':34,'7':53,'8':40,'9':42,'10':57,'NoAnswer':8},'under-16':{'1':6,'2':3,'3':4,'5':2,'6':6,'7':11,'8':6,'9':6,'10':13,'NoAnswer':1},'16-19':{'1':16,'2':7,'3':9,'4':9,'5':8,'6':13,'7':16,'8':14,'9':14,'10':17,'NoAnswer':3},'19-22':{'1':15,'2':10,'3':10,'4':8,'5':9,'6':8,'7':8,'8':12,'9':10,'10':12,'NoAnswer':1},'22-26':{'1':16,'2':2,'3':5,'4':1,'5':1,'6':2,'7':5,'8':4,'9':3,'10':4,'NoAnswer':1},'26+':{'1':11,'3':3,'4':2,'5':1,'6':2,'7':5,'8':1,'9':1,'10':6,'NoAnswer':1}}"
+                :dataCount="{'all':431,'':0,'under-16':58,'16-19':126,'19-22':103,'22-26':44,'26+':33}"
+              ></average>
+
+          </graph>
+        </div>
+
+        <p>
+          The 'fitting end' graph should, therefore, comes as no surprise either.
+        </p>
+
+        <div class="graph-area">
+          <graph
+              class="graph-wide"
+              title="THWFittingEnd"
+              :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
+              :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
+              :sets="[{'setKey':'all','setLabel':'All','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'under-16','setLabel':'Under 16','color':'#fa6','dataCount':58},{'setKey':'16-19','setLabel':'16-19','color':'#f83','dataCount':126},{'setKey':'19-22','setLabel':'19-22','color':'#e31','dataCount':103},{'setKey':'22-26','setLabel':'22-26','color':'#c90000','dataCount':44},{'setKey':'26+','setLabel':'26+','color':'#a00','dataCount':33}]"
+              :data="{'_multiSet':true,'all':{'1':103,'2':20,'3':21,'4':32,'5':22,'6':15,'7':39,'8':35,'9':53,'10':84,'NoAnswer':7},'under-16':{'1':9,'2':3,'3':1,'4':2,'5':4,'6':1,'7':6,'8':13,'9':3,'10':15,'NoAnswer':1},'16-19':{'1':27,'2':3,'3':8,'4':9,'5':6,'6':5,'7':15,'8':7,'9':19,'10':24,'NoAnswer':3},'19-22':{'1':24,'2':2,'3':6,'4':6,'5':6,'6':3,'7':14,'8':7,'9':11,'10':23,'NoAnswer':1},'22-26':{'1':13,'2':5,'3':2,'4':2,'5':1,'6':2,'7':1,'9':6,'10':11,'NoAnswer':1},'26+':{'1':13,'2':3,'4':4,'5':1,'7':1,'8':2,'9':4,'10':4,'NoAnswer':1}}"
+              :dataCount="{'all':431,'':0,'under-16':58,'16-19':126,'19-22':103,'22-26':44,'26+':33}"
+            >
+                <average
+                  :sets="[{'setKey':'all','setLabel':'All','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'under-16','setLabel':'Under 16','color':'#fa6','dataCount':58},{'setKey':'16-19','setLabel':'16-19','color':'#f83','dataCount':126},{'setKey':'19-22','setLabel':'19-22','color':'#e31','dataCount':103},{'setKey':'22-26','setLabel':'22-26','color':'#c90000','dataCount':44},{'setKey':'26+','setLabel':'26+','color':'#a00','dataCount':33}]"
+                  :data="{'_multiSet':true,'all':{'1':103,'2':20,'3':21,'4':32,'5':22,'6':15,'7':39,'8':35,'9':53,'10':84,'NoAnswer':7},'under-16':{'1':9,'2':3,'3':1,'4':2,'5':4,'6':1,'7':6,'8':13,'9':3,'10':15,'NoAnswer':1},'16-19':{'1':27,'2':3,'3':8,'4':9,'5':6,'6':5,'7':15,'8':7,'9':19,'10':24,'NoAnswer':3},'19-22':{'1':24,'2':2,'3':6,'4':6,'5':6,'6':3,'7':14,'8':7,'9':11,'10':23,'NoAnswer':1},'22-26':{'1':13,'2':5,'3':2,'4':2,'5':1,'6':2,'7':1,'9':6,'10':11,'NoAnswer':1},'26+':{'1':13,'2':3,'4':4,'5':1,'7':1,'8':2,'9':4,'10':4,'NoAnswer':1}}"
+                  :dataCount="{'all':431,'':0,'under-16':58,'16-19':126,'19-22':103,'22-26':44,'26+':33}"
+                ></average>
+
+            </graph>
+        </div>
+
+        <p>Wack.</p>
+
+        <p>We need to have an audit to see whether there was a fucky wucky with the data parser.</p>
+
+        <p>
+          On a lighter note: remember when I theorized that average ratings for THW visuals may be lower than the other two movies
+          because of the overly flashy design of Berk and costumes?
+        </p>
+
+        <div class="graph-area">
+            <graph
+              class="graph-wide"
+              title="HTTYD3VisualsRating"
+              :conf="{
+                columnXMargin: '1.2rem',
+                barWidth: '8px',
+                trackWidth: '8px',
+                columnWidth: '72px',
+                trackWidthMultiset: 'auto',
+                size: 'wide'
+              }"
+              :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
+              :sets="[{'setKey':'all-responses','setLabel':'All responses','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'sub-17','setLabel':'sub-17','color':'#fa6','dataCount':94},{'setKey':'17-20','setLabel':'17-20','color':'#f64','dataCount':132},{'setKey':'20-23','setLabel':'20-23','color':'#f41','dataCount':76},{'setKey':'23-27','setLabel':'23-27','color':'#d20','dataCount':38},{'setKey':'27-and-over','setLabel':'27 and over','color':'#b00','dataCount':24}]"
+              :data="{'_multiSet':true,'all-responses':{'1':5,'2':2,'3':1,'4':5,'5':8,'6':10,'7':16,'8':34,'9':68,'10':275,'NoAnswer':7},'sub-17':{'4':4,'6':2,'7':1,'8':5,'9':15,'10':65,'NoAnswer':2},'17-20':{'5':4,'6':4,'7':4,'8':7,'9':17,'10':94,'NoAnswer':2},'20-23':{'1':3,'2':1,'6':1,'7':4,'8':6,'9':13,'10':48},'23-27':{'3':1,'7':3,'8':5,'9':5,'10':22,'NoAnswer':2},'27-and-over':{'4':1,'5':2,'6':1,'7':1,'8':3,'9':6,'10':9,'NoAnswer':1}}"
+              :dataCount="{'all-responses':431,'':0,'sub-17':94,'17-20':132,'20-23':76,'23-27':38,'27-and-over':24}"
+            >
+              <!-- todo: averages go here -->
+            </graph>
+        </div>
+
+        <p>
+          While that graph doesn't prove that theory conclusively, the visuals ratings by older participants do drop off significantly.
+          Given the lack of 1/10 votes, I'd reckon lower votes aren't the result of the "fuck THW" salt squad. Also, the older you get, the bigger the chance
+          you don't have a favourite THW soundtrack:
+        </p>
+
+        <div class="graph-area">
+            <graph
+              class="graph-wide"
+              title="HTTYD3VisualsRating"
+              :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
+              :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
+              :sets="[{'setKey':'all','setLabel':'All','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'under-16','setLabel':'Under 16','color':'#fa6','dataCount':58},{'setKey':'16-19','setLabel':'16-19','color':'#f83','dataCount':126},{'setKey':'19-22','setLabel':'19-22','color':'#e31','dataCount':103},{'setKey':'22-26','setLabel':'22-26','color':'#c90000','dataCount':44},{'setKey':'26+','setLabel':'26+','color':'#a00','dataCount':33}]"
+              :data="{'_multiSet':true,'all':{'1':5,'2':2,'3':1,'4':5,'5':8,'6':10,'7':16,'8':34,'9':68,'10':275,'NoAnswer':7},'under-16':{'4':3,'6':1,'7':1,'8':2,'9':9,'10':42},'16-19':{'4':1,'5':2,'6':5,'7':3,'8':8,'9':18,'10':86,'NoAnswer':3},'19-22':{'2':1,'5':2,'6':1,'7':4,'8':7,'9':17,'10':70,'NoAnswer':1},'22-26':{'1':3,'3':1,'7':3,'8':6,'9':4,'10':25,'NoAnswer':2},'26+':{'4':1,'5':2,'6':1,'7':2,'8':3,'9':8,'10':15,'NoAnswer':1}}"
+              :dataCount="{'all':431,'':0,'under-16':58,'16-19':126,'19-22':103,'22-26':44,'26+':33}"
+            >
+                <average
+                  :sets="[{'setKey':'all','setLabel':'All','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'under-16','setLabel':'Under 16','color':'#fa6','dataCount':58},{'setKey':'16-19','setLabel':'16-19','color':'#f83','dataCount':126},{'setKey':'19-22','setLabel':'19-22','color':'#e31','dataCount':103},{'setKey':'22-26','setLabel':'22-26','color':'#c90000','dataCount':44},{'setKey':'26+','setLabel':'26+','color':'#a00','dataCount':33}]"
+                  :data="{'_multiSet':true,'all':{'1':5,'2':2,'3':1,'4':5,'5':8,'6':10,'7':16,'8':34,'9':68,'10':275,'NoAnswer':7},'under-16':{'4':3,'6':1,'7':1,'8':2,'9':9,'10':42},'16-19':{'4':1,'5':2,'6':5,'7':3,'8':8,'9':18,'10':86,'NoAnswer':3},'19-22':{'2':1,'5':2,'6':1,'7':4,'8':7,'9':17,'10':70,'NoAnswer':1},'22-26':{'1':3,'3':1,'7':3,'8':6,'9':4,'10':25,'NoAnswer':2},'26+':{'4':1,'5':2,'6':1,'7':2,'8':3,'9':8,'10':15,'NoAnswer':1}}"
+                  :dataCount="{'all':431,'':0,'under-16':58,'16-19':126,'19-22':103,'22-26':44,'26+':33}"
+                ></average>
+
+            </graph>
+        </div>
+
+        <p>
+          Reminder: neither of the cohorts had a significant 'Shy' coolumn presence for the first two movies, they were all low enough to be a rounding error. Not with THW.
+        </p>
+
+        <p>
+          Let's move on.
+        </p>
+
+        <div class="graph-area">
+          <graph
+              class="graph-wide"
+              title="MovieRanking"
+              :conf="{'columnXMargin':'1.2rem','size':'wide','barWidth':'8px !important','trackWidthMultiset':'8px !important','trackWidth':'16px !important','columnWidth':'72px !important','sidewaysLabels':true,'labelsHeight':'6rem','hideZeroColumns':true}"
+              :columns="[{'key':0,'label':'1 > 2 > 3'},{'key':1,'label':'1 > 3 > 2'},{'key':2,'label':'2 > 1 > 3'},{'key':3,'label':'2 > 3 > 1'},{'key':4,'label':'3 > 1 > 2'},{'key':5,'label':'3 > 2 > 1'},{'key':6,'label':'Shy'}]"
+              :sets="[{'setKey':'all','setLabel':'All','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'under-16','setLabel':'Under 16','color':'#fa6','dataCount':58},{'setKey':'16-19','setLabel':'16-19','color':'#f83','dataCount':126},{'setKey':'19-22','setLabel':'19-22','color':'#e31','dataCount':103},{'setKey':'22-26','setLabel':'22-26','color':'#c90000','dataCount':44},{'setKey':'26+','setLabel':'26+','color':'#a00','dataCount':33}]"
+              :data="{'_multiSet':true,'all':{'0':228,'1':79,'2':76,'3':16,'4':13,'5':11,'6':8},'under-16':{'0':18,'1':21,'2':13,'3':4,'4':1,'5':1},'16-19':{'0':61,'1':22,'2':24,'3':5,'4':6,'5':5,'6':3},'19-22':{'0':61,'1':14,'2':18,'3':3,'4':3,'5':2,'6':2},'22-26':{'0':30,'1':6,'2':6,'3':2},'26+':{'0':18,'1':6,'2':4,'4':1,'5':2,'6':2}}"
+              :dataCount="{'all':431,'':0,'under-16':58,'16-19':126,'19-22':103,'22-26':44,'26+':33}"
+            >
+            </graph>
+        </div>
+
+        <p>
+          I really like how older (19 and up) participants are, in general, "frst movie best, last movie worst" whereas the youngest cohort
+          seems to be a bit more varied in their opinions.
+        </p>
+
+        <p>
+          Moving on. Pop quiz: who thinks RTTE is canon?
+        </p>
+
+        <div class="graph-area">
+          <graph
+            class="graph-wide"
+            title="IsRTTECanon"
+            :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
+            :columns="[{'key':1,'label':'Yes'},{'key':3,'label':'Neutral'},{'key':2,'label':'No'},{'key':0,'label':'Shy'}]"
+            :sets="[{'setKey':'all','setLabel':'All','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'under-16','setLabel':'Under 16','color':'#fa6','dataCount':58},{'setKey':'16-19','setLabel':'16-19','color':'#f83','dataCount':126},{'setKey':'19-22','setLabel':'19-22','color':'#e31','dataCount':103},{'setKey':'22-26','setLabel':'22-26','color':'#c90000','dataCount':44},{'setKey':'26+','setLabel':'26+','color':'#a00','dataCount':33}]"
+            :data="{'_multiSet':true,'all':{'0':33,'1':235,'2':64,'3':99},'under-16':{'0':2,'1':39,'2':6,'3':11},'16-19':{'0':6,'1':80,'2':16,'3':24},'19-22':{'0':7,'1':55,'2':13,'3':28},'22-26':{'0':6,'1':15,'2':16,'3':7},'26+':{'0':7,'1':8,'2':7,'3':11}}"
+            :dataCount="{'all':431,'':0,'under-16':58,'16-19':126,'19-22':103,'22-26':44,'26+':33}"
+          >
+          </graph>
+        </div>
+
+        <p>
+          Probably nothing to do with this:
+        </p>
+
+        <div class="graph-area">
+          <graph
+            class="graph-wide"
+            title="RTTERating"
+            :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
+            :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
+            :sets="[{'setKey':'all','setLabel':'All','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'under-16','setLabel':'Under 16','color':'#fa6','dataCount':58},{'setKey':'16-19','setLabel':'16-19','color':'#f83','dataCount':126},{'setKey':'19-22','setLabel':'19-22','color':'#e31','dataCount':103},{'setKey':'22-26','setLabel':'22-26','color':'#c90000','dataCount':44},{'setKey':'26+','setLabel':'26+','color':'#a00','dataCount':33}]"
+            :data="{'_multiSet':true,'all':{'1':1,'2':2,'3':4,'4':10,'5':12,'6':19,'7':53,'8':65,'9':96,'10':119,'NoAnswer':50},'under-16':{'2':1,'5':1,'6':2,'7':4,'8':6,'9':16,'10':26,'NoAnswer':2},'16-19':{'1':1,'3':2,'4':3,'5':6,'6':3,'7':11,'8':17,'9':33,'10':40,'NoAnswer':10},'19-22':{'2':1,'4':2,'5':2,'6':4,'7':13,'8':20,'9':20,'10':26,'NoAnswer':15},'22-26':{'3':1,'4':2,'5':2,'6':4,'7':8,'8':6,'9':8,'10':5,'NoAnswer':8},'26+':{'3':1,'4':2,'6':1,'7':5,'8':6,'9':5,'10':4,'NoAnswer':9}}"
+            :dataCount="{'all':431,'':0,'under-16':58,'16-19':126,'19-22':103,'22-26':44,'26+':33}"
+          >
+            <average
+              :sets="[{'setKey':'all','setLabel':'All','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'under-16','setLabel':'Under 16','color':'#fa6','dataCount':58},{'setKey':'16-19','setLabel':'16-19','color':'#f83','dataCount':126},{'setKey':'19-22','setLabel':'19-22','color':'#e31','dataCount':103},{'setKey':'22-26','setLabel':'22-26','color':'#c90000','dataCount':44},{'setKey':'26+','setLabel':'26+','color':'#a00','dataCount':33}]"
+              :data="{'_multiSet':true,'all':{'1':1,'2':2,'3':4,'4':10,'5':12,'6':19,'7':53,'8':65,'9':96,'10':119,'NoAnswer':50},'under-16':{'2':1,'5':1,'6':2,'7':4,'8':6,'9':16,'10':26,'NoAnswer':2},'16-19':{'1':1,'3':2,'4':3,'5':6,'6':3,'7':11,'8':17,'9':33,'10':40,'NoAnswer':10},'19-22':{'2':1,'4':2,'5':2,'6':4,'7':13,'8':20,'9':20,'10':26,'NoAnswer':15},'22-26':{'3':1,'4':2,'5':2,'6':4,'7':8,'8':6,'9':8,'10':5,'NoAnswer':8},'26+':{'3':1,'4':2,'6':1,'7':5,'8':6,'9':5,'10':4,'NoAnswer':9}}"
+              :dataCount="{'all':431,'':0,'under-16':58,'16-19':126,'19-22':103,'22-26':44,'26+':33}"
+            ></average>
+          </graph>
+        </div>
+
+        <p>
+          There's also some age differences in the 'favourite villain' part:
+        </p>
+
+        <div class="graph-area">
+          <graph
+            class="graph-wide"
+            title="FavouriteVillain"
+            :conf="{'columnXMargin':'1.2rem','size':'wide','barWidth':'8px !important','trackWidthMultiset':'8px !important','trackWidth':'16px !important','columnWidth':'72px !important','sidewaysLabels':true,'labelsHeight':'6rem','hideZeroColumns':true}"
+            :columns="[{'key':0,'label':'Green Death'},{'key':1,'label':'Drago'},{'key':2,'label':'Drago\'s Bewilderbeast'},{'key':3,'label':'Grimmel'},{'key':4,'label':'Viggo'},{'key':5,'label':'Ryker'},{'key':6,'label':'Dagur'},{'key':7,'label':'Johann'},{'key':8,'label':'Warlords'},{'key':9,'label':'Alvin'},{'key':10,'label':'Mildew'},{'key':11,'label':'Stoick'},{'key':12,'label':'Other'},{'key':13,'label':'Shy'},{'key':14,'label':'D.W.'}]"
+            :sets="[{'setKey':'all','setLabel':'All','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'under-16','setLabel':'Under 16','color':'#fa6','dataCount':58},{'setKey':'16-19','setLabel':'16-19','color':'#f83','dataCount':126},{'setKey':'19-22','setLabel':'19-22','color':'#e31','dataCount':103},{'setKey':'22-26','setLabel':'22-26','color':'#c90000','dataCount':44},{'setKey':'26+','setLabel':'26+','color':'#a00','dataCount':33}]"
+            :data="{'_multiSet':true,'all':{'0':58,'1':60,'2':19,'3':55,'4':144,'5':1,'6':44,'7':14,'8':1,'9':4,'10':6,'11':3,'12':5,'13':17},'under-16':{'0':3,'1':7,'2':5,'3':9,'4':22,'6':4,'7':5,'10':1,'13':2},'16-19':{'0':18,'1':17,'2':4,'3':13,'4':50,'6':13,'7':2,'9':2,'11':1,'13':6},'19-22':{'0':13,'1':11,'2':7,'3':17,'4':31,'5':1,'6':9,'7':3,'8':1,'9':1,'10':2,'11':2,'12':2,'13':3},'22-26':{'0':8,'1':8,'2':1,'3':7,'4':10,'6':4,'7':1,'10':2,'12':2,'13':1},'26+':{'0':5,'1':8,'2':1,'3':2,'4':7,'6':5,'7':1,'9':1,'12':1,'13':2}}"
+            :dataCount="{'all':431,'':0,'under-16':58,'16-19':126,'19-22':103,'22-26':44,'26+':33}"
+          >
+          </graph>
+        </div>
+
+        <p>
+          And the older you get, the bigger the chance that of all draconids in the franchise, you'll like night furies the most.
+        </p>
+
+        <div class="graph-area">
+          <graph
+            class="graph-wide"
+            title="FavouriteDraconid"
+            :conf="{'columnXMargin':'1.2rem','size':'wide','barWidth':'8px !important','trackWidthMultiset':'8px !important','trackWidth':'16px !important','columnWidth':'72px !important','sidewaysLabels':true,'labelsHeight':'6rem','hideZeroColumns':true}"
+            :columns="[{'key':0,'label':'Night Fury'},{'key':1,'label':'Light Fury'},{'key':2,'label':'Night Lights'},{'key':3,'label':'Nadder'},{'key':8,'label':'Stormcutter'},{'key':5,'label':'Monstrous Nightmare'},{'key':7,'label':'Skrill'},{'key':9,'label':'Bewilderbeast'},{'key':10,'label':'Deathgripper'},{'key':13,'label':'Terrible Terror'},{'key':4,'label':'Gronckle'},{'key':12,'label':'Whispering Death'},{'key':14,'label':'Zippleback'},{'key':11,'label':'Gorecutter'},{'key':15,'label':'Other'},{'key':16,'label':'Shy'},{'key':17,'label':'D.W.'}]"
+            :sets="[{'setKey':'all','setLabel':'All','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'under-16','setLabel':'Under 16','color':'#fa6','dataCount':58},{'setKey':'16-19','setLabel':'16-19','color':'#f83','dataCount':126},{'setKey':'19-22','setLabel':'19-22','color':'#e31','dataCount':103},{'setKey':'22-26','setLabel':'22-26','color':'#c90000','dataCount':44},{'setKey':'26+','setLabel':'26+','color':'#a00','dataCount':33}]"
+            :data="{'_multiSet':true,'all':{'0':230,'1':9,'2':19,'3':10,'4':3,'5':11,'6':4,'7':35,'8':31,'9':9,'10':10,'12':4,'13':1,'14':3,'15':41,'16':11,'17':4},'under-16':{'0':24,'1':1,'2':5,'3':1,'5':3,'7':4,'8':3,'9':3,'10':1,'12':1,'15':9,'16':3,'17':1},'16-19':{'0':71,'1':1,'2':4,'3':6,'4':3,'5':6,'7':14,'8':3,'9':2,'12':2,'14':1,'15':11,'16':2,'17':1},'19-22':{'0':55,'1':3,'2':5,'5':2,'6':3,'7':5,'8':12,'9':1,'10':4,'12':1,'14':1,'15':9,'16':2},'22-26':{'0':23,'1':1,'2':2,'7':7,'8':3,'9':1,'10':3,'13':1,'15':2,'16':1},'26+':{'0':25,'1':1,'2':1,'3':1,'8':1,'15':3,'16':1,'17':1}}"
+            :dataCount="{'all':431,'':0,'under-16':58,'16-19':126,'19-22':103,'22-26':44,'26+':33}"
+          >
+          </graph>
+        </div>
+
+        <p>
+          Side note: due to small sample sizes, these graphs are sometimes surprisingly susceptible to cohort changes. Move the age cutoff one year up and down
+          and the story can alter a bit.
+        </p>
+
+        </template>
+
+        <!-- #endregion -->
+
+        <!-- #region gender -->
+
+        <h2 @click="deepDiveResults.gender = !deepDiveResults.gender">Results by gender</h2>
+        <div class="collapsible-heading-hint">(Click title to expand or collapse the section)</div>
+        <template v-if="deepDiveResults.gender">
+          <p>&nbsp;</p>
+          <p>
+            First things first — we're excluding the 'Other' and 'Shy' responses due to low-ish numbers.
+          </p>
+
+          <p>
+            First things first. The gender gap. Once people get old enough to stop giving a fuck about stereotypes, it kinda shrinks to pretty much nothing.
+          </p>
+
+          <div class="graph-area">
+            <graph
+              class="graph-wide"
+              title="Age"
+              defaultMode="absolute"
+              :conf="{trackWidth: '8px !important', columnWidth: '16px !important', hideZeroColumns: false}"
+              :columns="[{'key':10,'label':'10'},{'key':11,'label':''},{'key':12,'label':''},{'key':13,'label':''},{'key':14,'label':''},{'key':15,'label':'15'},{'key':16,'label':''},{'key':17,'label':''},{'key':18,'label':''},{'key':19,'label':''},{'key':20,'label':'20'},{'key':21,'label':''},{'key':22,'label':''},{'key':23,'label':''},{'key':24,'label':''},{'key':25,'label':'25'},{'key':26,'label':''},{'key':27,'label':''},{'key':28,'label':''},{'key':29,'label':''},{'key':30,'label':'30'},{'key':31,'label':''},{'key':32,'label':''},{'key':33,'label':''},{'key':34,'label':''},{'key':35,'label':'35'},{'key':36,'label':''},{'key':37,'label':''},{'key':38,'label':''},{'key':39,'label':''},{'key':40,'label':'40'},{'key':41,'label':''},{'key':42,'label':''},{'key':43,'label':''},{'key':44,'label':''},{'key':45,'label':'45'},{'key':46,'label':''},{'key':47,'label':''},{'key':48,'label':''},{'key':49,'label':''},{'key':'-1','label':'❄️'},{'key':'_dumm1','label':''},{'key':'_dumm4','label':''},{'key':'NoAnswer','label':'Shy'}]"
+              :sets="[{'setKey':'male','setLabel':'Male','color':'#66f','dataCount':269},{'setKey':'female','setLabel':'Female','color':'#f48','dataCount':116}]"
+              :data="{'_multiSet':true,'male':{'12':3,'13':4,'14':19,'15':11,'16':21,'17':31,'18':35,'19':24,'20':21,'21':20,'22':11,'23':6,'24':6,'25':5,'26':4,'27':3,'28':3,'29':4,'31':1,'33':1,'34':3,'NoAnswer':32,'-1':1},'female':{'12':1,'13':2,'14':4,'15':6,'16':9,'17':10,'18':9,'19':16,'20':7,'21':4,'22':4,'23':4,'24':2,'25':4,'26':4,'27':2,'28':3,'NoAnswer':23,'-1':2}}"
+              :dataCount="{'male':269,'female':116}"
+            >
+              <average
+                :sets="[{'setKey':'male','setLabel':'Male','color':'#66f','dataCount':269},{'setKey':'female','setLabel':'Female','color':'#f48','dataCount':116}]"
+                :data="{'_multiSet':true,'male':{'12':3,'13':4,'14':19,'15':11,'16':21,'17':31,'18':35,'19':24,'20':21,'21':20,'22':11,'23':6,'24':6,'25':5,'26':4,'27':3,'28':3,'29':4,'31':1,'33':1,'34':3,'NoAnswer':32,'-1':1},'female':{'12':1,'13':2,'14':4,'15':6,'16':9,'17':10,'18':9,'19':16,'20':7,'21':4,'22':4,'23':4,'24':2,'25':4,'26':4,'27':2,'28':3,'NoAnswer':23,'-1':2}}"
+                :dataCount="{'male':269,'female':116}"
+              ></average>
+            </graph>
+          </div>
+
+          <p>
+            Interestingly enough, compared to the world, the gender gap is the smallest in the North America and — once you ignore the southern hemisphere due to
+            insignificant amount of responses — the biggest in Europe.
+          </p>
+
+          <div class="graph-area">
+            <graph
                 class="graph-wide"
-                title="HTTYD2Rating"
-                :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
-                :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
-                :sets="[{'setKey':'male-(eu)','setLabel':'Male (EU)','color':'#33a','dataCount':112},{'setKey':'female-(eu)','setLabel':'Female (EU)','color':'#f33','dataCount':34},{'setKey':'male-(na)','setLabel':'Male (NA)','color':'#88f','dataCount':108},{'setKey':'female-(na)','setLabel':'Female (NA)','color':'#f48','dataCount':66}]"
-                :data="{'_multiSet':true,'male-(eu)':{'3':1,'5':2,'6':4,'7':14,'8':36,'9':24,'10':31},'female-(eu)':{'5':1,'7':2,'8':9,'9':11,'10':11},'male-(na)':{'2':1,'6':6,'7':18,'8':25,'9':28,'10':28,'NoAnswer':2},'female-(na)':{'1':1,'5':1,'6':4,'7':9,'8':11,'9':21,'10':19}}"
-                :dataCount="{'male-(eu)':112,'female-(eu)':34,'male-(na)':108,'female-(na)':66}"
-              > 
-                  <average
-                    :sets="[{'setKey':'male-(eu)','setLabel':'Male (EU)','color':'#33a','dataCount':112},{'setKey':'female-(eu)','setLabel':'Female (EU)','color':'#f33','dataCount':34},{'setKey':'male-(na)','setLabel':'Male (NA)','color':'#88f','dataCount':108},{'setKey':'female-(na)','setLabel':'Female (NA)','color':'#f48','dataCount':66}]"
-                    :data="{'_multiSet':true,'male-(eu)':{'3':1,'5':2,'6':4,'7':14,'8':36,'9':24,'10':31},'female-(eu)':{'5':1,'7':2,'8':9,'9':11,'10':11},'male-(na)':{'2':1,'6':6,'7':18,'8':25,'9':28,'10':28,'NoAnswer':2},'female-(na)':{'1':1,'5':1,'6':4,'7':9,'8':11,'9':21,'10':19}}"
-                    :dataCount="{'male-(eu)':112,'female-(eu)':34,'male-(na)':108,'female-(na)':66}"
-                  ></average>
-                
+                title="Location"
+                :conf="{'columnXMargin':'1.2rem','size':'wide','barWidth':'8px !important','trackWidthMultiset':'8px !important','trackWidth':'16px !important','columnWidth':'72px !important','sidewaysLabels':true,'labelsHeight':'6rem','hideZeroColumns':true}"
+                :columns="[{'key':6,'label':'Europe'},{'key':3,'label':'Asia'},{'key':1,'label':'Africa'},{'key':4,'label':'Australia'},{'key':7,'label':'NA'},{'key':8,'label':'SA'},{'key':2,'label':'Antarctica'},{'key':0,'label':'Shy'}]"
+                :sets="[{'setKey':'male','setLabel':'Male','color':'#88f','dataCount':269},{'setKey':'female','setLabel':'Female','color':'#f48','dataCount':116}]"
+                :data="{'_multiSet':true,'male':{'1':2,'2':1,'3':22,'4':17,'6':112,'7':108,'8':7},'female':{'0':2,'3':7,'4':7,'6':34,'7':66}}"
+                :dataCount="{'male':269,'female':116}"
+              >
               </graph>
-            </div>
-          </TabPanel>
-          <TabPanel val="p">
-            <div class="graph-area">
-              <graph
+          </div>
+
+          <p>
+            Let's do age by gender <i>and</i> location.
+          </p>
+
+          <Tabs v-model="tabs.gender.location">
+            <Tab
+              label="EU"
+              val="eu"
+            />
+            <Tab
+              label="NA"
+              val="na"
+            />
+          </Tabs>
+
+          <TabPanels v-model="tabs.gender.location">
+            <TabPanel val="eu">
+              <div class="graph-area">
+                <graph
+                    class="graph-wide"
+                    title="Age (by gender, EU)"
+                  defaultMode="absolute"
+
+                    :conf="{'size':'wide','barWidth':'4px !important','trackWidthMultiset':'8px !important','trackWidth':'16px !important','hideZeroColumns':false}"
+                    :columns="[{'key':10,'label':'10'},{'key':11,'label':''},{'key':12,'label':''},{'key':13,'label':''},{'key':14,'label':''},{'key':15,'label':'15'},{'key':16,'label':''},{'key':17,'label':''},{'key':18,'label':''},{'key':19,'label':''},{'key':20,'label':'20'},{'key':21,'label':''},{'key':22,'label':''},{'key':23,'label':''},{'key':24,'label':''},{'key':25,'label':'25'},{'key':26,'label':''},{'key':27,'label':''},{'key':28,'label':''},{'key':29,'label':''},{'key':30,'label':'30'},{'key':31,'label':''},{'key':32,'label':''},{'key':33,'label':''},{'key':34,'label':''},{'key':35,'label':'35'},{'key':36,'label':''},{'key':37,'label':''},{'key':38,'label':''},{'key':39,'label':''},{'key':40,'label':'40'},{'key':41,'label':''},{'key':42,'label':''},{'key':43,'label':''},{'key':44,'label':''},{'key':45,'label':'45'},{'key':46,'label':''},{'key':47,'label':''},{'key':48,'label':''},{'key':49,'label':''},{'key':'-1','label':'❄️'},{'key':'_dumm1','label':''},{'key':'_dumm4','label':''},{'key':'NoAnswer','label':'Shy'}]"
+                    :sets="[
+                      {'setKey':'male-(eu)','setLabel':'Male (EU)','color':'#33a','dataCount':112},
+                      {'setKey':'female-(eu)','setLabel':'Female (EU)','color':'#f33','dataCount':34},
+                    ]"
+                    :data="{'_multiSet':true,'male-(eu)':{'14':3,'15':3,'16':8,'17':13,'18':16,'19':12,'20':9,'21':12,'22':6,'23':1,'24':4,'25':3,'26':3,'27':2,'28':1,'29':2,'31':1,'34':2,'NoAnswer':11},'female-(eu)':{'14':1,'15':1,'16':7,'17':4,'18':2,'19':4,'20':2,'21':1,'22':1,'23':1,'24':2,'26':2,'27':1,'NoAnswer':5},'male-(na)':{'13':2,'14':7,'15':4,'16':9,'17':12,'18':10,'19':9,'20':11,'21':6,'22':4,'23':3,'24':2,'25':2,'26':1,'27':1,'28':2,'29':2,'33':1,'34':1,'NoAnswer':18,'-1':1},'female-(na)':{'12':1,'13':1,'14':2,'15':4,'16':1,'17':5,'18':5,'19':11,'20':3,'21':3,'22':2,'23':3,'25':3,'26':2,'27':1,'28':3,'NoAnswer':14,'-1':2}}"
+                    :dataCount="{'male-(eu)':112,'female-(eu)':34,'male-(na)':108,'female-(na)':66}"
+                  >
+                      <average
+                        :sets="[
+                          {'setKey':'male-(eu)','setLabel':'Male (EU)','color':'#33a','dataCount':112},
+                          {'setKey':'female-(eu)','setLabel':'Female (EU)','color':'#f33','dataCount':34},
+                        ]"
+                        :data="{'_multiSet':true,'male-(eu)':{'14':3,'15':3,'16':8,'17':13,'18':16,'19':12,'20':9,'21':12,'22':6,'23':1,'24':4,'25':3,'26':3,'27':2,'28':1,'29':2,'31':1,'34':2,'NoAnswer':11},'female-(eu)':{'14':1,'15':1,'16':7,'17':4,'18':2,'19':4,'20':2,'21':1,'22':1,'23':1,'24':2,'26':2,'27':1,'NoAnswer':5},'male-(na)':{'13':2,'14':7,'15':4,'16':9,'17':12,'18':10,'19':9,'20':11,'21':6,'22':4,'23':3,'24':2,'25':2,'26':1,'27':1,'28':2,'29':2,'33':1,'34':1,'NoAnswer':18,'-1':1},'female-(na)':{'12':1,'13':1,'14':2,'15':4,'16':1,'17':5,'18':5,'19':11,'20':3,'21':3,'22':2,'23':3,'25':3,'26':2,'27':1,'28':3,'NoAnswer':14,'-1':2}}"
+                        :dataCount="{'male-(eu)':112,'female-(eu)':34,'male-(na)':108,'female-(na)':66}"
+                      ></average>
+
+                  </graph>
+              </div>
+            </TabPanel>
+            <TabPanel val="na">
+              <div class="graph-area">
+                <graph
+                    class="graph-wide"
+                    title="Age (by gender, NA)"
+                  defaultMode="absolute"
+                    :conf="{'size':'wide','barWidth':'4px !important','trackWidthMultiset':'8px !important','trackWidth':'16px !important','hideZeroColumns':false}"
+                    :columns="[
+                      {'key':10,'label':'10'},{'key':11,'label':''},{'key':12,'label':''},{'key':13,'label':''},{'key':14,'label':''},{'key':15,'label':'15'},{'key':16,'label':''},{'key':17,'label':''},{'key':18,'label':''},{'key':19,'label':''},{'key':20,'label':'20'},{'key':21,'label':''},{'key':22,'label':''},{'key':23,'label':''},{'key':24,'label':''},{'key':25,'label':'25'},{'key':26,'label':''},{'key':27,'label':''},{'key':28,'label':''},{'key':29,'label':''},{'key':30,'label':'30'},{'key':31,'label':''},{'key':32,'label':''},{'key':33,'label':''},{'key':34,'label':''},{'key':35,'label':'35'},{'key':36,'label':''},{'key':37,'label':''},{'key':38,'label':''},{'key':39,'label':''},{'key':40,'label':'40'},{'key':41,'label':''},{'key':42,'label':''},{'key':43,'label':''},{'key':44,'label':''},{'key':45,'label':'45'},{'key':46,'label':''},{'key':47,'label':''},{'key':48,'label':''},{'key':49,'label':''},{'key':'-1','label':'❄️'},{'key':'_dumm1','label':''},{'key':'_dumm4','label':''},{'key':'NoAnswer','label':'Shy'}]"
+                    :sets="[{'setKey':'male-(na)','setLabel':'Male (NA)','color':'#88f','dataCount':108},{'setKey':'female-(na)','setLabel':'Female (NA)','color':'#f48','dataCount':66}]"
+                    :data="{'_multiSet':true,'male-(eu)':{'14':3,'15':3,'16':8,'17':13,'18':16,'19':12,'20':9,'21':12,'22':6,'23':1,'24':4,'25':3,'26':3,'27':2,'28':1,'29':2,'31':1,'34':2,'NoAnswer':11},'female-(eu)':{'14':1,'15':1,'16':7,'17':4,'18':2,'19':4,'20':2,'21':1,'22':1,'23':1,'24':2,'26':2,'27':1,'NoAnswer':5},'male-(na)':{'13':2,'14':7,'15':4,'16':9,'17':12,'18':10,'19':9,'20':11,'21':6,'22':4,'23':3,'24':2,'25':2,'26':1,'27':1,'28':2,'29':2,'33':1,'34':1,'NoAnswer':18,'-1':1},'female-(na)':{'12':1,'13':1,'14':2,'15':4,'16':1,'17':5,'18':5,'19':11,'20':3,'21':3,'22':2,'23':3,'25':3,'26':2,'27':1,'28':3,'NoAnswer':14,'-1':2}}"
+                    :dataCount="{'male-(eu)':112,'female-(eu)':34,'male-(na)':108,'female-(na)':66}"
+                  >
+                      <average
+                        :sets="[{'setKey':'male-(na)','setLabel':'Male (NA)','color':'#88f','dataCount':108},{'setKey':'female-(na)','setLabel':'Female (NA)','color':'#f48','dataCount':66}]"
+                        :data="{'_multiSet':true,'male-(eu)':{'14':3,'15':3,'16':8,'17':13,'18':16,'19':12,'20':9,'21':12,'22':6,'23':1,'24':4,'25':3,'26':3,'27':2,'28':1,'29':2,'31':1,'34':2,'NoAnswer':11},'female-(eu)':{'14':1,'15':1,'16':7,'17':4,'18':2,'19':4,'20':2,'21':1,'22':1,'23':1,'24':2,'26':2,'27':1,'NoAnswer':5},'male-(na)':{'13':2,'14':7,'15':4,'16':9,'17':12,'18':10,'19':9,'20':11,'21':6,'22':4,'23':3,'24':2,'25':2,'26':1,'27':1,'28':2,'29':2,'33':1,'34':1,'NoAnswer':18,'-1':1},'female-(na)':{'12':1,'13':1,'14':2,'15':4,'16':1,'17':5,'18':5,'19':11,'20':3,'21':3,'22':2,'23':3,'25':3,'26':2,'27':1,'28':3,'NoAnswer':14,'-1':2}}"
+                        :dataCount="{'male-(eu)':112,'female-(eu)':34,'male-(na)':108,'female-(na)':66}"
+                      ></average>
+
+                  </graph>
+              </div>
+            </TabPanel>
+          </TabPanels>
+
+          <p>
+            Maybe that redditor wasn't completely wacky, but overall ... still rather out of touch with the stereotypes.
+          </p>
+
+          <p>
+            If you ignore the boomer tail in the answers of male respondent, the female population seems to be roughly older than the male population
+            and also more widely distributed. But that 'over 27' tail that we see amongst male respondents and that we don't see among female respondents
+            still manages to make the male part of the fanbase slightly older on average.
+          </p>
+
+          <p>
+            It is worth noting that females used to be much more shyer when it comes to revealing their age: almost 20% of female respondents were age shy,
+            compared to the 10% of male respondents.
+          </p>
+
+          <p>
+            Interestingly enough, when it came to rating things on scale from one to ten, girls and women were, on average,
+            a bit more generous with the ratings. Doesn't matter where you look: the situation is the same (almost) everywhere.
+          </p>
+
+          <div class="graph-area">
+            <graph
+                class="graph-wide"
+                title="Rate HTTYD1 on 1-10?"
+                :conf="{
+                  columnXMargin: '1.2rem',
+                  barWidth: '8px',
+                  trackWidth: '8px',
+                  columnWidth: '72px',
+                  trackWidthMultiset: 'auto',
+                  size: 'wide',
+                }"
+                :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
+                :sets="[{'setKey':'male','setLabel':'Male','color':'#66f','dataCount':269},{'setKey':'female','setLabel':'Female','color':'#f48','dataCount':116}]"
+                :data="{'_multiSet':true,'male':{'4':1,'5':1,'7':23,'8':69,'9':71,'10':102,'NoAnswer':2},'female':{'5':2,'6':1,'7':7,'8':21,'9':26,'10':59}}"
+                :dataCount="{'male':269,'female':116}"
+              >
+                <average
+                  :sets="[{'setKey':'male','setLabel':'Male','color':'#66f','dataCount':269},{'setKey':'female','setLabel':'Female','color':'#f48','dataCount':116}]"
+                  :data="{'_multiSet':true,'male':{'4':1,'5':1,'7':23,'8':69,'9':71,'10':102,'NoAnswer':2},'female':{'5':2,'6':1,'7':7,'8':21,'9':26,'10':59}}"
+                  :dataCount="{'male':269,'female':116}"
+                ></average>
+              </graph>
+          </div>
+
+          <p>Bam, higher ratings on the pink side, across the board. Even for all aspects.</p>
+
+          <div class="graph-area">
+            <graph
+                class="graph-wide"
+                title="HTTYD 2?"
+                description="(overall rating)"
+                :conf="{
+                  columnXMargin: '1.2rem',
+                  barWidth: '8px',
+                  trackWidth: '8px',
+                  columnWidth: '72px',
+                  trackWidthMultiset: 'auto',
+                  size: 'wide',
+                  hideZeroColumns: true
+                }"
+                :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
+                :sets="[{'setKey':'male','setLabel':'Male','color':'#66f','dataCount':269},{'setKey':'female','setLabel':'Female','color':'#f48','dataCount':116}]"
+                :data="{'_multiSet':true,'male':{'2':1,'3':1,'5':4,'6':10,'7':38,'8':71,'9':66,'10':76,'NoAnswer':2},'female':{'1':1,'4':1,'5':2,'6':4,'7':11,'8':23,'9':39,'10':35}}"
+                :dataCount="{'male':269,'female':116}"
+              >
+                <average
+                  :sets="[{'setKey':'male','setLabel':'Male','color':'#66f','dataCount':269},{'setKey':'female','setLabel':'Female','color':'#f48','dataCount':116}]"
+                  :data="{'_multiSet':true,'male':{'4':1,'5':1,'7':23,'8':69,'9':71,'10':102,'NoAnswer':2},'female':{'5':2,'6':1,'7':7,'8':21,'9':26,'10':59}}"
+                  :dataCount="{'male':269,'female':116}"
+                ></average>
+              </graph>
+          </div>
+
+          <p>
+            The situation is mostly the same — the only notable exception is the plot rating, where male respondents were more likely to dole out ten outta tens than female.
+          </p>
+          <p>
+            <small>
+              There's two things worth noting, however: a) boys are showing a complete disregard for what your Statistics 101 professor will tell you and b) on average, female
+              ratings still come out to be slightly higher than male ratings.
+            </small>
+          </p>
+
+          <div class="graph-area">
+            <graph
                 class="graph-wide"
                 title="HTTYD2PlotRating"
+                :conf="{
+                  columnXMargin: '1.2rem',
+                  barWidth: '8px',
+                  trackWidth: '8px',
+                  columnWidth: '72px',
+                  trackWidthMultiset: 'auto',
+                  size: 'wide',
+                  hideZeroColumns: true
+                }"
+                :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
+                :sets="[{'setKey':'male','setLabel':'Male','color':'#66f','dataCount':269},{'setKey':'female','setLabel':'Female','color':'#f48','dataCount':116}]"
+                :data="{'_multiSet':true,'male':{'2':1,'3':1,'4':3,'5':8,'6':18,'7':64,'8':59,'9':58,'10':56,'NoAnswer':1},'female':{'1':1,'4':2,'5':3,'6':8,'7':21,'8':30,'9':32,'10':18,'NoAnswer':1}}"
+                :dataCount="{'male':269,'female':116}"
+              >
+                <average
+                  :sets="[{'setKey':'male','setLabel':'Male','color':'#66f','dataCount':269},{'setKey':'female','setLabel':'Female','color':'#f48','dataCount':116}]"
+                  :data="{'_multiSet':true,'male':{'4':1,'5':1,'7':23,'8':69,'9':71,'10':102,'NoAnswer':2},'female':{'5':2,'6':1,'7':7,'8':21,'9':26,'10':59}}"
+                  :dataCount="{'male':269,'female':116}"
+                ></average>
+              </graph>
+          </div>
+
+          <p>
+            This kind of thinking extends to the shorts and TV series:
+          </p>
+
+          <div class="graph-area">
+
+          </div>
+
+          <p>
+            And last but not least, female respondents tended to consider RTTE canon more often than male respondents.
+          </p>
+
+          <div class="graph-area">
+            <graph
+                class="graph-wide"
+                title="Is RTTE canon?"
+                :conf="{
+                  columnXMargin: '1.2rem',
+                  barWidth: '8px',
+                  trackWidth: '8px',
+                  columnWidth: '72px',
+                  trackWidthMultiset: 'auto',
+                  size: 'wide',
+                  hideZeroColumns: true
+                }"
+                :columns="[{'key':1,'label':'Yes'},{'key':3,'label':'Neutral'},{'key':2,'label':'No'},{'key':0,'label':'Shy'}]"
+                :sets="[{'setKey':'male','setLabel':'Male','color':'#66f','dataCount':269},{'setKey':'female','setLabel':'Female','color':'#f48','dataCount':116}]"
+                :data="{'_multiSet':true,'male':{'0':23,'1':141,'2':49,'3':56},'female':{'0':8,'1':70,'2':12,'3':26}}"
+                :dataCount="{'male':269,'female':116}"
+              >
+              </graph>
+          </div>
+
+          <p>
+            There <i>are</i> exceptions, though.
+          </p>
+
+          <p>
+            For example, female respondents were slightly less likely to think that the bond between Hiccup and Toothless was that of two mutual friends than male respondents:
+          </p>
+
+          <div class="graph-area">
+            <graph
+                class="graph-wide"
+                title="Bond type"
+                description="0: master-slave, 10: mutual friends"
+                :conf="{
+                  columnXMargin: '1.2rem',
+                  barWidth: '8px',
+                  trackWidth: '8px',
+                  columnWidth: '72px',
+                  trackWidthMultiset: 'auto',
+                  size: 'wide',
+                  hideZeroColumns: true
+                }"
+                :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
+                :sets="[{'setKey':'male','setLabel':'Male','color':'#66f','dataCount':269},{'setKey':'female','setLabel':'Female','color':'#f48','dataCount':116}]"
+                :data="{'_multiSet':true,'male':{'2':2,'3':4,'4':3,'5':3,'6':3,'7':6,'8':29,'9':65,'10':152,'NoAnswer':2},'female':{'1':1,'2':3,'3':1,'4':4,'5':6,'6':2,'7':9,'8':12,'9':13,'10':64,'NoAnswer':1}}"
+                :dataCount="{'male':269,'female':116}"
+              >
+                <average
+                  :sets="[{'setKey':'male','setLabel':'Male','color':'#66f','dataCount':269},{'setKey':'female','setLabel':'Female','color':'#f48','dataCount':116}]"
+                  :data="{'_multiSet':true,'male':{'2':2,'3':4,'4':3,'5':3,'6':3,'7':6,'8':29,'9':65,'10':152,'NoAnswer':2},'female':{'1':1,'2':3,'3':1,'4':4,'5':6,'6':2,'7':9,'8':12,'9':13,'10':64,'NoAnswer':1}}"
+                  :dataCount="{'male':269,'female':116}"
+                ></average>
+              </graph>
+          </div>
+
+          <p>
+            And I think that the elephant in the room is starting to become harder to hide with each passing moment.
+          </p>
+
+          <div class="graph-area">
+            <graph
+                class="graph-wide"
+                title="HTTYD3Rating"
+                :conf="{
+                  columnXMargin: '1.2rem',
+                  barWidth: '8px',
+                  trackWidth: '8px',
+                  columnWidth: '72px',
+                  trackWidthMultiset: 'auto',
+                  size: 'wide',
+                  hideZeroColumns: true
+                }"
+                :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
+                :sets="[{'setKey':'male','setLabel':'Male','color':'#66f','dataCount':269},{'setKey':'female','setLabel':'Female','color':'#f48','dataCount':116}]"
+                :data="{'_multiSet':true,'male':{'1':12,'2':7,'3':12,'4':14,'5':9,'6':26,'7':45,'8':49,'9':47,'10':45,'NoAnswer':3},'female':{'1':7,'2':6,'3':12,'4':9,'5':11,'6':12,'7':10,'8':15,'9':10,'10':22,'NoAnswer':2}}"
+                :dataCount="{'male':269,'female':116}"
+              >
+                <average
+                  :sets="[{'setKey':'male','setLabel':'Male','color':'#66f','dataCount':269},{'setKey':'female','setLabel':'Female','color':'#f48','dataCount':116}]"
+                  :data="{'_multiSet':true,'male':{'1':12,'2':7,'3':12,'4':14,'5':9,'6':26,'7':45,'8':49,'9':47,'10':45,'NoAnswer':3},'female':{'1':7,'2':6,'3':12,'4':9,'5':11,'6':12,'7':10,'8':15,'9':10,'10':22,'NoAnswer':2}}"
+                  :dataCount="{'male':269,'female':116}"
+                ></average>
+              </graph>
+          </div>
+
+          <p>
+            This comes as a surprise when you know the gender of the biggest serial complainers on reddit and the main discord.
+          </p>
+
+          <p>
+            And it's almost completely consistent, too! Male respondents rated every aspect of the movie higher, sometimes by as much
+            as a whole one rating higher on average! It's worth noting that female votes are often also way more contested. This <i>includes</i>
+            everything about the light fury.
+          </p>
+
+          <div class="graph-area">
+            <Tabs v-model="tabs.gender.thw">
+              <Tab label="Plot" val="plot" />
+              <Tab label="Emotion" val="emo" />
+              <Tab label="Characters" val="char" />
+              <Tab label="Theme" val="theme" />
+              <Tab label="Visuals" val="visuals" />
+              <Tab label="Score" val="ost" />
+              <Tab label="Worst character" val="wchar" />
+              <Tab label="LF character" val="tfcr" />
+              <Tab label="LF design" val="tfdr" />
+              <Tab label="Fitting end?" val="fe" />
+            </Tabs>
+            <TabPanels v-model="tabs.gender.thw">
+              <TabPanel val="plot">
+                <graph
+                  class="graph-wide"
+                  title="THW Plot Rating"
+                  :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
+                  :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
+                  :sets="[{'setKey':'male','setLabel':'Male','color':'#88f','dataCount':269},{'setKey':'female','setLabel':'Female','color':'#f48','dataCount':116}]"
+                  :data="{'_multiSet':true,'male':{'1':21,'2':14,'3':15,'4':13,'5':18,'6':36,'7':40,'8':45,'9':30,'10':34,'NoAnswer':3},'female':{'1':12,'2':13,'3':15,'4':6,'5':10,'6':10,'7':11,'8':9,'9':12,'10':16,'NoAnswer':2}}"
+                  :dataCount="{'male':269,'female':116}"
+                >
+                    <average
+                      :sets="[{'setKey':'male','setLabel':'Male','color':'#88f','dataCount':269},{'setKey':'female','setLabel':'Female','color':'#f48','dataCount':116}]"
+                      :data="{'_multiSet':true,'male':{'1':21,'2':14,'3':15,'4':13,'5':18,'6':36,'7':40,'8':45,'9':30,'10':34,'NoAnswer':3},'female':{'1':12,'2':13,'3':15,'4':6,'5':10,'6':10,'7':11,'8':9,'9':12,'10':16,'NoAnswer':2}}"
+                      :dataCount="{'male':269,'female':116}"
+                    ></average>
+                </graph>
+              </TabPanel>
+              <TabPanel val="emo">
+                <graph
+                  class="graph-wide"
+                  title="THW Emotion Rating"
+                  :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
+                  :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
+                  :sets="[{'setKey':'male','setLabel':'Male','color':'#88f','dataCount':269},{'setKey':'female','setLabel':'Female','color':'#f48','dataCount':116}]"
+                  :data="{'_multiSet':true,'male':{'1':11,'2':3,'3':7,'4':4,'5':13,'6':8,'7':15,'8':39,'9':38,'10':128,'NoAnswer':3},'female':{'1':4,'2':4,'3':6,'4':8,'5':9,'6':6,'7':5,'8':11,'9':7,'10':54,'NoAnswer':2}}"
+                  :dataCount="{'male':269,'female':116}"
+                >
+                    <average
+                      :sets="[{'setKey':'male','setLabel':'Male','color':'#88f','dataCount':269},{'setKey':'female','setLabel':'Female','color':'#f48','dataCount':116}]"
+                      :data="{'_multiSet':true,'male':{'1':11,'2':3,'3':7,'4':4,'5':13,'6':8,'7':15,'8':39,'9':38,'10':128,'NoAnswer':3},'female':{'1':4,'2':4,'3':6,'4':8,'5':9,'6':6,'7':5,'8':11,'9':7,'10':54,'NoAnswer':2}}"
+                      :dataCount="{'male':269,'female':116}"
+                    ></average>
+                </graph>
+              </TabPanel>
+              <TabPanel val="char">
+                <graph
+                  class="graph-wide"
+                  title="THW Character Rating"
+                  :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
+                  :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
+                  :sets="[{'setKey':'male','setLabel':'Male','color':'#88f','dataCount':269},{'setKey':'female','setLabel':'Female','color':'#f48','dataCount':116}]"
+                  :data="{'_multiSet':true,'male':{'1':16,'2':8,'3':6,'4':11,'5':16,'6':27,'7':30,'8':51,'9':44,'10':57,'NoAnswer':3},'female':{'1':13,'2':5,'3':4,'4':8,'5':10,'6':6,'7':11,'8':19,'9':15,'10':23,'NoAnswer':2}}"
+                  :dataCount="{'male':269,'female':116}"
+                >
+                    <average
+                      :sets="[{'setKey':'male','setLabel':'Male','color':'#88f','dataCount':269},{'setKey':'female','setLabel':'Female','color':'#f48','dataCount':116}]"
+                      :data="{'_multiSet':true,'male':{'1':16,'2':8,'3':6,'4':11,'5':16,'6':27,'7':30,'8':51,'9':44,'10':57,'NoAnswer':3},'female':{'1':13,'2':5,'3':4,'4':8,'5':10,'6':6,'7':11,'8':19,'9':15,'10':23,'NoAnswer':2}}"
+                      :dataCount="{'male':269,'female':116}"
+                    ></average>
+                </graph>
+              </TabPanel>
+              <TabPanel val="theme">
+                <graph
+                  class="graph-wide"
+                  title="THW Theme Rating"
+                  :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
+                  :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
+                  :sets="[{'setKey':'male','setLabel':'Male','color':'#88f','dataCount':269},{'setKey':'female','setLabel':'Female','color':'#f48','dataCount':116}]"
+                  :data="{'_multiSet':true,'male':{'1':30,'2':13,'3':10,'4':12,'5':12,'6':23,'7':24,'8':42,'9':39,'10':61,'NoAnswer':3},'female':{'1':24,'2':9,'3':5,'4':8,'5':10,'6':5,'7':3,'8':9,'9':13,'10':28,'NoAnswer':2}}"
+                  :dataCount="{'male':269,'female':116}"
+                >
+                    <average
+                      :sets="[{'setKey':'male','setLabel':'Male','color':'#88f','dataCount':269},{'setKey':'female','setLabel':'Female','color':'#f48','dataCount':116}]"
+                      :data="{'_multiSet':true,'male':{'1':30,'2':13,'3':10,'4':12,'5':12,'6':23,'7':24,'8':42,'9':39,'10':61,'NoAnswer':3},'female':{'1':24,'2':9,'3':5,'4':8,'5':10,'6':5,'7':3,'8':9,'9':13,'10':28,'NoAnswer':2}}"
+                      :dataCount="{'male':269,'female':116}"
+                    ></average>
+
+                </graph>
+              </TabPanel>
+              <TabPanel val="visuals">
+                <graph
+                  class="graph-wide"
+                  title="THW Visuals Rating"
+                  :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
+                  :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
+                  :sets="[{'setKey':'male','setLabel':'Male','color':'#88f','dataCount':269},{'setKey':'female','setLabel':'Female','color':'#f48','dataCount':116}]"
+                  :data="{'_multiSet':true,'male':{'1':2,'2':1,'3':1,'4':1,'5':2,'6':4,'7':8,'8':22,'9':44,'10':181,'NoAnswer':3},'female':{'1':2,'4':1,'5':5,'6':4,'7':4,'8':8,'9':17,'10':73,'NoAnswer':2}}"
+                  :dataCount="{'male':269,'female':116}"
+                >
+                    <average
+                      :sets="[{'setKey':'male','setLabel':'Male','color':'#88f','dataCount':269},{'setKey':'female','setLabel':'Female','color':'#f48','dataCount':116}]"
+                      :data="{'_multiSet':true,'male':{'1':2,'2':1,'3':1,'4':1,'5':2,'6':4,'7':8,'8':22,'9':44,'10':181,'NoAnswer':3},'female':{'1':2,'4':1,'5':5,'6':4,'7':4,'8':8,'9':17,'10':73,'NoAnswer':2}}"
+                      :dataCount="{'male':269,'female':116}"
+                    ></average>
+
+                </graph>
+              </TabPanel>
+              <TabPanel val="ost">
+                <graph
+                  class="graph-wide"
+                  title="THW Score Rating"
+                  :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
+                  :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
+                  :sets="[{'setKey':'male','setLabel':'Male','color':'#88f','dataCount':269},{'setKey':'female','setLabel':'Female','color':'#f48','dataCount':116}]"
+                  :data="{'_multiSet':true,'male':{'1':4,'2':1,'3':2,'4':4,'5':11,'6':12,'7':26,'8':46,'9':53,'10':105,'NoAnswer':5},'female':{'1':4,'2':1,'3':2,'4':3,'5':6,'6':1,'7':10,'8':21,'9':13,'10':52,'NoAnswer':3}}"
+                  :dataCount="{'male':269,'female':116}"
+                >
+                    <average
+                      :sets="[{'setKey':'male','setLabel':'Male','color':'#88f','dataCount':269},{'setKey':'female','setLabel':'Female','color':'#f48','dataCount':116}]"
+                      :data="{'_multiSet':true,'male':{'1':4,'2':1,'3':2,'4':4,'5':11,'6':12,'7':26,'8':46,'9':53,'10':105,'NoAnswer':5},'female':{'1':4,'2':1,'3':2,'4':3,'5':6,'6':1,'7':10,'8':21,'9':13,'10':52,'NoAnswer':3}}"
+                      :dataCount="{'male':269,'female':116}"
+                    ></average>
+                </graph>
+              </TabPanel>
+              <TabPanel val="wchar">
+                <graph
+                  class="graph-wide"
+                  title="THW Worst Character"
+                  :conf="{'columnXMargin':'1.2rem','size':'wide','barWidth':'8px !important','trackWidthMultiset':'8px !important','trackWidth':'16px !important','columnWidth':'72px !important','sidewaysLabels':true,'labelsHeight':'6rem','hideZeroColumns':true}"
+                  :columns="[{'key':3,'label':'Hiccup'},{'key':4,'label':'Toothless'},{'key':5,'label':'Astrid'},{'key':7,'label':'Valka'},{'key':14,'label':'Cloudjumper'},{'key':16,'label':'Eret'},{'key':17,'label':'Light Fury'},{'key':18,'label':'Grimmel'},{'key':8,'label':'Gobber'},{'key':9,'label':'Ruffnut'},{'key':10,'label':'Tuffnut'},{'key':11,'label':'Twins'},{'key':12,'label':'Snotlout'},{'key':13,'label':'Fishlegs'},{'key':2,'label':'Other'},{'key':1,'label':'Shy'},{'key':'dwFlag','label':'D.W.'}]"
+                  :sets="[{'setKey':'male','setLabel':'Male','color':'#88f','dataCount':269},{'setKey':'female','setLabel':'Female','color':'#f48','dataCount':116}]"
+                  :data="{'_multiSet':true,'male':{'1':8,'2':14,'3':4,'4':13,'5':4,'6':1,'7':3,'9':21,'10':9,'12':50,'13':12,'16':18,'17':65,'18':47},'female':{'1':7,'2':6,'3':2,'4':8,'5':2,'7':1,'9':1,'10':3,'12':14,'13':4,'16':1,'17':43,'18':24}}"
+                  :dataCount="{'male':269,'female':116}"
+                >
+                </graph>
+              </TabPanel>
+              <TabPanel val="tfcr">
+                <graph
+                  class="graph-wide"
+                  title="Light Fury Character Rating"
+                  :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
+                  :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
+                  :sets="[{'setKey':'male','setLabel':'Male','color':'#88f','dataCount':269},{'setKey':'female','setLabel':'Female','color':'#f48','dataCount':116}]"
+                  :data="{'_multiSet':true,'male':{'1':23,'2':17,'3':15,'4':11,'5':30,'6':31,'7':46,'8':47,'9':19,'10':27,'NoAnswer':3},'female':{'1':15,'2':11,'3':11,'4':12,'5':14,'6':10,'7':11,'8':12,'9':10,'10':8,'NoAnswer':2}}"
+                  :dataCount="{'male':269,'female':116}"
+                >
+                    <average
+                      :sets="[{'setKey':'male','setLabel':'Male','color':'#88f','dataCount':269},{'setKey':'female','setLabel':'Female','color':'#f48','dataCount':116}]"
+                      :data="{'_multiSet':true,'male':{'1':23,'2':17,'3':15,'4':11,'5':30,'6':31,'7':46,'8':47,'9':19,'10':27,'NoAnswer':3},'female':{'1':15,'2':11,'3':11,'4':12,'5':14,'6':10,'7':11,'8':12,'9':10,'10':8,'NoAnswer':2}}"
+                      :dataCount="{'male':269,'female':116}"
+                    ></average>
+
+                </graph>
+              </TabPanel>
+              <TabPanel val="tfdr">
+                <graph
+                  class="graph-wide"
+                  title="Light Fury Design Rating"
+                  :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
+                  :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
+                  :sets="[{'setKey':'male','setLabel':'Male','color':'#88f','dataCount':269},{'setKey':'female','setLabel':'Female','color':'#f48','dataCount':116}]"
+                  :data="{'_multiSet':true,'male':{'1':10,'2':10,'3':12,'4':19,'5':17,'6':16,'7':44,'8':44,'9':48,'10':46,'NoAnswer':3},'female':{'1':13,'2':9,'3':4,'4':19,'5':11,'6':4,'7':10,'8':11,'9':14,'10':21}}"
+                  :dataCount="{'male':269,'female':116}"
+                >
+                    <average
+                      :sets="[{'setKey':'male','setLabel':'Male','color':'#88f','dataCount':269},{'setKey':'female','setLabel':'Female','color':'#f48','dataCount':116}]"
+                      :data="{'_multiSet':true,'male':{'1':10,'2':10,'3':12,'4':19,'5':17,'6':16,'7':44,'8':44,'9':48,'10':46,'NoAnswer':3},'female':{'1':13,'2':9,'3':4,'4':19,'5':11,'6':4,'7':10,'8':11,'9':14,'10':21}}"
+                      :dataCount="{'male':269,'female':116}"
+                    ></average>
+
+                </graph>
+              </TabPanel>
+              <TabPanel val="fe">
+                <graph
+                class="graph-wide"
+                title="THWFittingEnd"
                 :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
                 :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
-                :sets="[{'setKey':'male-(eu)','setLabel':'Male (EU)','color':'#33a','dataCount':112},{'setKey':'female-(eu)','setLabel':'Female (EU)','color':'#f33','dataCount':34},{'setKey':'male-(na)','setLabel':'Male (NA)','color':'#88f','dataCount':108},{'setKey':'female-(na)','setLabel':'Female (NA)','color':'#f48','dataCount':66}]"
-                :data="{'_multiSet':true,'male-(eu)':{'3':1,'4':1,'5':5,'6':8,'7':23,'8':24,'9':26,'10':24},'female-(eu)':{'6':2,'7':6,'8':12,'9':10,'10':4},'male-(na)':{'2':1,'4':1,'5':3,'6':5,'7':36,'8':22,'9':23,'10':16,'NoAnswer':1},'female-(na)':{'1':1,'4':2,'5':2,'6':5,'7':11,'8':16,'9':18,'10':10,'NoAnswer':1}}"
-                :dataCount="{'male-(eu)':112,'female-(eu)':34,'male-(na)':108,'female-(na)':66}"
-              > 
+                :sets="[{'setKey':'male','setLabel':'Male','color':'#88f','dataCount':269},{'setKey':'female','setLabel':'Female','color':'#f48','dataCount':116}]"
+                :data="{'_multiSet':true,'male':{'1':55,'2':11,'3':11,'4':21,'5':17,'6':10,'7':25,'8':24,'9':39,'10':52,'NoAnswer':4},'female':{'1':34,'2':6,'3':7,'4':10,'5':2,'6':3,'7':8,'8':6,'9':12,'10':26,'NoAnswer':2}}"
+                :dataCount="{'male':269,'female':116}"
+              >
                   <average
-                    :sets="[{'setKey':'male-(eu)','setLabel':'Male (EU)','color':'#33a','dataCount':112},{'setKey':'female-(eu)','setLabel':'Female (EU)','color':'#f33','dataCount':34},{'setKey':'male-(na)','setLabel':'Male (NA)','color':'#88f','dataCount':108},{'setKey':'female-(na)','setLabel':'Female (NA)','color':'#f48','dataCount':66}]"
-                    :data="{'_multiSet':true,'male-(eu)':{'3':1,'4':1,'5':5,'6':8,'7':23,'8':24,'9':26,'10':24},'female-(eu)':{'6':2,'7':6,'8':12,'9':10,'10':4},'male-(na)':{'2':1,'4':1,'5':3,'6':5,'7':36,'8':22,'9':23,'10':16,'NoAnswer':1},'female-(na)':{'1':1,'4':2,'5':2,'6':5,'7':11,'8':16,'9':18,'10':10,'NoAnswer':1}}"
-                    :dataCount="{'male-(eu)':112,'female-(eu)':34,'male-(na)':108,'female-(na)':66}"
+                    :sets="[{'setKey':'male','setLabel':'Male','color':'#88f','dataCount':269},{'setKey':'female','setLabel':'Female','color':'#f48','dataCount':116}]"
+                    :data="{'_multiSet':true,'male':{'1':55,'2':11,'3':11,'4':21,'5':17,'6':10,'7':25,'8':24,'9':39,'10':52,'NoAnswer':4},'female':{'1':34,'2':6,'3':7,'4':10,'5':2,'6':3,'7':8,'8':6,'9':12,'10':26,'NoAnswer':2}}"
+                    :dataCount="{'male':269,'female':116}"
                   ></average>
-                
+
               </graph>
-            </div>
-          </TabPanel>
-          <TabPanel val="e">
+              </TabPanel>
+            </TabPanels>
+          </div>
+
+        </template>
+
+        <!-- #endregion gender -->
+
+        <!-- #region location -->
+        <h2 @click="deepDiveResults.location = !deepDiveResults.location">Results by location</h2>
+        <div class="collapsible-heading-hint">(Click title to expand or collapse the section)</div>
+        <template v-if="deepDiveResults.location">
+          <p>
+            Some aspects of 'by location' were already covered by the previous two sections, so I will not repeat myself
+            too much here. Age by gender by location is in the gender section.
+          </p>
+          <p>
+            Another thing worth noting is that in general, only EU and NA got enough answers to warrant putting them on
+            a graph. Sucks to not include the other continents, but such is life.
+          </p>
+          <p>
+            Anyway — as far as age is concerned, EU is older on average ... although NA has more outliers on the high end.
+            And they're less likely to volunteer their age, too.
+          </p>
+
+          <div class="graph-area">
+            <graph
+              class="graph-wide"
+              title="Age"
+              :conf="{'trackWidth':'6px !important','columnWidth':'8px !important','hideZeroColumns':false}"
+              :columns="[{'key':10,'label':'10'},{'key':11,'label':''},{'key':12,'label':''},{'key':13,'label':''},{'key':14,'label':''},{'key':15,'label':'15'},{'key':16,'label':''},{'key':17,'label':''},{'key':18,'label':''},{'key':19,'label':''},{'key':20,'label':'20'},{'key':21,'label':''},{'key':22,'label':''},{'key':23,'label':''},{'key':24,'label':''},{'key':25,'label':'25'},{'key':26,'label':''},{'key':27,'label':''},{'key':28,'label':''},{'key':29,'label':''},{'key':30,'label':'30'},{'key':31,'label':''},{'key':32,'label':''},{'key':33,'label':''},{'key':34,'label':''},{'key':35,'label':'35'},{'key':36,'label':''},{'key':37,'label':''},{'key':38,'label':''},{'key':39,'label':''},{'key':40,'label':'40'},{'key':41,'label':''},{'key':42,'label':''},{'key':43,'label':''},{'key':44,'label':''},{'key':45,'label':'45'},{'key':46,'label':''},{'key':47,'label':''},{'key':48,'label':''},{'key':49,'label':''},{'key':'-1','label':'❄️'},{'key':'_dumm1','label':''},{'key':'_dumm4','label':''},{'key':'NoAnswer','label':'Shy'}]"
+              :sets="[{'setKey':'europe','setLabel':'Europe','color':'#149','dataCount':160},{'setKey':'north-america','setLabel':'North America','color':'#fea','dataCount':194}]"
+              :data="{'_multiSet':true,'europe':{'14':4,'15':4,'16':19,'17':18,'18':18,'19':16,'20':14,'21':13,'22':7,'23':2,'24':6,'25':4,'26':5,'27':3,'28':1,'29':2,'31':1,'34':2,'63':1,'-1':1,'NoAnswer':19},'north-america':{'12':1,'13':3,'14':9,'15':10,'16':11,'17':20,'18':15,'19':21,'20':17,'21':11,'22':6,'23':6,'24':3,'25':5,'26':4,'27':2,'28':5,'29':2,'30':1,'33':1,'34':1,'35':1,'NoAnswer':36,'-1':3}}"
+              :dataCount="{'europe':160,'north-america':194}"
+            >
+                <average
+                  :sets="[{'setKey':'europe','setLabel':'Europe','color':'#149','dataCount':160},{'setKey':'north-america','setLabel':'North America','color':'#fea','dataCount':194}]"
+                  :data="{'_multiSet':true,'europe':{'14':4,'15':4,'16':19,'17':18,'18':18,'19':16,'20':14,'21':13,'22':7,'23':2,'24':6,'25':4,'26':5,'27':3,'28':1,'29':2,'31':1,'34':2,'63':1,'-1':1,'NoAnswer':19},'north-america':{'12':1,'13':3,'14':9,'15':10,'16':11,'17':20,'18':15,'19':21,'20':17,'21':11,'22':6,'23':6,'24':3,'25':5,'26':4,'27':2,'28':5,'29':2,'30':1,'33':1,'34':1,'35':1,'NoAnswer':36,'-1':3}}"
+                  :dataCount="{'europe':160,'north-america':194}"
+                ></average>
+
+            </graph>
+          </div>
+
+          <p>
+            The upper end of the american curve is putting in some mad overtime on the fandom time chart, though: on average,
+            NA respondents claim to be a part of the fandom for almost a full year longer than Europeans.
+          </p>
+
+          <div class="graph-area">
+            <graph
+              class="graph-wide"
+              title="FandomTime"
+              :conf="{'columnXMargin':'1.2rem','size':'wide','barWidth':'8px !important','trackWidthMultiset':'8px !important','trackWidth':'16px !important','columnWidth':'72px !important','sidewaysLabels':true,'labelsHeight':'6rem','hideZeroColumns':true}"
+              :columns="[{'key':0,'label':'<1'},{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10+'},{'key':'NoAnswer','label':'Shy'}]"
+              :sets="[{'setKey':'europe','setLabel':'Europe','color':'#149','dataCount':160},{'setKey':'north-america','setLabel':'North America','color':'#fea','dataCount':194}]"
+              :data="{'_multiSet':true,'europe':{'0':16,'1':10,'2':16,'3':16,'4':11,'5':15,'6':6,'7':19,'8':10,'9':7,'10':29,'NoAnswer':5},'north-america':{'0':16,'1':9,'2':15,'3':11,'4':8,'5':22,'6':10,'7':21,'8':8,'9':7,'10':63,'NoAnswer':4}}"
+              :dataCount="{'europe':160,'north-america':194}"
+            >
+            </graph>
+          </div>
+
+          <p>
+            Incidence of furry is rather similar between the continents:
+          </p>
+
+          <div class="graph-area">
+            <graph
+              class="graph-wide"
+              title="IsFurry"
+              :conf="{'columnXMargin':'1.2rem','size':'wide','barWidth':'8px !important','trackWidthMultiset':'8px !important','trackWidth':'16px !important','columnWidth':'72px !important','sidewaysLabels':true,'labelsHeight':'6rem','hideZeroColumns':true}"
+              :columns="[{'key':0,'label':'None'},{'key':1,'label':'Furry'},{'key':2,'label':'Scalie'},{'key':3,'label':'Other'},{'key':4,'label':'Shy'}]"
+              :sets="[{'setKey':'europe','setLabel':'Europe','color':'#149','dataCount':160},{'setKey':'north-america','setLabel':'North America','color':'#fea','dataCount':194}]"
+              :data="{'_multiSet':true,'europe':{'0':115,'1':31,'2':21,'3':8,'4':8},'north-america':{'0':138,'1':39,'2':33,'3':12,'4':5}}"
+              :dataCount="{'europe':160,'north-america':194}"
+            >
+            </graph>
+          </div>
+
+          <p>
+            But while Americans were less likely to volunteer their age, Europeans were less likely to volunteer their usernames.
+          </p>
+
+          <div class="graph-area">
+            <graph
+              class="graph-wide"
+              title="UsernameProvided"
+              :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
+              :columns="[{'key':1,'label':'Yes'},{'key':3,'label':'Neutral'},{'key':2,'label':'No'},{'key':0,'label':'Shy'}]"
+              :sets="[{'setKey':'europe','setLabel':'Europe','color':'#149','dataCount':160},{'setKey':'north-america','setLabel':'North America','color':'#fea','dataCount':194}]"
+              :data="{'_multiSet':true,'europe':{'1':50,'2':110},'north-america':{'1':73,'2':121}}"
+              :dataCount="{'europe':160,'north-america':194}"
+            >
+            </graph>
+          </div>
+
+          <p>
+            And I am tempted to jump continents:
+          </p>
+
+          <div class="graph-area">
+            <graph
+              class="graph-wide"
+              title="HTTYD1Rating"
+              :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
+              :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
+              :sets="[{'setKey':'europe','setLabel':'Europe','color':'#149','dataCount':160},{'setKey':'north-america','setLabel':'North America','color':'#fea','dataCount':194}]"
+              :data="{'_multiSet':true,'europe':{'1':1,'4':1,'7':4,'8':19,'9':56,'10':79},'north-america':{'6':1,'7':1,'8':23,'9':46,'10':123}}"
+              :dataCount="{'europe':160,'north-america':194}"
+            >
+                <average
+                  :sets="[{'setKey':'europe','setLabel':'Europe','color':'#149','dataCount':160},{'setKey':'north-america','setLabel':'North America','color':'#fea','dataCount':194}]"
+                  :data="{'_multiSet':true,'europe':{'1':1,'4':1,'7':4,'8':19,'9':56,'10':79},'north-america':{'6':1,'7':1,'8':23,'9':46,'10':123}}"
+                  :dataCount="{'europe':160,'north-america':194}"
+                ></average>
+
+            </graph>
+          </div>
+
+          <p>
+            Look, I'd put in some tabs and all, but I am on the line 2994 of the HTML file and vscode is lagging, so you'll have to take my word
+            when I say that similar thing can be seen on graphs that rate specific aspects of the movie.
+          </p>
+
+          <p>
+            Another thing that pops up, <i>again</i>. Toothless is the more popular character in both cases, but wins by a much greater margin
+            over here in Europe. Test drive has a convincing win over Forbidden Friendship in EU, but a minor loss over it among the NA respondents.
+          </p>
+
+          <p>
+            Is that difference due to gender or due to location? Well, depends. When it comes to favourite character, location to have a stronger
+            effect on the results than the gender (Toothless doesn't lead in EU just because it's the #1 choice for males, which represent a bigger
+            portion of the EU responses compared to the NA responses) ... though location × gender results are still interesting in that case. While
+            "Hiccup #1" responses are reasonably comparable across both genders among the NA respondents, there's a rather noticeable dip among the
+            femae/EU respondents.
+          </p>
+
+          <p>
+            Location obfuscates some interesting bits in the 'favourite soundtrack' graph: namely: in the US, female respondents picked Forbidden
+            Friendship as their favourite noticeably more often than Test Drive (while male responses went the other way), but they sorta averaged out.
+            In case of EU, though ... well, you could make that the 'favourite soundtrack by location' is actually the same thing as 'favourite soundtrack
+            by gender.' But this won't be the last time 'gender × location' graph is gonna be more interesting than each of these two on their own.
+          </p>
+
+          <p>
+            Shoutout to that three-way tie on EU/female 'favourite soundtrack by gender x location' graph.
+          </p>
+
+          <Tabs v-model="tabs.location.httydfav">
+            <Tab
+              label="Favourite Character"
+              val="fc"
+            />
+            <Tab
+              label="Favourite Soundtrack"
+              val="fs"
+            />
+            <Tab
+              label="Favourite Character (gender+location)"
+              val="fcg"
+            />
+            <Tab
+              label="Favourite Soundtrack (gender+location)"
+              val="fsg"
+            />
+          </Tabs>
+
+          <TabPanels v-model="tabs.location.httydfav">
+            <TabPanel val="fc">
+              <div class="graph-area">
+                <graph
+                    class="graph-wide"
+                    title="HTTYD1FavouriteCharacter"
+                    :conf="{'columnXMargin':'1.2rem','size':'wide','barWidth':'8px !important','trackWidthMultiset':'8px !important','trackWidth':'16px !important','columnWidth':'72px !important','sidewaysLabels':true,'labelsHeight':'6rem','hideZeroColumns':true}"
+                    :columns="[{'key':3,'label':'Hiccup'},{'key':4,'label':'Toothless'},{'key':5,'label':'Astrid'},{'key':6,'label':'Stoick'},{'key':8,'label':'Gobber'},{'key':9,'label':'Ruffnut'},{'key':10,'label':'Tuffnut'},{'key':11,'label':'Twins'},{'key':12,'label':'Snotlout'},{'key':13,'label':'Fishlegs'},{'key':2,'label':'Other'},{'key':1,'label':'Shy'},{'key':'dwFlag','label':'D.W.'}]"
+                    :sets="[{'setKey':'europe','setLabel':'Europe','color':'#149','dataCount':160},{'setKey':'north-america','setLabel':'North America','color':'#fea','dataCount':194}]"
+                    :data="{'_multiSet':true,'europe':{'1':1,'2':4,'3':39,'4':97,'5':8,'6':1,'8':5,'9':1,'10':3,'12':1},'north-america':{'1':3,'2':7,'3':59,'4':104,'5':8,'6':5,'8':6,'9':1,'10':1}}"
+                    :dataCount="{'europe':160,'north-america':194}"
+                  >
+                  </graph>
+              </div>
+            </TabPanel>
+            <TabPanel val="fs">
+              <div class="graph-area">
+                <graph
+                  class="graph-wide"
+                  title="HTTYD1FavouriteSoundtrack"
+                  :conf="{'columnXMargin':'1.2rem','size':'wide','barWidth':'8px !important','trackWidthMultiset':'8px !important','trackWidth':'16px !important','columnWidth':'72px !important','sidewaysLabels':true,'labelsHeight':'6rem','hideZeroColumns':true}"
+                  :columns="[{'key':0,'label':'This is Berk'},{'key':1,'label':'Dragon Battle'},{'key':2,'label':'The Downed Dragon'},{'key':3,'label':'Dragon training'},{'key':4,'label':'Wounded'},{'key':5,'label':'The Dragon Book'},{'key':6,'label':'Focus, Hiccup!'},{'key':7,'label':'Forbidden Friendship'},{'key':8,'label':'New Tail'},{'key':9,'label':'See You Tomorrow'},{'key':10,'label':'Test Drive'},{'key':11,'label':'Not so Fireproof'},{'key':12,'label':'This Time For Sure'},{'key':13,'label':'Astrid Goes for a Spin'},{'key':14,'label':'Romantic Flight'},{'key':15,'label':'Dragon\'s Den'},{'key':16,'label':'The Cove'},{'key':17,'label':'The Kill Ring'},{'key':18,'label':'Ready The Ships'},{'key':19,'label':'Battling the Green Death'},{'key':20,'label':'Counter Attack'},{'key':21,'label':'Where\'s Hiccup'},{'key':22,'label':'Coming Back Around'},{'key':23,'label':'Sticks and Stones'},{'key':24,'label':'Vikings Have Their Tea'},{'key':25,'label':'Shy'},{'key':26,'label':'D.W.'}]"
+                  :sets="[{'setKey':'europe','setLabel':'Europe','color':'#149','dataCount':160},{'setKey':'north-america','setLabel':'North America','color':'#fea','dataCount':194}]"
+                  :data="{'_multiSet':true,'europe':{'2':1,'7':38,'8':5,'9':6,'10':55,'14':12,'21':1,'22':2,'23':9,'25':31},'north-america':{'7':59,'8':7,'9':6,'10':57,'14':13,'15':1,'21':2,'22':7,'23':14,'25':28}}"
+                  :dataCount="{'europe':160,'north-america':194}"
+                >
+                </graph>
+              </div>
+            </TabPanel>
+            <TabPanel val="fcg">
+              <div class="graph-area">
+                <graph
+                  class="graph-wide"
+                  title="HTTYD1FavouriteCharacter"
+                  :conf="{'columnXMargin':'1.2rem','size':'wide','barWidth':'8px !important','trackWidthMultiset':'8px !important','trackWidth':'16px !important','columnWidth':'72px !important','sidewaysLabels':true,'labelsHeight':'6rem','hideZeroColumns':true}"
+                  :columns="[{'key':3,'label':'Hiccup'},{'key':4,'label':'Toothless'},{'key':5,'label':'Astrid'},{'key':6,'label':'Stoick'},{'key':8,'label':'Gobber'},{'key':9,'label':'Ruffnut'},{'key':10,'label':'Tuffnut'},{'key':11,'label':'Twins'},{'key':12,'label':'Snotlout'},{'key':13,'label':'Fishlegs'},{'key':2,'label':'Other'},{'key':1,'label':'Shy'},{'key':'dwFlag','label':'D.W.'}]"
+                  :sets="[{'setKey':'male-(eu)','setLabel':'Male (EU)','color':'#33a','dataCount':112},{'setKey':'female-(eu)','setLabel':'Female (EU)','color':'#f33','dataCount':34},{'setKey':'male-(na)','setLabel':'Male (NA)','color':'#88f','dataCount':108},{'setKey':'female-(na)','setLabel':'Female (NA)','color':'#f48','dataCount':66}]"
+                  :data="{'_multiSet':true,'male-(eu)':{'2':3,'3':32,'4':69,'5':5,'8':2,'10':1},'female-(eu)':{'2':1,'3':5,'4':22,'5':3,'8':2,'10':1},'male-(na)':{'1':3,'3':32,'4':58,'5':5,'6':4,'8':5,'9':1},'female-(na)':{'2':7,'3':22,'4':31,'5':3,'6':1,'8':1,'10':1}}"
+                  :dataCount="{'male-(eu)':112,'female-(eu)':34,'male-(na)':108,'female-(na)':66}"
+                >
+                </graph>
+              </div>
+            </TabPanel>
+            <TabPanel val="fsg">
+              <div class="graph-area">
+                <graph
+                  class="graph-wide"
+                  title="HTTYD1FavouriteSoundtrack"
+                  :conf="{'columnXMargin':'1.2rem','size':'wide','barWidth':'8px !important','trackWidthMultiset':'8px !important','trackWidth':'16px !important','columnWidth':'72px !important','sidewaysLabels':true,'labelsHeight':'6rem','hideZeroColumns':true}"
+                  :columns="[{'key':0,'label':'This is Berk'},{'key':1,'label':'Dragon Battle'},{'key':2,'label':'The Downed Dragon'},{'key':3,'label':'Dragon training'},{'key':4,'label':'Wounded'},{'key':5,'label':'The Dragon Book'},{'key':6,'label':'Focus, Hiccup!'},{'key':7,'label':'Forbidden Friendship'},{'key':8,'label':'New Tail'},{'key':9,'label':'See You Tomorrow'},{'key':10,'label':'Test Drive'},{'key':11,'label':'Not so Fireproof'},{'key':12,'label':'This Time For Sure'},{'key':13,'label':'Astrid Goes for a Spin'},{'key':14,'label':'Romantic Flight'},{'key':15,'label':'Dragon\'s Den'},{'key':16,'label':'The Cove'},{'key':17,'label':'The Kill Ring'},{'key':18,'label':'Ready The Ships'},{'key':19,'label':'Battling the Green Death'},{'key':20,'label':'Counter Attack'},{'key':21,'label':'Where\'s Hiccup'},{'key':22,'label':'Coming Back Around'},{'key':23,'label':'Sticks and Stones'},{'key':24,'label':'Vikings Have Their Tea'},{'key':25,'label':'Shy'},{'key':26,'label':'D.W.'}]"
+                  :sets="[{'setKey':'male-(eu)','setLabel':'Male (EU)','color':'#33a','dataCount':112},{'setKey':'female-(eu)','setLabel':'Female (EU)','color':'#f33','dataCount':34},{'setKey':'male-(na)','setLabel':'Male (NA)','color':'#88f','dataCount':108},{'setKey':'female-(na)','setLabel':'Female (NA)','color':'#f48','dataCount':66}]"
+                  :data="{'_multiSet':true,'male-(eu)':{'7':26,'8':4,'9':4,'10':44,'14':10,'21':1,'22':1,'23':7,'25':15},'female-(eu)':{'7':9,'8':1,'9':1,'10':9,'14':2,'22':1,'23':2,'25':9},'male-(na)':{'7':30,'8':4,'9':4,'10':36,'14':8,'15':1,'21':1,'22':5,'23':4,'25':15},'female-(na)':{'7':21,'8':3,'9':2,'10':16,'14':4,'21':1,'22':1,'23':8,'25':10}}"
+                  :dataCount="{'male-(eu)':112,'female-(eu)':34,'male-(na)':108,'female-(na)':66}"
+                >
+                </graph>
+              </div>
+            </TabPanel>
+          </TabPanels>
+
+          <p>
+            As far as the second movie is concerned, overall, the averages are tied. Per aspects, some aspects were rated higher by the EU (plot, characters, themes),
+            and some were more popular amongst people from North America (score, visuals, emotion):
+          </p>
+
+          <Tabs v-model="tabs.location.httyd2">
+            <Tab
+              label="Overall"
+              val="overall"
+            />
+            <Tab
+              label="Plot"
+              val="p"
+            />
+            <Tab
+              label="Emotion"
+              val="e"
+            />
+            <Tab
+              label="Characters"
+              val="c"
+            />
+            <Tab
+              label="Theme"
+              val="t"
+            />
+            <Tab
+              label="Visuals"
+              val="v"
+            />
+            <Tab
+              label="Score"
+              val="s"
+            />
+          </Tabs>
+
+          <TabPanels v-model="tabs.location.httyd2">
+            <TabPanel val="overall">
+              <div class="graph-area">
+                <graph
+                    class="graph-wide"
+                    title="HTTYD2PlotRating"
+                    :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
+                    :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
+                    :sets="[{'setKey':'europe','setLabel':'Europe','color':'#149','dataCount':160},{'setKey':'north-america','setLabel':'North America','color':'#fea','dataCount':194}]"
+                    :data="{'_multiSet':true,'europe':{'3':2,'4':1,'5':6,'6':11,'7':33,'8':40,'9':38,'10':28,'NoAnswer':1},'north-america':{'1':1,'2':1,'4':3,'5':5,'6':11,'7':53,'8':46,'9':44,'10':28,'NoAnswer':2}}"
+                    :dataCount="{'europe':160,'north-america':194}"
+                  >
+                      <average
+                        :sets="[{'setKey':'europe','setLabel':'Europe','color':'#149','dataCount':160},{'setKey':'north-america','setLabel':'North America','color':'#fea','dataCount':194}]"
+                        :data="{'_multiSet':true,'europe':{'3':2,'4':1,'5':6,'6':11,'7':33,'8':40,'9':38,'10':28,'NoAnswer':1},'north-america':{'1':1,'2':1,'4':3,'5':5,'6':11,'7':53,'8':46,'9':44,'10':28,'NoAnswer':2}}"
+                        :dataCount="{'europe':160,'north-america':194}"
+                      ></average>
+                  </graph>
+              </div>
+            </TabPanel>
+            <TabPanel val="p">
+              <div class="graph-area">
+                <graph
+                    class="graph-wide"
+                    title="HTTYD2PlotRating"
+                    :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
+                    :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
+                    :sets="[{'setKey':'europe','setLabel':'Europe','color':'#149','dataCount':160},{'setKey':'north-america','setLabel':'North America','color':'#fea','dataCount':194}]"
+                    :data="{'_multiSet':true,'europe':{'3':2,'4':1,'5':6,'6':11,'7':33,'8':40,'9':38,'10':28,'NoAnswer':1},'north-america':{'1':1,'2':1,'4':3,'5':5,'6':11,'7':53,'8':46,'9':44,'10':28,'NoAnswer':2}}"
+                    :dataCount="{'europe':160,'north-america':194}"
+                  >
+                      <average
+                        :sets="[{'setKey':'europe','setLabel':'Europe','color':'#149','dataCount':160},{'setKey':'north-america','setLabel':'North America','color':'#fea','dataCount':194}]"
+                        :data="{'_multiSet':true,'europe':{'3':2,'4':1,'5':6,'6':11,'7':33,'8':40,'9':38,'10':28,'NoAnswer':1},'north-america':{'1':1,'2':1,'4':3,'5':5,'6':11,'7':53,'8':46,'9':44,'10':28,'NoAnswer':2}}"
+                        :dataCount="{'europe':160,'north-america':194}"
+                      ></average>
+                  </graph>
+              </div>
+            </TabPanel>
+            <TabPanel val="e">
+              <div class="graph-area">
+                <graph
+              class="graph-wide"
+              title="HTTYD2EmotionRating"
+              :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
+              :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
+              :sets="[{'setKey':'europe','setLabel':'Europe','color':'#149','dataCount':160},{'setKey':'north-america','setLabel':'North America','color':'#fea','dataCount':194}]"
+              :data="{'_multiSet':true,'europe':{'1':1,'2':1,'4':2,'5':3,'6':4,'7':10,'8':26,'9':42,'10':70,'NoAnswer':1},'north-america':{'1':1,'3':1,'4':1,'5':2,'6':6,'7':13,'8':24,'9':57,'10':87,'NoAnswer':2}}"
+              :dataCount="{'europe':160,'north-america':194}"
+            >
+                <average
+                  :sets="[{'setKey':'europe','setLabel':'Europe','color':'#149','dataCount':160},{'setKey':'north-america','setLabel':'North America','color':'#fea','dataCount':194}]"
+                  :data="{'_multiSet':true,'europe':{'1':1,'2':1,'4':2,'5':3,'6':4,'7':10,'8':26,'9':42,'10':70,'NoAnswer':1},'north-america':{'1':1,'3':1,'4':1,'5':2,'6':6,'7':13,'8':24,'9':57,'10':87,'NoAnswer':2}}"
+                  :dataCount="{'europe':160,'north-america':194}"
+                ></average>
+
+            </graph>
+              </div>
+            </TabPanel>
+            <TabPanel val="c">
+              <div class="graph-area">
+                  <graph
+              class="graph-wide"
+              title="HTTYD2CharacterRating"
+              :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
+              :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
+              :sets="[{'setKey':'europe','setLabel':'Europe','color':'#149','dataCount':160},{'setKey':'north-america','setLabel':'North America','color':'#fea','dataCount':194}]"
+              :data="{'_multiSet':true,'europe':{'2':2,'3':1,'4':3,'5':2,'6':5,'7':14,'8':53,'9':33,'10':46,'NoAnswer':1},'north-america':{'1':1,'2':1,'4':2,'5':7,'6':8,'7':31,'8':37,'9':57,'10':48,'NoAnswer':2}}"
+              :dataCount="{'europe':160,'north-america':194}"
+            >
+                <average
+                  :sets="[{'setKey':'europe','setLabel':'Europe','color':'#149','dataCount':160},{'setKey':'north-america','setLabel':'North America','color':'#fea','dataCount':194}]"
+                  :data="{'_multiSet':true,'europe':{'2':2,'3':1,'4':3,'5':2,'6':5,'7':14,'8':53,'9':33,'10':46,'NoAnswer':1},'north-america':{'1':1,'2':1,'4':2,'5':7,'6':8,'7':31,'8':37,'9':57,'10':48,'NoAnswer':2}}"
+                  :dataCount="{'europe':160,'north-america':194}"
+                ></average>
+
+            </graph>
+
+              </div>
+            </TabPanel>
+            <TabPanel val="t">
+              <div class="graph-area">
+                <graph
+              class="graph-wide"
+              title="HTTYD2ThemeRating"
+              :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
+              :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
+              :sets="[{'setKey':'europe','setLabel':'Europe','color':'#149','dataCount':160},{'setKey':'north-america','setLabel':'North America','color':'#fea','dataCount':194}]"
+              :data="{'_multiSet':true,'europe':{'2':1,'4':4,'5':6,'6':14,'7':21,'8':38,'9':28,'10':46,'NoAnswer':2},'north-america':{'1':3,'2':1,'3':2,'4':4,'5':9,'6':11,'7':22,'8':40,'9':47,'10':53,'NoAnswer':2}}"
+              :dataCount="{'europe':160,'north-america':194}"
+            >
+                <average
+                  :sets="[{'setKey':'europe','setLabel':'Europe','color':'#149','dataCount':160},{'setKey':'north-america','setLabel':'North America','color':'#fea','dataCount':194}]"
+                  :data="{'_multiSet':true,'europe':{'2':1,'4':4,'5':6,'6':14,'7':21,'8':38,'9':28,'10':46,'NoAnswer':2},'north-america':{'1':3,'2':1,'3':2,'4':4,'5':9,'6':11,'7':22,'8':40,'9':47,'10':53,'NoAnswer':2}}"
+                  :dataCount="{'europe':160,'north-america':194}"
+                ></average>
+
+            </graph>
+              </div>
+            </TabPanel>
+            <TabPanel val="v">
+              <div class="graph-area">
+                  <graph
+              class="graph-wide"
+              title="HTTYD1VisualsRating"
+              :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
+              :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
+              :sets="[{'setKey':'europe','setLabel':'Europe','color':'#149','dataCount':160},{'setKey':'north-america','setLabel':'North America','color':'#fea','dataCount':194}]"
+              :data="{'_multiSet':true,'europe':{'5':4,'6':7,'7':24,'8':35,'9':37,'10':52,'NoAnswer':1},'north-america':{'4':1,'5':2,'6':13,'7':21,'8':48,'9':44,'10':64,'NoAnswer':1}}"
+              :dataCount="{'europe':160,'north-america':194}"
+            >
+                <average
+                  :sets="[{'setKey':'europe','setLabel':'Europe','color':'#149','dataCount':160},{'setKey':'north-america','setLabel':'North America','color':'#fea','dataCount':194}]"
+                  :data="{'_multiSet':true,'europe':{'5':4,'6':7,'7':24,'8':35,'9':37,'10':52,'NoAnswer':1},'north-america':{'4':1,'5':2,'6':13,'7':21,'8':48,'9':44,'10':64,'NoAnswer':1}}"
+                  :dataCount="{'europe':160,'north-america':194}"
+                ></average>
+
+            </graph>
+              </div>
+            </TabPanel>
+            <TabPanel val="s">
+              <div class="graph-area">
+                <graph
+              class="graph-wide"
+              title="HTTYD1ScoreRating"
+              :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
+              :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
+              :sets="[{'setKey':'europe','setLabel':'Europe','color':'#149','dataCount':160},{'setKey':'north-america','setLabel':'North America','color':'#fea','dataCount':194}]"
+              :data="{'_multiSet':true,'europe':{'2':1,'5':2,'6':3,'7':5,'8':5,'9':17,'10':127},'north-america':{'3':1,'4':1,'5':1,'6':2,'7':3,'8':6,'9':12,'10':167,'NoAnswer':1}}"
+              :dataCount="{'europe':160,'north-america':194}"
+            >
+                <average
+                  :sets="[{'setKey':'europe','setLabel':'Europe','color':'#149','dataCount':160},{'setKey':'north-america','setLabel':'North America','color':'#fea','dataCount':194}]"
+                  :data="{'_multiSet':true,'europe':{'2':1,'5':2,'6':3,'7':5,'8':5,'9':17,'10':127},'north-america':{'3':1,'4':1,'5':1,'6':2,'7':3,'8':6,'9':12,'10':167,'NoAnswer':1}}"
+                  :dataCount="{'europe':160,'north-america':194}"
+                ></average>
+
+            </graph>
+              </div>
+            </TabPanel>
+          </TabPanels>
+
+          <p>
+            But gender × location turns out to be the cooler daniel once more. Turns out that gender × location graph gets very interesting for the second movie.
+            With the first movie, the answers didn't diverge enough to warrant a mention. There were gender differences, but not much location differences. With
+            HTTYD2, the four groups (EU/male, EU/female, NA/male, NA/female) often get wildly different bell curves and peaks (with some double peaks as well).
+            Remember some of the weirness I pointed out on early graphs? When viewed in gender × location, the mysteries start to unravel.
+          </p>
+
+          <p>
+            (As a side note: I am aware that I am ignoring the age here — which is a factor that probably contributes to the double peaking we see here — but if
+            I did age × location × gender, the graph would have too many columns to be useful. Therefore, I ignore the age at the moment.)
+          </p>
+
+          <Tabs v-model="tabs.location.httyd2gl">
+            <Tab
+              label="Overall"
+              val="overall"
+            />
+            <Tab
+              label="Plot"
+              val="p"
+            />
+            <Tab
+              label="Emotion"
+              val="e"
+            />
+            <Tab
+              label="Characters"
+              val="c"
+            />
+            <Tab
+              label="Theme"
+              val="t"
+            />
+            <Tab
+              label="Visuals"
+              val="v"
+            />
+            <Tab
+              label="Score"
+              val="s"
+            />
+          </Tabs>
+
+          <TabPanels v-model="tabs.location.httyd2gl">
+            <TabPanel val="overall">
+              <div class="graph-area">
+                <graph
+                  class="graph-wide"
+                  title="HTTYD2Rating"
+                  :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
+                  :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
+                  :sets="[{'setKey':'male-(eu)','setLabel':'Male (EU)','color':'#33a','dataCount':112},{'setKey':'female-(eu)','setLabel':'Female (EU)','color':'#f33','dataCount':34},{'setKey':'male-(na)','setLabel':'Male (NA)','color':'#88f','dataCount':108},{'setKey':'female-(na)','setLabel':'Female (NA)','color':'#f48','dataCount':66}]"
+                  :data="{'_multiSet':true,'male-(eu)':{'3':1,'5':2,'6':4,'7':14,'8':36,'9':24,'10':31},'female-(eu)':{'5':1,'7':2,'8':9,'9':11,'10':11},'male-(na)':{'2':1,'6':6,'7':18,'8':25,'9':28,'10':28,'NoAnswer':2},'female-(na)':{'1':1,'5':1,'6':4,'7':9,'8':11,'9':21,'10':19}}"
+                  :dataCount="{'male-(eu)':112,'female-(eu)':34,'male-(na)':108,'female-(na)':66}"
+                >
+                    <average
+                      :sets="[{'setKey':'male-(eu)','setLabel':'Male (EU)','color':'#33a','dataCount':112},{'setKey':'female-(eu)','setLabel':'Female (EU)','color':'#f33','dataCount':34},{'setKey':'male-(na)','setLabel':'Male (NA)','color':'#88f','dataCount':108},{'setKey':'female-(na)','setLabel':'Female (NA)','color':'#f48','dataCount':66}]"
+                      :data="{'_multiSet':true,'male-(eu)':{'3':1,'5':2,'6':4,'7':14,'8':36,'9':24,'10':31},'female-(eu)':{'5':1,'7':2,'8':9,'9':11,'10':11},'male-(na)':{'2':1,'6':6,'7':18,'8':25,'9':28,'10':28,'NoAnswer':2},'female-(na)':{'1':1,'5':1,'6':4,'7':9,'8':11,'9':21,'10':19}}"
+                      :dataCount="{'male-(eu)':112,'female-(eu)':34,'male-(na)':108,'female-(na)':66}"
+                    ></average>
+
+                </graph>
+              </div>
+            </TabPanel>
+            <TabPanel val="p">
+              <div class="graph-area">
+                <graph
+                  class="graph-wide"
+                  title="HTTYD2PlotRating"
+                  :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
+                  :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
+                  :sets="[{'setKey':'male-(eu)','setLabel':'Male (EU)','color':'#33a','dataCount':112},{'setKey':'female-(eu)','setLabel':'Female (EU)','color':'#f33','dataCount':34},{'setKey':'male-(na)','setLabel':'Male (NA)','color':'#88f','dataCount':108},{'setKey':'female-(na)','setLabel':'Female (NA)','color':'#f48','dataCount':66}]"
+                  :data="{'_multiSet':true,'male-(eu)':{'3':1,'4':1,'5':5,'6':8,'7':23,'8':24,'9':26,'10':24},'female-(eu)':{'6':2,'7':6,'8':12,'9':10,'10':4},'male-(na)':{'2':1,'4':1,'5':3,'6':5,'7':36,'8':22,'9':23,'10':16,'NoAnswer':1},'female-(na)':{'1':1,'4':2,'5':2,'6':5,'7':11,'8':16,'9':18,'10':10,'NoAnswer':1}}"
+                  :dataCount="{'male-(eu)':112,'female-(eu)':34,'male-(na)':108,'female-(na)':66}"
+                >
+                    <average
+                      :sets="[{'setKey':'male-(eu)','setLabel':'Male (EU)','color':'#33a','dataCount':112},{'setKey':'female-(eu)','setLabel':'Female (EU)','color':'#f33','dataCount':34},{'setKey':'male-(na)','setLabel':'Male (NA)','color':'#88f','dataCount':108},{'setKey':'female-(na)','setLabel':'Female (NA)','color':'#f48','dataCount':66}]"
+                      :data="{'_multiSet':true,'male-(eu)':{'3':1,'4':1,'5':5,'6':8,'7':23,'8':24,'9':26,'10':24},'female-(eu)':{'6':2,'7':6,'8':12,'9':10,'10':4},'male-(na)':{'2':1,'4':1,'5':3,'6':5,'7':36,'8':22,'9':23,'10':16,'NoAnswer':1},'female-(na)':{'1':1,'4':2,'5':2,'6':5,'7':11,'8':16,'9':18,'10':10,'NoAnswer':1}}"
+                      :dataCount="{'male-(eu)':112,'female-(eu)':34,'male-(na)':108,'female-(na)':66}"
+                    ></average>
+
+                </graph>
+              </div>
+            </TabPanel>
+            <TabPanel val="e">
+              <div class="graph-area">
+                <graph
+              class="graph-wide"
+              title="HTTYD2EmotionRating"
+              :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
+              :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
+              :sets="[{'setKey':'male-(eu)','setLabel':'Male (EU)','color':'#33a','dataCount':112},{'setKey':'female-(eu)','setLabel':'Female (EU)','color':'#f33','dataCount':34},{'setKey':'male-(na)','setLabel':'Male (NA)','color':'#88f','dataCount':108},{'setKey':'female-(na)','setLabel':'Female (NA)','color':'#f48','dataCount':66}]"
+              :data="{'_multiSet':true,'male-(eu)':{'2':1,'4':1,'5':3,'6':3,'7':8,'8':18,'9':32,'10':46},'female-(eu)':{'4':1,'7':1,'8':3,'9':9,'10':20},'male-(na)':{'3':1,'4':1,'5':1,'6':6,'7':4,'8':13,'9':37,'10':44,'NoAnswer':1},'female-(na)':{'1':1,'5':1,'7':6,'8':7,'9':15,'10':35,'NoAnswer':1}}"
+              :dataCount="{'male-(eu)':112,'female-(eu)':34,'male-(na)':108,'female-(na)':66}"
+            >
+                <average
+                  :sets="[{'setKey':'male-(eu)','setLabel':'Male (EU)','color':'#33a','dataCount':112},{'setKey':'female-(eu)','setLabel':'Female (EU)','color':'#f33','dataCount':34},{'setKey':'male-(na)','setLabel':'Male (NA)','color':'#88f','dataCount':108},{'setKey':'female-(na)','setLabel':'Female (NA)','color':'#f48','dataCount':66}]"
+                  :data="{'_multiSet':true,'male-(eu)':{'2':1,'4':1,'5':3,'6':3,'7':8,'8':18,'9':32,'10':46},'female-(eu)':{'4':1,'7':1,'8':3,'9':9,'10':20},'male-(na)':{'3':1,'4':1,'5':1,'6':6,'7':4,'8':13,'9':37,'10':44,'NoAnswer':1},'female-(na)':{'1':1,'5':1,'7':6,'8':7,'9':15,'10':35,'NoAnswer':1}}"
+                  :dataCount="{'male-(eu)':112,'female-(eu)':34,'male-(na)':108,'female-(na)':66}"
+                ></average>
+
+            </graph>
+              </div>
+            </TabPanel>
+            <TabPanel val="c">
+              <div class="graph-area">
+                  <graph
+              class="graph-wide"
+              title="HTTYD2CharacterRating"
+              :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
+              :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
+              :sets="[{'setKey':'male-(eu)','setLabel':'Male (EU)','color':'#33a','dataCount':112},{'setKey':'female-(eu)','setLabel':'Female (EU)','color':'#f33','dataCount':34},{'setKey':'male-(na)','setLabel':'Male (NA)','color':'#88f','dataCount':108},{'setKey':'female-(na)','setLabel':'Female (NA)','color':'#f48','dataCount':66}]"
+              :data="{'_multiSet':true,'male-(eu)':{'2':1,'3':1,'4':3,'6':3,'7':9,'8':35,'9':27,'10':33},'female-(eu)':{'5':1,'7':4,'8':12,'9':6,'10':11},'male-(na)':{'2':1,'5':4,'6':3,'7':22,'8':23,'9':31,'10':23,'NoAnswer':1},'female-(na)':{'1':1,'4':2,'5':3,'6':3,'7':4,'8':12,'9':19,'10':21,'NoAnswer':1}}"
+              :dataCount="{'male-(eu)':112,'female-(eu)':34,'male-(na)':108,'female-(na)':66}"
+            >
+                <average
+                  :sets="[{'setKey':'male-(eu)','setLabel':'Male (EU)','color':'#33a','dataCount':112},{'setKey':'female-(eu)','setLabel':'Female (EU)','color':'#f33','dataCount':34},{'setKey':'male-(na)','setLabel':'Male (NA)','color':'#88f','dataCount':108},{'setKey':'female-(na)','setLabel':'Female (NA)','color':'#f48','dataCount':66}]"
+                  :data="{'_multiSet':true,'male-(eu)':{'2':1,'3':1,'4':3,'6':3,'7':9,'8':35,'9':27,'10':33},'female-(eu)':{'5':1,'7':4,'8':12,'9':6,'10':11},'male-(na)':{'2':1,'5':4,'6':3,'7':22,'8':23,'9':31,'10':23,'NoAnswer':1},'female-(na)':{'1':1,'4':2,'5':3,'6':3,'7':4,'8':12,'9':19,'10':21,'NoAnswer':1}}"
+                  :dataCount="{'male-(eu)':112,'female-(eu)':34,'male-(na)':108,'female-(na)':66}"
+                ></average>
+
+            </graph>
+
+              </div>
+            </TabPanel>
+            <TabPanel val="t">
+              <div class="graph-area">
+                <graph
+              class="graph-wide"
+              title="HTTYD2ThemeRating"
+              :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
+              :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
+              :sets="[{'setKey':'male-(eu)','setLabel':'Male (EU)','color':'#33a','dataCount':112},{'setKey':'female-(eu)','setLabel':'Female (EU)','color':'#f33','dataCount':34},{'setKey':'male-(na)','setLabel':'Male (NA)','color':'#88f','dataCount':108},{'setKey':'female-(na)','setLabel':'Female (NA)','color':'#f48','dataCount':66}]"
+              :data="{'_multiSet':true,'male-(eu)':{'4':3,'5':6,'6':10,'7':13,'8':30,'9':17,'10':32,'NoAnswer':1},'female-(eu)':{'4':1,'6':2,'7':6,'8':4,'9':11,'10':10},'male-(na)':{'1':1,'2':1,'3':1,'4':2,'5':5,'6':8,'7':10,'8':28,'9':25,'10':26,'NoAnswer':1},'female-(na)':{'1':2,'3':1,'4':1,'5':4,'6':1,'7':10,'8':10,'9':16,'10':20,'NoAnswer':1}}"
+              :dataCount="{'male-(eu)':112,'female-(eu)':34,'male-(na)':108,'female-(na)':66}"
+            >
+                <average
+                  :sets="[{'setKey':'male-(eu)','setLabel':'Male (EU)','color':'#33a','dataCount':112},{'setKey':'female-(eu)','setLabel':'Female (EU)','color':'#f33','dataCount':34},{'setKey':'male-(na)','setLabel':'Male (NA)','color':'#88f','dataCount':108},{'setKey':'female-(na)','setLabel':'Female (NA)','color':'#f48','dataCount':66}]"
+                  :data="{'_multiSet':true,'male-(eu)':{'4':3,'5':6,'6':10,'7':13,'8':30,'9':17,'10':32,'NoAnswer':1},'female-(eu)':{'4':1,'6':2,'7':6,'8':4,'9':11,'10':10},'male-(na)':{'1':1,'2':1,'3':1,'4':2,'5':5,'6':8,'7':10,'8':28,'9':25,'10':26,'NoAnswer':1},'female-(na)':{'1':2,'3':1,'4':1,'5':4,'6':1,'7':10,'8':10,'9':16,'10':20,'NoAnswer':1}}"
+                  :dataCount="{'male-(eu)':112,'female-(eu)':34,'male-(na)':108,'female-(na)':66}"
+                ></average>
+
+            </graph>
+              </div>
+            </TabPanel>
+            <TabPanel val="v">
+              <div class="graph-area">
+                <graph
+              class="graph-wide"
+              title="HTTYD2VisualsRating"
+              :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
+              :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
+              :sets="[{'setKey':'male-(eu)','setLabel':'Male (EU)','color':'#33a','dataCount':112},{'setKey':'female-(eu)','setLabel':'Female (EU)','color':'#f33','dataCount':34},{'setKey':'male-(na)','setLabel':'Male (NA)','color':'#88f','dataCount':108},{'setKey':'female-(na)','setLabel':'Female (NA)','color':'#f48','dataCount':66}]"
+              :data="{'_multiSet':true,'male-(eu)':{'7':2,'8':18,'9':33,'10':59},'female-(eu)':{'8':4,'9':5,'10':25},'male-(na)':{'5':1,'6':2,'7':4,'8':11,'9':23,'10':66,'NoAnswer':1},'female-(na)':{'2':1,'4':1,'5':1,'7':4,'8':4,'9':11,'10':44}}"
+              :dataCount="{'male-(eu)':112,'female-(eu)':34,'male-(na)':108,'female-(na)':66}"
+            >
+                <average
+                  :sets="[{'setKey':'male-(eu)','setLabel':'Male (EU)','color':'#33a','dataCount':112},{'setKey':'female-(eu)','setLabel':'Female (EU)','color':'#f33','dataCount':34},{'setKey':'male-(na)','setLabel':'Male (NA)','color':'#88f','dataCount':108},{'setKey':'female-(na)','setLabel':'Female (NA)','color':'#f48','dataCount':66}]"
+                  :data="{'_multiSet':true,'male-(eu)':{'7':2,'8':18,'9':33,'10':59},'female-(eu)':{'8':4,'9':5,'10':25},'male-(na)':{'5':1,'6':2,'7':4,'8':11,'9':23,'10':66,'NoAnswer':1},'female-(na)':{'2':1,'4':1,'5':1,'7':4,'8':4,'9':11,'10':44}}"
+                  :dataCount="{'male-(eu)':112,'female-(eu)':34,'male-(na)':108,'female-(na)':66}"
+                ></average>
+
+            </graph>
+              </div>
+            </TabPanel>
+            <TabPanel val="s">
+              <div class="graph-area">
+                <graph
+              class="graph-wide"
+              title="HTTYD2ScoreRating"
+              :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
+              :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
+              :sets="[{'setKey':'male-(eu)','setLabel':'Male (EU)','color':'#33a','dataCount':112},{'setKey':'female-(eu)','setLabel':'Female (EU)','color':'#f33','dataCount':34},{'setKey':'male-(na)','setLabel':'Male (NA)','color':'#88f','dataCount':108},{'setKey':'female-(na)','setLabel':'Female (NA)','color':'#f48','dataCount':66}]"
+              :data="{'_multiSet':true,'male-(eu)':{'3':2,'5':2,'6':3,'7':10,'8':22,'9':21,'10':52},'female-(eu)':{'7':1,'8':9,'9':3,'10':21},'male-(na)':{'2':1,'5':1,'6':1,'7':5,'8':22,'9':22,'10':54,'NoAnswer':2},'female-(na)':{'4':2,'5':2,'6':4,'7':2,'8':6,'9':8,'10':42}}"
+              :dataCount="{'male-(eu)':112,'female-(eu)':34,'male-(na)':108,'female-(na)':66}"
+            >
+                <average
+                  :sets="[{'setKey':'male-(eu)','setLabel':'Male (EU)','color':'#33a','dataCount':112},{'setKey':'female-(eu)','setLabel':'Female (EU)','color':'#f33','dataCount':34},{'setKey':'male-(na)','setLabel':'Male (NA)','color':'#88f','dataCount':108},{'setKey':'female-(na)','setLabel':'Female (NA)','color':'#f48','dataCount':66}]"
+                  :data="{'_multiSet':true,'male-(eu)':{'3':2,'5':2,'6':3,'7':10,'8':22,'9':21,'10':52},'female-(eu)':{'7':1,'8':9,'9':3,'10':21},'male-(na)':{'2':1,'5':1,'6':1,'7':5,'8':22,'9':22,'10':54,'NoAnswer':2},'female-(na)':{'4':2,'5':2,'6':4,'7':2,'8':6,'9':8,'10':42}}"
+                  :dataCount="{'male-(eu)':112,'female-(eu)':34,'male-(na)':108,'female-(na)':66}"
+                ></average>
+
+            </graph>
+              </div>
+            </TabPanel>
+          </TabPanels>
+
+          <p>
+            Other HTTYD2 graphs aren't very interesting in location × gender view. There are some minor difference, but nothing we've seen before.
+          </p>
+
+          <p>
+            Now, let's move onto the THW graphs. In Europe, Americans are often stereotyped as "the big dumb" ... but the rating graphs suggest that this
+            stereotype may be at least slightly incorrect. The results are disappointing enough that Tamius is franticly googling whether a set of Uno can be used
+            as a <a href="https://en.wikipedia.org/wiki/Green_card" target="_blank">green card</a>. Probably not, but one can hope.
+          </p>
+
+          <Tabs v-model="tabs.location.httyd3gl">
+            <Tab
+              label="Overall"
+              val="overall"
+            />
+            <Tab
+              label="Plot"
+              val="p"
+            />
+            <Tab
+              label="Emotion"
+              val="e"
+            />
+            <Tab
+              label="Characters"
+              val="c"
+            />
+            <Tab
+              label="Theme"
+              val="t"
+            />
+            <Tab
+              label="Visuals"
+              val="v"
+            />
+            <Tab
+              label="Score"
+              val="s"
+            />
+          </Tabs>
+          <TabPanels v-model="tabs.location.httyd3gl">
+            <TabPanel val="overall">
+              <div class="graph-area">
+                  <graph
+              class="graph-wide"
+              title="HTTYD3Rating"
+              :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
+              :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
+              :sets="[{'setKey':'male-(eu)','setLabel':'Male (EU)','color':'#33a','dataCount':112},{'setKey':'female-(eu)','setLabel':'Female (EU)','color':'#f33','dataCount':34},{'setKey':'male-(na)','setLabel':'Male (NA)','color':'#88f','dataCount':108},{'setKey':'female-(na)','setLabel':'Female (NA)','color':'#f48','dataCount':66}]"
+              :data="{'_multiSet':true,'male-(eu)':{'1':2,'2':2,'3':6,'4':6,'5':3,'6':14,'7':21,'8':17,'9':19,'10':21,'NoAnswer':1},'female-(eu)':{'1':2,'2':2,'3':5,'4':2,'5':5,'6':2,'7':3,'9':4,'10':9},'male-(na)':{'1':8,'2':5,'3':5,'4':8,'5':5,'6':10,'7':16,'8':20,'9':14,'10':15,'NoAnswer':2},'female-(na)':{'1':4,'2':4,'3':5,'4':4,'5':6,'6':6,'7':6,'8':13,'9':6,'10':10,'NoAnswer':2}}"
+              :dataCount="{'male-(eu)':112,'female-(eu)':34,'male-(na)':108,'female-(na)':66}"
+            >
+                <average
+                  :sets="[{'setKey':'male-(eu)','setLabel':'Male (EU)','color':'#33a','dataCount':112},{'setKey':'female-(eu)','setLabel':'Female (EU)','color':'#f33','dataCount':34},{'setKey':'male-(na)','setLabel':'Male (NA)','color':'#88f','dataCount':108},{'setKey':'female-(na)','setLabel':'Female (NA)','color':'#f48','dataCount':66}]"
+                  :data="{'_multiSet':true,'male-(eu)':{'1':2,'2':2,'3':6,'4':6,'5':3,'6':14,'7':21,'8':17,'9':19,'10':21,'NoAnswer':1},'female-(eu)':{'1':2,'2':2,'3':5,'4':2,'5':5,'6':2,'7':3,'9':4,'10':9},'male-(na)':{'1':8,'2':5,'3':5,'4':8,'5':5,'6':10,'7':16,'8':20,'9':14,'10':15,'NoAnswer':2},'female-(na)':{'1':4,'2':4,'3':5,'4':4,'5':6,'6':6,'7':6,'8':13,'9':6,'10':10,'NoAnswer':2}}"
+                  :dataCount="{'male-(eu)':112,'female-(eu)':34,'male-(na)':108,'female-(na)':66}"
+                ></average>
+
+            </graph>
+              </div>
+            </TabPanel>
+            <TabPanel val="p">
+              <div class="graph-area">
+                <graph
+              class="graph-wide"
+              title="HTTYD3PlotRating"
+              :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
+              :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
+              :sets="[{'setKey':'male-(eu)','setLabel':'Male (EU)','color':'#33a','dataCount':112},{'setKey':'female-(eu)','setLabel':'Female (EU)','color':'#f33','dataCount':34},{'setKey':'male-(na)','setLabel':'Male (NA)','color':'#88f','dataCount':108},{'setKey':'female-(na)','setLabel':'Female (NA)','color':'#f48','dataCount':66}]"
+              :data="{'_multiSet':true,'male-(eu)':{'1':6,'2':7,'3':8,'4':5,'5':8,'6':15,'7':17,'8':19,'9':14,'10':12,'NoAnswer':1},'female-(eu)':{'1':3,'2':7,'3':2,'4':3,'5':4,'6':2,'8':3,'9':5,'10':5},'male-(na)':{'1':13,'2':7,'3':5,'4':5,'5':9,'6':16,'7':16,'8':14,'9':9,'10':12,'NoAnswer':2},'female-(na)':{'1':7,'2':3,'3':10,'4':2,'5':4,'6':8,'7':9,'8':6,'9':7,'10':8,'NoAnswer':2}}"
+              :dataCount="{'male-(eu)':112,'female-(eu)':34,'male-(na)':108,'female-(na)':66}"
+            >
+                <average
+                  :sets="[{'setKey':'male-(eu)','setLabel':'Male (EU)','color':'#33a','dataCount':112},{'setKey':'female-(eu)','setLabel':'Female (EU)','color':'#f33','dataCount':34},{'setKey':'male-(na)','setLabel':'Male (NA)','color':'#88f','dataCount':108},{'setKey':'female-(na)','setLabel':'Female (NA)','color':'#f48','dataCount':66}]"
+                  :data="{'_multiSet':true,'male-(eu)':{'1':6,'2':7,'3':8,'4':5,'5':8,'6':15,'7':17,'8':19,'9':14,'10':12,'NoAnswer':1},'female-(eu)':{'1':3,'2':7,'3':2,'4':3,'5':4,'6':2,'8':3,'9':5,'10':5},'male-(na)':{'1':13,'2':7,'3':5,'4':5,'5':9,'6':16,'7':16,'8':14,'9':9,'10':12,'NoAnswer':2},'female-(na)':{'1':7,'2':3,'3':10,'4':2,'5':4,'6':8,'7':9,'8':6,'9':7,'10':8,'NoAnswer':2}}"
+                  :dataCount="{'male-(eu)':112,'female-(eu)':34,'male-(na)':108,'female-(na)':66}"
+                ></average>
+
+            </graph>
+              </div>
+            </TabPanel>
+            <TabPanel val="e">
+              <div class="graph-area">
+                <graph
+              class="graph-wide"
+              title="HTTYD3EmotionRating"
+              :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
+              :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
+              :sets="[{'setKey':'male-(eu)','setLabel':'Male (EU)','color':'#33a','dataCount':112},{'setKey':'female-(eu)','setLabel':'Female (EU)','color':'#f33','dataCount':34},{'setKey':'male-(na)','setLabel':'Male (NA)','color':'#88f','dataCount':108},{'setKey':'female-(na)','setLabel':'Female (NA)','color':'#f48','dataCount':66}]"
+              :data="{'_multiSet':true,'male-(eu)':{'1':4,'3':1,'4':3,'5':6,'6':4,'7':6,'8':16,'9':15,'10':56,'NoAnswer':1},'female-(eu)':{'2':3,'3':2,'4':1,'5':2,'6':1,'7':3,'8':6,'9':1,'10':15},'male-(na)':{'1':6,'2':3,'3':5,'4':1,'5':7,'6':3,'7':8,'8':20,'9':15,'10':38,'NoAnswer':2},'female-(na)':{'1':3,'3':4,'4':6,'5':4,'6':4,'7':1,'8':4,'9':6,'10':32,'NoAnswer':2}}"
+              :dataCount="{'male-(eu)':112,'female-(eu)':34,'male-(na)':108,'female-(na)':66}"
+            >
+                <average
+                  :sets="[{'setKey':'male-(eu)','setLabel':'Male (EU)','color':'#33a','dataCount':112},{'setKey':'female-(eu)','setLabel':'Female (EU)','color':'#f33','dataCount':34},{'setKey':'male-(na)','setLabel':'Male (NA)','color':'#88f','dataCount':108},{'setKey':'female-(na)','setLabel':'Female (NA)','color':'#f48','dataCount':66}]"
+                  :data="{'_multiSet':true,'male-(eu)':{'1':4,'3':1,'4':3,'5':6,'6':4,'7':6,'8':16,'9':15,'10':56,'NoAnswer':1},'female-(eu)':{'2':3,'3':2,'4':1,'5':2,'6':1,'7':3,'8':6,'9':1,'10':15},'male-(na)':{'1':6,'2':3,'3':5,'4':1,'5':7,'6':3,'7':8,'8':20,'9':15,'10':38,'NoAnswer':2},'female-(na)':{'1':3,'3':4,'4':6,'5':4,'6':4,'7':1,'8':4,'9':6,'10':32,'NoAnswer':2}}"
+                  :dataCount="{'male-(eu)':112,'female-(eu)':34,'male-(na)':108,'female-(na)':66}"
+                ></average>
+            </graph>
+              </div>
+            </TabPanel>
+            <TabPanel val="c">
+              <div class="graph-area">
+                <graph
+              class="graph-wide"
+              title="HTTYD3CharacterRating"
+              :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
+              :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
+              :sets="[{'setKey':'male-(eu)','setLabel':'Male (EU)','color':'#33a','dataCount':112},{'setKey':'female-(eu)','setLabel':'Female (EU)','color':'#f33','dataCount':34},{'setKey':'male-(na)','setLabel':'Male (NA)','color':'#88f','dataCount':108},{'setKey':'female-(na)','setLabel':'Female (NA)','color':'#f48','dataCount':66}]"
+              :data="{'_multiSet':true,'male-(eu)':{'1':3,'2':4,'3':1,'4':9,'5':7,'6':8,'7':13,'8':25,'9':17,'10':24,'NoAnswer':1},'female-(eu)':{'1':6,'2':1,'4':3,'5':3,'7':1,'8':6,'9':5,'10':9},'male-(na)':{'1':13,'2':3,'3':4,'4':2,'5':6,'6':13,'7':13,'8':17,'9':15,'10':20,'NoAnswer':2},'female-(na)':{'1':6,'2':3,'3':4,'4':3,'5':3,'6':5,'7':10,'8':9,'9':9,'10':12,'NoAnswer':2}}"
+              :dataCount="{'male-(eu)':112,'female-(eu)':34,'male-(na)':108,'female-(na)':66}"
+            >
+                <average
+                  :sets="[{'setKey':'male-(eu)','setLabel':'Male (EU)','color':'#33a','dataCount':112},{'setKey':'female-(eu)','setLabel':'Female (EU)','color':'#f33','dataCount':34},{'setKey':'male-(na)','setLabel':'Male (NA)','color':'#88f','dataCount':108},{'setKey':'female-(na)','setLabel':'Female (NA)','color':'#f48','dataCount':66}]"
+                  :data="{'_multiSet':true,'male-(eu)':{'1':3,'2':4,'3':1,'4':9,'5':7,'6':8,'7':13,'8':25,'9':17,'10':24,'NoAnswer':1},'female-(eu)':{'1':6,'2':1,'4':3,'5':3,'7':1,'8':6,'9':5,'10':9},'male-(na)':{'1':13,'2':3,'3':4,'4':2,'5':6,'6':13,'7':13,'8':17,'9':15,'10':20,'NoAnswer':2},'female-(na)':{'1':6,'2':3,'3':4,'4':3,'5':3,'6':5,'7':10,'8':9,'9':9,'10':12,'NoAnswer':2}}"
+                  :dataCount="{'male-(eu)':112,'female-(eu)':34,'male-(na)':108,'female-(na)':66}"
+                ></average>
+            </graph>
+
+              </div>
+            </TabPanel>
+            <TabPanel val="t">
+              <div class="graph-area">
+                <graph
+              class="graph-wide"
+              title="HTTYD3ThemeRating"
+              :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
+              :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
+              :sets="[{'setKey':'male-(eu)','setLabel':'Male (EU)','color':'#33a','dataCount':112},{'setKey':'female-(eu)','setLabel':'Female (EU)','color':'#f33','dataCount':34},{'setKey':'male-(na)','setLabel':'Male (NA)','color':'#88f','dataCount':108},{'setKey':'female-(na)','setLabel':'Female (NA)','color':'#f48','dataCount':66}]"
+              :data="{'_multiSet':true,'male-(eu)':{'1':13,'2':4,'3':6,'4':5,'5':4,'6':6,'7':15,'8':17,'9':19,'10':22,'NoAnswer':1},'female-(eu)':{'1':6,'2':3,'3':1,'4':2,'5':3,'6':1,'7':2,'8':2,'9':2,'10':12},'male-(na)':{'1':15,'2':7,'3':4,'4':6,'5':7,'6':12,'7':7,'8':16,'9':7,'10':25,'NoAnswer':2},'female-(na)':{'1':15,'2':5,'3':3,'4':5,'5':3,'6':3,'7':1,'8':7,'9':9,'10':13,'NoAnswer':2}}"
+              :dataCount="{'male-(eu)':112,'female-(eu)':34,'male-(na)':108,'female-(na)':66}"
+            >
+                <average
+                  :sets="[{'setKey':'male-(eu)','setLabel':'Male (EU)','color':'#33a','dataCount':112},{'setKey':'female-(eu)','setLabel':'Female (EU)','color':'#f33','dataCount':34},{'setKey':'male-(na)','setLabel':'Male (NA)','color':'#88f','dataCount':108},{'setKey':'female-(na)','setLabel':'Female (NA)','color':'#f48','dataCount':66}]"
+                  :data="{'_multiSet':true,'male-(eu)':{'1':13,'2':4,'3':6,'4':5,'5':4,'6':6,'7':15,'8':17,'9':19,'10':22,'NoAnswer':1},'female-(eu)':{'1':6,'2':3,'3':1,'4':2,'5':3,'6':1,'7':2,'8':2,'9':2,'10':12},'male-(na)':{'1':15,'2':7,'3':4,'4':6,'5':7,'6':12,'7':7,'8':16,'9':7,'10':25,'NoAnswer':2},'female-(na)':{'1':15,'2':5,'3':3,'4':5,'5':3,'6':3,'7':1,'8':7,'9':9,'10':13,'NoAnswer':2}}"
+                  :dataCount="{'male-(eu)':112,'female-(eu)':34,'male-(na)':108,'female-(na)':66}"
+                ></average>
+
+            </graph>
+              </div>
+            </TabPanel>
+            <TabPanel val="v">
+              <div class="graph-area">
+              <graph
+              class="graph-wide"
+              title="HTTYD3VisualsRating"
+              :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
+              :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
+              :sets="[{'setKey':'male-(eu)','setLabel':'Male (EU)','color':'#33a','dataCount':112},{'setKey':'female-(eu)','setLabel':'Female (EU)','color':'#f33','dataCount':34},{'setKey':'male-(na)','setLabel':'Male (NA)','color':'#88f','dataCount':108},{'setKey':'female-(na)','setLabel':'Female (NA)','color':'#f48','dataCount':66}]"
+              :data="{'_multiSet':true,'male-(eu)':{'5':1,'6':1,'7':1,'8':10,'9':25,'10':73,'NoAnswer':1},'female-(eu)':{'5':3,'8':3,'9':6,'10':21,'NoAnswer':1},'male-(na)':{'1':2,'2':1,'4':1,'5':1,'6':3,'7':5,'8':11,'9':12,'10':70,'NoAnswer':2},'female-(na)':{'1':1,'4':1,'5':1,'6':3,'7':3,'8':3,'9':11,'10':42,'NoAnswer':1}}"
+              :dataCount="{'male-(eu)':112,'female-(eu)':34,'male-(na)':108,'female-(na)':66}"
+            >
+                <average
+                  :sets="[{'setKey':'male-(eu)','setLabel':'Male (EU)','color':'#33a','dataCount':112},{'setKey':'female-(eu)','setLabel':'Female (EU)','color':'#f33','dataCount':34},{'setKey':'male-(na)','setLabel':'Male (NA)','color':'#88f','dataCount':108},{'setKey':'female-(na)','setLabel':'Female (NA)','color':'#f48','dataCount':66}]"
+                  :data="{'_multiSet':true,'male-(eu)':{'5':1,'6':1,'7':1,'8':10,'9':25,'10':73,'NoAnswer':1},'female-(eu)':{'5':3,'8':3,'9':6,'10':21,'NoAnswer':1},'male-(na)':{'1':2,'2':1,'4':1,'5':1,'6':3,'7':5,'8':11,'9':12,'10':70,'NoAnswer':2},'female-(na)':{'1':1,'4':1,'5':1,'6':3,'7':3,'8':3,'9':11,'10':42,'NoAnswer':1}}"
+                  :dataCount="{'male-(eu)':112,'female-(eu)':34,'male-(na)':108,'female-(na)':66}"
+                ></average>
+
+            </graph>
+              </div>
+            </TabPanel>
+            <TabPanel val="s">
+              <div class="graph-area">
+                <graph
+              class="graph-wide"
+              title="HTTYD3ScoreRating"
+              :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
+              :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
+              :sets="[{'setKey':'male-(eu)','setLabel':'Male (EU)','color':'#33a','dataCount':112},{'setKey':'female-(eu)','setLabel':'Female (EU)','color':'#f33','dataCount':34},{'setKey':'male-(na)','setLabel':'Male (NA)','color':'#88f','dataCount':108},{'setKey':'female-(na)','setLabel':'Female (NA)','color':'#f48','dataCount':66}]"
+              :data="{'_multiSet':true,'male-(eu)':{'1':1,'3':2,'4':2,'5':4,'6':6,'7':12,'8':19,'9':25,'10':40,'NoAnswer':1},'female-(eu)':{'1':1,'3':1,'5':1,'7':5,'8':5,'9':4,'10':17},'male-(na)':{'1':2,'4':2,'5':7,'6':5,'7':11,'8':19,'9':17,'10':41,'NoAnswer':4},'female-(na)':{'1':3,'2':1,'3':1,'4':3,'5':5,'6':1,'7':2,'8':11,'9':8,'10':29,'NoAnswer':2}}"
+              :dataCount="{'male-(eu)':112,'female-(eu)':34,'male-(na)':108,'female-(na)':66}"
+            >
+                <average
+                  :sets="[{'setKey':'male-(eu)','setLabel':'Male (EU)','color':'#33a','dataCount':112},{'setKey':'female-(eu)','setLabel':'Female (EU)','color':'#f33','dataCount':34},{'setKey':'male-(na)','setLabel':'Male (NA)','color':'#88f','dataCount':108},{'setKey':'female-(na)','setLabel':'Female (NA)','color':'#f48','dataCount':66}]"
+                  :data="{'_multiSet':true,'male-(eu)':{'1':1,'3':2,'4':2,'5':4,'6':6,'7':12,'8':19,'9':25,'10':40,'NoAnswer':1},'female-(eu)':{'1':1,'3':1,'5':1,'7':5,'8':5,'9':4,'10':17},'male-(na)':{'1':2,'4':2,'5':7,'6':5,'7':11,'8':19,'9':17,'10':41,'NoAnswer':4},'female-(na)':{'1':3,'2':1,'3':1,'4':3,'5':5,'6':1,'7':2,'8':11,'9':8,'10':29,'NoAnswer':2}}"
+                  :dataCount="{'male-(eu)':112,'female-(eu)':34,'male-(na)':108,'female-(na)':66}"
+                ></average>
+
+            </graph>
+              </div>
+            </TabPanel>
+          </TabPanels>
+
+        <p>
+          Anyway, moral of the story: you can see that the graphs are everywhere, but female/EU demographics is <i>very</i> divided on some issues.
+        </p>
+
+        <p>
+          Here's a few other fun (but perhaps not always unexpected) differences between the gender-by-location split:
+
+          <ul>
+            <li>Male/any picked Night Fury as their favourite dragon noticebly more than female/any</li>
+            <li>Male/any picked Viggo more often than female/any, and the gap between the two is wider in the NA</li>
+            <li>Female/eu deem HTTYD2 opening scene noticeably more often than other three demographic groups, which all generally prefer HTTYD1 opening.</li>
+          </ul>
+        </p>
+
+        <Tabs v-model="tabs.location.glextras">
+          <Tab
+            label="Favourite Draconid"
+            val="fd"
+          />
+          <Tab
+            label="Favourite Villain"
+            val="fv"
+          />
+          <Tab
+            label="Favourite Opening Scene"
+            val="fo"
+          />
+        </Tabs>
+        <TabPanels v-model="tabs.location.glextras">
+          <TabPanel val="fd">
             <div class="graph-area">
               <graph
-            class="graph-wide"
-            title="HTTYD2EmotionRating"
-            :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
-            :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
-            :sets="[{'setKey':'male-(eu)','setLabel':'Male (EU)','color':'#33a','dataCount':112},{'setKey':'female-(eu)','setLabel':'Female (EU)','color':'#f33','dataCount':34},{'setKey':'male-(na)','setLabel':'Male (NA)','color':'#88f','dataCount':108},{'setKey':'female-(na)','setLabel':'Female (NA)','color':'#f48','dataCount':66}]"
-            :data="{'_multiSet':true,'male-(eu)':{'2':1,'4':1,'5':3,'6':3,'7':8,'8':18,'9':32,'10':46},'female-(eu)':{'4':1,'7':1,'8':3,'9':9,'10':20},'male-(na)':{'3':1,'4':1,'5':1,'6':6,'7':4,'8':13,'9':37,'10':44,'NoAnswer':1},'female-(na)':{'1':1,'5':1,'7':6,'8':7,'9':15,'10':35,'NoAnswer':1}}"
-            :dataCount="{'male-(eu)':112,'female-(eu)':34,'male-(na)':108,'female-(na)':66}"
-          > 
-              <average
-                :sets="[{'setKey':'male-(eu)','setLabel':'Male (EU)','color':'#33a','dataCount':112},{'setKey':'female-(eu)','setLabel':'Female (EU)','color':'#f33','dataCount':34},{'setKey':'male-(na)','setLabel':'Male (NA)','color':'#88f','dataCount':108},{'setKey':'female-(na)','setLabel':'Female (NA)','color':'#f48','dataCount':66}]"
-                :data="{'_multiSet':true,'male-(eu)':{'2':1,'4':1,'5':3,'6':3,'7':8,'8':18,'9':32,'10':46},'female-(eu)':{'4':1,'7':1,'8':3,'9':9,'10':20},'male-(na)':{'3':1,'4':1,'5':1,'6':6,'7':4,'8':13,'9':37,'10':44,'NoAnswer':1},'female-(na)':{'1':1,'5':1,'7':6,'8':7,'9':15,'10':35,'NoAnswer':1}}"
-                :dataCount="{'male-(eu)':112,'female-(eu)':34,'male-(na)':108,'female-(na)':66}"
-              ></average>
-            
-          </graph>
+              class="graph-wide"
+              title="FavouriteDraconid"
+              :conf="{'columnXMargin':'1.2rem','size':'wide','barWidth':'8px !important','trackWidthMultiset':'8px !important','trackWidth':'16px !important','columnWidth':'72px !important','sidewaysLabels':true,'labelsHeight':'6rem','hideZeroColumns':true}"
+              :columns="[{'key':0,'label':'Night Fury'},{'key':1,'label':'Light Fury'},{'key':2,'label':'Night Lights'},{'key':3,'label':'Nadder'},{'key':8,'label':'Stormcutter'},{'key':5,'label':'Monstrous Nightmare'},{'key':7,'label':'Skrill'},{'key':9,'label':'Bewilderbeast'},{'key':10,'label':'Deathgripper'},{'key':13,'label':'Terrible Terror'},{'key':4,'label':'Gronckle'},{'key':12,'label':'Whispering Death'},{'key':14,'label':'Zippleback'},{'key':11,'label':'Gorecutter'},{'key':15,'label':'Other'},{'key':16,'label':'Shy'},{'key':17,'label':'D.W.'}]"
+              :sets="[{'setKey':'male-(eu)','setLabel':'Male (EU)','color':'#33a','dataCount':112},{'setKey':'female-(eu)','setLabel':'Female (EU)','color':'#f33','dataCount':34},{'setKey':'male-(na)','setLabel':'Male (NA)','color':'#88f','dataCount':108},{'setKey':'female-(na)','setLabel':'Female (NA)','color':'#f48','dataCount':66}]"
+              :data="{'_multiSet':true,'male-(eu)':{'0':75,'1':2,'2':6,'3':1,'5':1,'6':1,'7':6,'8':4,'9':3,'10':2,'14':1,'15':9,'16':1},'female-(eu)':{'0':16,'1':1,'2':2,'5':2,'6':1,'7':3,'8':3,'9':1,'10':2,'15':2,'16':1},'male-(na)':{'0':68,'1':1,'2':2,'3':1,'5':4,'7':11,'8':5,'9':1,'12':1,'13':1,'14':1,'15':10,'16':2},'female-(na)':{'0':26,'1':1,'2':3,'3':3,'5':3,'6':2,'7':5,'8':7,'9':2,'10':2,'12':1,'15':8,'16':3,'17':1}}"
+              :dataCount="{'male-(eu)':112,'female-(eu)':34,'male-(na)':108,'female-(na)':66}"
+            >
+            </graph>
             </div>
           </TabPanel>
-          <TabPanel val="c">
+          <TabPanel val="fv">
             <div class="graph-area">
-                <graph
-            class="graph-wide"
-            title="HTTYD2CharacterRating"
-            :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
-            :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
-            :sets="[{'setKey':'male-(eu)','setLabel':'Male (EU)','color':'#33a','dataCount':112},{'setKey':'female-(eu)','setLabel':'Female (EU)','color':'#f33','dataCount':34},{'setKey':'male-(na)','setLabel':'Male (NA)','color':'#88f','dataCount':108},{'setKey':'female-(na)','setLabel':'Female (NA)','color':'#f48','dataCount':66}]"
-            :data="{'_multiSet':true,'male-(eu)':{'2':1,'3':1,'4':3,'6':3,'7':9,'8':35,'9':27,'10':33},'female-(eu)':{'5':1,'7':4,'8':12,'9':6,'10':11},'male-(na)':{'2':1,'5':4,'6':3,'7':22,'8':23,'9':31,'10':23,'NoAnswer':1},'female-(na)':{'1':1,'4':2,'5':3,'6':3,'7':4,'8':12,'9':19,'10':21,'NoAnswer':1}}"
-            :dataCount="{'male-(eu)':112,'female-(eu)':34,'male-(na)':108,'female-(na)':66}"
-          > 
-              <average
-                :sets="[{'setKey':'male-(eu)','setLabel':'Male (EU)','color':'#33a','dataCount':112},{'setKey':'female-(eu)','setLabel':'Female (EU)','color':'#f33','dataCount':34},{'setKey':'male-(na)','setLabel':'Male (NA)','color':'#88f','dataCount':108},{'setKey':'female-(na)','setLabel':'Female (NA)','color':'#f48','dataCount':66}]"
-                :data="{'_multiSet':true,'male-(eu)':{'2':1,'3':1,'4':3,'6':3,'7':9,'8':35,'9':27,'10':33},'female-(eu)':{'5':1,'7':4,'8':12,'9':6,'10':11},'male-(na)':{'2':1,'5':4,'6':3,'7':22,'8':23,'9':31,'10':23,'NoAnswer':1},'female-(na)':{'1':1,'4':2,'5':3,'6':3,'7':4,'8':12,'9':19,'10':21,'NoAnswer':1}}"
-                :dataCount="{'male-(eu)':112,'female-(eu)':34,'male-(na)':108,'female-(na)':66}"
-              ></average>
-            
-          </graph>
-        
+              <graph
+              class="graph-wide"
+              title="FavouriteVillain"
+              :conf="{'columnXMargin':'1.2rem','size':'wide','barWidth':'8px !important','trackWidthMultiset':'8px !important','trackWidth':'16px !important','columnWidth':'72px !important','sidewaysLabels':true,'labelsHeight':'6rem','hideZeroColumns':true}"
+              :columns="[{'key':0,'label':'Green Death'},{'key':1,'label':'Drago'},{'key':2,'label':'Drago\'s Bewilderbeast'},{'key':3,'label':'Grimmel'},{'key':4,'label':'Viggo'},{'key':5,'label':'Ryker'},{'key':6,'label':'Dagur'},{'key':7,'label':'Johann'},{'key':8,'label':'Warlords'},{'key':9,'label':'Alvin'},{'key':10,'label':'Mildew'},{'key':11,'label':'Stoick'},{'key':12,'label':'Other'},{'key':13,'label':'Shy'},{'key':14,'label':'D.W.'}]"
+              :sets="[{'setKey':'male-(eu)','setLabel':'Male (EU)','color':'#33a','dataCount':112},{'setKey':'female-(eu)','setLabel':'Female (EU)','color':'#f33','dataCount':34},{'setKey':'male-(na)','setLabel':'Male (NA)','color':'#88f','dataCount':108},{'setKey':'female-(na)','setLabel':'Female (NA)','color':'#f48','dataCount':66}]"
+              :data="{'_multiSet':true,'male-(eu)':{'0':15,'1':14,'2':2,'3':16,'4':39,'6':12,'7':3,'9':2,'10':3,'12':2,'13':4},'female-(eu)':{'0':3,'1':6,'2':3,'3':3,'4':9,'6':5,'7':2,'12':1,'13':2},'male-(na)':{'0':14,'1':15,'2':2,'3':11,'4':44,'6':9,'7':2,'9':2,'10':1,'11':2,'13':6},'female-(na)':{'0':11,'1':11,'2':6,'3':6,'4':14,'6':10,'7':5,'8':1,'10':2}}"
+              :dataCount="{'male-(eu)':112,'female-(eu)':34,'male-(na)':108,'female-(na)':66}"
+            >
+            </graph>
             </div>
           </TabPanel>
-          <TabPanel val="t">
+          <TabPanel val="fo">
             <div class="graph-area">
-               <graph
-            class="graph-wide"
-            title="HTTYD2ThemeRating"
-            :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
-            :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
-            :sets="[{'setKey':'male-(eu)','setLabel':'Male (EU)','color':'#33a','dataCount':112},{'setKey':'female-(eu)','setLabel':'Female (EU)','color':'#f33','dataCount':34},{'setKey':'male-(na)','setLabel':'Male (NA)','color':'#88f','dataCount':108},{'setKey':'female-(na)','setLabel':'Female (NA)','color':'#f48','dataCount':66}]"
-            :data="{'_multiSet':true,'male-(eu)':{'4':3,'5':6,'6':10,'7':13,'8':30,'9':17,'10':32,'NoAnswer':1},'female-(eu)':{'4':1,'6':2,'7':6,'8':4,'9':11,'10':10},'male-(na)':{'1':1,'2':1,'3':1,'4':2,'5':5,'6':8,'7':10,'8':28,'9':25,'10':26,'NoAnswer':1},'female-(na)':{'1':2,'3':1,'4':1,'5':4,'6':1,'7':10,'8':10,'9':16,'10':20,'NoAnswer':1}}"
-            :dataCount="{'male-(eu)':112,'female-(eu)':34,'male-(na)':108,'female-(na)':66}"
-          > 
-              <average
+              <graph
+                class="graph-wide"
+                title="FavouriteOpeningScene"
+                :conf="{'columnXMargin':'1.2rem','size':'wide','barWidth':'8px !important','trackWidthMultiset':'8px !important','trackWidth':'16px !important','columnWidth':'72px !important','sidewaysLabels':true,'labelsHeight':'6rem','hideZeroColumns':true}"
+                :columns="[{'key':1,'label':'HTTYD1'},{'key':2,'label':'HTTYD2'},{'key':3,'label':'HTTYD: THW'},{'key':0,'label':'Shy'}]"
                 :sets="[{'setKey':'male-(eu)','setLabel':'Male (EU)','color':'#33a','dataCount':112},{'setKey':'female-(eu)','setLabel':'Female (EU)','color':'#f33','dataCount':34},{'setKey':'male-(na)','setLabel':'Male (NA)','color':'#88f','dataCount':108},{'setKey':'female-(na)','setLabel':'Female (NA)','color':'#f48','dataCount':66}]"
-                :data="{'_multiSet':true,'male-(eu)':{'4':3,'5':6,'6':10,'7':13,'8':30,'9':17,'10':32,'NoAnswer':1},'female-(eu)':{'4':1,'6':2,'7':6,'8':4,'9':11,'10':10},'male-(na)':{'1':1,'2':1,'3':1,'4':2,'5':5,'6':8,'7':10,'8':28,'9':25,'10':26,'NoAnswer':1},'female-(na)':{'1':2,'3':1,'4':1,'5':4,'6':1,'7':10,'8':10,'9':16,'10':20,'NoAnswer':1}}"
+                :data="{'_multiSet':true,'male-(eu)':{'1':61,'2':45,'3':6},'female-(eu)':{'1':12,'2':19,'3':2},'male-(na)':{'1':58,'2':43,'3':4},'female-(na)':{'1':33,'2':27,'3':6}}"
                 :dataCount="{'male-(eu)':112,'female-(eu)':34,'male-(na)':108,'female-(na)':66}"
-              ></average>
-            
-          </graph>
-            </div>
-          </TabPanel>
-          <TabPanel val="v">
-            <div class="graph-area">
-               <graph
-            class="graph-wide"
-            title="HTTYD2VisualsRating"
-            :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
-            :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
-            :sets="[{'setKey':'male-(eu)','setLabel':'Male (EU)','color':'#33a','dataCount':112},{'setKey':'female-(eu)','setLabel':'Female (EU)','color':'#f33','dataCount':34},{'setKey':'male-(na)','setLabel':'Male (NA)','color':'#88f','dataCount':108},{'setKey':'female-(na)','setLabel':'Female (NA)','color':'#f48','dataCount':66}]"
-            :data="{'_multiSet':true,'male-(eu)':{'7':2,'8':18,'9':33,'10':59},'female-(eu)':{'8':4,'9':5,'10':25},'male-(na)':{'5':1,'6':2,'7':4,'8':11,'9':23,'10':66,'NoAnswer':1},'female-(na)':{'2':1,'4':1,'5':1,'7':4,'8':4,'9':11,'10':44}}"
-            :dataCount="{'male-(eu)':112,'female-(eu)':34,'male-(na)':108,'female-(na)':66}"
-          > 
-              <average
-                :sets="[{'setKey':'male-(eu)','setLabel':'Male (EU)','color':'#33a','dataCount':112},{'setKey':'female-(eu)','setLabel':'Female (EU)','color':'#f33','dataCount':34},{'setKey':'male-(na)','setLabel':'Male (NA)','color':'#88f','dataCount':108},{'setKey':'female-(na)','setLabel':'Female (NA)','color':'#f48','dataCount':66}]"
-                :data="{'_multiSet':true,'male-(eu)':{'7':2,'8':18,'9':33,'10':59},'female-(eu)':{'8':4,'9':5,'10':25},'male-(na)':{'5':1,'6':2,'7':4,'8':11,'9':23,'10':66,'NoAnswer':1},'female-(na)':{'2':1,'4':1,'5':1,'7':4,'8':4,'9':11,'10':44}}"
-                :dataCount="{'male-(eu)':112,'female-(eu)':34,'male-(na)':108,'female-(na)':66}"
-              ></average>
-            
-          </graph>
-            </div>
-          </TabPanel>
-          <TabPanel val="s">
-            <div class="graph-area">
-               <graph
-            class="graph-wide"
-            title="HTTYD2ScoreRating"
-            :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
-            :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
-            :sets="[{'setKey':'male-(eu)','setLabel':'Male (EU)','color':'#33a','dataCount':112},{'setKey':'female-(eu)','setLabel':'Female (EU)','color':'#f33','dataCount':34},{'setKey':'male-(na)','setLabel':'Male (NA)','color':'#88f','dataCount':108},{'setKey':'female-(na)','setLabel':'Female (NA)','color':'#f48','dataCount':66}]"
-            :data="{'_multiSet':true,'male-(eu)':{'3':2,'5':2,'6':3,'7':10,'8':22,'9':21,'10':52},'female-(eu)':{'7':1,'8':9,'9':3,'10':21},'male-(na)':{'2':1,'5':1,'6':1,'7':5,'8':22,'9':22,'10':54,'NoAnswer':2},'female-(na)':{'4':2,'5':2,'6':4,'7':2,'8':6,'9':8,'10':42}}"
-            :dataCount="{'male-(eu)':112,'female-(eu)':34,'male-(na)':108,'female-(na)':66}"
-          > 
-              <average
-                :sets="[{'setKey':'male-(eu)','setLabel':'Male (EU)','color':'#33a','dataCount':112},{'setKey':'female-(eu)','setLabel':'Female (EU)','color':'#f33','dataCount':34},{'setKey':'male-(na)','setLabel':'Male (NA)','color':'#88f','dataCount':108},{'setKey':'female-(na)','setLabel':'Female (NA)','color':'#f48','dataCount':66}]"
-                :data="{'_multiSet':true,'male-(eu)':{'3':2,'5':2,'6':3,'7':10,'8':22,'9':21,'10':52},'female-(eu)':{'7':1,'8':9,'9':3,'10':21},'male-(na)':{'2':1,'5':1,'6':1,'7':5,'8':22,'9':22,'10':54,'NoAnswer':2},'female-(na)':{'4':2,'5':2,'6':4,'7':2,'8':6,'9':8,'10':42}}"
-                :dataCount="{'male-(eu)':112,'female-(eu)':34,'male-(na)':108,'female-(na)':66}"
-              ></average>
-            
-          </graph>
+              >
+              </graph>
             </div>
           </TabPanel>
         </TabPanels>
 
-        <p>
-          Other HTTYD2 graphs aren't very interesting in location × gender view. There are some minor difference, but nothing we've seen before.
-        </p>
+        </template>
 
-        <p>
-          Now, let's move onto the THW graphs. In Europe, Americans are often stereotyped as "the big dumb" ... but the rating graphs suggest that this
-          stereotype may be <i>very</i> incorrect. The results are disappointing enough that Tamius is franticly googling whether a set of Uno can be used
-          as a <a href="https://en.wikipedia.org/wiki/Green_card" target="_blank">green card</a>.
-        </p>
+        <!-- #endregion location -->
 
-      </template>
+        <!-- #region fandom time -->
 
-      <!-- #endregion location -->
+        <h2 @click="deepDiveResults.fandomTime = !deepDiveResults.fandomTime">Results by fandom time</h2>
+        <div class="collapsible-heading-hint">(Click title to expand or collapse the section)</div>
+        <template v-if="deepDiveResults.fandomTime">
+          <p>
+            I can already hear ya. "Tam, are you gonna make us watch the age graphs again?"
+            Now, I get the sentiment, but surpringly: no. I mean, yes, most of the graphs are roughly the same,
+            but in some instances the graphs do differ quite noticeably.
+          </p>
+          <p>
+            Most notably: "HTTYD1 favourite soundtrack" graph has, so far, been very interesting in this entire deep dive. Fandom time does not disappoint. Turns out that the longer you've spent in this fandom, the more likely it is for you to consider Forbidden Friendship your favourite soundtrack.
+            The absolute opposite happens on Test Drive (some squinting is required).
+          </p>
 
+          <div class="graph-area">
+            <graph
+              class="graph-wide"
+              title="HTTYD1FavouriteSoundtrack"
+              :conf="{'columnXMargin':'1.2rem','size':'wide','barWidth':'8px !important','trackWidthMultiset':'8px !important','trackWidth':'16px !important','columnWidth':'72px !important','sidewaysLabels':true,'labelsHeight':'6rem','hideZeroColumns':true}"
+              :columns="[{'key':0,'label':'This is Berk'},{'key':1,'label':'Dragon Battle'},{'key':2,'label':'The Downed Dragon'},{'key':3,'label':'Dragon training'},{'key':4,'label':'Wounded'},{'key':5,'label':'The Dragon Book'},{'key':6,'label':'Focus, Hiccup!'},{'key':7,'label':'Forbidden Friendship'},{'key':8,'label':'New Tail'},{'key':9,'label':'See You Tomorrow'},{'key':10,'label':'Test Drive'},{'key':11,'label':'Not so Fireproof'},{'key':12,'label':'This Time For Sure'},{'key':13,'label':'Astrid Goes for a Spin'},{'key':14,'label':'Romantic Flight'},{'key':15,'label':'Dragon\'s Den'},{'key':16,'label':'The Cove'},{'key':17,'label':'The Kill Ring'},{'key':18,'label':'Ready The Ships'},{'key':19,'label':'Battling the Green Death'},{'key':20,'label':'Counter Attack'},{'key':21,'label':'Where\'s Hiccup'},{'key':22,'label':'Coming Back Around'},{'key':23,'label':'Sticks and Stones'},{'key':24,'label':'Vikings Have Their Tea'},{'key':25,'label':'Shy'},{'key':26,'label':'D.W.'}]"
+              :sets="[{'setKey':'all','setLabel':'All','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'0-1-yr','setLabel':'0-1 yr','color':'#fa6','dataCount':68},{'setKey':'2-3-yr','setLabel':'2-3 yr','color':'#f83','dataCount':64},{'setKey':'4-5-yr','setLabel':'4-5 yr','color':'#e31','dataCount':66},{'setKey':'6-7-yr','setLabel':'6-7 yr','color':'#c90000','dataCount':66},{'setKey':'8-9-yr','setLabel':'8-9 yr','color':'#a00','dataCount':39},{'setKey':'10+-yr','setLabel':'10+ yr','color':'#800','dataCount':115}]"
+              :data="{'_multiSet':true,'all':{'2':1,'7':120,'8':15,'9':13,'10':139,'14':33,'15':1,'21':5,'22':9,'23':28,'25':67,'26':1},'0-1-yr':{'7':11,'8':3,'10':26,'14':6,'22':4,'23':4,'25':14},'2-3-yr':{'2':1,'7':15,'8':2,'9':1,'10':27,'14':8,'21':1,'23':1,'25':8},'4-5-yr':{'7':14,'8':3,'9':2,'10':30,'14':3,'21':1,'22':2,'23':2,'25':9},'6-7-yr':{'7':19,'8':1,'9':7,'10':13,'14':8,'15':1,'21':1,'22':2,'23':5,'25':9},'8-9-yr':{'7':13,'8':3,'10':9,'14':2,'21':1,'23':1,'25':10},'10+-yr':{'7':45,'8':3,'9':2,'10':32,'14':3,'21':1,'22':1,'23':14,'25':14,'26':1}}"
+              :dataCount="{'all':431,'':0,'0-1-yr':68,'2-3-yr':64,'4-5-yr':66,'6-7-yr':66,'8-9-yr':39,'10+-yr':115}"
+            >
+            </graph>
+          </div>
 
+          <p>
+            Then, the favourite draconid graph. Just to refresh your memory: when we did the 'by age' graph, the rule of the thumb was: the older you are, the more likely it is for you to deem Night Furies your favourite. However, the results are flipped when you look at the results by time spent in fandom:
+          </p>
+
+          <div class="graph-area">
+            <graph
+              class="graph-wide"
+              title="FavouriteDraconid"
+              :conf="{'columnXMargin':'1.2rem','size':'wide','barWidth':'8px !important','trackWidthMultiset':'8px !important','trackWidth':'16px !important','columnWidth':'72px !important','sidewaysLabels':true,'labelsHeight':'6rem','hideZeroColumns':true}"
+              :columns="[{'key':0,'label':'Night Fury'},{'key':1,'label':'Light Fury'},{'key':2,'label':'Night Lights'},{'key':3,'label':'Nadder'},{'key':8,'label':'Stormcutter'},{'key':5,'label':'Monstrous Nightmare'},{'key':7,'label':'Skrill'},{'key':9,'label':'Bewilderbeast'},{'key':10,'label':'Deathgripper'},{'key':13,'label':'Terrible Terror'},{'key':4,'label':'Gronckle'},{'key':12,'label':'Whispering Death'},{'key':14,'label':'Zippleback'},{'key':11,'label':'Gorecutter'},{'key':15,'label':'Other'},{'key':16,'label':'Shy'},{'key':17,'label':'D.W.'}]"
+              :sets="[{'setKey':'all','setLabel':'All','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'0-1-yr','setLabel':'0-1 yr','color':'#fa6','dataCount':68},{'setKey':'2-3-yr','setLabel':'2-3 yr','color':'#f83','dataCount':64},{'setKey':'4-5-yr','setLabel':'4-5 yr','color':'#e31','dataCount':66},{'setKey':'6-7-yr','setLabel':'6-7 yr','color':'#c90000','dataCount':66},{'setKey':'8-9-yr','setLabel':'8-9 yr','color':'#a00','dataCount':39},{'setKey':'10+-yr','setLabel':'10+ yr','color':'#800','dataCount':115}]"
+              :data="{'_multiSet':true,'all':{'0':230,'1':9,'2':19,'3':10,'4':3,'5':11,'6':4,'7':35,'8':31,'9':9,'10':10,'12':4,'13':1,'14':3,'15':41,'16':11,'17':4},'0-1-yr':{'0':47,'1':1,'5':1,'7':5,'8':2,'9':3,'10':2,'15':5,'16':2},'2-3-yr':{'0':38,'1':2,'2':1,'3':1,'5':2,'7':5,'8':6,'9':2,'10':1,'14':1,'15':5},'4-5-yr':{'0':29,'1':2,'2':2,'3':4,'5':1,'6':1,'7':6,'8':8,'9':2,'10':2,'12':1,'15':8},'6-7-yr':{'0':33,'2':8,'3':1,'5':2,'6':3,'7':5,'8':4,'10':1,'15':7,'16':2},'8-9-yr':{'0':20,'2':2,'3':1,'5':3,'7':2,'8':3,'9':1,'15':5,'16':2},'10+-yr':{'0':56,'1':4,'2':3,'3':3,'4':2,'5':2,'7':11,'8':8,'9':1,'10':4,'12':3,'13':1,'14':2,'15':11,'16':4,'17':3}}"
+              :dataCount="{'all':431,'':0,'0-1-yr':68,'2-3-yr':64,'4-5-yr':66,'6-7-yr':66,'8-9-yr':39,'10+-yr':115}"
+            >
+            </graph>
+          </div>
+
+          <p>And this happens in the answers to "Worst Character of HTTYD2" question as well: the older you are, the less likely you are to hate on Drago. The longer you've spent in the fandom, the more likely you are to hate on Drago.</p>
+
+          <Tabs v-model="tabs.fandomtime.worst2">
+            <Tab label="Answers by fandom time" val="f" />
+            <Tab label="Answers by age" val="a" />
+          </Tabs>
+          <TabPanels v-model="tabs.fandomtime.worst2">
+            <TabPanel val="f">
+            <graph
+              class="graph-wide"
+              title="HTTYD2WorstCharacter"
+              :conf="{'columnXMargin':'1.2rem','size':'wide','barWidth':'8px !important','trackWidthMultiset':'8px !important','trackWidth':'16px !important','columnWidth':'72px !important','sidewaysLabels':true,'labelsHeight':'6rem','hideZeroColumns':true}"
+              :columns="[{'key':3,'label':'Hiccup'},{'key':4,'label':'Toothless'},{'key':5,'label':'Astrid'},{'key':6,'label':'Stoick'},{'key':7,'label':'Valka'},{'key':14,'label':'Cloudjumper'},{'key':15,'label':'Drago'},{'key':16,'label':'Eret'},{'key':8,'label':'Gobber'},{'key':9,'label':'Ruffnut'},{'key':10,'label':'Tuffnut'},{'key':11,'label':'Twins'},{'key':12,'label':'Snotlout'},{'key':13,'label':'Fishlegs'},{'key':2,'label':'Other'},{'key':1,'label':'Shy'},{'key':'dwFlag','label':'D.W.'}]"
+              :sets="[{'setKey':'all','setLabel':'All','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'0-1-yr','setLabel':'0-1 yr','color':'#fa6','dataCount':68},{'setKey':'2-3-yr','setLabel':'2-3 yr','color':'#f83','dataCount':64},{'setKey':'4-5-yr','setLabel':'4-5 yr','color':'#e31','dataCount':66},{'setKey':'6-7-yr','setLabel':'6-7 yr','color':'#c90000','dataCount':66},{'setKey':'8-9-yr','setLabel':'8-9 yr','color':'#a00','dataCount':39},{'setKey':'10+-yr','setLabel':'10+ yr','color':'#800','dataCount':115}]"
+              :data="{'_multiSet':true,'all':{'1':31,'2':14,'3':4,'4':3,'5':14,'6':1,'7':19,'8':8,'9':46,'10':24,'12':51,'13':29,'14':5,'15':123,'16':59,'dwFlag':1},'0-1-yr':{'1':6,'2':6,'4':1,'5':3,'7':3,'8':1,'9':9,'10':5,'12':8,'13':2,'14':1,'15':17,'16':6},'2-3-yr':{'1':4,'4':1,'5':4,'6':1,'7':3,'9':7,'10':4,'12':3,'13':9,'15':14,'16':14},'4-5-yr':{'1':4,'3':4,'4':1,'5':1,'7':4,'8':2,'9':4,'10':3,'12':12,'13':4,'15':17,'16':10},'6-7-yr':{'1':2,'2':2,'5':2,'7':5,'9':4,'10':4,'12':9,'13':9,'15':21,'16':8,'dwFlag':1},'8-9-yr':{'1':6,'7':1,'8':3,'9':2,'10':1,'12':2,'13':2,'14':2,'15':14,'16':6},'10+-yr':{'1':5,'2':4,'5':3,'7':3,'8':2,'9':18,'10':7,'12':15,'13':3,'14':2,'15':38,'16':15}}"
+              :dataCount="{'all':431,'':0,'0-1-yr':68,'2-3-yr':64,'4-5-yr':66,'6-7-yr':66,'8-9-yr':39,'10+-yr':115}"
+            >
+            </graph>
+            </TabPanel>
+            <TabPanel val="a">
+              <graph
+              class="graph-wide"
+              title="HTTYD2WorstCharacter"
+              :conf="{'columnXMargin':'1.2rem','size':'wide','barWidth':'8px !important','trackWidthMultiset':'8px !important','trackWidth':'16px !important','columnWidth':'72px !important','sidewaysLabels':true,'labelsHeight':'6rem','hideZeroColumns':true}"
+              :columns="[{'key':3,'label':'Hiccup'},{'key':4,'label':'Toothless'},{'key':5,'label':'Astrid'},{'key':6,'label':'Stoick'},{'key':7,'label':'Valka'},{'key':14,'label':'Cloudjumper'},{'key':15,'label':'Drago'},{'key':16,'label':'Eret'},{'key':8,'label':'Gobber'},{'key':9,'label':'Ruffnut'},{'key':10,'label':'Tuffnut'},{'key':11,'label':'Twins'},{'key':12,'label':'Snotlout'},{'key':13,'label':'Fishlegs'},{'key':2,'label':'Other'},{'key':1,'label':'Shy'},{'key':'dwFlag','label':'D.W.'}]"
+              :sets="[{'setKey':'all','setLabel':'All','color':'#000','border':'1px solid #c0f','dataCount':431},{'setKey':'','setLabel':' ','color':'#000','dataCount':0},{'setKey':'under-16','setLabel':'Under 16','color':'#fa6','dataCount':58},{'setKey':'16-19','setLabel':'16-19','color':'#f83','dataCount':126},{'setKey':'19-22','setLabel':'19-22','color':'#e31','dataCount':103},{'setKey':'22-26','setLabel':'22-26','color':'#c90000','dataCount':44},{'setKey':'26+','setLabel':'26+','color':'#a00','dataCount':33}]"
+              :data="{'_multiSet':true,'all':{'1':31,'2':14,'3':4,'4':3,'5':14,'6':1,'7':19,'8':8,'9':46,'10':24,'12':51,'13':29,'14':5,'15':123,'16':59,'dwFlag':1},'under-16':{'1':2,'2':2,'5':1,'7':1,'8':1,'9':6,'10':3,'12':9,'13':4,'15':18,'16':11},'16-19':{'1':13,'2':7,'4':1,'5':2,'7':3,'8':3,'9':10,'10':9,'12':14,'13':11,'14':1,'15':38,'16':14},'19-22':{'1':7,'2':4,'3':1,'4':2,'5':2,'6':1,'7':6,'8':1,'9':13,'10':1,'12':14,'13':5,'14':2,'15':30,'16':14},'22-26':{'1':2,'3':3,'5':4,'7':3,'8':2,'9':4,'10':6,'12':3,'13':2,'15':9,'16':6},'26+':{'1':1,'5':3,'7':3,'9':6,'10':3,'12':1,'13':2,'14':2,'15':8,'16':4}}"
+              :dataCount="{'all':431,'':0,'under-16':58,'16-19':126,'19-22':103,'22-26':44,'26+':33}"
+            >
+            </graph>
+            </TabPanel>
+          </TabPanels>
+
+        </template>
+
+        <!-- #endregion -->
+
+        <h2 @click="deepDiveResults.enjoygarbage = !deepDiveResults.enjoygarbage">Results by "personal enjoyment vs. objective quality"</h2>
+        <div class="collapsible-heading-hint">(Click title to expand or collapse the section)</div>
+        <template v-if="deepDiveResults.enjoygarbage">
+          <p>
+            Quick refresher: the question was:  'Personal enjoyment of a piece of media is different and independent of the quality of that piece of media, express your agreement on a scale from 1 to 10.'
+          </p>
+          <p>
+            The answer is yes. There are some minor but notable differences between the people who agree and disagree with this statement.
+            For HTTYD1 and 2, you get people who fully agree with the statement giving noticeably higher ratings than other group. Most graphs
+            look more or less like this, except with different shapes of the bell:
+          </p>
+
+          <div class="graph-area">
+            <graph
+              class="graph-wide"
+              title="HTTYD1CharacterRating"
+              :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
+              :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
+              :sets="[{'setKey':'1-5','setLabel':'1-5','color':'#d00','dataCount':57},{'setKey':'6-7','setLabel':'6-7','color':'#e40','dataCount':80},{'setKey':'8-9','setLabel':'8-9','color':'#f84','dataCount':128},{'setKey':'10','setLabel':'10','color':'#fc6','dataCount':158}]"
+              :data="{'10':{'5':4,'6':3,'7':17,'8':35,'9':32,'10':66,'NoAnswer':1},'_multiSet':true,'1-5':{'1':1,'4':1,'5':2,'6':2,'7':5,'8':14,'9':8,'10':24},'6-7':{'5':2,'6':3,'7':13,'8':14,'9':22,'10':26},'8-9':{'5':2,'6':4,'7':15,'8':29,'9':37,'10':41}}"
+              :dataCount="{'10':158,'1-5':57,'6-7':80,'8-9':128}"
+            >
+                <average
+                  :sets="[{'setKey':'1-5','setLabel':'1-5','color':'#d00','dataCount':57},{'setKey':'6-7','setLabel':'6-7','color':'#e40','dataCount':80},{'setKey':'8-9','setLabel':'8-9','color':'#f84','dataCount':128},{'setKey':'10','setLabel':'10','color':'#fc6','dataCount':158}]"
+                  :data="{'10':{'5':4,'6':3,'7':17,'8':35,'9':32,'10':66,'NoAnswer':1},'_multiSet':true,'1-5':{'1':1,'4':1,'5':2,'6':2,'7':5,'8':14,'9':8,'10':24},'6-7':{'5':2,'6':3,'7':13,'8':14,'9':22,'10':26},'8-9':{'5':2,'6':4,'7':15,'8':29,'9':37,'10':41}}"
+                  :dataCount="{'10':158,'1-5':57,'6-7':80,'8-9':128}"
+                ></average>
+
+            </graph>
+          </div>
+          <p>
+            And in general, it kinda makes sense when you consider how people generally vote on polls like this. But then, the "5 or less" gang reverses the trend in some situations, rating some aspects of The Hidden World higher than the "fully agree" gang. Sample graph ahead.
+          </p>
+          <div>
+            <graph
+              class="graph-wide"
+              title="HTTYD3Rating"
+              :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
+              :columns="[{'key':1,'label':'1'},{'key':2,'label':'2'},{'key':3,'label':'3'},{'key':4,'label':'4'},{'key':5,'label':'5'},{'key':6,'label':'6'},{'key':7,'label':'7'},{'key':8,'label':'8'},{'key':9,'label':'9'},{'key':10,'label':'10'},{'key':'NoAnswer','label':'Shy'}]"
+              :sets="[{'setKey':'1-5','setLabel':'1-5','color':'#d00','dataCount':57},{'setKey':'6-7','setLabel':'6-7','color':'#e40','dataCount':80},{'setKey':'8-9','setLabel':'8-9','color':'#f84','dataCount':128},{'setKey':'10','setLabel':'10','color':'#fc6','dataCount':158}]"
+              :data="{'10':{'1':11,'2':6,'3':8,'4':9,'5':7,'6':17,'7':24,'8':21,'9':23,'10':30,'NoAnswer':2},'_multiSet':true,'1-5':{'1':5,'3':3,'4':4,'5':5,'6':6,'7':2,'8':6,'9':7,'10':15,'NoAnswer':4},'6-7':{'1':2,'2':3,'3':8,'4':4,'5':4,'6':7,'7':10,'8':17,'9':14,'10':11},'8-9':{'1':3,'2':4,'3':10,'4':13,'5':5,'6':13,'7':23,'8':23,'9':17,'10':17}}"
+              :dataCount="{'10':158,'1-5':57,'6-7':80,'8-9':128}"
+            >
+                <average
+                  :sets="[{'setKey':'1-5','setLabel':'1-5','color':'#d00','dataCount':57},{'setKey':'6-7','setLabel':'6-7','color':'#e40','dataCount':80},{'setKey':'8-9','setLabel':'8-9','color':'#f84','dataCount':128},{'setKey':'10','setLabel':'10','color':'#fc6','dataCount':158}]"
+                  :data="{'10':{'1':11,'2':6,'3':8,'4':9,'5':7,'6':17,'7':24,'8':21,'9':23,'10':30,'NoAnswer':2},'_multiSet':true,'1-5':{'1':5,'3':3,'4':4,'5':5,'6':6,'7':2,'8':6,'9':7,'10':15,'NoAnswer':4},'6-7':{'1':2,'2':3,'3':8,'4':4,'5':4,'6':7,'7':10,'8':17,'9':14,'10':11},'8-9':{'1':3,'2':4,'3':10,'4':13,'5':5,'6':13,'7':23,'8':23,'9':17,'10':17}}"
+                  :dataCount="{'10':158,'1-5':57,'6-7':80,'8-9':128}"
+                ></average>
+
+            </graph>
+          </div>
+          <p>
+            Which is interesting and would warrant further analysis, but I'm not going to dwell on this for too long. I need to finish this thing. Brussel already gave up on me months ago, and boy. 10 months, 4000 lines of HTML and a shit tonne more of javascript for this page later I just want to be done with that, too. So, sorry for no tabs on this one.
+          </p>
+        </template>
         <!-- TAB GROUP REFERENCE STUFF
 
         <Tabs v-model="tabs.gender.location">
@@ -3519,20 +3900,104 @@
             </div>
           </TabPanel>
         </TabPanels>
-        
          -->
-
-
+      </div>
     </div>
 
-
-
-
+    <div class="segment">
+      <h1>Final thoughts</h1>
+      <p>
+        I guess we can now answer the question: will Tam finish survey results page before Joseph Anderson finishes his Witcher 3 review (or before GRRM finishes Winds of Winter)? And the answer is yes.
+        I already did most of the excuses in the intro section, so ... boy. At least most of this code can be reused, assuming there's gonna be a 2022 poll and <i>if</i> I'm gonna be invited.
+      </p>
+      <p>
+        Oh ... and one last thing.
+      </p>
+    </div>
 
     <div class="segment">
       <h1>Feedback feedback</h1>
       <div class="segment-content">
-        <p>Yeah, Tamius is pulling a raycevick end credits thing.</p>
+        <p>Yeah, Tamius is pulling a raycevick end credits thing, even though most questions prolly went more towards Brussel.</p>
+
+        <div class="qna-list">
+          <div class="qna">
+            <div class="q">If people put any "questions to the creators" in here, are we gonna answer them on the results page?</div>
+            <div class="a">Well ... might as well.</div>
+          </div>
+
+          <div class="qna">
+            <div class="q"><span class="clarification">(towards Brussel)</span> Mix the question about the "objective quality." Your [Tamius] is showing.</div>
+            <div class="a">There have been exactly five questions where I knew exactly who asked just from the response. This is one of them.</div>
+          </div>
+
+          <div class="qna">
+            <div class="q">Do you like eating popcorn while watching the hidden world with extra salt?</div>
+            <div class="a">Gondor has no salt. Gondor needs no salt.<br/><br/>I find that beign forced to watch THW produces enough salt on its own, so I'd actually take the salt-free popcorn.</div>
+          </div>
+
+          <div class="qna">
+            <div class="q">it's been two years nerds, give it a rest</div>
+            <div class="a">no</div>
+          </div>
+
+          <div class="qna">
+            <div class="q">What are u going to do with the results?</div>
+            <div class="a">I guess the question has been answered.</div>
+          </div>
+
+          <div class="qna">
+            <div class="q">Why didn't you add the question about how important people consider GOTNF to be tothe overall plot reeeeee</div>
+            <div class="a">Has there not been enough graphs already?</div>
+          </div>
+
+          <div class="qna">
+            <div class="q">Get a hobby, unless this is your hobby.</div>
+            <div class="a">If you wonder why the results took so long to prepare, blame this guy.</div>
+          </div>
+
+          <div class="qna">
+            <div class="q">Can i have a lollipop now?</div>
+            <div class="a">Yes.</div>
+          </div>
+
+          <div class="qna">
+            <div class="q"><span class="clarification">(towards Brussel)</span> play smite you <a href="https://www.youtube.com/watch?v=dEF6kb7Hh0Q">fa[mily show]</a> its been 3 months since you lost the bet</div>
+            <div class="a">What about you start playing D&amp;D?</div>
+          </div>
+
+          <div class="qna">
+            <div class="q"><span class="clarification">(towards Tamius, regarding reddit username)</span> Stole me fucking name, av had it for 7 years now ye fucking stole it XD</div>
+            <div class="a">I've had it for 12 (possibly longer).</div>
+          </div>
+
+          <div class="qna">
+            <div class="q">Would love to have a small field to say what you like and hate about each movie. Imo it's hard to put a number on something without telling why. Also tam you gotta carry me in csgo man</div>
+            <div class="a">Well this would have been a nightmare to host. (As for CSGO, perhaps I should?)</div>
+          </div>
+
+          <div class="qna">
+            <div class="q">Good survey - but if only the rating on Homecoming had a 0 option!</div>
+            <div class="a">0/10 is reserved for Dragonheart 2, Dragonheart 4, Eragon and The Hobbit trilogy, sorry.</div>
+          </div>
+
+          <div class="qna">
+            <div class="q">THE LIGHT FURY IS PINK!!!!!</div>
+            <div class="a">No, the light fury isn't pink. This is pink:<br/>
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Pink_2019-07-27_Munich_%28cropped%29.jpg/330px-Pink_2019-07-27_Munich_%28cropped%29.jpg" lazyload="true" />
+            </div>
+          </div>
+
+          <div class="qna">
+            <div class="q">By reading the results I have provided you agree to pay me $50 into my crypto.com account.</div>
+            <div class="a">Imagine not using kraken or binance.</div>
+          </div>
+
+          <div class="qna">
+            <div class="q"><span class="clarification">(Paraphrasing multiple comments)</span> This poll is breathtaking!</div>
+            <div class="a">No, you're breathtaking!</div>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -3546,7 +4011,7 @@
         <span style="color: green">>implying there was QA</span>
         <small><small><br/>Actually there was. Lots of it. I've got way more problems with parsing data this year than the last one.</small></small>
       </p>
-      
+
       <p>
         Tech stack:
       </p>
@@ -3656,14 +4121,21 @@ export default defineComponent({
         location: {
           httydfav: 'fc',
           httyd2: 'overall',
-          httyd2gl: 'overall'
-        }
+          httyd2gl: 'overall',
+          httyd3gl: 'overall',
+          glextras: 'fd',
+        },
+        fandomtime: {
+          worst2: 'f',
+        },
       },
 
       deepDiveResults: {
         age: false,
         gender: false,
-        location: false
+        location: false,
+        fandomTime: false,
+        enjoygarbage: false
       }
     };
   },
@@ -3692,7 +4164,7 @@ export default defineComponent({
 
       console.info('Starting to process data ...')
 
-      // create data structure ahead of time. 
+      // create data structure ahead of time.
       const processedData = {};
 
       for (const question of Object.values(Question)) {
@@ -4012,7 +4484,7 @@ a:hover, a:focus, a:active, .link:hover {
 }
 
 .graph-area {
-  width: calc(100% + 2rem);  
+  width: calc(100% + 2rem);
 
   margin-left: calc(-2rem - 1px);
 
@@ -4057,5 +4529,31 @@ a:hover, a:focus, a:active, .link:hover {
   user-select: none;
 
   border-bottom: 1px solid dotted #fa6 !important;
+}
+
+
+.qna {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+
+  .q {
+    color: rgb(215, 166, 100);
+    font-style: italic;
+
+    .clarification {
+      color: #696969;
+    }
+  }
+
+  .a {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+
+    img {
+      display: block;
+      margin: 0 auto;
+      // text-align: center;
+    }
+  }
 }
 </style>

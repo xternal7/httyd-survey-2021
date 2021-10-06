@@ -3953,7 +3953,12 @@
 
           <div class="qna">
             <div class="q">Get a hobby, unless this is your hobby.</div>
-            <div class="a">If you wonder why the results took so long to prepare, blame this guy.</div>
+            <div class="a">
+              If you wonder why the results took so long to prepare, blame this guy.<br/><br/>
+              But yeah, you <i>could</i> call this a hobby.
+              <div class="meths"></div>
+              <small class="darker">Side note: I know that meths is spoon/needle combo, but the joke looks much funnier with mountains of ... shit, Miza informed me there's underage kids here. If you're under 18, pretend this is candy cotton and that thing a stick.</small>
+            </div>
           </div>
 
           <div class="qna">
@@ -3978,13 +3983,13 @@
 
           <div class="qna">
             <div class="q">Good survey - but if only the rating on Homecoming had a 0 option!</div>
-            <div class="a">0/10 is reserved for Dragonheart 2, Dragonheart 4, Eragon and The Hobbit trilogy, sorry.</div>
+            <div class="a">0/10 or less is reserved for Dragonheart 2, Dragonheart 4, Eragon, The Last Airbender (movie), and The Hobbit trilogy. Sorry.</div>
           </div>
 
           <div class="qna">
             <div class="q">THE LIGHT FURY IS PINK!!!!!</div>
-            <div class="a">No, the light fury isn't pink. This is pink:<br/>
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Pink_2019-07-27_Munich_%28cropped%29.jpg/330px-Pink_2019-07-27_Munich_%28cropped%29.jpg" lazyload="true" />
+            <div class="a">No, the light fury isn't pink. <a href="https://www.youtube.com/watch?v=YUtHjOvPKT0">This</a> is pink:<br/>
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Pink_2019-07-27_Munich_%28cropped%29.jpg/330px-Pink_2019-07-27_Munich_%28cropped%29.jpg" lazyload="true" /><br/>
             </div>
           </div>
 
@@ -4555,5 +4560,18 @@ a:hover, a:focus, a:active, .link:hover {
       // text-align: center;
     }
   }
+
+  .darker {
+    color: #696969;
+  }
+}
+
+.meths {
+  width: 100%;
+  aspect-ratio: 960/549;
+  background-image: url('assets/drugs-are-bad-mmkay.webp');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 </style>

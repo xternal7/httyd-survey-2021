@@ -7,7 +7,7 @@
       <div class="description">{{description}}</div>
       <div class="expand"></div>
       <div class="mode-switch-box">
-        <div 
+        <div
           class="option"
           :class="{'selected': displayMode === GraphDisplayMode.Absolute}"
           @click="displayMode = GraphDisplayMode.Absolute"
@@ -69,7 +69,7 @@
               }"
             >
                 <div class="graph-bars">
-                  <template 
+                  <template
                     v-for="set of setConf"
                   >
                     <div
@@ -95,7 +95,7 @@
                       </div>
                     </div>
 
-                    <!-- relative display -->
+                    <!-- relative display, desktop -->
                     <div
                       v-else
                       class="graph-set-track"
@@ -154,7 +154,7 @@
           </template>
         </div>
       </div>
-      <div 
+      <div
         v-if="setConf.length > 1"
         class="graph-set-container flex flex-row flex-wrap flex-center"
       >
@@ -215,7 +215,7 @@
               v-for="tick of tickValues.tickPercentValues"
               :key="tick"
               class="graph-tick-y"
-              :style="{'height': tickValues.percentBlockHeight}"
+              :style="{'width': tickValues.percentBlockHeight}"
             >
               <div class="value-percent">
                 {{tick}} %
@@ -237,7 +237,7 @@
                 <span class="answer">{{column.label}}</span> &nbsp;
               </div>
               <div class="mobile-graph-bars">
-                <template 
+                <template
                   v-for="set of setConf"
                 >
                   <div
@@ -259,7 +259,7 @@
                     </div>
                   </div>
 
-                  <!-- relative display -->
+                  <!-- relative display, mobile -->
                   <div
                     v-else
                     class="mobile-graph-set-track"
@@ -284,7 +284,7 @@
           </template>
         </div>
       </div>
-      <div 
+      <div
         v-if="setConf.length > 1"
         class="graph-set-container flex flex-row flex-wrap flex-center"
       >
@@ -436,7 +436,7 @@ export default defineComponent({
       }
 
 
-      // get max value for graph 
+      // get max value for graph
       let maxValue = 0;
       let maxPercent = 0;
 
@@ -463,7 +463,7 @@ export default defineComponent({
         }
       }
 
-      
+
       if (this.conf.hideZeroColumns) {
         for (const col of this.columns) {
           this.hiddenCols[col.key] = (! this.graphData[col.key]);
@@ -486,7 +486,7 @@ export default defineComponent({
 
       this.tickValues.tickValues = [] as number[];
       this.tickValues.tickPercentValues = [] as string[];
-      
+
       for (let i = 0; i <= yTicks; i++) {
         this.tickValues.tickValues.push( i * yTickInterval );
       }
@@ -623,7 +623,7 @@ export default defineComponent({
   .graph-tick-y {
     position: relative;
     display: block;
-    border-bottom: 1px dotted rgba(#fa6, 0.5);
+    // border-bottom: 1px dotted rgba(#fa6, 0.5);
 
     .value-abs, .value-percent {
       position: absolute;
@@ -710,7 +710,7 @@ export default defineComponent({
     }
     // .graph-set-track::hover {
     //   cursor: pointer;
-      
+
     // }
   }
 
@@ -777,7 +777,7 @@ export default defineComponent({
         white-space: nowrap;
         // margin-left: 0px;
         // padding-left: 0px;
-        // background-color: #000; 
+        // background-color: #000;
         z-index: 110;
       }
       .value-abs {
@@ -886,7 +886,7 @@ export default defineComponent({
   }
 
   .graph-set-container {
-    position: sticky; 
+    position: sticky;
     bottom: 0px;
     background-color: rgba(0,0,0,0.8);
 
@@ -945,6 +945,15 @@ export default defineComponent({
 
 .relative {
   position:relative;
+}
+
+.graph-main-container.mobile {
+  padding: 1rem;
+
+  .graph-main {
+    padding: 0;
+    padding-bottom: 1rem;
+  }
 }
 
 </style>

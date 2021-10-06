@@ -65,7 +65,7 @@
 
         <div class="graph-area">
           <div class="graph-normal">
-            <graph
+            <graph :isMobile="isMobile"
               title="Age"
               description="'Snowflake' contains people who think are funny and gave answers like 'example: 11' or anything not a number. Answers like 'I'll be X soon' were corrected to answerer's current age."
               :conf="{trackWidth: '6px !important', columnWidth: '8px !important'}"
@@ -79,7 +79,7 @@
             </average>
           </div>
           <div class="graph-normal">
-            <graph
+            <graph :isMobile="isMobile"
               title="Gender"
               description="Various instances of 'nonbinary' are accounted for under 'other'. 'Apache' category contains meme answers, and I'm awarding 'male dragon' a title of a snowflake."
               :conf="{barWidth: '16px !important', columnWidth: '64px !important'}"
@@ -97,7 +97,7 @@
 
         <div class="graph-area">
           <div class="graph-normal">
-            <graph
+            <graph :isMobile="isMobile"
               title="Location"
               description="What continent do you live on?"
               :conf="{barWidth: '16px !important', columnWidth: '72px !important', labelsHeight: '6rem'}"
@@ -107,7 +107,7 @@
             ></graph>
           </div>
           <div class="graph-normal">
-            <graph
+            <graph :isMobile="isMobile"
               title="Community"
               description=" Which of the following HTTYD communities do you most frequently use? PICK ONE."
               :conf="{barWidth: '16px !important', columnWidth: '42px !important', sidewaysLabels: true, labelsHeight: '6rem'}"
@@ -124,7 +124,7 @@
 
         <div class="graph-area">
           <div class="graph-normal">
-            <graph
+            <graph :isMobile="isMobile"
               title="Participation in 2020 survey"
               description=""
               :conf="{barWidth: '16px !important', columnWidth: '72px !important', labelsHeight: '6rem'}"
@@ -134,7 +134,7 @@
             ></graph>
           </div>
           <div class="graph-normal">
-            <graph
+            <graph :isMobile="isMobile"
               title="Time in fandom"
               description="How long have you been a member of the HTTYD fandom? Answers were given in years."
               :conf="{barWidth: '12px !important', columnWidth: '42px !important', labelsHeight: '6rem'}"
@@ -152,7 +152,7 @@
 
         <div class="graph-area">
           <div class="graph-normal">
-            <graph
+            <graph :isMobile="isMobile"
               title="Of furries and scalies"
               description="Do you identify as a member of any of the following communities? (Multiple choices possible)"
               :conf="{barWidth: '16px !important', columnWidth: '72px !important', labelsHeight: '6rem'}"
@@ -191,7 +191,7 @@
 
         <div class="graph-area">
           <div class="graph-wide">
-            <graph
+            <graph :isMobile="isMobile"
               title="Rate [aspect] from 1 to 10"
               :conf="{
                 columnXMargin: '1.2rem',
@@ -252,7 +252,7 @@
 
         <div class="graph-area">
           <div class="graph-wide">
-            <graph
+            <graph :isMobile="isMobile"
               title="Favourite and least favourite character"
               :conf="{
                 size: 'wide',
@@ -288,7 +288,7 @@
 
         <div class="graph-area">
           <div class="graph-wide">
-            <graph
+            <graph :isMobile="isMobile"
               title="Favourite Soundtrack"
               :conf="{
                 columnXMargin: '1.2rem',
@@ -326,7 +326,7 @@
         </p>
         <div class="graph-area">
           <div class="graph-wide">
-            <graph
+            <graph :isMobile="isMobile"
               title="Rate [aspect] from 1 to 10"
               :conf="{
                 columnXMargin: '1.2rem',
@@ -387,7 +387,7 @@
 
         <div class="graph-area">
           <div class="graph-wide">
-            <graph
+            <graph :isMobile="isMobile"
               title="Favourite and least favourite character"
               :conf="{
                 barWidth: '8px !important',
@@ -419,7 +419,7 @@
 
         <div class="graph-area">
           <div class="graph-wide">
-            <graph
+            <graph :isMobile="isMobile"
               title="Favourite Soundtrack"
               :conf="{
                 columnXMargin: '1.2rem',
@@ -447,7 +447,7 @@
 
         <div class="graph-area">
           <div class="graph-wide">
-            <graph
+            <graph :isMobile="isMobile"
               title="Would Valka be better as villain?"
               description="Originally, Dean DeBlois planned to have Valka be HTTYD 2's sympathetic villain. The question asked: Do you think this idea, if it had made it into the final product, would have improved the film?"
               :conf="{
@@ -479,7 +479,7 @@
         </p>
         <div class="graph-area">
           <div class="graph-wide">
-            <graph
+            <graph :isMobile="isMobile"
               title="Rate [aspect] from 1 to 10"
               :conf="{
                 columnXMargin: '1.2rem',
@@ -555,7 +555,7 @@
 
         <div class="graph-area">
           <div class="graph-wide">
-            <graph
+            <graph :isMobile="isMobile"
               title="Favourite and least favourite character"
               :conf="{
                 size: 'wide',
@@ -588,7 +588,7 @@
 
         <div class="graph-area">
           <div class="graph-wide">
-            <graph
+            <graph :isMobile="isMobile"
               title="Favourite Soundtrack"
               :conf="{
                 columnXMargin: '1.2rem',
@@ -624,7 +624,7 @@
 
         <div class="graph-area">
           <div class="graph-wide">
-            <graph
+            <graph :isMobile="isMobile"
               title="Would Drago redemption arc improve THW?"
               description="Originally, Dean DeBlois planned a redemption arc for Drago in the third film. The question was: Do you think this idea, if it had made it into the final product, would have improved the film?"
               :conf="{
@@ -662,7 +662,7 @@
         <div class="graph-area">
           <TabPanels v-model="tabs.base.aggregatedRatings">
             <TabPanel val="overall">
-              <graph
+              <graph :isMobile="isMobile"
                 title="Rate [movie] from 1 to 10, overall"
                 class="graph-wide"
                 :conf="{
@@ -695,7 +695,7 @@
             </graph>
             </TabPanel>
             <TabPanel val='plot'>
-              <graph
+              <graph :isMobile="isMobile"
                 title="Rate plot from 1 to 10"
                 class="graph-wide"
                 :conf="{
@@ -729,7 +729,7 @@
               </graph>
             </TabPanel>
             <TabPanel val='theme'>
-              <graph
+              <graph :isMobile="isMobile"
                 title="Rate theme from 1 to 10"
                 class="graph-wide"
                 :conf="{
@@ -764,7 +764,7 @@
               </graph>
             </TabPanel>
             <TabPanel val='score'>
-              <graph
+              <graph :isMobile="isMobile"
                 class="graph-wide"
                 title="Rate score from 1 to 10"
                 :conf="{
@@ -798,7 +798,7 @@
               </graph>
             </TabPanel>
             <TabPanel val='char'>
-              <graph
+              <graph :isMobile="isMobile"
                 title="Rate characters from 1 to 10"
                 :conf="{
                   columnXMargin: '0.125rem',
@@ -831,7 +831,7 @@
               </graph>
             </TabPanel>
             <TabPanel val='vis'>
-              <graph
+              <graph :isMobile="isMobile"
                 title="Rate visuals from 1 to 10"
                 :conf="{
                   columnXMargin: '0.125rem',
@@ -864,7 +864,7 @@
               </graph>
             </TabPanel>
             <TabPanel val='emo'>
-              <graph
+              <graph :isMobile="isMobile"
                 title="Rate emotion from 1 to 10"
                 :conf="{
                   columnXMargin: '0.125rem',
@@ -935,7 +935,7 @@
 
         <div class="graph-area">
           <div class="graph-wide">
-            <graph
+            <graph :isMobile="isMobile"
               title="Favourite draconid"
               :conf="{
                 trackWidth: '8px',
@@ -972,7 +972,7 @@
 
         <div class="graph-area">
           <div class="graph-wide">
-            <graph
+            <graph :isMobile="isMobile"
               title="Favourite villain"
               :conf="{
                 trackWidth: '8px',
@@ -1003,7 +1003,7 @@
 
         <div class="graph-area">
           <div class="graph-wide">
-            <graph
+            <graph :isMobile="isMobile"
               title="Favourite opening scene"
               :conf="{
                 trackWidth: '8px',
@@ -1039,7 +1039,7 @@
         </p>
         <div class="graph-area">
           <div class="graph-normal">
-            <graph
+            <graph :isMobile="isMobile"
               title="Light Fury as a character"
               description="What is your opinion on the Light Fury as a character? 0: garbage tier, 5-6: eh, 10: perfect"
               :conf="{trackWidth: '8px', barWidth: '16px !important', columnWidth: '32px !important'}"
@@ -1061,7 +1061,7 @@
             </average>
           </div>
           <div class="graph-normal">
-            <graph
+            <graph :isMobile="isMobile"
               title="Light fury: the design"
               description="What is your opinion on the Light Fury's visual design? 0: garbage tier, 5-6: eh, 10: perfect"
               :conf="{trackWidth: '8px', barWidth: '16px !important', columnWidth: '32px !important'}"
@@ -1078,7 +1078,7 @@
 
         <div class="graph-area">
           <div class="graph-normal">
-            <graph
+            <graph :isMobile="isMobile"
               title="Was THW a fitting end to the franchise?"
               description="0: hell no, 5-6: eh, 10: perfect"
               :conf="{trackWidth: '8px', barWidth: '16px !important', columnWidth: '32px !important'}"
@@ -1092,7 +1092,7 @@
           </div>
 
           <div class="graph-normal">
-            <graph
+            <graph :isMobile="isMobile"
               title="The plot of The Hidden World makes sense"
               description="Rate your agreement with the following statement: 'The plot of The Hidden World makes sense and has clear cause and effect.' 0: hell no, 5-6: eh, 10: enough sense to make me a millionare"
               :conf="{trackWidth: '8px', barWidth: '16px !important', columnWidth: '32px !important'}"
@@ -1112,7 +1112,7 @@
 
         <div class="graph-area">
           <div class="graph-normal">
-            <graph
+            <graph :isMobile="isMobile"
               title="Fitting end vs. plot rating"
               :conf="{trackWidthMultiset: '8px', columnWidth: '32px !important'}"
               :sets="[{
@@ -1137,7 +1137,7 @@
             ></graph>
           </div>
           <div class="graph-normal">
-            <graph
+            <graph :isMobile="isMobile"
               title="Plot coherency vs. plot rating"
               :conf="{trackWidthMultiset: '8px', columnWidth: '32px !important'}"
               :columns="graphColumnDefinitions.rating1to10()"
@@ -1198,7 +1198,7 @@
 
         <div class="graph-area">
           <div class="graph-normal">
-          <graph
+          <graph :isMobile="isMobile"
             title="Strongest themes — TODO MULTI CHOICE"
             description="Which of the following themes / messages do you feel The Hidden World most strongly conveys? Participants were asked to pick two at most. 'They tried' is for people who picked more."
             :conf="{
@@ -1214,7 +1214,7 @@
           ></graph>
         </div>
           <div class="graph-normal">
-            <graph
+            <graph :isMobile="isMobile"
               title="Theme approval"
               description="Regarding the themes you see in The Hidden World, rate the extent to which you agree with / approve of those themes."
               :conf="{trackWidth: '8px', barWidth: '16px !important', columnWidth: '32px !important'}"
@@ -1271,7 +1271,7 @@
 
         <div class="graph-area">
           <div class="graph-normal">
-            <graph
+            <graph :isMobile="isMobile"
               title="Favourite short"
               :conf="{
                 trackWidth: '8px',
@@ -1290,7 +1290,7 @@
           </div>
 
           <div class="graph-normal">
-            <graph
+            <graph :isMobile="isMobile"
               title="Rate [short] from 1 to 10"
               :conf="{
                 columnXMargin: '0.75rem',
@@ -1372,7 +1372,7 @@
 
         <div class="graph-area">
           <div class="graph-normal">
-            <graph
+            <graph :isMobile="isMobile"
               title="Rate [TV series] from 1 to 10"
               :conf="{
                 columnXMargin: '0.125rem',
@@ -1418,7 +1418,7 @@
         </div>
 
           <div class="graph-normal">
-            <graph
+            <graph :isMobile="isMobile"
               title="Likability of side characters in RTTE"
               description="Rate your agreement with the following statement: 'The side characters (Snotlout, Fishlegs, the Twins, etc) were generally more likable in Race to the Edge than in the films.'"
               :conf="{trackWidth: '8px', barWidth: '16px !important', columnWidth: '32px !important'}"
@@ -1440,7 +1440,7 @@
 
         <div class="graph-area">
           <div class="graph-normal">
-          <graph
+          <graph :isMobile="isMobile"
             title="Is Race to the Edge canon?"
             descriptiom="Do you consider Race to the Edge canon to the films?"
             :conf="{trackWidth: '8px', barWidth: '16px !important', columnWidth: '32px !important'}"
@@ -1468,7 +1468,7 @@
 
         <div class="graph-area">
           <div class="graph-normal">
-          <graph
+          <graph :isMobile="isMobile"
             title="Personal enjoyment vs. objective quality."
             description="Rate the following statement: 'Personal enjoyment of a piece of media is different and independent of the quality of that piece of media.' Agreement on the scale from 1 - 10. Bigger number means more agreement."
             :conf="{trackWidth: '8px', barWidth: '16px !important', columnWidth: '32px !important'}"
@@ -1489,7 +1489,7 @@
 
         <div class="graph-area">
           <div class="graph-normal">
-          <graph
+          <graph :isMobile="isMobile"
             title="Most important aspects of a movie"
             description="Of the following aspects of films/shows in general, which do you feel are the MOST important? Try not to check more than 2 boxes."
             :conf="{
@@ -1508,7 +1508,7 @@
 
         <div class="graph-area">
           <div class="graph-normal">
-            <graph
+            <graph :isMobile="isMobile"
               title="Why do you like HTTYD franchise? (todo: data)"
               description="Which of the following best describe/describes your reason for being drawn to HTTYD? Try not to check more than 2 boxes."
               :conf="{
@@ -1526,7 +1526,7 @@
           </div>
 
           <div class="graph-normal">
-            <graph
+            <graph :isMobile="isMobile"
               title="Master/pet or mutual friends?"
               description="Do you view the bond between Hiccup and Toothless as being more 'Master and Pet' or 'Mutual Friends?' 0 - master/pet, 10 - mutual friends"
               :conf="{trackWidth: '8px', barWidth: '16px !important', columnWidth: '32px !important'}"
@@ -1549,7 +1549,7 @@
 
         <div class="graph-area">
           <div class="graph-normal">
-          <graph
+          <graph :isMobile="isMobile"
             title="Movie ranking"
             description="From best to worst"
             :conf="{
@@ -1567,7 +1567,7 @@
         </div>
 
           <div class="graph-normal">
-          <graph
+          <graph :isMobile="isMobile"
             title="Movie watching order"
             description="In which order did you see the each film for the first time?"
             :conf="{
@@ -1585,7 +1585,7 @@
         </div>
 
           <div class="graph-normal">
-          <graph
+          <graph :isMobile="isMobile"
             title="The Hidden World opinion change"
             description="If you watched The Hidden World before seeing the other two films, did your opinion of The Hidden World change after watching them?"
             :conf="{
@@ -1659,7 +1659,7 @@
 
         <div class="graph-area">
           <div class="graph-wide">
-            <graph
+            <graph :isMobile="isMobile"
               class="graph-wide"
               title="Community"
               :conf="{'columnXMargin':'1.2rem','size':'wide','barWidth':'8px !important','trackWidthMultiset':'8px !important','trackWidth':'16px !important','columnWidth':'72px !important','sidewaysLabels':true,'labelsHeight':'6rem','hideZeroColumns':true}"
@@ -1684,7 +1684,7 @@
         </p>
 
         <div class="graph-area">
-          <graph
+          <graph :isMobile="isMobile"
               class="graph-wide"
               title="Location"
               :conf="{'columnXMargin':'1.2rem','size':'wide','barWidth':'8px !important','trackWidthMultiset':'8px !important','trackWidth':'16px !important','columnWidth':'72px !important','sidewaysLabels':true,'labelsHeight':'6rem','hideZeroColumns':true}"
@@ -1702,7 +1702,7 @@
 
         <div class="graph-area">
           <div class="graph-wide">
-            <graph
+            <graph :isMobile="isMobile"
               class="graph-wide"
               title="Furries"
               description="Multiple choices were allowed for this question"
@@ -1741,7 +1741,7 @@
         <div class="graph-aree">
           <TabPanels v-model="tabs.age.httyd1">
             <TabPanel val="overall" class="graph-wide">
-              <graph
+              <graph :isMobile="isMobile"
                 class="graph-wide"
                 title="HTTYD1Rating"
                 :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
@@ -1759,7 +1759,7 @@
               </graph>
             </TabPanel>
             <TabPanel class="graph-wide" val="plot">
-              <graph
+              <graph :isMobile="isMobile"
                 class="graph-wide"
                 title="HTTYD1: Plot"
                 :conf="{
@@ -1783,7 +1783,7 @@
               </graph>
             </TabPanel>
             <TabPanel class="graph-wide" val="vis">
-              <graph
+              <graph :isMobile="isMobile"
                 class="graph-wide"
                 title="HTTYD1: Visuals"
                 :conf="{
@@ -1808,7 +1808,7 @@
               </graph>
             </TabPanel>
             <TabPanel class="graph-wide" val="emo">
-              <graph
+              <graph :isMobile="isMobile"
                 class="graph-wide"
                 title="HTTYD1EmotionRating"
                 :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
@@ -1826,7 +1826,7 @@
               </graph>
             </TabPanel>
             <TabPanel class="graph-wide" val="char">
-              <graph
+              <graph :isMobile="isMobile"
                 class="graph-wide"
                 title="HTTYD1CharacterRating"
                 :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
@@ -1844,7 +1844,7 @@
               </graph>
             </TabPanel>
             <TabPanel class="graph-wide" val="theme">
-              <graph
+              <graph :isMobile="isMobile"
                 class="graph-wide"
                 title="HTTYD1ThemeRating"
                 :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
@@ -1862,7 +1862,7 @@
               </graph>
             </TabPanel>
             <TabPanel class="graph-wide" val="ost">
-              <graph
+              <graph :isMobile="isMobile"
                 class="graph-wide"
                 title="HTTYD1ScoreRating"
                 :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
@@ -1880,7 +1880,7 @@
               </graph>
             </TabPanel>
             <TabPanel class="graph-wide" val="fsong">
-              <graph
+              <graph :isMobile="isMobile"
                 class="graph-wide"
                 title="HTTYD1FavouriteSoundtrack"
                 :conf="{'columnXMargin':'1.2rem','size':'wide','barWidth':'8px !important','trackWidthMultiset':'8px !important','trackWidth':'16px !important','columnWidth':'72px !important','sidewaysLabels':true,'labelsHeight':'6rem','hideZeroColumns':true}"
@@ -1892,7 +1892,7 @@
               </graph>
             </TabPanel>
             <TabPanel class="graph-wide" val="fchar">
-              <graph
+              <graph :isMobile="isMobile"
                 class="graph-wide"
                 title="HTTYD1FavouriteCharacter"
                 :conf="{'columnXMargin':'1.2rem','size':'wide','barWidth':'8px !important','trackWidthMultiset':'8px !important','trackWidth':'16px !important','columnWidth':'72px !important','sidewaysLabels':true,'labelsHeight':'6rem','hideZeroColumns':true}"
@@ -1904,7 +1904,7 @@
               </graph>
             </TabPanel>
             <TabPanel class="graph-wide" val="wchar">
-              <graph
+              <graph :isMobile="isMobile"
                 class="graph-wide"
                 title="HTTYD1WorstCharacter"
                 :conf="{'columnXMargin':'1.2rem','size':'wide','barWidth':'8px !important','trackWidthMultiset':'8px !important','trackWidth':'16px !important','columnWidth':'72px !important','sidewaysLabels':true,'labelsHeight':'6rem','hideZeroColumns':true}"
@@ -1951,7 +1951,7 @@
         </p>
 
         <div class="graph-area">
-          <graph
+          <graph :isMobile="isMobile"
             class="graph-wide"
             title="HTTYD2Rating"
             :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
@@ -1968,7 +1968,7 @@
 
           </graph>
 
-          <graph
+          <graph :isMobile="isMobile"
               class="graph-wide"
               title="HTTYD2PlotRating"
               :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
@@ -1997,7 +1997,7 @@
         </p>
 
         <div class="graph-area">
-          <graph
+          <graph :isMobile="isMobile"
               class="graph-wide"
               title="HTTYD2ScoreRating"
               :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
@@ -2027,7 +2027,7 @@
         </p>
 
         <div class="grpah-area">
-          <graph
+          <graph :isMobile="isMobile"
               class="graph-wide"
               title="HTTYD2ThemeRating"
               :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
@@ -2056,7 +2056,7 @@
         </p>
 
         <div class="graph-area">
-          <graph
+          <graph :isMobile="isMobile"
               class="graph-wide"
               title="HTTYD3Rating"
               :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
@@ -2102,7 +2102,7 @@
 
           <TabPanels v-model="tabs.age.thwRatings">
             <TabPanel val="plot">
-              <graph
+              <graph :isMobile="isMobile"
               class="graph-wide"
               title="HTTYD3PlotRating"
               :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
@@ -2120,7 +2120,7 @@
             </graph>
             </TabPanel>
             <TabPanel val="theme">
-              <graph
+              <graph :isMobile="isMobile"
               class="graph-wide"
               title="HTTYD3ThemeRating"
               :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
@@ -2138,7 +2138,7 @@
             </graph>
             </TabPanel>
             <TabPanel val="theme-approval">
-              <graph
+              <graph :isMobile="isMobile"
               class="graph-wide"
               title="THWThemeApproval"
               :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
@@ -2164,7 +2164,7 @@
         </p>
 
         <div class="graph-area">
-          <graph
+          <graph :isMobile="isMobile"
             class="graph-wide"
             title="THWPlotCoherency"
             :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
@@ -2187,7 +2187,7 @@
         </p>
 
         <div class="graph-area">
-          <graph
+          <graph :isMobile="isMobile"
               class="graph-wide"
               title="THWFittingEnd"
               :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
@@ -2215,7 +2215,7 @@
         </p>
 
         <div class="graph-area">
-            <graph
+            <graph :isMobile="isMobile"
               class="graph-wide"
               title="HTTYD3VisualsRating"
               :conf="{
@@ -2242,7 +2242,7 @@
         </p>
 
         <div class="graph-area">
-            <graph
+            <graph :isMobile="isMobile"
               class="graph-wide"
               title="HTTYD3VisualsRating"
               :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
@@ -2269,7 +2269,7 @@
         </p>
 
         <div class="graph-area">
-          <graph
+          <graph :isMobile="isMobile"
               class="graph-wide"
               title="MovieRanking"
               :conf="{'columnXMargin':'1.2rem','size':'wide','barWidth':'8px !important','trackWidthMultiset':'8px !important','trackWidth':'16px !important','columnWidth':'72px !important','sidewaysLabels':true,'labelsHeight':'6rem','hideZeroColumns':true}"
@@ -2291,7 +2291,7 @@
         </p>
 
         <div class="graph-area">
-          <graph
+          <graph :isMobile="isMobile"
             class="graph-wide"
             title="IsRTTECanon"
             :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
@@ -2308,7 +2308,7 @@
         </p>
 
         <div class="graph-area">
-          <graph
+          <graph :isMobile="isMobile"
             class="graph-wide"
             title="RTTERating"
             :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
@@ -2330,7 +2330,7 @@
         </p>
 
         <div class="graph-area">
-          <graph
+          <graph :isMobile="isMobile"
             class="graph-wide"
             title="FavouriteVillain"
             :conf="{'columnXMargin':'1.2rem','size':'wide','barWidth':'8px !important','trackWidthMultiset':'8px !important','trackWidth':'16px !important','columnWidth':'72px !important','sidewaysLabels':true,'labelsHeight':'6rem','hideZeroColumns':true}"
@@ -2347,7 +2347,7 @@
         </p>
 
         <div class="graph-area">
-          <graph
+          <graph :isMobile="isMobile"
             class="graph-wide"
             title="FavouriteDraconid"
             :conf="{'columnXMargin':'1.2rem','size':'wide','barWidth':'8px !important','trackWidthMultiset':'8px !important','trackWidth':'16px !important','columnWidth':'72px !important','sidewaysLabels':true,'labelsHeight':'6rem','hideZeroColumns':true}"
@@ -2383,7 +2383,7 @@
           </p>
 
           <div class="graph-area">
-            <graph
+            <graph :isMobile="isMobile"
               class="graph-wide"
               title="Age"
               defaultMode="absolute"
@@ -2407,7 +2407,7 @@
           </p>
 
           <div class="graph-area">
-            <graph
+            <graph :isMobile="isMobile"
                 class="graph-wide"
                 title="Location"
                 :conf="{'columnXMargin':'1.2rem','size':'wide','barWidth':'8px !important','trackWidthMultiset':'8px !important','trackWidth':'16px !important','columnWidth':'72px !important','sidewaysLabels':true,'labelsHeight':'6rem','hideZeroColumns':true}"
@@ -2437,7 +2437,7 @@
           <TabPanels v-model="tabs.gender.location">
             <TabPanel val="eu">
               <div class="graph-area">
-                <graph
+                <graph :isMobile="isMobile"
                     class="graph-wide"
                     title="Age (by gender, EU)"
                   defaultMode="absolute"
@@ -2465,7 +2465,7 @@
             </TabPanel>
             <TabPanel val="na">
               <div class="graph-area">
-                <graph
+                <graph :isMobile="isMobile"
                     class="graph-wide"
                     title="Age (by gender, NA)"
                   defaultMode="absolute"
@@ -2508,7 +2508,7 @@
           </p>
 
           <div class="graph-area">
-            <graph
+            <graph :isMobile="isMobile"
                 class="graph-wide"
                 title="Rate HTTYD1 on 1-10?"
                 :conf="{
@@ -2535,7 +2535,7 @@
           <p>Bam, higher ratings on the pink side, across the board. Even for all aspects.</p>
 
           <div class="graph-area">
-            <graph
+            <graph :isMobile="isMobile"
                 class="graph-wide"
                 title="HTTYD 2?"
                 description="(overall rating)"
@@ -2572,7 +2572,7 @@
           </p>
 
           <div class="graph-area">
-            <graph
+            <graph :isMobile="isMobile"
                 class="graph-wide"
                 title="HTTYD2PlotRating"
                 :conf="{
@@ -2610,7 +2610,7 @@
           </p>
 
           <div class="graph-area">
-            <graph
+            <graph :isMobile="isMobile"
                 class="graph-wide"
                 title="Is RTTE canon?"
                 :conf="{
@@ -2639,7 +2639,7 @@
           </p>
 
           <div class="graph-area">
-            <graph
+            <graph :isMobile="isMobile"
                 class="graph-wide"
                 title="Bond type"
                 description="0: master-slave, 10: mutual friends"
@@ -2670,7 +2670,7 @@
           </p>
 
           <div class="graph-area">
-            <graph
+            <graph :isMobile="isMobile"
                 class="graph-wide"
                 title="HTTYD3Rating"
                 :conf="{
@@ -2720,7 +2720,7 @@
             </Tabs>
             <TabPanels v-model="tabs.gender.thw">
               <TabPanel val="plot">
-                <graph
+                <graph :isMobile="isMobile"
                   class="graph-wide"
                   title="THW Plot Rating"
                   :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
@@ -2737,7 +2737,7 @@
                 </graph>
               </TabPanel>
               <TabPanel val="emo">
-                <graph
+                <graph :isMobile="isMobile"
                   class="graph-wide"
                   title="THW Emotion Rating"
                   :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
@@ -2754,7 +2754,7 @@
                 </graph>
               </TabPanel>
               <TabPanel val="char">
-                <graph
+                <graph :isMobile="isMobile"
                   class="graph-wide"
                   title="THW Character Rating"
                   :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
@@ -2771,7 +2771,7 @@
                 </graph>
               </TabPanel>
               <TabPanel val="theme">
-                <graph
+                <graph :isMobile="isMobile"
                   class="graph-wide"
                   title="THW Theme Rating"
                   :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
@@ -2789,7 +2789,7 @@
                 </graph>
               </TabPanel>
               <TabPanel val="visuals">
-                <graph
+                <graph :isMobile="isMobile"
                   class="graph-wide"
                   title="THW Visuals Rating"
                   :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
@@ -2807,7 +2807,7 @@
                 </graph>
               </TabPanel>
               <TabPanel val="ost">
-                <graph
+                <graph :isMobile="isMobile"
                   class="graph-wide"
                   title="THW Score Rating"
                   :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
@@ -2824,7 +2824,7 @@
                 </graph>
               </TabPanel>
               <TabPanel val="wchar">
-                <graph
+                <graph :isMobile="isMobile"
                   class="graph-wide"
                   title="THW Worst Character"
                   :conf="{'columnXMargin':'1.2rem','size':'wide','barWidth':'8px !important','trackWidthMultiset':'8px !important','trackWidth':'16px !important','columnWidth':'72px !important','sidewaysLabels':true,'labelsHeight':'6rem','hideZeroColumns':true}"
@@ -2836,7 +2836,7 @@
                 </graph>
               </TabPanel>
               <TabPanel val="tfcr">
-                <graph
+                <graph :isMobile="isMobile"
                   class="graph-wide"
                   title="Light Fury Character Rating"
                   :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
@@ -2854,7 +2854,7 @@
                 </graph>
               </TabPanel>
               <TabPanel val="tfdr">
-                <graph
+                <graph :isMobile="isMobile"
                   class="graph-wide"
                   title="Light Fury Design Rating"
                   :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
@@ -2872,7 +2872,7 @@
                 </graph>
               </TabPanel>
               <TabPanel val="fe">
-                <graph
+                <graph :isMobile="isMobile"
                 class="graph-wide"
                 title="THWFittingEnd"
                 :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
@@ -2914,7 +2914,7 @@
           </p>
 
           <div class="graph-area">
-            <graph
+            <graph :isMobile="isMobile"
               class="graph-wide"
               title="Age"
               :conf="{'trackWidth':'6px !important','columnWidth':'8px !important','hideZeroColumns':false}"
@@ -2938,7 +2938,7 @@
           </p>
 
           <div class="graph-area">
-            <graph
+            <graph :isMobile="isMobile"
               class="graph-wide"
               title="FandomTime"
               :conf="{'columnXMargin':'1.2rem','size':'wide','barWidth':'8px !important','trackWidthMultiset':'8px !important','trackWidth':'16px !important','columnWidth':'72px !important','sidewaysLabels':true,'labelsHeight':'6rem','hideZeroColumns':true}"
@@ -2955,7 +2955,7 @@
           </p>
 
           <div class="graph-area">
-            <graph
+            <graph :isMobile="isMobile"
               class="graph-wide"
               title="IsFurry"
               :conf="{'columnXMargin':'1.2rem','size':'wide','barWidth':'8px !important','trackWidthMultiset':'8px !important','trackWidth':'16px !important','columnWidth':'72px !important','sidewaysLabels':true,'labelsHeight':'6rem','hideZeroColumns':true}"
@@ -2972,7 +2972,7 @@
           </p>
 
           <div class="graph-area">
-            <graph
+            <graph :isMobile="isMobile"
               class="graph-wide"
               title="UsernameProvided"
               :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
@@ -2989,7 +2989,7 @@
           </p>
 
           <div class="graph-area">
-            <graph
+            <graph :isMobile="isMobile"
               class="graph-wide"
               title="HTTYD1Rating"
               :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
@@ -3058,7 +3058,7 @@
           <TabPanels v-model="tabs.location.httydfav">
             <TabPanel val="fc">
               <div class="graph-area">
-                <graph
+                <graph :isMobile="isMobile"
                     class="graph-wide"
                     title="HTTYD1FavouriteCharacter"
                     :conf="{'columnXMargin':'1.2rem','size':'wide','barWidth':'8px !important','trackWidthMultiset':'8px !important','trackWidth':'16px !important','columnWidth':'72px !important','sidewaysLabels':true,'labelsHeight':'6rem','hideZeroColumns':true}"
@@ -3072,7 +3072,7 @@
             </TabPanel>
             <TabPanel val="fs">
               <div class="graph-area">
-                <graph
+                <graph :isMobile="isMobile"
                   class="graph-wide"
                   title="HTTYD1FavouriteSoundtrack"
                   :conf="{'columnXMargin':'1.2rem','size':'wide','barWidth':'8px !important','trackWidthMultiset':'8px !important','trackWidth':'16px !important','columnWidth':'72px !important','sidewaysLabels':true,'labelsHeight':'6rem','hideZeroColumns':true}"
@@ -3086,7 +3086,7 @@
             </TabPanel>
             <TabPanel val="fcg">
               <div class="graph-area">
-                <graph
+                <graph :isMobile="isMobile"
                   class="graph-wide"
                   title="HTTYD1FavouriteCharacter"
                   :conf="{'columnXMargin':'1.2rem','size':'wide','barWidth':'8px !important','trackWidthMultiset':'8px !important','trackWidth':'16px !important','columnWidth':'72px !important','sidewaysLabels':true,'labelsHeight':'6rem','hideZeroColumns':true}"
@@ -3100,7 +3100,7 @@
             </TabPanel>
             <TabPanel val="fsg">
               <div class="graph-area">
-                <graph
+                <graph :isMobile="isMobile"
                   class="graph-wide"
                   title="HTTYD1FavouriteSoundtrack"
                   :conf="{'columnXMargin':'1.2rem','size':'wide','barWidth':'8px !important','trackWidthMultiset':'8px !important','trackWidth':'16px !important','columnWidth':'72px !important','sidewaysLabels':true,'labelsHeight':'6rem','hideZeroColumns':true}"
@@ -3153,7 +3153,7 @@
           <TabPanels v-model="tabs.location.httyd2">
             <TabPanel val="overall">
               <div class="graph-area">
-                <graph
+                <graph :isMobile="isMobile"
                     class="graph-wide"
                     title="HTTYD2PlotRating"
                     :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
@@ -3172,7 +3172,7 @@
             </TabPanel>
             <TabPanel val="p">
               <div class="graph-area">
-                <graph
+                <graph :isMobile="isMobile"
                     class="graph-wide"
                     title="HTTYD2PlotRating"
                     :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
@@ -3191,7 +3191,7 @@
             </TabPanel>
             <TabPanel val="e">
               <div class="graph-area">
-                <graph
+                <graph :isMobile="isMobile"
               class="graph-wide"
               title="HTTYD2EmotionRating"
               :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
@@ -3211,7 +3211,7 @@
             </TabPanel>
             <TabPanel val="c">
               <div class="graph-area">
-                  <graph
+                  <graph :isMobile="isMobile"
               class="graph-wide"
               title="HTTYD2CharacterRating"
               :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
@@ -3232,7 +3232,7 @@
             </TabPanel>
             <TabPanel val="t">
               <div class="graph-area">
-                <graph
+                <graph :isMobile="isMobile"
               class="graph-wide"
               title="HTTYD2ThemeRating"
               :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
@@ -3252,7 +3252,7 @@
             </TabPanel>
             <TabPanel val="v">
               <div class="graph-area">
-                  <graph
+                  <graph :isMobile="isMobile"
               class="graph-wide"
               title="HTTYD1VisualsRating"
               :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
@@ -3272,7 +3272,7 @@
             </TabPanel>
             <TabPanel val="s">
               <div class="graph-area">
-                <graph
+                <graph :isMobile="isMobile"
               class="graph-wide"
               title="HTTYD1ScoreRating"
               :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
@@ -3338,7 +3338,7 @@
           <TabPanels v-model="tabs.location.httyd2gl">
             <TabPanel val="overall">
               <div class="graph-area">
-                <graph
+                <graph :isMobile="isMobile"
                   class="graph-wide"
                   title="HTTYD2Rating"
                   :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
@@ -3358,7 +3358,7 @@
             </TabPanel>
             <TabPanel val="p">
               <div class="graph-area">
-                <graph
+                <graph :isMobile="isMobile"
                   class="graph-wide"
                   title="HTTYD2PlotRating"
                   :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
@@ -3378,7 +3378,7 @@
             </TabPanel>
             <TabPanel val="e">
               <div class="graph-area">
-                <graph
+                <graph :isMobile="isMobile"
               class="graph-wide"
               title="HTTYD2EmotionRating"
               :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
@@ -3398,7 +3398,7 @@
             </TabPanel>
             <TabPanel val="c">
               <div class="graph-area">
-                  <graph
+                  <graph :isMobile="isMobile"
               class="graph-wide"
               title="HTTYD2CharacterRating"
               :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
@@ -3419,7 +3419,7 @@
             </TabPanel>
             <TabPanel val="t">
               <div class="graph-area">
-                <graph
+                <graph :isMobile="isMobile"
               class="graph-wide"
               title="HTTYD2ThemeRating"
               :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
@@ -3439,7 +3439,7 @@
             </TabPanel>
             <TabPanel val="v">
               <div class="graph-area">
-                <graph
+                <graph :isMobile="isMobile"
               class="graph-wide"
               title="HTTYD2VisualsRating"
               :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
@@ -3459,7 +3459,7 @@
             </TabPanel>
             <TabPanel val="s">
               <div class="graph-area">
-                <graph
+                <graph :isMobile="isMobile"
               class="graph-wide"
               title="HTTYD2ScoreRating"
               :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
@@ -3522,7 +3522,7 @@
           <TabPanels v-model="tabs.location.httyd3gl">
             <TabPanel val="overall">
               <div class="graph-area">
-                  <graph
+                  <graph :isMobile="isMobile"
               class="graph-wide"
               title="HTTYD3Rating"
               :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
@@ -3542,7 +3542,7 @@
             </TabPanel>
             <TabPanel val="p">
               <div class="graph-area">
-                <graph
+                <graph :isMobile="isMobile"
               class="graph-wide"
               title="HTTYD3PlotRating"
               :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
@@ -3562,7 +3562,7 @@
             </TabPanel>
             <TabPanel val="e">
               <div class="graph-area">
-                <graph
+                <graph :isMobile="isMobile"
               class="graph-wide"
               title="HTTYD3EmotionRating"
               :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
@@ -3581,7 +3581,7 @@
             </TabPanel>
             <TabPanel val="c">
               <div class="graph-area">
-                <graph
+                <graph :isMobile="isMobile"
               class="graph-wide"
               title="HTTYD3CharacterRating"
               :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
@@ -3601,7 +3601,7 @@
             </TabPanel>
             <TabPanel val="t">
               <div class="graph-area">
-                <graph
+                <graph :isMobile="isMobile"
               class="graph-wide"
               title="HTTYD3ThemeRating"
               :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
@@ -3621,7 +3621,7 @@
             </TabPanel>
             <TabPanel val="v">
               <div class="graph-area">
-              <graph
+              <graph :isMobile="isMobile"
               class="graph-wide"
               title="HTTYD3VisualsRating"
               :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
@@ -3641,7 +3641,7 @@
             </TabPanel>
             <TabPanel val="s">
               <div class="graph-area">
-                <graph
+                <graph :isMobile="isMobile"
               class="graph-wide"
               title="HTTYD3ScoreRating"
               :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
@@ -3692,7 +3692,7 @@
         <TabPanels v-model="tabs.location.glextras">
           <TabPanel val="fd">
             <div class="graph-area">
-              <graph
+              <graph :isMobile="isMobile"
               class="graph-wide"
               title="FavouriteDraconid"
               :conf="{'columnXMargin':'1.2rem','size':'wide','barWidth':'8px !important','trackWidthMultiset':'8px !important','trackWidth':'16px !important','columnWidth':'72px !important','sidewaysLabels':true,'labelsHeight':'6rem','hideZeroColumns':true}"
@@ -3706,7 +3706,7 @@
           </TabPanel>
           <TabPanel val="fv">
             <div class="graph-area">
-              <graph
+              <graph :isMobile="isMobile"
               class="graph-wide"
               title="FavouriteVillain"
               :conf="{'columnXMargin':'1.2rem','size':'wide','barWidth':'8px !important','trackWidthMultiset':'8px !important','trackWidth':'16px !important','columnWidth':'72px !important','sidewaysLabels':true,'labelsHeight':'6rem','hideZeroColumns':true}"
@@ -3720,7 +3720,7 @@
           </TabPanel>
           <TabPanel val="fo">
             <div class="graph-area">
-              <graph
+              <graph :isMobile="isMobile"
                 class="graph-wide"
                 title="FavouriteOpeningScene"
                 :conf="{'columnXMargin':'1.2rem','size':'wide','barWidth':'8px !important','trackWidthMultiset':'8px !important','trackWidth':'16px !important','columnWidth':'72px !important','sidewaysLabels':true,'labelsHeight':'6rem','hideZeroColumns':true}"
@@ -3754,7 +3754,7 @@
           </p>
 
           <div class="graph-area">
-            <graph
+            <graph :isMobile="isMobile"
               class="graph-wide"
               title="HTTYD1FavouriteSoundtrack"
               :conf="{'columnXMargin':'1.2rem','size':'wide','barWidth':'8px !important','trackWidthMultiset':'8px !important','trackWidth':'16px !important','columnWidth':'72px !important','sidewaysLabels':true,'labelsHeight':'6rem','hideZeroColumns':true}"
@@ -3771,7 +3771,7 @@
           </p>
 
           <div class="graph-area">
-            <graph
+            <graph :isMobile="isMobile"
               class="graph-wide"
               title="FavouriteDraconid"
               :conf="{'columnXMargin':'1.2rem','size':'wide','barWidth':'8px !important','trackWidthMultiset':'8px !important','trackWidth':'16px !important','columnWidth':'72px !important','sidewaysLabels':true,'labelsHeight':'6rem','hideZeroColumns':true}"
@@ -3791,7 +3791,7 @@
           </Tabs>
           <TabPanels v-model="tabs.fandomtime.worst2">
             <TabPanel val="f">
-            <graph
+            <graph :isMobile="isMobile"
               class="graph-wide"
               title="HTTYD2WorstCharacter"
               :conf="{'columnXMargin':'1.2rem','size':'wide','barWidth':'8px !important','trackWidthMultiset':'8px !important','trackWidth':'16px !important','columnWidth':'72px !important','sidewaysLabels':true,'labelsHeight':'6rem','hideZeroColumns':true}"
@@ -3803,7 +3803,7 @@
             </graph>
             </TabPanel>
             <TabPanel val="a">
-              <graph
+              <graph :isMobile="isMobile"
               class="graph-wide"
               title="HTTYD2WorstCharacter"
               :conf="{'columnXMargin':'1.2rem','size':'wide','barWidth':'8px !important','trackWidthMultiset':'8px !important','trackWidth':'16px !important','columnWidth':'72px !important','sidewaysLabels':true,'labelsHeight':'6rem','hideZeroColumns':true}"
@@ -3833,7 +3833,7 @@
           </p>
 
           <div class="graph-area">
-            <graph
+            <graph :isMobile="isMobile"
               class="graph-wide"
               title="HTTYD1CharacterRating"
               :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
@@ -3854,7 +3854,7 @@
             And in general, it kinda makes sense when you consider how people generally vote on polls like this. But then, the "5 or less" gang reverses the trend in some situations, rating some aspects of The Hidden World higher than the "fully agree" gang. Sample graph ahead.
           </p>
           <div>
-            <graph
+            <graph :isMobile="isMobile"
               class="graph-wide"
               title="HTTYD3Rating"
               :conf="{'columnXMargin':'1.2rem','barWidth':'8px','trackWidth':'8px','columnWidth':'72px','trackWidthMultiset':'auto','size':'wide','hideZeroColumns':false}"
@@ -4109,6 +4109,8 @@ export default defineComponent({
         }
       ],
       enum2draconid,
+
+      isMobile: this.$isMobile(),
 
       tabs: {
         base: {

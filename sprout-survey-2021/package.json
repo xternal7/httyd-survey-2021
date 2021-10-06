@@ -12,6 +12,7 @@
     "core-js": "^3.6.5",
     "sass-loader": "^10.1.1",
     "vue": "^3.0.0",
+    "vue3-mobile-detection": "^1.0.4",
     "vue3-tabs": "^0.1.9"
   },
   "devDependencies": {

@@ -81,7 +81,7 @@ export class GdocsScrapper {
   test = "wow";
 
   /**
-   * We will re-fetch gsheet data 
+   * We will re-fetch gsheet data
    */
   maxAge: number;
   private lastCacheRefresh: any;
@@ -103,7 +103,7 @@ export class GdocsScrapper {
 
     if (
       !this.lastCacheRefresh
-        || Date.now() - this.lastCacheRefresh > this.maxAge 
+        || Date.now() - this.lastCacheRefresh > this.maxAge
         || forceRefresh
     ) {
       // prevent multiple requests that arrive in quick succession from
@@ -259,7 +259,7 @@ export class GdocsScrapper {
       }
 
       // count people who provided usernames, but omit the actual username
-      rowOut[Question.UsernameProvided] = [ row[Question.UsernameProvided] ? Answer.Yes : Answer.No]; 
+      rowOut[Question.UsernameProvided] = [ row[Question.UsernameProvided] ? Answer.Yes : Answer.No];
       if (rowOut[Question.UsernameProvided]) {
         usernameCount++;
       }
@@ -358,7 +358,7 @@ export class GdocsScrapper {
       if (thwThemes.indexOf('Love and Loss') !== -1) {
         rowOut[Question.THWStrongestThemes].push(THWTheme.LoveLoss);
       }
-      // catch people who picked more than two boxes so far BEFORE 
+      // catch people who picked more than two boxes so far BEFORE
       // processing any extra tags we added on top of the answers:
       if (rowOut[Question.THWStrongestThemes].length > 2) {
         rowOut[Question.THWStrongestThemes].push(THWTheme.TooManyAnswers);
@@ -478,7 +478,7 @@ export class GdocsScrapper {
       if (fandomReason.indexOf('Other') !== -1 || fandomReason.indexOf('_other')) {
         rowOut[Question.HTTYDAppealReasons].push(HTTYDAppealReason.Other);
       }
-      
+
 
       // most important aspect
       const importantAspects = row[Question.MostImportantAspects];
@@ -519,13 +519,13 @@ export class GdocsScrapper {
       if (favDraconid[1] && favDraconid[1].indexOf('This Sign Can\'t Stop Me Because I Can\'t Read') !== -1) {
         dwFlag = true;
       }
-      
+
       rowOut[Question.FavouriteDraconid] = [draconidType, ...(dwFlag ? [Draconid.Multiple] : [])];
       rowOut[Question.FavouriteDraconidReason] = {
         value: draconidType,
         reason: fdReason,
         originalValue: draconidType === Draconid.Other ? favDraconid[0].trim().toLowerCase() : undefined,
-        reasonScore: this.parseNumber(fdScore),
+        reasonScore: fdReason.length * (this.parseNumber(fdScore) || 1),
       }
 
       // fav villain
@@ -539,7 +539,7 @@ export class GdocsScrapper {
         dwFlag2 = true;
       }
 
-      rowOut[Question.FavouriteVillain] =  [villainType, ...(dwFlag2 ? [Villain.Multiple] : [])]; 
+      rowOut[Question.FavouriteVillain] =  [villainType, ...(dwFlag2 ? [Villain.Multiple] : [])];
       rowOut[Question.FavouriteVillainReason] = {
         value: villainType,
         originalValue: villainType === Villain.Other ? favVillain[0].trim().toLowerCase() : undefined,
@@ -623,7 +623,12 @@ export class GdocsScrapper {
 
     return {
       deletedCount: deletedCount,
-      processedData: processedData
+      responseCount: processedData.length,
+      processedData: processedData,
+      usernameCount: usernameCount,
+      usernamePercent: usernameCount / processedData.length,
+      feedbackCount: feedbackCount,
+      feedbackPercent: feedbackCount / processedData.length
     };
   }
 
@@ -728,7 +733,7 @@ export class GdocsScrapper {
         return Continent.NorthAmerica;
       case 'South America':
         return Continent.SouthAmerica;
-      default: 
+      default:
         return Continent.Shy;
     }
   }
@@ -774,7 +779,7 @@ export class GdocsScrapper {
       case Question.FavouriteVillainReasonScore:
       case Question.BondType:
         return true;
-      default: 
+      default:
         return false;
     }
   }
@@ -789,7 +794,7 @@ export class GdocsScrapper {
    * It only handles up to two letter columns because thats
    * what we need and I don't wanan spend time coming up
    * with a general solution
-   * @param lastColumn 
+   * @param lastColumn
    */
   // generateExcelColums(lastColumn: string = 'Z'): string[] {
   //   const cols = [];
@@ -797,7 +802,7 @@ export class GdocsScrapper {
   //   // guard against users doing user things
   //   lastColumn = lastColumn.toUpperCase();
 
-  //   let ccNumber = 10;        // we can do (number).toString(radix). 
+  //   let ccNumber = 10;        // we can do (number).toString(radix).
   //   let currentColumn = 'A';  // 10.toString(11) returns 'a', which is neat.
 
   //   while (true) {
@@ -855,7 +860,7 @@ export class GdocsScrapper {
   //     };
 
 
-  //     // first, we compare the time to get base offset 
+  //     // first, we compare the time to get base offset
   //     // if row remains -1, then there's something wrong with the data
   //     let baseOffset = -1;
   //     for (let i = +row; i < truthData.length; i++) {
@@ -889,10 +894,10 @@ export class GdocsScrapper {
   //         }
   //       }
   //     }
-      
+
 
   //     // first pass:
-  //     // we do multiple passes for each row. First, we check for 
+  //     // we do multiple passes for each row. First, we check for
   //     // naive offsets — whether stuff from survey data matches
   //     // our truth table
   //     // for (const [col, columnValue] of Object.entries(value)) {
@@ -905,7 +910,7 @@ export class GdocsScrapper {
   //     //     });
   //     //   } else {
   //     //     // check column until a match is found. We do this for non-trusted columns as well,
-  //     //     // since naiveOffset _can_ be used to confirm the offset we got in answers that 
+  //     //     // since naiveOffset _can_ be used to confirm the offset we got in answers that
   //     //     // are unique in a jiffy.
   //     //     let foundMatch = false;
   //     //     for (let i = +row; i < truthData.length; i++) {
@@ -929,7 +934,7 @@ export class GdocsScrapper {
   //     // }
 
   //     // second pass:
-  //     // 
+  //     //
   //   }
   // }
 

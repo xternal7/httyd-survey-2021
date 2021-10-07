@@ -92,7 +92,7 @@
           <div class="graph-normal">
             <graph :isMobile="isMobile"
               title="Gender"
-              description="Various instances of 'nonbinary' are accounted for under 'other'. 'Apache' category contains meme answers, and I'm awarding 'male dragon' a title of a snowflake."
+              description="Various instances of 'nonbinary' are accounted for under 'other'. 'Apache' category contains meme answers (no, Patrick, 420 is not a gender), and I'm awarding 'male dragon' a title of a snowflake."
               :conf="{barWidth: '16px !important', columnWidth: '64px !important'}"
               :columns="graphColumnDefinitions[Question.Gender]()"
               :data="graphData?.['all']?.[Question.Gender]"
@@ -1577,7 +1577,7 @@
           <div class="graph-normal">
           <graph :isMobile="isMobile"
             title="The Hidden World opinion change"
-            description="If you watched The Hidden World before seeing the other two films, did your opinion of The Hidden World change after watching them?"
+            description="If you watched The Hidden World before seeing the other two films, did your opinion of The Hidden World change after watching them? (Note that this graph only contains answers from people who watched THW before other two films)"
             :conf="{
               barWidth: '20px !important',
               trackWidthMultiset: '16px !important',
@@ -1588,7 +1588,7 @@
             }"
             :columns="graphColumnDefinitions.yesNoNeutral()"
             :data="graphData?.['all']?.[Question.THWOpinionChange]"
-            :dataCount="graphData?.['all']?.answerCount"
+            :dataCount="graphData?.['all']?.thwOpinionChangeCount"
           ></graph>
         </div>
         </div>
@@ -4234,8 +4234,6 @@ export default defineComponent({
         processedData[question] = { }
       }
 
-      console.info('[÷] data structure prepared');
-
 
       for (const surveyResponse of data) {
         for (const question of Object.values(Question)) {
@@ -4277,78 +4275,21 @@ export default defineComponent({
             }
           }
         }
-
         // todo: special processing for "please select at most 2" questions.
       }
 
-      const endTime = performance.now();
-      console.info(`Data for ${datasetName} processed in ${endTime - startTime} ms.        (note: numbers are slightly fuzzed cos spectre)`);
-      console.info('Processed data:', processedData);
 
-      console.info(
-      `\n\n\n\n---------------[DATA INPUT]---------------`,
-      `\n\n\n          general info\n`,
-      // `\ndeleted answers: ${data.deletedCount}`,
-      // `\n  valid answers: ${data.processedData.length}`,
-      // `\n username given: ${usernameCount}`,
-      // `\n feedback given: ${feedbackCount}`,
-      '\n\n\n          furry count\n',
-      `\n      not furry: ${data.filter(x => x[Question.IsFurry].indexOf(FurryCommunity.None) !== -1).length}`,
-      `\n       is furry: ${data.filter(x => x[Question.IsFurry].indexOf(FurryCommunity.Furry) !== -1).length}`,
-      `\n      is scalie: ${data.filter(x => x[Question.IsFurry].indexOf(FurryCommunity.Scalie) !== -1).length}`,
-      `\n       is other: ${data.filter(x => x[Question.IsFurry].indexOf(FurryCommunity.Other) !== -1).length}`,
-      `\n         is shy: ${data.filter(x => x[Question.IsFurry].indexOf(FurryCommunity.AnswerShy) !== -1).length}`,
-      '\n\n\n          fav draconid\n',
-      `\n     night fury: ${data.filter(x => x[Question.FavouriteDraconid].value === Draconid.NightFury).length}`,
-      `\n       thotfury: ${data.filter(x => x[Question.FavouriteDraconid].value === Draconid.ThotFury).length}`,
-      '\n\n\n          fav villain\n',
-      `\n    green death: ${data.filter(x => x[Question.FavouriteVillain].value === Villain.GreenDeath).length}`,
-      `\n          Drago: ${data.filter(x => x[Question.FavouriteVillain].value === Villain.Drago).length}`,
-      '\n\n\n          fav/least fav char\n',
-      '\n               | HTTYD1    HTTYD2   HTTYD3',
-      `\n         hiccup: +${
-        data.filter(x => x[Question.HTTYD1FavouriteCharacter].value === Character.Hiccup).length
-      }; -${
-        data.filter(x => x[Question.HTTYD1WorstCharacter].value === Character.Hiccup).length
-      }   +${
-        data.filter(x => x[Question.HTTYD2FavouriteCharacter].value === Character.Hiccup).length
-      }; -${
-        data.filter(x => x[Question.HTTYD2WorstCharacter].value === Character.Hiccup).length
-      }   +${
-        data.filter(x => x[Question.HTTYD3FavouriteCharacter].value === Character.Hiccup).length
-      }; -${
-        data.filter(x => x[Question.HTTYD3WorstCharacter].value === Character.Hiccup).length
-      }   `,
-      `\n        tuffnut: +${
-        data.filter(x => x[Question.HTTYD1FavouriteCharacter].value === Character.Tuffnut).length
-      }; -${
-        data.filter(x => x[Question.HTTYD1WorstCharacter].value === Character.Tuffnut).length
-      }   +${
-        data.filter(x => x[Question.HTTYD2FavouriteCharacter].value === Character.Tuffnut).length
-      }; -${
-        data.filter(x => x[Question.HTTYD2WorstCharacter].value === Character.Tuffnut).length
-      }   +${
-        data.filter(x => x[Question.HTTYD3FavouriteCharacter].value === Character.Tuffnut).length
-      }; -${
-        data.filter(x => x[Question.HTTYD3WorstCharacter].value === Character.Tuffnut).length
-      }   `,
-      `\n        ruffnut: +${
-        data.filter(x => x[Question.HTTYD1FavouriteCharacter].value === Character.Ruffnut).length
-      }; -${
-        data.filter(x => x[Question.HTTYD1WorstCharacter].value === Character.Ruffnut).length
-      }   +${
-        data.filter(x => x[Question.HTTYD2FavouriteCharacter].value === Character.Ruffnut).length
-      }; -${
-        data.filter(x => x[Question.HTTYD2WorstCharacter].value === Character.Ruffnut).length
-      }   +${
-        data.filter(x => x[Question.HTTYD3FavouriteCharacter].value === Character.Ruffnut).length
-      }; -${
-        data.filter(x => x[Question.HTTYD3WorstCharacter].value === Character.Ruffnut).length
-      }   `,
-    );
-
+      let thwOpinionChangeCount = 0;
+      for (const value in processedData[Question.THWOpinionChange]) {
+        if (value !== 'NoAnswer') {
+          thwOpinionChangeCount += processedData[Question.THWOpinionChange][value];
+        } else {
+          processedData[Question.THWOpinionChange][value][0];
+        }
+      }
 
       processedData['answerCount'] = data.length;
+      processedData['thwOpinionChangeCount'] = thwOpinionChangeCount || 1;
       return processedData;
     },
     getHttydRatingSet() {

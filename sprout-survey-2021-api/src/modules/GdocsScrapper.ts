@@ -260,7 +260,7 @@ export class GdocsScrapper {
 
       // count people who provided usernames, but omit the actual username
       rowOut[Question.UsernameProvided] = [ row[Question.UsernameProvided] ? Answer.Yes : Answer.No];
-      if (rowOut[Question.UsernameProvided]) {
+      if (rowOut[Question.UsernameProvided] == Answer.Yes) {
         usernameCount++;
       }
 

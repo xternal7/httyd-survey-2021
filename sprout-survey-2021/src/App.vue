@@ -54,6 +54,17 @@
     </div>
 
     <div class="segment">
+      <h1>Survey basics</h1>
+      <div class="segment-content">
+         <p>
+           In total, the survey got {{surveyResults.responseCount}} responses (this number excludes {{surveyResults.deletedCount}} deleted responses — all
+           were exact duplicates of previous responses). {{surveyResults.usernameCount}} ({{(surveyResults.usernamePercent * 100).toFixed(1)}} %) of respondents left their usernames
+           and {{surveyResults.feedbackCount}} ({{(surveyResults.feedbackPercent * 100).toFixed(1)}} %) of respondents provided some feedback.
+        </p>
+      </div>
+    </div>
+
+    <div class="segment">
       <h1>Demographics</h1>
 
       <div class="segment-content">
@@ -165,10 +176,6 @@
 
         <p>
           ... with some of these answers bleeding into the gender section, I can't say I'm surprised.
-        </p>
-        <p>
-          Additionally, {{surveyResults.providedUsernames}} out of {{surveyResults.totalAnswers}} ({{(surveyResults.providedAnswers/(surveyResults.totalAnswers || 1)).toFixed()}}%) of people left their usernames and
-          {{surveyResults.providedFeedbacks}} ({{(surveyResults.providedFeedbacks/(surveyResults.totalAnswers || 1)).toFixed()}}%) have left us some feedback.
         </p>
       </div>
     </div>

@@ -2,17 +2,17 @@
   <div class="root">
     <div class="head">
       <div>
-        Display reasons for:
+        Display reasons for: &nbsp; &nbsp; <select @change="selectReason">
+          <option
+            v-for="option in options"
+            :key="option.value"
+            :value="option.value"
+          >
+            {{option.label}}
+          </option>
+        </select>
       </div>
-      <select @change="selectReason">
-        <option
-          v-for="option in options"
-          :key="option.value"
-          :value="option.value"
-        >
-          {{option.label}}
-        </option>
-      </select>
+
     </div>
     <div class="reason-box">
       <div
@@ -30,6 +30,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 import { enum2draconid } from '../enums/draconid.enum';
+import { enum2villain } from '../enums/villain.enum';
 
 export default defineComponent({
   name: 'FavouriteReasonDisplay',
@@ -50,8 +51,10 @@ export default defineComponent({
   },
   methods: {
     selectReason(option) {
-      console.log('selected new option:', option)
-      this.selectedOption = option;
+      console.log('selected new option:', option.target.value)
+      this.selectedOption = option.target.value;
+
+      this.processReasons(this.data);
     },
     processReasons(data) {
       console.warn(
@@ -65,10 +68,10 @@ export default defineComponent({
       //   2. have chosen the answer we're interested in (if we decided to filter by answer)
       const relevantHits = data.filter(
         x => (
-          x[+this.reasonField]?.reason?.trim() &&
+          x[this.reasonField]?.reason?.trim() &&
           (
             !this.selectedOption ||
-            x[this.reasonField] === this.selectedOption
+            x[this.reasonField].value == this.selectedOption
           )
         )
       );
@@ -93,7 +96,7 @@ export default defineComponent({
       // sort from highest score to lowest
       relevantHits.sort((a, b) => b.__reasonScore - a.__reasonScore);
 
-      const answerFn = this.answerFn === 'draconid' ? enum2draconid : () => {};
+      const answerFn = (this.answerFn === 'draconid' ? enum2draconid : enum2villain) as (x: any, y: any) => string;
 
       // map fields to the structure we expect
       this.reasons = relevantHits.map(
@@ -103,7 +106,7 @@ export default defineComponent({
         })
       );
 
-      console.log("reasons?", this.reasons)
+      // console.log("reasons?", this.reasons)
       // and we're done?
     }
   }
@@ -112,15 +115,16 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .reason-box {
+  margin-top: 2rem;
   height: 32rem;
   max-height: 90vh;
   overflow-y: auto;
 }
 
 .reason-item {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-
+  padding: 1rem;
+  // margin-bottom: 1rem;
+  border-top: 1px solid transparent;
   &:not(:last-child) {
     padding-bottom: 1rem;
     border-bottom: 1px dotted #fa6;
@@ -137,5 +141,9 @@ export default defineComponent({
   .reason {
     opacity: 0.69;
   }
+}
+
+.reason-item:nth-child(2n) {
+  background-color: #120a08;
 }
 </style>

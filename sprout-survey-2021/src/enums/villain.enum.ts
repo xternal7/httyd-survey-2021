@@ -51,7 +51,44 @@ export function villain2enum(villain: string) {
       return Villain.Stoick;
     case '':
       return Villain.None;
-    default: 
+    default:
       return Villain.Other;
+  }
+}
+
+export function enum2villain(villain: Villain, originalValue?: string): string {
+  switch (villain) {
+    case Villain.GreenDeath:
+      return 'Green death';
+    case Villain.Drago:
+      return 'Drago';
+    case Villain.DragoBewilderbeast:
+      return 'Drago\'s Bewilderbeast';
+    case Villain.Viggo:
+      return 'Viggo';
+    case Villain.Alvin:
+      return 'Alvin';
+    case Villain.Dagur:
+      return 'Dagur';
+    case Villain.Grimmel:
+      return 'Grimmel';
+    case Villain.Johann:
+      return 'Johann';
+    case Villain.Mildew:
+      return 'Mildew';
+    case Villain.Ryker:
+      return 'Ryker';
+    case Villain.Stoick:
+      return 'Stoick';
+    case Villain.THWWarlords:
+      return 'THW Warlords';
+    case Villain.Multiple:
+      return '<Multiple>';
+    case Villain.None:
+      return '<none>';
+    case Villain.Other:
+      return `Other — ${originalValue || 'unknown'}`;
+    default:
+      return `MISSINGO — ${villain}`;
   }
 }

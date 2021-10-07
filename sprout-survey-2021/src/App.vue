@@ -955,7 +955,7 @@
           I don't think anyone is surprised by the results. First two places go to Night Fury and <a href="https://httydnd.tamius.net/23" target="_blank">Night Fury: Wyvern Edition</a>.
         </p>
 
-        <div class="">
+        <div class="favourite-reason-container">
           <favourite-reason-display
             :data="surveyResults.processedData"
             :options="favDraconidOptions"
@@ -964,7 +964,6 @@
           >
           </favourite-reason-display>
         </div>
-
         <p>
           The 'favourite villain' question largely follows the same format as the previous one, so I don't feel
           the need to repeat myself. Let's go straight to the results.
@@ -988,11 +987,12 @@
           </div>
         </div>
 
-        <div class="">
+        <div class="favourite-reason-container">
           <favourite-reason-display
             :data="surveyResults.processedData"
             :options="favVillainOptions"
             :reasonField="Question.FavouriteVillainReason"
+            answerFn="villain"
           >
           </favourite-reason-display>
         </div>
@@ -3907,7 +3907,7 @@
     <div class="segment">
       <h1>Final thoughts</h1>
       <p>
-        I guess we can now answer the question: will Tam finish survey results page before Joseph Anderson finishes his Witcher 3 review (or before GRRM finishes Winds of Winter)? And the answer is yes.
+        I guess we can now answer the question: will Tam finish survey results page before <a href="https://www.youtube.com/c/JosephAndersonChannel/videos">Joseph Anderson</a> finishes his Witcher 3 review (or before GRRM finishes Winds of Winter)? And the answer is yes.
         I already did most of the excuses in the intro section, so ... boy. At least most of this code can be reused, assuming there's gonna be a 2022 poll and <i>if</i> I'm gonna be invited.
       </p>
       <p>
@@ -3918,7 +3918,11 @@
     <div class="segment">
       <h1>Feedback feedback</h1>
       <div class="segment-content">
-        <p>Yeah, Tamius is pulling a raycevick end credits thing, even though most questions prolly went more towards Brussel.</p>
+        <p>
+          Yeah, Tamius is pulling a <a href="https://www.youtube.com/channel/UC1JTQBa5QxZCpXrFSkMxmPw">Raycevick</a> <a href="https://youtu.be/_8zSMExo5c0?t=1670">end
+          credits thing</a>, even though most questions prolly went more towards Brussel.
+          No, I'm not sharing names.
+        </p>
 
         <div class="qna-list">
           <div class="qna">
@@ -4008,30 +4012,81 @@
 
     <div class="segment">
       <h1>Credits</h1>
-      <p>Writeup: Tamius Han</p>
-      <p>Poll: A Brussel Sprout</p>
-      <p>Website and related software: Tamius Han</p>
-      <p>QA:</p>
-      <p>
-        <span style="color: green">>implying there was QA</span>
-        <small><small><br/>Actually there was. Lots of it. I've got way more problems with parsing data this year than the last one.</small></small>
-      </p>
-
-      <p>
-        Tech stack:
-      </p>
-      <p>
-        Vue3, typescript.
-        NodeJS for backend processing.
-        Axios for that one request.
-        Github: the site, backend
-      </p>
-      <p>
-        Other resources
-      </p>
-      <p>Fonts: Josefin Sans</p>
-      <p>Art: sourced from How To Train Your Dragon movies.</p>
+      <div class="line">
+        <div class="l">
+          Writeup:
+        </div>
+        <div class="r">
+          Tamius Han
+        </div>
+      </div>
+      <div class="line">
+        <div class="l">
+          Poll:
+        </div>
+        <div class="r">
+          A Brussel Sprout
+        </div>
+      </div>
+      <div class="line">
+        <div class="l">
+          Website and related software:
+        </div>
+        <div class="r">
+          Tamius Han
+        </div>
+      </div>
+      <div class="line">
+        <div class="l">
+          QA:
+        </div>
+        <div class="r">
+          <span style="color: green">>implying there was QA</span>
+          <small><small><br/>Actually there was. Lots of it. I've got way more problems with parsing data this year than the last one.</small></small>
+        </div>
+      </div>
+      <div class="line">
+        <div class="l">
+          Tech stack:
+       </div>
+        <div class="r">
+          Vue3, typescript.<br/>
+          NodeJS for backend processing.<br/>
+          Axios for that one request.<br/>
+          <a href="https://github.com/xternal7/httyd-survey-2021">See this mess on github!</a>
+        </div>
+      </div>
+      <div class="line">
+        <div class="l">
+          Fonts:
+        </div>
+        <div class="r">
+          Josefin Sans
+        </div>
+      </div>
+      <div class="line">
+        <div class="l">
+          Art:
+        </div>
+        <div class="r">
+          Cover image grabbed from How To Train Your Dragon<br/>
+          Charr snorting coke: original-ish creation. <small><small>If you consider taking a screenshot in gw2 with Freestyle and then editing it a bit 'original'.</small></small><br/>
+          Pink photo: stolen from Wikipedia
+        </div>
+      </div>
+      <div class="line"></div>
+      <div class="line">
+        <div class="l">
+          Shameless self-plug:
+        </div>
+        <div class="r">
+          <a href="http://httydnd.tamius.net/0">How To Train Your (Dungeons &) Dragon</a> <small>(Project finished)</small><br/>
+          <a href="http://tamius.net/">Homepage</a><br/>
+          <a href="https://stuff.tamius.net/sacred-texts/">Blog</a><br/><br/>
+        </div>
+      </div>
     </div>
+
   </div>
 </template>
 
@@ -4051,7 +4106,7 @@ import FavouriteReasonDisplay from './components/FavouriteReasonDisplay.vue';
 import {Character} from './enums/character.enum';
 import {FurryCommunity} from './enums/furry-community.enum';
 import {Draconid, enum2draconid} from './enums/draconid.enum';
-import {Villain} from './enums/villain.enum';
+import {Villain, enum2villain} from './enums/villain.enum';
 
 // data
 import surveyResults from './assets/results/survey-data.js';
@@ -4100,13 +4155,15 @@ export default defineComponent({
         {
           value: undefined,
           label: 'All answers'
-        }
+        },
+        ...this.getDraconids()
       ],
       favVillainOptions: [
         {
           value: undefined,
           label: 'All answers'
-        }
+        },
+        ...this.getVillains()
       ],
       enum2draconid,
 
@@ -4351,6 +4408,29 @@ export default defineComponent({
         setLabel: 'Least favourite',
         color: '#c90000'
       }];
+    },
+    getDraconids() {
+      const draconids = [] as any[];
+
+      for (const draconid in Object.values(Draconid)) {
+        draconids.push({
+          value: +draconid,
+          label: enum2draconid(+draconid) as any
+        });
+      }
+
+      return draconids;
+    },
+    getVillains() {
+      const villains = [] as any[];
+      for (const villain in Object.values(Villain)) {
+        villains.push({
+          value: +villain,
+          label: enum2villain(+villain) as any
+        });
+      }
+
+      return villains;
     }
   }
 });
@@ -4575,5 +4655,35 @@ a:hover, a:focus, a:active, .link:hover {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
+}
+
+.line {
+  display: flex;
+  flex-direction: row;
+  padding: 0.5rem 0.5rem;
+
+  .l {
+    flex: 50% 0 0;
+    text-align: right;
+    font-weight: bold;
+    padding-right: 0.25rem;
+  }
+  .r {
+    flex: 50% 0 0;
+    text-align: left;
+    font-weight: normal;
+    color: #bbb;
+    padding-left: 0.25rem;
+
+    small {
+      opacity: 0.75;
+    }
+  }
+}
+
+.favourite-reason-container {
+  margin-bottom: 2rem;
+  background: rgb(255,170,102);
+  background: linear-gradient(0deg, rgba(255,170,102,0.25691410353203781) 0%, rgba(255,170,102,0) 2rem);
 }
 </style>

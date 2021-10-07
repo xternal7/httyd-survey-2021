@@ -1113,69 +1113,52 @@
         <div class="graph-area">
           <div class="graph-normal">
             <graph :isMobile="isMobile"
-              title="Fitting end vs. plot rating"
+              title="Fitting end vs. plot rating vs. plot coherency"
               :conf="{trackWidthMultiset: '8px', columnWidth: '32px !important'}"
               :sets="[{
                 setKey: 'fittingEnd',
                 setLabel: 'Fitting end rating',
-                color: '#ffeaa9'
+                color: '#c90000'
               },{
                 setKey: 'plotRating',
                 setLabel: 'Plot rating',
-                color: '#c90000'
+                color: '#ffeaa9'
+              },{
+                setKey: 'plotCoherency',
+                setLabel: 'Plot coherency',
+                color: '#3264cc'
               }]"
               :columns="graphColumnDefinitions.rating1to10()"
               :data="{
                 _multiSet: true,
                 fittingEnd: graphData?.['all']?.[Question.THWFittingEnd],
-                plotRating: graphData?.['all']?.[Question.HTTYD3PlotRating]
+                plotRating: graphData?.['all']?.[Question.HTTYD3PlotRating],
+                plotCoherency: graphData?.['all']?.[Question.THWPlotCoherency],
               }"
               :dataCount="{
                 fittingEnd: graphData?.['all']?.answerCount,
-                plotRating: graphData?.['all']?.answerCount
+                plotRating: graphData?.['all']?.answerCount,
+                plotCoherency: graphData?.['all']?.answerCount,
               }"
-            ></graph>
-          </div>
-          <div class="graph-normal">
-            <graph :isMobile="isMobile"
-              title="Plot coherency vs. plot rating"
-              :conf="{trackWidthMultiset: '8px', columnWidth: '32px !important'}"
-              :columns="graphColumnDefinitions.rating1to10()"
-              :sets="[{
-                setKey: 'plotCoherency',
-                setLabel: 'Plot coherency rating',
-                color: '#ffeaa9'
-              },{
-                setKey: 'plotRating',
-                setLabel: 'Plot rating',
-                color: '#c90000'
-              }]"
+            >
+            <average
+             :sets="[
+                {setKey: 'fittingEnd', setLabel: 'THW is fitting end', color: '#c90000' },
+                {setKey: 'plotRating', setLabel: 'Plot rating', color: '#ffeaa9'},
+                {setKey: 'plotMakesSense', setLabel: 'THW plot is coherent & makes sense', color: '#3264cc'},
+              ]"
               :data="{
                 _multiSet: true,
-                plotCoherency: graphData?.['all']?.[Question.THWPlotCoherency],
-                plotRating: graphData?.['all']?.[Question.HTTYD3PlotRating]
+                fittingEnd: graphData?.['all']?.[Question.THWFittingEnd],
+                plotRating: graphData?.['all']?.[Question.HTTYD3PlotRating],
+                plotMakesSense: graphData?.['all']?.[Question.THWPlotCoherency],
               }"
-              :dataCount="{
-                fittingEnd: graphData?.['all']?.answerCount,
-                plotRating: graphData?.['all']?.answerCount
-              }"
-            ></graph>
+            ></average>
+            </graph>
           </div>
         </div>
         <div>
-          <average
-            :sets="[
-              {setKey: 'fittingEnd', setLabel: 'THW is fitting end'},
-              {setKey: 'plotMakesSense', setLabel: 'THW plot is coherent & makes sense'},
-              {setKey: 'plotRating', setLabel: 'Plot rating'}
-            ]"
-            :data="{
-              _multiSet: true,
-              fittingEnd: graphData?.['all']?.[Question.THWFittingEnd],
-              plotMakesSense: graphData?.['all']?.[Question.THWPlotCoherency],
-              plotRating: graphData?.['all']?.[Question.HTTYD3PlotRating]
-            }"
-          ></average>
+
         </div>
 
 
@@ -1199,7 +1182,7 @@
         <div class="graph-area">
           <div class="graph-normal">
           <graph :isMobile="isMobile"
-            title="Strongest themes — TODO MULTI CHOICE"
+            title="Strongest themes"
             description="Which of the following themes / messages do you feel The Hidden World most strongly conveys? Participants were asked to pick two at most. 'They tried' is for people who picked more."
             :conf="{
               trackWidth: '8px',
@@ -1509,7 +1492,7 @@
         <div class="graph-area">
           <div class="graph-normal">
             <graph :isMobile="isMobile"
-              title="Why do you like HTTYD franchise? (todo: data)"
+              title="Why do you like HTTYD franchise?"
               description="Which of the following best describe/describes your reason for being drawn to HTTYD? Try not to check more than 2 boxes."
               :conf="{
                 barWidth: '20px !important',
@@ -1651,6 +1634,7 @@
 
         <!-- #region results by age -->
         <h2 @click="deepDiveResults.age = !deepDiveResults.age">Results by age</h2>
+        <div class="collapsible-heading-hint">(Click title to expand or collapse the section)</div>
         <template v-if="deepDiveResults.age">
         <p>
           I didn't expect too much surprises here, but since I was mostly playing with that while debugging my filters, I was doing testing
@@ -2231,7 +2215,6 @@
               :data="{'_multiSet':true,'all-responses':{'1':5,'2':2,'3':1,'4':5,'5':8,'6':10,'7':16,'8':34,'9':68,'10':275,'NoAnswer':7},'sub-17':{'4':4,'6':2,'7':1,'8':5,'9':15,'10':65,'NoAnswer':2},'17-20':{'5':4,'6':4,'7':4,'8':7,'9':17,'10':94,'NoAnswer':2},'20-23':{'1':3,'2':1,'6':1,'7':4,'8':6,'9':13,'10':48},'23-27':{'3':1,'7':3,'8':5,'9':5,'10':22,'NoAnswer':2},'27-and-over':{'4':1,'5':2,'6':1,'7':1,'8':3,'9':6,'10':9,'NoAnswer':1}}"
               :dataCount="{'all-responses':431,'':0,'sub-17':94,'17-20':132,'20-23':76,'23-27':38,'27-and-over':24}"
             >
-              <!-- todo: averages go here -->
             </graph>
         </div>
 
@@ -2256,7 +2239,6 @@
                   :data="{'_multiSet':true,'all':{'1':5,'2':2,'3':1,'4':5,'5':8,'6':10,'7':16,'8':34,'9':68,'10':275,'NoAnswer':7},'under-16':{'4':3,'6':1,'7':1,'8':2,'9':9,'10':42},'16-19':{'4':1,'5':2,'6':5,'7':3,'8':8,'9':18,'10':86,'NoAnswer':3},'19-22':{'2':1,'5':2,'6':1,'7':4,'8':7,'9':17,'10':70,'NoAnswer':1},'22-26':{'1':3,'3':1,'7':3,'8':6,'9':4,'10':25,'NoAnswer':2},'26+':{'4':1,'5':2,'6':1,'7':2,'8':3,'9':8,'10':15,'NoAnswer':1}}"
                   :dataCount="{'all':431,'':0,'under-16':58,'16-19':126,'19-22':103,'22-26':44,'26+':33}"
                 ></average>
-
             </graph>
         </div>
 
@@ -3981,13 +3963,23 @@
           </div>
 
           <div class="qna">
+            <div class="q">Include opinions on the rescue riders spinoffs</div>
+            <div class="a img-max-width"><img src="https://imgur.com/sgE2RZz.png" lazyload="true" /></div>
+          </div>
+
+          <div class="qna">
             <div class="q">Would love to have a small field to say what you like and hate about each movie. Imo it's hard to put a number on something without telling why. Also tam you gotta carry me in csgo man</div>
-            <div class="a">Well this would have been a nightmare to host. (As for CSGO, perhaps I should?)</div>
+            <div class="a">Give me <a href="https://youtu.be/vVX-PrBRtTY?t=57">200 bucks</a> and it's done.</div>
           </div>
 
           <div class="qna">
             <div class="q">Good survey - but if only the rating on Homecoming had a 0 option!</div>
             <div class="a">0/10 or less is reserved for Dragonheart 2, Dragonheart 4, Eragon, The Last Airbender (movie), and The Hobbit trilogy. Sorry.</div>
+          </div>
+
+          <div class="qna">
+            <div class="q">Good survey, just forgot two question. "Do you think that a fourth movie would improve the franchise or un-improve the franchise?" and "If there where to be a fourth movie, what should it be about?"</div>
+            <div class="a">We all know that the answers to that question is gonna be an overwhelming "god f■■k no, it's gonna make things worse" ... Though to be fair, I know a few people who'd say "you can't get worse than THW." But they're wrong, and it only takes one viewing of Dragonheart 2 to prove it.</div>
           </div>
 
           <div class="qna">
@@ -4640,6 +4632,13 @@ a:hover, a:focus, a:active, .link:hover {
       display: block;
       margin: 0 auto;
       // text-align: center;
+    }
+
+    &.img-max-width {
+      img {
+        width: 32rem;
+        max-width: 100%;
+      }
     }
   }
 

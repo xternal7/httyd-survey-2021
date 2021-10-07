@@ -3,7 +3,7 @@
     class="graph-root"
   >
     <div class="graph-header expand">
-      <h1>{{title}}</h1>
+      <h1 :class="{'mobile-h1': isMobile}">{{title}}</h1>
       <div class="description">{{description}}</div>
       <div class="expand"></div>
       <div class="mode-switch-box">
@@ -623,7 +623,7 @@ export default defineComponent({
   .graph-tick-y {
     position: relative;
     display: block;
-    // border-bottom: 1px dotted rgba(#fa6, 0.5);
+    border-bottom: 1px dotted rgba(#fa6, 0.5);
 
     .value-abs, .value-percent {
       position: absolute;
@@ -765,6 +765,7 @@ export default defineComponent({
       position: relative;
       display: block;
       border-left: 1px dotted rgba(#fa6, 0.5);
+      border-bottom: 0px solid transparent;
 
       .value-abs, .value-percent {
         position: sticky;
@@ -954,6 +955,10 @@ export default defineComponent({
     padding: 0;
     padding-bottom: 1rem;
   }
+}
+
+.mobile-h1 {
+  font-size: 1.125rem !important;
 }
 
 </style>

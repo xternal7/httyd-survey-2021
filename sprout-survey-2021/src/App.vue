@@ -4593,12 +4593,12 @@ a:hover, a:focus, a:active, .link:hover {
   }
 }
 
-@media screen and (min-width: 1200px) {
-  .graph-area {
-    margin-left: calc(0px - max(calc(100vw - min(75rem, 100%)), 0.001px) / 2 - 1px);
-    width: calc(100vw - 1px);
-  }
-}
+// @media screen and (min-width: 1200px) {
+  // .graph-area {
+    // margin-left: calc(0px - max(calc(100vw - min(75rem, 100%)), 0.001px) / 2 - 1px);
+    // width: calc(100vw - 1px);
+  // }
+// }
 
 * {
   box-sizing: border-box;
